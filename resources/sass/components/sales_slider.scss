@@ -1,0 +1,120 @@
+.sales_slider {
+  width: 100%;
+  height:166px;
+  margin: 10px 0;
+
+  @include breakpoint($phone) {
+    margin-bottom: 50px;
+    display: block;
+    width: 870px;
+    height: 360px;
+    // display: none;
+  }
+
+  &-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    &_ctas {
+      display: none;
+      position: absolute;
+      @include absCenter();
+      left: 60%;
+      height: 300px;
+      width: 300px;
+      z-index: 9999;
+
+      &-button {
+        width: 300px;
+        height: 50px;
+        border-radius: 50px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-25%);
+        background: $brown;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        cursor: pointer;
+        @include btnShadow();
+        font-size: $btn_fs;
+
+        span {
+          font-family: $font;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 18px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: $white;
+          text-transform: uppercase;
+        }
+      }
+
+      &-timer {
+        @include bg(cover,center);
+        height: 135px;
+        width: 400px;
+        overflow: hidden;
+      }
+      &-heading {
+        span {
+          &:first-child {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 18px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.02em;
+            color: $dblack;
+            margin-bottom: 10px;
+          }
+
+          &:nth-child(2) {
+            font-family: $font;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 100%;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            color: $blue;
+            margin-bottom: 5px;
+          }
+
+          &:nth-child(3) {
+            font-family: $font;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.02em;
+            color: $dblack;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    &_background {
+      height: 100%;
+      width: 100%;
+      @include bg(cover, center);
+      @include breakpoint($medium) {
+        width: 870px;
+        height: 360px;
+      }
+
+    }
+  }
+}

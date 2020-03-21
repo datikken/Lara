@@ -1,0 +1,126 @@
+.subscription {
+  display: block;
+  width: 100%;
+  background: $yellow;
+  height: 80px;
+
+  &_wrapper {
+    width: 100%;
+    margin: 0 auto;
+    @include flex(center, center, wrap);
+
+    @include breakpoint($phone) {
+      @include flex(center, space-around, wrap);
+    }
+    height: 100%;
+    @include breakpoint($phone) {
+      width: $layoutw;
+    }
+    &-item {
+      overflow: hidden;
+      border-radius: 30px;
+      @include breakpoint($medium) {
+        border-radius: none;
+      }
+
+      position: relative;
+      &:first-child {
+        padding-top: 5px;
+        @include breakpoint($phone) {
+          padding-top: 0;
+        }
+      }
+      &:nth-child(2) {
+        width: 100%;
+        margin: 0 20px 10px 20px;
+        @include breakpoint($phone) {
+        margin: 0 20px 0 20px;
+        width: initial;
+        }
+      }
+
+      &_button {
+        position: absolute;
+        right: -3.2rem;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: $black;
+        height: 100%;
+        color: $white;
+        display: flex;
+        align-items: center;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        cursor: pointer;
+
+        @include  breakpoint($medium) {
+          width: 100px;
+        }
+
+        span {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: $white;
+          padding: 0 10px;
+        }
+      }
+      input {
+        height: 30px;
+        width: 100%;
+        border-radius: 50px;
+        border: none;
+        padding-left: 30px;
+        -webkit-appearance: none;
+        outline: none;
+        font-size: 16px;
+          //safari
+        @media not all and (min-resolution:.001dpcm) {
+          padding-top: 5px;
+        }
+        @include  breakpoint($medium) {
+          height: 40px;
+        }
+
+        @include breakpoint($phone) {
+          font-size: 12px;
+          padding-top: 0;
+          width: 500px;
+        }
+        &::placeholder {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 110%;
+          padding-top: 2px;
+          letter-spacing: 0.02em;
+          opacity: 0.5;
+        }
+      }
+      &_heading {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 11px;
+        line-height: 17px;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        padding: 5px;
+        display: block;
+
+        @include breakpoint($phone) {
+          margin-left: 0px;
+          font-size: 12px;
+          line-height: 14px;
+          margin-left: 25px;
+        }
+
+      }
+    }
+  }
+}

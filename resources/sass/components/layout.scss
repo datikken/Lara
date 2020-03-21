@@ -1,0 +1,44 @@
+.columns {
+  @include breakpoint($phone) {
+    width: 100%;
+    max-width: $layoutw;
+    margin: 0 auto;
+    display: flex;
+  }
+  .left_column, .main_column {
+    width: 100%;
+  }
+  .left_column {
+    width: 100%;
+    
+    @include breakpoint($phone) {
+      max-width: 270px;
+    }
+  }
+  .main_column {
+    max-width: 870px;
+
+    @include breakpoint($phone) {
+      margin-left: 30px;
+    }
+  }
+}
+.catalog_columns {
+  overflow: hidden;
+  
+  @include  breakpoint($medium) {
+    padding-top: 20px;
+  }
+}
+
+.mobile-layout {
+  @include breakpoint($phone) {
+    display: none;
+  }
+}
+.desktop-layout {
+  //display: none;
+  @include breakpoint($phone) {
+    display: flex;
+  }
+}

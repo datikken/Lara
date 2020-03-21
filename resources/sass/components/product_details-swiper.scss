@@ -1,0 +1,38 @@
+.details-swiper {
+    overflow-x: hidden;
+    position: absolute;
+    height: 170px!important;
+    top: 6rem;
+    min-height: initial!important;
+    border: 1px solid $light_gray;
+    
+    @include breakpoint($phone) {
+        display: none;
+    }
+
+    .swiper-pagination {
+        bottom: 18px!important;
+        top: initial!important;
+
+        .swiper-pagination-bullet {
+            width: 7px;
+            height: 7px;
+            left: 150px;
+            top: 375px;
+            border: 1px solid $yellow;
+            background: transparent!important;
+        }
+
+        .swiper-pagination-bullet-active {
+           background: $yellow!important;
+        }
+    }
+    .swiper-wrapper {
+        .swiper-slide {
+            img {
+                object-fit: contain;
+                padding: 25px;
+            }
+        }
+    }
+}

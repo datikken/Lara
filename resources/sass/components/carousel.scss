@@ -1,0 +1,250 @@
+.owl-carousel,
+.owl-wrapper {
+  height: 367px;
+  max-width: 1170px;
+  margin: 0 auto;
+  @include breakpoint($phone) {
+    height: 474px !important;
+  }
+}
+.owl-carousel {
+  overflow: hidden;
+  height: 100%;
+}
+.owl-wrapper {
+  position: relative;
+  max-height: 367px;
+  padding-bottom: 30px;
+
+  @include breakpoint($phone) {
+    border-top: 1px solid $gray;
+    position: relative;
+    margin-bottom: 50px;
+    z-index: 0;
+    display: block;
+    max-height: 100%;
+  }
+  //safari
+  // @media not all and (min-resolution:.001dpcm) {
+  //   margin-top: 505px!important;
+  // }
+}
+.owl-item {
+  text-align: center;
+  // height: 100% !important;
+  max-height: 200px;
+  margin: 0 20px;
+  @include breakpoint($phone) {   
+    max-height: initial;
+  }
+  &:before {
+    display: none !important;
+  }
+  cursor: pointer;
+}
+.owl-dots {
+  display: none;
+}
+.owl-nav {
+  position: absolute;
+  left: 6rem;
+  display: block !important;
+  top: 3px;
+
+  @include breakpoint($phone) {
+    top: 20px;
+  }
+
+  .owl-prev {
+    margin-right: 55px;
+  }
+  .owl-prev,
+  .owl-next {
+    color: $gray !important;
+    outline: none;
+  }
+}
+.owl-stage-outer {
+  padding-top: 55px;
+  @include breakpoint($phone) {
+    padding-top: 75px;
+  }
+  overflow: hidden;
+  height: 100%;
+
+  .owl-stage {
+    height: 100%;
+    .owl-item {
+      height: 100% !important;
+    }
+  }
+}
+
+.owl-controls-heading {
+  left: 10px;
+  top: 0;
+  position: absolute;
+  font-family: $font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: $dblack;
+
+  @include breakpoint($phone) {
+    top: 25px;
+    left: 0;
+  }
+
+  &:after {
+    content: "";
+    width: 170px;
+    position: absolute;
+    border-bottom: 1px solid $yellow;
+    bottom: 0;
+    left: 0;
+    top: 28px;
+  }
+}
+.owl-item {
+  max-width: 200px;
+  max-height: 200px;
+  @include breakpoint($phone) {
+    max-width: initial;
+    max-height: initial;
+    width: 270px;
+    height: 370px;
+    margin: 0 15px;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:after {
+    content: "";
+    width: 1px;
+    height: 100%;
+    border-left: 1px solid $light_gray;
+    position: absolute;
+    right: -22px;
+    top: 50px;
+    display: none;
+
+    @include breakpoint($medium) {
+      right: -17px;
+      top: 50%;
+      display: block;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+.carousel_card {
+  min-width: 170px;
+  text-align: left;
+  max-height: 200px;
+
+  &-wrapper {
+    &_item {
+      @include breakpoint($phone) {
+        margin-bottom: 10px;
+      }
+
+      &-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        &_cart {
+          width: 40px;
+          height: 40px;
+          background: $yellow;
+          border-radius: 50%;
+          position: relative;
+          cursor: pointer;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+
+          &-item {
+            object-fit: contain!important;
+            max-width: 20px;
+            margin-right: 2px;
+          }
+        }
+        &_price {
+          font-family: $font;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 26px;
+          text-transform: uppercase;
+          color: $blue;
+          position: relative;
+       
+          &-currency {
+            height: 11px!important;
+            width: 8px!important;
+            margin-left: 5px;
+            position: absolute;
+            bottom: 3px;
+          }
+        }
+      }
+      &:nth-child(3) {
+        padding: 10px;
+        border: 1px solid $light_gray;
+        max-width: 264px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        margin-top: 10px;
+
+        @include breakpoint($phone) {
+          height: 100%;
+          // max-height: 248px;
+          max-height: 270px;
+        }
+      }
+
+      &-image {
+        background-image: url("/img/unnecessary/image.svg");
+        @include bg(cover, center);
+        width: 127.96px;
+        height: 93.29px;
+      }
+      &-name {
+        font-size: 9px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        font-family: $font;
+        margin-bottom: 5px;
+        @include breakpoint($phone) {
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          color: $dblack;
+          margin-bottom: 10px;
+        }
+      }
+
+      &-heading {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        padding-bottom: 20px;
+
+        @include breakpoint($phone) {
+          font-family: $font;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 18px;
+          letter-spacing: 0.02em;
+          color: $dblack;
+        }
+      }
+    }
+  }
+}

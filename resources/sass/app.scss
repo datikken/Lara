@@ -6,7 +6,92 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-@import "./vendor/_swiper";
-@import "vendor/_core";
+@import "./variables/variables";
+@import "./utils/utils";
+@import "./utils/classes";
+@import "./components/header";
+@import "./components/menu.scss";
+@import "./components/menu/menu_secondary";
+@import "./components/subscription.scss";
+@import "./components/footer/footer";
+@import "./components/footer/footer_categories";
+@import "./components/footer/payments";
+@import "./components/slider";
+@import "./components/layout";
+@import "./components/banner";
+@import "./components/banners_mob";
+@import "./components/viewed";
+@import "./components/sales";
+@import "./components/sales_slider";
+@import "./components/sales_slider_card";
+@import "./components/sales_best2";
+@import "./components/sales_eco";
+@import "./components/news";
+@import "./components/carousel";
+@import "./components/breadcrumbs";
+@import "./components/product";
+@import "./components/filters/filters";
+@import "./components/filters/mfilters";
+@import "./components/pagination";
+@import "./components/history";
+@import "./components/product_details";
+@import "./components/product_details-swiper";
+@import "./components/product_info";
+@import "./components/product_comments";
+@import "./components/product_gallery";
+@import "./components/product_feedback-form";
+@import "./components/cart";
+@import "./components/sales_mob";
+@import "./components/information";
+@import "./components/contacts";
+@import "./components/contacts_feedback";
+@import "./components/hits";
+@import "./components/hits_ofers";
+@import "./components/blog";
+@import "./components/like";
+@import "./components/comments";
+@import "./components/buttons";
+@import "./components/tip";
+@import "./components/swiper/main_page";
+@import "./components/product_details_slider";
+@import "./components/swiper/owl-swiper.scss";
+@import "./components/about/mission";
+@import "./components/about/navigator";
+@import "./components/about/about_hero";
+@import "./components/bestPrinters/bestPrinters";
+@import "./components/landing/lenta";
+@import "./components/landing/video";
+@import "./components/landing/heading";
+@import "./components/landing/block";
+@import "./components/landing/feed";
+@import "./components/landing/landswipe";
+@import "./components/bestPrinters/bestPrintersSwipe";
 
-body {}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: $font;
+    font-style: normal;
+    font-weight: normal;
+    overflow-x: hidden !important;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: "MontserratSemiBold";
+    src: url("/fonts/Montserrat-semibold.ttf");
+}
+
+main {
+    min-height: 500px;
+}

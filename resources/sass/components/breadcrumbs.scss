@@ -1,0 +1,85 @@
+.breadcrumbs {
+    padding-left: 25px;
+    
+    @include breakpoint($phone) {
+        padding-left: 0;
+    }
+
+    max-width: $layoutw;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    &_list {
+        max-width: 314px;
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 20px 20px 15px 0;
+
+        &--item {
+            margin-right: 35px;
+            font-family: $font;
+            font-style: normal;
+            font-weight: normal;
+            color: $breadcrumb;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &_text {
+                transition: color $transition;
+                color: $breadcrumb;
+            
+            }
+
+            &:after {
+                content: '';
+                background-image: url('/img/icons/arrow_right.svg');
+                height: 10px;
+                width: 4px;
+                display: block;
+                @include bg(contain, center);
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+.MuiBreadcrumbs-root {
+    border-bottom: 1px solid $yellow;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.MuiSvgIcon-root {
+    color: $breadcrumb;
+}
+
+.MuiBreadcrumbs-ol {
+    padding-top: 20px!important;
+}
+
+.MuiBreadcrumbs-li, .MuiTypography-body1 {
+    font-size: 12px!important;
+    line-height: 14px!important;
+    letter-spacing: 0.02em!important;
+
+    a, p {
+        color: $breadcrumb;
+    }
+    
+    p {
+        pointer-events: none;
+    }
+    
+    &:hover {
+        text-decoration: none;
+        color: $black;
+    }
+}
+
+.crumbs_wrap {
+    max-width: $layoutw;
+    margin-top: 20px;
+    margin: 0 auto;
+}

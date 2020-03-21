@@ -1,0 +1,181 @@
+.contacts_feedback {
+  margin: 0;
+  padding: 15px 15px 0 15px;
+  position: relative;
+  padding-bottom: 290px;
+  background-color: $light_gray;
+
+  @include breakpoint($phone) {
+    background-color: $white;
+    padding-bottom: 360px;
+  }
+
+  .contacts_wrap-item_inner {
+    .contacts_wrap-item_inner-feedback {
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url("/img/icons/feedback.svg");
+    }
+    .contacts_wrap-item_inner-item_form {
+      &_control-heading {
+        font-family: $font;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 17px;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        text-align: center;
+        margin: 10px 0;
+
+        @include breakpoint($phone) {
+          text-align: left;
+        }
+      }
+
+      &_control-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        position: absolute;
+        top: 13.5rem;
+        left: 50%;
+        transform: translate(-50%);
+        @include breakpoint($phone) {
+          top: 10.5rem;
+        }
+
+        &_item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $white;
+          cursor: pointer;
+          font-family: $font;
+          font-size: 11px;
+          line-height: 17px;
+          letter-spacing: 0.02em;
+
+          &:first-child {
+            margin-left: 15px;
+            height: 40px;
+            background: $black;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+          }
+          &:nth-child(2) {
+            background: $white;
+            color: $black;
+            border-right: 1px solid $light_gray;
+          }
+          &:nth-child(3) {
+            margin-right: 15px;
+            height: 40px;
+            background: $white;
+            color: $black;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+          }
+        }
+      }
+      &_control-submit {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        margin-bottom: 30px;
+
+        @include breakpoint($phone) {
+          right: 0;
+          left: initial;
+          transform: none;
+        }
+
+        &_btn {
+          @include flex(center, center, no-wrap);
+          width: 187px;
+          height: 40px;
+          left: 94px;
+          top: 1577px;
+          background: $yellow;
+          border-radius: 30px;
+
+          font-family: $font;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: $dblack;
+        }
+      }
+      &_control-input {
+        @include flex(flex-start, flex-start, no-wrap);
+        flex-direction: column;
+        margin-bottom: 10px;
+        &_textarea {
+          margin-top: 60px;
+          width: calc(100% - 30px);
+          position: absolute;
+          left: 15px;
+
+          @include breakpoint($phone) {
+            margin-top: 70px;
+          }
+
+          textarea {
+            width: 100%;
+            height: 40px;
+            border-radius: 30px;
+            height: 150px;
+            border: 1px solid $light_gray;
+            resize: none;
+            padding: 10px 0px;
+            outline: none;
+            appearance: none;
+            padding: 20px;
+
+            &::placeholder {
+              font-family: $font;
+              font-size: 11px;
+              line-height: 17px;
+              letter-spacing: 0.02em;
+              color: $gray;
+            }
+          }
+        }
+        input {
+          width: 265px;
+          height: 40px;
+          left: 50px;
+          top: 1157px;
+          background: $white;
+          border-radius: 30px;
+          appearance: none;
+          border: none;
+          padding-left: 20px;
+
+          &::placeholder {
+            font-family: $font;
+            font-size: 11px;
+            line-height: 17px;
+            letter-spacing: 0.02em;
+            color: $gray;
+          }
+        }
+        &-label {
+          font-family: $font;
+          font-weight: 500;
+          font-size: 11px;
+          line-height: 17px;
+          letter-spacing: 0.02em;
+          color: $dblack;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}

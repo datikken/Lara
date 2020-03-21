@@ -1,0 +1,181 @@
+.viewed {
+  height: 140px;
+  overflow-y: hidden;
+  width: 100%;
+  position: relative;
+
+  @include breakpoint($phone) {
+    margin-bottom: 50px;
+    overflow-x: hidden;
+    overflow-y: scroll; display: block;
+    width: 270px;
+    height: 401px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+    @include breakpoint($phone) {
+      display: block;
+    }
+    background-color: $gray;
+    width: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $purple;
+  }
+
+  &_wrapper {
+    display: flex;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include breakpoint($phone) {
+      display: block;
+    }
+    &:first-child {
+      margin-left: 10px;
+      @include breakpoint($phone) {
+        margin-left: 0;
+      }
+    }
+    &:last-child {
+      margin-right: 20px;
+      @include breakpoint($phone) {
+        margin-right: 0;
+      }
+    }
+
+    &-item {
+      display: flex;
+      padding-top: 35px;
+      position: relative;
+    
+      @include breakpoint($phone) {
+        padding-top: 0;
+        height: 110px;
+        align-items: center;
+      }
+  
+      &_image {
+        width: 100px;
+        margin-left: 15px;
+        @include bg(contain, center);
+        cursor: pointer;
+        border: none;
+        max-width: 100px;
+        height: 100px;
+        left: 375px;
+        top: 1161px;
+        flex-basis: 50%;
+        @include flex(center, center, no-wrap);
+        margin-bottom: 20px;
+        
+        @include breakpoint($phone) {
+          margin-left: 0;
+          margin-bottom: 0px;
+          width: initial;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &_text {
+        margin-left: 16px;
+        flex-basis: 65%;
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 50%;
+          bottom: -1px;
+          right: 35px;
+          border-bottom: 1px solid $feedItem;
+        }
+
+        &-heading {
+          font-family: $font;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: $dblack;
+          margin-bottom: 10px;
+          padding-top: 19px;
+
+          @include breakpoint($medium) {
+            padding-top: 0;
+          }
+
+          &-item {
+            font-weight: bold!important;
+            font-size: 14px;
+          }
+
+           span {
+            font-weight: 200;
+            &:first-child {
+              font-size: 9px;
+            }
+          }
+        }
+
+        &-price {
+          font-family: $font;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 18px;
+          display: flex;
+          align-items: flex-end;
+          letter-spacing: 0.02em;
+          color: $dblack;
+          position: relative;
+          cursor: pointer;
+
+          img {
+            margin-left: 3px;
+            width: 7px;
+            height: 9.87px;
+          }
+        }
+      }
+
+      &_heading {
+        position: absolute;
+        left: 10px;
+        height: 30px;
+        top: 0px;
+
+        @include breakpoint($phone) {
+          position: relative;
+          left: initial;
+          height: 35px!important;
+        }
+        &-text {
+          font-weight: 500;
+          font-family: $font;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          color: $dblack;
+
+          &:after {
+            content: "";
+            display: block;
+            width: 170px;
+            border-bottom: 1px solid $yellow;
+            margin-top: 15px;
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
+}

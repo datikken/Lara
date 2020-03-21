@@ -1,0 +1,193 @@
+.ymap-coords {
+  margin-bottom: 20px;
+}
+
+.contacts {
+  @include breakpoint($phone) {
+    max-width: $layoutw;
+    margin: 0 auto;
+  }
+  &_column {
+    @include breakpoint($phone) {
+      display: flex;
+      &-inner {
+        flex-basis: 70%;
+      }
+      .mobile-hide {
+        flex-basis: 30%;
+      }
+    }
+  }
+  &_wrap {
+    &-item {
+      margin-bottom: 35px;
+      display: flex;
+      align-items: flex-start;
+      border-bottom: 1px solid $light_gray;
+      margin: 0 15px;
+      padding-top: 10px;
+
+      &_socials {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 100%;
+        grid-column-gap: 25px;
+        margin-bottom: 20px;
+        @include breakpoint($phone) {
+          width: 33%;
+        }
+        &-item {
+          .telegram,
+          .facebook,
+          .vk,
+          .insta {
+            height: 15px;
+            width: 15px;
+            @include bg(contain, center);
+            background-repeat: no-repeat;
+            cursor: pointer;
+          }
+          .telegram {
+            background-image: url("/img/icons/telegram.svg");
+          }
+          .facebook {
+            background-image: url("/img/icons/facebook.svg");
+          }
+          .vk {
+            background-image: url("/img/icons/vk.svg");
+          }
+          .insta {
+            background-image: url("/img/icons/instagram.svg");
+          }
+        }
+      }
+      &_inner {
+        &-inputs-wrap {
+          @include breakpoint($phone) {
+            display: flex;
+            .contacts_wrap-item_inner-item_form_control-input {
+              margin-right: 20px;
+            }
+          }
+        }
+        &:nth-child(2) {
+          margin: 5px 15px;
+          width: 100%;
+        }
+        &-item {
+          display: flex;
+          flex-direction: column;
+
+          &-day {
+            @include flex(center, space-between, no-wrap);
+            border-bottom: 1px solid $light_gray;
+            &:last-child {
+              border-bottom: none;
+            }
+
+            &-time {
+              padding: 10px 0;
+              font-family: $font;
+              font-size: 11px;
+              line-height: 17px;
+              letter-spacing: 0.02em;
+              color: $dblack;
+            }
+            &-item {
+              font-family: $font;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 11px;
+              line-height: 17px;
+              letter-spacing: 0.02em;
+              color: $dblack;
+            }
+          }
+
+          &-mail {
+            font-family: $font;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            color: $blue;
+            @include flex(center, flex-start, no-wrap);
+            margin-bottom: 20px;
+
+            &:before {
+              content: "";
+              height: 15px;
+              width: 15px;
+              display: block;
+              @include bg(contain, center);
+              background-image: url("/img/icons/mail.svg");
+              margin-right: 10px;
+            }
+          }
+          &-tel {
+            font-family: $semifont;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            color: $dblack;
+            display: block;
+            margin-bottom: 20px;
+            @include flex(center, flex-start, no-wrap);
+
+            &:before {
+              content: "";
+              height: 15px;
+              width: 15px;
+              display: block;
+              @include bg(contain, center);
+              background-image: url("/img/icons/tel.svg");
+              margin-right: 10px;
+            }
+          }
+          &-text {
+            font-family: $semifont;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: $dblack;
+            display: block;
+            margin-bottom: 15px;
+          }
+        }
+        &-contacts,
+        &-timing,
+        &-location {
+          width: 30px;
+          height: 30px;
+          @include bg(contain, center);
+        }
+        &-timing {
+          background-image: url("/img/icons/telephone.svg");
+        }
+        &-contacts {
+          background-image: url("/img/icons/telephone.svg");
+        }
+        &-location {
+          background-image: url("/img/icons/location.svg");
+        }
+
+        &-item {
+          &-desc {
+            font-family: $font;
+            font-size: 11px;
+            line-height: 17px;
+            letter-spacing: 0.02em;
+            color: $dblack;
+            margin-bottom: 15px;
+          }
+          &-text {
+          }
+        }
+        &-logo {
+        }
+      }
+    }
+  }
+}

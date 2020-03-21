@@ -1,0 +1,119 @@
+.as-visible {
+  visibility: visible !important;
+}
+.overflow {
+  overflow: hidden !important;
+  position: fixed;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.mobile-hide {
+  display: none !important;
+  @include breakpoint($phone) {
+    display: block !important;
+  }
+}
+
+.desktop-hide {
+  @include breakpoint($phone) {
+    display: none !important;
+  }
+}
+.activeItem {
+  position: relative;
+  color: black !important;
+  &:after {
+    background-image: url("/img/icons/arrow_right_black.svg") !important;
+  }
+
+  @include breakpoint($phone) {
+    &:before {
+      position: absolute;
+      margin-top: 10px;
+      content: "";
+      display: block;
+      height: 3px;
+      width: 100%;
+      bottom: -22px;
+      background-image: -webkit-linear-gradient(left, $purple2, $blue);
+    }
+  }
+}
+.blue {
+  color: $blue;
+}
+.search_width {
+  width: 75%!important;
+  .menu_wrapper-item_search_input {
+    width: 100%!important;
+  }
+  .menu_wrapper-item_search_button {
+    border-radius: 0;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+}
+
+#___gatsby {
+  overflow-x: hidden;
+}
+
+.active_border {
+  border-bottom: 1px solid $yellow;
+}
+.error404 {
+  width: 100%;
+  margin: 0 auto;
+
+  img {
+    object-fit: cover;
+    margin: 20px; 
+    width: calc(100% - 40px);
+  }
+   
+  @include breakpoint($medium) {
+    width: 643px;
+    height: 571px;
+    margin-bottom: 500px;
+  }
+}
+
+.graybg {
+  background-color: #e9e9ea;
+}
+
+.MuiSlider-thumb {
+  box-shadow: none!important;
+}
+.MuiSlider-thumb::after {
+  display: none!important;
+}
+.MuiSlider-thumb:hover {
+  box-shadow: none;
+}
+.PrivateValueLabel-circle-33 {
+  width: initial!important;
+}
+.as-none {
+  opacity: 0!important;
+}
+.swiper-slide {
+  cursor: pointer;
+}
+.muiLabel {
+  font-family: $font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: $black;
+  width: 50px!important;
+  display: block;
+  position: absolute;
+  top: -24px;
+}

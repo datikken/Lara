@@ -1,0 +1,130 @@
+footer {
+  display: block;
+  width: 100%;
+  background: $black;
+  @include breakpoint($phone) {
+    height: 340px;
+  }
+
+  .footer_wrapper {
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 30px;
+    @include flex(flex-start, flex-start, wrap);
+
+    @include breakpoint($phone) {
+      padding-top: 0px;
+      height: 100%;
+      @include flex(center, space-around, wrap);
+      width: $layoutw;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 0 30px 20px;
+
+      &:first-child {
+        margin-bottom: 30px;
+      }
+      &:nth-child(2) {
+        margin-bottom: 50px;
+        @include breakpoint($phone) {
+          margin-bottom: 30px;
+        }
+      }
+
+      &:nth-child(3) {
+        margin-left: 50px;
+        @include  breakpoint($medium) {
+          margin-left: 0;
+        }
+      }
+
+      @include breakpoint($phone) {
+        &:first-child {
+          margin-bottom: 0;
+        }
+        margin-left: 0px;
+        height: 100%;
+      }
+
+      &_social {
+        display: flex;
+
+        &_facebook,
+        &_instagram,
+        &_email {
+          height: 30px;
+          width: 30px;
+          @include bg(contain, center);
+          margin-right: 30px;
+          cursor: pointer;
+        }
+      }
+      &_logo {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 10px;
+        cursor: pointer;
+        a {
+          color: $white;
+        }
+      }
+      &_tel {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: 0.02em;
+        color: $white;
+        @include flex(center, flex-start, wrap);
+        margin-bottom: 20px;
+
+        span {
+          a {
+            text-decoration: none;
+            color: $white !important;
+          }
+        }
+
+        &-icon {
+          @include bg(contain, center);
+          background-image: url("/img/header/contact.svg");
+          width: 30px;
+          height: 25px;
+          margin-right: 10px;
+        }
+      }
+      &_info,
+      &_adress {
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        color: $white;
+        margin-bottom: 15px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.footer_cat {
+  &-item {
+    &:nth-child(2) {
+      flex-direction: column;
+      @include breakpoint($phone) {
+        flex-direction: row;
+      }
+      .footer_cat-item_list {
+        ul {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

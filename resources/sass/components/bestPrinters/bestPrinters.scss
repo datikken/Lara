@@ -1,0 +1,74 @@
+.bestPrinters {
+    min-height: 195px;
+    margin-bottom: 20px;
+
+    &_item div p {
+        margin: 0;
+    }
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $black;
+    width: 100%;
+
+    &_image {
+        padding: 10px;
+        min-width: 166px;
+        img {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &_item {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin: 10px 10px 30px 15px;
+
+        &-desc {
+            font-family: $font;
+            font-size: 11px;
+            line-height: 17px;
+            letter-spacing: 0.02em;
+            color: $white;
+        }
+        &-title {
+            font-family: $font;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 18px;
+            letter-spacing: 0.02em;
+            color: $white;
+            text-transform: uppercase;
+        }
+        &-heading {
+            font-family: $font;
+            font-size: 11px;
+            line-height: 17px;
+            display: flex;
+            align-items: flex-end;
+            letter-spacing: 0.02em;
+            color: $white;
+        }
+    }
+}
+.bestPrinters_swiper {
+    position: relative;
+
+    .swiper-pagination {
+        bottom: 27px!important;
+        width: 50%!important;
+
+        .swiper-pagination-bullet {
+            width: 5px!important;
+            height: 5px!important;
+            background: transparent!important;
+            border: 1px solid $white!important;
+            box-shadow: none;
+            opacity: 1;
+        }
+        .swiper-pagination-bullet-active {
+            background: $white!important;
+        }
+    }
+}

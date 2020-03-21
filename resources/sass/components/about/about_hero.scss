@@ -1,0 +1,57 @@
+.about_hero {
+  display: none;
+  @include breakpoint($medium) {
+    display: block;
+  }
+  &-wrap {
+    position: relative;
+
+    &_item {
+
+      &-img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        min-height: 300px;
+      }
+
+      &-top {
+        position: absolute;
+        top: 24px;
+        max-width: 570px;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        &_text {
+          font-family: $font;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 20px;
+          text-align: center;
+          letter-spacing: 0.02em;
+          color: $dblack;
+        }
+      }
+      &-bottom {
+        position: absolute;
+        bottom: 1rem;
+        max-width: 450px;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        &_text {
+          font-family: $font;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 20px;
+          text-align: center;
+          letter-spacing: 0.02em;
+          color: $dblack;
+        }
+      }
+    }
+  }
+}
