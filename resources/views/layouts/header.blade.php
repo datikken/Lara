@@ -1,7 +1,7 @@
 <div class="header">
     <div class="header_wrapper">
         <div class="header_wrapper-item">
-            <a to="/">
+            <a href="/">
             <div class="header_wrapper-item_logo">
                 <img class="header_wrapper-item_logo-item" src="/images/header/LOGO.png" alt="Logo"/>
             </div>
@@ -9,35 +9,35 @@
         </div>
         <div class="header_wrapper-item">
             <ul class="header_wrapper-item_menu">
-                <li class="header_wrapper-item_menu-item"><a to="/catalog">Каталог</a></li>
+                <li class="header_wrapper-item_menu-item"><a href="/catalog">Каталог</a></li>
                 <li class="header_wrapper-item_menu-item">
-                    <a to="/information">Информация</a>
+                    <a href="/information">Информация</a>
                     <ul class="header_wrapper-item_menu-item-secondary">
-                        <a class="header_wrapper-item_menu-item-secondary_item" to="/information#payments">
+                        <a class="header_wrapper-item_menu-item-secondary_item" href="/information#payments">
                         <li>Оплата</li>
                         </a>
-                        <a class="header_wrapper-item_menu-item-secondary_item" to="/information#delivery">
+                        <a class="header_wrapper-item_menu-item-secondary_item" href="/information#delivery">
                         <li>Доставка</li>
                         </a>
-                        <a class="header_wrapper-item_menu-item-secondary_item" to="/information#guaranty">
+                        <a class="header_wrapper-item_menu-item-secondary_item" href="/information#guaranty">
                         <li>Гарантия</li>
                         </a>
                     </ul>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <a to="/hits">Хит-парад принтеров</a>
+                    <a href="/hits">Хит-парад принтеров</a>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <a to="/sales">Акции</a>
+                    <a href="/sales">Акции</a>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <a to="/blog">Блог</a>
+                    <a href="/blog">Блог</a>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <a to="/about">О нас</a>
+                    <a href="/about">О нас</a>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <a to="/contacts">Контакты</a>
+                    <a href="/contacts">Контакты</a>
                 </li>
             </ul>
         </div>
