@@ -1,5 +1,6 @@
 @include('layouts.header')
+@include('components.menu')
 
-    @yield('center')
+@yield('center')
 
 @include('layouts.footer')

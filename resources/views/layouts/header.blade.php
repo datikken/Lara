@@ -1,50 +1,50 @@
 <div class="header">
     <div class="header_wrapper">
         <div class="header_wrapper-item">
-            <Link to="/">
+            <a to="/">
             <div class="header_wrapper-item_logo">
-                <img class="header_wrapper-item_logo-item" src={'/header/LOGO.png'} alt="Logo"/>
+                <img class="header_wrapper-item_logo-item" src="/images/header/LOGO.png" alt="Logo"/>
             </div>
-            </Link>
+            </a>
         </div>
         <div class="header_wrapper-item">
             <ul class="header_wrapper-item_menu">
-                <li class="header_wrapper-item_menu-item"><Link to="/catalog">Каталог</Link></li>
+                <li class="header_wrapper-item_menu-item"><a to="/catalog">Каталог</a></li>
                 <li class="header_wrapper-item_menu-item">
-                    <Link to="/information">Информация</Link>
+                    <a to="/information">Информация</a>
                     <ul class="header_wrapper-item_menu-item-secondary">
-                        <Link class="header_wrapper-item_menu-item-secondary_item" to="/information#payments">
+                        <a class="header_wrapper-item_menu-item-secondary_item" to="/information#payments">
                         <li>Оплата</li>
-                        </Link>
-                        <Link class="header_wrapper-item_menu-item-secondary_item" to="/information#delivery">
+                        </a>
+                        <a class="header_wrapper-item_menu-item-secondary_item" to="/information#delivery">
                         <li>Доставка</li>
-                        </Link>
-                        <Link class="header_wrapper-item_menu-item-secondary_item" to="/information#guaranty">
+                        </a>
+                        <a class="header_wrapper-item_menu-item-secondary_item" to="/information#guaranty">
                         <li>Гарантия</li>
-                        </Link>
+                        </a>
                     </ul>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <Link to="/hits">Хит-парад принтеров</Link>
+                    <a to="/hits">Хит-парад принтеров</a>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <Link to="/sales">Акции</Link>
+                    <a to="/sales">Акции</a>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <Link to="/blog">Блог</Link>
+                    <a to="/blog">Блог</a>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <Link to="/about">О нас</Link>
+                    <a to="/about">О нас</a>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <Link to="/contacts">Контакты</Link>
+                    <a to="/contacts">Контакты</a>
                 </li>
             </ul>
         </div>
         <div class="header_wrapper-item">
             <div class="header_wrapper-item_contacts">
                 <div class="header_wrapper-item_contacts-icon">
-                    <img class="header_wrapper-item_contacts-icon-item" src={'/header/contact.svg'} alt="Logo"/>
+                    <img class="header_wrapper-item_contacts-icon-item" src='/images/header/contact.svg' alt="Logo"/>
                 </div>
                 <span class="header_wrapper-item_contacts-tel">8 800 555 66 33</span>
                 <div class="header_wrapper-item_contacts-email">kakayatopochta@gmail.com</div>

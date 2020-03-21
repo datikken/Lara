@@ -2,73 +2,128 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c87618a9-9379-4ba4-9501-9c5546ef7e31" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/404/404.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/about/about_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/about/delimeter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/about/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/banner/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/banner/banner2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bestPrinters/printer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bestPrinters/printer.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/header/LOGO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/header/MLOGO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/header/Mail.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/header/contact.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/hits/hits_printer.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/hits/hits_printer2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/CommentsGray.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/LikeGray.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/alot.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/arrow_right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/arrow_right_black.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/arrow_right_white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/black_arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/bullet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/cart_delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/delivery.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/details_btn.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/facebook.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/feedback.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/guaranty.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/instagram.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/like.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/location.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/mail.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/menu_decor.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/ok.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/ok2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/payment.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/product_cart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/rub.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/rubFat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/swiper_left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/swiper_right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/tel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/telegram.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/telephone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/timing.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/tip.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/vk.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/card.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/card2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/clicks.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/lenta.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/pallete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/partner/home.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/partner/otzovik.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/printer.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/printerIcon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/printerIcon2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/printerIcon3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/printerIcon4.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/robot.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/slider.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/swiper/decor.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/swiper/sertificate.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/video_btn.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/landing/video_poster.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/menu/Mhamburger.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/menu/cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/menu/hamburger.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/menu/login.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/menu/rub.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/menu/tracking.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/menu/zoomin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/news/item.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/payments/apple.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/payments/ebay.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/payments/google.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/payments/maestro.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/payments/mastercard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/payments/paypal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/payments/visa.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/payments/webmoney.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/arrow_left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/arrow_right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/decor.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/item.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/item1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/numBack.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/numDec.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/salesBackground.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/salesProd.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/sales_best.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/sales_eco.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/sales_slider.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/sales_slider2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sales/timer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/social/facebook.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/social/instagram.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/social/mail.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/swiper/Slider-image1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/swiper/Slider-image2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/Slider.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/ava.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/banner_black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/best_product.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/image.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/owl-swiper.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/product1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/product2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/product_cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/product_detail1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/product_detail2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/product_detail3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/product_mob.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/product_mob2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unnecessary/sales_mob.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/viewed/viewed_product.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/about/about_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/about/_about_hero.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/about/mission.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/about/_mission.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/about/navigator.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/about/_navigator.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/banner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_banner.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/banners_mob.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_banners_mob.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/bestPrinters/bestPrinters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/bestPrinters/bestPrintersSwipe.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrintersSwipe.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/blog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_blog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/breadcrumbs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_breadcrumbs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_carousel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_cart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/comments.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_comments.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/contacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_contacts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/contacts_feedback.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_contacts_feedback.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/filters/filters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/filters/_filters.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/filters/mfilters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/filters/_mfilters.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/footer/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/footer/_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/footer/footer_categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/footer/_footer_categories.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/footer/footer_support.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/footer/_footer_support.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/footer/payments.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/footer/_payments.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/history.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_history.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/hits.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_hits.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/hits_ofers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_hits_ofers.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/information.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_information.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/landing/block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/landing/_block.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/landing/feed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/landing/_feed.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/landing/heading.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/landing/_heading.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/landing/landswipe.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/landing/_landswipe.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/landing/lenta.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/landing/_lenta.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/landing/video.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/landing/_video.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/like.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_like.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/menu/menu_secondary.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/menu/_menu_secondary.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/news.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_news.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_product.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/product_comments.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_product_comments.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/product_details-swiper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_product_details-swiper.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/product_details.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_product_details.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/product_details_slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_product_details_slider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/product_feedback-form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_product_feedback-form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/product_gallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_product_gallery.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/product_info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_product_info.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/sales.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/sales_best2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales_best2.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/sales_eco.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales_eco.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/sales_mob.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales_mob.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/sales_slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales_slider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/sales_slider_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_slider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/subscription.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_subscription.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/swiper/main_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/swiper/_main_page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/swiper/owl-swiper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/swiper/_owl-swiper.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/tip.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_tip.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/viewed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_viewed.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/utils/classes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/utils/_classes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/utils/utils.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/utils/_utils.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/variables/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/variables/_variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,11 +137,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
+      <file leaf-file-name="menu.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/components/menu.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+            <state relative-caret-position="150">
+              <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -95,34 +150,25 @@
         <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.mix.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_header.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/sass/components/_header.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -150,15 +196,16 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
         <option value="$PROJECT_DIR$/app/Product.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/allproducts.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/vendor/_core.scss" />
         <option value="$PROJECT_DIR$/resources/sass/vendor/_swiper.scss" />
         <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/components/menu.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/header.blade.php" />
       </list>
     </option>
   </component>
@@ -290,24 +337,18 @@
             <path>
               <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
               <item name="public_html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
-              <item name="public_html" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -322,9 +363,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/resources/sass" />
@@ -418,7 +462,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.4715762" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -535,13 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -617,24 +654,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-column="8" selection-end-line="154" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -645,10 +668,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/_header.scss">
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/about/search.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/components/menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
         </state>
       </provider>
     </entry>
