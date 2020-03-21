@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Laravel</title>
+        <script src="{!! mix('js/app.js') !!}"></script>
+        <script src="js/vendors/swiper/swiper.min.js"></script>
+        <link rel="stylesheet" href="css/app.css">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -78,6 +80,49 @@
                     @endauth
                 </div>
             @endif
+            <script>
+
+            </script>
+
+            <!-- Slider main container -->
+            <div class="swiper-container" style="width: 400px;">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide" style="background: red;">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    ...
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+
+            <script>
+                var mySwiper = new Swiper ('.swiper-container', {
+                    loop: true,
+                    // If we need pagination
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    // And if we need scrollbar
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                    },
+                })
+            </script>
 
             <div class="content">
                 <div class="title m-b-md">
