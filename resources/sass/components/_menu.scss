@@ -158,6 +158,7 @@
               top: 12.4rem;
               right: -11rem;
               font-weight: 300;
+              display: none;
 
               &-text {
                 padding: 12.5px;
@@ -422,4 +423,5 @@
 .menu_wrapper-item_menuText-link {
   position: relative;
   z-index: 999999;
+  order:2!important;
 }

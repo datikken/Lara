@@ -574,6 +574,7 @@ a:hover {
   top: 12.4rem;
   right: -11rem;
   font-weight: 300;
+  display: none;
 }
 
 .menu_wrapper-item-main_menu-item-text_secondary-text {
@@ -920,6 +921,7 @@ a:hover {
 .menu_wrapper-item_menuText-link {
   position: relative;
   z-index: 999999;
+  order: 2 !important;
 }
 
 .menu_wrapper-item_secondary {
