@@ -47,7 +47,9 @@
     <div class="cart_wrap-item_inner-table_row-col">
         <span class="desktop-hide">Общая сумма товаров (шт)</span>
         <div class="cart_wrap-item_inner-table_row-col_total">
-            <span>4500</span>
+            <span>
+                {{$cartItem['totalprice']}}
+            </span>
         </div>
     </div>
     <div class="cart_wrap-item_inner-table_row-col desktop-hide">

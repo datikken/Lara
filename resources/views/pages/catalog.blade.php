@@ -4,11 +4,6 @@
 @extends('layouts.index')
 
 @section('center')
-<!--    @foreach ($products as $product)-->
-<!--        <p>This is a product - {{ $product->name }}</p>-->
-<!--        <p>This is a product price - {{ $product->price }}</p>-->
-<!--        <br/>-->
-<!--    @endforeach-->
 
 <div class="crumbs_wrap mobile-hide">
 <!--    <Breadcrumbs-->

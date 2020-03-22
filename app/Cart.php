@@ -8,7 +8,6 @@
 
 namespace App;
 
-
 class Cart
 {
     public $items;
@@ -37,9 +36,9 @@ class Cart
         {
             $productToAdd = $this->items[$id];
             $productToAdd['quantity']++;
-
+            $productToAdd['totalprice'] =  $productToAdd['quantity'] * $productToAdd['price'];
         } else {
-            $productToAdd = ['quantity' => 1, 'price' => $price, 'data'=> $product];
+            $productToAdd = ['quantity' => 1,'price' => $price, 'totalprice' => $price,'data'=> $product];
 
         }
 

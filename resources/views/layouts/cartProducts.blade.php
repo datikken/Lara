@@ -30,6 +30,21 @@
                 </div>
             </div>
 
+            <div class="cart_wrap-item_inner-table_row">
+                <div class="cart_wrap-item_inner-table_row-col">
+                    <span class="cart_wrap-item_inner-table_row-col-heading">Картридж</span>
+                </div>
+                <div class="cart_wrap-item_inner-table_row-col">
+                    <span class="cart_wrap-item_inner-table_row-col-heading">Цена (шт)</span>
+                </div>
+                <div class="cart_wrap-item_inner-table_row-col">
+                    <span class="cart_wrap-item_inner-table_row-col-heading">Количество</span>
+                </div>
+                <div class="cart_wrap-item_inner-table_row-col">
+                    <span class="cart_wrap-item_inner-table_row-col-heading">Общая сумма</span>
+                </div>
+            </div>
+
             <div class="cart_wrap-item_inner">
                 <div class="cart_wrap-item_inner-table">
 
@@ -45,7 +60,15 @@
             </div>
         </div>
 
-        {{--<CartTotal />--}}
+        <div class="cart_wrap-item_inner-total">
+            <div class="cart_wrap-item_inner-total_inner">
+                <span class="cart_wrap-item_inner-total_inner-item">Общая сумма</span>
+                <span class="cart_wrap-item_inner-total_inner-item">{{$cartItems->totalPrice}}</span>
+            </div>
+            <div class="cart_wrap-item_inner-total_button">
+                <span class="cart_wrap-item_inner-total_button-item">оформить заказ</span>
+            </div>
+        </div>
 
     </div>
 </div>

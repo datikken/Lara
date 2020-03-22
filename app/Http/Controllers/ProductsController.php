@@ -20,6 +20,10 @@ class ProductsController extends Controller
 
     public function addProductToCart(Request $request, $id)
     {
+//        $request->session()->forget('cart');
+//        $request->session()->flush();
+//
+
         $prevCart = $request->session()->get('cart');
 
         $cart = new Cart($prevCart);
