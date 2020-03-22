@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use stdClass;
 use App\Product;
 use App\Cart;
 use Illuminate\Http\Request;
@@ -41,11 +42,12 @@ class ProductsController extends Controller
     public function showCart()
     {
         $cart = Session::get('cart');
+        $empty = new stdClass();
 
         if($cart) {
             return view('layouts.cartProducts', ['cartItems' => $cart]);
         } else {
-            return view('layouts.cartProducts', ['cartItems' => '']);
+            return view('layouts.cartProducts', ['cartItems' => $empty]);
         }
 
 //        return redirect()->route('allProducts');

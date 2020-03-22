@@ -217,7 +217,7 @@
     </a>
 </div>
 <div class="menu_wrapper-item">
-    <a href="/cabinet" class="menu_wrapper-item_personal">
+    <a href="/login" class="menu_wrapper-item_personal">
     <div class="menu_wrapper-item_personal_icon">
         <img src="/images/menu/login.svg" alt=""/>
     </div>
@@ -237,8 +237,8 @@
             <img src="/images/menu/cart.svg" alt=""/>
                 <span class="menu_wrapper-item_cart_icon-amount">
                     @php
-                      if(Session::get('cart')->totalQuantity > 0)
-                          echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalQuantity)
+                        if(Session::get('cart')->totalQuantity > 0)
+                            echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalQuantity)
                     @endphp
                 </span>
         </div>
