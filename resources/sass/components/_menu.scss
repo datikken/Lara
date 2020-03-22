@@ -11,14 +11,14 @@
     position: relative;
 
     @include breakpoint($medium) {
-        @include flex(center, space-between, wrap);
+        @include flex(center, flex-start, wrap);
         max-width: $layoutw;
     }
 
     &-item {
         &:last-child {
             @include breakpoint(1030px) {
-                margin: 10px;
+                //margin: 10px;
             }
         }
 
@@ -26,16 +26,43 @@
             display: none;
         }
 
+        &:nth-child(3) {
+            @include  breakpoint(600px) {
+                display: block;
+                position: absolute;
+                right: 5.4rem;
+            }
+            @include breakpoint(1030px) {
+                display: flex;
+                position: initial;
+                right: initial;
+            }
+        }
+
+        &:nth-child(4) {
+            @include  breakpoint(600px) {
+                display: block;
+                position: absolute;
+                right: 3rem;
+            }
+            @include breakpoint(1030px) {
+                display: flex;
+                position: initial;
+                right: initial;
+            }
+        }
+
         &:nth-child(2) {
             @include  breakpoint(600px) {
                 position: absolute;
                 right: 0;
-                width: calc(100% - 175px);
+                width: calc(100% - 255px);
             }
 
             @include breakpoint($medium) {
                 position: relative;
                 width: initial;
+                margin-left: 20px;
             }
         }
 
@@ -280,18 +307,31 @@
         margin-left: 15px;
         cursor: pointer;
 
+        @include breakpoint(1030px) {
+          margin-left: 30px;
+        }
+
+        @include  breakpoint(1200px) {
+           display: flex;
+        }
+
         &_icon {
           width: 24px;
           height: 18px;
         }
+
         &_text {
           font-size: 12px;
           line-height: 14px;
           letter-spacing: 0.02em;
           color: $dblack;
           margin-left: 5px;
-          display: flex;
           align-items: center;
+          display: none;
+
+          @include  breakpoint(1200px) {
+             display: flex;
+          }
         }
       }
       &_tracking {
@@ -304,18 +344,24 @@
           height: 14.86px;
           @include bg(contain, center);
         }
+
         &_text {
           font-size: 12px;
           line-height: 14px;
           letter-spacing: 0.02em;
           color: $dblack;
           margin-left: 10px;
+          display: none;
+
+          @include  breakpoint(1200px) {
+             display: flex;
+          }
         }
       }
       &_search {
         background:$yellow;
         position: absolute;
-        right: 3.2rem;
+        right:  3.2rem;
         top:50%;
         transform: translate(0,-50%);
         width: 100px;
@@ -332,6 +378,11 @@
 
         @include  breakpoint(600px) {
            width: 100%;
+           right: 8.2rem;
+        }
+
+        @include breakpoint(1030px) {
+          margin-left: 30px;
         }
 
         &_input {
@@ -429,7 +480,7 @@
         color: $dblack;
         margin-left: 10px;
         cursor: pointer;
-        width: 125px;
+        width: 74px;
         display: flex !important;
         align-items: center;
         height: 50px;

@@ -244,6 +244,12 @@ a:hover {
   position: relative;
 }
 
+@media screen and (min-width: 1180px) {
+  .header_wrapper-item_contacts {
+    display: block;
+  }
+}
+
 .header_wrapper-item_contacts-icon {
   width: 30px;
   height: 30px;
@@ -431,15 +437,9 @@ a:hover {
   .menu_wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     max-width: 1170px;
-  }
-}
-
-@media screen and (min-width: 1030px) {
-  .menu_wrapper-item:last-child {
-    margin: 10px;
   }
 }
 
@@ -449,10 +449,42 @@ a:hover {
 }
 
 @media screen and (min-width: 600px) {
+  .menu_wrapper-item:nth-child(3) {
+    display: block;
+    position: absolute;
+    right: 5.4rem;
+  }
+}
+
+@media screen and (min-width: 1030px) {
+  .menu_wrapper-item:nth-child(3) {
+    display: flex;
+    position: initial;
+    right: initial;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .menu_wrapper-item:nth-child(4) {
+    display: block;
+    position: absolute;
+    right: 3rem;
+  }
+}
+
+@media screen and (min-width: 1030px) {
+  .menu_wrapper-item:nth-child(4) {
+    display: flex;
+    position: initial;
+    right: initial;
+  }
+}
+
+@media screen and (min-width: 600px) {
   .menu_wrapper-item:nth-child(2) {
     position: absolute;
     right: 0;
-    width: calc(100% - 175px);
+    width: calc(100% - 255px);
   }
 }
 
@@ -460,6 +492,7 @@ a:hover {
   .menu_wrapper-item:nth-child(2) {
     position: relative;
     width: initial;
+    margin-left: 20px;
   }
 }
 
@@ -739,6 +772,18 @@ a:hover {
   cursor: pointer;
 }
 
+@media screen and (min-width: 1030px) {
+  .menu_wrapper-item_personal {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .menu_wrapper-item_personal {
+    display: flex;
+  }
+}
+
 .menu_wrapper-item_personal_icon {
   width: 24px;
   height: 18px;
@@ -750,8 +795,14 @@ a:hover {
   letter-spacing: 0.02em;
   color: #292930;
   margin-left: 5px;
-  display: flex;
   align-items: center;
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .menu_wrapper-item_personal_text {
+    display: flex;
+  }
 }
 
 .menu_wrapper-item_tracking {
@@ -777,6 +828,13 @@ a:hover {
   letter-spacing: 0.02em;
   color: #292930;
   margin-left: 10px;
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .menu_wrapper-item_tracking_text {
+    display: flex;
+  }
 }
 
 .menu_wrapper-item_search {
@@ -809,6 +867,13 @@ a:hover {
 @media screen and (min-width: 600px) {
   .menu_wrapper-item_search {
     width: 100%;
+    right: 8.2rem;
+  }
+}
+
+@media screen and (min-width: 1030px) {
+  .menu_wrapper-item_search {
+    margin-left: 30px;
   }
 }
 
@@ -955,7 +1020,7 @@ a:hover {
   color: #292930;
   margin-left: 10px;
   cursor: pointer;
-  width: 125px;
+  width: 74px;
   display: flex !important;
   align-items: center;
   height: 50px;

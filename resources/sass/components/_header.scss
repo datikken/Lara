@@ -28,6 +28,10 @@
         display: none;
         position: relative;
 
+          @include breakpoint(1180px) {
+              display: block;
+          }
+
         &-icon {
           width: 30px;
           height: 30px;
