@@ -64,13 +64,12 @@ class ProductsController extends Controller
 
         $prevCart = $request->session()->get('cart');
 
-        dump($str);
-        dump($cart);
-        dump($prevCart);
-
         $updatedCart = new Cart($prevCart);
         $updatedCart->updatePriceAndQuantity();
 
         $request->session()->put('cart', $updatedCart);
+
+        return redirect()->route('cartItems');
+
     }
 }

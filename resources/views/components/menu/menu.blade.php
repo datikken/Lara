@@ -235,7 +235,12 @@
         <a href="/cart">
         <div class="menu_wrapper-item_cart_icon">
             <img src="/images/menu/cart.svg" alt=""/>
-            <span class="menu_wrapper-item_cart_icon-amount">88</span>
+                <span class="menu_wrapper-item_cart_icon-amount">
+                    @php
+                      if(Session::get('cart')->totalQuantity > 0)
+                          echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalQuantity)
+                    @endphp
+                </span>
         </div>
         <div class="menu_wrapper-item_cart_value">56834</div>
         <div class="menu_wrapper-item_cart_currency">

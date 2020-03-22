@@ -87,6 +87,6 @@ class HelperString{
     public static function onlyNumber($num)
     {
         $str = preg_replace('/[^0-9.]+/', '', $num);
-        return $str;
+        return (int)$str;
     }
 }
