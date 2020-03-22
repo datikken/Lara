@@ -65,20 +65,23 @@ a:hover {
 .active_border {
   border-bottom: 1px solid $yellow;
 }
+.error {
+    background-color: $light_gray;
+}
 .error404 {
   width: 100%;
   margin: 0 auto;
 
   img {
     object-fit: cover;
-    margin: 20px; 
+    margin: 20px;
     width: calc(100% - 40px);
   }
-   
+
   @include breakpoint($medium) {
     width: 643px;
     height: 571px;
-    margin-bottom: 500px;
+    padding-bottom: 100px;
   }
 }
 

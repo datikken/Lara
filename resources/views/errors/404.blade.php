@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -14,8 +12,10 @@
     @extends('layouts.index')
 
     @section('center')
-        <div class="error404">
-            <img src='/images/404/404.svg' alt="Error" />
+        <div class="error">
+            <div class="error404">
+                <img src='/images/404/404.svg' alt="Error" />
+            </div>
         </div>
     @endsection
 </body>

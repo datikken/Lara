@@ -137,6 +137,10 @@ a:hover {
   border-bottom: 1px solid #fdd935;
 }
 
+.error {
+  background-color: #e9e9ea;
+}
+
 .error404 {
   width: 100%;
   margin: 0 auto;
@@ -153,7 +157,7 @@ a:hover {
   .error404 {
     width: 643px;
     height: 571px;
-    margin-bottom: 500px;
+    padding-bottom: 100px;
   }
 }
 
