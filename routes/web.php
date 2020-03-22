@@ -15,5 +15,9 @@ Route::get('/', function () {
     return view('pages.index');
 });
 
-Route::get('catalog', ['uses' => "ProductsController@index"]);
+Route::get('catalog', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
+
 Route::get('product/AddToCart/{id}', ['uses' => 'ProductsController@addProductToCart', 'as' => 'AddToCartProduct']);
+
+//Cart
+Route::get('cart', ['uses' => "ProductsController@showCart", 'as' => 'cartItems']);

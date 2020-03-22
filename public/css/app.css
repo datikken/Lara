@@ -6153,6 +6153,10 @@ footer .footer_wrapper-item_adress {
   align-items: center;
 }
 
+.cart_wrap-item_inner-table_row-col_img img {
+  width: 100%;
+}
+
 .cart_wrap-item_inner-table_row-col_desc {
   flex-basis: 80%;
   margin-left: 30px;

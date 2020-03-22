@@ -341,6 +341,9 @@
                 height: 100px;
                 display: flex;
                 align-items: center;
+                  img {
+                      width: 100%;
+                  }
               }
               &_desc {
                 flex-basis: 80%;
