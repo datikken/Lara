@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
@@ -15,5 +14,10 @@ class ProductsController extends Controller
         $products = Product::all();
 
         return view('pages.catalog', compact("products"));
+    }
+
+    public function addProductToCart(Request $request, $id)
+    {
+        print_r($id);
     }
 }

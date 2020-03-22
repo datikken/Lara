@@ -3984,6 +3984,7 @@ footer .footer_wrapper-item_adress {
 @media screen and (min-width: 1030px) {
   .product_wrapper-item_btn img {
     margin-left: 0;
+    margin-right: 2px;
   }
 }
 

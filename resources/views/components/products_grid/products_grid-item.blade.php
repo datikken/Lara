@@ -12,7 +12,7 @@
             </div>
             <div class="product_wrapper-item">
                 <div class="product_wrapper-item_image">
-                    <img src="/images/unnecessary/product1.png" alt="product" />
+                    <img src="{{Storage::disk('local')->url('/product_images/' . $image )}}" alt="{{$image}}" />
                 </div>
                 <div class="product_wrapper-item_overlay">
                     <div class="product_wrapper-item_overlay_wrapper">
@@ -29,10 +29,12 @@
                 </div>
                 <div class="product_wrapper-item_price">
                     <span class="product_wrapper-item_price-item">29900</span>
-                    <img src="/images/icons/rub.svg" alt="cur" />
+                        <img src="/images/icons/rub.svg" alt="cur" />
                 </div>
 
+<a href="{{route('AddToCartProduct', ['id' => $id])}}">
                 @include('components.btn.buy_btn')
+</a>
 
             </div>
         </div>
