@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Route::get('catalog', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
 
-Route::get('product/AddToCart/{id}', ['uses' => 'ProductsController@addProductToCart', 'as' => 'AddToCartProduct']);
-
 //Cart
 Route::get('cart', ['uses' => "ProductsController@showCart", 'as' => 'cartItems']);
+    //Add items to cart
+Route::get('product/AddToCart/{id}', ['uses' => 'ProductsController@addProductToCart', 'as' => 'AddToCartProduct']);
+    //Remove items from cart
+Route::get('product/deleteItemFromCart/{id}', ['uses' => 'ProductsController@deleteItemFromCart', 'as' => 'DeleteItemFromCart']);
