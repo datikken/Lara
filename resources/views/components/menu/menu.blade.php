@@ -217,7 +217,7 @@
     </a>
 </div>
 <div class="menu_wrapper-item">
-    <a href="/cabinet" class="menu_wrapper-item_personal">
+    <a href="/login" class="menu_wrapper-item_personal">
     <div class="menu_wrapper-item_personal_icon">
         <img src="/images/menu/login.svg" alt=""/>
     </div>
