@@ -3,7 +3,7 @@
         <div class="product_wrapper">
             <div class="product_wrapper-item">
                 <div class="product_wrapper-item_heading">
-                    <span class="product_wrapper-item_heading-item">IC-HLOR70A</span>
+                    <span class="product_wrapper-item_heading-item">{{ $name }}</span>
                 </div>
                 <div class="product_wrapper-item_amount">
                     <img src="/images/icons/alot.svg" alt="amount"/>

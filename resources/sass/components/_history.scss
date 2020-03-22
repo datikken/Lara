@@ -2,8 +2,10 @@
   max-width: 1170px;
   margin: 0 auto;
   overflow: hidden;
+
   @include breakpoint($phone) {
     margin-bottom: 365px;
+    margin-left: 20px;
   }
 
   &_wrapper {

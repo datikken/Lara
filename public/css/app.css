@@ -4299,6 +4299,7 @@ footer .footer_wrapper-item_adress {
 @media screen and (min-width: 600px) {
   .history {
     margin-bottom: 365px;
+    margin-left: 20px;
   }
 }
 
