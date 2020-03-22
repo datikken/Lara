@@ -52,6 +52,19 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="face" class="col-md-4 col-form-label text-md-right">{{ __('Face') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="face" type="text" class="form-control @error('password') is-invalid @enderror" name="face" required autocomplete="face">
+
+                                @error('face')
+                                    <span class="invalid-face" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
