@@ -3,10 +3,13 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+//
+// require('./bootstrap');
+// window.Vue = require('vue');
 
-require('./bootstrap');
+import Logger from './components/Logger'
 
-window.Vue = require('vue');
+let a = new Logger();
 
 /**
  * The following block of code may be used to automatically register your

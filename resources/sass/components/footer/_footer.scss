@@ -162,7 +162,6 @@ footer {
 
         &-icon {
           @include bg(contain, center);
-          background-image: url("/img/header/contact.svg");
           width: 30px;
           height: 25px;
           margin-right: 10px;
