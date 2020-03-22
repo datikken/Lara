@@ -11,7 +11,5 @@
     </head>
     <body>
         @extends('layouts.index')
-
-
     </body>
 </html>

@@ -2224,7 +2224,6 @@ footer .footer_wrapper-item_adress {
 
 .viewed_wrapper {
   display: flex;
-  overflow-x: scroll;
 }
 
 .viewed_wrapper::-webkit-scrollbar {

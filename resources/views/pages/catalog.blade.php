@@ -30,9 +30,9 @@
 <!--        <CatalogFilters/>-->
 <!--        <CatalogBanner/>-->
 <!---->
-<!--        <div class="mobile-hide">-->
-<!--            <Viewed />-->
-<!--        </div>-->
+        <div class="mobile-hide">
+            @include('components.viewed.viewed')
+        </div>
     </div>
 
     <div class="right_column">

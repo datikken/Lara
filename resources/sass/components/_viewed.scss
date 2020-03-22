@@ -26,7 +26,6 @@
 
   &_wrapper {
     display: flex;
-    overflow-x: scroll;
 
     &::-webkit-scrollbar {
       display: none;
@@ -52,13 +51,13 @@
       display: flex;
       padding-top: 35px;
       position: relative;
-    
+
       @include breakpoint($phone) {
         padding-top: 0;
         height: 110px;
         align-items: center;
       }
-  
+
       &_image {
         width: 100px;
         margin-left: 15px;
@@ -72,7 +71,7 @@
         flex-basis: 50%;
         @include flex(center, center, no-wrap);
         margin-bottom: 20px;
-        
+
         @include breakpoint($phone) {
           margin-left: 0;
           margin-bottom: 0px;
