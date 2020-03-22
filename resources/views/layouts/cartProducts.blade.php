@@ -47,7 +47,6 @@
 
             <div class="cart_wrap-item_inner">
                 <div class="cart_wrap-item_inner-table">
-
                     @if($cartItems != '')
                         @foreach($cartItems->items as $cartItem)
                             @include('components.cart.cart_item', $cartItem)
@@ -55,21 +54,23 @@
                     @else
                         @include('components.cart.cart_empty')
                     @endif
-
                 </div>
             </div>
         </div>
 
-        <div class="cart_wrap-item_inner-total">
-            <div class="cart_wrap-item_inner-total_inner">
-                <span class="cart_wrap-item_inner-total_inner-item">Общая сумма</span>
-                <span class="cart_wrap-item_inner-total_inner-item">{{$cartItems->totalPrice}}</span>
+        @if($cartItems != '')
+            <div class="cart_wrap-item_inner-total">
+                <div class="cart_wrap-item_inner-total_inner">
+                    <span class="cart_wrap-item_inner-total_inner-item">Общая сумма</span>
+                    <span class="cart_wrap-item_inner-total_inner-item">
+                            {{$cartItems->totalPrice}}
+                    </span>
+                </div>
+                <div class="cart_wrap-item_inner-total_button">
+                    <span class="cart_wrap-item_inner-total_button-item">оформить заказ</span>
+                </div>
             </div>
-            <div class="cart_wrap-item_inner-total_button">
-                <span class="cart_wrap-item_inner-total_button-item">оформить заказ</span>
-            </div>
-        </div>
-
+        @endif
     </div>
 </div>
 
