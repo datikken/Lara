@@ -39,7 +39,6 @@
       overflow: hidden;
       cursor: pointer;
       padding-top: 30px;
-   
 
       &:first-child {
         position: absolute;
@@ -64,10 +63,10 @@
         justify-content: center;
         padding-top: 5px;
         margin-left: 20px!important;
-        
-        @include breakpoint($phone) {
+
+        @include breakpoint($medium) {
           margin-left: 0px!important;
-          display: flex;
+          align-items: center;
           flex-direction: row;
           justify-content: space-between;
           padding-top: 0;
@@ -121,7 +120,7 @@
         @include breakpoint($medium) {
           height: initial;
         }
-        
+
         img {
           width: 177px;
         }
@@ -138,7 +137,7 @@
           max-width: 270px;
         }
 
-        
+
         &_wrapper {
           &-item {
             text-align: center;
@@ -205,7 +204,7 @@
       }
       &_btn {
         @include breakpoint($phone) {
-          display: none;
+          //display: none;
         }
         text-align: center;
         text-transform: uppercase;
@@ -222,10 +221,19 @@
         width: 120px;
         height: 30px;
 
+          @include breakpoint($medium){
+              width: 30px;
+              margin: 2px 2px 2px 0;
+          }
+
         img {
           height: 15px;
           width: 15px;
           margin-left: 15px;
+
+          @include breakpoint($medium){
+            margin-left: 0;
+          }
         }
 
       }

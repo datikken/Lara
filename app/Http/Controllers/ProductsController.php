@@ -14,6 +14,6 @@ class ProductsController extends Controller
 
         $products = Product::all();
 
-        return view('allproducts', compact("products"));
+        return view('pages.catalog', compact("products"));
     }
 }

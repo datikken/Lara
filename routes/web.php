@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.index');
 });
 
-Route::get('products', ['uses' => "ProductsController@index"]);
+Route::get('catalog', ['uses' => "ProductsController@index"]);

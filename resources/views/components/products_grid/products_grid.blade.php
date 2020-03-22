@@ -1,0 +1,7 @@
+@include('components.products_grid.products_grid-item')
+@include('components.products_grid.products_grid-item')
+@include('components.products_grid.products_grid-item')
+@include('components.products_grid.products_grid-item')
+@include('components.products_grid.products_grid-item')
+@include('components.products_grid.products_grid-item')
+@include('components.products_grid.products_grid-item')

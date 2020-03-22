@@ -14,9 +14,20 @@
     margin: 0 auto;
     @include flex(center, space-between, wrap);
 
+    @include breakpoint($medium) {
+      margin-left: 10px;
+      justify-content: space-between;
+    }
+
+   @include  breakpoint(1180px) {
+      margin: 0 auto;
+   }
+
     &-item {
       &_contacts {
+        display: none;
         position: relative;
+
         &-icon {
           width: 30px;
           height: 30px;

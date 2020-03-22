@@ -7,19 +7,41 @@
     width: 100%;
     margin: 0 auto;
     height: 100%;
-    @include flex(center, flex-start, wrap);
+    @include flex(center,space-between, wrap);
     position: relative;
 
-    @include breakpoint($phone) {
-      width: $layoutw;
+    @include breakpoint($medium) {
+        @include flex(center, space-between, wrap);
+        max-width: $layoutw;
     }
 
     &-item {
-      display: none;
+        &:last-child {
+            @include breakpoint(1030px) {
+                margin: 10px;
+            }
+        }
 
-      &-home {
-        display: flex;
-      }
+        &:nth-child(3), &:nth-child(4) {
+            display: none;
+        }
+
+        &:nth-child(2) {
+            @include  breakpoint(600px) {
+                position: absolute;
+                right: 0;
+                width: calc(100% - 175px);
+            }
+
+            @include breakpoint($medium) {
+                position: relative;
+                width: initial;
+            }
+        }
+
+        &-home {
+            display: flex;
+        }
 
       @media screen and (max-width: 414px) {
         &:last-child {
@@ -95,7 +117,7 @@
         list-style: none;
         padding: 0;
         left: -18px;
-        top: 38px;
+        top: 37px;
         width: 200px;
         overflow: hidden;
         display: none;
@@ -201,9 +223,11 @@
           height: 31px;
           cursor: pointer;
           position: relative;
+          margin-right: 10px;
 
           @include  breakpoint($medium) {
             margin-left: 20px;
+            \margin-right: 0;
           }
 
           &-amount {
@@ -234,6 +258,11 @@
           text-transform: capitalize;
           margin-left: 20px;
           color: $blue;
+          display: none;
+
+          @include  breakpoint($medium) {
+            display: block;
+          }
         }
         &_currency {
           @include bg(contain, center);
@@ -301,9 +330,17 @@
           width: initial!important;
         }
 
+        @include  breakpoint(600px) {
+           width: 100%;
+        }
+
         &_input {
+          @include breakpoint(600px) {
+            width: 100%;
+          }
+
           input {
-            margin-right: 1rem;
+            margin-right: .4rem;
             padding-left: 10px;
             height: 30px;
             border-radius: 38px;
@@ -314,6 +351,10 @@
             position: relative;
             font-size: 12px;
             width:0;
+
+            @include breakpoint(600px) {
+              width: 100%;
+            }
 
             @include breakpoint($medium) {
               padding-left: 30px;
@@ -365,6 +406,7 @@
         cursor: pointer;
         display: flex;
         height: 100%;
+        z-index: 99;
 
         @include  breakpoint($medium) {
           width: 15px;
