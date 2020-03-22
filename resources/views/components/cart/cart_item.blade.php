@@ -52,8 +52,11 @@
             </span>
         </div>
     </div>
-    <div class="cart_wrap-item_inner-table_row-col desktop-hide">
-        <span class="desktop-hide">Удалить товар</span>
+    <div class="cart_wrap-item_inner-table_row-col">
+
+        <?php dump($cartItem['data']['id']) ?>
+
+        <a class="" href={{route('DeleteItemFromCart', ['id' => $cartItem['data']['id']])}}>Удалить товар</a>
         <div class="cart_wrap-item_inner-table_row-col_delete"></div>
     </div>
 </div>

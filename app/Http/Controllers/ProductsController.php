@@ -6,6 +6,7 @@ use App\Product;
 use App\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use App\Includes\HelperString;
 
 class ProductsController extends Controller
 {
@@ -48,5 +49,28 @@ class ProductsController extends Controller
         }
 
 //        return redirect()->route('allProducts');
+    }
+
+    public function deleteItemFromCart(Request $request, $id)
+    {
+        $str = HelperString::onlyNumber($id);
+
+        $cart = $request->session()->get('cart');
+
+        if(array_key_exists($str, $cart->items))
+        {
+             unset($cart->items[$str]);
+        }
+
+        $prevCart = $request->session()->get('cart');
+
+        dump($str);
+        dump($cart);
+        dump($prevCart);
+
+        $updatedCart = new Cart($prevCart);
+        $updatedCart->updatePriceAndQuantity();
+
+        $request->session()->put('cart', $updatedCart);
     }
 }
