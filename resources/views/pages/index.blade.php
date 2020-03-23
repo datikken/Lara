@@ -45,7 +45,7 @@
     @include('components.banner.banner_mob')
 
     <div class="desktop-hide">
-        {{--<SalesSlider />--}}
+        @include('components.sales.sales_slider')
         {{--<BestPrintersSlider />--}}
     </div>
 
@@ -69,7 +69,6 @@
 
             <div class="mobile-hide">
                 @include('components.sales.sales_slider')
-                {{--<SalesSlider />--}}
             </div>
 
             @include('components.sales.sales_best')

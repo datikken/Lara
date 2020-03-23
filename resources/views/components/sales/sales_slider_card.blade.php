@@ -21,7 +21,7 @@
             </div>
 
             <div class="mobile-hide">
-                {{--<TextBtn text={'успеть купить'} classVal={'sales_slider_btn'} />--}}
+                @include('components.btn.text_btn', [ 'class' => 'sales_slider_btn', 'text' => 'Успеть Купить'])
             </div>
 
         </div>
