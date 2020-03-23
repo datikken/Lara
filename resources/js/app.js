@@ -8,6 +8,7 @@
 // window.Vue = require('vue');
 
 import Logger from './components/Logger'
+import './components/Swiper';
 
 let a = new Logger();
 

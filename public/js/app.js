@@ -96,6 +96,8 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Logger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Logger */ "./resources/js/components/Logger.js");
+/* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Swiper */ "./resources/js/components/Swiper.js");
+/* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_Swiper__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -104,6 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 // require('./bootstrap');
 // window.Vue = require('vue');
+
 
 var a = new _components_Logger__WEBPACK_IMPORTED_MODULE_0__["default"]();
 /**
@@ -143,6 +146,49 @@ var Logger = function Logger() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Logger);
+
+/***/ }),
+
+/***/ "./resources/js/components/Swiper.js":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Swiper.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.onload = function () {
+  var salesSwiper = new Swiper('.sales_slider', {
+    slidesPerView: 1
+  });
+  var mySwiper = new Swiper('.owl_swiper', {
+    containerClass: 'owl_swiper',
+    activeSlideKey: '5',
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 40
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10
+      }
+    }
+  });
+};
 
 /***/ }),
 

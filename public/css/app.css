@@ -2476,6 +2476,15 @@ footer .footer_wrapper-item_adress {
   display: none;
 }
 
+.sales_slider {
+  max-height: 360px;
+  min-height: 360px !important;
+}
+
+.sales_slider .swiper-wrapper .swiper-slide {
+  width: 100%;
+}
+
 @media screen and (min-width: 600px) {
   .sales {
     margin-bottom: 20px;
@@ -2487,6 +2496,7 @@ footer .footer_wrapper-item_adress {
   height: 100%;
   display: flex;
   justify-content: space-between;
+  max-height: 180px !important;
 }
 
 @media screen and (min-width: 1030px) {
@@ -2745,6 +2755,10 @@ footer .footer_wrapper-item_adress {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-image: url("/images/sales/ostatkiBackground.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media screen and (min-width: 1030px) {
@@ -2891,6 +2905,7 @@ footer .footer_wrapper-item_adress {
   height: 60px;
   position: relative;
   margin: 0 2px;
+  background-image: url("/images/sales/numBackground.png");
 }
 
 @media screen and (min-width: 1030px) {
@@ -2928,8 +2943,8 @@ footer .footer_wrapper-item_adress {
   text-transform: uppercase;
   color: #fdd935;
   position: absolute;
-  top: 45%;
-  left: 48%;
+  top: 50%;
+  left: 54%;
   transform: translate(-50%, -50%);
 }
 

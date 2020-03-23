@@ -4,6 +4,10 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-image: url('/images/sales/ostatkiBackground.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 
   @include breakpoint($medium) {
     grid-template-columns: 360px 1fr;
@@ -129,6 +133,7 @@
           height: 60px;
           position: relative;
           margin: 0 2px;
+          background-image: url('/images/sales/numBackground.png');
 
           @include breakpoint($medium) {
             width: 70px;
@@ -160,8 +165,8 @@
             text-transform: uppercase;
             color: $yellow;
             position: absolute;
-            top: 45%;
-            left: 48%;
+            top: 50%;
+            left: 54%;
             transform: translate(-50%, -50%);
 
             @include breakpoint($medium) {
@@ -188,7 +193,7 @@
     background: #E34A02!important;
     margin: 0 auto;
     margin-top: 30px;
-    
+
     .action_btn-item {
         font-family: $font;
         font-weight: 600;
