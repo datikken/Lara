@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
+    <title>Printers</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="/js/vendors/swiper/swiper.min.js"></script>
     <link rel="stylesheet" href="/css/app.css">
