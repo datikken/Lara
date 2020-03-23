@@ -68,6 +68,7 @@
             @include('components.sales.sales')
 
             <div class="mobile-hide">
+                @include('components.sales.sales_slider')
                 {{--<SalesSlider />--}}
             </div>
 
