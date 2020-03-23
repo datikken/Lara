@@ -31,15 +31,6 @@
     </div>
 
     <div class="mobile-hide">
-        {{--<Swiper {...params}>--}}
-            {{--{allContentfulSwiper.edges.map(({ node }) => (--}}
-            {{--<Link--}}
-                {{--to="/landing"--}}
-                {{--key={node}--}}
-                {{--style={{ backgroundImage: `url(${node.image.file.url})` }}--}}
-            {{--></Link>--}}
-            {{--))}--}}
-        {{--</Swiper>--}}
         @include('components.main_swiper.main_swiper')
     </div>
 
