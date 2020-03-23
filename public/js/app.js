@@ -158,7 +158,14 @@ var Logger = function Logger() {
 
 window.onload = function () {
   var mainSwiper = new Swiper('.main_slider', {
-    slidesPerView: 1
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination'
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
   });
   var salesSwiper = new Swiper('.sales_slider', {
     slidesPerView: 1

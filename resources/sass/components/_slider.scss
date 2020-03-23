@@ -1,5 +1,4 @@
 .swiper-container {
-  // display: none;
   height: 200px !important;
 }
 .swiper-container {
@@ -39,6 +38,7 @@
     width: 100%;
     object-fit: cover;
   }
+
   @include breakpoint($phone) {
     height: auto;
     width: initial;
@@ -46,30 +46,7 @@
   }
 }
 
-
-.swiper-button-next,
-.swiper-button-prev {
-  display: none;
-  @include breakpoint($medium) {
-    display: block;
-  }
-}
-
-.swiper-button-next {
-  width: 17.25px !important;
-  height: 25px !important;
-  right: 20%!important;
-  top: 52.1%!important;
-}
-.swiper-button-prev {
-  width: 17.25px !important;
-  height: 25px !important;
-  top:52%!important;
-  left: 20%!important;
-}
-
 .swiper-pagination {
-
   @include breakpoint($phone) {
     bottom: 38px !important;
     top: 87.5% !important;
@@ -91,4 +68,26 @@
 .swiper-pagination-bullet-active {
   background: $black!important;
   box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.7);
+}
+
+.main_slider {
+    .swiper-button-prev, .swiper-button-next {
+        &:after {
+            display: none;
+        }
+    }
+    .swiper-button-next {
+        width: 17.25px !important;
+        height: 25px !important;
+        right: 21%!important;
+        top: 52.1%!important;
+        background-image: url('/images/icons/swiper_right.svg');
+    }
+    .swiper-button-prev {
+        width: 17.25px !important;
+        height: 25px !important;
+        top:52%!important;
+        left: 21%!important;
+        background-image: url('/images/icons/swiper_left.svg');
+    }
 }
