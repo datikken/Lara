@@ -237,8 +237,7 @@
             <img src="/images/menu/cart.svg" alt=""/>
                 <span class="menu_wrapper-item_cart_icon-amount">
                     @php
-                      if(Session::get('cart')->totalQuantity > 0)
-                          echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalQuantity)
+                      if(Session::get('cart')) echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalQuantity)
                     @endphp
                 </span>
         </div>
