@@ -1,4 +1,8 @@
 window.onload = function () {
+    var mainSwiper = new Swiper('.main_slider', {
+        slidesPerView: 1
+    });
+
     var salesSwiper = new Swiper('.sales_slider', {
         slidesPerView: 1
     });

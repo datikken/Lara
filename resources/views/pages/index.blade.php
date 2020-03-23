@@ -40,6 +40,7 @@
             {{--></Link>--}}
             {{--))}--}}
         {{--</Swiper>--}}
+        @include('components.main_swiper.main_swiper')
     </div>
 
     @include('components.banner.banner_mob')
