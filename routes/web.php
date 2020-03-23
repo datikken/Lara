@@ -28,3 +28,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/information', 'InformationController@index');
+Route::get('/hits', 'HitsController@index');

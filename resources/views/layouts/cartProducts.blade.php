@@ -47,7 +47,7 @@
 
             <div class="cart_wrap-item_inner">
                 <div class="cart_wrap-item_inner-table">
-                    @if($cartItems != '')
+                    @if(isset($cartItems->items))
                         @foreach($cartItems->items as $cartItem)
                             @include('components.cart.cart_item', $cartItem)
                         @endforeach
@@ -58,7 +58,7 @@
             </div>
         </div>
 
-        @if($cartItems != '')
+        @if(isset($cartItems->items))
             <div class="cart_wrap-item_inner-total">
                 <div class="cart_wrap-item_inner-total_inner">
                     <span class="cart_wrap-item_inner-total_inner-item">Общая сумма</span>
