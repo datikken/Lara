@@ -27,3 +27,4 @@ Route::get('product/deleteItemFromCart/{id}', ['uses' => 'ProductsController@del
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/information', 'InformationController@index');
