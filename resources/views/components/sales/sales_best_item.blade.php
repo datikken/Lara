@@ -15,7 +15,19 @@
             </div>
 
             <div class="sales_best-wrapper_item-content_inner-image">
-                <img src='/images/sales/sales_best.png' alt=""/>
+
+                <div class="swiper-container swiper-container-v">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image: url('/images/sales/sales_best.png')"></div>
+                        <div class="swiper-slide" style="background-image: url('/images/sales/sales_best.png')"></div>
+                        <div class="swiper-slide" style="background-image: url('/images/sales/sales_best.png')"></div>
+                        <div class="swiper-slide" style="background-image: url('/images/sales/sales_best.png')"></div>
+                    </div>
+                </div>
+
+                {{--<div class="swiper-button-next"></div>--}}
+                {{--<div class="swiper-button-prev"></div>--}}
+
             </div>
         </div>
     </div>

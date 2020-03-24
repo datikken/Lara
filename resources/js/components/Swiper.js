@@ -1,9 +1,18 @@
 window.onload = function () {
 
+    var swiperV = new Swiper('.swiper-container-v', {
+        spaceBetween: 50,
+        navigation: {
+            nextEl: '.swiper-button-nextt',
+            prevEl: '.swiper-button-prevv',
+        }
+    });
+
     var mainSwiper = new Swiper('.best_printers', {
         pagination: {
             el: '.swiper-pagination',
         },
+        mousewheel: true,
         direction: 'vertical',
         navigation: {
             nextEl: '.swiper-button-next',
@@ -84,3 +93,12 @@ window.onload = function () {
         }
     })
 };
+
+
+var swiperH = new Swiper('.swiper-container-h', {
+    spaceBetween: 50,
+    pagination: {
+        el: '.swiper-pagination-h',
+        clickable: true,
+    },
+});

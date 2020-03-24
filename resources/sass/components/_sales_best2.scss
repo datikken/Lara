@@ -8,7 +8,7 @@
 
   @include breakpoint($phone) {
     max-height: 195px;
-    width: 857px;
+    width: 869px;
     background-image: none;
     max-height: 368px;
     margin-bottom: 80px;
@@ -111,10 +111,11 @@
             }
           }
           &-image {
-            width: 470px;
+            width: 459px;
             height: 310px;
             margin-left: 35px;
             @include bg(cover, center);
+            border: 1px solid $gray;
           }
         }
         &_heading {
@@ -140,4 +141,11 @@
       }
     }
   }
+}
+
+
+.swiper-container-v {
+    width: 459px!important;
+    height: 310px!important;
+    min-height: initial!important;
 }

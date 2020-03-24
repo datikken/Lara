@@ -2991,7 +2991,7 @@ footer .footer_wrapper-item_adress {
 @media screen and (min-width: 600px) {
   .sales_best {
     max-height: 195px;
-    width: 857px;
+    width: 869px;
     background-image: none;
     max-height: 368px;
     margin-bottom: 80px;
@@ -3109,12 +3109,13 @@ footer .footer_wrapper-item_adress {
 }
 
 .sales_best-wrapper_item-content_inner-image {
-  width: 470px;
+  width: 459px;
   height: 310px;
   margin-left: 35px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  border: 1px solid #d4d4d5;
 }
 
 .sales_best-wrapper_item-content_heading {
@@ -3136,6 +3137,12 @@ footer .footer_wrapper-item_adress {
   position: absolute;
   border-bottom: 2px solid #fdd935;
   top: 20px;
+}
+
+.swiper-container-v {
+  width: 459px !important;
+  height: 310px !important;
+  min-height: initial !important;
 }
 
 .sales_eco {

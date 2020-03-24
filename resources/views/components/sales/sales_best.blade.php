@@ -23,15 +23,12 @@
                         <div class="swiper-slide">
                             @include('components.sales.sales_best_item')
                         </div>
-                        <div class="swiper-slide">
-                            @include('components.sales.sales_best_item')
-                        </div>
                     </div>
                 </div>
+
+                <div class="swiper-pagination swiper-pagination-v"></div>
+
             </div>
-
-
         </div>
     </div>
-
 </div>
