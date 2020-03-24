@@ -157,6 +157,34 @@ var Logger = function Logger() {
 /***/ (function(module, exports) {
 
 window.onload = function () {
+  var feedBackSwiper = new Swiper('.feedback_swiper', {
+    containerClass: 'owl_swiper',
+    activeSlideKey: '5',
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 10
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 10
+      },
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 10
+      },
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10
+      }
+    }
+  });
   var mainSwiper = new Swiper('.main_slider', {
     slidesPerView: 1,
     pagination: {

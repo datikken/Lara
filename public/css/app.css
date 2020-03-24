@@ -8565,13 +8565,9 @@ footer .footer_wrapper-item_adress {
   height: 30px !important;
 }
 
-.land_swiper {
-  padding-bottom: 60px;
-  border-bottom: 1px solid #d4d4d5;
-}
-
-.land_swiper .swiper-pagination {
-  display: none !important;
+.feedback_swiper .swiper-wrapper .swiper-slide {
+  max-width: 198px !important;
+  max-height: 100px !important;
 }
 
 .landswipe {
@@ -8683,6 +8679,15 @@ footer .footer_wrapper-item_adress {
   color: #292930;
 }
 
+.land_swiper {
+  padding-bottom: 60px;
+  border-bottom: 1px solid #d4d4d5;
+}
+
+.land_swiper .swiper-pagination {
+  display: none !important;
+}
+
 .landswipe_swiper {
   margin-bottom: 50px;
 }
@@ -8693,6 +8698,13 @@ footer .footer_wrapper-item_adress {
 
 .landswipe_swiper .swiper-wrapper .swiper-slide {
   width: 770px !important;
+}
+
+.feedback_swiper {
+  height: 120px !important;
+  padding-bottom: 60px;
+  min-height: initial;
+  border-bottom: 1px solid #d4d4d5;
 }
 
 .best_printers {

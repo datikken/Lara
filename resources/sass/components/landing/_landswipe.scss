@@ -1,6 +1,6 @@
 .landswipe {
   width: 100%;
-  
+
   &_wrap {
     border: 5px solid $yellow;
     max-width: 770px;
@@ -101,9 +101,19 @@
   }
 }
 
+
+.land_swiper {
+    padding-bottom: 60px;
+    border-bottom: 1px solid $gray;
+
+    .swiper-pagination {
+        display: none !important;
+    }
+}
+
 .landswipe_swiper {
   margin-bottom: 50px;
-  
+
   .swiper-pagination {
     display: none!important;
   }
@@ -113,4 +123,11 @@
       width: 770px!important;
     }
   }
+}
+
+.feedback_swiper {
+    height: 120px!important;
+    padding-bottom: 60px;
+    min-height: initial;
+    border-bottom: 1px solid $gray;
 }

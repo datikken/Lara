@@ -88,11 +88,12 @@
   }
 }
 
-.land_swiper {
-  padding-bottom: 60px;
-  border-bottom: 1px solid $gray;
-
-  .swiper-pagination {
-    display: none !important;
-  }
+.feedback_swiper {
+    .swiper-wrapper {
+        .swiper-slide {
+            max-width: 198px!important;
+            max-height: 100px!important;
+        }
+    }
 }
+
