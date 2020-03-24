@@ -8518,6 +8518,7 @@ footer .footer_wrapper-item_adress {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  padding-top: 10px;
 }
 
 .feed_item-wrap_item-desc_item {

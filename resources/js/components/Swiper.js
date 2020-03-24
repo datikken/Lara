@@ -14,8 +14,8 @@ window.onload = function () {
     var feedBackSwiper = new Swiper('.feedback_swiper', {
         containerClass: 'owl_swiper',
         activeSlideKey: '5',
-        centeredSlides: true,
-        loop: true,
+        // centeredSlides: true,
+        // loop: true,
         autoplay: {
             delay: 2500,
             disableOnInteraction: false
