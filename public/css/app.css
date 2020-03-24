@@ -3013,6 +3013,9 @@ footer .footer_wrapper-item_adress {
 
 .sales_best-wrapper_item {
   width: 100%;
+  margin-left: 37px;
+  align-self: flex-start;
+  padding-top: 1.55rem;
 }
 
 .sales_best-wrapper_item:first-child {
@@ -3046,14 +3049,8 @@ footer .footer_wrapper-item_adress {
      object-fit: contain;
 }
 
-.sales_best-wrapper_item:first-child {
-  width: 75px;
-  height: 100%;
-}
-
 .sales_best-wrapper_item-content_inner {
   display: flex;
-  padding-top: 35px;
 }
 
 .sales_best-wrapper_item-content_inner-text {

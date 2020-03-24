@@ -1,5 +1,16 @@
 window.onload = function () {
 
+    var mainSwiper = new Swiper('.best_printers', {
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        direction: 'vertical',
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    });
+
     var feedBackSwiper = new Swiper('.feedback_swiper', {
         containerClass: 'owl_swiper',
         activeSlideKey: '5',

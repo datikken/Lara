@@ -18,7 +18,6 @@
     display: flex;
     flex-direction: row;
     height: 100%;
-
     display: none;
 
     @include breakpoint($phone) {
@@ -27,6 +26,9 @@
 
     &_item {
       width: 100%;
+      margin-left: 37px;
+      align-self: flex-start;
+      padding-top: 1.55rem;
 
       &:first-child {
         display: none;
@@ -52,14 +54,10 @@
           object-fit: contain;
         }
       }
-      &:first-child {
-        width: 75px;
-        height: 100%;
-      }
       &-content {
         &_inner {
           display: flex;
-          padding-top: 35px;
+          //padding-top: 35px;
 
           &-text {
             max-width: 300px;
