@@ -58,10 +58,6 @@ a:hover {
   }
 }
 
-#___gatsby {
-  overflow-x: hidden;
-}
-
 .active_border {
   border-bottom: 1px solid $yellow;
 }
@@ -88,35 +84,16 @@ a:hover {
 .graybg {
   background-color: #e9e9ea;
 }
-
-.MuiSlider-thumb {
-  box-shadow: none!important;
-}
-.MuiSlider-thumb::after {
-  display: none!important;
-}
-.MuiSlider-thumb:hover {
-  box-shadow: none;
-}
-.PrivateValueLabel-circle-33 {
-  width: initial!important;
-}
 .as-none {
   opacity: 0!important;
+}
+.as-visible {
+  display: block;
 }
 .swiper-slide {
   cursor: pointer;
 }
-.muiLabel {
-  font-family: $font;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: $black;
-  width: 50px!important;
-  display: block;
-  position: absolute;
-  top: -24px;
+
+.mobile_menu {
+  height: 100vh!important;
 }
