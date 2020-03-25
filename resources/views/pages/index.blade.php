@@ -26,6 +26,7 @@
             {{--></div>--}}
             {{--))}--}}
         {{--</Swiper>--}}
+        @include('components.main_swiper.main_swiper')
     </div>
 
     <div class="mobile-hide">

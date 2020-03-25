@@ -92,8 +92,12 @@ a:hover {
 }
 .swiper-slide {
   cursor: pointer;
+  height: 190px;
+  @include  breakpoint($medium) {
+    height: 100%;
+  }
 }
 
 .mobile_menu {
-  height: 100vh!important;
+  height: 98vh!important;
 }

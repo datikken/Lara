@@ -1,5 +1,5 @@
 .swiper-container {
-  //display: none;
+  min-height: initial!important;
   @include breakpoint($medium) {
     display: block;
   }
@@ -23,4 +23,11 @@
     left: 2rem;
     top: 50%;
     z-index: 99;
+}
+.swiper-wrapper {
+  height: 190px!important;
+
+  @include  breakpoint($medium) {
+    height: 100%!important;
+  }
 }

@@ -1,5 +1,9 @@
 .swiper-container {
-  height: 200px !important;
+  height: 190px;
+  margin: 0!important;
+  @include  breakpoint($medium) {
+    height: 450px;
+  }
 }
 .swiper-container {
   width: 100% !important;
@@ -11,7 +15,7 @@
 
   @include breakpoint($phone) {
     display: block;
-    min-height: 450px;
+    height: 450px!important;
   }
 }
 .swiper-slide {

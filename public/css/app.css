@@ -171,10 +171,17 @@ a:hover {
 
 .swiper-slide {
   cursor: pointer;
+  height: 190px;
+}
+
+@media screen and (min-width: 1030px) {
+  .swiper-slide {
+    height: 100%;
+  }
 }
 
 .mobile_menu {
-  height: 100vh !important;
+  height: 98vh !important;
 }
 
 .header {
@@ -1837,7 +1844,14 @@ footer .footer_wrapper-item_adress {
 }
 
 .swiper-container {
-  height: 200px !important;
+  height: 190px;
+  margin: 0 !important;
+}
+
+@media screen and (min-width: 1030px) {
+  .swiper-container {
+    height: 450px;
+  }
 }
 
 .swiper-container {
@@ -1852,7 +1866,7 @@ footer .footer_wrapper-item_adress {
 @media screen and (min-width: 600px) {
   .swiper-container {
     display: block;
-    min-height: 450px;
+    height: 450px !important;
   }
 }
 
@@ -2766,6 +2780,13 @@ footer .footer_wrapper-item_adress {
   width: 100%;
   background: #fff;
   position: relative;
+  display: none;
+}
+
+@media screen and (min-width: 1030px) {
+  .sales_slider-card_prod-item {
+    display: block;
+  }
 }
 
 .sales_slider-card_prod-item img {
@@ -2880,6 +2901,8 @@ footer .footer_wrapper-item_adress {
   position: relative;
   margin: 0 2px;
   background-image: url("/images/sales/numBackground.png");
+  background-size: cover;
+  background-position: center;
 }
 
 @media screen and (min-width: 1030px) {
@@ -2917,13 +2940,15 @@ footer .footer_wrapper-item_adress {
   text-transform: uppercase;
   color: #fdd935;
   position: absolute;
-  top: 50%;
-  left: 54%;
+  top: 48%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
 @media screen and (min-width: 1030px) {
   .sales_slider-card_items-wrap-nums_num-item {
+    top: 50%;
+    left: 54%;
     font-family: "Montserrat";
     font-weight: bold;
     font-size: 64px;
@@ -7659,6 +7684,10 @@ footer .footer_wrapper-item_adress {
   top: 10px;
 }
 
+.swiper-container {
+  min-height: initial !important;
+}
+
 @media screen and (min-width: 1030px) {
   .swiper-container {
     display: block;
@@ -7687,6 +7716,16 @@ footer .footer_wrapper-item_adress {
   left: 2rem;
   top: 50%;
   z-index: 99;
+}
+
+.swiper-wrapper {
+  height: 190px !important;
+}
+
+@media screen and (min-width: 1030px) {
+  .swiper-wrapper {
+    height: 100% !important;
+  }
 }
 
 .carousel-slider {
@@ -8694,6 +8733,7 @@ footer .footer_wrapper-item_adress {
 .best_printers {
   position: relative;
   overflow: hidden;
+  margin: 20px 0;
 }
 
 @media screen and (min-width: 1030px) {

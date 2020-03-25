@@ -35,6 +35,11 @@
       width: 100%;
       background: $white;
       position: relative;
+      display: none;
+
+      @include  breakpoint($medium) {
+        display: block;
+      }
 
       img {
         position: absolute;
@@ -134,6 +139,8 @@
           position: relative;
           margin: 0 2px;
           background-image: url('/images/sales/numBackground.png');
+          background-size: cover;
+          background-position: center;
 
           @include breakpoint($medium) {
             width: 70px;
@@ -165,12 +172,13 @@
             text-transform: uppercase;
             color: $yellow;
             position: absolute;
-            top: 50%;
-            left: 54%;
+            top: 48%;
+            left: 50%;
             transform: translate(-50%, -50%);
 
             @include breakpoint($medium) {
-                font-family: $font;
+                top: 50%;
+                left: 54%;  font-family: $font;
                 font-weight: bold;
                 font-size: 64px;
                 line-height: 100%;
