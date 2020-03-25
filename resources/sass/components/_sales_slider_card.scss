@@ -1,16 +1,16 @@
 .sales_slider-card {
   position: relative;
-  width: 100%;
+  width: calc(100% - 52px);
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-image: url('/images/sales/ostatkiBackground.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
 
   @include breakpoint($medium) {
     grid-template-columns: 360px 1fr;
+    background-size: contain;
   }
 
   &::before {

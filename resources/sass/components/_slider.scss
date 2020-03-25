@@ -1,6 +1,6 @@
 .swiper-container {
-  height: 190px;
-  margin: 0!important;
+  height: 200px;
+  margin: 0 0 20px 0;
   @include  breakpoint($medium) {
     height: 450px;
   }
@@ -80,18 +80,30 @@
             display: none;
         }
     }
+  .swiper-button-next, .swiper-button-prev {
+
+  }
+
     .swiper-button-next {
         width: 17.25px !important;
         height: 25px !important;
-        right: 21%!important;
         top: 52.1%!important;
         background-image: url('/images/icons/swiper_right.svg');
+        right: 20px;
+
+      @include  breakpoint($medium) {
+        right: 21%!important;
+      }
     }
     .swiper-button-prev {
         width: 17.25px !important;
         height: 25px !important;
         top:52%!important;
-        left: 21%!important;
         background-image: url('/images/icons/swiper_left.svg');
+        left: 20px;
+
+      @include  breakpoint($medium) {
+        left: 21%!important;
+      }
     }
 }

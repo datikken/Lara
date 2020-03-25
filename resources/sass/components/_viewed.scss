@@ -1,5 +1,5 @@
 .viewed {
-  height: 140px;
+  height: 160px;
   overflow-y: hidden;
   width: 100%;
   position: relative;
@@ -35,7 +35,8 @@
       display: block;
     }
     &:first-child {
-      margin-left: 10px;
+      margin-left: 16px;
+
       @include breakpoint($phone) {
         margin-left: 0;
       }
@@ -49,8 +50,8 @@
 
     &-item {
       display: flex;
-      padding-top: 35px;
       position: relative;
+      padding-top: 55px;
 
       @include breakpoint($phone) {
         padding-top: 0;
@@ -59,11 +60,11 @@
       }
 
       &_image {
-        width: 100px;
+        border: 1px solid $gray;
+        min-width: 100px;
         margin-left: 15px;
         @include bg(contain, center);
         cursor: pointer;
-        border: none;
         max-width: 100px;
         height: 100px;
         left: 375px;
@@ -79,13 +80,14 @@
         }
 
         img {
-          width: 100%;
+          width:calc(100% - 30px);
         }
       }
 
       &_text {
-        margin-left: 16px;
+        margin-left: 10px;
         flex-basis: 65%;
+        min-width: 110px;
 
         &:after {
           content: '';
@@ -148,7 +150,7 @@
 
       &_heading {
         position: absolute;
-        left: 10px;
+        left: 16px;
         height: 30px;
         top: 0px;
 

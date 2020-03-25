@@ -37,7 +37,7 @@ footer {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin: 0 0 30px 10px;
+      margin: 0 0 30px 16px;
 
       &:nth-child(1) {
          flex: 100%;
@@ -95,7 +95,7 @@ footer {
         margin-left: 50px;
 
         @include  breakpoint(400px) {
-            margin-left: 10px;
+            margin-left: 16px;
         }
 
         @include  breakpoint(600px) {

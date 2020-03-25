@@ -2,6 +2,9 @@
   position: relative;
   overflow: hidden;
   margin: 20px 0;
+  @include breakpoint($medium) {
+    margin: 0;
+  }
 
   @include breakpoint($medium) {
     max-height: 370px;

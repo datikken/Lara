@@ -30,6 +30,10 @@
       align-self: flex-start;
       padding-top: 25px;
 
+      @include  breakpoint($medium) {
+        //padding-top: 30px;
+      }
+
       &:first-child {
         display: none;
         @include breakpoint($phone) {

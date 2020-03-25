@@ -42,7 +42,7 @@
       height: 30px;
       position: absolute;
       z-index: 99;
-      left: 10px;
+      left: 16px;
 
       @include breakpoint($phone) {
         left: 0;

@@ -12,11 +12,16 @@
 
   &-wrapper {
     height: 100%;
-    width: 100%;
     @include bg(contain, center);
     cursor: pointer;
-    img {
-      height: 100%;
-    }
+    background-size: cover;
+    margin: 0 16px;
+    background-image: url(/images/sales/turtle.png);
+
+   &_item {
+     &-head {
+
+     }
+   }
   }
 }
