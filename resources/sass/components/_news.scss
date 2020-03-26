@@ -88,6 +88,17 @@
       }
 
       &-item {
+        max-width: 250px;
+        height: 90px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $light_gray;
+        padding: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+
         &:first-child {
           margin-left: 25px;
           @include breakpoint($phone) {
@@ -100,16 +111,10 @@
             margin-right: 0;
           }
         }
-        max-width: 250px;
-        height: 90px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $light_gray;
-        padding: 10px;
-        margin-bottom: 10px;
-        margin-right: 10px;
+        &:last-child:after {
+          display: none;
+        }
+
         @include breakpoint($phone) {
           margin-right: 0;
           margin-bottom: 28px;

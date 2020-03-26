@@ -2338,6 +2338,10 @@ footer .footer_wrapper-item_adress {
   }
 }
 
+.viewed_wrapper-item:last-child .viewed_wrapper-item_text:after {
+  display: none;
+}
+
 .viewed_wrapper-item_image {
   border: 1px solid #d4d4d5;
   min-width: 100px;
@@ -2363,6 +2367,7 @@ footer .footer_wrapper-item_adress {
     margin-left: 0;
     margin-bottom: 0px;
     width: initial;
+    border: none;
   }
 }
 
@@ -2765,6 +2770,7 @@ footer .footer_wrapper-item_adress {
   .sales_slider-card {
     grid-template-columns: 360px 1fr;
     background-size: contain;
+    width: 100%;
   }
 }
 
@@ -3325,6 +3331,10 @@ footer .footer_wrapper-item_adress {
   .news_wrapper-block-item:last-child {
     margin-right: 0;
   }
+}
+
+.news_wrapper-block-item:last-child:after {
+  display: none;
 }
 
 @media screen and (min-width: 600px) {

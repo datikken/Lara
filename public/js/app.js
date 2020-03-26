@@ -10810,7 +10810,6 @@ window.onload = function () {
     pagination: {
       el: '.swiper-pagination'
     },
-    mousewheel: true,
     direction: 'vertical',
     navigation: {
       nextEl: '.swiper-button-next',

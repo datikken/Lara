@@ -11,6 +11,7 @@
   @include breakpoint($medium) {
     grid-template-columns: 360px 1fr;
     background-size: contain;
+    width: 100%;
   }
 
   &::before {

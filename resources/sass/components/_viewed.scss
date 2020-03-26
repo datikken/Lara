@@ -59,6 +59,12 @@
         align-items: center;
       }
 
+      &:last-child {
+        .viewed_wrapper-item_text:after {
+          display: none;
+        }
+      }
+
       &_image {
         border: 1px solid $gray;
         min-width: 100px;
@@ -77,6 +83,7 @@
           margin-left: 0;
           margin-bottom: 0px;
           width: initial;
+          border: none;
         }
 
         img {
