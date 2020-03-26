@@ -2258,7 +2258,6 @@ footer .footer_wrapper-item_adress {
 
 .viewed {
   height: 160px;
-  overflow-y: hidden;
   width: 100%;
   position: relative;
 }
@@ -2292,6 +2291,7 @@ footer .footer_wrapper-item_adress {
 
 .viewed_wrapper {
   display: flex;
+  overflow-x: scroll;
 }
 
 .viewed_wrapper::-webkit-scrollbar {
@@ -2503,6 +2503,7 @@ footer .footer_wrapper-item_adress {
   display: flex;
   justify-content: space-between;
   max-height: 180px !important;
+  border-left: 1px solid #fdd935;
 }
 
 @media screen and (min-width: 1030px) {
@@ -3191,6 +3192,124 @@ footer .footer_wrapper-item_adress {
   background-size: cover;
   margin: 0 16px;
   background-image: url(/images/sales/turtle.png);
+  display: flex;
+}
+
+@media screen and (min-width: 1030px) {
+  .sales_eco-wrapper {
+    margin: 0 0 16px;
+  }
+}
+
+.sales_eco-wrapper_item {
+  height: 130px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0 0 20px;
+  border-left: 2px solid #fdd935;
+  padding-left: 20px;
+  width: 450px;
+  max-height: 333px;
+}
+
+@media screen and (min-width: 1030px) {
+  .sales_eco-wrapper_item {
+    margin: 33px 0 0 87px;
+    height: 333px;
+  }
+}
+
+.sales_eco-wrapper_item-btn {
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sales_eco-wrapper_item-desc,
+.sales_eco-wrapper_item-head {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #FDD935;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sales_eco-wrapper_item-head {
+  color: #fff;
+  max-width: 230px;
+}
+
+@media screen and (min-width: 1030px) {
+  .sales_eco-wrapper_item-head {
+    max-width: 450px;
+  }
+}
+
+.sales_eco-wrapper_item-head p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (min-width: 1030px) {
+  .sales_eco-wrapper_item-head p {
+    font-size: 36px;
+    line-height: 100%;
+  }
+}
+
+.sales_eco-wrapper_item-head span {
+  color: #fdd935;
+}
+
+.flat_btn {
+  width: 130px !important;
+  height: 30px !important;
+  border: 2px solid #FDD935;
+  box-sizing: border-box;
+  border-radius: 50px !important;
+  background: transparent !important;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+@media screen and (min-width: 1030px) {
+  .flat_btn {
+    width: 330px !important;
+    height: 70px !important;
+  }
+}
+
+.flat_btn .action_btn-item {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #FDD935;
+}
+
+@media screen and (min-width: 1030px) {
+  .flat_btn .action_btn-item {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.04em;
+  }
 }
 
 @media not all and (min-resolution: 0.001dpcm) {

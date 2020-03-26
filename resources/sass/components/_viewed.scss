@@ -1,6 +1,5 @@
 .viewed {
   height: 160px;
-  overflow-y: hidden;
   width: 100%;
   position: relative;
 
@@ -26,6 +25,7 @@
 
   &_wrapper {
     display: flex;
+    overflow-x: scroll;
 
     &::-webkit-scrollbar {
       display: none;
