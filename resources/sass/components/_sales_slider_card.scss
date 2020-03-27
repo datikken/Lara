@@ -1,16 +1,18 @@
 .sales_slider-card {
   position: relative;
-  width: calc(100% - 52px);
+  width: calc(100% - 32px);
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.1fr;
   background-image: url('/images/sales/ostatkiBackground.png');
   background-size: cover;
+  background-position: right;
   background-repeat: no-repeat;
 
   @include breakpoint($medium) {
     grid-template-columns: 360px 1fr;
     background-size: contain;
+    background-position: center;
     width: 100%;
   }
 
@@ -19,13 +21,15 @@
   }
 
   &_prod {
-    width: 156px;
-    height: calc(100% - 40px);
+    justify-self: flex-start;
+    align-self: center;
+    width: 136px;
+    height: 136px;
     justify-self: flex-start;
     align-self: center;
     background-repeat: no-repeat;
     background-position: center;
-    margin-left: 20px;
+    margin-left: 16px;
 
     @include breakpoint($medium) {
       height: calc(100% - 25px);
@@ -38,18 +42,12 @@
 
     &-item {
       div {
-        background-position: center;
         height: 100%;
-        padding: 10px;
-        background-repeat: no-repeat;
-
-        ackground-position: center;
-        height: 100%;
-        padding: 10px;
         background-size: contain;
         background-repeat: no-repeat;
         width: 70%;
         margin: 0 auto;
+        background-position: center;
       }
 
       height: 100%;

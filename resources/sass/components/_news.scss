@@ -43,6 +43,7 @@
       position: absolute;
       z-index: 99;
       left: 16px;
+      max-width: 130px;
 
       @include breakpoint($phone) {
         left: 0;
@@ -196,15 +197,6 @@
             }
           }
         }
-
-        //&:after {
-        //  content: "";
-        //  display: block;
-        //  width: 170px;
-        //  border-bottom: 1px solid $gray;
-        //  position: absolute;
-        //  bottom: -17px;
-        //}
       }
     }
   }
