@@ -100,7 +100,7 @@
         margin-right: 10px;
 
         &:first-child {
-          margin-left: 25px;
+          margin-left: 32px;
           @include breakpoint($phone) {
             margin-left: 0;
           }

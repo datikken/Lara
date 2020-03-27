@@ -1,5 +1,5 @@
 .viewed {
-  height: 160px;
+  height: 136px;
   width: 100%;
   position: relative;
 
@@ -26,6 +26,7 @@
   &_wrapper {
     display: flex;
     overflow-x: scroll;
+    overflow-y: hidden;
 
     &::-webkit-scrollbar {
       display: none;
@@ -68,7 +69,7 @@
       &_image {
         border: 1px solid $gray;
         min-width: 100px;
-        margin-left: 15px;
+        margin-left: 16px;
         @include bg(contain, center);
         cursor: pointer;
         max-width: 100px;
@@ -77,11 +78,9 @@
         top: 1161px;
         flex-basis: 50%;
         @include flex(center, center, no-wrap);
-        margin-bottom: 20px;
 
         @include breakpoint($phone) {
           margin-left: 0;
-          margin-bottom: 0px;
           width: initial;
           border: none;
         }

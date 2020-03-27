@@ -63,5 +63,14 @@
     justify-content: space-between;
     top: 150px!important;
     left: 26px!important;
+
+    .swiper-pagination-bullet {
+      background: #fff!important;
+      border: 1px solid black!important;
+    }
+    .swiper-pagination-bullet-active {
+      background: $breadcrumb!important;
+      border: 1px solid $breadcrumb!important;
+    }
   }
 }
