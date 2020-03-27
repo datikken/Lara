@@ -1,7 +1,8 @@
 <div class="sales_slider-card">
     <div class="sales_slider-card_prod">
         <div class="sales_slider-card_prod-item">
-            <div style="background-image: url('/images/sales/salesProd.svg');"></div>
+            {{--<div style="background-image: url('');"></div>--}}
+            <img src="/images/sales/salesProdd.png" />
         </div>
     </div>
 

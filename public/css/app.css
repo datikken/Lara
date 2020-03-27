@@ -1884,8 +1884,15 @@ footer .footer_wrapper-item_adress {
 .swiper-slide img {
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media screen and (min-width: 1030px) {
+  .swiper-slide img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -2763,7 +2770,7 @@ footer .footer_wrapper-item_adress {
   grid-template-columns: 1fr 1.1fr;
   background-image: url("/images/sales/ostatkiBackground.png");
   background-size: cover;
-  background-position: right;
+  background-position: top right;
   background-repeat: no-repeat;
 }
 
@@ -2804,6 +2811,8 @@ footer .footer_wrapper-item_adress {
 }
 
 .sales_slider-card_prod-item {
+  display: flex;
+  align-items: center;
   height: 100%;
   width: 100%;
   background: #fff;
@@ -2822,6 +2831,13 @@ footer .footer_wrapper-item_adress {
 }
 
 @media screen and (min-width: 1030px) {
+  .sales_slider-card_prod-item div {
+    width: 251px;
+    height: 184px;
+  }
+}
+
+@media screen and (min-width: 1030px) {
   .sales_slider-card_prod-item {
     display: block;
   }
@@ -2833,7 +2849,7 @@ footer .footer_wrapper-item_adress {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 58%;
+  top: 50%;
   width: 110px !important;
 }
 
@@ -2841,7 +2857,7 @@ footer .footer_wrapper-item_adress {
   .sales_slider-card_prod-item img {
     width: 250px !important;
     height: 180px;
-    top: 56.7% !important;
+    top: 50% !important;
     -o-object-fit: cover !important;
        object-fit: cover !important;
   }
@@ -2967,8 +2983,10 @@ footer .footer_wrapper-item_adress {
 }
 
 .sales_slider-card_items-wrap-nums_num-item {
+  top: 46% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
   font-family: "Montserrat";
-  font-style: normal;
   font-weight: bold;
   font-size: 30px;
   line-height: 26px;
@@ -2978,9 +2996,6 @@ footer .footer_wrapper-item_adress {
   text-transform: uppercase;
   color: #fdd935;
   position: absolute;
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 @media screen and (min-width: 1030px) {

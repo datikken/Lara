@@ -40,7 +40,11 @@
   img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
+
+    @include breakpoint($medium) {
+      object-fit: cover;
+    }
   }
 
   @include breakpoint($phone) {
