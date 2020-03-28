@@ -11,7 +11,7 @@
 
   @include breakpoint($medium) {
     width: 869px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 
     &_slider {
@@ -39,13 +39,10 @@
         max-height: initial!important;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        column-gap: 20px;
+        column-gap: 16px;
       }
 
       @include breakpoint($medium) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 10px;
         margin: initial;
       }
 

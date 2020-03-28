@@ -2541,7 +2541,7 @@ footer .footer_wrapper-item_adress {
 @media screen and (min-width: 1030px) {
   .sales {
     width: 869px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 }
 
@@ -2570,16 +2570,13 @@ footer .footer_wrapper-item_adress {
     max-height: initial !important;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    -moz-column-gap: 20px;
-         column-gap: 20px;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
   }
 }
 
 @media screen and (min-width: 1030px) {
   .sales-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
     margin: initial;
   }
 }
