@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c87618a9-9379-4ba4-9501-9c5546ef7e31" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_slider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/sales/sales_slider_card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/sales/sales_slider_card.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_menu.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,65 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sales_slider_card.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/components/sales/sales_slider_card.blade.php">
+      <file leaf-file-name="_menu.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/sass/components/_menu.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_viewed.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/sass/components/_viewed.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_sales_slider.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales_slider.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sales_slider_num.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/components/sales/sales_slider_num.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_sales_slider_card.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_slider.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/sass/components/_slider.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_news.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/sass/components/_news.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="154" column="26" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
+            <state relative-caret-position="195">
+              <caret line="209" column="33" selection-start-line="209" selection-start-column="33" selection-end-line="209" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -94,7 +37,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>banners_wrap</find>
       <find>banners</find>
       <find>main_</find>
       <find>viewed_wrapper</find>
@@ -119,11 +61,12 @@
       <find>52</find>
       <find>news</find>
       <find>sales</find>
-      <find>prod</find>
       <find>sales_slider</find>
       <find>nums</find>
       <find>sales_slider-card</find>
       <find>.swiper-slide</find>
+      <find>prod</find>
+      <find>secondary</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -135,8 +78,8 @@
       <dir>$PROJECT_DIR$/resources</dir>
       <dir>$PROJECT_DIR$/resources/views/components/sales</dir>
       <dir>$PROJECT_DIR$/resources/views</dir>
-      <dir>$PROJECT_DIR$/resources/sass</dir>
       <dir>$PROJECT_DIR$/resources/sass/components</dir>
+      <dir>$PROJECT_DIR$/resources/sass</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -171,7 +114,6 @@
         <option value="$PROJECT_DIR$/resources/sass/components/landing/_feed.scss" />
         <option value="$PROJECT_DIR$/resources/views/components/sales/sales_best.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/components/sales/sales_best_item.blade.php" />
-        <option value="$PROJECT_DIR$/resources/sass/components/_menu.scss" />
         <option value="$PROJECT_DIR$/resources/views/components/menu/menu.blade.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/js/app.js" />
@@ -196,6 +138,7 @@
         <option value="$PROJECT_DIR$/resources/views/components/sales/sales_slider_card.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/components/_slider.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" />
+        <option value="$PROJECT_DIR$/resources/sass/components/_menu.scss" />
       </list>
     </option>
   </component>
@@ -328,13 +271,6 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="sass" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -443,13 +379,13 @@
       <workItem from="1585296302663" duration="132000" />
       <workItem from="1585333154670" duration="52000" />
       <workItem from="1585334077534" duration="2103000" />
-      <workItem from="1585336805586" duration="5249000" />
+      <workItem from="1585336805586" duration="6050000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="27124000" />
+    <option name="totallyTimeSpent" value="27925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="0" />
@@ -461,7 +397,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32984293" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.4384817" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22847222" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22847222" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
@@ -719,13 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/_menu.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4821">
-          <caret line="156" column="27" selection-start-line="156" selection-start-column="27" selection-end-line="156" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -858,22 +787,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/_viewed.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/_news.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="154" column="26" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/images/sales/salesProd.svg">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="215" column="42" lean-forward="true" selection-start-line="215" selection-start-column="42" selection-end-line="215" selection-end-column="42" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/components/sales/sales_slider_num.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -886,6 +808,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/_viewed.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -903,10 +832,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss">
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/_news.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        <state relative-caret-position="243">
+          <caret line="154" column="26" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/_menu.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="209" column="33" selection-start-line="209" selection-start-column="33" selection-end-line="209" selection-end-column="33" />
         </state>
       </provider>
     </entry>

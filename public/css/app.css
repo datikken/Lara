@@ -632,6 +632,7 @@ a:hover {
   right: -13.3rem;
   font-weight: 300;
   display: none;
+  overflow-y: scroll;
 }
 
 .menu_wrapper-item-main_menu-item-text_secondary-text {
