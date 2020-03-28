@@ -107,7 +107,7 @@
         align-items: center;
         letter-spacing: 0.02em;
         color: $dblack;
-        margin-bottom: 15px;
+        margin: 10px 0;
 
         @include breakpoint($medium) {
           font-weight: 600;

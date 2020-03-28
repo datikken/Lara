@@ -10818,6 +10818,13 @@ array.forEach(function (el) {
 /***/ (function(module, exports) {
 
 window.onload = function () {
+  var swiperMain = new Swiper('.bestPrinters_swiper', {
+    spaceBetween: 50,
+    navigation: {
+      nextEl: '.swiper-button-nextt',
+      prevEl: '.swiper-button-prevv'
+    }
+  });
   var swiperV = new Swiper('.swiper-container-v', {
     spaceBetween: 50,
     navigation: {
@@ -10825,7 +10832,7 @@ window.onload = function () {
       prevEl: '.swiper-button-prevv'
     }
   });
-  var mainSwiper = new Swiper('.best_printers', {
+  var slider = new Swiper('.best_printers', {
     pagination: {
       el: '.swiper-pagination'
     },

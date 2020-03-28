@@ -2894,7 +2894,7 @@ footer .footer_wrapper-item_adress {
   align-items: center;
   letter-spacing: 0.02em;
   color: #292930;
-  margin-bottom: 15px;
+  margin: 10px 0;
 }
 
 @media screen and (min-width: 1030px) {
@@ -8340,7 +8340,7 @@ footer .footer_wrapper-item_adress {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin: 10px;
+  margin: 10px 10px 30px 10px;
 }
 
 .bestPrinters_item-desc {

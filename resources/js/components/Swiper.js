@@ -1,6 +1,14 @@
 window.onload = function () {
 
-    var swiperV = new Swiper('.swiper-container-v', {
+    let swiperMain = new Swiper('.bestPrinters_swiper', {
+        spaceBetween: 50,
+        navigation: {
+            nextEl: '.swiper-button-nextt',
+            prevEl: '.swiper-button-prevv',
+        }
+    })
+
+    let swiperV = new Swiper('.swiper-container-v', {
         spaceBetween: 50,
         navigation: {
             nextEl: '.swiper-button-nextt',
@@ -8,7 +16,7 @@ window.onload = function () {
         }
     });
 
-    var mainSwiper = new Swiper('.best_printers', {
+    let slider = new Swiper('.best_printers', {
         pagination: {
             el: '.swiper-pagination',
         },
@@ -19,7 +27,7 @@ window.onload = function () {
         }
     });
 
-    var feedBackSwiper = new Swiper('.feedback_swiper', {
+    let feedBackSwiper = new Swiper('.feedback_swiper', {
         containerClass: 'owl_swiper',
         activeSlideKey: '5',
         centeredSlides: true,
@@ -48,7 +56,7 @@ window.onload = function () {
         }
     });
 
-    var mainSwiper = new Swiper('.main_slider', {
+    let mainSwiper = new Swiper('.main_slider', {
         slidesPerView: 1,
         pagination: {
             el: '.swiper-pagination',
@@ -59,11 +67,11 @@ window.onload = function () {
         }
     });
 
-    var salesSwiper = new Swiper('.sales_slider', {
+    let salesSwiper = new Swiper('.sales_slider', {
         slidesPerView: 1
     });
 
-    var mySwiper = new Swiper ('.owl_swiper', {
+    let mySwiper = new Swiper ('.owl_swiper', {
         containerClass: 'owl_swiper',
         activeSlideKey: '5',
         centeredSlides: true,
@@ -94,7 +102,7 @@ window.onload = function () {
 };
 
 
-var swiperH = new Swiper('.swiper-container-h', {
+let swiperH = new Swiper('.swiper-container-h', {
     spaceBetween: 50,
     pagination: {
         el: '.swiper-pagination-h',
