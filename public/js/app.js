@@ -10779,17 +10779,6 @@ var Logger = function Logger() {
     $('.menu_wrapper-item_secondary').toggleClass('mobile_menu');
   });
 });
-var menuItems = document.querySelectorAll('.menu_wrapper-item-main_menu-item');
-var secondary = '.menu_wrapper-item-main_menu-item-text_secondary';
-var array = [menuItems[5], secondary];
-array.forEach(function (el) {
-  $(el).mouseover(function () {
-    $(secondary).css('display', 'block');
-  });
-  $(el).mouseleave(function () {
-    $(secondary).css('display', 'none');
-  });
-});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

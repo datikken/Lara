@@ -50,6 +50,7 @@
           margin-bottom: 5px;
           display: block;
           text-decoration: none;
+
           &:hover {
             text-decoration: none;
             color: $black;
@@ -95,9 +96,19 @@
           position: relative;
           margin-bottom: 0;
 
+          &:nth-child(2):hover {
+            .header_wrapper-item_menu-item-secondary {
+              visibility: visible;
+            }
+          }
+
           &:nth-child(2) {
             a {
               @include smenu_underline(117%, -22px);
+              //safari
+              @media not all and (min-resolution:.001dpcm) {
+                @include smenu_underline(105%, -22px);
+              }
             }
           }
 
@@ -108,11 +119,6 @@
             &:hover {
               text-decoration: none;
               color: $black;
-            }
-          }
-          &:hover {
-            .header_wrapper-item_menu-item-secondary {
-              visibility: visible;
             }
           }
 
