@@ -10818,6 +10818,7 @@ array.forEach(function (el) {
 /***/ (function(module, exports) {
 
 window.onload = function () {
+  console.log('inited');
   var swiperMain = new Swiper('.bestPrinters_swiper', {
     spaceBetween: 50,
     navigation: {

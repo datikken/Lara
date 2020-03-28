@@ -3,6 +3,7 @@
         <div class="bestPrinters_item-heading">
             <p>Рейтинг лучших принтеров</p>
         </div>
+
         <div class="bestPrinters_item-title">
             <p>НАЗВАНИЕ<span>ПРИНТЕРА</span></p>
         </div>

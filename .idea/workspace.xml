@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c87618a9-9379-4ba4-9501-9c5546ef7e31" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Swiper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,38 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_bestPrinters.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BestPrintersSliderItem.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSliderItem.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BestPrintersSlider.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSlider.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="48" selection-start-column="29" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Swiper.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Swiper.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/components/Swiper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -171,8 +140,8 @@
         <option value="$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSliderItem.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/components/_sales_eco.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" />
-        <option value="$PROJECT_DIR$/resources/js/components/Swiper.js" />
         <option value="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" />
+        <option value="$PROJECT_DIR$/resources/js/components/Swiper.js" />
       </list>
     </option>
   </component>
@@ -442,13 +411,13 @@
       <workItem from="1585296302663" duration="132000" />
       <workItem from="1585333154670" duration="52000" />
       <workItem from="1585334077534" duration="2103000" />
-      <workItem from="1585336805586" duration="16344000" />
+      <workItem from="1585336805586" duration="16765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="38219000" />
+    <option name="totallyTimeSpent" value="38640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="0" />
@@ -460,7 +429,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32984293" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.4384817" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4986911" visible="true" weight="0.22847222" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4986911" visible="true" weight="0.22847222" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
@@ -881,17 +850,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSlider.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="48" selection-start-column="29" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/Swiper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="121">
+          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -902,10 +864,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss">
+    <entry file="file://$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSlider.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state>
+          <caret column="48" selection-start-column="29" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/Swiper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

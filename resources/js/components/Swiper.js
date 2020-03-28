@@ -1,5 +1,7 @@
 window.onload = function () {
 
+    console.log('inited');
+
     let swiperMain = new Swiper('.bestPrinters_swiper', {
         spaceBetween: 50,
         navigation: {

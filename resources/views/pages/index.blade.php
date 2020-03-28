@@ -25,7 +25,9 @@
         @include('components.main_swiper.main_swiper')
     </div>
 
+
     @include('components.banner.banner_mob')
+
 
     <div class="desktop-hide">
         @include('components.sales.sales_slider')
