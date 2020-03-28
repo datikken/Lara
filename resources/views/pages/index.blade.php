@@ -18,14 +18,6 @@
     @section('center')
 
     <div class="desktop-hide">
-        {{--<Swiper {...paramsHorizontal}>--}}
-            {{--{allContentfulSwiper.edges.map(({ node }) => (--}}
-            {{--<div--}}
-                {{--key={node}--}}
-                {{--style={{ backgroundImage: `url(${node.image.file.url})` }}--}}
-            {{--></div>--}}
-            {{--))}--}}
-        {{--</Swiper>--}}
         @include('components.main_swiper.main_swiper')
     </div>
 
@@ -37,7 +29,7 @@
 
     <div class="desktop-hide">
         @include('components.sales.sales_slider')
-        {{--<BestPrintersSlider />--}}
+        @include('components.best_printers.BestPrintersSlider')
     </div>
 
     <div class="columns desktop-layout">

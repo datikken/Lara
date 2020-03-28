@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c87618a9-9379-4ba4-9501-9c5546ef7e31" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSlider.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSliderItem.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,13 +19,61 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Lara-dev" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_sales_slider_card.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss">
+      <file leaf-file-name="BestPrintersSlider.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSlider.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <state relative-caret-position="210">
+              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_bestPrintersSwipe.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrintersSwipe.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_bestPrinters.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sales_slider.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/components/sales/sales_slider.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BestPrintersSliderItem.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSliderItem.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -38,9 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>- 32px</find>
-      <find>img</find>
-      <find>-wrapper_item</find>
       <find>viewed_wrapper-item_text</find>
       <find>calc(100% - 52px)</find>
       <find>view</find>
@@ -68,6 +116,9 @@
       <find>right: 3.2rem</find>
       <find>menu_wrapper-item_search_input</find>
       <find>search_width</find>
+      <find>@include('components.btn.</find>
+      <find>195px</find>
+      <find>250px</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -78,8 +129,8 @@
       <dir>$PROJECT_DIR$/resources/views/components</dir>
       <dir>$PROJECT_DIR$/resources</dir>
       <dir>$PROJECT_DIR$/resources/views/components/sales</dir>
-      <dir>$PROJECT_DIR$/resources/views</dir>
       <dir>$PROJECT_DIR$/resources/sass/components</dir>
+      <dir>$PROJECT_DIR$/resources/views</dir>
       <dir>$PROJECT_DIR$/resources/sass</dir>
     </dirStrings>
   </component>
@@ -89,11 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/components/owl.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/components/owl/owl_card.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/components/sales/sales_slider_item_num.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/components/sales/sales_slider_item.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/components/owl/owl.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/components/sales/sales_slider_num.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/components/sales/sales_slider.blade.php" />
@@ -115,7 +161,6 @@
         <option value="$PROJECT_DIR$/resources/views/components/sales/sales_best_item.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/components/menu/menu.blade.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
-        <option value="$PROJECT_DIR$/resources/views/pages/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/components/_product_details-swiper.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/swiper/_main_page.scss" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -127,7 +172,6 @@
         <option value="$PROJECT_DIR$/resources/sass/components/_sales.scss" />
         <option value="$PROJECT_DIR$/resources/views/components/sales/sales_eco.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/components/_sales_eco.scss" />
-        <option value="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrintersSwipe.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/_sales_best2.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/_viewed.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/_news.scss" />
@@ -140,6 +184,13 @@
         <option value="$PROJECT_DIR$/resources/sass/utils/_classes.scss" />
         <option value="$PROJECT_DIR$/resources/js/components/Menu.js" />
         <option value="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" />
+        <option value="$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSlider.js" />
+        <option value="$PROJECT_DIR$/../printers/site/src/components/bestPrinters/BestPrintersSlider.js" />
+        <option value="$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSliderItem.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSlider.blade.php" />
+        <option value="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrintersSwipe.scss" />
+        <option value="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" />
       </list>
     </option>
   </component>
@@ -279,6 +330,34 @@
               <item name="sass" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="bestPrinters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -302,6 +381,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/components/best_printers" />
       <recent name="$PROJECT_DIR$/public/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -387,30 +467,31 @@
       <workItem from="1585296302663" duration="132000" />
       <workItem from="1585333154670" duration="52000" />
       <workItem from="1585334077534" duration="2103000" />
-      <workItem from="1585336805586" duration="9927000" />
+      <workItem from="1585336805586" duration="12082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="31802000" />
+    <option name="totallyTimeSpent" value="33957000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32984293" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.4384817" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22847222" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.4384817" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4986911" visible="true" weight="0.22847222" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info x="870" y="97" width="265" height="764" id="Time Tracking" order="7" type="FLOATING" weight="0.18402778" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5013089" side_tool="true" weight="0.22847222" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Thumbnails" order="8" weight="0.32945737" />
       <window_info id="Designer" order="4" />
@@ -514,34 +595,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="61" column="41" lean-forward="true" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/components/landing/lenta.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/components/landing/video.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/components/landing/heading.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/components/landing/block.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -592,13 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/components/sales/sales_slider.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="32" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/components/landing/_feed.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -636,13 +682,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/components/_product_details-swiper.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -721,13 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrintersSwipe.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -849,7 +881,56 @@
     <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSliderItem.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/components/sales/sales_slider.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../printers/site/src/components/bestPrinters/BestPrintersSlider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSlider.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrintersSwipe.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
         </state>
       </provider>
     </entry>

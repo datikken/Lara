@@ -54,6 +54,14 @@
 }
 .bestPrinters_swiper {
     position: relative;
+    height: 195px!important;
+
+    .swiper-wrapper {
+        height: initial!important;
+        .swiper-slide {
+            height: initial;
+        }
+    }
 
     .swiper-pagination {
         bottom: 27px!important;

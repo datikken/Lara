@@ -8375,6 +8375,15 @@ footer .footer_wrapper-item_adress {
 
 .bestPrinters_swiper {
   position: relative;
+  height: 195px !important;
+}
+
+.bestPrinters_swiper .swiper-wrapper {
+  height: initial !important;
+}
+
+.bestPrinters_swiper .swiper-wrapper .swiper-slide {
+  height: initial;
 }
 
 .bestPrinters_swiper .swiper-pagination {
