@@ -10931,8 +10931,8 @@ var swiperH = new Swiper('.swiper-container-h', {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/datikken/Downloads/Lara-dev/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/datikken/Downloads/Lara-dev/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/t/tikken23/tikken23.beget.tech/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/t/tikken23/tikken23.beget.tech/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
