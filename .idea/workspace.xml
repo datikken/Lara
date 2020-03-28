@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c87618a9-9379-4ba4-9501-9c5546ef7e31" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_sales_eco.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales_eco.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,11 +20,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_bestPrinters.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_bestPrinters.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+            <state relative-caret-position="156">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_sales_eco.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales_eco.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -132,7 +140,6 @@
         <option value="$PROJECT_DIR$/resources/views/components/sales/sales.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/components/_sales.scss" />
         <option value="$PROJECT_DIR$/resources/views/components/sales/sales_eco.blade.php" />
-        <option value="$PROJECT_DIR$/resources/sass/components/_sales_eco.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/_sales_best2.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/_viewed.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/_news.scss" />
@@ -152,6 +159,7 @@
         <option value="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrintersSwipe.scss" />
         <option value="$PROJECT_DIR$/resources/views/components/best_printers/BestPrintersSliderItem.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" />
+        <option value="$PROJECT_DIR$/resources/sass/components/_sales_eco.scss" />
       </list>
     </option>
   </component>
@@ -295,14 +303,6 @@
               <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="bestPrinters" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -428,13 +428,13 @@
       <workItem from="1585296302663" duration="132000" />
       <workItem from="1585333154670" duration="52000" />
       <workItem from="1585334077534" duration="2103000" />
-      <workItem from="1585336805586" duration="15248000" />
+      <workItem from="1585336805586" duration="15709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="37123000" />
+    <option name="totallyTimeSpent" value="37584000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="0" />
@@ -710,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales_eco.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
@@ -890,8 +883,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        <state relative-caret-position="156">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales_eco.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
         </state>
       </provider>
     </entry>
