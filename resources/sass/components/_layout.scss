@@ -9,16 +9,22 @@
     width: 100%;
   }
   .left_column {
+    display: none;
     width: 100%;
-    
+
     @include breakpoint($phone) {
       max-width: 270px;
+    }
+
+    @include breakpoint(1200px) {
+      display: block;
     }
   }
   .main_column {
     max-width: 870px;
+    margin: 0 auto;
 
-    @include breakpoint($phone) {
+    @include breakpoint(1200px) {
       margin-left: 30px;
     }
   }

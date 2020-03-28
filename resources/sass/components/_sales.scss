@@ -1,12 +1,23 @@
 .sales {
-  width: 869px;
   height: 180px;
   margin-bottom: 30px;
   display: none;
 
+  @include  breakpoint($phone) {
+    height: initial;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  @include breakpoint($medium) {
+    width: 869px;
+    margin-bottom: 10px;
+  }
+
     &_slider {
       max-height: 360px;
       min-height: 360px!important;
+
         .swiper-wrapper {
             .swiper-slide {
                 width: 100%;
@@ -14,29 +25,46 @@
         }
     }
 
-  @include breakpoint($phone)  {
-    margin-bottom: 20px;
-    display: block;
-  }
-
     &-wrapper {
       height: 100%;
       display: flex;
       justify-content: space-between;
-      max-height: 180px!important;
+      flex-wrap: wrap;
       border-left: 1px solid $yellow;
+      max-height: 180px!important;
+      margin: 6px 16px 0 16px;
+
+      @include  breakpoint($phone) {
+        border-left: none;
+        max-height: initial!important;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+      }
 
       @include breakpoint($medium) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10px;
+        margin: initial;
       }
 
       &_item {
         background: $yellow;
-        width: 430px;
-        height: 180px;
         box-shadow: $card_shadow;
+        width: 100%;
+        margin-bottom: 10px;
+
+        &:nth-child(1) {
+          @include breakpoint($phone) {
+            //margin-bottom: 18px;
+          }
+        }
+
+        @include breakpoint($medium) {
+          //width: 430px;
+          height: 180px;
+        }
 
         &-inner {
           padding: 10px;
@@ -110,6 +138,7 @@
   overflow: hidden!important;
   height: 100%;
   margin: 0 10px;
+
   @include  breakpoint($medium) {
     height: 360px;
     margin: 0px;

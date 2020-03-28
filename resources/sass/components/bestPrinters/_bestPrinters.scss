@@ -1,5 +1,6 @@
 .bestPrinters {
     height: 196px;
+    justify-content: space-between;
 
     &_item div p {
         margin: 0;
@@ -30,6 +31,8 @@
             line-height: 17px;
             letter-spacing: 0.02em;
             color: $white;
+            width: 177px;
+
             p {
                text-align: left;
             }
