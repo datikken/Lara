@@ -10,7 +10,7 @@
   transition: all $transition;
   top: 50px;
   overflow: hidden;
-  overflow-y: hidden;
+  overflow-y: scroll;
   z-index: 99999;
 
   .menu_Wrapper-item_secondary-item {

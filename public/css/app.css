@@ -1053,7 +1053,7 @@ a:hover {
   transition: all 0.2s;
   top: 50px;
   overflow: hidden;
-  overflow-y: hidden;
+  overflow-y: scroll;
   z-index: 99999;
 }
 
