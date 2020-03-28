@@ -58,6 +58,7 @@ p {
 
 .as-visible {
   visibility: visible !important;
+  display: block;
 }
 
 .overflow {
@@ -171,7 +172,7 @@ a:hover {
 }
 
 .as-visible {
-  display: block;
+  display: block !important;
 }
 
 .swiper-slide {
@@ -374,7 +375,6 @@ a:hover {
 .header_wrapper-item_menu-item-secondary {
   position: absolute;
   top: 35px;
-  z-index: 9999;
   margin: 0;
   background: #fff;
   width: 130px;
@@ -386,6 +386,7 @@ a:hover {
   transition: visibility 0.2s;
   font-weight: 300;
   font-family: "Montserrat";
+  z-index: 999999;
 }
 
 @media not all and (min-resolution: 0.001dpcm) {
@@ -1052,7 +1053,7 @@ a:hover {
 }
 
 .menu_wrapper-item_menuText:hover .menu_wrapper-item-main_menu {
-  z-index: 9999;
+  z-index: 9999999;
   display: block;
   color: black;
 }
