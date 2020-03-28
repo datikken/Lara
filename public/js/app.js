@@ -10851,6 +10851,17 @@ $(menuItems[5]).hover(function () {
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 window.onload = function () {
+  var main = new Swiper('.landswipe', {
+    slidesPerView: 'auto',
+    containerClass: 'landswipe_swiper',
+    centeredSlides: true,
+    initialSlide: '2',
+    spaceBetween: 100,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
   var swiperMain = new Swiper('.bestPrinters_swiper', _defineProperty({
     spaceBetween: 50,
     navigation: {

@@ -1,4 +1,16 @@
 window.onload = function () {
+    let main = new Swiper('.landswipe', {
+        slidesPerView: 'auto',
+        containerClass: 'landswipe_swiper',
+        centeredSlides: true,
+        initialSlide: '2',
+        spaceBetween: 100,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        }
+    })
+
     let swiperMain = new Swiper('.bestPrinters_swiper', {
         spaceBetween: 50,
         navigation: {

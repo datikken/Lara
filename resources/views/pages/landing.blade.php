@@ -38,6 +38,8 @@
              'footer'=> 'Новые модели картриджей проходят тесты на вертикальный и горизонтальный градиент, отсутствие фантомных изображений, равномерность заливки и общее качество печати.',
              'cartoon' => '/images/landing/pallete.svg'])
 
+        @include('components.landing.landswipe')
+
     @endsection
 </body>
 </html>
