@@ -38,9 +38,13 @@
             letter-spacing: 0.02em;
             color: $white;
             text-transform: uppercase;
+            max-width: 120px;
+            word-break: break-word;
 
-            span {
-                color: $yellow;
+            p {
+                span {
+                    color: $yellow;
+                }
             }
         }
         &-heading {

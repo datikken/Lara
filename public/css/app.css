@@ -8359,9 +8359,11 @@ footer .footer_wrapper-item_adress {
   letter-spacing: 0.02em;
   color: #fff;
   text-transform: uppercase;
+  max-width: 120px;
+  word-break: break-word;
 }
 
-.bestPrinters_item-title span {
+.bestPrinters_item-title p span {
   color: #fdd935;
 }
 
