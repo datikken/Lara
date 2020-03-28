@@ -10,6 +10,7 @@
 import Logger from './components/Logger'
 import './components/Menu';
 import './components/Swiper';
+import './components/Search';
 
 let a = new Logger();
 

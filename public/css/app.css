@@ -116,10 +116,15 @@ a:hover {
 }
 
 .search_width {
-  width: 75% !important;
+  width: calc(100% - 90px) !important;
+  z-index: 99;
 }
 
 .search_width .menu_wrapper-item_search_input {
+  width: 100% !important;
+}
+
+.search_width .menu_wrapper-item_search_input input {
   width: 100% !important;
 }
 
@@ -1120,6 +1125,11 @@ a:hover {
 
 .menu_wrapper-item_secondary .menu_Wrapper-item_secondary-item_list-item a {
   color: #292930;
+}
+
+.search_open {
+  width: 75%;
+  z-index: 999;
 }
 
 .subscription {
@@ -2768,7 +2778,7 @@ footer .footer_wrapper-item_adress {
   width: calc(100% - 32px);
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1fr 1.81fr;
   background-image: url("/images/sales/ostatkiBackground.png");
   background-size: cover;
   background-position: top right;

@@ -47,9 +47,15 @@ a:hover {
   color: $blue;
 }
 .search_width {
-  width: 75%!important;
+  width: calc(100% - 90px)!important;
+  z-index: 99;
+
   .menu_wrapper-item_search_input {
     width: 100%!important;
+
+    input {
+      width: 100%!important;
+    }
   }
   .menu_wrapper-item_search_button {
     border-radius: 0;

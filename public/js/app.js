@@ -10710,6 +10710,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_Menu__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Swiper */ "./resources/js/components/Swiper.js");
 /* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_Swiper__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Search */ "./resources/js/components/Search.js");
+/* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_Search__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -10718,6 +10720,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 // require('./bootstrap');
 // window.Vue = require('vue');
+
 
 
 
@@ -10785,6 +10788,22 @@ array.forEach(function (el) {
   });
   $(el).mouseleave(function () {
     $(secondary).css('display', 'none');
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/js/components/Search.js":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Search.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  $('.menu_wrapper-item_search_button').on('click', function () {
+    $('.menu_wrapper-item_search').toggleClass('search_width');
   });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
