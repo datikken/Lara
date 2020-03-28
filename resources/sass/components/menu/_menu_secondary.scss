@@ -9,6 +9,7 @@
   min-width: 315px;
   transition: all $transition;
   top: 50px;
+  -webkit-overflow-scrolling: auto;
   overflow-y: scroll;
   z-index: 99999;
 

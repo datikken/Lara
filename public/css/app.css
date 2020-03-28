@@ -1052,6 +1052,7 @@ a:hover {
   min-width: 315px;
   transition: all 0.2s;
   top: 50px;
+  -webkit-overflow-scrolling: auto;
   overflow-y: scroll;
   z-index: 99999;
 }
