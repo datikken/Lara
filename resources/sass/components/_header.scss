@@ -125,7 +125,6 @@
           &-secondary {
             position: absolute;
             top: 35px;
-            z-index: 9999;
             margin: 0;
             background: $white;
             width: 130px;
@@ -137,7 +136,7 @@
             transition: visibility $transition;
             font-weight: 300;
             font-family: $font;
-
+            z-index: 999999;
             @media not all and (min-resolution: 0.001dpcm) {
               left: -23px;
               top: 32px;

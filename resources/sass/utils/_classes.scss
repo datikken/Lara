@@ -1,5 +1,6 @@
 .as-visible {
   visibility: visible !important;
+  display: block;
 }
 .overflow {
   overflow: hidden !important;
@@ -94,7 +95,7 @@ a:hover {
   opacity: 0!important;
 }
 .as-visible {
-  display: block;
+  display: block!important;
 }
 .swiper-slide {
   cursor: pointer;
