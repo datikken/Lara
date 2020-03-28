@@ -10848,15 +10848,22 @@ $(menuItems[5]).hover(function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 window.onload = function () {
-  console.log('inited');
-  var swiperMain = new Swiper('.bestPrinters_swiper', {
+  var swiperMain = new Swiper('.bestPrinters_swiper', _defineProperty({
     spaceBetween: 50,
     navigation: {
       nextEl: '.swiper-button-nextt',
       prevEl: '.swiper-button-prevv'
+    },
+    pagination: {
+      el: '.swiper-pagination'
     }
-  });
+  }, "navigation", {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }));
   var swiperV = new Swiper('.swiper-container-v', {
     spaceBetween: 50,
     navigation: {
@@ -10973,8 +10980,8 @@ var swiperH = new Swiper('.swiper-container-h', {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/t/tikken23/tikken23.beget.tech/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/t/tikken23/tikken23.beget.tech/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/datikken/Downloads/Lara-dev/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/datikken/Downloads/Lara-dev/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
