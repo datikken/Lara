@@ -4,7 +4,7 @@
             <p>Рейтинг лучших принтеров</p>
         </div>
         <div class="bestPrinters_item-title">
-            <p>НАЗВАНИЕ<br/> <span>ПРИНТЕРА</span></p>
+            <p>НАЗВАНИЕ<span>ПРИНТЕРА</span></p>
         </div>
         <div class="bestPrinters_item-desc">
             <p>
