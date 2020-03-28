@@ -632,7 +632,6 @@ a:hover {
   right: -13.3rem;
   font-weight: 300;
   display: none;
-  overflow-y: scroll;
 }
 
 .menu_wrapper-item-main_menu-item-text_secondary-text {
@@ -1054,6 +1053,7 @@ a:hover {
   transition: all 0.2s;
   top: 50px;
   overflow: hidden;
+  overflow-y: hidden;
   z-index: 99999;
 }
 
