@@ -3,11 +3,13 @@
   width: calc(100% - 32px);
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1.81fr;
+  grid-template-columns: 1fr 1.3fr;
   background-image: url('/images/sales/ostatkiBackground.png');
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
+
+  //grid-template-columns: 1fr 1.81fr;
 
   @include breakpoint($medium) {
     grid-template-columns: 360px 1fr;
