@@ -2960,7 +2960,7 @@ footer .footer_wrapper-item_adress {
   align-items: center;
   letter-spacing: 0.02em;
   color: #292930;
-  margin: 0 0 10px 0;
+  margin: 0 0 5px 0;
 }
 
 @media screen and (min-width: 600px) {

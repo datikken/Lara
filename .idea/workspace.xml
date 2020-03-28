@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c87618a9-9379-4ba4-9501-9c5546ef7e31" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_sales.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_sales_slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales_slider.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/bestPrinters/_bestPrinters.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/menu/_menu_secondary.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/menu/_menu_secondary.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/swiper/_main_page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/swiper/_main_page.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +23,8 @@
       <file leaf-file-name="_sales.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="303">
+              <caret line="58" column="39" lean-forward="true" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
               <folding>
                 <marker date="1585424633478" expanded="true" signature="100:121" ph="..." />
               </folding>
@@ -59,8 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>-18</find>
-      <find>menu_wrapper-item-main_menu</find>
       <find>menu_wrapper-item-main_menu-item</find>
       <find>as-visible</find>
       <find>bestPrinters_item-heading</find>
@@ -86,9 +77,11 @@
       <find>sales</find>
       <find>border</find>
       <find>sales_slider</find>
-      <find>card</find>
       <find>heading</find>
       <find>sales-wrapper</find>
+      <find>wrap</find>
+      <find>card</find>
+      <find>headin</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -159,8 +152,8 @@
         <option value="$PROJECT_DIR$/resources/sass/components/swiper/_main_page.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/_sales_slider.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/_layout.scss" />
-        <option value="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" />
         <option value="$PROJECT_DIR$/resources/sass/components/_sales.scss" />
+        <option value="$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss" />
       </list>
     </option>
   </component>
@@ -424,13 +417,13 @@
       <workItem from="1585334077534" duration="2103000" />
       <workItem from="1585336805586" duration="24091000" />
       <workItem from="1585410523387" duration="3937000" />
-      <workItem from="1585415103285" duration="6916000" />
+      <workItem from="1585415103285" duration="7235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="57076000" />
+    <option name="totallyTimeSpent" value="57395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="0" />
@@ -441,8 +434,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32984293" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.4384817" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4986911" visible="true" weight="0.22847222" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.4384817" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4986911" visible="true" weight="0.22847222" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
@@ -879,15 +872,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales_slider_card.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="306">
+          <caret line="118" column="26" lean-forward="true" selection-start-line="118" selection-start-column="26" selection-end-line="118" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/components/_sales.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        <state relative-caret-position="303">
+          <caret line="58" column="39" lean-forward="true" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
           <folding>
             <marker date="1585424633478" expanded="true" signature="100:121" ph="..." />
           </folding>
