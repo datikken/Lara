@@ -5,7 +5,7 @@
             <div class="menu_wrapper-item_hamburger">
                 <img src="/images/menu/Mhamburger.svg" alt="hamburger" class="desktop-hide"/>
                 <img src="/images/menu/hamburger.svg" alt="hamburger" class="mobile-hide"/>
-                <a href="/">
+                <a class="menu_wrapper-item_hamburger-link" href="/">
                     <img src='/images/header/MLOGO.png' alt="logo" class="menu_wrapper-item_hamburger-logo"/>
                 </a>
             </div>

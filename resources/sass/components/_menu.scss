@@ -459,6 +459,12 @@
         height: 100%;
         z-index: 99;
 
+        &-link {
+          height: 50px;
+          display: flex;
+          align-items: center;
+        }
+
         @include  breakpoint($medium) {
           width: 15px;
         }

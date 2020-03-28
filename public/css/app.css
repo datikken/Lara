@@ -998,6 +998,12 @@ a:hover {
   z-index: 99;
 }
 
+.menu_wrapper-item_hamburger-link {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (min-width: 1030px) {
   .menu_wrapper-item_hamburger {
     width: 15px;
