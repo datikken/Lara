@@ -8340,7 +8340,7 @@ footer .footer_wrapper-item_adress {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin: 20px;
+  margin: 10px;
 }
 
 .bestPrinters_item-desc {
@@ -8369,12 +8369,14 @@ footer .footer_wrapper-item_adress {
 
 .bestPrinters_item-heading {
   font-family: "Montserrat";
-  font-size: 11px;
   line-height: 17px;
   display: flex;
   align-items: flex-end;
   letter-spacing: 0.02em;
   color: #fff;
+  font-size: 10px;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
 .bestPrinters_swiper {
