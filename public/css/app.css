@@ -8316,10 +8316,8 @@ footer .footer_wrapper-item_adress {
 }
 
 .bestPrinters {
-  min-height: 195px;
-  margin-bottom: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  height: 195px;
+  display: flex;
   background-color: #40404c;
   width: 100%;
 }
@@ -8342,7 +8340,7 @@ footer .footer_wrapper-item_adress {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin: 10px 10px 30px 15px;
+  margin: 20px;
 }
 
 .bestPrinters_item-desc {
@@ -8363,6 +8361,10 @@ footer .footer_wrapper-item_adress {
   text-transform: uppercase;
 }
 
+.bestPrinters_item-title span {
+  color: #fdd935;
+}
+
 .bestPrinters_item-heading {
   font-family: "Montserrat";
   font-size: 11px;
@@ -8376,14 +8378,15 @@ footer .footer_wrapper-item_adress {
 .bestPrinters_swiper {
   position: relative;
   height: 195px !important;
+  margin-bottom: 20px !important;
 }
 
 .bestPrinters_swiper .swiper-wrapper {
-  height: initial !important;
+  height: 195px !important;
 }
 
 .bestPrinters_swiper .swiper-wrapper .swiper-slide {
-  height: initial;
+  height: 195px;
 }
 
 .bestPrinters_swiper .swiper-pagination {

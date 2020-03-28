@@ -1,13 +1,11 @@
 .bestPrinters {
-    min-height: 195px;
-    margin-bottom: 20px;
+    height: 195px;
 
     &_item div p {
         margin: 0;
     }
     
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     background-color: $black;
     width: 100%;
 
@@ -23,7 +21,7 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        margin: 10px 10px 30px 15px;
+        margin: 20px;
 
         &-desc {
             font-family: $font;
@@ -40,6 +38,10 @@
             letter-spacing: 0.02em;
             color: $white;
             text-transform: uppercase;
+
+            span {
+                color: $yellow;
+            }
         }
         &-heading {
             font-family: $font;
@@ -55,11 +57,13 @@
 .bestPrinters_swiper {
     position: relative;
     height: 195px!important;
+    margin-bottom: 20px!important;
 
     .swiper-wrapper {
-        height: initial!important;
+        height: 195px!important;
+
         .swiper-slide {
-            height: initial;
+            height: 195px;
         }
     }
 
