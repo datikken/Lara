@@ -9236,6 +9236,7 @@ main {
 
 .main .card-body form .form-group .agreement_check {
   display: flex;
+  align-items: center;
 }
 
 .main .card-body form .form-group .agreement_check .btn-link {
