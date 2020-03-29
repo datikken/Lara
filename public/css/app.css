@@ -2065,8 +2065,14 @@ footer .footer_wrapper-item_adress {
 
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
+}
+
+@media screen and (min-width: 1030px) {
+  .main {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .main .container,
@@ -2084,10 +2090,16 @@ footer .footer_wrapper-item_adress {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
+  display: none;
+}
+
+@media screen and (min-width: 1030px) {
+  .main .auth-pick {
+    display: flex;
+  }
 }
 
 .main .auth-pick_item {
@@ -2109,6 +2121,13 @@ footer .footer_wrapper-item_adress {
   background: #d4d4d5;
   left: 50%;
   top: 38px;
+  display: none;
+}
+
+@media screen and (min-width: 1030px) {
+  .main .auth-decor {
+    display: block;
+  }
 }
 
 .banner2 {
@@ -9142,14 +9161,20 @@ main {
 }
 
 .main {
-  max-width: 970px;
   margin: 0 auto;
   background: #fff;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
-  width: 970px;
-  height: 574px;
   margin-bottom: 250px;
   position: relative;
+  width: 100%;
+}
+
+@media screen and (min-width: 1030px) {
+  .main {
+    max-width: 970px;
+    width: 970px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    height: 574px;
+  }
 }
 
 .main .container {
@@ -9420,6 +9445,23 @@ main {
   color: #40404c;
   border-bottom: 1px solid #fdd935;
   padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main .card .card-header:after {
+  content: "";
+  display: block;
+  background-image: url("/images/icons/closed.svg");
+  width: 12px;
+  height: 12px;
+}
+
+@media screen and (min-width: 1030px) {
+  .main .card .card-header:after {
+    display: none;
+  }
 }
 
 .register_greet {

@@ -50,8 +50,12 @@
 }
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
+
+  @include breakpoint($medium) {
+    grid-template-columns: 1fr 1fr;
+  }
 
   .container, .card-body {
     width: 585px;
@@ -66,10 +70,14 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    display: flex;
     align-items: center;
     justify-content: center;
     background-color: #fff;
+    display: none;
+
+    @include breakpoint($medium) {
+      display: flex;
+    }
 
     &_item {
       font-family: $font;
@@ -90,5 +98,10 @@
     background: $gray;
     left: 50%;
     top: 38px;
+    display: none;
+    
+    @include breakpoint($medium) {
+      display: block;
+    }
   }
 }
