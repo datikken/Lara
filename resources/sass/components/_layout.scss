@@ -48,3 +48,47 @@
     display: flex;
   }
 }
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  .container, .card-body {
+    width: 585px;
+    margin: 0 auto;
+  }
+  .auth-pick {
+    border-radius: 30px;
+    border: 1px solid $gray!important;
+    position: absolute;
+    left: 47.8%;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+
+    &_item {
+      font-family: $font;
+      font-size: 12px;
+      line-height: 15px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.02em;
+      color: $black;
+      margin-bottom: 2px;
+    }
+  }
+  .auth-decor {
+    position: absolute;
+    height: 474px;
+    width: 1px;
+    background: $gray;
+    left: 50%;
+    top: 38px;
+  }
+}

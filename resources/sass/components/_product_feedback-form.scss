@@ -4,6 +4,10 @@
   margin: 20px;
   margin-bottom: 50px;
 
+  &-control {
+    outline: none;
+  }
+
   @include breakpoint($phone) {
     margin: 0 auto;
     margin-bottom: 0px;
