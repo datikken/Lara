@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c87618a9-9379-4ba4-9501-9c5546ef7e31" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/components/forms/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/forms/register.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +22,8 @@
       <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/components/forms/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="526">
+              <caret line="129" column="61" selection-start-line="129" selection-start-column="61" selection-end-line="129" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -43,8 +39,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>form-check</find>
-      <find>background-image</find>
       <find>Я принимаю условия политики конфиденциальности</find>
       <find>agreem</find>
       <find>_box</find>
@@ -73,6 +67,8 @@
       <find>Регистрация</find>
       <find>face</find>
       <find>Зарегистрируйте свой аккаунт используя любой способ</find>
+      <find>Register</find>
+      <find>btn-primary</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -84,10 +80,10 @@
       <dir>$PROJECT_DIR$/resources/sass/components</dir>
       <dir>$PROJECT_DIR$/resources/lang</dir>
       <dir>$PROJECT_DIR$/resources/views/auth</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/resources/views</dir>
       <dir>$PROJECT_DIR$/resources/sass</dir>
       <dir>$PROJECT_DIR$/resources</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -449,7 +445,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="85750000" />
+    <option name="totallyTimeSpent" value="85871000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="0" />
@@ -924,11 +920,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/components/forms/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="526">
+          <caret line="129" column="61" selection-start-line="129" selection-start-column="61" selection-end-line="129" selection-end-column="61" />
         </state>
       </provider>
     </entry>
