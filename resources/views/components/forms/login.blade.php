@@ -47,6 +47,13 @@
 
                         <div class="agreement_check">
                             <div class="form-check">
+                                <div class="form-check_box">
+                                    <div class="form-check_box-wrap">
+                                        <div class="form-check_box-wrap_item">
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                 <label class="form-check-label" for="remember">

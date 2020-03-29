@@ -88,7 +88,16 @@
                     </div>
 
                     <div class="agreement">
-                        <input id="agreement" type="checkbox" class="form-control" name="agreement" required>
+
+                        <div class="form-check_box">
+                            <div class="form-check_box-wrap">
+                                <div class="form-check_box-wrap_item">
+
+                                </div>
+                            </div>
+                        </div>
+
+
                         <span>
                             {{ __('Я принимаю условия политики конфиденциальности') }}
                         </span>

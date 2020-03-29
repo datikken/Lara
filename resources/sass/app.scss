@@ -130,14 +130,37 @@ main {
                 letter-spacing: 0.02em;
                 text-transform: uppercase;
                 color: $dblack;
-
-                span {
-
-                }
             }
             .agreement {
                 display: flex;
+                align-items: center;
                 margin: 20px 0 30px 0;
+
+                span {
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    color: $blue;
+                    margin-left: 35px!important;
+                }
+
+                .form-check_box {
+                    border: 1px solid $gray;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    z-index: 99999;
+                    background: #fff;
+                    cursor: pointer;
+
+
+
+                    &-wrap {
+
+                    }
+                }
 
                 .form-control {
                     width: 20px;
@@ -191,6 +214,23 @@ main {
                     display: flex;
                     align-items: center;
 
+                    &_box {
+                        border: 1px solid $gray;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        z-index: 99999;
+                        background: $white;
+                        cursor: pointer;
+
+                        &:after {
+                            content: '';
+                            height: 9px;
+                            width: 6px;
+                            background-image: url('/img/icons/arrow_right_black.svg');
+                        }
+                    }
+
                     .form-check-label {
                         font-family: $font;
                         font-size: 12px;
@@ -199,7 +239,7 @@ main {
                         letter-spacing: 0.02em;
                         color: $black;
                         cursor: pointer;
-                        padding-bottom: 4px;
+                        margin-left: 10px;
                     }
                     .form-check-input {
                         width: 20px;

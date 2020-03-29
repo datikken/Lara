@@ -9188,7 +9188,28 @@ main {
 
 .main .card-body form .agreement {
   display: flex;
+  align-items: center;
   margin: 20px 0 30px 0;
+}
+
+.main .card-body form .agreement span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #3559fd;
+  margin-left: 35px !important;
+}
+
+.main .card-body form .agreement .form-check_box {
+  border: 1px solid #d4d4d5;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 99999;
+  background: #fff;
+  cursor: pointer;
 }
 
 .main .card-body form .agreement .form-control {
@@ -9245,6 +9266,23 @@ main {
   align-items: center;
 }
 
+.main .card-body form .form-group .form-check_box {
+  border: 1px solid #d4d4d5;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 99999;
+  background: #fff;
+  cursor: pointer;
+}
+
+.main .card-body form .form-group .form-check_box:after {
+  content: "";
+  height: 9px;
+  width: 6px;
+  background-image: url("/img/icons/arrow_right_black.svg");
+}
+
 .main .card-body form .form-group .form-check .form-check-label {
   font-family: "Montserrat";
   font-size: 12px;
@@ -9253,7 +9291,7 @@ main {
   letter-spacing: 0.02em;
   color: #40404c;
   cursor: pointer;
-  padding-bottom: 4px;
+  margin-left: 10px;
 }
 
 .main .card-body form .form-group .form-check .form-check-input {
