@@ -2,6 +2,7 @@
     <div class="row justify-content-center">
             <div class="card">
                 <div class="card-header">{{ __('Регистрация') }}</div>
+
                 <div class="card-greet register_greet">
                     <p class="card-greet_text">
                         Зарегистрируйте свой аккаунт используя любой способ
@@ -25,6 +26,38 @@
                                 @enderror
                             </div>
                         </div>
+
+
+                        <div class="form-group row">
+                        <span>
+                            {{ __('Вы регистрируетесь как') }}
+                        </span>
+
+                            <div class="form_type">
+                                <div class="form_type-item activeFormItem">
+                                    <div class="form_type-itemText">
+                                        <span>Юр. лицо</span>
+                                    </div>
+                                </div>
+                                <div class="form_type-item">
+                                    <div class="form_type-itemText">
+                                        <span class="form_type-itemText_inner">Физ. лицо</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <input id="type" type="text"
+                                   class="form-control @error('name') is-invalid @enderror"
+                                   name="type"
+                                   style="display: none;"
+                                   value="fizik"
+                                   required autocomplete="type" autofocus>
+                            @error('type')
+                            <span class="invalid-feedback" role="alert">
+                               <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Почта') }}</label>
