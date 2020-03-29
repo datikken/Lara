@@ -10804,23 +10804,7 @@ $(secondary).hover(function () {
 $(menuItems[5]).hover(function () {
   console.log('say2', secondary);
   $('.menu_wrapper-item-main_menu-item-text_secondary').toggleClass('as-visible');
-}); // $(secondary).css('display', 'none');
-// $(secondary).css('display', 'block');
-//safari fix
-// $(document).ready(function() {
-//     $('.header_wrapper-item_menu-item-secondary').hover(() => {
-//         let menu = $('.header_wrapper-item_menu-item-secondary');
-//             menu.css('display', 'block');
-//             menu.css('visibility', 'visible');
-//     })
-//
-//     $('.header_wrapper-item_menu-item').hover(() => {
-//         $('.header_wrapper-item_menu-item-secondary').toggleClass('as-visible');
-//     })
-//
-//     $(menu).hover(function() {
-//     })
-// });
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

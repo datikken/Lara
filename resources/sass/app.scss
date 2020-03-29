@@ -182,7 +182,18 @@ main {
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 10px;
-                
+
+                .col-form-label {
+                    font-family: $font;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    color: #40404c;
+                    margin-bottom: 5px;
+                }
+
                 .agreement_check {
                     display: flex;
                     align-items: center;
@@ -338,9 +349,11 @@ main {
             line-height: 14px;
             letter-spacing: 0.02em;
             color: $gray;
+            max-width: 170px;
 
             &_text {
                 margin: 20px 0;
+                text-align: left;
             }
         }
         .card-header {
@@ -355,4 +368,8 @@ main {
             padding-bottom: 15px;
         }
     }
+}
+
+.register_greet {
+    max-width: 250px!important;
 }

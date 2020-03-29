@@ -9234,6 +9234,17 @@ main {
   margin-bottom: 10px;
 }
 
+.main .card-body form .form-group .col-form-label {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  margin-bottom: 5px;
+}
+
 .main .card-body form .form-group .agreement_check {
   display: flex;
   align-items: center;
@@ -9391,10 +9402,12 @@ main {
   line-height: 14px;
   letter-spacing: 0.02em;
   color: #d4d4d5;
+  max-width: 170px;
 }
 
 .main .card .card-greet_text {
   margin: 20px 0;
+  text-align: left;
 }
 
 .main .card .card-header {
@@ -9407,5 +9420,9 @@ main {
   color: #40404c;
   border-bottom: 1px solid #fdd935;
   padding-bottom: 15px;
+}
+
+.register_greet {
+  max-width: 250px !important;
 }
 
