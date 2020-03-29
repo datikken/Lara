@@ -269,8 +269,16 @@ main {
                     height: 40px;
                     border-radius: 30px;
                     @include input();
-                    padding: 0 0 0 10px!important;
+                    padding: 0 0 0 30px!important;
                     margin-right: 0;
+
+                    &::placeholder {
+                        font-family: $font;
+                        font-size: 12px;
+                        line-height: 14px;
+                        letter-spacing: 0.02em;
+                        color: $gray;
+                    }
                 }
 
                 span {
