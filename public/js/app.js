@@ -10712,6 +10712,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_Swiper__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Search */ "./resources/js/components/Search.js");
 /* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_Search__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -10724,7 +10725,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var a = new _components_Logger__WEBPACK_IMPORTED_MODULE_0__["default"]();
+var form = new Form();
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -10741,6 +10744,27 @@ var a = new _components_Logger__WEBPACK_IMPORTED_MODULE_0__["default"]();
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+/***/ }),
+
+/***/ "./resources/js/components/Form.js":
+/*!*****************************************!*\
+  !*** ./resources/js/components/Form.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Form = function Form() {
+  _classCallCheck(this, Form);
+
+  console.log('inited');
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Form);
 
 /***/ }),
 

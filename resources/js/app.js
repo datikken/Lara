@@ -11,8 +11,10 @@ import Logger from './components/Logger'
 import './components/Menu';
 import './components/Swiper';
 import './components/Search';
+import './components/Form';
 
 let a = new Logger();
+let form = new Form();
 
 /**
  * The following block of code may be used to automatically register your
