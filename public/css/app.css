@@ -338,7 +338,7 @@ a:hover {
     width: 0;
     height: 2px;
     background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
-    left: -22px;
+    left: -15px;
     top: 30px;
     transition: 0.2s;
   }
@@ -391,7 +391,7 @@ a:hover {
 
 @media not all and (min-resolution: 0.001dpcm) {
   .header_wrapper-item_menu-item-secondary {
-    left: -23px;
+    left: -15px !important;
     top: 32px;
   }
 }

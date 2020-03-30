@@ -4,9 +4,7 @@
     <list default="true" id="c87618a9-9379-4ba4-9501-9c5546ef7e31" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/icons/alot.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/icons/alot.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_product.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/products_grid/products_grid-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/products_grid/products_grid-item.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_header.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="products_grid-item.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/components/products_grid/products_grid-item.blade.php">
+      <file leaf-file-name="_header.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/sass/components/_header.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+            <state relative-caret-position="238">
+              <caret line="109" column="50" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -43,8 +41,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>card-greet_text</find>
-      <find>С возвращением. Войдите в свой аккаунт</find>
       <find>С возвращением. Войдите в свой аккаунт.</find>
       <find>ВХОД</find>
       <find>new-pa</find>
@@ -73,6 +69,8 @@
       <find>#E9E9EA</find>
       <find>btn</find>
       <find>amou</find>
+      <find>secondary</find>
+      <find>smenu</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -120,7 +118,6 @@
         <option value="$PROJECT_DIR$/resources/sass/components/_sales_eco.scss" />
         <option value="$PROJECT_DIR$/resources/sass/utils/_utils.scss" />
         <option value="$PROJECT_DIR$/resources/views/layouts/header.blade.php" />
-        <option value="$PROJECT_DIR$/resources/sass/components/_header.scss" />
         <option value="$PROJECT_DIR$/resources/sass/utils/_classes.scss" />
         <option value="$PROJECT_DIR$/resources/views/components/menu/menu.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/components/menu/_menu_secondary.scss" />
@@ -153,6 +150,7 @@
         <option value="$PROJECT_DIR$/resources/js/components/Menu.js" />
         <option value="$PROJECT_DIR$/resources/views/components/products_grid/products_grid-item.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/components/_product.scss" />
+        <option value="$PROJECT_DIR$/resources/sass/components/_header.scss" />
       </list>
     </option>
   </component>
@@ -286,14 +284,7 @@
               <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lara-dev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lara-dev" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -417,7 +408,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="93735000" />
+    <option name="totallyTimeSpent" value="94097000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="0" />
@@ -429,7 +420,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32984293" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.46989527" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7971204" visible="true" weight="0.22847222" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7971204" visible="true" weight="0.22847222" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
@@ -549,13 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="95" column="1" selection-start-line="95" selection-start-column="1" selection-end-line="98" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/_header.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="127" selection-start-line="127" selection-end-line="127" />
         </state>
       </provider>
     </entry>
@@ -897,6 +881,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/_header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="109" column="50" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
         </state>
       </provider>
     </entry>
