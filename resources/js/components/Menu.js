@@ -32,6 +32,5 @@ $(secondary).hover(() => {
 })
 
 $(menuItems[5]).hover(function() {
-    console.log('say2', secondary);
     $('.menu_wrapper-item-main_menu-item-text_secondary').toggleClass('as-visible')
 });

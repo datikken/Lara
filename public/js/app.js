@@ -10826,7 +10826,6 @@ $(secondary).hover(function () {
   $('.menu_wrapper-item-main_menu-item-text_secondary').toggleClass('as-visible');
 });
 $(menuItems[5]).hover(function () {
-  console.log('say2', secondary);
   $('.menu_wrapper-item-main_menu-item-text_secondary').toggleClass('as-visible');
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
