@@ -11,14 +11,13 @@
                 </p>
             </div>
 
-
             <div class="card-body">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group row">
                         <label for="email" class="row_label">{{ __('Почта') }}</label>
 
-                        <input id="email" type="email" placeholder="Введите вашу почту" form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <input id="email" type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -28,10 +27,10 @@
 
                     </div>
                     <div class="form-group row">
-                        <label for="email" class="row_label">{{ __('Пароль') }}</label>
+                        <label for="email" class="row_label password_hide">{{ __('Пароль') }}</label>
 
                         <div class="col-md-6">
-                            <input id="password" type="password" placeholder="Введите ваш пароль"  class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <input id="password" type="password" placeholder="Введите ваш пароль"  class="form-control password_hide @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                             @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -72,11 +71,11 @@
                         <button type="submit" class="btn btn-primary">
                             {{ __('Войти') }}
                         </button>
-
-
                     </div>
                 </form>
             </div>
+
+
         </div>
     </div>
 </div>

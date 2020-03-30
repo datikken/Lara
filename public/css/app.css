@@ -9338,7 +9338,7 @@ main {
 }
 
 .main .card-body form .form-group input {
-  width: 300px;
+  width: 270px;
   height: 40px;
   border-radius: 30px;
   border: 1px solid #e9e9ea;
@@ -9349,6 +9349,7 @@ main {
   margin-right: 30px;
   padding: 0 0 0 30px !important;
   margin-right: 0;
+  outline: none;
 }
 
 .main .card-body form .form-group input::-webkit-input-placeholder {
@@ -9409,7 +9410,7 @@ main {
   height: 40px;
   align-items: center;
   justify-items: center;
-  border: 1px solid;
+  border: 1px solid #d4d4d5;
   border-radius: 30px;
 }
 
@@ -9506,5 +9507,31 @@ main {
 
 .register_greet {
   max-width: 250px !important;
+}
+
+.password_hide {
+  position: relative !important;
+}
+
+.password_hide:after {
+  content: "";
+  display: block;
+  background-image: url("/images/icons/closedeyese.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 9999;
+  top: 2rem;
+  cursor: pointer;
+  right: 10px;
+}
+
+@media screen and (min-width: 1030px) {
+  .password_hide:after {
+    right: 0;
+  }
 }
 

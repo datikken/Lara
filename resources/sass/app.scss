@@ -158,12 +158,6 @@ main {
                     z-index: 99999;
                     background: #fff;
                     cursor: pointer;
-
-
-
-                    &-wrap {
-
-                    }
                 }
 
                 .form-control {
@@ -265,12 +259,13 @@ main {
                 }
 
                 input {
-                    width: 300px;
+                    width: 270px;
                     height: 40px;
                     border-radius: 30px;
                     @include input();
                     padding: 0 0 0 30px!important;
                     margin-right: 0;
+                    outline: none;
 
                     &::placeholder {
                         font-family: $font;
@@ -279,6 +274,7 @@ main {
                         letter-spacing: 0.02em;
                         color: $gray;
                     }
+
                 }
 
                 span {
@@ -299,7 +295,7 @@ main {
                 height: 40px;
                 align-items: center;
                 justify-items: center;
-                border: 1px solid;
+                border: 1px solid $gray;
                 border-radius: 30px;
 
                 &-item {
@@ -398,4 +394,28 @@ main {
 
 .register_greet {
     max-width: 250px!important;
+}
+
+.password_hide {
+    position: relative!important;
+
+    &:after {
+        content: '';
+        display: block;
+        background-image: url('/images/icons/closedeyese.svg');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        z-index: 9999;
+        top: 2rem;
+        cursor: pointer;
+        right: 10px;
+
+        @include breakpoint($medium) {
+            right:0;
+        }
+    }
 }
