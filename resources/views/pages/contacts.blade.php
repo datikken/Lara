@@ -15,10 +15,10 @@
 <body>
 @extends('layouts.index')
 
-@section('center')
+    @section('center')
+        @include('components.contacts.map')
+        @include('components.contacts.index')
+    @endsection
 
-    @include('components.contacts.index')
-
-@endsection
 </body>
 </html>

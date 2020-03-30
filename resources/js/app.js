@@ -12,9 +12,18 @@ import './components/Menu';
 import './components/Swiper';
 import './components/Search';
 import './components/Form';
+import SimpleMap from './components/Map';
 
 let a = new Logger();
-let form = new Form();
+// let form = new Form();
+
+$(document).ready(function() {
+    let domEl = $('.ymap-coords');
+
+    let map = new SimpleMap();
+        map._simpleMap(domEl);
+
+});
 
 /**
  * The following block of code may be used to automatically register your

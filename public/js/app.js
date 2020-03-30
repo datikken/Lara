@@ -10705,7 +10705,7 @@ return jQuery;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_Logger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Logger */ "./resources/js/components/Logger.js");
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _components_Logger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Logger */ "./resources/js/components/Logger.js");
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Menu */ "./resources/js/components/Menu.js");
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_Menu__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Swiper */ "./resources/js/components/Swiper.js");
@@ -10713,6 +10713,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Search */ "./resources/js/components/Search.js");
 /* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_Search__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
+/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Map */ "./resources/js/components/Map.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -10726,8 +10727,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var a = new _components_Logger__WEBPACK_IMPORTED_MODULE_0__["default"]();
-var form = new Form();
+
+var a = new _components_Logger__WEBPACK_IMPORTED_MODULE_0__["default"](); // let form = new Form();
+
+$(document).ready(function () {
+  var domEl = $('.ymap-coords');
+  var map = new _components_Map__WEBPACK_IMPORTED_MODULE_5__["default"]();
+
+  map._simpleMap(domEl);
+});
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -10744,6 +10752,7 @@ var form = new Form();
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -10786,6 +10795,69 @@ var Logger = function Logger() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Logger);
+
+/***/ }),
+
+/***/ "./resources/js/components/Map.js":
+/*!****************************************!*\
+  !*** ./resources/js/components/Map.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var SimpleMap = /*#__PURE__*/function () {
+  function SimpleMap() {
+    _classCallCheck(this, SimpleMap);
+  }
+
+  _createClass(SimpleMap, [{
+    key: "_simpleMap",
+    value: function _simpleMap(maps) {
+      console.warn(maps);
+      ymaps.ready(function () {
+        $(maps).each(function (i, el) {
+          var placeMark, myMap, yProjects;
+          yProjects = [];
+          myMap = new ymaps.Map(el, {
+            center: ['50', '39'],
+            zoom: 12,
+            type: 'yandex#map',
+            behaviors: ['default', 'scrollZoom']
+          }); // myMap.balloon.open([el.dataset.lat, el.dataset.lng], {
+          //     contentHeader: el.dataset.desc,
+          //     contentBody: '',
+          //     contentFooter: el.dataset.adress,
+          // }, {
+          //     closeButton: false
+          // });
+          // placeMark = new ymaps.Placemark([el.dataset.lat,el.dataset.lng], {
+          //     balloonContent: el.dataset.ballon,
+          //     balloonCloseButton: true,
+          //     hideIconOnBalloonOpen: true
+          // }, {
+          //     preset: 'islands#circleDotIcon',
+          //     iconColor: '#333'
+          // });
+          //
+          // myMap.geoObjects.add(placeMark);
+        });
+      });
+    }
+  }]);
+
+  return SimpleMap;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (SimpleMap);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
