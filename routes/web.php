@@ -31,3 +31,4 @@ Route::get('/information', 'InformationController@index');
 Route::get('/hits', 'HitsController@index');
 Route::get('/about', 'AboutController@index');
 Route::get('/landing', 'LandingController@index',['as' => 'landing']);
+Route::get('/contacts', 'ContactsController@index');
