@@ -10,7 +10,10 @@
 .product {
   border: 1px solid $light_gray;
   min-width: 270px;
+  width: 270px;
+  height: 360px;
   margin: 0 10px 10px 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 
   @include breakpoint($phone) {
     margin: 0 10px 20px 10px;
@@ -27,15 +30,23 @@
 
     @include breakpoint($phone) {
       display: block;
-      padding: 20px;
+      padding: 10px 20px 20px 20px;
+    }
+
+    &-itemContent {
+      height: 240px;
+      background: $light_gray;
+      box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+      margin-bottom: 10px!important;
     }
 
     &-item {
       position: relative;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       overflow: hidden;
       cursor: pointer;
       padding-top: 30px;
@@ -51,6 +62,7 @@
       }
       &:nth-child(2) {
         flex-basis: 100%;
+
         @include breakpoint($phone) {
           padding-top: 0;
         }
@@ -81,6 +93,20 @@
         margin: 0;
       }
 
+      &_name {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+
+        &-item {
+          font-family: $font;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          color: $dblack;
+        }
+      }
       &_heading {
         font-family: $font;
         font-weight: 600;
@@ -89,6 +115,7 @@
         letter-spacing: 0.02em;
         color: $dblack;
         display: none;
+
         @include breakpoint($phone) {
           display: block;
         }
@@ -105,7 +132,7 @@
         img {
           width: 10px;
           height: 10px;
-          margin-right: 10px;
+          margin-right: 5px;
         }
       }
       &_image2 {
@@ -203,15 +230,11 @@
         }
       }
       &_btn {
-        @include breakpoint($phone) {
-          //display: none;
-        }
         text-align: center;
         text-transform: uppercase;
         color: black;
         background: $yellow;
         border-radius: 30px;
-        @include btnShadow();
         min-height: 30px;
         font-size: 10px;
         line-height: 14px;
@@ -223,7 +246,6 @@
 
           @include breakpoint($medium){
               width: 30px;
-              margin: 2px 2px 2px 0;
           }
 
         img {

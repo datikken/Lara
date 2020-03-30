@@ -2,6 +2,9 @@
     <a href="/product">
         <div class="product_wrapper">
             <div class="product_wrapper-item">
+                <div class="product_wrapper-item_name">
+                    <span class="product_wrapper-item_name-item">Картридж</span>
+                </div>
                 <div class="product_wrapper-item_heading">
                     <span class="product_wrapper-item_heading-item">{{ $name }}</span>
                 </div>
@@ -10,7 +13,7 @@
                     <span class="product_wrapper-item_amount-item">Много</span>
                 </div>
             </div>
-            <div class="product_wrapper-item">
+            <div class="product_wrapper-item product_wrapper-itemContent">
                 <div class="product_wrapper-item_image">
                     <img src="{{Storage::disk('local')->url('/product_images/' . $image )}}" alt="{{$image}}" />
                 </div>
