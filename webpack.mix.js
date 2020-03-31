@@ -6,4 +6,8 @@ mix.js('resources/js/app.js', 'public/js')
         jquery: ['$', 'window.jQuery', 'jQuery'],
     });
 
-mix.sass('resources/sass/app.scss', 'public/css');
+mix.sass('resources/sass/app.scss', 'public/css')
+    .copyDirectory('resources/assets/images', 'public/images')
+    .options({
+        processCssUrls: false
+    });

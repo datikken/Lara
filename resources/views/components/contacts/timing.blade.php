@@ -1,4 +1,4 @@
-<div class="contacts_wrap-item">
+<div class="contacts_wrap-item timigs">
     <div class="contacts_wrap-item_inner">
         <div class="contacts_wrap-item_inner-timing">
             <img src='/images/icons/timing.svg' alt="Timing"/>

@@ -5,6 +5,8 @@
             <div class="contacts_column-inner">
                 <div class="contacts_wrap-inner">
 
+                    <div class="contacts-inf_grid">
+
                     <div class="contacts_wrap-item">
                         <div class="contacts_wrap-item_inner">
                             <div class="contacts_wrap-item_inner-location">
@@ -44,27 +46,24 @@
                             <div class="contacts_wrap-item_socials">
                                 <div class="contacts_wrap-item_socials-item">
                                     <div class="telegram">
-                                        <img src='/images/icons/telegram.svg' alt="Telegram"/>
                                     </div>
                                 </div>
                                 <div class="contacts_wrap-item_socials-item">
                                     <div class="facebook">
-                                        <img src='/images/icons/facebook.svg' alt="Facebook"/>
                                     </div>
                                 </div>
                                 <div class="contacts_wrap-item_socials-item">
                                     <div class="vk">
-                                        <img src='/images/icons/vk.svg' alt="VK"/>
                                     </div>
                                 </div>
                                 <div class="contacts_wrap-item_socials-item">
                                     <div class="insta">
-                                        <img src='/images/icons/instagram.svg' alt="Instagramm"/>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
 
                 <div class="desktop-hide">
@@ -78,58 +77,71 @@
                         </div>
                     </div>
                     <div class="contacts_wrap-item_inner">
-
                         <div class="contacts_wrap-item_inner-item">
                             <span class="contacts_wrap-item_inner-item-text">Обратная связь</span>
                         </div>
 
                         <div class="contacts_wrap-item_inner-item">
-                            <div class="contacts_wrap-item_inner-item_form">
+                            <div class="cfeedback">
+                                <div class="cfeedback_wrap">
+                                    {{--Имя Фамилия--}}
+                                    <div class="cfeedback_wrap-row">
+                                        <div class="cfeedback_wrap-item">
+                                            <div class="cfeedback_wrap-item_label">
+                                                <span>Имя</span>
+                                            </div>
 
-                                <div class="contacts_wrap-item_inner-inputs-wrap">
+                                            <div class="cfeedback_wrap-item_input">
+                                                <input type="text" class="cfeedback_wrap-item_input-item">
+                                            </div>
+                                        </div>
 
-                                    <div class="contacts_wrap-item_inner-item_form_control-input">
-                                        <label htmlfor="feedback[name]" class="contacts_wrap-item_inner-item_form_control-input-label">Имя</label>
-                                        <input type="text" name="feedback[name]" placeholder="Имя"/>
+                                        <div class="cfeedback_wrap-item">
+                                            <div class="cfeedback_wrap-item_label">
+                                                <span>Фамилия</span>
+                                            </div>
+
+                                            <div class="cfeedback_wrap-item_input">
+                                                <input type="text" class="cfeedback_wrap-item_input-item">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{--Тема--}}
+                                    <div class="cfeedback_wrap-row">
+                                        <div class="cfeedback_wrap-item_label">
+                                            <span>Тема обращения</span>
+                                        </div>
+
+                                        <div class="cfeedback_wrap-item-row">
+
+                                            <div class="cfeedback_wrap-item-row_inner">
+                                                <span>Пожелания</span>
+                                            </div>
+                                            <div class="cfeedback_wrap-item-row_inner">
+                                                <span>Вопрос</span>
+                                            </div>
+                                            <div class="cfeedback_wrap-item-row_inner">
+                                                <span>Претензия</span>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="contacts_wrap-item_inner-item_form_control-input">
-                                        <label htmlfor="feedback[lastname]"  class="contacts_wrap-item_inner-item_form_control-input-label">Фамилия</label>
-                                        <input type="text" name="feedback[lastname]" placeholder="Фамилия"/>
+                                    <div class="cfeedback_wrap-row">
+                                        <div class="cfeedback_wrap-item_label">
+                                            <span>Тема обращения</span>
+                                        </div>
+
+                                        <div class="cfeedback_wrap-item_textarea">
+                                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                                        </div>
                                     </div>
+
+                                    <div class="cfeedback_wrap-row">
+                                        @include('components.btn.text_btn', [ 'class' => 'cfeedback_wrap-row_btn', 'text' => 'Отправить'])
+                                    </div>
+
+
                                 </div>
-
-                                <div class="contacts_wrap-item_inner-item_form_control-heading">
-                                    <span class="contacts_wrap-item_inner-item_form_control-input-label">Тема обращения</span>
-                                </div>
-
-                                <div class="contacts_wrap-item_inner-item_form_control-options">
-                                    <div class="contacts_wrap-item_inner-item_form_control-options_item">
-                                        <span>Пожелания</span>
-                                    </div>
-                                    <div class="contacts_wrap-item_inner-item_form_control-options_item">
-                                        <span>Вопрос</span>
-                                    </div>
-                                    <div class="contacts_wrap-item_inner-item_form_control-options_item">
-                                        <span>Претензия</span>
-                                    </div>
-                                </div>
-
-                                <div class="contacts_wrap-item_inner-item_form_control-input">
-                                    <div class="contacts_wrap-item_inner-item_form_control-input_textarea">
-                                <textarea type="text" name="feedback[text]"
-                                          placeholder="Напишите свое обращения"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="contacts_wrap-item_inner-item_form_control-submit">
-                                    <div class="contacts_wrap-item_inner-item_form_control-submit_btn">
-                                        <span>
-                                            Отправить
-                                        </span>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>

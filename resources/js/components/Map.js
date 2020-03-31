@@ -1,7 +1,5 @@
 class SimpleMap {
     _simpleMap(maps) {
-        console.warn(maps);
-
         ymaps.ready(function () {
             $(maps).each(function (i, el) {
                 let placeMark,

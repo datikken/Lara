@@ -10821,7 +10821,6 @@ var SimpleMap = /*#__PURE__*/function () {
   _createClass(SimpleMap, [{
     key: "_simpleMap",
     value: function _simpleMap(maps) {
-      console.warn(maps);
       ymaps.ready(function () {
         $(maps).each(function (i, el) {
           var placeMark, myMap, yProjects;
@@ -11070,8 +11069,8 @@ var swiperH = new Swiper('.swiper-container-h', {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/datikken/Downloads/Lara-dev/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/datikken/Downloads/Lara-dev/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/datikken/Downloads/Lara/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/datikken/Downloads/Lara/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

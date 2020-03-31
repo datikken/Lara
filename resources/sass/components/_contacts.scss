@@ -3,6 +3,12 @@
 }
 
 .contacts {
+  &-inf_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid $yellow;
+  }
+
   @include breakpoint($phone) {
     max-width: $layoutw;
     margin: 0 auto;
@@ -19,11 +25,13 @@
     }
   }
   &_wrap {
+    .timigs {
+      border-bottom: none!important;
+    }
     &-item {
       margin-bottom: 35px;
       display: flex;
       align-items: flex-start;
-      border-bottom: 1px solid $light_gray;
       margin: 0 15px;
       padding-top: 10px;
 
@@ -35,6 +43,9 @@
         margin-bottom: 20px;
         @include breakpoint($phone) {
           width: 33%;
+        }
+        @include breakpoint($medium) {
+          margin-left: 24px;
         }
         &-item {
           .telegram,
@@ -48,16 +59,16 @@
             cursor: pointer;
           }
           .telegram {
-            background-image: url("/img/icons/telegram.svg");
+            background-image: url("/images/icons/telegram.svg");
           }
           .facebook {
-            background-image: url("/img/icons/facebook.svg");
+            background-image: url("/images/icons/facebook.svg");
           }
           .vk {
-            background-image: url("/img/icons/vk.svg");
+            background-image: url("/images/icons/vk.svg");
           }
           .insta {
-            background-image: url("/img/icons/instagram.svg");
+            background-image: url("/images/icons/instagram.svg");
           }
         }
       }
@@ -67,6 +78,14 @@
             display: flex;
             .contacts_wrap-item_inner-item_form_control-input {
               margin-right: 20px;
+
+              input {
+                border: 1px solid $light_gray!important;
+                @include breakpoint($medium) {
+                  width: 340px!important;
+                  height: 40px!important;
+                }
+              }
             }
           }
         }
@@ -81,6 +100,11 @@
           &-day {
             @include flex(center, space-between, no-wrap);
             border-bottom: 1px solid $light_gray;
+
+            &-item {
+              font-family: $semifont!important;
+            }
+
             &:last-child {
               border-bottom: none;
             }
@@ -119,7 +143,7 @@
               width: 15px;
               display: block;
               @include bg(contain, center);
-              background-image: url("/img/icons/mail.svg");
+              background-image: url("/images/icons/mail.svg");
               margin-right: 10px;
             }
           }
@@ -133,6 +157,8 @@
             display: block;
             margin-bottom: 20px;
             @include flex(center, flex-start, no-wrap);
+            background-image: url("/images/icons/tel.svg");
+            background-repeat: no-repeat;
 
             &:before {
               content: "";
@@ -140,7 +166,7 @@
               width: 15px;
               display: block;
               @include bg(contain, center);
-              background-image: url("/img/icons/tel.svg");
+              background-image: url("/images/icons/tel.svg");
               margin-right: 10px;
             }
           }
@@ -164,13 +190,13 @@
           @include bg(contain, center);
         }
         &-timing {
-          background-image: url("/img/icons/telephone.svg");
+          background-image: url("/images/icons/telephone.svg");
         }
         &-contacts {
-          background-image: url("/img/icons/telephone.svg");
+          background-image: url("/images/icons/telephone.svg");
         }
         &-location {
-          background-image: url("/img/icons/location.svg");
+          background-image: url("/images/icons/location.svg");
         }
 
         &-item {
