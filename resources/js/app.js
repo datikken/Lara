@@ -13,9 +13,11 @@ import './components/Swiper';
 import './components/Search';
 import './components/Form';
 import SimpleMap from './components/Map';
+import ContactsFormController from './controllers/ContactsFormController'
 
 let a = new Logger();
 // let form = new Form();
+let form = new ContactsFormController();
 
 $(document).ready(function() {
     let domEl = $('.ymap-coords');

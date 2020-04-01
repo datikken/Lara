@@ -82,57 +82,60 @@
                         </div>
 
                         <div class="contacts_wrap-item_inner-item">
+
+
                             <div class="cfeedback">
                                 <div class="cfeedback_wrap">
                                     {{--Имя Фамилия--}}
-                                    <div class="cfeedback_wrap-row">
-                                        <div class="cfeedback_wrap-item">
-                                            <div class="cfeedback_wrap-item_label">
+                                    <div class="cfeedback_wrap-row fio_fields">
+                                        <div class="cfeedback_wrap-row_item">
+                                            <div class="cfeedback_wrap-row_item_label">
                                                 <span>Имя</span>
                                             </div>
 
-                                            <div class="cfeedback_wrap-item_input">
-                                                <input type="text" class="cfeedback_wrap-item_input-item">
+                                            <div class="cfeedback_wrap-row_item_input">
+                                                <input type="text" class="cfeedback_wrap-row_item_input-item" placeholder="Введите ваше имя">
                                             </div>
                                         </div>
 
-                                        <div class="cfeedback_wrap-item">
-                                            <div class="cfeedback_wrap-item_label">
+                                        <div class="cfeedback_wrap-row_item">
+                                            <div class="cfeedback_wrap-row_item_label">
                                                 <span>Фамилия</span>
                                             </div>
 
-                                            <div class="cfeedback_wrap-item_input">
-                                                <input type="text" class="cfeedback_wrap-item_input-item">
+                                            <div class="cfeedback_wrap-row_item_input">
+                                                <input type="text" class="cfeedback_wrap-row_item_input-item" placeholder="Введите вашу фамилию">
                                             </div>
                                         </div>
                                     </div>
                                     {{--Тема--}}
                                     <div class="cfeedback_wrap-row">
-                                        <div class="cfeedback_wrap-item_label">
+                                        <div class="cfeedback_wrap-row_item_label">
                                             <span>Тема обращения</span>
                                         </div>
 
-                                        <div class="cfeedback_wrap-item-row">
+                                        <div class="cfeedback_wrap-row_item-row">
 
-                                            <div class="cfeedback_wrap-item-row_inner">
+                                            <div class="cfeedback_wrap-row_item-row_inner active">
                                                 <span>Пожелания</span>
                                             </div>
-                                            <div class="cfeedback_wrap-item-row_inner">
+                                            <div class="cfeedback_wrap-row_item-row_inner">
                                                 <span>Вопрос</span>
                                             </div>
-                                            <div class="cfeedback_wrap-item-row_inner">
+                                            <div class="cfeedback_wrap-row_item-row_inner">
                                                 <span>Претензия</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="cfeedback_wrap-row">
-                                        <div class="cfeedback_wrap-item_label">
+                                        <div class="cfeedback_wrap-row_item_label">
                                             <span>Тема обращения</span>
                                         </div>
 
-                                        <div class="cfeedback_wrap-item_textarea">
-                                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                                        <div class="cfeedback_wrap-row_item_textarea">
+
+                                            <textarea name="" id="" cols="30" rows="10" placeholder="Напишите свое обращение. Мы будем рады ответить вам на ваши вопросы"></textarea>
                                         </div>
                                     </div>
 

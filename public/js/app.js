@@ -10714,6 +10714,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_Search__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
 /* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Map */ "./resources/js/components/Map.js");
+/* harmony import */ var _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./controllers/ContactsFormController */ "./resources/js/controllers/ContactsFormController.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -10728,8 +10729,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var a = new _components_Logger__WEBPACK_IMPORTED_MODULE_0__["default"](); // let form = new Form();
 
+var form = new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
 $(document).ready(function () {
   var domEl = $('.ymap-coords');
   var map = new _components_Map__WEBPACK_IMPORTED_MODULE_5__["default"]();
@@ -11048,6 +11051,39 @@ var swiperH = new Swiper('.swiper-container-h', {
     clickable: true
   }
 });
+
+/***/ }),
+
+/***/ "./resources/js/controllers/ContactsFormController.js":
+/*!************************************************************!*\
+  !*** ./resources/js/controllers/ContactsFormController.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ContactsFormController = function ContactsFormController() {
+  _classCallCheck(this, ContactsFormController);
+
+  $(document).ready(function () {
+    $('.cfeedback_wrap-row_item-row_inner').on('click', function (e) {
+      $('.cfeedback_wrap-row_item-row_inner').each(function (i, el) {
+        console.log(el);
+
+        if (el.classList.contains('active')) {
+          el.classList.remove('active');
+        }
+      });
+      e.currentTarget.classList.add('active');
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ContactsFormController);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 

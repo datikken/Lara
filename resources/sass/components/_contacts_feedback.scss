@@ -1,0 +1,102 @@
+.cfeedback {
+  width: 100%;
+  //max-width: 700px;
+
+  &_wrap {
+    .fio_fields {
+      //margin-bottom: 20px;
+    }
+
+    .fio_fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+      -webkit-appearance: none;
+    }
+    &-row {
+      margin-bottom: 20px;
+
+      &:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      &_item {
+        &_input {
+          input {
+            width: 340px;
+            height: 40px;
+            border-radius: 30px;
+            padding-left: 20px;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            border: 1px solid $light_gray;
+          }
+        }
+        &_textarea {
+
+          textarea {
+            display: block;
+            height: 200px;
+            width: calc(100% - 30px);
+            border: 1px solid $light_gray;
+            border-radius: 30px;
+            resize: none;
+            outline: none;
+            padding: 10px 10px 0 20px;
+            max-width: 746px;
+          }
+        }
+
+        &_label {
+          margin-bottom: 5px;
+        }
+
+        &-row {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          border: 1px solid $light_gray;
+          border-radius: 30px;
+          overflow: hidden;
+
+          .active {
+            color: #fff;
+            background: black;
+          }
+
+          &_inner {
+            text-align: center;
+            overflow: hidden;
+            cursor: pointer;
+            padding: 10.5px;
+            transition: background-color $transition;
+
+            &:nth-child(2) {
+              border-right: 1px solid $light_gray;
+              border-left: 1px solid $light_gray;
+            }
+            //border-top-left-radius: 30px;
+            //border-bottom-left-radius: 30px;
+            span {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        &_label {
+          span {
+            font-family: $font;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+          }
+        }
+      }
+    }
+  }
+}

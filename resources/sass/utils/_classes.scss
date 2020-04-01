@@ -108,3 +108,15 @@ a:hover {
 .mobile_menu {
   height: 98vh!important;
 }
+
+input, textarea {
+  &::placeholder {
+    font-family: $font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    color: $gray;
+  }
+}
