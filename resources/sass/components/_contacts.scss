@@ -4,6 +4,12 @@
 
 .contacts {
   &_feedback {
+    margin-bottom: 0!important;
+
+    @include breakpoint($medium) {
+      margin-bottom: 15px;
+    }
+
     .contacts_wrap-item_inner {
       &-item-text {
         margin: 0 60px 30px 60px;

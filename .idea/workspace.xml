@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c87618a9-9379-4ba4-9501-9c5546ef7e31" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_contacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_contacts.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/components/_contacts_feedback.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_contacts_feedback.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +25,8 @@
       <file leaf-file-name="_contacts.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/sass/components/_contacts.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+            <state relative-caret-position="282">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -31,8 +34,8 @@
       <file leaf-file-name="_contacts_feedback.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/sass/components/_contacts_feedback.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+            <state relative-caret-position="76">
+              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -48,7 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>contacts_fe</find>
       <find>day</find>
       <find>wrap-item</find>
       <find>submit</find>
@@ -57,7 +59,6 @@
       <find>active</find>
       <find>d4</find>
       <find>D4D4D5</find>
-      <find>textare</find>
       <find>textarea</find>
       <find>feedb</find>
       <find>contacts-inf_grid</find>
@@ -78,6 +79,8 @@
       <find>contact</find>
       <find>cfeed</find>
       <find>row</find>
+      <find>textare</find>
+      <find>btn</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -440,13 +443,13 @@
       <workItem from="1585474042999" duration="174000" />
       <workItem from="1585474248914" duration="13720000" />
       <workItem from="1585491699203" duration="6219000" />
-      <workItem from="1585740575919" duration="4902000" />
+      <workItem from="1585740575919" duration="5456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="118243000" />
+    <option name="totallyTimeSpent" value="118797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1535" y="106" width="1265" height="907" extended-state="0" />
@@ -457,14 +460,14 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32984293" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.46938777" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79591835" visible="true" weight="0.2284585" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.46938777" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7941176" visible="true" weight="0.2284585" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info x="870" y="97" width="265" height="764" id="Time Tracking" order="7" type="FLOATING" weight="0.18402778" />
-      <window_info id="Favorites" order="2" sideWeight="0.20408164" side_tool="true" visible="true" weight="0.2284585" />
+      <window_info id="Favorites" order="2" sideWeight="0.20588236" side_tool="true" visible="true" weight="0.2284585" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Thumbnails" order="8" weight="0.32945737" />
       <window_info id="Designer" order="4" />
@@ -917,15 +920,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/components/_contacts.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        <state relative-caret-position="282">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/components/_contacts_feedback.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        <state relative-caret-position="76">
+          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
         </state>
       </provider>
     </entry>

@@ -16,7 +16,6 @@
       flex-direction: column;
       margin: 0 44px;
 
-
       @include breakpoint($medium) {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -29,7 +28,10 @@
     &-row {
       margin-bottom: 20px;
 
-
+      &_btn {
+        width: 187px!important;
+        height: 40px!important;
+      }
 
       &:last-child {
         display: flex;
@@ -75,6 +77,10 @@
             outline: none;
             padding: 10px 10px 0 20px;
             max-width: 746px;
+
+            &::placeholder {
+              padding: 6px;
+            }
           }
         }
 

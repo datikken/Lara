@@ -5954,8 +5954,14 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .contacts_feedback {
+  margin-bottom: 0 !important;
   background-color: #d4d4d5;
   padding-top: 16px !important;
+}
+@media screen and (min-width: 1030px) {
+  .contacts_feedback {
+    margin-bottom: 15px;
+  }
 }
 .contacts_feedback .contacts_wrap-item_inner-item-text {
   margin: 0 60px 30px 60px;
@@ -6251,6 +6257,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cfeedback_wrap-row {
   margin-bottom: 20px;
 }
+.cfeedback_wrap-row_btn {
+  width: 187px !important;
+  height: 40px !important;
+}
 .cfeedback_wrap-row:last-child {
   display: flex;
   align-items: center;
@@ -6303,6 +6313,21 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   outline: none;
   padding: 10px 10px 0 20px;
   max-width: 746px;
+}
+.cfeedback_wrap-row_item_textarea textarea::-webkit-input-placeholder {
+  padding: 6px;
+}
+.cfeedback_wrap-row_item_textarea textarea::-moz-placeholder {
+  padding: 6px;
+}
+.cfeedback_wrap-row_item_textarea textarea:-ms-input-placeholder {
+  padding: 6px;
+}
+.cfeedback_wrap-row_item_textarea textarea::-ms-input-placeholder {
+  padding: 6px;
+}
+.cfeedback_wrap-row_item_textarea textarea::placeholder {
+  padding: 6px;
 }
 .cfeedback_wrap-row_item_label {
   margin-bottom: 5px;
