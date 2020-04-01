@@ -5260,7 +5260,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   height: 40px;
   border-radius: 30px;
   height: 150px;
-  border: 1px solid #e9e9ea;
+  border: none;
   resize: none;
   padding: 10px 20px;
   outline: none;
@@ -6307,7 +6307,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: block;
   height: 200px;
   width: calc(100% - 30px);
-  border: 1px solid #e9e9ea;
+  border: none;
   border-radius: 30px;
   resize: none;
   outline: none;
