@@ -6253,15 +6253,19 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   overflow: hidden;
 }
 .cfeedback_wrap-row_item-row .active {
-  color: #fff;
   background: black;
 }
+.cfeedback_wrap-row_item-row .active span {
+  color: #fff;
+}
 .cfeedback_wrap-row_item-row_inner {
-  text-align: center;
   overflow: hidden;
   cursor: pointer;
-  padding: 10.5px;
   transition: background-color 0.2s;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cfeedback_wrap-row_item-row_inner:nth-child(2) {
   border-right: 1px solid #e9e9ea;
@@ -6269,8 +6273,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .cfeedback_wrap-row_item-row_inner span {
   display: block;
-  width: 100%;
-  height: 100%;
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
 }
 .cfeedback_wrap-row_item_label span {
   font-family: "Montserrat";
