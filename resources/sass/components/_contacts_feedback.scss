@@ -16,12 +16,13 @@
       flex-direction: column;
       margin: 0 44px;
 
+
       @include breakpoint($medium) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
         -webkit-appearance: none;
-        margin: 0;
+        margin: 0 0 10px 0;
       }
 
     }
