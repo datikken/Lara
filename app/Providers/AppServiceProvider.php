@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Auth;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,5 +26,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        View::share('Name', "tikken");
+        View::composer('*', function($view) {
+            $view->with('userData', Auth::user());
+        });
     }
 }

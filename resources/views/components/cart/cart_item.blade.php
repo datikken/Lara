@@ -1,4 +1,4 @@
-<?php #dump($cartItem)?>
+<?php #dump($userData->email) ?>
 
 <div class="cart_wrap-item_inner-table_row">
     <div class="cart_wrap-item_inner-table_row-col">
