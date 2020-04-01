@@ -10,13 +10,22 @@
 .product {
   border: 1px solid $light_gray;
   min-width: 270px;
-  width: 270px;
-  height: 360px;
   margin: 0 10px 10px 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  height: 160px;
 
-  @include breakpoint($phone) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    flex: 1.5;
+  }
+
+  @include breakpoint($medium) {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     margin: 0 10px 20px 10px;
+    width: 270px;
+    height: 270px;
   }
 
   & a:hover {
@@ -27,17 +36,21 @@
     display: flex;
     position: relative;
     padding: 10px;
+    width: 100%;
 
     @include breakpoint($phone) {
       display: block;
-      padding: 10px 20px 20px 20px;
+      padding: 0px 20px 5px 20px;
     }
 
     &-itemContent {
-      height: 240px;
-      background: $light_gray;
-      box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
-      margin-bottom: 10px!important;
+      height: 100%;
+      @include breakpoint($medium) {
+        margin-bottom: 20px;
+        min-height: 170px;
+        border: 1px solid $light_gray;
+        margin-bottom: 10px!important;
+      }
     }
 
     &-item {
@@ -46,10 +59,16 @@
       align-items: center;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin-bottom: 10px;
       overflow: hidden;
       cursor: pointer;
-      padding-top: 30px;
+      top: 5px;
+      flex: 1;
+      margin-bottom: 16px;
+      //padding-top: 30px;
+      @include breakpoint($medium) {
+        margin-bottom: 10px;
+        top: initial;
+      }
 
       &:first-child {
         position: absolute;
@@ -61,8 +80,6 @@
         }
       }
       &:nth-child(2) {
-        flex-basis: 100%;
-
         @include breakpoint($phone) {
           padding-top: 0;
         }
@@ -90,14 +107,21 @@
       }
 
       &:last-child {
-        margin: 0;
+        //margin-left: 15px!important;
+
+        @include breakpoint($medium) {
+          margin: 0;
+        }
       }
 
       &_name {
-        flex-basis: 100%;
-        margin-bottom: 10px;
+        @include breakpoint($medium) {
+          flex-basis: 100%;
+          margin-bottom: 10px;
+        }
 
         &-item {
+          display: none;
           font-family: $font;
           font-style: normal;
           font-weight: normal;
@@ -128,6 +152,7 @@
         color:$black;
         display: flex;
         align-items: center;
+        margin-top: 7px;
 
         img {
           width: 10px;
@@ -144,12 +169,21 @@
         width: 177px;
         height: 100px;
         margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         @include breakpoint($medium) {
           height: initial;
         }
 
         img {
-          width: 177px;
+          width: 137px;
+          display: block;
+          @include breakpoint($medium) {
+            width: 177px;
+          }
         }
       }
       &_overlay {
@@ -215,6 +249,10 @@
         }
 
         &-item {
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 14px;
+
           &:nth-child(1) {
             font-family: $font;
             font-style: normal;
