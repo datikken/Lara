@@ -8381,3 +8381,7 @@ main {
     right: 0;
   }
 }
+
+.invalid-feedback {
+  color: red !important;
+}

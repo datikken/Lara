@@ -17,13 +17,12 @@
                     <div class="form-group row">
                         <label for="email" class="row_label">{{ __('Почта') }}</label>
 
-                        <input id="email" type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
                         @error('email')
                         <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                         @enderror
+                        <input id="email" type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                     </div>
                     <div class="form-group row password_field">
@@ -32,13 +31,14 @@
                         <label for="email" class="row_label password_hide">{{ __('Пароль') }}</label>
 
                         <div class="col-md-6">
-                            <input id="password" type="password" placeholder="Введите ваш пароль"  class="form-control password_hide @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+
+                            <input id="password" type="password" placeholder="Введите ваш пароль"  class="form-control password_hide @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                         </div>
                     </div>
 
