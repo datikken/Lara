@@ -10715,6 +10715,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
 /* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Map */ "./resources/js/components/Map.js");
 /* harmony import */ var _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./controllers/ContactsFormController */ "./resources/js/controllers/ContactsFormController.js");
+/* harmony import */ var _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./controllers/LoginFormController */ "./resources/js/controllers/LoginFormController.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -10730,11 +10731,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var a = new _components_Logger__WEBPACK_IMPORTED_MODULE_0__["default"](); // let form = new Form();
 
 var form = new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
 $(document).ready(function () {
   var domEl = $('.ymap-coords');
+  var login = new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_7__["default"]();
   var map = new _components_Map__WEBPACK_IMPORTED_MODULE_5__["default"]();
 
   map._simpleMap(domEl);
@@ -11084,6 +11087,43 @@ var ContactsFormController = function ContactsFormController() {
 
 /* harmony default export */ __webpack_exports__["default"] = (ContactsFormController);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/js/controllers/LoginFormController.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/controllers/LoginFormController.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var LoginFormController = function LoginFormController() {
+  _classCallCheck(this, LoginFormController);
+
+  var wraps = document.querySelectorAll('.password_field');
+  wraps.forEach(function (el) {
+    console.log('wraps.forEac', el);
+    var span = el.querySelector('.password_field-label');
+    span.addEventListener('click', function () {
+      var input = el.querySelector('input');
+      var attr = input.getAttribute('type');
+
+      if (attr === 'text') {
+        input.setAttribute('type', 'password');
+      } else {
+        input.setAttribute('type', 'text');
+      }
+
+      console.warn(input);
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LoginFormController);
 
 /***/ }),
 

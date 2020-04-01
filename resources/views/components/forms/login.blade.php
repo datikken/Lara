@@ -26,7 +26,9 @@
                         @enderror
 
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row password_field">
+                        <span class="password_field-label"></span>
+
                         <label for="email" class="row_label password_hide">{{ __('Пароль') }}</label>
 
                         <div class="col-md-6">

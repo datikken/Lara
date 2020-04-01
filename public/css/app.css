@@ -8138,6 +8138,7 @@ main {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  position: relative !important;
 }
 .main .card-body form .form-group .col-form-label {
   font-family: "Montserrat";
@@ -8361,11 +8362,7 @@ main {
   max-width: 250px !important;
 }
 
-.password_hide {
-  position: relative !important;
-}
-.password_hide:after {
-  content: "";
+.password_field-label {
   display: block;
   background-image: url("/images/icons/closedeyese.svg");
   background-position: center;
@@ -8380,7 +8377,7 @@ main {
   right: 10px;
 }
 @media screen and (min-width: 1030px) {
-  .password_hide:after {
+  .password_field-label {
     right: 0;
   }
 }

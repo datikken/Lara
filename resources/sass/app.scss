@@ -180,7 +180,8 @@ main {
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 10px;
-
+                position: relative!important;
+                
                 .col-form-label {
                     font-family: $font;
                     font-style: normal;
@@ -395,12 +396,8 @@ main {
 .register_greet {
     max-width: 250px!important;
 }
-
-.password_hide {
-    position: relative!important;
-
-    &:after {
-        content: '';
+.password_field {
+    &-label {
         display: block;
         background-image: url('/images/icons/closedeyese.svg');
         background-position: center;

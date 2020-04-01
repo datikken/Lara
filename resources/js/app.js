@@ -14,6 +14,7 @@ import './components/Search';
 import './components/Form';
 import SimpleMap from './components/Map';
 import ContactsFormController from './controllers/ContactsFormController'
+import LoginFormController from './controllers/LoginFormController'
 
 let a = new Logger();
 // let form = new Form();
@@ -21,6 +22,7 @@ let form = new ContactsFormController();
 
 $(document).ready(function() {
     let domEl = $('.ymap-coords');
+    let login = new LoginFormController();
 
     let map = new SimpleMap();
         map._simpleMap(domEl);

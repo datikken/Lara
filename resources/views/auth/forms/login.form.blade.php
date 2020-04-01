@@ -19,8 +19,12 @@
                                 @enderror
 
                         </div>
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right password_hide">{{ __('Password') }}</label>
+                        <div class="form-group row password_field">
+                            <span class="password_field-label"></span>
+
+                            <label for="password" class="col-md-4 col-form-label text-md-right password_hide">
+                                {{ __('Password') }}
+                            </label>
 
                                 <input id="password" type="password" placeholder="Введите ваш пароль" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 

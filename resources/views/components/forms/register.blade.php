@@ -73,7 +73,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row password_field">
+                            <span class="password_field-label"></span>
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Пароль') }}</label>
 
                             <div class="col-md-6">
@@ -100,7 +101,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row password_field">
+                            <span class="password_field-label"></span>
                             <label for="password-confirm" class="col-md-4 col-form-label password_hide text-md-right">{{ __('Подтверждение пароля') }}</label>
 
                             <div class="col-md-6">
