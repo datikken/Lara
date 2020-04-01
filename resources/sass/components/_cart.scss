@@ -148,6 +148,8 @@
           }
         }
         &-table {
+          border-top: 1px solid $light_gray;
+
           @include breakpoint($phone) {
             border-bottom: 1px solid $yellow;
             margin-bottom: 40px;
@@ -203,7 +205,11 @@
               position: relative;
               padding: 15px 10px;
               justify-content: space-between;
-              border-bottom: 1px solid $light_gray;
+              //border-bottom: 1px solid $light_gray;
+
+              @include breakpoint($medium) {
+                border: none;
+              }
 
               &:last-child {
                 background: $light_gray;
@@ -222,12 +228,12 @@
                 cursor: pointer;
               }
 
-              &:last-child {
-                border: none;
-                @include breakpoint($medium) {
-                  border: 1px solid $gray;
-                }
-              }
+              //&:last-child {
+              //  border: none;
+              //  @include breakpoint($medium) {
+              //    border-bottom: 1px solid $light_gray;
+              //  }
+              //}
               @include breakpoint($phone) {
                 padding: 0 0 15px 0;
               }
