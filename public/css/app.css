@@ -5953,10 +5953,24 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 20px;
 }
 
+.contacts_feedback {
+  background-color: #d4d4d5;
+}
+@media screen and (min-width: 1030px) {
+  .contacts_feedback {
+    background-color: #fff;
+  }
+}
 .contacts-inf_grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid #fdd935;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1030px) {
+  .contacts-inf_grid {
+    display: grid;
+    border-bottom: 1px solid #fdd935;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media screen and (min-width: 600px) {
   .contacts {
@@ -5983,17 +5997,26 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   align-items: flex-start;
   margin: 0 15px;
-  padding-top: 10px;
+  border-bottom: 1px solid #e9e9ea;
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 1030px) {
+  .contacts_wrap-item {
+    padding-top: 10px;
+    border-bottom: none;
+  }
 }
 .contacts_wrap-item_socials {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 100%;
   grid-column-gap: 25px;
-  margin-bottom: 20px;
+  width: 240px;
+  margin-bottom: 10px;
 }
 @media screen and (min-width: 600px) {
   .contacts_wrap-item_socials {
+    margin-bottom: 20px;
     width: 33%;
   }
 }
@@ -6170,10 +6193,16 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   width: 100%;
 }
 .cfeedback_wrap .fio_fields {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  -webkit-appearance: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 1030px) {
+  .cfeedback_wrap .fio_fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    -webkit-appearance: none;
+  }
 }
 .cfeedback_wrap-row {
   margin-bottom: 20px;
@@ -6182,6 +6211,14 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+.cfeedback_wrap-row_item {
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 1030px) {
+  .cfeedback_wrap-row_item {
+    margin-bottom: 0;
+  }
 }
 .cfeedback_wrap-row_item_input input {
   width: 340px;

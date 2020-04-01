@@ -4,14 +4,16 @@
 
   &_wrap {
     .fio_fields {
-      //margin-bottom: 20px;
-    }
+      display: flex;
+      flex-wrap: wrap;
 
-    .fio_fields {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 20px;
-      -webkit-appearance: none;
+      @include breakpoint($medium) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        -webkit-appearance: none;
+      }
+
     }
     &-row {
       margin-bottom: 20px;
@@ -23,6 +25,12 @@
       }
 
       &_item {
+        margin-bottom: 10px;
+
+        @include breakpoint($medium) {
+          margin-bottom: 0;
+        }
+
         &_input {
           input {
             width: 340px;
