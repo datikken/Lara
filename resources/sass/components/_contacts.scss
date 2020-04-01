@@ -4,9 +4,23 @@
 
 .contacts {
   &_feedback {
+    .contacts_wrap-item_inner {
+      &-item-text {
+        margin: 0 60px 30px 60px;
+      }
+    }
       background-color: $gray;
       padding-top: 16px!important;
+      //padding: 0 16px;
+    @include breakpoint($medium) {
+      padding: 0;
+    }
       //padding: 16px 16px 0 16px;
+      .contacts_wrap-item_inner {
+        &:nth-child(1) {
+          position: absolute;
+        }
+      }
 
     @include breakpoint($medium) {
       background-color: #fff;
@@ -99,7 +113,7 @@
       }
       &_inner {
         &:nth-child(1) {
-          margin: 0 16px;
+          padding: 0 16px;
         }
 
         &-inputs-wrap {
@@ -119,16 +133,27 @@
           }
         }
         &:nth-child(2) {
-          margin: 5px 15px;
           width: 100%;
+
+          @include breakpoint($medium) {
+            margin: 5px 15px;
+          }
         }
         &-item {
           display: flex;
           flex-direction: column;
 
+          @include breakpoint($medium) {
+            padding: 0;
+          }
+
           &-day {
             @include flex(center, space-between, no-wrap);
             border-bottom: 1px solid $light_gray;
+            max-width: 300px;
+            @include breakpoint($medium) {
+              max-width: initial;
+            }
 
             &-item {
               font-family: $semifont!important;
@@ -209,6 +234,7 @@
             color: $dblack;
             display: block;
             margin-bottom: 15px;
+            //margin: 0 60px;
           }
         }
         &-contacts,

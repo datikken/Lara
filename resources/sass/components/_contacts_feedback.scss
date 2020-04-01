@@ -1,26 +1,43 @@
 .cfeedback {
   width: 100%;
+  .contacts_wrap-item_inner {
+    margin: 0;
+  }
   &_wrap {
+    padding: 0 16px;
+
+    @include breakpoint($medium) {
+      padding: 0;
+    }
+
     .fio_fields {
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
+      margin: 0 44px;
 
       @include breakpoint($medium) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
         -webkit-appearance: none;
+        margin: 0;
       }
 
     }
     &-row {
       margin-bottom: 20px;
 
+
+
       &:last-child {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
+
+        @include breakpoint($medium) {
+          justify-content: flex-end;
+        }
       }
 
       &_item {
@@ -47,7 +64,6 @@
           }
         }
         &_textarea {
-
           textarea {
             display: block;
             height: 200px;
