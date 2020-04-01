@@ -5955,6 +5955,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 
 .contacts_feedback {
   background-color: #d4d4d5;
+  padding-top: 16px !important;
 }
 @media screen and (min-width: 1030px) {
   .contacts_feedback {
@@ -5996,13 +5997,13 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 35px;
   display: flex;
   align-items: flex-start;
-  margin: 0 15px;
   border-bottom: 1px solid #e9e9ea;
   margin-bottom: 15px;
 }
 @media screen and (min-width: 1030px) {
   .contacts_wrap-item {
     padding-top: 10px;
+    margin: 0 15px;
     border-bottom: none;
   }
 }
@@ -6017,7 +6018,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 @media screen and (min-width: 600px) {
   .contacts_wrap-item_socials {
     margin-bottom: 20px;
-    width: 33%;
+    width: initial;
   }
 }
 @media screen and (min-width: 1030px) {
@@ -6048,6 +6049,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .contacts_wrap-item_socials-item .insta {
   background-image: url("/images/icons/instagram.svg");
+}
+.contacts_wrap-item_inner:nth-child(1) {
+  margin: 0 16px;
 }
 @media screen and (min-width: 600px) {
   .contacts_wrap-item_inner-inputs-wrap {
@@ -6195,6 +6199,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cfeedback_wrap .fio_fields {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 @media screen and (min-width: 1030px) {
   .cfeedback_wrap .fio_fields {
@@ -6221,14 +6226,28 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 .cfeedback_wrap-row_item_input input {
-  width: 340px;
   height: 40px;
   border-radius: 30px;
-  padding-left: 20px;
   -moz-appearance: none;
   -webkit-appearance: none;
   outline: none;
   border: 1px solid #e9e9ea;
+  width: 100%;
+}
+.cfeedback_wrap-row_item_input input::-webkit-input-placeholder {
+  padding-left: 20px;
+}
+.cfeedback_wrap-row_item_input input::-moz-placeholder {
+  padding-left: 20px;
+}
+.cfeedback_wrap-row_item_input input:-ms-input-placeholder {
+  padding-left: 20px;
+}
+.cfeedback_wrap-row_item_input input::-ms-input-placeholder {
+  padding-left: 20px;
+}
+.cfeedback_wrap-row_item_input input::placeholder {
+  padding-left: 20px;
 }
 .cfeedback_wrap-row_item_textarea textarea {
   display: block;

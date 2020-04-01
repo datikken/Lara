@@ -1,11 +1,10 @@
 .cfeedback {
   width: 100%;
-  //max-width: 700px;
-
   &_wrap {
     .fio_fields {
       display: flex;
       flex-wrap: wrap;
+      flex-direction: column;
 
       @include breakpoint($medium) {
         display: grid;
@@ -33,14 +32,18 @@
 
         &_input {
           input {
-            width: 340px;
+            //width: 340px;
             height: 40px;
             border-radius: 30px;
-            padding-left: 20px;
             -moz-appearance: none;
             -webkit-appearance: none;
             outline: none;
             border: 1px solid $light_gray;
+            width: 100%;
+
+            &::placeholder {
+              padding-left: 20px;
+            }
           }
         }
         &_textarea {
@@ -90,8 +93,7 @@
               border-right: 1px solid $light_gray;
               border-left: 1px solid $light_gray;
             }
-            //border-top-left-radius: 30px;
-            //border-bottom-left-radius: 30px;
+
             span {
               display: block;
               font-family: $font;

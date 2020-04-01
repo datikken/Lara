@@ -5,6 +5,8 @@
 .contacts {
   &_feedback {
       background-color: $gray;
+      padding-top: 16px!important;
+      //padding: 16px 16px 0 16px;
 
     @include breakpoint($medium) {
       background-color: #fff;
@@ -46,12 +48,12 @@
       margin-bottom: 35px;
       display: flex;
       align-items: flex-start;
-      margin: 0 15px;
       border-bottom: 1px solid $light_gray;
       margin-bottom: 15px;
 
       @include breakpoint($medium) {
         padding-top: 10px;
+        margin: 0 15px;
         border-bottom: none;
       }
 
@@ -65,7 +67,7 @@
 
         @include breakpoint($phone) {
           margin-bottom: 20px;
-          width: 33%;
+          width: initial;
         }
         @include breakpoint($medium) {
           margin-left: 24px;
@@ -96,6 +98,10 @@
         }
       }
       &_inner {
+        &:nth-child(1) {
+          margin: 0 16px;
+        }
+
         &-inputs-wrap {
           @include breakpoint($phone) {
             display: flex;

@@ -129,12 +129,8 @@
                                     </div>
 
                                     <div class="cfeedback_wrap-row">
-                                        <div class="cfeedback_wrap-row_item_label">
-                                            <span>Тема обращения</span>
-                                        </div>
 
                                         <div class="cfeedback_wrap-row_item_textarea">
-
                                             <textarea name="" id="" cols="30" rows="10" placeholder="Напишите свое обращение. Мы будем рады ответить вам на ваши вопросы"></textarea>
                                         </div>
                                     </div>
