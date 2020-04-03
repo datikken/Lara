@@ -45,7 +45,7 @@
                             <li><span>О нас</span></li>
                             <li><span>Блог</span></li>
                             <li><span>Акции</span></li>
-                            <li><span>Контакты</span></li>
+                            <li><a href="/contacts">Контакты</a></li>
                             <li><span>Информация</span></li>
                             <li><span>Хит парад принтеров</span></li>
                         </ul>

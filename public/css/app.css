@@ -1522,6 +1522,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin: 0 0 7px 0;
   cursor: pointer;
 }
+.footer_cat-item_list ul li a {
+  color: #fff;
+}
 .footer_cat-item_list ul li span a {
   color: #fff;
 }
