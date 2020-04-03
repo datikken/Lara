@@ -8435,9 +8435,11 @@ main {
   color: red !important;
 }
 
+#map {
+  height: 300px;
+}
 @media screen and (min-width: 1030px) {
   #map {
-    height: 300px;
     margin-bottom: 40px;
     overflow: hidden;
   }

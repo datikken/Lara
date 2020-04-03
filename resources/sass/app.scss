@@ -420,8 +420,9 @@ main {
 }
 
 #map {
+    height: 300px;
+
     @include breakpoint($medium) {
-        height: 300px;
         margin-bottom: 40px;
         overflow: hidden;
     }
