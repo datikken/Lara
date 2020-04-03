@@ -10813,7 +10813,7 @@ var Logger = function Logger() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
@@ -10828,32 +10828,50 @@ var SimpleMap = /*#__PURE__*/function () {
     key: "_simpleMap",
     value: function _simpleMap(maps) {
       ymaps.ready(function () {
-        $(maps).each(function (i, el) {
-          var placeMark, myMap, yProjects;
-          yProjects = [];
-          myMap = new ymaps.Map(el, {
-            center: ['50', '39'],
-            zoom: 12,
-            type: 'yandex#map',
-            behaviors: ['default', 'scrollZoom']
-          }); // myMap.balloon.open([el.dataset.lat, el.dataset.lng], {
-          //     contentHeader: el.dataset.desc,
-          //     contentBody: '',
-          //     contentFooter: el.dataset.adress,
-          // }, {
-          //     closeButton: false
-          // });
-          // placeMark = new ymaps.Placemark([el.dataset.lat,el.dataset.lng], {
-          //     balloonContent: el.dataset.ballon,
-          //     balloonCloseButton: true,
-          //     hideIconOnBalloonOpen: true
-          // }, {
-          //     preset: 'islands#circleDotIcon',
-          //     iconColor: '#333'
-          // });
-          //
-          // myMap.geoObjects.add(placeMark);
+        var myMap = new ymaps.Map('map', {
+          center: [55.751574, 37.573856],
+          zoom: 9
+        }, {
+          searchControlProvider: 'yandex#search'
+        }),
+            // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+          hintContent: 'Собственный значок метки',
+          balloonContent: 'Это красивая метка'
+        }, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#image',
+          // Своё изображение иконки метки.
+          iconImageHref: 'images/myIcon.gif',
+          // Размеры метки.
+          iconImageSize: [30, 42],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-5, -38]
+        }),
+            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+          hintContent: 'Собственный значок метки с контентом',
+          balloonContent: 'А эта — новогодняя',
+          iconContent: '12'
+        }, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#imageWithContent',
+          // Своё изображение иконки метки.
+          iconImageHref: 'images/ball.png',
+          // Размеры метки.
+          iconImageSize: [48, 48],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-24, -24],
+          // Смещение слоя с содержимым относительно слоя с картинкой.
+          iconContentOffset: [15, 15],
+          // Макет содержимого.
+          iconContentLayout: MyIconContentLayout
         });
+        myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
       });
     }
   }]);
@@ -10862,7 +10880,6 @@ var SimpleMap = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (SimpleMap);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -10884,7 +10901,7 @@ var menuItems = document.querySelectorAll('.menu_wrapper-item-main_menu-item');
 var secondary = $('.menu_wrapper-item-main_menu-item-text_secondary');
 var menu = document.querySelector('.menu_wrapper-item-main_menu');
 var dropdown = document.querySelector('.menu_wrapper-item_menuText');
-var array = [secondary, menu, dropdown];
+var array = [document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary'), secondary, menu, dropdown];
 
 function _handleChange(item) {
   $(item).mouseover(function () {
@@ -10898,12 +10915,22 @@ function _handleChange(item) {
 
 array.forEach(function (el) {
   _handleChange(el);
-});
+}); //XXX
+
 $(secondary).hover(function () {
-  $('.menu_wrapper-item-main_menu-item-text_secondary').toggleClass('as-visible');
+  $('.menu_wrapper-item-main_menu-item-text_secondary').add('as-visible');
 });
 $(menuItems[5]).hover(function () {
-  $('.menu_wrapper-item-main_menu-item-text_secondary').toggleClass('as-visible');
+  document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary').classList.add('as-visible');
+});
+$(menuItems[5]).on("mouseleave", function () {
+  document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary').classList.remove('as-visible');
+});
+$('.menu_wrapper-item-main_menu-item-text_secondary').on('mouseenter', function () {
+  document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary').classList.add('as-visible');
+});
+$('.menu_wrapper-item-main_menu-item-text_secondary').on('mouseleave', function () {
+  document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary').classList.remove('as-visible');
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 

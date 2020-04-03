@@ -196,6 +196,7 @@
             color: $blue;
             @include flex(center, flex-start, no-wrap);
             margin-bottom: 20px;
+            cursor: pointer;
 
             &:before {
               content: "";

@@ -6203,6 +6203,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   justify-content: flex-start;
   flex-wrap: no-wrap;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .contacts_wrap-item_inner-item-mail:before {
   content: "";
@@ -8432,4 +8433,12 @@ main {
 
 .invalid-feedback {
   color: red !important;
+}
+
+@media screen and (min-width: 1030px) {
+  #map {
+    height: 500px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
 }
