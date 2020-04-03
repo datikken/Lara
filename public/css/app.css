@@ -7547,6 +7547,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   height: 195px;
 }
 
+.swiper-container .swiper-pagination {
+  display: none !important;
+}
+
 @media screen and (min-width: 1030px) {
   .lenta {
     margin-bottom: 50px;

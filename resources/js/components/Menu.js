@@ -4,22 +4,38 @@ let secondary = $('.menu_wrapper-item-main_menu-item-text_secondary');
 let menu = document.querySelector('.menu_wrapper-item-main_menu');
 let dropdown = document.querySelector('.menu_wrapper-item_menuText');
 let array = [document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary'),secondary, menu,dropdown];
+let search = document.querySelector('.menu_wrapper-item_search');
+
+// menu_wrapper-item_search search_width
+
+
 
 $(document).ready(function() {
     let state = false;
 
+    $(search).on('click', function() {
+        if(!state) {
+            search.classList.add('search_width');
+            state = true;
+        } else {
+            search.classList.remove('search_width');
+            state = false;
+        }
+    })
+
     $('.menu_wrapper-item_hamburger').on('click', () => {
             let body = document.querySelector('body');
-                body.classList.add('overflow')
 
             if(!state) {
                 state = true;
 
+                body.classList.add('overflow')
                 document.querySelector('.menu_wrapper-item_secondary').classList.add('as-visible');
                 document.querySelector('.menu_wrapper-item_secondary').classList.add('mobile_menu');
             } else {
                 state = false;
 
+                body.classList.remove('overflow')
                 document.querySelector('.menu_wrapper-item_secondary').classList.remove('as-visible');
                 document.querySelector('.menu_wrapper-item_secondary').classList.remove('mobile_menu');
             }

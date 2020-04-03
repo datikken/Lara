@@ -79,21 +79,11 @@
             height: 195px;
         }
     }
-    //
-    //.swiper-pagination {
-    //    bottom: 27px!important;
-    //    width: 50%!important;
-    //
-    //    .swiper-pagination-bullet {
-    //        width: 5px!important;
-    //        height: 5px!important;
-    //        background: transparent!important;
-    //        border: 1px solid $white!important;
-    //        box-shadow: none;
-    //        opacity: 1;
-    //    }
-    //    .swiper-pagination-bullet-active {
-    //        background: $white!important;
-    //    }
-    //}
+
+}
+
+.swiper-container {
+     .swiper-pagination {
+        display: none!important;
+    }
 }
