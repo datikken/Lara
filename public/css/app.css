@@ -8437,10 +8437,6 @@ main {
 
 #map {
   height: 300px;
-}
-@media screen and (min-width: 1030px) {
-  #map {
-    margin-bottom: 40px;
-    overflow: hidden;
-  }
+  overflow: hidden;
+  margin-bottom: 40px;
 }
