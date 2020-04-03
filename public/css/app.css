@@ -8326,6 +8326,7 @@ main {
   justify-items: center;
   border: 1px solid #d4d4d5;
   border-radius: 30px;
+  overflow: hidden;
 }
 .main .card-body form .form_type-item {
   display: block;
@@ -8352,8 +8353,6 @@ main {
   background: black;
   height: 100%;
   width: 100%;
-  border-bottom-left-radius: 30px;
-  border-top-left-radius: 30px;
   overflow: hidden;
   display: flex;
   align-items: center;

@@ -298,6 +298,7 @@ main {
                 justify-items: center;
                 border: 1px solid $gray;
                 border-radius: 30px;
+                overflow: hidden;
 
                 &-item {
                     display: block;
@@ -328,8 +329,6 @@ main {
                     background: black;
                     height: 100%;
                     width: 100%;
-                    border-bottom-left-radius: 30px;
-                    border-top-left-radius: 30px;
                     overflow: hidden;
                     display: flex;
                     align-items: center;

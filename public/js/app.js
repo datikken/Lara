@@ -11099,31 +11099,52 @@ var ContactsFormController = function ContactsFormController() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var LoginFormController = function LoginFormController() {
-  _classCallCheck(this, LoginFormController);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  var wraps = document.querySelectorAll('.password_field');
-  wraps.forEach(function (el) {
-    console.log('wraps.forEac', el);
-    var span = el.querySelector('.password_field-label');
-    span.addEventListener('click', function () {
-      var input = el.querySelector('input');
-      var attr = input.getAttribute('type');
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-      if (attr === 'text') {
-        input.setAttribute('type', 'password');
-      } else {
-        input.setAttribute('type', 'text');
-      }
+var LoginFormController = /*#__PURE__*/function () {
+  _createClass(LoginFormController, [{
+    key: "_pickFaceType",
+    value: function _pickFaceType(etc) {
+      var inputs = document.querySelectorAll('.form_type-item');
+      var el = etc.currentTarget;
+      inputs.forEach(function (el) {
+        el.classList.remove('activeFormItem');
+        var faceInput = document.querySelector('[name="face"]');
+        var text = el.querySelector('.form_type-itemText_inner');
+        if (text) faceInput.setAttribute('value', '');
+      });
+      el.classList.add('activeFormItem');
+    }
+  }]);
 
-      console.warn(input);
+  function LoginFormController() {
+    _classCallCheck(this, LoginFormController);
+
+    var that = this;
+    var wraps = document.querySelectorAll('.password_field');
+    var formType = document.querySelectorAll('.form_type-item');
+    $('.form_type-item').on('click', function (e) {
+      that._pickFaceType(e);
     });
-  });
-};
+    wraps.forEach(function (el) {
+      var span = el.querySelector('.password_field-label');
+      span.addEventListener('click', function () {
+        var input = el.querySelector('input');
+        var attr = input.getAttribute('type');
+        input.setAttribute('type', 'text');
+      });
+    });
+  }
+
+  return LoginFormController;
+}();
 
 /* harmony default export */ __webpack_exports__["default"] = (LoginFormController);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -11145,8 +11166,8 @@ var LoginFormController = function LoginFormController() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/datikken/Downloads/Lara/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/datikken/Downloads/Lara/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/datikken/Sites/Lara/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/datikken/Sites/Lara/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

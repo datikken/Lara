@@ -38,7 +38,7 @@
                             <div class="form_type">
                                 <div class="form_type-item activeFormItem">
                                     <div class="form_type-itemText">
-                                        <span>Юр. лицо</span>
+                                        <span class="form_type-itemText_inner">Юр. лицо</span>
                                     </div>
                                 </div>
                                 <div class="form_type-item">

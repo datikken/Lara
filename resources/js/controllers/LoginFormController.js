@@ -1,28 +1,38 @@
 class LoginFormController {
+    _pickFaceType(etc) {
+        let inputs = document.querySelectorAll('.form_type-item');
+        let el = etc.currentTarget;
+
+        inputs.forEach((el) => {
+            el.classList.remove('activeFormItem');
+
+            let faceInput = document.querySelector('[name="face"]');
+            let text = el.querySelector('.form_type-itemText_inner');
+
+             if(text) faceInput.setAttribute('value', '');
+        });
+
+        el.classList.add('activeFormItem');
+    }
     constructor() {
+        let that = this;
         let wraps = document.querySelectorAll('.password_field');
+        let formType = document.querySelectorAll('.form_type-item');
 
-        wraps.forEach((el) => {
-            console.log('wraps.forEac', el);
-
-            let span = el.querySelector('.password_field-label');
-                span.addEventListener('click', function() {
-
-                    let input = el.querySelector('input');
-                    let attr = input.getAttribute('type');
-
-                    if(attr === 'text') {
-                        input.setAttribute('type', 'password');
-                    } else {
-                        input.setAttribute('type', 'text');
-                    }
-
-
-                   console.warn(input);
-                });
+        $('.form_type-item').on('click', function (e) {
+            that._pickFaceType(e)
         })
 
+        wraps.forEach((el) => {
+            let span = el.querySelector('.password_field-label');
 
+                span.addEventListener('click', function() {
+                    let input = el.querySelector('input')
+                    let attr = input.getAttribute('type')
+
+                    input.setAttribute('type', 'text')
+                });
+        })
     }
 }
 
