@@ -179,7 +179,6 @@
         width: 177px;
         height: 100px;
         margin: 0 auto;
-
         display: flex;
         align-items: center;
         justify-content: center;
@@ -189,10 +188,12 @@
         }
 
         img {
-          width: 137px;
+          width: 70px;
           display: block;
           @include breakpoint($medium) {
             width: 177px;
+            max-height: 160px;
+            object-fit: contain;
           }
         }
       }

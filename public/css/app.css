@@ -3860,12 +3860,15 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 .product_wrapper-item_image img {
-  width: 137px;
+  width: 70px;
   display: block;
 }
 @media screen and (min-width: 1030px) {
   .product_wrapper-item_image img {
     width: 177px;
+    max-height: 160px;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 .product_wrapper-item_overlay {
@@ -5819,6 +5822,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .cart_wrap-item_inner-table_row-col_img img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
 }
 .cart_wrap-item_inner-table_row-col_desc {
   flex-basis: 80%;

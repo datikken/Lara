@@ -26,7 +26,7 @@
                 <td>{{$product['price']}}</td>
                 <td>{{$product['type']}}</td>
                 <td>{{$product['description']}}</td>
-                <td>{{$product['image']}}</td>
+                <td><img src="{{ Storage::url('product_images/' . $product['image']) }} " alt=""></td>
                 <td>{{$product['created_at']}}</td>
                 <td>{{$product['updated_up']}}</td>
 
