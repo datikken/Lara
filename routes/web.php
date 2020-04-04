@@ -24,6 +24,7 @@ Route::get('product/AddToCart/{id}', ['uses' => 'ProductsController@addProductTo
     //Remove items from cart
 Route::get('product/deleteItemFromCart/{id}', ['uses' => 'ProductsController@deleteItemFromCart', 'as' => 'DeleteItemFromCart']);
 
+//Auth routes
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -32,3 +33,6 @@ Route::get('/hits', 'HitsController@index');
 Route::get('/about', 'AboutController@index');
 Route::get('/landing', 'LandingController@index',['as' => 'landing']);
 Route::get('/contacts', 'ContactsController@index');
+
+//Admin pannel
+Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts']);

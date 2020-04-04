@@ -6,10 +6,6 @@ let dropdown = document.querySelector('.menu_wrapper-item_menuText');
 let array = [document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary'),secondary, menu,dropdown];
 let search = document.querySelector('.menu_wrapper-item_search');
 
-// menu_wrapper-item_search search_width
-
-
-
 $(document).ready(function() {
     let state = false;
 
@@ -56,7 +52,6 @@ array.forEach((el) => {
     _handleChange(el);
 });
 
-//XXX
 $(secondary).hover(() => {
     $('.menu_wrapper-item-main_menu-item-text_secondary').add('as-visible');
 })
