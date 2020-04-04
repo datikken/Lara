@@ -20,8 +20,7 @@ class AdminProductsController extends Controller
         $product = Product::find($id);
         return view('admin.editProductForm', ['product' => $product]);
     }
-
-    //Display edit product image form
+    //Display edit product image
     public function editProductImageForm($id)
     {
         $product = Product::find($id);

@@ -13,8 +13,6 @@ class ProductsController extends Controller
 {
     public function index()
     {
-//        $products = DB::table('products')->get();
-
         $products = Product::all();
 
         return view('pages.catalog', compact("products"));
@@ -22,10 +20,6 @@ class ProductsController extends Controller
 
     public function addProductToCart(Request $request, $id)
     {
-//        $request->session()->forget('cart');
-//        $request->session()->flush();
-//
-
         $prevCart = $request->session()->get('cart');
 
         $cart = new Cart($prevCart);
@@ -33,8 +27,6 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $cart->addItem($id, $product);
         $request->session()->put('cart', $cart);
-
-//        dump($cart);
 
         return redirect()->route('allProducts');
     }
@@ -49,8 +41,6 @@ class ProductsController extends Controller
         } else {
             return view('layouts.cartProducts', ['cartItems' => $empty]);
         }
-
-//        return redirect()->route('allProducts');
     }
 
     public function deleteItemFromCart(Request $request, $id)

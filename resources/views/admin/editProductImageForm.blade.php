@@ -1,21 +1,24 @@
-<div class="table-responsive">
+@extends('layouts.admin')
 
-    @if($errors->any())
+@section('center')
+    <div class="table-responsive">
 
-        <div class="alert-danger alert">
-            <ul>
+        @if($errors->any())
 
-                <li>{!! print_r($errors->all()) !!}</li>
+            <div class="alert-danger alert">
+                <ul>
 
-            </ul>
-        </div>
-    @endif
+                    <li>{!! print_r($errors->all()) !!}</li>
 
-    <h3>Current Image</h3>
-    <div><img src="{{asset('storage')}}/{{$product['image']}}" width="100" height="100" style="max-height: 220px" alt=""/></div>
+                </ul>
+            </div>
+        @endif
+
+        <h3>Current Image</h3>
+        <div><img src="{{asset('storage')}}/{{$product['image']}}" width="100" height="100" style="max-height: 220px" alt=""/></div>
 
         <form action="/admin/updateImage/{{$product->id}}" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
+            {{ csrf_field() }}
 
             <div class="form-group">
                 <label for="description">Update image</label>
@@ -26,4 +29,7 @@
 
         </form>
 
-</div>
+    </div>
+
+
+@endsection

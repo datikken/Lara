@@ -38,7 +38,7 @@ Route::get('/contacts', 'ContactsController@index');
 Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts']);
 
 //Display Edit Product form
-Route::get('admin/editProductForm/{$id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);
+Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);
 
 //Display edit Product form
-Route::get('admin/editProductImageForm/{$id}', ['uses' => "AdminProductsController@editProductImageForm", 'as' => 'adminEditProductImageForm']);
+Route::get('admin/editProductImageForm/{id}', ['uses' => "AdminProductsController@editProductImageForm", 'as' => 'adminEditProductImageForm']);
