@@ -80,7 +80,7 @@
                     </li>
                     <li class="menu_Wrapper-item_secondary-item_list-item vip-item">
                         <img src="/images/menu/login.svg" alt="login" />
-                        <a href="/cabinet">
+                        <a href="/login">
                         <span class="menu_Wrapper-item_secondary-item_list-item-text">
                                         Личный кабинет
                                       </span>
