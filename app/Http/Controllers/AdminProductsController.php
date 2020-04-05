@@ -21,7 +21,6 @@ class AdminProductsController extends Controller
         } else {
             return view('admin.displayProducts', ['products' => $products]);
         }
-
     }
 
     //Display edit product form
@@ -91,7 +90,7 @@ class AdminProductsController extends Controller
         $type = $request->input('type');
         $price = $request->input('price');
 
-//        Validator::make( $request->all(), ['image' => 'max:5000'])->validate();
+        //Validator::make( $request->all(), ['image' => 'max:5000'])->validate();
         $ext = $request->file('image')->getClientOriginalExtension();
         $stringImageReFormat = str_replace(' ', '', $request->input('name'));
 
@@ -109,5 +108,18 @@ class AdminProductsController extends Controller
         } else {
             return 'Product was not created';
         }
+    }
+
+    public function deleteProduct($id) {
+        $product = Product::find($id);
+        $exists = Storage::disk('local')->exists('public/product_image/'.$product->image);
+
+        if($exists) {
+            Storage::delete('public/product_images'.$product->image);
+        }
+
+        Product::destroy($id);
+
+        return redirect()->route('adminDisplayProducts');
     }
 }

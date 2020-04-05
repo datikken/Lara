@@ -33,7 +33,7 @@
                 <td>
                     <a href="{{route('adminEditProductImageForm', ['id' => $product['id']]) }}" class="btn btn-outline-primary">Edit product image</a>
                     <a href="{{route('adminEditProductForm', ['id' => $product['id']]) }}" class="btn btn-outline-primary">Edit product</a>
-                    <a href="#" class="btn btn-danger">Remove</a>
+                    <a href="{{route('adminDeleteProduct', ['id' => $product['id']])}}" class="btn btn-danger">Remove</a>
                 </td>
             </tr>
             @endforeach
