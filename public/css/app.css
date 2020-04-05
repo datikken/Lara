@@ -5865,6 +5865,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
      object-fit: cover;
   height: 100%;
 }
+@media screen and (min-width: 1030px) {
+  .cart_wrap-item_inner-table_row-col_img img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
 .cart_wrap-item_inner-table_row-col_desc {
   flex-basis: 80%;
   margin-left: 30px;
