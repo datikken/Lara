@@ -203,12 +203,29 @@
                 margin:0;
               }
             }
+            .col_amount {
+              margin-bottom: 0!important;
+
+                span {
+                  display: none;
+                  @include breakpoint($medium) {
+                    display: block;
+                  }
+                }
+            }
 
             &-col {
               display: flex;
               align-items: center;
               position: relative;
               padding: 15px 10px;
+              justify-content: space-between;
+              margin-bottom:0;
+
+
+              @include breakpoint($medium) {
+                margin: 15px;
+              }
 
               //justify-content: space-between;
               //border-bottom: 1px solid $light_gray;
@@ -392,7 +409,7 @@
                 position: relative;
 
                 .remove_icon {
-                  display: block;
+                  display: none;
                   height: 15px;
                   width: 15px;
                   color: black;
@@ -403,6 +420,10 @@
                   background-size: cover;
                   background-repeat: no-repeat;
                   background-position: center;
+
+                  @include breakpoint($medium) {
+                    display: block;
+                  }
                 }
 
                   img {

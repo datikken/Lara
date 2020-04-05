@@ -43,7 +43,7 @@
 
             <div class="cart_wrap-item_inner-table_row-col_btns-btn" style="margin-right: 34px;">
 
-                <div class="cart_wrap-item_inner-table_row-col" style="margin-bottom: 15px;">
+                <div class="cart_wrap-item_inner-table_row-col col_amount" style="margin-bottom: 15px;">
                     <span>Количество (шт)</span>
                 </div>
 
