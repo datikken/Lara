@@ -54,6 +54,10 @@ a:hover {
   .menu_wrapper-item_search_input {
     width: 100%!important;
 
+    form {
+      margin: 0;
+    }
+
     input {
       width: 100%!important;
     }

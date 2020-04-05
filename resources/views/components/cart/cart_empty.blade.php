@@ -23,25 +23,28 @@
     </div>
     <div class="cart_wrap-item_inner-table_row-col">
         <div class="cart_wrap-item_inner-table_row-col_price">
+
             <span class="desktop-hide">Цена (шт)</span>
             <span class="cart_wrap-item_inner-table_row-col_price-val-item">
                X
             </span>
             <img src="/images/icons/rub.svg" alt="currency"/>
+
+
         </div>
     </div>
     <div class="cart_wrap-item_inner-table_row-col">
         <span class="desktop-hide">Количество (шт)</span>
         <div class="cart_wrap-item_inner-table_row-col_btns">
-            <span class="cart_wrap-item_inner-table_row-col_btns-btn">
-                <span>
-                    X
-                </span>
-                <span class="cart_wrap-item_inner-table_row-col_btns-btn-items">
-                    <span>+</span>
-                    <span>-</span>
-                </span>
-            </span>
+            <div class="cart_wrap-item_inner-table_row-col_btns-btn">
+                {{--<span>--}}
+                    {{--X--}}
+                {{--</span>--}}
+                {{--<span class="cart_wrap-item_inner-table_row-col_btns-btn-items">--}}
+                    {{--<span>+</span>--}}
+                    {{--<span>-</span>--}}
+                {{--</span>--}}
+            </div>
         </div>
     </div>
     <div class="cart_wrap-item_inner-table_row-col">

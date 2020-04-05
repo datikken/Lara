@@ -197,7 +197,7 @@
     <div class="menu_wrapper-item">
         <div class="menu_wrapper-item_search">
         <div class="menu_wrapper-item_search_input">
-            <form action="search" method="get">
+            <form action="search" method="get" style="margin-bottom: 0;">
                 <input
                         type="search"
                         name="searchText"
