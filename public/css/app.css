@@ -8087,6 +8087,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border: 1px solid #d4d4d5 !important;
 }
 
+.upload_file {
+  border: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }

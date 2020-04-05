@@ -31,8 +31,8 @@
                 <td>{{$product['updated_up']}}</td>
 
                 <td>
-                    <a href="{{route('adminEditProductImageForm', ['id' => $product['id']]) }}" class="btn btn-primary">Edit product image</a>
-                    <a href="{{route('adminEditProductForm', ['id' => $product['id']]) }}" class="btn btn-primary">Edit product</a>
+                    <a href="{{route('adminEditProductImageForm', ['id' => $product['id']]) }}" class="btn btn-outline-primary">Edit product image</a>
+                    <a href="{{route('adminEditProductForm', ['id' => $product['id']]) }}" class="btn btn-outline-primary">Edit product</a>
                     <a href="#" class="btn btn-danger">Remove</a>
                 </td>
             </tr>

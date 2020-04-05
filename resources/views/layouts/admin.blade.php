@@ -18,6 +18,7 @@
     <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
     <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/app.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -59,6 +60,7 @@
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
+
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link active" href="#">--}}
                             {{--<span data-feather="home"></span>--}}
@@ -71,12 +73,15 @@
                             {{--Orders--}}
                         {{--</a>--}}
                     {{--</li>--}}
+
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <span data-feather="shopping-cart"></span>
                             Products
                         </a>
+                        <a style="float: right;" href="{{route('adminCreateProductForm')}}" class="btn btn-outline-primary">Add</a>
                     </li>
+
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link" href="#">--}}
                             {{--<span data-feather="users"></span>--}}
@@ -95,6 +100,7 @@
                             {{--Integrations--}}
                         {{--</a>--}}
                     {{--</li>--}}
+
                 </ul>
 
                 {{--<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">--}}
