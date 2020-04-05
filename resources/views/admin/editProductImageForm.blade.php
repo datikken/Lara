@@ -16,14 +16,16 @@
 
         <h3>Current Image</h3>
 
-        <div><img src=" {{ Storage::url('product_images/' . $product['image']) }}"
+        <div>
+            <img src=" {{ Storage::url('product_images/' . $product['image']) }}"
                   width="200"
                   height="200"
                   style="max-height: 220px;
                   object-fit: cover;"
-                  alt=""/></div>
-            <br>
-        <form action="/admin/updateImage/{{$product->id}}" method="post" enctype="multipart/form-data">
+                  alt=""/>
+        </div>
+        <br>
+        <form action="/admin/updateProductImage/{{$product->id}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
 
             <div class="form-group">
