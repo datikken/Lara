@@ -69,7 +69,7 @@ class AdminProductsController extends Controller
     {
         $name = $request->input('name');
         $type = $request->input('type');
-        $price = $request->input('price');
+        $price = preg_replace('/[^0-9.]/', '', $request->input('price'));
 
         $updateArr = array('name' => $name, 'type' => $type, 'price' => $price);
 

@@ -35,7 +35,7 @@ Route::get('/landing', 'LandingController@index',['as' => 'landing']);
 Route::get('/contacts', 'ContactsController@index');
 
 //Admin pannel
-Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts']);
+Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts'])->middleware('restrictToAdmin');
 //Display Edit Product form
 Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);
 
@@ -55,3 +55,7 @@ Route::get('admin/createProductForm', ['uses' => "AdminProductsController@create
 
 //Delete product
 Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
+
+Route::get('/testStorage', function() {
+    return "<img src=".Storage::url('product_images/product1.png').">";
+});
