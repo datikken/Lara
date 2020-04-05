@@ -153,10 +153,12 @@
         &-table {
           border-top: 1px solid $light_gray;
 
-          @include breakpoint($phone) {
+          @include breakpoint($medium) {
             border-bottom: 1px solid $yellow;
             margin-bottom: 40px;
+            padding-bottom: 20px;
           }
+
           &_row {
             display: flex;
             flex-direction: column;
@@ -165,6 +167,7 @@
 
             @include breakpoint($phone) {
               padding: 10px;
+              display: block;
             }
 
             &_heading {
@@ -180,7 +183,7 @@
               color: $black;
             }
 
-            @include breakpoint($phone) {
+            @include breakpoint($medium) {
               flex-direction: row;
               margin: 0;
               padding: 0;
@@ -190,23 +193,28 @@
             }
 
             &:first-child {
-              display: none;
               @include breakpoint($phone) {
                 display: flex;
+                margin-bottom: 0;
               }
             }
 
             &:nth-child(2) {
               margin-top: 30px;
+              display: none;
 
-              @include breakpoint($phone) {
+              @include breakpoint($medium) {
+                display: flex;
                 margin:0;
+                margin-top: 10px;
               }
             }
             .col_amount {
+              display: none;
               margin-bottom: 0!important;
 
               @include breakpoint($medium) {
+                display: block;
                 margin-bottom: 15px!important;
               }
 
@@ -218,6 +226,10 @@
                 }
             }
 
+            .product_delete {
+
+            }
+
             &-col {
               display: flex;
               align-items: center;
@@ -225,6 +237,13 @@
               padding: 15px 10px;
               justify-content: space-between;
               margin-bottom:0;
+
+              &:nth-child(1) {
+                padding-top: 35px;
+                @include  breakpoint($medium) {
+                  padding-top: 0;
+                }
+              }
 
 
               @include breakpoint($medium) {
@@ -290,6 +309,16 @@
                 letter-spacing: 0.02em;
                 text-transform: uppercase;
                 color: $dblack;
+
+                a {
+                  height: 15px;
+                  width: 15px;
+                  display: block;
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: cover;
+
+                }
               }
               &_btns {
                 border-radius: 30px;
@@ -316,7 +345,11 @@
                     border: 1px solid $light_gray;
                     border-radius: 30px;
                     align-items: center;
-                    margin-bottom: 29px;
+
+                    @include breakpoint($medium) {
+                      margin-bottom: 29px;
+                    }
+
 
                     &_minus, &_quantity, &_plus {
                       height: 100%;

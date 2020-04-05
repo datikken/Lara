@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <div class="cart_wrap-item_inner-table_row">
+            <div class="cart_wrap-item_inner-table_row cart_table-headings">
                 <div class="cart_wrap-item_inner-table_row-col">
                     <span class="cart_wrap-item_inner-table_row-col-heading">Картридж</span>
                 </div>

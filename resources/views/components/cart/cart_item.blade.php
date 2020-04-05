@@ -43,7 +43,7 @@
 
             <div class="cart_wrap-item_inner-table_row-col_btns-btn" style="margin-right: 34px;">
 
-                <div class="cart_wrap-item_inner-table_row-col col_amount" style="margin-bottom: 15px;">
+                <div class="cart_wrap-item_inner-table_row-col col_amount">
                     <span>Количество (шт)</span>
                 </div>
 
@@ -71,6 +71,15 @@
             <span>
                 {{$cartItem['totalprice']}}
             </span>
+        </div>
+    </div>
+
+    <div class="desktop-hide">
+        <div class="cart_wrap-item_inner-table_row-col product_delete" style="padding-top: 15px;">
+            <span class="desktop-hide"> Удалить товар </span>
+            <div class="cart_wrap-item_inner-table_row-col_total">
+                <a href="{{route('DeleteItemFromCart', ['id' => $cartItem['data']['id']])}}" class="remove_icon" style="background-image: url('/images/unnecessary/cart_close.svg')"></a>
+            </div>
         </div>
     </div>
 

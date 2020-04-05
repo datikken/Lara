@@ -2,8 +2,12 @@
   display: grid;
   grid-template-columns: 1fr;
   position: relative;
+  margin-bottom: 100px;
+  margin-top: 16px;
 
-  @include breakpoint($phone) {
+  @include breakpoint($medium) {
+    margin-bottom: 0;
+    margin-top: 0;
     margin-left: 10px;
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -11,7 +15,11 @@
   .pagination_links {
     position: absolute;
     left: 50%;
-    bottom: -30px;
+    bottom: -50px;
+
+    @include breakpoint($medium) {
+      bottom: -20px;
+    }
 
     .pagination {
         list-style: none;

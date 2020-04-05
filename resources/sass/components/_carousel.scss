@@ -3,8 +3,13 @@
   height: 367px;
   max-width: 1170px;
   margin: 0 auto;
+
   @include breakpoint($phone) {
     height: 474px !important;
+  }
+
+  @include breakpoint($medium) {
+    margin-bottom: 50px;
   }
 }
 .owl-carousel {
