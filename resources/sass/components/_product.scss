@@ -1,9 +1,65 @@
 .products_grid {
   display: grid;
   grid-template-columns: 1fr;
+  position: relative;
+
   @include breakpoint($phone) {
     margin-left: 10px;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .pagination_links {
+    position: absolute;
+    left: 50%;
+    bottom: -30px;
+
+    .pagination {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+
+        .active {
+          background: $yellow;
+          border: 1px solid $yellow!important;
+          pointer-events: none;
+        }
+  
+        .page-item {
+          height: 30px;
+          width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid $gray;
+          border-radius: 50%;
+          margin: 0 10px 0 0;
+
+          &:last-child, &:first-child {
+            margin: 0;
+          }
+          
+          span {
+            display: block;
+            font-family: $font;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            color: #000000;
+          }
+        }
+
+        li {
+          &:first-child, &:last-child {
+            display: none;
+          }
+        }
+
+
+    }
   }
 }
 

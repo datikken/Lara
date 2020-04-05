@@ -10,4 +10,6 @@
 
 @endforeach
 
-{{ $products->links() }}
+<div class="pagination_links">
+    {{ $products->links() }}
+</div>
