@@ -5846,10 +5846,14 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #292930;
 }
 .cart_wrap-item_inner-table_row-col_btns-btn-items_minus {
+  color: #40404c;
   border-right: 1px solid #e9e9ea;
 }
 .cart_wrap-item_inner-table_row-col_btns-btn-items_quantity {
   border-right: 1px solid #e9e9ea;
+}
+.cart_wrap-item_inner-table_row-col_btns-btn-items_plus {
+  color: #40404c;
 }
 .cart_wrap-item_inner-table_row-col_btns-btn:first-child {
   font-family: "Montserrat";

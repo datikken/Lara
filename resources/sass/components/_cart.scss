@@ -315,13 +315,16 @@
                     }
 
                     &_minus {
+                      color: $black;
                       border-right: 1px solid $light_gray;
                     }
                     &_quantity {
                       border-right: 1px solid $light_gray;
                     }
 
-                    &_plus {}
+                    &_plus {
+                      color: $black;
+                    }
                   }
                   &:first-child {
                     font-family: $font;
