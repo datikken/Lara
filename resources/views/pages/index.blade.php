@@ -69,7 +69,8 @@
         @include('components.banner.banner')
     </div>
 
-        @include('components.owl.owl')
+
+    @include('components.owl.owl')
 
     @endsection
 </body>

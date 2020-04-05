@@ -19,5 +19,6 @@
 
     @yield('center')
 
+    @include('components.subscriptions.subscriptions')
     @include('layouts.footer')
 </body>
