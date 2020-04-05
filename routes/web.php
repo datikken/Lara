@@ -10,9 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/',['uses' => 'ProductsController@index', 'as' => 'allProducts']);
-
+Route::get('/', function () {
+    return view('pages.index');
+});
 //Catalog
 Route::get('catalog', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
 
