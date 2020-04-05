@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c87618a9-9379-4ba4-9501-9c5546ef7e31" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/_product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_product.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/_cart.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_contacts.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/sass/components/_contacts.scss">
+      <file leaf-file-name="_cart.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/sass/components/_cart.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+            <state relative-caret-position="331">
+              <caret line="302" column="40" selection-start-line="302" selection-start-column="40" selection-end-line="302" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -48,7 +46,6 @@
       <find>search_input</find>
       <find>cart_wrap-item_inner-table_row-col_btns-btn</find>
       <find>Удалить товар</find>
-      <find>btn</find>
       <find>col</find>
       <find>val</find>
       <find>_price</find>
@@ -71,6 +68,7 @@
       <find>cart_wrap-item_inner-table_row-col_img</find>
       <find>img</find>
       <find>grid</find>
+      <find>btn</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -149,10 +147,10 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Product.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
-        <option value="$PROJECT_DIR$/resources/sass/components/_cart.scss" />
         <option value="$PROJECT_DIR$/resources/views/components/cart/cart_item.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/components/products_grid/products_grid.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/components/_product.scss" />
+        <option value="$PROJECT_DIR$/resources/sass/components/_cart.scss" />
       </list>
     </option>
   </component>
@@ -448,13 +446,13 @@
       <workItem from="1586032666789" duration="3876000" />
       <workItem from="1586078703720" duration="3058000" />
       <workItem from="1586083347331" duration="17792000" />
-      <workItem from="1586105804807" duration="2791000" />
+      <workItem from="1586105804807" duration="3055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="199532000" />
+    <option name="totallyTimeSpent" value="199796000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="6" />
@@ -466,7 +464,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32984293" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.46335077" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7617801" visible="true" weight="0.21111111" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7617801" visible="true" weight="0.21111111" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
@@ -848,13 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/_cart.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="395" column="35" selection-start-line="395" selection-start-column="35" selection-end-line="395" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/components/products_grid/products_grid.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -887,6 +878,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/_cart.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="302" column="40" selection-start-line="302" selection-start-column="40" selection-end-line="302" selection-end-column="40" />
         </state>
       </provider>
     </entry>

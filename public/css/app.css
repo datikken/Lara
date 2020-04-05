@@ -5824,6 +5824,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border: 1px solid #e9e9ea;
   border-radius: 30px;
   align-items: center;
+  margin-bottom: 29px;
 }
 .cart_wrap-item_inner-table_row-col_btns-btn-items_minus, .cart_wrap-item_inner-table_row-col_btns-btn-items_quantity, .cart_wrap-item_inner-table_row-col_btns-btn-items_plus {
   height: 100%;
