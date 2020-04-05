@@ -8,7 +8,7 @@ use App\Product;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\facades\File;
+use Illuminate\Support\Facades\File;
 
 class AdminProductsController extends Controller
 {
