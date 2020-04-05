@@ -15,7 +15,11 @@ Route::get('/', function () {
     return view('pages.index');
 });
 
+//Catalog
 Route::get('catalog', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
+
+//Search
+Route::get('search', ['uses'=> "ProductsController@search", 'as' => 'searchProducts']);
 
 //Cart
 Route::get('cart', ['uses' => "ProductsController@showCart", 'as' => 'cartItems']);
@@ -39,14 +43,12 @@ Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' =>
 //Display Edit Product form
 Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);
 
-
 //Display edit Product form
 Route::get('admin/editProductImageForm/{id}', ['uses' => "AdminProductsController@editProductImageForm", 'as' => 'adminEditProductImageForm']);
     //update product image
     Route::post('admin/updateProductImage/{id}', ['uses' => 'AdminProductsController@updateProductImage', 'as' => 'adminUpdateProductImage']);
     //update product fields
     Route::post('admin/updateProduct/{id}', ['uses' => 'AdminProductsController@updateProduct', 'as' => 'adminUpdateProduct']);
-
 
 //Display create Product form
 Route::get('admin/createProductForm', ['uses' => "AdminProductsController@createProductForm", 'as' => 'adminCreateProductForm']);
@@ -55,6 +57,7 @@ Route::get('admin/createProductForm', ['uses' => "AdminProductsController@create
 
 //Delete product
 Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
+
 
 Route::get('/testStorage', function() {
     return "<img src=".Storage::url('product_images/product1.png').">";

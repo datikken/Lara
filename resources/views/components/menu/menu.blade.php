@@ -197,11 +197,13 @@
     <div class="menu_wrapper-item">
         <div class="menu_wrapper-item_search">
         <div class="menu_wrapper-item_search_input">
-            <input
-                type="search"
-                name=""
-                placeholder="Введите модель принтера или артикул картриджа"
-            />
+            <form action="search" method="get">
+                <input
+                        type="search"
+                        name="searchText"
+                        placeholder="Введите модель принтера или артикул картриджа"
+                />
+            </form>
         </div>
         <div class="menu_wrapper-item_search_button">
         <img src="/images/menu/zoomin.svg" alt="icon"/>
