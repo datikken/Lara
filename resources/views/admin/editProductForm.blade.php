@@ -3,7 +3,7 @@
 @section('center')
 
     <div class="table-responsive">
-        <form action="/admin/update/{{$product->id}}" method="post">
+        <form action="/admin/updateProduct/{{$product->id}}" method="post">
 
             {{csrf_field()}}
 
@@ -21,6 +21,8 @@
                 <label for="type">Цена</label>
                 <input type="text" class="form-control" name="price" id="price" placeholder="Product Price" value="{{$product->price}}" required>
             </div>
+
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 
         </form>
     </div>
