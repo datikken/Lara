@@ -6,7 +6,9 @@
             <span>Картридж</span>
         </div>
         <div class="cart_wrap-item_inner-table_row-col_img">
-                <img src="{{Storage::disk('local')->url('product_images/' . $cartItem['data']['image'])}}" alt="product"/>
+
+            <a href="{{route('DeleteItemFromCart', ['id' => $cartItem['data']['id']])}}" class="remove_icon" style="background-image: url('/images/unnecessary/cart_close.svg')"></a>
+            <img src="{{Storage::disk('local')->url('product_images/' . $cartItem['data']['image'])}}" alt="product"/>
         </div>
         <div class="cart_wrap-item_inner-table_row-col_desc">
 
@@ -30,7 +32,7 @@
                 <span class="cart_wrap-item_inner-table_row-col_price-val-item">
                     {{$cartItem['price']}}
                 </span>
-                <img src="/images/icons/rub.svg" alt="currency"/>
+                <img src="/images/icons/rub.svg" alt="currency" />
             </div>
 
         </div>
@@ -73,7 +75,7 @@
     </div>
 
     {{--<div class="cart_wrap-item_inner-table_row-col">--}}
-        {{--<a class="" href={{route('DeleteItemFromCart', ['id' => $cartItem['data']['id']])}}>Удалить товар</a>--}}
+        {{--<a class="" href=>Удалить товар</a>--}}
         {{--<div class="cart_wrap-item_inner-table_row-col_delete"></div>--}}
     {{--</div>--}}
 

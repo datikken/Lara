@@ -245,7 +245,11 @@
                     @endphp
                 </span>
         </div>
-        <div class="menu_wrapper-item_cart_value">56834</div>
+        <div class="menu_wrapper-item_cart_value">
+            @php
+                if(Session::get('cart')) { echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalPrice); }
+            @endphp
+        </div>
         <div class="menu_wrapper-item_cart_currency">
             <img src="/images/menu/rub.svg" alt="rub"/>
         </div>

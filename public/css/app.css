@@ -725,8 +725,7 @@ input::placeholder, textarea::placeholder {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  margin: 0px 0 0 3px;
-  height: 10px;
+  margin: 8px 0 0 5px;
   width: 8px;
   display: none;
 }
@@ -5510,11 +5509,15 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 10px;
 }
 
+@media screen and (min-width: 1030px) {
+  .cart {
+    margin-bottom: 300px;
+  }
+}
 .cart_wrap {
   max-width: 1170px;
   margin: 0 auto;
   min-height: 600px;
-  overflow: hidden;
 }
 @media screen and (min-width: 600px) {
   .cart_wrap {
@@ -5681,11 +5684,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cart_wrap-item_inner-table {
   border-top: 1px solid #e9e9ea;
 }
-@media screen and (min-width: 1030px) {
-  .cart_wrap-item_inner-table {
-    padding-bottom: 20px;
-  }
-}
 @media screen and (min-width: 600px) {
   .cart_wrap-item_inner-table {
     border-bottom: 1px solid #fdd935;
@@ -5721,6 +5719,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     margin: 0;
     padding: 0;
     border: none;
+    display: flex;
+    margin: 20px 0;
   }
 }
 .cart_wrap-item_inner-table_row:first-child {
@@ -5729,7 +5729,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 @media screen and (min-width: 600px) {
   .cart_wrap-item_inner-table_row:first-child {
     display: flex;
-    margin: 20px 0;
   }
 }
 .cart_wrap-item_inner-table_row:nth-child(2) {
@@ -5737,7 +5736,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 600px) {
   .cart_wrap-item_inner-table_row:nth-child(2) {
-    margin-top: 0;
+    margin: 0;
   }
 }
 .cart_wrap-item_inner-table_row-col {
@@ -5908,6 +5907,20 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   height: 100px;
   display: flex;
   align-items: center;
+  position: relative;
+}
+.cart_wrap-item_inner-table_row-col_img .remove_icon {
+  display: block;
+  height: 15px;
+  width: 15px;
+  color: black;
+  position: absolute;
+  left: -2rem;
+  cursor: pointer;
+  background-image: url("/img/unnecessary/cart_close.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .cart_wrap-item_inner-table_row-col_img img {
   width: 100%;
