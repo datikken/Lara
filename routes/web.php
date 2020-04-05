@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/',['uses' => 'ProductsController@index', 'as' => 'allProducts']);
 
 //Catalog
 Route::get('catalog', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
