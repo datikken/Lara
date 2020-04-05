@@ -9,3 +9,5 @@
 )
 
 @endforeach
+
+{{ $products->links() }}
