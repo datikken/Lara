@@ -31,7 +31,7 @@
                     <span class="product_wrapper-item_head-item">IC-HLOR70A</span>
                 </div>
                 <div class="product_wrapper-item_price">
-                    <span class="product_wrapper-item_price-item">29900</span>
+                    <span class="product_wrapper-item_price-item">{{$price}}</span>
                         <img src="/images/icons/rub.svg" alt="cur" />
                 </div>
 

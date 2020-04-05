@@ -11,7 +11,7 @@
             </div>
         @endif
 
-            <h2>Create new product</h2>
+            <h2>Добавить новый продукт</h2>
 
             <form action="/admin/sendCreateProductForm" method="post" enctype="multipart/form-data">
 

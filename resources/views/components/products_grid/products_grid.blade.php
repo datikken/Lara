@@ -4,7 +4,8 @@
     [
         'id' => $product->id,
         'name' => $product->name,
-        'image' => $product->image
+        'image' => $product->image,
+        'price' => $product->price
     ]
 )
 
