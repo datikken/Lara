@@ -8,6 +8,7 @@ use App\Product;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\facades\File;
 
 class AdminProductsController extends Controller
 {
@@ -55,7 +56,6 @@ class AdminProductsController extends Controller
 
             $arrToUpdate = array('image' => $product->image);
 
-
             DB::table('products')->where('id', $id)->update($arrToUpdate);
 
             return redirect()->route('adminDisplayProducts');
@@ -84,4 +84,30 @@ class AdminProductsController extends Controller
         return view('admin.createProduct');
     }
 
+    public function sendCreateProductForm(Request $request)
+    {
+        $name = $request->input('name');
+        $description = $request->input('description');
+        $type = $request->input('type');
+        $price = $request->input('price');
+
+//        Validator::make( $request->all(), ['image' => 'max:5000'])->validate();
+        $ext = $request->file('image')->getClientOriginalExtension();
+        $stringImageReFormat = str_replace(' ', '', $request->input('name'));
+
+        $imageName = $stringImageReFormat . '.' . $ext;
+
+        $imageEncoded = File::get($request->image);
+        Storage::disk('local')->put('public/product_images/' . $imageName, $imageEncoded);
+
+        $newProductArray = array('name' => $name, 'description' => $description,'image'=>$imageName, 'type' => $type,'price' => $price);
+
+        $created = DB::table('products')->insert($newProductArray);
+
+        if($created) {
+            return redirect()->route('adminDisplayProducts');
+        } else {
+            return 'Product was not created';
+        }
+    }
 }

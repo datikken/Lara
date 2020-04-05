@@ -13,7 +13,7 @@
 
             <h2>Create new product</h2>
 
-            <form action="/admin/insert" method="post" enctype="multipart/form-data">
+            <form action="/admin/sendCreateProductForm" method="post" enctype="multipart/form-data">
 
                 {{ csrf_field() }}
 
@@ -28,18 +28,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="description">Изображение</label>
-                    <input type="file" class="form-control upload_file" name="image" id="image" required>
-                </div>
-
-                <div class="form-group">
                     <label for="type">Тип</label>
-                    <input type="file" class="form-control upload_file" name="type" id="type" required>
+                    <input type="text" class="form-control" name="type" id="type" required>
                 </div>
 
                 <div class="form-group">
                     <label for="price">Цена</label>
-                    <input type="file" class="form-control upload_file" name="price" id="price" required>
+                    <input type="text" class="form-control" name="price" id="price" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Изображение</label>
+                    <input type="file" class="form-control upload_file" name="image" id="image" required>
                 </div>
 
                 <button type="submit" name="submit" class="btn btn-primary">Отправить</button>
