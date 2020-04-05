@@ -206,6 +206,10 @@
             .col_amount {
               margin-bottom: 0!important;
 
+              @include breakpoint($medium) {
+                margin-bottom: 15px!important;
+              }
+
                 span {
                   display: none;
                   @include breakpoint($medium) {

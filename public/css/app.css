@@ -5744,6 +5744,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cart_wrap-item_inner-table_row .col_amount {
   margin-bottom: 0 !important;
 }
+@media screen and (min-width: 1030px) {
+  .cart_wrap-item_inner-table_row .col_amount {
+    margin-bottom: 15px !important;
+  }
+}
 .cart_wrap-item_inner-table_row .col_amount span {
   display: none;
 }
