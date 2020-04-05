@@ -51,6 +51,10 @@ a:hover {
   width: calc(100% - 90px)!important;
   z-index: 99;
 
+  @include breakpoint($medium) {
+    min-width: 506px!important;
+  }
+
   .menu_wrapper-item_search_input {
     width: 100%!important;
 

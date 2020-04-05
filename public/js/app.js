@@ -37065,6 +37065,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Map */ "./resources/js/components/Map.js");
 /* harmony import */ var _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./controllers/ContactsFormController */ "./resources/js/controllers/ContactsFormController.js");
 /* harmony import */ var _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./controllers/LoginFormController */ "./resources/js/controllers/LoginFormController.js");
+/* harmony import */ var _controllers_SearchController__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/SearchController */ "./resources/js/controllers/SearchController.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -37082,9 +37083,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
 
 
 
+
 var a = new _components_Logger__WEBPACK_IMPORTED_MODULE_0__["default"](); // let form = new Form();
 
 var form = new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
+var search = new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_8__["default"]();
 $(document).ready(function () {
   var domEl = $('.ymap-coords');
   var login = new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_7__["default"]();
@@ -37587,6 +37590,48 @@ var LoginFormController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (LoginFormController);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/js/controllers/SearchController.js":
+/*!******************************************************!*\
+  !*** ./resources/js/controllers/SearchController.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var SearchController = /*#__PURE__*/function () {
+  _createClass(SearchController, [{
+    key: "setListener",
+    value: function setListener(search) {
+      $(search).on('focus keypress', function () {
+        var val = $(search).val();
+        console.log(val);
+      });
+    }
+  }]);
+
+  function SearchController() {
+    _classCallCheck(this, SearchController);
+
+    var el = document.querySelector('.menu_wrapper-item_search_input');
+    var search = el.querySelector('input');
+    this.setListener(search);
+  }
+
+  return SearchController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (SearchController);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

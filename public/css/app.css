@@ -115,6 +115,11 @@ a:hover {
   width: calc(100% - 90px) !important;
   z-index: 99;
 }
+@media screen and (min-width: 1030px) {
+  .search_width {
+    min-width: 506px !important;
+  }
+}
 .search_width .menu_wrapper-item_search_input {
   width: 100% !important;
 }
