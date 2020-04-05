@@ -5550,6 +5550,19 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border-bottom: 1px solid #e9e9ea;
   margin-bottom: 20px;
 }
+.cart_wrap-crumb .active {
+  position: relative;
+}
+.cart_wrap-crumb .active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #bb3cfd;
+  bottom: -22px;
+  left: -10px;
+}
 @media screen and (min-width: 600px) {
   .cart_wrap-crumb {
     padding: 20px 0;
@@ -5716,6 +5729,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .cart_wrap-item_inner-table_row {
+    flex-direction: row;
     padding: 10px;
     display: block;
     margin-bottom: 0 !important;
@@ -5743,7 +5757,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     margin: 20px 0;
   }
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1030px) {
   .cart_wrap-item_inner-table_row:first-child {
     display: flex;
     margin-bottom: 0;
@@ -5807,7 +5821,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cart_wrap-item_inner-table_row-col:last-child {
   background: #e9e9ea;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1030px) {
   .cart_wrap-item_inner-table_row-col:last-child {
     background: initial;
   }
@@ -5821,7 +5835,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-position: center;
   cursor: pointer;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1030px) {
   .cart_wrap-item_inner-table_row-col {
     padding: 0 0 15px 0;
   }
@@ -5834,7 +5848,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   letter-spacing: 0.02em;
   color: #40404c;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1030px) {
   .cart_wrap-item_inner-table_row-col {
     margin: 20px 0 0;
     flex-basis: 20%;
@@ -6019,7 +6033,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   flex-basis: 80%;
   margin-left: 30px;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1030px) {
   .cart_wrap-item_inner-table_row-col_desc:first-child {
     flex-basis: 60%;
   }
@@ -6063,7 +6077,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 20px;
   display: none;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1030px) {
   .cart_wrap-item_inner-heading {
     display: block;
   }

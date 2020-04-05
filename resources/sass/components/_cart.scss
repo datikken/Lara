@@ -20,6 +20,21 @@
       border-bottom: 1px solid $light_gray;
       margin-bottom: 20px;
 
+      .active {
+        position: relative;
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 4px;
+          width: 100%;
+          background: $purple;
+          bottom: -22px;
+          left: -10px;
+        }
+      }
+
       @include breakpoint($phone) {
         padding: 20px 0;
         width: initial;
@@ -166,6 +181,7 @@
             margin: 15px 15px 30px 15px;
 
             @include breakpoint($medium) {
+              flex-direction: row;
               padding: 10px;
               display: block;
               margin-bottom: 0!important;
@@ -194,7 +210,7 @@
             }
 
             &:first-child {
-              @include breakpoint($phone) {
+              @include breakpoint($medium) {
                 display: flex;
                 margin-bottom: 0;
               }
@@ -262,7 +278,7 @@
                 background: $light_gray;
                 //padding: 20px 10px;
 
-                @include breakpoint($phone) {
+                @include breakpoint($medium) {
                   background: initial;
                 }
               }
@@ -275,7 +291,7 @@
                 cursor: pointer;
               }
 
-              @include breakpoint($phone) {
+              @include breakpoint($medium) {
                 padding: 0 0 15px 0;
               }
 
@@ -288,7 +304,7 @@
                 color: $black;
               }
 
-              @include breakpoint($phone) {
+              @include breakpoint($medium) {
                 margin: 20px 0 0;
                 flex-basis: 20%;
                 justify-content: initial;
@@ -484,7 +500,7 @@
                 margin-left: 30px;
 
                 &:first-child {
-                  @include breakpoint($phone) {
+                  @include breakpoint($medium) {
                     flex-basis: 60%;
                   }
                 }
@@ -532,7 +548,7 @@
           color: $dblack;
           margin-bottom: 20px;
           display: none;
-          @include breakpoint($phone) {
+          @include breakpoint($medium) {
             display: block;
           }
         }
