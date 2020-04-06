@@ -52,6 +52,7 @@
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
         cursor: pointer;
+        outline: none;
 
         @include  breakpoint($medium) {
           width: 100px;
@@ -63,8 +64,8 @@
           line-height: 14px;
           letter-spacing: 0.02em;
           text-transform: uppercase;
-          color: $white;
-          padding: 0 10px;
+          color: #fff;
+          padding: 2px 0 0 5px
         }
       }
       input {

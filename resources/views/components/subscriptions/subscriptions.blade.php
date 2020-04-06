@@ -7,8 +7,8 @@
             @csrf
             <input type="text" name="email" placeholder="Введите свою почту">
 
-            <button type="submit" class="btn btn-primary" class="subscription_wrapper-item_button">
-                {{ __('Отправить') }}
+            <button type="submit" class="subscription_wrapper-item_button">
+                <span>{{ __('Отправить') }}</span>
             </button>
         </form>
     </div>
