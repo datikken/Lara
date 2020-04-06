@@ -138,8 +138,8 @@ class ProductsController extends Controller
 
             Session::forget('cart');
             Session::flush();
-//            return redirect()->route('allProducts')->withsuccess('thanks for choosing us');
 
+            return redirect()->route('allProducts')->withsuccess('thanks for choosing us');
         } else {
             return redirect()->route('allProducts');
         }
