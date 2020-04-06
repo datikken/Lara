@@ -1135,7 +1135,7 @@ input::placeholder, textarea::placeholder {
 .subscription_wrapper-item_button {
   position: absolute;
   right: -3.2rem;
-  top: 50%;
+  top: 52%;
   transform: translate(-50%, -50%);
   background: #40404c;
   height: 100%;
