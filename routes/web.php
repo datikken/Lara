@@ -65,7 +65,8 @@ Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@delete
 //Create order
 Route::get('product/createOrder/', ['uses' => 'ProductsController@createOrder', 'as'=> 'createOrder']);
 
-
+//Email Subscriptions
+Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'subscribe']);
 
 //Test file storage
 Route::get('/testStorage', function() {

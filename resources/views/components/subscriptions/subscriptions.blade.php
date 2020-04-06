@@ -3,12 +3,13 @@
         <div class="subscription_wrapper-item">
             <span class="subscription_wrapper-item_heading">Хотите быть в курсе новостей из мира картриджей?</span>
         </div>
-        <div class="subscription_wrapper-item">
-            <input type="text" name="text" placeholder="Введите свою почту">
+        <form class="subscription_wrapper-item" method="POST" action="{{ route('subscribe') }}">
+            @csrf
+            <input type="text" name="email" placeholder="Введите свою почту">
 
-            <div class="subscription_wrapper-item_button">
-                <span>Отправить</span>
-            </div>
-        </div>
+            <button type="submit" class="btn btn-primary" class="subscription_wrapper-item_button">
+                {{ __('Отправить') }}
+            </button>
+        </form>
     </div>
 </div>
