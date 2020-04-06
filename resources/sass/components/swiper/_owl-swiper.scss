@@ -27,9 +27,6 @@
   }
 
     .swiper-container {
-      padding-top: 2.2rem;
-      height: 100%!important;
-
         .swiper-wrapper {
             .swiper-slide {
               max-width: 180px;
@@ -52,6 +49,10 @@
     }
 }
 .owl_swiper {
+    height: 450px!important;
+    overflow: hidden;
+    margin-bottom: 0;
+
   @include  breakpoint($medium) {
     padding-top: 20px;
   }

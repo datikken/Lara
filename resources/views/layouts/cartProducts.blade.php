@@ -67,7 +67,9 @@
                     </span>
                 </div>
                 <div class="cart_wrap-item_inner-total_button">
-                    <span class="cart_wrap-item_inner-total_button-item">оформить заказ</span>
+                    <a class="cart_wrap-item_inner-total_button-item" href="{{ route('createOrder') }}">
+                        оформить заказ
+                    </a>
                 </div>
             </div>
         @endif

@@ -21,4 +21,5 @@
 
     @include('components.subscriptions.subscriptions')
     @include('layouts.footer')
+    {{--@include('alert.success_cart');--}}
 </body>

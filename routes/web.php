@@ -61,6 +61,13 @@ Route::get('admin/createProductForm', ['uses' => "AdminProductsController@create
 Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
 
 
+//Orders
+//Create order
+Route::get('product/createOrder/', ['uses' => 'ProductsController@createOrder', 'as'=> 'createOrder']);
+
+
+
+//Test file storage
 Route::get('/testStorage', function() {
     return "<img src=".Storage::url('product_images/product1.png').">";
 });

@@ -6083,6 +6083,82 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 
+.cart_success_wrap {
+  width: 770px;
+  height: 330px !important;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  padding: 10% 2em;
+  box-sizing: border-box;
+  flex-direction: column;
+  color: #40404c;
+  background: #fff;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+  position: relative;
+}
+.cart_success_wrap:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -5px;
+  border-radius: inherit;
+  background: linear-gradient(to right, #D935FD, #3559FD);
+}
+.cart_success_wrap_item {
+  position: absolute;
+}
+.cart_success_wrap_item:first-child {
+  top: 54px;
+}
+.cart_success_wrap_item:nth-child(2) {
+  top: 87px;
+}
+.cart_success_wrap_item:nth-child(3) {
+  top: 148px;
+}
+.cart_success_wrap_item:last-child {
+  bottom: 40px;
+}
+.cart_success_wrap_item-heading h1 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+  margin: 0;
+}
+.cart_success_wrap_item-icon {
+  width: 57px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.cart_success_wrap_item-paragraph {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #292930;
+  width: 564px;
+  height: 60px;
+  text-align: center;
+}
+.cart_success_wrap_item-paragraph p {
+  text-align: center;
+  margin: 0;
+}
 @media screen and (min-width: 600px) {
   .sales_mob {
     display: none;
@@ -7410,10 +7486,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   transform: rotate(180deg);
   margin-right: 55px;
 }
-.owl-wrapper .swiper-container {
-  padding-top: 2.2rem;
-  height: 100% !important;
-}
 .owl-wrapper .swiper-container .swiper-wrapper .swiper-slide {
   max-width: 180px;
   display: flex;
@@ -7432,6 +7504,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 
+.owl_swiper {
+  height: 450px !important;
+  overflow: hidden;
+  margin-bottom: 0;
+}
 @media screen and (min-width: 1030px) {
   .owl_swiper {
     padding-top: 20px;
