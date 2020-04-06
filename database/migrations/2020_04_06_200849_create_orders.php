@@ -15,10 +15,10 @@ class CreateOrders extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('status');
             $table->date('date');
-            $table->date('status');
             $table->date('del date');
-            $table->date('price', 8, 2);
+            $table->text('price', 8, 2);
         });
     }
 

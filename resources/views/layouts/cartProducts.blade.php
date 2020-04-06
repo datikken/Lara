@@ -76,4 +76,6 @@
     </div>
 </div>
 
+@include('alert.success_cart')
+
 @include('layouts.footer')

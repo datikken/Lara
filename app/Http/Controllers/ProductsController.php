@@ -7,6 +7,7 @@ use App\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Includes\HelperString;
+use Illuminate\Support\Facades\DB;
 use stdClass;
 
 class ProductsController extends Controller
@@ -108,13 +109,14 @@ class ProductsController extends Controller
     {
         $cart = Session::get('cart');
 
+
         if($cart) {
             $date = date('Y-m-d H:i:s');
             $newOrderArray = array(
                 'status'=>'on_hold',
                 'date'=>$date,
-                'del_date' => $date,
-                'price' =>$cart->totalPrice
+                'del date' => $date,
+                'price' => $cart->totalPrice
             );
 
             $created_order = DB::table('orders')->insert($newOrderArray);
@@ -136,7 +138,7 @@ class ProductsController extends Controller
 
             Session::forget('cart');
             Session::flush();
-            return redirect()->route('allProducts')->withsuccess('thanks for choosing us');
+//            return redirect()->route('allProducts')->withsuccess('thanks for choosing us');
 
         } else {
             return redirect()->route('allProducts');
