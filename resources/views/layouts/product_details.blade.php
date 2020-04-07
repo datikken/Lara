@@ -16,10 +16,7 @@
 @extends('layouts.index')
 
 @section('center')
-
-        {{ $product }}
-
-        <h1>Product details</h1>
+    @include('components.product_details.products_details-item', ['product' => $product ]);
 @endsection
 
 </body>
