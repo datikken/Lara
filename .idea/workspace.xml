@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c87618a9-9379-4ba4-9501-9c5546ef7e31" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/sass/components/cart/_checkout-products.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/components/cart/_order_list.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/cart/order_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/cart/order_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/cartProducts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/cartProducts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/components/cart/_checkout-products.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/cart/_checkout-products.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/variables/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/variables/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/cart/checkoutProducts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/cart/checkoutProducts.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,35 +26,17 @@
       <file leaf-file-name="checkoutProducts.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/components/cart/checkoutProducts.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+            <state relative-caret-position="106">
+              <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cartProducts.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/cartProducts.blade.php">
+      <file leaf-file-name="_checkout-products.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/sass/components/cart/_checkout-products.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1582">
-              <caret line="79" column="42" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_order_list.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/sass/components/cart/_order_list.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order_list.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/components/cart/order_list.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="313">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
@@ -134,8 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/sass/admin/admin.scss" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_04_05_132858_add_admin_field.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/RestrictAccess.php" />
@@ -179,12 +157,14 @@
         <option value="$PROJECT_DIR$/resources/views/components/product_details/products_details-item.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/components/cart/checkoutProducts.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/cartProducts.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/components/cart/order_list.scss" />
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
         <option value="$PROJECT_DIR$/resources/views/components/cart/order_list.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/components/cart/_order_list.scss" />
+        <option value="$PROJECT_DIR$/resources/views/components/cart/checkoutProducts.blade.php" />
+        <option value="$PROJECT_DIR$/resources/sass/variables/_variables.scss" />
+        <option value="$PROJECT_DIR$/resources/sass/components/cart/_checkout-products.scss" />
       </list>
     </option>
   </component>
@@ -291,8 +271,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="203" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="838" />
   </component>
@@ -302,7 +282,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -359,6 +338,21 @@
               <item name="Lara" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lara" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lara" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="cart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lara" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lara" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -370,6 +364,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
@@ -508,35 +503,34 @@
       <workItem from="1586287448463" duration="379000" />
       <workItem from="1586289786511" duration="348000" />
       <workItem from="1586290159372" duration="1006000" />
-      <workItem from="1586291221036" duration="4634000" />
+      <workItem from="1586291221036" duration="5621000" />
+      <workItem from="1586302539522" duration="628000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="227312000" />
+    <option name="totallyTimeSpent" value="228927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7617801" visible="true" weight="0.2611111" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32984293" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.46200982" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7617801" visible="true" weight="0.2611111" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info x="870" y="97" width="265" height="764" id="Time Tracking" order="7" type="FLOATING" weight="0.18402778" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.46200982" />
       <window_info id="Favorites" order="2" sideWeight="0.2382199" side_tool="true" weight="0.21111111" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Thumbnails" order="8" weight="0.32945737" />
       <window_info id="Designer" order="4" />
       <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -546,28 +540,30 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.32945737" />
+      <window_info x="870" y="97" width="265" height="764" id="Time Tracking" order="7" type="FLOATING" weight="0.18402778" />
       <window_info id="Designer" order="4" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="2" sideWeight="0.2382199" side_tool="true" visible="true" weight="0.21111111" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.46388605" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info x="870" y="97" width="265" height="764" id="Time Tracking" order="7" type="FLOATING" weight="0.18402778" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7617801" visible="true" weight="0.21111111" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
@@ -938,16 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/components/cart/checkoutProducts.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/cart/_checkout-products.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -955,31 +941,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/variables/_variables.scss">
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/cart/_order_list.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/cartProducts.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1582">
-          <caret line="79" column="42" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
+        <state relative-caret-position="274">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/components/cart/order_list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="460">
+          <caret line="20" column="68" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/components/cart/_order_list.scss">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/cartProducts.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="1794">
+          <caret line="78" column="38" lean-forward="true" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/components/cart/checkoutProducts.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/variables/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/components/cart/_checkout-products.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
     </entry>

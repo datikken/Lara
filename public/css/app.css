@@ -6221,6 +6221,70 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 30px;
 }
 
+.cart_check {
+  max-width: 630px;
+}
+.cart_check-wrap {
+  margin-top: 50px;
+}
+.cart_check-wrap_item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-gap: 30px;
+  margin-bottom: 35px;
+}
+.cart_check-wrap_item:nth-child(3) {
+  margin-bottom: 0;
+}
+.cart_check-wrap_item .checkbox {
+  flex-direction: row !important;
+  align-items: center;
+}
+.cart_check-wrap_item-group {
+  display: flex;
+  flex-direction: column;
+}
+.cart_check-wrap_item-group_btn {
+  margin-bottom: 5px;
+}
+.cart_check-wrap_item-group label {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  margin-bottom: 10px;
+}
+.cart_check-wrap_item-group [for=required] {
+  color: #FF0000;
+  padding-top: 5px;
+}
+.cart_check-wrap_item-group [for=save] {
+  margin-bottom: 0;
+}
+.cart_check-wrap_item-group input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+}
+.cart_check-wrap_item-group input {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #FF0000;
+}
+.cart_check-wrap_head h1 {
+  font-family: "MontserratSemiBold";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+  margin-bottom: 30px;
+}
+
 @media screen and (min-width: 600px) {
   .sales_mob {
     display: none;
