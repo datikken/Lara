@@ -150,4 +150,9 @@ class ProductsController extends Controller
             return redirect()->route('allProducts');
         }
     }
+
+    public function checkoutProducts()
+    {
+        return view('components.cart.checkoutProducts');
+    }
 }

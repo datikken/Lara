@@ -64,6 +64,7 @@ Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@delete
 
 //Orders
 //Create order
+Route::get('product/checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
 Route::get('product/createOrder/', ['uses' => 'ProductsController@createOrder', 'as'=> 'createOrder']);
 
 //Email Subscriptions
