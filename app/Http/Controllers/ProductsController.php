@@ -19,13 +19,19 @@ class ProductsController extends Controller
         return view('pages.catalog', compact("products"));
     }
 
+    public function productDetails(Request $request, $id)
+    {
+        $product = Product::find($id);
+
+        return view('layouts.product_details', ['product' => $product]);
+    }
+
     public function search(Request $request)
     {
         $searchText = $request->get('searchText');
         $products = Product::where('name', 'Like', $searchText."%")->paginate(3);
 
         return view('components.products_grid/products_grid', compact('products'));
-
     }
 
     public function addProductToCart(Request $request, $id)

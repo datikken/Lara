@@ -1,5 +1,5 @@
 <div class="product">
-    <a href="/product">
+    <a href="{{ route('ShowProductDetails',['id' => $id]) }}">
         <div class="product_wrapper">
             <div class="product_wrapper-item">
                 <div class="product_wrapper-item_name">

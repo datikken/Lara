@@ -25,6 +25,7 @@ Route::get('cart', ['uses' => "ProductsController@showCart", 'as' => 'cartItems'
 Route::get('product/AddToCart/{id}', ['uses' => 'ProductsController@addProductToCart', 'as' => 'AddToCartProduct']);
     //Remove items from cart
 Route::get('product/deleteItemFromCart/{id}', ['uses' => 'ProductsController@deleteItemFromCart', 'as' => 'DeleteItemFromCart']);
+Route::get('product/details/{id}',['uses' => 'ProductsController@productDetails', 'as' => 'ShowProductDetails']);
 
 //Auth routes
 Auth::routes();
