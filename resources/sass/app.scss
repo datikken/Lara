@@ -32,8 +32,10 @@
 @import "./components/product_comments";
 @import "./components/product_gallery";
 @import "./components/product_feedback-form";
-@import "components/cart/cart";
-@import "components/cart/cart_item";
+@import "./components/cart/cart";
+@import "./components/cart/cart_item";
+@import "components/cart/order_list";
+@import "components/cart/checkout-products";
 @import "./components/sales_mob";
 @import "./components/information";
 @import "./components/contacts";

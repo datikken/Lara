@@ -9,21 +9,47 @@
         <div class="order_list-wrap_inner">
             <div class="order_list-wrap_inner-row">
                 <div class="order_list-wrap_inner-row_item">
-                    <span>Наимениование</span>
+                    <span class="order_list-wrap_inner-row_item-head">Наимениование</span>
                 </div>
                 <div class="order_list-wrap_inner-row_item">
-                    <span>Стоимость</span>
+                    <span class="order_list-wrap_inner-row_item-head">Стоимость</span>
                 </div>
             </div>
 
             <div class="order_list-wrap_inner-row">
                 <div class="order_list-wrap_inner-row_item">
-                    <span>Тонер-картридж TC-H85A</span>
+                    <span class="order_list-wrap_inner-row_item-text">Тонер-картридж TC-H85A</span>
                 </div>
                 <div class="order_list-wrap_inner-row_item">
-                    <span>12600 руб.</span>
+                    <span class="order_list-wrap_inner-row_item-text">12600 руб.</span>
                 </div>
             </div>
+
+            <div class="order_list-wrap_inner-row">
+                <div class="order_list-wrap_inner-row_item">
+                    <span class="order_list-wrap_inner-row_item-text">Тонер-картридж TC-H85A</span>
+                </div>
+                <div class="order_list-wrap_inner-row_item">
+                    <span class="order_list-wrap_inner-row_item-text">12600 руб.</span>
+                </div>
+            </div>
+            <div class="order_list-wrap_inner-row">
+                <div class="order_list-wrap_inner-row_item">
+                    <span class="order_list-wrap_inner-row_item-text">Тонер-картридж TC-H85A</span>
+                </div>
+                <div class="order_list-wrap_inner-row_item">
+                    <span class="order_list-wrap_inner-row_item-text">12600 руб.</span>
+                </div>
+            </div>
+            <div class="order_list-wrap_inner-row">
+                <div class="order_list-wrap_inner-row_item">
+                    <span class="order_list-wrap_inner-row_item-text">Тонер-картридж TC-H85A</span>
+                </div>
+                <div class="order_list-wrap_inner-row_item">
+                    <span class="order_list-wrap_inner-row_item-text">12600 руб.</span>
+                </div>
+            </div>
+
         </div>
 
         <div class="order_list-wrap_footer">

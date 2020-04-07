@@ -6160,6 +6160,67 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   text-align: center;
   margin: 0;
 }
+.order_list-wrap {
+  width: 240px;
+  border: 1px solid #d4d4d5;
+  padding: 40px 30px;
+}
+.order_list-wrap_footer-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  align-items: center;
+}
+.order_list-wrap_footer-row_item {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+}
+.order_list-wrap_inner-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+  align-items: center;
+}
+.order_list-wrap_inner-row_item {
+  margin-bottom: 17px;
+}
+.order_list-wrap_inner-row_item-text {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  max-width: 130px;
+  display: block;
+}
+.order_list-wrap_inner-row_item-head {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+}
+.order_list-wrap_item-head h1 {
+  font-family: "MontserratSemiBold";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+  padding-bottom: 17px;
+  width: 100%;
+  border-bottom: 1px solid #fdd935;
+  margin-bottom: 30px;
+}
+
 @media screen and (min-width: 600px) {
   .sales_mob {
     display: none;
