@@ -1,0 +1,76 @@
+.filters {
+  max-width: 270px;
+  border: 1px solid $light_gray;
+  padding: 0px 20px 0 20px;
+  margin-bottom: 50px;
+  display: none;
+  @include breakpoint($phone) {
+    display: block;
+  }
+
+  &_wrapper {
+    &-item {
+      border-bottom: 1px solid $light_gray;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      cursor: pointer;
+      padding: 15px 0 15px 0;
+
+      &:first-child {
+        border-top:none;
+      }
+      &:last-child {
+        border: none;
+      }
+      &:hover .filters_wrapper-item_list {
+        display: block;
+      }
+      &_text {
+        font-family: $font;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:after {
+          content: "";
+          display: block;
+          background-image: url("/img/icons/arrow_right.svg");
+          height: 10px;
+          width: 4px;
+          @include bg(contain, center);
+        }
+      }
+
+      &_list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        border-bottom: 1px solid $light_gray;
+
+        &-text {
+          border-bottom: 1px solid $light_gray;
+          font-family: $font;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          color: $dblack;
+          display: flex;
+          align-items: center;
+
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.MuiSvgIcon-fontSizeSmall {
+  font-size: 1rem!important;
+}

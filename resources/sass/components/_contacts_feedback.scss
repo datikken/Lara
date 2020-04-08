@@ -1,0 +1,142 @@
+.cfeedback {
+  width: 100%;
+  .contacts_wrap-item_inner {
+    margin: 0;
+  }
+  &_wrap {
+    padding: 0 16px;
+
+    @include breakpoint($medium) {
+      padding: 0;
+    }
+
+    .fio_fields {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin: 0 44px;
+
+      @include breakpoint($medium) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        -webkit-appearance: none;
+        margin: 0 0 10px 0;
+      }
+
+    }
+    &-row {
+      margin-bottom: 20px;
+
+      &_btn {
+        width: 187px!important;
+        height: 40px!important;
+      }
+
+      &:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include breakpoint($medium) {
+          justify-content: flex-end;
+        }
+      }
+
+      &_item {
+        margin-bottom: 10px;
+
+        @include breakpoint($medium) {
+          margin-bottom: 0;
+        }
+
+        &_input {
+          input {
+            //width: 340px;
+            height: 40px;
+            border-radius: 30px;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            border: 1px solid $light_gray;
+            width: 100%;
+
+            &::placeholder {
+              padding-left: 20px;
+            }
+          }
+        }
+        &_textarea {
+          textarea {
+            display: block;
+            height: 200px;
+            width: calc(100% - 30px);
+            border: none;
+            border-radius: 30px;
+            resize: none;
+            outline: none;
+            padding: 10px 10px 0 20px;
+            max-width: 746px;
+
+            &::placeholder {
+              padding: 6px;
+            }
+          }
+        }
+
+        &_label {
+          margin-bottom: 5px;
+        }
+
+        &-row {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          border: 1px solid $light_gray;
+          border-radius: 30px;
+          overflow: hidden;
+
+          .active {
+            span {
+              color: #fff;
+            }
+            background: black;
+          }
+
+          &_inner {
+            overflow: hidden;
+            cursor: pointer;
+            transition: background-color $transition;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:nth-child(2) {
+              border-right: 1px solid $light_gray;
+              border-left: 1px solid $light_gray;
+            }
+
+            span {
+              display: block;
+              font-family: $font;
+              font-size: 12px;
+              line-height: 14px;
+              letter-spacing: 0.02em;
+              color: $black;
+            }
+          }
+        }
+        &_label {
+          span {
+            font-family: $font;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+          }
+        }
+      }
+    }
+  }
+}

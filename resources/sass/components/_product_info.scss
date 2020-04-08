@@ -1,0 +1,96 @@
+.product_info {
+  max-width: $layoutw;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  display: none;
+
+  @include breakpoint($phone) {
+    display: block;
+  }
+
+  &_wrap {
+    &-menu {
+      &_item {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        &-text {
+          margin: 0 35px;
+          font-family: $font;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          text-align: center;
+          letter-spacing: 0.02em;
+          color: $dblack;
+        }
+      }
+    }
+  }
+}
+
+.minfo {
+  padding-top: 30px;
+  margin-bottom: 10px;
+
+  @include breakpoint($phone) {
+    display: none;
+  }
+  &_wrap {
+    &-item {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $dblack;
+
+      &-arrow {
+        display: block;
+        @include bg(center, center);
+        background-repeat: no-repeat;
+        background-image: url("/img/icons/black_arrow.svg");
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translate(0, -50%) rotate(180deg);
+      }
+      .select_wrapper {
+        // max-width: 322px;
+        margin: 0 20px;
+        position: relative;
+      }
+      select {
+        position: relative;
+        border: 1px solid $black;
+        border-radius: 0;
+        padding: 10px 0;
+        width: 100%;
+        // max-width: 322px;
+        text-align: center;
+        margin: 0 15px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        justify-content: center;
+        margin: 0 auto;
+
+        font-family: $font;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $dblack;
+        outline: none;
+        padding-left: 20px;
+        background-color: $white;
+      }
+    }
+  }
+}

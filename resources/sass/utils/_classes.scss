@@ -1,0 +1,130 @@
+.as-visible {
+  visibility: visible !important;
+  display: block;
+}
+.overflow {
+  overflow: hidden !important;
+  position: fixed;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.mobile-hide {
+  display: none !important;
+  @include breakpoint($phone) {
+    display: block !important;
+  }
+}
+
+.desktop-hide {
+  @include breakpoint($phone) {
+    display: none !important;
+  }
+}
+.activeItem {
+  position: relative;
+  color: black !important;
+  &:after {
+    background-image: url("/img/icons/arrow_right_black.svg") !important;
+  }
+
+  @include breakpoint($phone) {
+    &:before {
+      position: absolute;
+      margin-top: 10px;
+      content: "";
+      display: block;
+      height: 3px;
+      width: 100%;
+      bottom: -22px;
+      background-image: -webkit-linear-gradient(left, $purple2, $blue);
+    }
+  }
+}
+.blue {
+  color: $blue;
+}
+.search_width {
+  width: calc(100% - 90px)!important;
+  z-index: 99;
+
+  @include breakpoint($medium) {
+    min-width: 506px!important;
+  }
+
+  .menu_wrapper-item_search_input {
+    width: 100%!important;
+
+    form {
+      margin: 0;
+    }
+
+    input {
+      width: 100%!important;
+    }
+  }
+  .menu_wrapper-item_search_button {
+    border-radius: 0;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+}
+
+.active_border {
+  border-bottom: 1px solid $yellow;
+}
+.error {
+    background-color: $light_gray;
+}
+.error404 {
+  width: 100%;
+  margin: 0 auto;
+
+  img {
+    object-fit: cover;
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+
+  @include breakpoint($medium) {
+    width: 643px;
+    height: 571px;
+    padding-bottom: 100px;
+  }
+}
+
+.graybg {
+  background-color: #e9e9ea;
+}
+.as-none {
+  opacity: 0!important;
+}
+.as-visible {
+  display: block!important;
+}
+.swiper-slide {
+  cursor: pointer;
+  height: 166px;
+  @include  breakpoint($medium) {
+    height: 100%;
+  }
+}
+
+.mobile_menu {
+  height: 98vh!important;
+}
+
+input, textarea {
+  &::placeholder {
+    font-family: $font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    color: $gray;
+  }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Ellipse" fill="#FDD935" fill-rule="nonzero">
+            <circle id="Oval" cx="15" cy="15" r="15"></circle>
+        </g>
+        <g id="Group" transform="translate(8.000000, 10.000000)" fill="#40404C" fill-rule="nonzero">
+            <path d="M0,0.527344 L0,10.4704 L15,10.4704 L15,0.527344 L0,0.527344 Z M7.50008,6.66756 L1.34768,1.26487 L13.6523,1.26487 L7.50008,6.66756 Z M5.04924,5.4971 L0.73753,9.28345 L0.73753,1.71072 L5.04924,5.4971 Z M5.60809,5.98794 L7.49989,7.64928 L9.39169,5.98794 L13.6562,9.73282 L1.34382,9.73282 L5.60809,5.98794 Z M9.95058,5.49729 L14.2624,1.71072 L14.2624,9.28345 L9.95058,5.49729 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

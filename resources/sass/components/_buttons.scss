@@ -1,0 +1,29 @@
+.action_btn {
+  background: $yellow;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  height: 30px;
+  width: 160px;
+  
+  @include breakpoint($medium) {
+    height: 40px;
+    width: 170px;
+  }
+
+  &-item {
+    font-family: $semifont;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $dblack;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+  }
+}

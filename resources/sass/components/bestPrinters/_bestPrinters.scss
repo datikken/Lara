@@ -1,0 +1,89 @@
+.bestPrinters {
+    height: 196px;
+    justify-content: space-between;
+
+    &_item div p {
+        margin: 0;
+    }
+    
+    display: flex;
+    background-color: $black;
+    width: 100%;
+
+    &_image {
+        padding: 16px;
+        min-width: 166px;
+
+        img {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &_item {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin: 10px 10px 16px 10px;
+
+        &-desc {
+            font-family: $font;
+            font-size: 11px;
+            line-height: 17px;
+            letter-spacing: 0.02em;
+            color: $white;
+            width: 177px;
+
+            p {
+               text-align: left;
+            }
+        }
+        &-title {
+            font-family: $font;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 18px;
+            letter-spacing: 0.02em;
+            color: $white;
+            text-transform: uppercase;
+            max-width: 120px;
+            word-break: break-word;
+
+            p {
+                span {
+                    color: $yellow;
+                }
+            }
+        }
+        &-heading {
+            font-family: $font;
+            line-height: 17px;
+            display: flex;
+            align-items: flex-end;
+            letter-spacing: 0.02em;
+            color: $white;
+            font-size: 10px;
+            color: #fff;
+            //margin-bottom: 5px;
+        }
+    }
+}
+.bestPrinters_swiper {
+    position: relative;
+    height: 195px!important;
+    margin-bottom: 20px!important;
+
+    .swiper-wrapper {
+        height: 195px!important;
+
+        .swiper-slide {
+            height: 195px;
+        }
+    }
+
+}
+
+.swiper-container {
+     .swiper-pagination {
+        display: none!important;
+    }
+}
