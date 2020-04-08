@@ -78,39 +78,16 @@
                         </div>
                     </div>
 
-                    <div class="order_list-wrap_inner-row">
-                        <div class="order_list-wrap_inner-row_item">
-                            <span class="order_list-wrap_inner-row_item-text">Тонер-картридж TC-H85A</span>
+                    @foreach (Session::get('cart')->items as $item)
+                        <div class="order_list-wrap_inner-row">
+                            <div class="order_list-wrap_inner-row_item">
+                                <span class="order_list-wrap_inner-row_item-text">{{ $item['data']['name'] }}</span>
+                            </div>
+                            <div class="order_list-wrap_inner-row_item">
+                                <span class="order_list-wrap_inner-row_item-text"> {{ $item['price'] }}</span>
+                            </div>
                         </div>
-                        <div class="order_list-wrap_inner-row_item">
-                            <span class="order_list-wrap_inner-row_item-text">12600 руб.</span>
-                        </div>
-                    </div>
-
-                    <div class="order_list-wrap_inner-row">
-                        <div class="order_list-wrap_inner-row_item">
-                            <span class="order_list-wrap_inner-row_item-text">Тонер-картридж TC-H85A</span>
-                        </div>
-                        <div class="order_list-wrap_inner-row_item">
-                            <span class="order_list-wrap_inner-row_item-text">12600 руб.</span>
-                        </div>
-                    </div>
-                    <div class="order_list-wrap_inner-row">
-                        <div class="order_list-wrap_inner-row_item">
-                            <span class="order_list-wrap_inner-row_item-text">Тонер-картридж TC-H85A</span>
-                        </div>
-                        <div class="order_list-wrap_inner-row_item">
-                            <span class="order_list-wrap_inner-row_item-text">12600 руб.</span>
-                        </div>
-                    </div>
-                    <div class="order_list-wrap_inner-row">
-                        <div class="order_list-wrap_inner-row_item">
-                            <span class="order_list-wrap_inner-row_item-text">Тонер-картридж TC-H85A</span>
-                        </div>
-                        <div class="order_list-wrap_inner-row_item">
-                            <span class="order_list-wrap_inner-row_item-text">12600 руб.</span>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
 
@@ -120,7 +97,11 @@
                             <span>Сумма</span>
                         </div>
                         <div class="order_list-wrap_footer-row_item">
-                            <span>672 837 000 руб</span>
+                            <span>
+                                @php
+                                    if(Session::get('cart')) echo Session::get('cart')->totalPrice;
+                                @endphp руб.
+                            </span>
                         </div>
                     </div>
                 </div>

@@ -40,27 +40,11 @@
     <div class="cart_wrap-item_inner-table_row-col">
         <span class="desktop-hide">Количество (шт)</span>
         <div class="cart_wrap-item_inner-table_row-col_btns">
-
             <div class="cart_wrap-item_inner-table_row-col_btns-btn" style="margin-right: 34px;">
-
                 <div class="cart_wrap-item_inner-table_row-col col_amount">
                     <span>Количество (шт)</span>
                 </div>
-
-                <div class="cart_wrap-item_inner-table_row-col_btns-btn-items">
-                    <a href="{{ route('DecreaseSingleProduct', ['id' => $cartItem['data']['id']])}}">
-                        <div class="cart_wrap-item_inner-table_row-col_btns-btn-items_minus">-</div>
-                    </a>
-
-                    <div class="cart_wrap-item_inner-table_row-col_btns-btn-items_quantity">
-                        <span>{{$cartItem['quantity']}}</span>
-                    </div>
-
-                    <a href="{{ route('IncreaseSingleProduct', ['id' => $cartItem['data']['id']])}}">
-                        <div class="cart_wrap-item_inner-table_row-col_btns-btn-items_plus">+</div>
-                    </a>
-                </div>
-
+                @include('components.btn.amount_btn')
             </div>
         </div>
     </div>

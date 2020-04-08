@@ -118,6 +118,8 @@
             &-item {
               text-transform: uppercase;
               font-weight: 500;
+              text-decoration: none;
+              color: $black;
               @include breakpoint($phone) {
                 font-size: 12px;
               }
