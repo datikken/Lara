@@ -5,6 +5,7 @@
   justify-content: space-between;
   margin-top: 50px;
   margin-bottom: 50px;
+  min-height: 790px;
 }
 
 .cart_check {
@@ -18,11 +19,6 @@
       grid-template-columns: 1fr 1fr;
       align-items: center;
       grid-gap: 30px;
-      margin-bottom: 35px;
-
-      &:nth-child(3) {
-        margin-bottom: 0;
-      }
 
       .checkbox {
         flex-direction: row!important;
@@ -32,6 +28,7 @@
           display: flex;
           flex-direction: column;
           border: none;
+          outline: none;
 
           &_btn {
             margin-bottom: 5px;

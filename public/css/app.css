@@ -6290,6 +6290,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   justify-content: space-between;
   margin-top: 50px;
   margin-bottom: 50px;
+  min-height: 790px;
 }
 
 .cart_check {
@@ -6304,10 +6305,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   grid-gap: 30px;
-  margin-bottom: 35px;
-}
-.cart_check-wrap_item:nth-child(3) {
-  margin-bottom: 0;
 }
 .cart_check-wrap_item .checkbox {
   flex-direction: row !important;
@@ -6317,6 +6314,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   flex-direction: column;
   border: none;
+  outline: none;
 }
 .cart_check-wrap_item-group_btn {
   margin-bottom: 5px;
