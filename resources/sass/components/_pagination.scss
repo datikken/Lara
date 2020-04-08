@@ -1,0 +1,37 @@
+.pagination {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .pactive {
+    background: $yellow;
+    border: 0;
+  }
+  &-item_dots {
+    border: none !important;
+  }
+  &-item {
+    border: 2px solid $light_gray;
+    width: 30px;
+    height: 30px;
+    color: $black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &_text {
+      font-family: $semifont;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.02em;
+      color: black;
+    }
+  }
+}

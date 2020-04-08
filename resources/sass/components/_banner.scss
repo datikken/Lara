@@ -1,0 +1,93 @@
+.banner2 {
+  background-color: $light_gray;
+  display: none;
+  @include breakpoint($phone) {
+    display: block;
+  }
+}
+.banner {
+  width: 100%;
+  height: 480px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+
+  @include breakpoint($phone) {
+    margin-bottom: 50px;
+    display: block;
+    width: 270px;
+    border: 1px solid $light_gray;
+  }
+
+  &-wrapper {
+    padding: 20px;
+    border: 16px solid $yellow;
+    @include breakpoint($phone) {
+      border: none;
+    }
+    &_image {
+      margin: 0 auto;
+      width: 230px;
+      height: 219.02px;
+      margin-bottom: 40px;
+      background-image: url("/img/banner/banner.png");
+    }
+    &_image2 {
+      background-image: url("/img/banner/banner2.png");
+      height: 230px;
+    }  
+    &_heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-item {
+        font-family: $font;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+        color: $blue;
+        &:nth-child(2) {
+          color: black;
+          margin-bottom: 30px;
+        }
+      }
+    }
+    &_desc {
+      font-family: $font;
+      font-size: 12px;
+      line-height: 14px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.02em;
+      color: $dblack;
+      margin-bottom: 30px;
+
+      &-item {
+        width: 100%;
+      }
+    }
+    &_cta {
+      text-align: center;
+      width: 196px;
+      height: 40px;
+      background: $yellow;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      @include btnShadow();
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: $btn_fs;
+
+      &-item {
+        width: 100%;
+      }
+    }
+  }
+}

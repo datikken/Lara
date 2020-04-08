@@ -1,0 +1,388 @@
+.products_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  margin-bottom: 100px;
+  margin-top: 16px;
+
+  @include breakpoint($medium) {
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .pagination_links {
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+
+    @include breakpoint($medium) {
+      bottom: -40px;
+    }
+
+    .pagination {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+
+        .active {
+          background: $yellow;
+          border: 1px solid $yellow!important;
+          pointer-events: none;
+        }
+  
+        .page-item {
+          height: 30px;
+          width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid $gray;
+          border-radius: 50%;
+          margin: 0 10px 0 0;
+
+          &:last-child, &:first-child {
+            margin: 0;
+          }
+          
+          span, a {
+            display: block;
+            font-family: $semifont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            color: $black;
+          }
+        }
+
+        li {
+          &:first-child, &:last-child {
+            display: none;
+          }
+        }
+
+
+    }
+  }
+}
+
+.product {
+  border: 1px solid $light_gray;
+  min-width: 270px;
+  margin: 0 10px 10px 10px;
+  height: 160px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  }
+
+
+  a {
+    flex: 1.5;
+    @include breakpoint($medium) {
+      flex: 0;
+    }
+  }
+
+  @include breakpoint($medium) {
+    margin: 0 10px 20px 10px;
+    width: 270px;
+    height: 270px;
+  }
+
+  & a:hover {
+    text-decoration: none;
+  }
+
+  &_wrapper {
+    display: flex;
+    position: relative;
+    padding: 10px;
+    width: 100%;
+
+    @include breakpoint($phone) {
+      display: block;
+      padding: 0px 20px 5px 20px;
+    }
+
+    &-itemContent {
+      height: 100%;
+      @include breakpoint($medium) {
+        margin-bottom: 20px;
+        min-height: 170px;
+        border: 1px solid $light_gray;
+        margin-bottom: 10px!important;
+      }
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      overflow: hidden;
+      cursor: pointer;
+      top: 5px;
+      flex: 1;
+      margin-bottom: 16px;
+      //padding-top: 30px;
+      @include breakpoint($medium) {
+        margin-bottom: 10px;
+        top: initial;
+      }
+
+      &:first-child {
+        position: absolute;
+        z-index: 2;
+        padding-top: 0;
+
+        @include breakpoint($phone) {
+          position: relative;
+        }
+      }
+      &:nth-child(2) {
+        @include breakpoint($phone) {
+          padding-top: 0;
+        }
+      }
+      &:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 70%;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 5px;
+        margin-left: 20px!important;
+
+        @include breakpoint($medium) {
+          margin-left: 0px!important;
+          align-items: center;
+          flex-direction: row;
+          justify-content: space-between;
+          padding-top: 0;
+        }
+      }
+
+      &:hover .product_wrapper-item_overlay {
+        bottom: 0;
+      }
+
+      &:last-child {
+        //margin-left: 15px!important;
+
+        @include breakpoint($medium) {
+          margin: 0;
+        }
+      }
+
+      &_name {
+        @include breakpoint($medium) {
+          flex-basis: 100%;
+          margin-bottom: 10px;
+        }
+
+        &-item {
+          display: none;
+          font-family: $font;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          color: $dblack;
+        }
+      }
+      &_heading {
+        font-family: $font;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        display: none;
+
+        @include breakpoint($phone) {
+          display: block;
+        }
+      }
+      &_amount {
+        font-family: $font;
+        font-size: 9px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color:$black;
+        display: flex;
+        align-items: center;
+        margin-top: 7px;
+        @include breakpoint($medium) {
+          margin-top: 0;
+        }
+
+        img {
+          width: 10px;
+          height: 10px;
+          margin-right: 5px;
+        }
+      }
+      &_image2 {
+        background-image: url("/img/unnecessary/product2.png") !important;
+      }
+      &_image {
+        background-image: url("/img/unnecessary/product1.png");
+        @include bg(contain, center);
+        width: 177px;
+        height: 100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include breakpoint($medium) {
+          height: initial;
+        }
+
+        img {
+          width: 70px;
+          display: block;
+          @include breakpoint($medium) {
+            width: 177px;
+            max-height: 160px;
+            object-fit: contain;
+          }
+        }
+      }
+      &_overlay {
+        width: 100%;
+        position: absolute;
+        bottom: -100px;
+        background: rgba(255, 255, 255, 0.7);
+        @include btnShadow();
+        padding: 20px 0;
+        transition: bottom $transition;
+        @include breakpoint($phone) {
+          max-width: 270px;
+        }
+
+
+        &_wrapper {
+          &-item {
+            text-align: center;
+            &_text {
+              font-family: $font;
+              font-size: 12px;
+              line-height: 14px;
+              letter-spacing: 0.02em;
+              color: rgba(41, 41, 48, 0.7);
+            }
+          }
+        }
+      }
+      &_price {
+        font-family: $font;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 26px;
+        text-transform: uppercase;
+        color: $blue;
+        margin-bottom: 8px;
+        display: flex;
+        margin-left: 10px;
+
+        @include breakpoint($medium) {
+          margin-left: 0;
+        }
+
+        img {
+          margin: 14px 0 0 3px;
+          height: 10px;
+          width: 8px;
+        }
+
+        @include breakpoint($phone) {
+          margin-bottom: 0;
+        }
+      }
+      &_head {
+        color: black;
+        font-family: $semifont;
+        margin-bottom: 5px;
+        font-weight: 500;
+        margin-bottom: 25px;
+        margin-left: 10px;
+        @include breakpoint($medium) {
+          margin-left: 0;
+        }
+
+        &-item {
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 14px;
+
+          &:nth-child(1) {
+            font-family: $font;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 11px;
+            line-height: 17px;
+            letter-spacing: 0.02em;
+            color: $dblack;
+          }
+        }
+        @include breakpoint($phone) {
+          display: none;
+        }
+      }
+      &_btn {
+        text-align: center;
+        text-transform: uppercase;
+        color: black;
+        background: $yellow;
+        border-radius: 30px;
+        min-height: 30px;
+        font-size: 10px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 30px;
+
+          @include breakpoint($medium){
+              width: 30px;
+          }
+
+        img {
+          height: 15px;
+          width: 15px;
+          margin-left: 15px;
+
+          @include breakpoint($medium){
+            margin-left: 0;
+            margin-right: 2px;
+          }
+        }
+
+      }
+      &_cart {
+        display: none;
+        @include breakpoint($phone) {
+          display: block;
+        }
+        @include bg(contain, center);
+        background-image: url("/img/icons/product_cart.png");
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

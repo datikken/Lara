@@ -1,0 +1,127 @@
+.sales_eco {
+  //display: none;
+  width: 100%;
+  margin-bottom: 15px;
+  height: 173px;
+
+  @include breakpoint($phone) {
+    height: 400px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &-wrapper {
+    height: 100%;
+    @include bg(contain, center);
+    cursor: pointer;
+    background-size: cover;
+    margin: 0 16px;
+    background-image: url(/images/sales/turtle.png);
+    display: flex;
+
+    @include breakpoint($medium) {
+      margin: 0 0 16px;
+    }
+
+    &_item {
+      height: 130px;
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 20px 0 0 20px;
+      border-left: 2px solid $yellow;
+      padding-left: 20px;
+      width: 450px;
+      max-height: 333px;
+
+      @include  breakpoint($medium) {
+        margin:33px 0 0 87px;
+        height: 333px;
+      }
+
+
+      &-btn {
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+      }
+
+      &-desc, &-head {
+        font-family: $font;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: #FDD935;
+        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+      }
+
+      &-head {
+        color: #fff;
+        max-width: 250px;
+
+        @include breakpoint($medium) {
+          max-width: 450px;
+        }
+
+        p {
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 18px;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: #fff;
+          text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+          @include  breakpoint($medium) {
+            font-size: 36px;
+            line-height: 100%;
+          }
+        }
+
+        span {
+          color: $yellow;
+        }
+      }
+    }
+  }
+}
+
+.flat_btn {
+  width: 130px!important;
+  height: 30px!important;
+  border: 2px solid #FDD935;
+  box-sizing: border-box;
+  border-radius: 50px!important;
+  background: transparent!important;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25)!important;
+
+  @include breakpoint($medium) {
+    width: 330px!important;
+    height: 70px!important;
+  }
+
+  .action_btn-item {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FDD935;
+
+    @include  breakpoint($medium) {
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: 0.04em;
+    }
+  }
+}

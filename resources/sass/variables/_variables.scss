@@ -1,0 +1,38 @@
+$font: "Montserrat";
+$semifont: "MontserratSemiBold";
+
+$layoutw: 1170px;
+$last_phone: 450px;
+$mobile: 320px;
+$phone: 600px;
+$tablet: 768px;
+$medium: 1030px;
+$large: 1120px;
+$btn_fs: 12px;
+$select-width: 220px;
+$select-height: 40px;
+
+//colors
+$white: #fff;
+$yellow: #fdd935;
+$dblack: #292930;
+$black: #40404c;
+$blue: #3559fd;
+$gray: #d4d4d5;
+$gray2: #c4c4c4;
+$light_gray: #e9e9ea;
+$purple: #bb3cfd;
+$purple2: #d935fd;
+$breadcrumb: #d4d4d5;
+$brown: #e34a02;
+$lightblue: #35FDD9;
+$feedItem: #E9E9EA;
+$red: #FF0000;
+$popupboxshadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+$gradient: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
+
+//shadows
+$button_shadow: 0px 0px 3px rgba(41, 41, 48, 0.25);
+$card_shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$menu_shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
+$transition: .2s;

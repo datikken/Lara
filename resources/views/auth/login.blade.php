@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Printers</title>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="/js/vendors/swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+</head>
+<body>
+
+@extends('layouts.index')
+
+@section('center')
+
+    <div class="main">
+        @include('components.forms.login')
+
+        <div class="auth-decor"></div>
+        <div class="auth-pick">
+            <span class="auth-pick_item">или</span>
+        </div>
+
+        @include('components.forms.register')
+
+    </div>
+
+@endsection
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Ellipse" fill="#FDD935" fill-rule="nonzero">
+            <circle id="Oval" cx="15" cy="15" r="15"></circle>
+        </g>
+        <g id="facebook-logo-1" transform="translate(10.000000, 7.000000)" stroke="#40404C">
+            <path d="M2.70643,5.89356 L3.20643,5.89356 L3.20643,5.39356 L3.20643,3.69152 C3.20643,2.67615 3.52431,1.88679 4.04379,1.35376 C4.56194,0.822096 5.32467,0.5 6.30359,0.5 C6.30372,0.5 6.30385,0.5 6.30398,0.5 L8.0545,0.502809 L8.0545,2.40479 L6.93847,2.40518 C6.93841,2.40518 6.93835,2.40518 6.93829,2.40518 C6.44743,2.40521 5.99178,2.4958 5.69057,2.83698 C5.40247,3.1633 5.36985,3.59862 5.36985,3.95072 L5.36985,5.39356 L5.36985,5.89356 L5.86985,5.89356 L7.9633,5.89356 L7.9625,7.97149 L5.86985,7.97149 L5.36985,7.97149 L5.36985,8.47149 L5.36985,14.5 L3.20643,14.5 L3.20643,8.47149 L3.20643,7.97149 L2.70643,7.97149 L0.94482,7.97149 L0.94482,5.89356 L2.70643,5.89356 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
