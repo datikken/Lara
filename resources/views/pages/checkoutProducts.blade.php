@@ -18,7 +18,7 @@
 @section('center')
     <div class="cart_check-wrapper">
         <div class="cart_check">
-            <form class="cart_check-wrap">
+            <form class="cart_check-wrap" method="POST" action="{{ route('setCustomerFio') }}">
 
                 {{ csrf_field() }}
 
@@ -28,8 +28,8 @@
 
                 <div class="cart_check-wrap_item">
                     <div class="cart_check-wrap_item-group">
-                        <label for="name">Имя *</label>
-                        <input type="text" name="name" />
+                        <label for="firstname">Имя *</label>
+                        <input type="text" name="firstname" />
                         <label for="required">Поле имя обязательно к заполнению</label>
                     </div>
                     <div class="cart_check-wrap_item-group">
@@ -41,13 +41,13 @@
 
                 <div class="cart_check-wrap_item">
                     <div class="cart_check-wrap_item-group">
-                        <label for="name">Телефон *</label>
-                        <input type="text" name="name" placeholder="+7 (___) ___ - __ - __"/>
+                        <label for="tel">Телефон *</label>
+                        <input type="text" name="tel" placeholder="+7 (___) ___ - __ - __"/>
                         <label for="required">Поле телефон обязательно к заполнению</label>
                     </div>
-                    <div class="cart_check-wrap_item-group">
+                    <button type="submit" class="cart_check-wrap_item-group">
                         @include('components.btn.text_btn', [ 'class' => 'cart_check-wrap_item-group_btn', 'text' => 'продолжить'])
-                    </div>
+                    </button>
                 </div>
 
                 <div class="cart_check-wrap_item">

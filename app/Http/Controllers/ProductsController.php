@@ -155,4 +155,21 @@ class ProductsController extends Controller
     {
         return view('pages.checkoutProducts');
     }
+
+    public function setCustomerFio(Request $request)
+    {
+        $firstname = $request->input('firstname');
+        $lastname = $request->input('lastname');
+        $tel = $request->input('tel');
+
+        $arr = [
+            'firstname' => $firstname,
+            'lastname' => $lastname,
+            'fio' => $tel
+        ];
+
+        $request->session()->put('cart-customerFio', $arr);
+
+        return redirect()->route('allProducts');
+    }
 }
