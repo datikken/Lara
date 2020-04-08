@@ -53,9 +53,9 @@ class ProductsController extends Controller
         $empty = new stdClass();
 
         if($cart) {
-            return view('layouts.cartProducts', ['cartItems' => $cart]);
+            return view('pages.cart.cartProducts', ['cartItems' => $cart]);
         } else {
-            return view('layouts.cartProducts', ['cartItems' => $empty]);
+            return view('pages.cart.cartProducts', ['cartItems' => $empty]);
         }
     }
 
@@ -153,7 +153,7 @@ class ProductsController extends Controller
 
     public function checkoutProducts()
     {
-        return view('pages.checkoutProducts');
+        return view('pages.cart.checkoutProducts');
     }
 
     public function setCustomerFio(Request $request)

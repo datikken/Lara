@@ -20,6 +20,13 @@
       border-bottom: 1px solid $light_gray;
       margin-bottom: 20px;
 
+      @include breakpoint($phone) {
+        padding: 30px 0 50px 0;
+        width: initial;
+        margin-bottom: 30px;
+        background: initial;
+      }
+
       .active {
         position: relative;
 
@@ -35,12 +42,6 @@
         }
       }
 
-      @include breakpoint($phone) {
-        padding: 20px 0;
-        width: initial;
-        margin-bottom: 30px;
-        background: initial;
-      }
       &-item {
         font-family: $font;
         font-size: 12px;

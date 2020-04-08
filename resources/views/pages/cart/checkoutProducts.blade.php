@@ -1,4 +1,4 @@
-@extends('layouts.index')
+@extends('layouts.cartProducts')
 
 @section('center')
     <div class="cart_check-wrapper">
@@ -74,7 +74,6 @@
                             </div>
                         </div>
                     @endforeach
-
                 </div>
 
                 <div class="order_list-wrap_footer">

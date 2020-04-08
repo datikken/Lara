@@ -5572,6 +5572,14 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border-bottom: 1px solid #e9e9ea;
   margin-bottom: 20px;
 }
+@media screen and (min-width: 600px) {
+  .cart_wrap-crumb {
+    padding: 30px 0 50px 0;
+    width: initial;
+    margin-bottom: 30px;
+    background: initial;
+  }
+}
 .cart_wrap-crumb .active {
   position: relative;
 }
@@ -5584,14 +5592,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background: #bb3cfd;
   bottom: -22px;
   left: -10px;
-}
-@media screen and (min-width: 600px) {
-  .cart_wrap-crumb {
-    padding: 20px 0;
-    width: initial;
-    margin-bottom: 30px;
-    background: initial;
-  }
 }
 .cart_wrap-crumb-item {
   font-family: "Montserrat";
@@ -6288,7 +6288,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
   margin-bottom: 50px;
   min-height: 790px;
 }
