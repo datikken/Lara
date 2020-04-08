@@ -21,12 +21,11 @@
       margin-bottom: 20px;
 
       @include breakpoint($phone) {
-        padding: 30px 0 50px 0;
+        padding: 20px 0;
         width: initial;
-        margin-bottom: 30px;
         background: initial;
+        margin-bottom: 50px;
       }
-
       .active {
         position: relative;
 

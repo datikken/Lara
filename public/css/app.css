@@ -5574,10 +5574,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 600px) {
   .cart_wrap-crumb {
-    padding: 30px 0 50px 0;
+    padding: 20px 0;
     width: initial;
-    margin-bottom: 30px;
     background: initial;
+    margin-bottom: 50px;
   }
 }
 .cart_wrap-crumb .active {
@@ -6316,7 +6316,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   outline: none;
 }
 .cart_check-wrap_item-group_btn {
-  margin-bottom: 5px;
   outline: none;
 }
 .cart_check-wrap_item-group label {
