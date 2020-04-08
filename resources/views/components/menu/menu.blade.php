@@ -251,7 +251,9 @@
             @endphp
         </div>
         <div class="menu_wrapper-item_cart_currency">
-            <img src="/images/menu/rub.svg" alt="rub"/>
+            @php
+                if(Session::get('cart')) { echo '<img src="/images/menu/rub.svg" alt="rub"/>'; }
+            @endphp
         </div>
         </a>
     </div>

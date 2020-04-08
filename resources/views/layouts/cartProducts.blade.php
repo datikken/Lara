@@ -8,42 +8,44 @@
 <div class="cart">
     <div class="cart_wrap">
 
-        <div class="cart_wrap-crumb">
-            <div class="cart_wrap-crumb-item active">
-                <span>Ваша корзина</span>
-            </div>
-            <div class="cart_wrap-crumb-item">
-                <span>Авторизация</span>
-            </div>
-            <div class="cart_wrap-crumb-item">
-                <span>Доставка</span>
-            </div>
-            <div class="cart_wrap-crumb-item">
-                <span>Оплата</span>
-            </div>
-        </div>
-
-        <div class="cart_wrap-item">
-            <div class="cart_wrap-item_inner">
-                <div class="cart_wrap-item_inner-heading">
-                    <span class="cart_wrap-item_inner-heading-text">корзина</span>
+        @if(isset($cartItems->items))
+            <div class="cart_wrap-crumb">
+                <div class="cart_wrap-crumb-item active">
+                    <span>Ваша корзина</span>
+                </div>
+                <div class="cart_wrap-crumb-item">
+                    <span>Авторизация</span>
+                </div>
+                <div class="cart_wrap-crumb-item">
+                    <span>Доставка</span>
+                </div>
+                <div class="cart_wrap-crumb-item">
+                    <span>Оплата</span>
                 </div>
             </div>
 
-            <div class="cart_wrap-item_inner-table_row cart_table-headings">
-                <div class="cart_wrap-item_inner-table_row-col">
-                    <span class="cart_wrap-item_inner-table_row-col-heading">Картридж</span>
+            <div class="cart_wrap-item">
+                <div class="cart_wrap-item_inner">
+                    <div class="cart_wrap-item_inner-heading">
+                        <span class="cart_wrap-item_inner-heading-text">корзина</span>
+                    </div>
                 </div>
-                <div class="cart_wrap-item_inner-table_row-col">
-                    <span class="cart_wrap-item_inner-table_row-col-heading">Цена (шт)</span>
+
+                <div class="cart_wrap-item_inner-table_row cart_table-headings">
+                    <div class="cart_wrap-item_inner-table_row-col">
+                        <span class="cart_wrap-item_inner-table_row-col-heading">Картридж</span>
+                    </div>
+                    <div class="cart_wrap-item_inner-table_row-col">
+                        <span class="cart_wrap-item_inner-table_row-col-heading">Цена (шт)</span>
+                    </div>
+                    <div class="cart_wrap-item_inner-table_row-col">
+                        <span class="cart_wrap-item_inner-table_row-col-heading">Количество</span>
+                    </div>
+                    <div class="cart_wrap-item_inner-table_row-col">
+                        <span class="cart_wrap-item_inner-table_row-col-heading">Общая сумма</span>
+                    </div>
                 </div>
-                <div class="cart_wrap-item_inner-table_row-col">
-                    <span class="cart_wrap-item_inner-table_row-col-heading">Количество</span>
-                </div>
-                <div class="cart_wrap-item_inner-table_row-col">
-                    <span class="cart_wrap-item_inner-table_row-col-heading">Общая сумма</span>
-                </div>
-            </div>
+            @endif
 
             <div class="cart_wrap-item_inner">
                 <div class="cart_wrap-item_inner-table">
@@ -73,6 +75,9 @@
                 </div>
             </div>
         @endif
+
+
+
     </div>
 </div>
 

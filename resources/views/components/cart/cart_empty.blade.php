@@ -1,8 +1,10 @@
 <?php #dump($cartItem)?>
 
-<div class="cart_wrap-item_inner-table_row">
-    <h2>Ваша корзина еще пуста</h2>
-    <p>Для удобства наполнения корзины, Вы можете воспользоваться поиском
+<div class="empty_cart">
+    <h2 class="empty_cart-head">Ваша корзина еще пуста</h2>
+    <p class="empty_cart-paragraph">Для удобства наполнения корзины, Вы можете воспользоваться поиском
         или каталогом товаров</p>
-    @include('components.btn.text_btn', [ 'class' => 'flat_btn', 'text' => 'перейти в каталог'])
+    <a href="{{route('allProducts')}}">
+        @include('components.btn.text_btn', [ 'class' => 'empty_cart-btn', 'text' => 'перейти в каталог'])
+    </a>
 </div>
