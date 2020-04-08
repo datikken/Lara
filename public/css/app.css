@@ -6221,11 +6221,21 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 30px;
 }
 
+.cart_check-wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .cart_check {
   max-width: 630px;
 }
 .cart_check-wrap {
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
 }
 .cart_check-wrap_item {
   display: grid;

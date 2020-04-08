@@ -1,7 +1,17 @@
+.cart_check-wrapper {
+  max-width: $layoutw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .cart_check {
   max-width: 630px;
   &-wrap {
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
 
     &_item {
       display: grid;

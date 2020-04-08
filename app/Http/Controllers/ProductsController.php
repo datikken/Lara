@@ -153,6 +153,6 @@ class ProductsController extends Controller
 
     public function checkoutProducts()
     {
-        return view('components.cart.checkoutProducts');
+        return view('pages.checkoutProducts');
     }
 }
