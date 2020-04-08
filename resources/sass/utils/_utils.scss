@@ -194,3 +194,26 @@ p {
     background-color: $dblack!important;
     color: $white!important;
 }
+
+.checkbox {
+  position: absolute;
+  margin-right: 20px;
+  cursor: pointer;
+
+  &-wrap {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_arrow {
+      display: block;
+      height: 80%;
+      width: 80%;
+      transform: rotate(90deg);
+      display: none;
+    }
+  }
+}

@@ -35,6 +35,7 @@
 
           &_btn {
             margin-bottom: 5px;
+            outline: none;
           }
 
           label {
@@ -54,10 +55,12 @@
           }
           [for='save'] {
             margin-bottom: 0;
+            margin-left: 10px;
           }
           input[type='checkbox'] {
               width: 20px;
               height: 20px;
+              visibility: hidden;
           }
           input {
             width: 300px;

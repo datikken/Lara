@@ -54,6 +54,27 @@ p {
   color: #fff !important;
 }
 
+.checkbox {
+  position: absolute;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.checkbox-wrap {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d4d4d5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkbox-wrap_arrow {
+  display: block;
+  height: 80%;
+  width: 80%;
+  transform: rotate(90deg);
+  display: none;
+}
+
 .as-visible {
   visibility: visible !important;
   display: block;
@@ -6299,6 +6320,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .cart_check-wrap_item-group_btn {
   margin-bottom: 5px;
+  outline: none;
 }
 .cart_check-wrap_item-group label {
   font-family: "Montserrat";
@@ -6316,10 +6338,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .cart_check-wrap_item-group [for=save] {
   margin-bottom: 0;
+  margin-left: 10px;
 }
 .cart_check-wrap_item-group input[type=checkbox] {
   width: 20px;
   height: 20px;
+  visibility: hidden;
 }
 .cart_check-wrap_item-group input {
   width: 300px;

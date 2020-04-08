@@ -6,7 +6,6 @@
             <img src="/images/icons/arrow_right.svg" alt="icon" />
             <ul class="filters_wrapper-item_list">
                 <li class="filters_wrapper-item_list-text">
-
                     <span>Фильтр</span>
                 </li>
             </ul>
@@ -34,7 +33,6 @@
             <img src="/images/icons/arrow_right.svg" alt="icon" />
             <ul class="filters_wrapper-item_list">
                 <li class="filters_wrapper-item_list-text">
-
                     <span>Фильтр</span>
                 </li>
             </ul>
