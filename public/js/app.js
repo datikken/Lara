@@ -37065,7 +37065,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./controllers/ContactsFormController */ "./resources/js/controllers/ContactsFormController.js");
 /* harmony import */ var _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./controllers/LoginFormController */ "./resources/js/controllers/LoginFormController.js");
 /* harmony import */ var _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./controllers/SearchController */ "./resources/js/controllers/SearchController.js");
+/* harmony import */ var _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/DeliveryController */ "./resources/js/controllers/DeliveryController.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
+
 
 
 
@@ -37079,10 +37081,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
 var form = new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_5__["default"]();
 var search = new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__["default"]();
 $(document).ready(function () {
-  var map = new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
-  var domEl = $('.ymap-coords');
+  var domEl, map;
+  domEl = $('.ymap-coords');
+  if (domEl) map = new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
   domEl && map._simpleMap(domEl);
   var login = new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
+  var cart, cartController;
+  cart = $('.cart');
+  cart && new _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_8__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -37178,52 +37184,54 @@ var SimpleMap = /*#__PURE__*/function () {
   _createClass(SimpleMap, [{
     key: "_simpleMap",
     value: function _simpleMap(maps) {
-      ymaps.ready(function () {
-        var myMap = new ymaps.Map('map', {
-          center: [55.751574, 37.573856],
-          zoom: 9
-        }, {
-          searchControlProvider: 'yandex#search'
-        }),
-            // Создаём макет содержимого.
-        MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
-            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-          hintContent: 'Собственный значок метки',
-          balloonContent: 'Это красивая метка'
-        }, {
-          // Опции.
-          // Необходимо указать данный тип макета.
-          iconLayout: 'default#image',
-          // Своё изображение иконки метки.
-          iconImageHref: 'images/myIcon.gif',
-          // Размеры метки.
-          iconImageSize: [30, 42],
-          // Смещение левого верхнего угла иконки относительно
-          // её "ножки" (точки привязки).
-          iconImageOffset: [-5, -38]
-        }),
-            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-          hintContent: 'Собственный значок метки с контентом',
-          balloonContent: 'А эта — новогодняя',
-          iconContent: '12'
-        }, {
-          // Опции.
-          // Необходимо указать данный тип макета.
-          iconLayout: 'default#imageWithContent',
-          // Своё изображение иконки метки.
-          iconImageHref: 'images/ball.png',
-          // Размеры метки.
-          iconImageSize: [48, 48],
-          // Смещение левого верхнего угла иконки относительно
-          // её "ножки" (точки привязки).
-          iconImageOffset: [-24, -24],
-          // Смещение слоя с содержимым относительно слоя с картинкой.
-          iconContentOffset: [15, 15],
-          // Макет содержимого.
-          iconContentLayout: MyIconContentLayout
+      if (typeof ymaps != 'undefined') {
+        ymaps.ready(function () {
+          var myMap = new ymaps.Map('map', {
+            center: [55.751574, 37.573856],
+            zoom: 9
+          }, {
+            searchControlProvider: 'yandex#search'
+          }),
+              // Создаём макет содержимого.
+          MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+              myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            hintContent: 'Собственный значок метки',
+            balloonContent: 'Это красивая метка'
+          }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: 'images/myIcon.gif',
+            // Размеры метки.
+            iconImageSize: [30, 42],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-5, -38]
+          }),
+              myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+            hintContent: 'Собственный значок метки с контентом',
+            balloonContent: 'А эта — новогодняя',
+            iconContent: '12'
+          }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#imageWithContent',
+            // Своё изображение иконки метки.
+            iconImageHref: 'images/ball.png',
+            // Размеры метки.
+            iconImageSize: [48, 48],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-24, -24],
+            // Смещение слоя с содержимым относительно слоя с картинкой.
+            iconContentOffset: [15, 15],
+            // Макет содержимого.
+            iconContentLayout: MyIconContentLayout
+          });
+          myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
         });
-        myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
-      });
+      }
     }
   }]);
 
@@ -37333,125 +37341,126 @@ $('.menu_wrapper-item-main_menu-item-text_secondary').on('mouseleave', function 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 window.onload = function () {
-  var main = new Swiper('.landswipe', {
-    slidesPerView: 'auto',
-    containerClass: 'landswipe_swiper',
-    centeredSlides: true,
-    initialSlide: '2',
-    spaceBetween: 100,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    }
-  });
-  var swiperMain = new Swiper('.bestPrinters_swiper', _defineProperty({
-    spaceBetween: 50,
-    navigation: {
-      nextEl: '.swiper-button-nextt',
-      prevEl: '.swiper-button-prevv'
-    },
-    pagination: {
-      el: '.swiper-pagination'
-    }
-  }, "navigation", {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  }));
-  var swiperV = new Swiper('.swiper-container-v', {
-    spaceBetween: 50,
-    navigation: {
-      nextEl: '.swiper-button-nextt',
-      prevEl: '.swiper-button-prevv'
-    }
-  });
-  var slider = new Swiper('.best_printers', {
-    pagination: {
-      el: '.swiper-pagination'
-    },
-    direction: 'vertical',
-    navigation: {
+  if (typeof Swiper !== 'undefined') {
+    var main = new Swiper('.landswipe', {
+      slidesPerView: 'auto',
+      containerClass: 'landswipe_swiper',
+      centeredSlides: true,
+      initialSlide: '2',
+      spaceBetween: 100,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
+    });
+    var swiperMain = new Swiper('.bestPrinters_swiper', _defineProperty({
+      spaceBetween: 50,
+      navigation: {
+        nextEl: '.swiper-button-nextt',
+        prevEl: '.swiper-button-prevv'
+      },
+      pagination: {
+        el: '.swiper-pagination'
+      }
+    }, "navigation", {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
-    }
-  });
-  var feedBackSwiper = new Swiper('.feedback_swiper', {
-    containerClass: 'owl_swiper',
-    activeSlideKey: '5',
-    centeredSlides: true,
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
-    },
-    breakpoints: {
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 10
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 10
-      },
-      640: {
-        slidesPerView: 3,
-        spaceBetween: 10
-      },
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 10
+    }));
+    var swiperV = new Swiper('.swiper-container-v', {
+      spaceBetween: 50,
+      navigation: {
+        nextEl: '.swiper-button-nextt',
+        prevEl: '.swiper-button-prevv'
       }
-    }
-  });
-  var mainSwiper = new Swiper('.main_slider', {
-    slidesPerView: 1,
-    pagination: {
-      el: '.swiper-pagination'
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    }
-  });
-  var salesSwiper = new Swiper('.sales_slider', {
-    slidesPerView: 1
-  });
-  var mySwiper = new Swiper('.owl_swiper', {
-    containerClass: 'owl_swiper',
-    activeSlideKey: '5',
-    centeredSlides: true,
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
-    },
-    breakpoints: {
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 40
+    });
+    var slider = new Swiper('.best_printers', {
+      pagination: {
+        el: '.swiper-pagination'
       },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 30
-      },
-      640: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      },
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 10
+      direction: 'vertical',
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
       }
-    }
-  });
-};
-
-var swiperH = new Swiper('.swiper-container-h', {
-  spaceBetween: 50,
-  pagination: {
-    el: '.swiper-pagination-h',
-    clickable: true
+    });
+    var feedBackSwiper = new Swiper('.feedback_swiper', {
+      containerClass: 'owl_swiper',
+      activeSlideKey: '5',
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 10
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 10
+        },
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 10
+        },
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        }
+      }
+    });
+    var mainSwiper = new Swiper('.main_slider', {
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    });
+    var salesSwiper = new Swiper('.sales_slider', {
+      slidesPerView: 1
+    });
+    var mySwiper = new Swiper('.owl_swiper', {
+      containerClass: 'owl_swiper',
+      activeSlideKey: '5',
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 40
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        },
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        }
+      }
+    });
+    var swiperH = new Swiper('.swiper-container-h', {
+      spaceBetween: 50,
+      pagination: {
+        el: '.swiper-pagination-h',
+        clickable: true
+      }
+    });
   }
-});
+};
 
 /***/ }),
 
@@ -37485,6 +37494,27 @@ var ContactsFormController = function ContactsFormController() {
 
 /* harmony default export */ __webpack_exports__["default"] = (ContactsFormController);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/js/controllers/DeliveryController.js":
+/*!********************************************************!*\
+  !*** ./resources/js/controllers/DeliveryController.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var DeliveryController = function DeliveryController() {
+  _classCallCheck(this, DeliveryController);
+
+  console.log('damn delivery is goin on');
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (DeliveryController);
 
 /***/ }),
 

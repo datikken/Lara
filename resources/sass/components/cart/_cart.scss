@@ -2,6 +2,7 @@
   @include breakpoint($medium) {
     margin-bottom: 300px;
   }
+
   &_wrap {
     max-width: $layoutw;
     margin: 0 auto;
@@ -9,6 +10,19 @@
 
     @include breakpoint($phone) {
       margin-bottom: 30px;
+    }
+
+    .active {
+      position: relative;
+
+      &-item {
+          width: 8%;
+          position: absolute;
+          height: 4px;
+          background: $gradient;
+          bottom: -3px;
+          left: 0;
+        }
     }
 
     &-crumb {
@@ -25,20 +39,6 @@
         width: initial;
         background: initial;
         margin-bottom: 50px;
-      }
-      .active {
-        position: relative;
-
-        &:after {
-          content: "";
-          display: block;
-          position: absolute;
-          height: 4px;
-          width: 100%;
-          background: $purple;
-          bottom: -22px;
-          left: -10px;
-        }
       }
 
       &-item {
@@ -245,9 +245,7 @@
                 }
             }
 
-            .product_delete {
-
-            }
+            .product_delete {}
 
             &-col {
               display: flex;
@@ -264,22 +262,17 @@
                 }
               }
 
-
               @include breakpoint($medium) {
                 margin: 15px;
               }
-
               //justify-content: space-between;
               //border-bottom: 1px solid $light_gray;
-
               @include breakpoint($medium) {
                 border: none;
               }
 
               &:last-child {
                 background: $light_gray;
-                //padding: 20px 10px;
-
                 @include breakpoint($medium) {
                   background: initial;
                 }
@@ -373,7 +366,6 @@
                     @include breakpoint($medium) {
                       margin-bottom: 29px;
                     }
-
 
                     &_minus, &_quantity, &_plus {
                       height: 100%;

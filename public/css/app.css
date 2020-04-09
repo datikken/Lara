@@ -5563,6 +5563,17 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     margin-bottom: 30px;
   }
 }
+.cart_wrap .active {
+  position: relative;
+}
+.cart_wrap .active-item {
+  width: 8%;
+  position: absolute;
+  height: 4px;
+  background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
+  bottom: -3px;
+  left: 0;
+}
 .cart_wrap-crumb {
   width: 100%;
   background: #e9e9ea;
@@ -5579,19 +5590,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     background: initial;
     margin-bottom: 50px;
   }
-}
-.cart_wrap-crumb .active {
-  position: relative;
-}
-.cart_wrap-crumb .active:after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  background: #bb3cfd;
-  bottom: -22px;
-  left: -10px;
 }
 .cart_wrap-crumb-item {
   font-family: "Montserrat";

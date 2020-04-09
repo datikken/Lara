@@ -1,4 +1,5 @@
 window.onload = function () {
+   if(typeof Swiper !== 'undefined') {
     let main = new Swiper('.landswipe', {
         slidesPerView: 'auto',
         containerClass: 'landswipe_swiper',
@@ -9,7 +10,7 @@ window.onload = function () {
             el: '.swiper-pagination',
             clickable: true,
         }
-    })
+    });
 
     let swiperMain = new Swiper('.bestPrinters_swiper', {
         spaceBetween: 50,
@@ -24,7 +25,7 @@ window.onload = function () {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         }
-    })
+    });
 
     let swiperV = new Swiper('.swiper-container-v', {
         spaceBetween: 50,
@@ -116,14 +117,14 @@ window.onload = function () {
                 spaceBetween: 10
             }
         }
-    })
+    });
+
+    let swiperH = new Swiper('.swiper-container-h', {
+        spaceBetween: 50,
+        pagination: {
+            el: '.swiper-pagination-h',
+            clickable: true,
+        }
+    });
+  }
 };
-
-
-let swiperH = new Swiper('.swiper-container-h', {
-    spaceBetween: 50,
-    pagination: {
-        el: '.swiper-pagination-h',
-        clickable: true,
-    }
-});
