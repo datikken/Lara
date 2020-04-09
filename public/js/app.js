@@ -37506,15 +37506,43 @@ var ContactsFormController = function ContactsFormController() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var DeliveryController = function DeliveryController() {
-  _classCallCheck(this, DeliveryController);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  console.log('damn delivery is goin on');
-};
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var DeliveryController = /*#__PURE__*/function () {
+  _createClass(DeliveryController, [{
+    key: "_progressBar",
+    value: function _progressBar() {
+      var page = document.querySelector('.cart');
+      var bar = page.querySelector('.active-item');
+      var deliveryStep = page.querySelector('.order_list');
+      var formStep = page.querySelector('.dform');
+
+      if (deliveryStep) {
+        $(bar).css('width', '37%');
+      }
+
+      if (formStep) {
+        $(bar).css('width', '65%');
+      }
+    }
+  }]);
+
+  function DeliveryController() {
+    _classCallCheck(this, DeliveryController);
+
+    var cart = $('.cart_wrap');
+    cart && this._progressBar(cart);
+  }
+
+  return DeliveryController;
+}();
 
 /* harmony default export */ __webpack_exports__["default"] = (DeliveryController);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
