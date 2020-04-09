@@ -66,8 +66,24 @@
       }
 
       &_item {
+        .map_group {
+          &-heading {
+            font-family: $semifont;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 130%;
+            color: $dblack;
+            margin-bottom: 20px;
+          }
+        }
+
         .metro_form {
-            .metro_group {
+          .form_group-btn {
+            margin-bottom: 50px!important;
+          }
+
+          .metro_group {
               display: flex;
               margin-bottom: 30px;
 

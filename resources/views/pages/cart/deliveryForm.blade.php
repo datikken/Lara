@@ -88,15 +88,12 @@
                     @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn', 'text' => 'Забрать из этого пункта'])
                 </div>
 
-
                 <div class="form_group map_group">
                     <div class="map_group-heading">
                         <span class="map_group-heading_item">Выбрать на карте</span>
                     </div>
 
                     <div class="map_group-map"></div>
-
-                    @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn', 'text' => 'Забрать с этого постамата'])
 
                 </div>
             </div>

@@ -6411,6 +6411,18 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   text-transform: uppercase;
   color: #292930;
 }
+.dform_wrap-col_item .map_group-heading {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  color: #292930;
+  margin-bottom: 20px;
+}
+.dform_wrap-col_item .metro_form .form_group-btn {
+  margin-bottom: 50px !important;
+}
 .dform_wrap-col_item .metro_form .metro_group {
   display: flex;
   margin-bottom: 30px;
