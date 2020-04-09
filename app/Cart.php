@@ -36,10 +36,9 @@ class Cart
         {
             $productToAdd = $this->items[$id];
             $productToAdd['quantity']++;
-            $productToAdd['totalprice'] =  $productToAdd['quantity'] * $productToAdd['price'];
+            $productToAdd['totalPrice'] =  $productToAdd['quantity'] * $productToAdd['price'];
         } else {
-            $productToAdd = ['quantity' => 1,'price' => $price, 'totalprice' => $price,'data'=> $product];
-
+            $productToAdd = ['quantity' => 1,'price' => $price, 'totalPrice' => $price,'data'=> $product];
         }
 
         $this->items[$id] = $productToAdd;
@@ -55,7 +54,7 @@ class Cart
         foreach($this->items as $item)
         {
            $totalQuantity = $totalQuantity + $item['quantity'];
-           $totalPrice = $totalPrice + $item['totalprice'];
+           $totalPrice = $totalPrice + $item['totalPrice'];
         }
 
         $this->totalQuantity = $totalQuantity;
