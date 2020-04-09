@@ -6854,6 +6854,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   outline: none;
   padding: 10px 10px 0 20px;
   max-width: 746px;
+  border: 1px solid #e9e9ea;
 }
 .cfeedback_wrap-row_item_textarea textarea::-webkit-input-placeholder {
   padding: 6px;

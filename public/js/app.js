@@ -37054,24 +37054,17 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _components_Logger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Logger */ "./resources/js/components/Logger.js");
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Menu */ "./resources/js/components/Menu.js");
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_Menu__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Swiper */ "./resources/js/components/Swiper.js");
-/* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_Swiper__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Search */ "./resources/js/components/Search.js");
-/* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_Search__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
-/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Map */ "./resources/js/components/Map.js");
-/* harmony import */ var _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./controllers/ContactsFormController */ "./resources/js/controllers/ContactsFormController.js");
-/* harmony import */ var _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./controllers/LoginFormController */ "./resources/js/controllers/LoginFormController.js");
-/* harmony import */ var _controllers_SearchController__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/SearchController */ "./resources/js/controllers/SearchController.js");
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-//
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Menu */ "./resources/js/components/Menu.js");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_Menu__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Swiper */ "./resources/js/components/Swiper.js");
+/* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_Swiper__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Search */ "./resources/js/components/Search.js");
+/* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_Search__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
+/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Map */ "./resources/js/components/Map.js");
+/* harmony import */ var _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./controllers/ContactsFormController */ "./resources/js/controllers/ContactsFormController.js");
+/* harmony import */ var _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./controllers/LoginFormController */ "./resources/js/controllers/LoginFormController.js");
+/* harmony import */ var _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./controllers/SearchController */ "./resources/js/controllers/SearchController.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
 
 
@@ -37083,34 +37076,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
 
 
 
-
-var a = new _components_Logger__WEBPACK_IMPORTED_MODULE_0__["default"](); // let form = new Form();
-
-var form = new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
-var search = new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_8__["default"]();
+var form = new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_5__["default"]();
+var search = new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__["default"]();
 $(document).ready(function () {
+  var map = new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
   var domEl = $('.ymap-coords');
-  var login = new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_7__["default"]();
-  var map = new _components_Map__WEBPACK_IMPORTED_MODULE_5__["default"]();
-
-  map._simpleMap(domEl);
+  domEl && map._simpleMap(domEl);
+  var login = new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
 });
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -37179,27 +37152,6 @@ var Form = function Form() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Form);
-
-/***/ }),
-
-/***/ "./resources/js/components/Logger.js":
-/*!*******************************************!*\
-  !*** ./resources/js/components/Logger.js ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Logger = function Logger() {
-  _classCallCheck(this, Logger);
-
-  console.log('inited');
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Logger);
 
 /***/ }),
 
@@ -37654,8 +37606,8 @@ var SearchController = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/datikken/Downloads/Lara-pre/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/datikken/Downloads/Lara-pre/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/datikken/Downloads/Lara/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/datikken/Downloads/Lara/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
