@@ -170,11 +170,16 @@ class ProductsController extends Controller
 
         $request->session()->put('cart-customerFio', $arr);
 
-        return redirect()->route('setDelivery');
+        return redirect()->route('deliveryForm');
     }
 
     public function setDelivery()
     {
         return view('pages.delivery');
+    }
+
+    public function deliveryForm()
+    {
+        return view('pages.cart.deliveryForm');
     }
 }
