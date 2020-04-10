@@ -64,6 +64,10 @@ Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'s
 //Email Subscriptions
 Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'subscribe']);
 
+//AJAX
+Route::post('products/addToCartAjaxPost', ['uses' => 'ProductsController@addToCartAjaxPost', 'as' => 'AddToCartAjaxPost']);
+Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
+
 //Test file storage
 Route::get('/testStorage', function() {
     return "<img src=".Storage::url('product_images/product1.png').">";
