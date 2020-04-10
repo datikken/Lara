@@ -6435,6 +6435,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   text-transform: uppercase;
   color: #292930;
 }
+.dform_wrap-col_item .map_group .map_group-delivery {
+  width: 631px !important;
+  height: 364px !important;
+  margin-bottom: 30px !important;
+}
 .dform_wrap-col_item .map_group-heading {
   font-family: "MontserratSemiBold";
   font-style: normal;

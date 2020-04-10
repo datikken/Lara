@@ -37066,7 +37066,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./controllers/LoginFormController */ "./resources/js/controllers/LoginFormController.js");
 /* harmony import */ var _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./controllers/SearchController */ "./resources/js/controllers/SearchController.js");
 /* harmony import */ var _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/DeliveryController */ "./resources/js/controllers/DeliveryController.js");
+/* harmony import */ var _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./controllers/DeliveryFormController */ "./resources/js/controllers/DeliveryFormController.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
+
 
 
 
@@ -37081,13 +37083,19 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
 var form = new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_5__["default"]();
 var search = new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__["default"]();
 $(document).ready(function () {
-  var domEl, map;
-  domEl = $('.ymap-coords');
+  var domEl, map, dform;
+  domEl = document.querySelector('.ymap-coords');
   if (domEl) map = new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
   domEl && map._simpleMap(domEl);
+  dform = document.querySelector('.dform');
+
+  if (dform) {
+    new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__["default"](dform);
+  }
+
   var login = new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
   var cart, cartController;
-  cart = $('.cart');
+  cart = document.querySelector('.cart');
   cart && new _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_8__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
@@ -37543,6 +37551,89 @@ var DeliveryController = /*#__PURE__*/function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (DeliveryController);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/js/controllers/DeliveryFormController.js":
+/*!************************************************************!*\
+  !*** ./resources/js/controllers/DeliveryFormController.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var DeliveryFormController = /*#__PURE__*/function () {
+  function DeliveryFormController(form) {
+    _classCallCheck(this, DeliveryFormController);
+
+    if (form) {
+      this._initMap(form);
+    }
+  }
+
+  _createClass(DeliveryFormController, [{
+    key: "_initMap",
+    value: function _initMap() {
+      ymaps.ready(function () {
+        var myMap = new ymaps.Map('map', {
+          center: [55.751574, 37.573856],
+          zoom: 12
+        }, {
+          searchControlProvider: 'yandex#search'
+        }),
+            // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+          hintContent: 'Собственный значок метки',
+          balloonContent: 'Это красивая метка'
+        }, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#image',
+          // Своё изображение иконки метки.
+          iconImageHref: 'images/myIcon.gif',
+          // Размеры метки.
+          iconImageSize: [30, 42],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-5, -38]
+        }),
+            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+          hintContent: 'Собственный значок метки с контентом',
+          balloonContent: 'А эта — новогодняя',
+          iconContent: '12'
+        }, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#imageWithContent',
+          // Своё изображение иконки метки.
+          iconImageHref: 'images/ball.png',
+          // Размеры метки.
+          iconImageSize: [48, 48],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-24, -24],
+          // Смещение слоя с содержимым относительно слоя с картинкой.
+          iconContentOffset: [15, 15],
+          // Макет содержимого.
+          iconContentLayout: MyIconContentLayout
+        });
+        myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
+      });
+    }
+  }]);
+
+  return DeliveryFormController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (DeliveryFormController);
 
 /***/ }),
 

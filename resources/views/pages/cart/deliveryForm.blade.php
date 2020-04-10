@@ -93,7 +93,8 @@
                         <span class="map_group-heading_item">Выбрать на карте</span>
                     </div>
 
-                    <div class="map_group-map"></div>
+                    <div id="map" class="ymaps map_group-delivery"></div>
+                    @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn', 'text' => 'Забрать с этого постамата'])
 
                 </div>
             </div>

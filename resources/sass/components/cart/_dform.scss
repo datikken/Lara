@@ -92,6 +92,12 @@
 
       &_item {
         .map_group {
+          .map_group-delivery {
+            width: 631px!important;
+            height: 364px!important;
+            margin-bottom: 30px!important;
+          }
+
           &-heading {
             font-family: $semifont;
             font-style: normal;
