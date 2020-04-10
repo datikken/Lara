@@ -17,7 +17,7 @@
 
 <div class="columns catalog_columns">
     <div class="left_column mobile-hide">
-            @include('components.catalog_filters.catalog_filters')-->
+            {{--@include('components.catalog_filters.catalog_filters')--}}
 <!--        <CatalogFilters/>-->
             @include('components.banner.catalog_banner')
 
