@@ -33,6 +33,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="type">Категория</label>
+                    <input type="text" class="form-control" name="category" id="type" required>
+                </div>
+
+                <div class="form-group">
                     <label for="price">Цена</label>
                     <input type="text" class="form-control" name="price" id="price" required>
                 </div>

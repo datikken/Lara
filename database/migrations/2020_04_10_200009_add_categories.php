@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddExtraFieldToUsersTable extends Migration
+class AddCategories extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class AddExtraFieldToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('face');
+        Schema::table('products', function (Blueprint $table) {
+            $table->string('category');
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -25,8 +24,6 @@ class AddExtraFieldToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('face');
-        });
+        //
     }
 }

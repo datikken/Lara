@@ -89,6 +89,7 @@ class AdminProductsController extends Controller
         $description = $request->input('description');
         $type = $request->input('type');
         $price = $request->input('price');
+        $category = $request->input('category');
 
         //Validator::make( $request->all(), ['image' => 'max:5000'])->validate();
         $ext = $request->file('image')->getClientOriginalExtension();
@@ -99,7 +100,14 @@ class AdminProductsController extends Controller
         $imageEncoded = File::get($request->image);
         Storage::disk('local')->put('public/product_images/' . $imageName, $imageEncoded);
 
-        $newProductArray = array('name' => $name, 'description' => $description,'image'=>$imageName, 'type' => $type,'price' => $price);
+        $newProductArray = array(
+            'name' => $name,
+            'description' => $description,
+            'image'=>$imageName,
+            'type' => $type,
+            'price' => $price,
+            'category' => $category
+        );
 
         $created = DB::table('products')->insert($newProductArray);
 
