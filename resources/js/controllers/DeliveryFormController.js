@@ -2,9 +2,18 @@ class DeliveryFormController {
     constructor(form) {
         if(form) {
             this._initMap(form);
+            this._checkBoxes();
         }
     }
-
+    _checkBoxes() {
+        let check = document.querySelectorAll('.delivery_type-item');
+            check.forEach((el) => {
+                el.addEventListener('click', function(e) {
+                    let item = e.currentTarget.querySelector('img');
+                        item && $(item).toggleClass('display');
+                });
+            })
+    }
     _initMap() {
         ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {

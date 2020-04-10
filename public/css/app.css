@@ -72,6 +72,7 @@ p {
   height: 80%;
   width: 80%;
   transform: rotate(90deg);
+  margin-top: 2px;
   display: none;
 }
 
@@ -9123,4 +9124,8 @@ main {
   height: 300px;
   overflow: hidden;
   margin-bottom: 20px;
+}
+
+.display {
+  display: block;
 }

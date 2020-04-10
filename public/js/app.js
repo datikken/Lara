@@ -37563,7 +37563,7 @@ var DeliveryController = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
@@ -37575,10 +37575,23 @@ var DeliveryFormController = /*#__PURE__*/function () {
 
     if (form) {
       this._initMap(form);
+
+      this._checkBoxes();
     }
   }
 
   _createClass(DeliveryFormController, [{
+    key: "_checkBoxes",
+    value: function _checkBoxes() {
+      var check = document.querySelectorAll('.delivery_type-item');
+      check.forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          var item = e.currentTarget.querySelector('img');
+          item && $(item).toggleClass('display');
+        });
+      });
+    }
+  }, {
     key: "_initMap",
     value: function _initMap() {
       ymaps.ready(function () {
@@ -37634,6 +37647,7 @@ var DeliveryFormController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (DeliveryFormController);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 

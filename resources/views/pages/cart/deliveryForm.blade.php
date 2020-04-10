@@ -59,8 +59,12 @@
                 </form>
 
               <div class="form_group address_group">
-                    <label for="lastaddress" class="form_group-label">Ранее используемый пункт выдачи</label>
-                    <input type="text" name="lastaddress"/>
+                    <label
+                        for="lastaddress"
+                        class="form_group-label">
+                        Ранее используемый пункт выдачи
+                    </label>
+                    <input type="text" name="lastaddress" placeholder="Россия, Москва, ул. Академика Королева, д. 8, корпус 38, строение 98, подъезд 8, офис 787" />
 
                   <div class="btns_wrap">
                       <div class="form_group-btn active">
