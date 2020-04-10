@@ -37067,6 +37067,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./controllers/SearchController */ "./resources/js/controllers/SearchController.js");
 /* harmony import */ var _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/DeliveryController */ "./resources/js/controllers/DeliveryController.js");
 /* harmony import */ var _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./controllers/DeliveryFormController */ "./resources/js/controllers/DeliveryFormController.js");
+/* harmony import */ var _controllers_CartController__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./controllers/CartController */ "./resources/js/controllers/CartController.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
 
 
@@ -37080,11 +37081,17 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
 
 
 
-var form = new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_5__["default"]();
-var search = new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__["default"]();
+
 $(document).ready(function () {
-  var domEl, map, dform;
+  new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
+  new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_5__["default"]();
+  new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__["default"]();
+  cart = document.querySelector('.cart');
+  var domEl, map, dform, cart, pgrid;
+  pgrid = document.querySelector('.products_grid');
   domEl = document.querySelector('.ymap-coords');
+  cart && new _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_8__["default"]();
+  pgrid && new _controllers_CartController__WEBPACK_IMPORTED_MODULE_10__["default"](pgrid);
   if (domEl) map = new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
   domEl && map._simpleMap(domEl);
   dform = document.querySelector('.dform');
@@ -37092,11 +37099,6 @@ $(document).ready(function () {
   if (dform) {
     new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__["default"](dform);
   }
-
-  var login = new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
-  var cart, cartController;
-  cart = document.querySelector('.cart');
-  cart && new _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_8__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -37469,6 +37471,63 @@ window.onload = function () {
     });
   }
 };
+
+/***/ }),
+
+/***/ "./resources/js/controllers/CartController.js":
+/*!****************************************************!*\
+  !*** ./resources/js/controllers/CartController.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CartController = /*#__PURE__*/function () {
+  function CartController(el) {
+    _classCallCheck(this, CartController);
+
+    this.el = el;
+    var that = this;
+    var btn = this.el.querySelector('.ajaxGETproduct');
+    btn.addEventListener('click', function (e) {
+      that._makeCall(e);
+    });
+  }
+
+  _createClass(CartController, [{
+    key: "_makeCall",
+    value: function _makeCall(e) {
+      e.preventDefault();
+      var url = e.currentTarget.getAttribute('data-url');
+
+      var _token = $('input[name="_token"]').val();
+
+      $.ajax({
+        method: "GET",
+        url: url,
+        data: {
+          token: _token
+        },
+        success: function success(data, status, XHR) {// console.warn(data);
+        },
+        error: function error(_error, status, XHR) {// console.warn(error);
+        }
+      });
+    }
+  }]);
+
+  return CartController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (CartController);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 

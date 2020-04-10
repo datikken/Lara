@@ -1,3 +1,5 @@
+{{ csrf_field()  }}
+
 <div class="product">
     <a href="{{ route('ShowProductDetails',['id' => $id]) }}">
         <div class="product_wrapper">
@@ -35,7 +37,7 @@
                         <img src="/images/icons/rub.svg" alt="cur" />
                 </div>
 
-<a href="{{route('AddToCartProduct', ['id' => $id])}}">
+<a href="#" class="ajaxGETproduct" data-url="{{ route('AddToCartAjaxGet', ['id' => $id]) }}">
                 @include('components.btn.buy_btn')
 </a>
 

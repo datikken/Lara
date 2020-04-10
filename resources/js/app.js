@@ -11,13 +11,20 @@ import LoginFormController from './controllers/LoginFormController'
 import SearchController from './controllers/SearchController'
 import DeliveryController from './controllers/DeliveryController'
 import DeliveryFormController from './controllers/DeliveryFormController'
-
-let form = new ContactsFormController();
-let search = new SearchController();
+import CartController from './controllers/CartController'
 
 $(document).ready(function() {
-    let domEl, map, dform;
+    new LoginFormController();
+    new ContactsFormController();
+    new SearchController();
+
+    cart = document.querySelector('.cart');
+    let domEl, map, dform, cart, pgrid;
+        pgrid = document.querySelector('.products_grid');
         domEl = document.querySelector('.ymap-coords');
+
+    cart && new DeliveryController();
+    pgrid && new CartController(pgrid);
 
     if(domEl) map = new SimpleMap();
        domEl && map._simpleMap(domEl);
@@ -27,10 +34,4 @@ $(document).ready(function() {
        if(dform) {
             new DeliveryFormController(dform);
        }
-
-    let login = new LoginFormController();
-
-    let cart, cartController;
-        cart = document.querySelector('.cart');
-        cart && new DeliveryController();
 });

@@ -245,13 +245,11 @@ class ProductsController extends Controller
     public function addToCartAjaxGet(Request $request, $id)
     {
         $prevCart = $request->session()->get('cart');
-
         $cart = new Cart($prevCart);
-
         $product = Product::find($id);
         $cart->addItem($id, $product);
         $request->session()->put('cart', $cart);
-
-        return response()->json(['cart', 'success']);
+//
+        return response()->json(array('cart', 'success'));
     }
 }
