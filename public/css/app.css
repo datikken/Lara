@@ -24,10 +24,6 @@
   margin-bottom: 20px;
 }
 
-.gatsby-image-wrapper div, .gatsby-image-wrapper img {
-  padding: 0;
-}
-
 .menu_visible {
   height: 90vh !important;
   overflow-y: scroll !important;
@@ -78,6 +74,10 @@ p {
 
 input {
   border: 1px solid #d4d4d5;
+}
+
+.invisible {
+  display: none;
 }
 
 .as-visible {
@@ -261,6 +261,11 @@ input::placeholder, textarea::placeholder {
   line-height: 14px;
   letter-spacing: 0.02em;
   color: #d4d4d5;
+}
+
+[type=submit] {
+  border: none;
+  outline: none !important;
 }
 
 .header {
@@ -6402,6 +6407,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dform_wrap-col .index_group .form_group-wrap {
   display: flex;
 }
+.dform_wrap-col .index_group .form_group-wrap [type=submit] {
+  border: none;
+}
 .dform_wrap-col .index_group .form_group-wrap .action_btn {
   width: 170px !important;
   height: 40px !important;
@@ -6511,6 +6519,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   letter-spacing: 0.02em;
   color: #292930;
   display: block;
+  cursor: pointer;
 }
 .dform_wrap-col_item .form_group-label {
   font-family: "MontserratSemiBold";

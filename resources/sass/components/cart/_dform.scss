@@ -46,6 +46,10 @@
           &-wrap {
             display: flex;
 
+            [type="submit"] {
+              border: none;
+            }
+
             .action_btn {
               width: 170px!important;
               height: 40px!important;
@@ -184,6 +188,7 @@
                 letter-spacing: 0.02em;
                 color: $dblack;
                 display: block;
+                cursor: pointer;
               }
             }
           }

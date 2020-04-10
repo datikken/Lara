@@ -128,3 +128,8 @@ input, textarea {
     color: $gray;
   }
 }
+
+[type="submit"] {
+  border: none;
+  outline: none!important;
+}

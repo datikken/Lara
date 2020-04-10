@@ -7,8 +7,17 @@ class DeliveryFormController {
     }
     _checkBoxes() {
         let check = document.querySelectorAll('.delivery_type-item');
+            function clear() {
+                check.forEach((el) => {
+                    let item = el.querySelector('img');
+                        if(item.classList.contains('display')) {
+                            item.classList.remove('display')
+                        }
+                })
+            }
             check.forEach((el) => {
                 el.addEventListener('click', function(e) {
+                    clear();
                     let item = e.currentTarget.querySelector('img');
                         item && $(item).toggleClass('display');
                 });

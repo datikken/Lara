@@ -37584,8 +37584,20 @@ var DeliveryFormController = /*#__PURE__*/function () {
     key: "_checkBoxes",
     value: function _checkBoxes() {
       var check = document.querySelectorAll('.delivery_type-item');
+
+      function clear() {
+        check.forEach(function (el) {
+          var item = el.querySelector('img');
+
+          if (item.classList.contains('display')) {
+            item.classList.remove('display');
+          }
+        });
+      }
+
       check.forEach(function (el) {
         el.addEventListener('click', function (e) {
+          clear();
           var item = e.currentTarget.querySelector('img');
           item && $(item).toggleClass('display');
         });
