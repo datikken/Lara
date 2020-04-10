@@ -37749,7 +37749,7 @@ var LoginFormController = /*#__PURE__*/function () {
         var text = el.querySelector('.form_type-itemText_inner');
         if (text) faceInput.setAttribute('value', '');
       });
-      el.classList.add('activeFormItem');
+      el.classList.toggle('activeFormItem');
     }
   }]);
 
@@ -37764,10 +37764,18 @@ var LoginFormController = /*#__PURE__*/function () {
     });
     wraps.forEach(function (el) {
       var span = el.querySelector('.password_field-label');
+      var clicked = false;
       span.addEventListener('click', function () {
         var input = el.querySelector('input');
         var attr = input.getAttribute('type');
-        input.setAttribute('type', 'text');
+
+        if (!clicked) {
+          input.setAttribute('type', 'text');
+          clicked = true;
+        } else {
+          input.setAttribute('type', 'password');
+          clicked = false;
+        }
       });
     });
   }

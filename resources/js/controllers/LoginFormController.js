@@ -12,7 +12,7 @@ class LoginFormController {
              if(text) faceInput.setAttribute('value', '');
         });
 
-        el.classList.add('activeFormItem');
+        el.classList.toggle('activeFormItem');
     }
     constructor() {
         let that = this;
@@ -21,16 +21,23 @@ class LoginFormController {
 
         $('.form_type-item').on('click', function (e) {
             that._pickFaceType(e)
-        })
+        });
 
         wraps.forEach((el) => {
             let span = el.querySelector('.password_field-label');
+            let clicked = false;
 
                 span.addEventListener('click', function() {
-                    let input = el.querySelector('input')
-                    let attr = input.getAttribute('type')
+                    let input = el.querySelector('input');
+                    let attr = input.getAttribute('type');
 
-                    input.setAttribute('type', 'text')
+                    if(!clicked) {
+                        input.setAttribute('type', 'text');
+                        clicked = true;
+                    } else {
+                        input.setAttribute('type', 'password');
+                        clicked = false;
+                    }
                 });
         })
     }
