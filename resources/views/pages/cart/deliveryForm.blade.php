@@ -1,6 +1,7 @@
 @extends('layouts.cartProducts')
 
 @section('center')
+<div class="dform_outer">
    <div class="dform">
        <div class="dform_head">
            <span class="dform_head-item">Воспользуйтесь помощником для выбора доступных вариантов доставки</span>
@@ -57,7 +58,6 @@
                     </div>
                 </form>
 
-
               <div class="form_group address_group">
                     <label for="lastaddress" class="form_group-label">Ранее используемый пункт выдачи</label>
                     <input type="text" name="lastaddress"/>
@@ -101,7 +101,6 @@
 
          <div class="dform_wrap-col">
             <div class="dform_wrap-col_item delivery_type">
-
                 <div class="delivery_type-item">
                     @include('components.checkbox.simple_check')
                     <span>Самовывоз</span>
@@ -118,12 +117,12 @@
                     @include('components.checkbox.simple_check')
                     <span>Доставка почтой России</span>
                 </div>
-
             </div>
          </div>
-
       </div>
    </div>
-   @include('components.cart.order_list')
+
+    @include('components.cart.order_list')
+</div>
 
 @endsection

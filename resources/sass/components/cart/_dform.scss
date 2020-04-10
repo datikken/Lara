@@ -1,4 +1,7 @@
 .dform {
+  &_outer {
+    display: flex;
+  }
   &_head {
     font-family: $semifont;
     font-weight: 500;
@@ -15,6 +18,28 @@
 
     &-col {
       padding: 0 16px;
+
+      &:nth-child(2) {
+        margin-left: -200px;
+      }
+
+      .delivery_type {
+        &-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          
+            span {
+              font-family: $font;
+              font-size: 12px;
+              line-height: 14px;
+              letter-spacing: 0.02em;
+              color: $dblack;
+              display: block;
+              margin-left: 35px;
+            }
+        }
+      }
 
       .index_group {
         .form_group {
@@ -81,6 +106,7 @@
         .metro_form {
           .form_group-btn {
             margin-bottom: 50px!important;
+            cursor: pointer;
           }
 
           .metro_group {
@@ -91,6 +117,10 @@
                 &:first-child {
                   input {
                     width: 230px;
+                    border: none;
+                    border-top: 1px solid $gray;
+                    border-bottom: 1px solid $gray;
+                    border-left: 1px solid $gray;
                   }
                 }
               }

@@ -117,7 +117,6 @@ class ProductsController extends Controller
     {
         $cart = Session::get('cart');
 
-
         if($cart) {
             $date = date('Y-m-d H:i:s');
             $newOrderArray = array(
