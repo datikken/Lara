@@ -2,7 +2,7 @@
 
 @section('center')
     <div class="cart_wrap-item">
-        @if(empty($cartItems))
+        @if(Session::get('cart'))
         <div class="cart_wrap-item_inner">
             <div class="cart_wrap-item_inner-heading">
                 <span class="cart_wrap-item_inner-heading-text">корзина</span>
@@ -26,7 +26,7 @@
 
         <div class="cart_wrap-item_inner">
             <div class="cart_wrap-item_inner-table">
-                @if(!empty($cartItems))
+                @if(Session::get('cart'))
                     @foreach($cartItems->items as $cartItem)
                         @include('components.cart.cart_item', $cartItem)
                     @endforeach
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        @if(!empty($cartItems))
+        @if(Session::get('cart'))
             <div class="cart_wrap-item_inner-total">
                 <div class="cart_wrap-item_inner-total_inner">
                     <span class="cart_wrap-item_inner-total_inner-item">Общая сумма</span>

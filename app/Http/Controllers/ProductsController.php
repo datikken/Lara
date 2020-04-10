@@ -79,6 +79,9 @@ class ProductsController extends Controller
 
         $request->session()->put('cart', $updatedCart);
 
+        session()->forget('cart');
+        dump($updatedCart);
+
         return redirect()->route('cartItems');
 
     }
