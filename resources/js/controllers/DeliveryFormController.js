@@ -10,7 +10,11 @@ class DeliveryFormController {
             function clear() {
                 check.forEach((el) => {
                     let item = el.querySelector('img');
-                        if(item.classList.contains('display')) {
+
+                    let checkbox = el.querySelector('[type="checkbox"]');
+                        checkbox.removeAttribute('value');
+
+                    if(item.classList.contains('display')) {
                             item.classList.remove('display')
                         }
                 })
@@ -18,6 +22,10 @@ class DeliveryFormController {
             check.forEach((el) => {
                 el.addEventListener('click', function(e) {
                     clear();
+
+                    let checkbox = e.currentTarget.querySelector('[type="checkbox"]');
+                        checkbox.setAttribute('value', 'checked');
+
                     let item = e.currentTarget.querySelector('img');
                         item && $(item).toggleClass('display');
                 });

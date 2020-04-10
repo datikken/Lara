@@ -37647,6 +37647,8 @@ var DeliveryFormController = /*#__PURE__*/function () {
       function clear() {
         check.forEach(function (el) {
           var item = el.querySelector('img');
+          var checkbox = el.querySelector('[type="checkbox"]');
+          checkbox.removeAttribute('value');
 
           if (item.classList.contains('display')) {
             item.classList.remove('display');
@@ -37657,6 +37659,8 @@ var DeliveryFormController = /*#__PURE__*/function () {
       check.forEach(function (el) {
         el.addEventListener('click', function (e) {
           clear();
+          var checkbox = e.currentTarget.querySelector('[type="checkbox"]');
+          checkbox.setAttribute('value', 'checked');
           var item = e.currentTarget.querySelector('img');
           item && $(item).toggleClass('display');
         });

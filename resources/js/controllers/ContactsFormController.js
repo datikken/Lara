@@ -9,7 +9,7 @@ class ContactsFormController {
                     if(el.classList.contains(('active'))) {
                         el.classList.remove('active');
                     }
-                })
+                });
 
                 e.currentTarget.classList.add('active');
 
