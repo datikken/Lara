@@ -6,9 +6,9 @@
 
 <div class="cart">
     <div class="cart_wrap">
+        @if(Session::get('cart'))
         <div class="cart_wrap-crumb active">
             <div class="active-item"></div>
-
             <div class="cart_wrap-crumb-item">
                 <span>Ваша корзина</span>
             </div>
@@ -22,13 +22,9 @@
                 <span>Оплата</span>
             </div>
         </div>
-
+        @endif
         @yield('center')
-
-{{--@include('alert.success_cart')--}}
-
     </div>
 </div>
-
 
 @include('layouts.footer')

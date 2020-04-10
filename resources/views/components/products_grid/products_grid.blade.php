@@ -8,7 +8,6 @@
         'price' => $product->price
     ]
 )
-
 @endforeach
 
 <div class="pagination_links">

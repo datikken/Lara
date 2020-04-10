@@ -2,30 +2,31 @@
 
 @section('center')
     <div class="cart_wrap-item">
+        @if(empty($cartItems))
         <div class="cart_wrap-item_inner">
             <div class="cart_wrap-item_inner-heading">
                 <span class="cart_wrap-item_inner-heading-text">корзина</span>
             </div>
         </div>
-
-        <div class="cart_wrap-item_inner-table_row cart_table-headings">
-            <div class="cart_wrap-item_inner-table_row-col">
-                <span class="cart_wrap-item_inner-table_row-col-heading">Картридж</span>
+            <div class="cart_wrap-item_inner-table_row cart_table-headings">
+                <div class="cart_wrap-item_inner-table_row-col">
+                    <span class="cart_wrap-item_inner-table_row-col-heading">Картридж</span>
+                </div>
+                <div class="cart_wrap-item_inner-table_row-col">
+                    <span class="cart_wrap-item_inner-table_row-col-heading">Цена (шт)</span>
+                </div>
+                <div class="cart_wrap-item_inner-table_row-col">
+                    <span class="cart_wrap-item_inner-table_row-col-heading">Количество</span>
+                </div>
+                <div class="cart_wrap-item_inner-table_row-col">
+                    <span class="cart_wrap-item_inner-table_row-col-heading">Общая сумма</span>
+                </div>
             </div>
-            <div class="cart_wrap-item_inner-table_row-col">
-                <span class="cart_wrap-item_inner-table_row-col-heading">Цена (шт)</span>
-            </div>
-            <div class="cart_wrap-item_inner-table_row-col">
-                <span class="cart_wrap-item_inner-table_row-col-heading">Количество</span>
-            </div>
-            <div class="cart_wrap-item_inner-table_row-col">
-                <span class="cart_wrap-item_inner-table_row-col-heading">Общая сумма</span>
-            </div>
-        </div>
+        @endif
 
         <div class="cart_wrap-item_inner">
             <div class="cart_wrap-item_inner-table">
-                @if(isset($cartItems))
+                @if(empty($cartItems))
                     @foreach($cartItems->items as $cartItem)
                         @include('components.cart.cart_item', $cartItem)
                     @endforeach
@@ -35,7 +36,7 @@
             </div>
         </div>
 
-        @if(isset($cartItems))
+        @if(empty($cartItems))
             <div class="cart_wrap-item_inner-total">
                 <div class="cart_wrap-item_inner-total_inner">
                     <span class="cart_wrap-item_inner-total_inner-item">Общая сумма</span>
