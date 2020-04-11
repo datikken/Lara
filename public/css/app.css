@@ -3583,7 +3583,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .owl-item:after {
-    right: -17px;
+    right: -15.5px;
     top: 43%;
     display: block;
     transform: translate(-50%, -50%);
@@ -3857,7 +3857,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .product {
-    margin: 20px 10px 20px 10px;
+    margin: 0px 10px 20px 10px;
     width: 270px;
     height: 270px;
   }

@@ -36,7 +36,6 @@
 }
 .owl-item {
   text-align: center;
-  // height: 100% !important;
   max-height: 200px;
   margin: 0 20px;
   @include breakpoint($phone) {   
@@ -137,7 +136,7 @@
     display: none;
 
     @include breakpoint($medium) {
-      right: -17px;
+      right: -15.5px;
       top: 43%;
       display: block;
       transform: translate(-50%, -50%);
