@@ -3,7 +3,35 @@ class DeliveryFormController {
         if(form) {
             this._initMap(form);
             this._checkBoxes();
+            this._listsHandler();
         }
+    }
+    _listsHandler() {
+        let items = [];
+
+        let a = document.querySelector('.metro_group_wrap_list-wrap');
+            a && items.push(a);
+
+        let b = document.querySelector('.postamat_list-wrap');
+            b && items.push(b);
+
+            items.forEach((a) => {
+                a.addEventListener('click', function (e) {
+                    let wrap = e.currentTarget;
+                    let ul = wrap.querySelector('ul');
+
+                    ul && ul.classList.toggle('active_ul');
+
+                    let lis = ul.querySelectorAll('li');
+
+                    lis.forEach((el) => {
+                        el.addEventListener('click', function(e) {
+                            let input = e.path[3].querySelector('input');
+                                input.setAttribute('value', e.currentTarget.innerText);
+                        });
+                    });
+                });
+            });
     }
     _checkBoxes() {
         let check = document.querySelectorAll('.delivery_type-item');

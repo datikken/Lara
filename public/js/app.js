@@ -37640,10 +37640,35 @@ var DeliveryFormController = /*#__PURE__*/function () {
       this._initMap(form);
 
       this._checkBoxes();
+
+      this._listsHandler();
     }
   }
 
   _createClass(DeliveryFormController, [{
+    key: "_listsHandler",
+    value: function _listsHandler() {
+      var items = [];
+      var a = document.querySelector('.metro_group_wrap_list-wrap');
+      a && items.push(a);
+      var b = document.querySelector('.postamat_list-wrap');
+      b && items.push(b);
+      items.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var wrap = e.currentTarget;
+          var ul = wrap.querySelector('ul');
+          ul && ul.classList.toggle('active_ul');
+          var lis = ul.querySelectorAll('li');
+          lis.forEach(function (el) {
+            el.addEventListener('click', function (e) {
+              var input = e.path[3].querySelector('input');
+              input.setAttribute('value', e.currentTarget.innerText);
+            });
+          });
+        });
+      });
+    }
+  }, {
     key: "_checkBoxes",
     value: function _checkBoxes() {
       var check = document.querySelectorAll('.delivery_type-item');
