@@ -87,7 +87,7 @@ class ProductsController extends Controller
         if(empty($cart->items)) {
             return view('components.cart.cart_empty');
         } else {
-            return view('pages.cart.cartProducts', ['cartItems' => $cart]);
+            return view('components.cart.cart_grid', ['cartItems' => $cart]);
         }
 
     }

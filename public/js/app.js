@@ -37497,12 +37497,9 @@ var CartController = /*#__PURE__*/function () {
     var that = this;
     this.el = el;
     var btns = this.el.querySelectorAll('.ajaxGETproduct');
-    var closes = this.el.querySelectorAll('.remove_icon');
-    closes && closes.forEach(function (el, i) {
-      el.addEventListener('click', function (e) {
-        that._deleteFromCart(closes[i], el);
-      });
-    });
+
+    this._setDeleteListeners();
+
     btns && btns.forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         that._makeCall(e);
@@ -37511,6 +37508,17 @@ var CartController = /*#__PURE__*/function () {
   }
 
   _createClass(CartController, [{
+    key: "_setDeleteListeners",
+    value: function _setDeleteListeners() {
+      var that = this;
+      var closes = this.el.querySelectorAll('.remove_icon');
+      closes.forEach(function (el, i) {
+        el.addEventListener('click', function (e) {
+          that._deleteFromCart(closes[i], el);
+        });
+      });
+    }
+  }, {
     key: "_deleteFromCart",
     value: function _deleteFromCart(item) {
       var url = item.getAttribute('data-href');
@@ -37525,10 +37533,16 @@ var CartController = /*#__PURE__*/function () {
           token: _token
         },
         success: function success(data, status, XHR) {
-          var cart = $('.cart_wrap');
-          $(cart).html(data);
+          if ($(data).hasClass('empty_cart')) {
+            var cart = $('.cart_wrap');
+            $(cart).html(data);
 
-          that._fixValues('', '', 'addClass');
+            that._fixValues('', '', 'addClass');
+          } else {
+            $('.cart_content').html(data);
+
+            that._setDeleteListeners();
+          }
         },
         error: function error(_error, status, XHR) {
           console.warn(_error);

@@ -3,18 +3,23 @@ class CartController {
         let that = this;
         this.el = el;
         let btns = this.el.querySelectorAll('.ajaxGETproduct');
-        let closes = this.el.querySelectorAll('.remove_icon');
 
-        closes && closes.forEach((el,i) => {
-            el.addEventListener('click', function(e) {
-                    that._deleteFromCart(closes[i],el);
-                });
-        });
+        this._setDeleteListeners();
 
        btns && btns.forEach((btn) => {
             btn.addEventListener('click', function(e) {
                 that._makeCall(e);
             })
+        });
+    }
+
+    _setDeleteListeners() {
+        let that = this;
+        let closes = this.el.querySelectorAll('.remove_icon');
+        closes.forEach((el,i) => {
+            el.addEventListener('click', function(e) {
+                that._deleteFromCart(closes[i],el);
+            });
         });
     }
 
@@ -28,9 +33,14 @@ class CartController {
             url: url,
             data: {token: _token},
             success: function (data, status, XHR) {
-                let cart = $('.cart_wrap');
-                $(cart).html(data)
-                that._fixValues('', '', 'addClass');
+                if($(data).hasClass('empty_cart')) {
+                    let cart = $('.cart_wrap');
+                    $(cart).html(data)
+                    that._fixValues('', '', 'addClass');
+                } else {
+                    $('.cart_content').html(data);
+                    that._setDeleteListeners();
+                }
             },
             error: function (error, status, XHR) {
                 console.warn(error);
