@@ -79,11 +79,7 @@ class ProductsController extends Controller
 
         $request->session()->put('cart', $updatedCart);
 
-        session()->forget('cart');
-        dump($updatedCart);
-
         return redirect()->route('cartItems');
-
     }
 
     public function increaseSingleProduct(Request $request, $id)
@@ -233,9 +229,7 @@ class ProductsController extends Controller
     public function addToCartAjaxPost(Request $request)
     {
         $id = $request->input('id');
-
         $prevCart = $request->session()->get('cart');
-
         $cart = new Cart($prevCart);
 
         $product = Product::find($id);
