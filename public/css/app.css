@@ -312,8 +312,14 @@ input::placeholder, textarea::placeholder {
   width: 30px;
   height: 30px;
   position: absolute;
-  left: -15px;
-  top: -0.2rem;
+  left: -1px;
+  top: -0.3rem;
+}
+@media not all and (min-resolution: 0.001dpcm) {
+  .header_wrapper-item_contacts-icon {
+    left: -15px;
+    top: -0.2rem;
+  }
 }
 .header_wrapper-item_contacts-tel {
   font-style: normal;
@@ -5817,6 +5823,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .cart_wrap-item_inner-table_row .col_amount span {
   display: none;
+  min-width: 120px;
 }
 @media screen and (min-width: 1030px) {
   .cart_wrap-item_inner-table_row .col_amount span {
@@ -6465,6 +6472,71 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dform_wrap-col_item .metro_form .metro_group {
   display: flex;
   margin-bottom: 30px;
+}
+.dform_wrap-col_item .metro_form .metro_group .form_group .postamat_list-wrap-heading {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 130%;
+  color: #d4d4d5;
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 80%;
+}
+.dform_wrap-col_item .metro_form .metro_group .form_group .postamat_list-wrap-icon {
+  width: 10px;
+  height: 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translate(0, -50%) rotate(90deg);
+}
+.dform_wrap-col_item .metro_form .metro_group .form_group .postamat_list-wrap ul {
+  display: none;
+  list-style: none;
+  position: absolute;
+}
+.dform_wrap-col_item .metro_form .metro_group .form_group .metro_group_wrap_list-wrap {
+  height: 38px;
+  width: 231px;
+  overflow: hidden;
+  border: 1px solid #d4d4d5;
+  position: relative;
+}
+.dform_wrap-col_item .metro_form .metro_group .form_group .metro_group_wrap_list-wrap-heading {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 130%;
+  color: #d4d4d5;
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 80%;
+}
+.dform_wrap-col_item .metro_form .metro_group .form_group .metro_group_wrap_list-wrap-icon {
+  width: 10px;
+  height: 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translate(0, -50%) rotate(90deg);
+}
+.dform_wrap-col_item .metro_form .metro_group .form_group .metro_group_wrap_list-wrap ul {
+  display: none;
+  list-style: none;
+  position: absolute;
 }
 .dform_wrap-col_item .metro_form .metro_group .form_group:first-child input {
   width: 230px;

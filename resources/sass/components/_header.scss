@@ -36,8 +36,13 @@
           width: 30px;
           height: 30px;
           position: absolute;
-          left: -15px;
-          top: -0.2rem;
+          left: -1px;
+          top: -0.3rem;
+
+          @media not all and (min-resolution: 0.001dpcm) {
+            left: -15px;
+            top: -0.2rem;
+          }
         }
         &-tel {
           font-style: normal;
