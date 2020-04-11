@@ -1,12 +1,14 @@
 class CartController {
     constructor(el) {
-        this.el = el;
         let that = this;
+        this.el = el;
+        let btns = this.el.querySelectorAll('.ajaxGETproduct');
 
-        let btn = this.el.querySelector('.ajaxGETproduct');
-            btn.addEventListener('click', function(e) {
-                that._makeCall(e);
-            })
+            btns.forEach((btn) => {
+                btn.addEventListener('click', function(e) {
+                    that._makeCall(e);
+                })
+            });
     }
 
     _makeCall(e) {
@@ -20,10 +22,10 @@ class CartController {
             url: url,
             data: {token: _token},
             success: function (data, status, XHR) {
-                // console.warn(data);
+                $('#cartAmount').html(data.cart);
             },
             error: function (error, status, XHR) {
-                // console.warn(error);
+                console.warn(error);
             }
         })
     }

@@ -35,9 +35,9 @@
                     <span>Сумма</span>
                 </div>
                 <div class="order_list-wrap_footer-row_item">
-                    <span>
+                    <span id="totalQuantity">
                         @php
-                            if(Session::get('cart')) echo Session::get('cart')->totalPrice;
+                            if(Session::has('cart')) echo Session::get('cart')->totalPrice;
                         @endphp руб.
                     </span>
                 </div>

@@ -242,7 +242,7 @@ class ProductsController extends Controller
         $cart->addItem($id, $product);
         $request->session()->put('cart', $cart);
 
-        return response()->json(['cart', 'success']);
+        return response()->json('cart', $cart->totalQuantity);
     }
 
     public function addToCartAjaxGet(Request $request, $id)
@@ -252,7 +252,7 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $cart->addItem($id, $product);
         $request->session()->put('cart', $cart);
-//
-        return response()->json(array('cart', 'success'));
+
+        return response()->json((object) array('cart' => $cart->totalQuantity));
     }
 }

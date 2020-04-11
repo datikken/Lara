@@ -37493,11 +37493,13 @@ var CartController = /*#__PURE__*/function () {
   function CartController(el) {
     _classCallCheck(this, CartController);
 
-    this.el = el;
     var that = this;
-    var btn = this.el.querySelector('.ajaxGETproduct');
-    btn.addEventListener('click', function (e) {
-      that._makeCall(e);
+    this.el = el;
+    var btns = this.el.querySelectorAll('.ajaxGETproduct');
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        that._makeCall(e);
+      });
     });
   }
 
@@ -37515,9 +37517,11 @@ var CartController = /*#__PURE__*/function () {
         data: {
           token: _token
         },
-        success: function success(data, status, XHR) {// console.warn(data);
+        success: function success(data, status, XHR) {
+          $('#cartAmount').html(data.cart);
         },
-        error: function error(_error, status, XHR) {// console.warn(error);
+        error: function error(_error, status, XHR) {
+          console.warn(_error);
         }
       });
     }
