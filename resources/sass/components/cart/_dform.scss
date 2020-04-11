@@ -158,14 +158,12 @@
 
                   ul {
                     display: none;
-                    list-style: none;
-                    position: absolute;
                   }
                 }
                 .metro_group_wrap_list-wrap {
                   height: 38px;
                   width: 231px;
-                  overflow: hidden;
+                  //overflow: hidden;
                   border: 1px solid $gray;
                   position: relative;
                   cursor: pointer;

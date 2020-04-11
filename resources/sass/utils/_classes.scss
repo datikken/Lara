@@ -133,3 +133,36 @@ input, textarea {
   border: none;
   outline: none!important;
 }
+
+.active_ul {
+  display: block!important;
+  list-style: none;
+  position: absolute;
+  max-width: 400px;
+  margin-left: -1px;
+  background: #fff;
+  top: 38px;
+  width: 100%;
+  padding: 0;
+  margin-top: 0;
+  padding-left: 0;
+  border: 1px solid $gray;
+  z-index: 9999;
+  max-height: 121px;
+  overflow-y: scroll;
+
+  li {
+    font-family: $font;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    color: $dblack;
+    padding: 20px 1rem;
+    transition: all $transition;
+
+    &:hover {
+      background: $black;
+      color: #fff;
+    }
+  }
+}

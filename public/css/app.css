@@ -268,6 +268,37 @@ input::placeholder, textarea::placeholder {
   outline: none !important;
 }
 
+.active_ul {
+  display: block !important;
+  list-style: none;
+  position: absolute;
+  max-width: 400px;
+  margin-left: -1px;
+  background: #fff;
+  top: 38px;
+  width: 100%;
+  padding: 0;
+  margin-top: 0;
+  padding-left: 0;
+  border: 1px solid #d4d4d5;
+  z-index: 9999;
+  max-height: 121px;
+  overflow-y: scroll;
+}
+.active_ul li {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  padding: 20px 1rem;
+  transition: all 0.2s;
+}
+.active_ul li:hover {
+  background: #40404c;
+  color: #fff;
+}
+
 .header {
   display: none;
   font-family: "MontserratSemiBold";
@@ -6506,13 +6537,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .dform_wrap-col_item .metro_form .metro_group .form_group .postamat_list-wrap ul {
   display: none;
-  list-style: none;
-  position: absolute;
 }
 .dform_wrap-col_item .metro_form .metro_group .form_group .metro_group_wrap_list-wrap {
   height: 38px;
   width: 231px;
-  overflow: hidden;
   border: 1px solid #d4d4d5;
   position: relative;
   cursor: pointer;
