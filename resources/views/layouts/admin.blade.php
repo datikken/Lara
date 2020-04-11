@@ -10,6 +10,7 @@
     <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#563d7c">
     @include('components.styles.style')
+    @include('components.styles.bootstrap')
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;

@@ -140,19 +140,19 @@
          <div class="dform_wrap-col">
             <div class="dform_wrap-col_item delivery_type">
                 <div class="delivery_type-item">
-                    @include('components.checkbox.simple_check')
+                    @include('components.checkbox.simple_check', ['name' => 'selfpick'])
                     <span>Самовывоз</span>
                 </div>
                 <div class="delivery_type-item">
-                    @include('components.checkbox.simple_check')
+                    @include('components.checkbox.simple_check', ['name' => 'delivery'])
                     <span>Доставка по Москве в пределах МКАД</span>
                 </div>
                 <div class="delivery_type-item">
-                    @include('components.checkbox.simple_check')
+                    @include('components.checkbox.simple_check', ['name' => 'mkad'])
                     <span>Доставка по Москве за МКАД</span>
                 </div>
                 <div class="delivery_type-item">
-                    @include('components.checkbox.simple_check')
+                    @include('components.checkbox.simple_check', ['name' => 'post'])
                     <span>Доставка почтой России</span>
                 </div>
             </div>

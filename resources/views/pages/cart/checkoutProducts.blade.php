@@ -37,7 +37,7 @@
                 <div class="cart_check-wrap_item">
                     <div class="cart_check-wrap_item-group checkbox">
                         <input type="checkbox" name="save" />
-                        @include('components.checkbox.simple_check')
+                        @include('components.checkbox.simple_check', ['name' => 'save'])
                         <label for="save">Сохранить данные</label>
                     </div>
                 </div>

@@ -18,18 +18,12 @@
 
     <div class="swiper-container owl_swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" key="1">
-                @include('components.owl.owl_card')
-            </div>
-            <div class="swiper-slide" key="2">
-                @include('components.owl.owl_card')
-            </div>
-            <div class="swiper-slide" key="3">
-                @include('components.owl.owl_card')
-            </div>
-            <div class="swiper-slide" key="4">
-                @include('components.owl.owl_card')
-            </div>
+            @foreach ($products as $product)
+                <div class="swiper-slide" key="1">
+                    @include('components.owl.owl_card', $product)
+                </div>
+            @endforeach
+
         </div>
     </div>
 

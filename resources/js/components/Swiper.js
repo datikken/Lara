@@ -51,10 +51,10 @@ window.onload = function () {
         activeSlideKey: '5',
         centeredSlides: true,
         loop: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false
-        },
+        // autoplay: {
+        //     delay: 2500,
+        //     disableOnInteraction: false
+        // },
         breakpoints: {
             1024: {
                 slidesPerView: 4,
@@ -95,10 +95,10 @@ window.onload = function () {
         activeSlideKey: '5',
         centeredSlides: true,
         loop: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false
-        },
+        // autoplay: {
+        //     delay: 2500,
+        //     disableOnInteraction: false
+        // },
         breakpoints: {
             1024: {
                 slidesPerView: 4,

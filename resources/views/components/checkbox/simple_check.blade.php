@@ -3,8 +3,8 @@
         <input
            class="checkbox-wrap_input invisible"
            type="checkbox"
-           name="remember"
+           name="<?php echo $name ?>"
         />
-        <img src="/images/icons/arrow_right.svg" alt="icon" class="checkbox-wrap_arrow"/>
+        <img src="/images/icons/arrow_right.svg" alt="icon" class="checkbox-wrap_arrow invisible"/>
     </div>
 </div>

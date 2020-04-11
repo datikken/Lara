@@ -10719,8 +10719,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/DeliveryController */ "./resources/js/controllers/DeliveryController.js");
 /* harmony import */ var _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./controllers/DeliveryFormController */ "./resources/js/controllers/DeliveryFormController.js");
 /* harmony import */ var _controllers_CartController__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./controllers/CartController */ "./resources/js/controllers/CartController.js");
+/* harmony import */ var _components_Checkbox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/Checkbox */ "./resources/js/components/Checkbox.js");
 // require('./bootstrap');
 // window.Vue = require('vue');
+
 
 
 
@@ -10736,7 +10738,8 @@ __webpack_require__.r(__webpack_exports__);
 $(document).ready(function () {
   new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
   new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_5__["default"]();
-  new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__["default"](); // new PageController();
+  new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__["default"]();
+  new _components_Checkbox__WEBPACK_IMPORTED_MODULE_11__["default"](); // new PageController();
 
   cart = document.querySelector('.cart');
   var mapEl, map, dform, cart, pgrid;
@@ -10753,6 +10756,70 @@ $(document).ready(function () {
   }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/js/components/Checkbox.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Checkbox.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Checkbox = /*#__PURE__*/function () {
+  function Checkbox() {
+    _classCallCheck(this, Checkbox);
+
+    var inited = false;
+    var checkboxes = document.querySelectorAll('.checkbox');
+
+    if (!inited) {
+      this.changeState(checkboxes);
+    }
+  }
+
+  _createClass(Checkbox, [{
+    key: "changeState",
+    value: function changeState(els) {
+      els.forEach(function (a) {
+        var clicked = false;
+        var img = a.querySelector('img');
+        img.addEventListener('click', function (e) {
+          if (!clicked) {
+            img.classList.add('invisible');
+            clicked = true;
+          } else {
+            img.classList.remove('invisible');
+            clicked = false;
+          }
+        });
+        a.addEventListener('click', function (e) {
+          var img = e.target.querySelector('img');
+
+          if (!clicked) {
+            img.classList.add('invisible');
+            clicked = true;
+          } else {
+            img.classList.remove('invisible');
+            clicked = false;
+          }
+        });
+      });
+    }
+  }]);
+
+  return Checkbox;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Checkbox);
 
 /***/ }),
 
@@ -10991,10 +11058,10 @@ window.onload = function () {
       activeSlideKey: '5',
       centeredSlides: true,
       loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-      },
+      // autoplay: {
+      //     delay: 2500,
+      //     disableOnInteraction: false
+      // },
       breakpoints: {
         1024: {
           slidesPerView: 4,
@@ -11032,10 +11099,10 @@ window.onload = function () {
       activeSlideKey: '5',
       centeredSlides: true,
       loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-      },
+      // autoplay: {
+      //     delay: 2500,
+      //     disableOnInteraction: false
+      // },
       breakpoints: {
         1024: {
           slidesPerView: 4,

@@ -1,8 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/',['uses' => "ProductsController@showIndex", 'as' => 'index']);
 //Catalog
 Route::get('catalog', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
 

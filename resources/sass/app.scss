@@ -145,7 +145,7 @@ main {
             .agreement {
                 display: flex;
                 align-items: center;
-                margin: 20px 0 30px 0;
+                margin: 20px 0;
 
                 span {
                     font-style: normal;
@@ -257,7 +257,7 @@ main {
                         letter-spacing: 0.02em;
                         color: $black;
                         cursor: pointer;
-                        margin-left: 10px;
+                        margin-left: 35px;
                     }
                     .form-check-input {
                         width: 20px;

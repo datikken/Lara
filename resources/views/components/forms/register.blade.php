@@ -80,7 +80,6 @@
                             <span class="password_field-label"></span>
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Пароль') }}</label>
 
-
                             <div class="col-md-6">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -114,19 +113,17 @@
                         </div>
 
                         <div class="agreement">
-
-                            <div class="form-check_box">
-                                <div class="form-check_box-wrap">
-                                    <div class="form-check_box-wrap_item">
-
-                                    </div>
-                                </div>
-                            </div>
-
-
+                            @include('components.checkbox.simple_check', ['name' => 'agreement'])
+                            {{----}}
+                            {{--<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>--}}
+                            {{--<div class="form-check_box">--}}
+                                {{--<div class="form-check_box-wrap">--}}
+                                    {{--<div class="form-check_box-wrap_item"></div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <span>
-                            {{ __('Я принимаю условия политики конфиденциальности') }}
-                        </span>
+                                {{ __('Я принимаю условия политики конфиденциальности') }}
+                            </span>
                         </div>
 
                         <div class="form-group row mb-0">

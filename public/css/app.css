@@ -69,7 +69,6 @@ p {
   width: 80%;
   transform: rotate(90deg);
   margin-top: 2px;
-  display: none;
 }
 
 input {
@@ -3640,6 +3639,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-left: 5px;
   position: absolute;
   bottom: 3px;
+  position: absolute;
+  right: -10px;
 }
 .carousel_card-wrapper_item:nth-child(3) {
   padding: 10px;
@@ -8985,7 +8986,7 @@ main {
 .main .card-body form .agreement {
   display: flex;
   align-items: center;
-  margin: 20px 0 30px 0;
+  margin: 20px 0;
 }
 .main .card-body form .agreement span {
   font-style: normal;
@@ -9087,7 +9088,7 @@ main {
   letter-spacing: 0.02em;
   color: #40404c;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 35px;
 }
 .main .card-body form .form-group .form-check .form-check-input {
   width: 20px;

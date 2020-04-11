@@ -12,6 +12,11 @@ use stdClass;
 
 class ProductsController extends Controller
 {
+    public function showIndex()
+    {
+        $products = Product::all();
+        return view('pages.index', ['products' => $products]);
+    }
     public function index()
     {
         $products = Product::paginate(3);
