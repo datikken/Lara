@@ -1,5 +1,4 @@
 @extends('layouts.cartProducts')
-
 @section('center')
     <div class="cart_wrap-item">
         @if(Session::get('cart'))

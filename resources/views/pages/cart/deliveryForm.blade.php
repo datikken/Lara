@@ -1,5 +1,4 @@
 @extends('layouts.cartProducts')
-
 @section('center')
 <div class="dform_outer">
    <div class="dform">
@@ -160,8 +159,6 @@
          </div>
       </div>
    </div>
-
     @include('components.cart.order_list')
 </div>
-
 @endsection

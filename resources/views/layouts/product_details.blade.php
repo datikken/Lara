@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Printers</title>
+    @include('components.styles.style')
+    @include('components.scripts.scripts')
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <link rel="stylesheet" href="/css/app.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
 </head>
 <body>
 @extends('layouts.index')

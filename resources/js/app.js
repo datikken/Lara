@@ -21,19 +21,16 @@ $(document).ready(function() {
     // new PageController();
 
     cart = document.querySelector('.cart');
-
-    let domEl, map, dform, cart, pgrid;
+    let mapEl, map, dform, cart, pgrid;
         pgrid = document.querySelector('.products_grid');
         if(!pgrid) pgrid = document.querySelector('.cart_wrap');
 
-        domEl = document.querySelector('.ymap-coords');
+        mapEl = document.querySelector('.ymaps');
 
     cart && new DeliveryController();
     pgrid && new CartController(pgrid);
 
-    if(domEl) map = new SimpleMap();
-       domEl && map._simpleMap(domEl);
-
+    if(mapEl) map = new SimpleMap(mapEl);
        dform = document.querySelector('.dform');
 
        if(dform) {

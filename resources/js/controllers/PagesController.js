@@ -24,7 +24,6 @@ class PagesController {
                         let newScripts = htmlDoc.querySelectorAll('script');
 
                         oldScripts.forEach((el) => {
-                            // console.log(el.src);
                             el.remove();
                         });
 
@@ -33,12 +32,10 @@ class PagesController {
                                 script.type = "text/javascript";
                                 script.src = el.src;
 
-
                             if(el.src != '') {
                                 document.head.appendChild(script);
                                 if(el.src.indexOf('app') > 0) {
                                     console.log(el);
-                                    // eval(el.innerText);
                                 }
                             }
                         });

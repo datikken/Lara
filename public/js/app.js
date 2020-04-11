@@ -10739,14 +10739,13 @@ $(document).ready(function () {
   new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__["default"](); // new PageController();
 
   cart = document.querySelector('.cart');
-  var domEl, map, dform, cart, pgrid;
+  var mapEl, map, dform, cart, pgrid;
   pgrid = document.querySelector('.products_grid');
   if (!pgrid) pgrid = document.querySelector('.cart_wrap');
-  domEl = document.querySelector('.ymap-coords');
+  mapEl = document.querySelector('.ymaps');
   cart && new _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_8__["default"]();
   pgrid && new _controllers_CartController__WEBPACK_IMPORTED_MODULE_10__["default"](pgrid);
-  if (domEl) map = new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
-  domEl && map._simpleMap(domEl);
+  if (mapEl) map = new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"](mapEl);
   dform = document.querySelector('.dform');
 
   if (dform) {
@@ -10794,8 +10793,10 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var SimpleMap = /*#__PURE__*/function () {
-  function SimpleMap() {
+  function SimpleMap(el) {
     _classCallCheck(this, SimpleMap);
+
+    this._simpleMap(el);
   }
 
   _createClass(SimpleMap, [{
@@ -10809,21 +10810,14 @@ var SimpleMap = /*#__PURE__*/function () {
           }, {
             searchControlProvider: 'yandex#search'
           }),
-              // Создаём макет содержимого.
-          MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
               myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
             hintContent: 'Собственный значок метки',
             balloonContent: 'Это красивая метка'
           }, {
-            // Опции.
-            // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
-            // Своё изображение иконки метки.
             iconImageHref: 'images/myIcon.gif',
-            // Размеры метки.
             iconImageSize: [30, 42],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
             iconImageOffset: [-5, -38]
           }),
               myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
@@ -10831,19 +10825,11 @@ var SimpleMap = /*#__PURE__*/function () {
             balloonContent: 'А эта — новогодняя',
             iconContent: '12'
           }, {
-            // Опции.
-            // Необходимо указать данный тип макета.
             iconLayout: 'default#imageWithContent',
-            // Своё изображение иконки метки.
             iconImageHref: 'images/ball.png',
-            // Размеры метки.
             iconImageSize: [48, 48],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
             iconImageOffset: [-24, -24],
-            // Смещение слоя с содержимым относительно слоя с картинкой.
             iconContentOffset: [15, 15],
-            // Макет содержимого.
             iconContentLayout: MyIconContentLayout
           });
           myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);

@@ -2,7 +2,6 @@
 @extends('layouts.index')
 
 @section('center')
-
 <div class="crumbs_wrap mobile-hide">
 <!--    <Breadcrumbs-->
 <!--        separator={<NavigateNextIcon fontSize="small" />}-->
@@ -37,7 +36,6 @@
 
     </div>
 </div>
-
 @endsection
 
 @yield('bottom')

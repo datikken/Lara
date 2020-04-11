@@ -1,5 +1,4 @@
 @extends('layouts.cartProducts')
-
 @section('center')
     <div class="cart_check-wrapper">
         <div class="cart_check">
@@ -45,8 +44,6 @@
 
             </form>
         </div>
-
         @include('components.cart.order_list')
-
     </div>
 @endsection
