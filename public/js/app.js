@@ -11194,6 +11194,9 @@ var CartController = /*#__PURE__*/function () {
         success: function success(data, status, XHR) {
           if ($(data).hasClass('empty_cart')) {
             var cart = $('.cart_wrap');
+            var amount = $('#cartAmount');
+            var price = $('#cartPrice');
+            console.log('test', $(data).find('#cartPrice'));
             $(cart).html(data);
 
             that._fixValues('', '', 'addClass');

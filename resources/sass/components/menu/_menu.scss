@@ -151,8 +151,8 @@
         z-index: 9999;
         list-style: none;
         padding: 0;
-        left: -10px;
-        top: 50px;
+        left: -1px;
+        top: 38px;
         width: 200px;
         overflow: hidden;
         display: none;
@@ -198,10 +198,10 @@
             padding: 12.5px;
             color: $dblack;
             border-bottom: 1px solid $light_gray;
-            display: flex;
             justify-content: space-between;
             width: 88%;
             transition: all $transition;
+            display: flex!important;
 
             &_secondary {
               background: $white;
@@ -211,8 +211,8 @@
               padding: 0;
               z-index: 99;
               width: 130px;
-              top: 13.1rem;
-              right: -13.8rem;
+              top: 12.4rem;
+              right: -14.4rem;
               font-weight: 300;
               display: none;
 

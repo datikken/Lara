@@ -35,7 +35,13 @@ class CartController {
             success: function (data, status, XHR) {
                 if($(data).hasClass('empty_cart')) {
                     let cart = $('.cart_wrap');
-                    $(cart).html(data)
+                    let amount = $('#cartAmount');
+                    let price = $('#cartPrice');
+
+                    console.log('test',$(data).find('#cartPrice'));
+
+
+                    $(cart).html(data);
                     that._fixValues('', '', 'addClass');
                 } else {
                     $('.cart_content').html(data);

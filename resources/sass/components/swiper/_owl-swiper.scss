@@ -3,7 +3,7 @@
 
   @include breakpoint($medium) {
     margin-bottom: 0;
-    padding-top: 50px;
+    padding-top: 70px;
   }
 
   .owl-controls-heading {
@@ -42,7 +42,13 @@
     }
 }
 .carousel_card-wrapper_item {
+  &-image {
+    background-size: cover;
+  }
+
     &:nth-child(3) {
+      border: 1px solid $gray;
+
       @include breakpoint($medium) {
         height: 270px;
       }
