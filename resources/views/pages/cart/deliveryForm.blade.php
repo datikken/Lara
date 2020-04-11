@@ -105,7 +105,7 @@
 
                         <div class="form_group">
                             <label for="station" class="form_group-label">Выбрать пункт выдачи</label>
-                            <input type="text" name="station">
+                            <input type="text" name="station" style="display: none;">
 
                             <div class="postamat_list-wrap">
                                 <span class="postamat_list-wrap-heading">Введите ближайшее метро</span>

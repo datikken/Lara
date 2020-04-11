@@ -125,14 +125,23 @@
 
               .form_group {
                 .postamat_list-wrap {
+                  border: 1px solid $gray;
+                  border-left: none;
+                  position: relative;
+                  width: 400px;
+                  height: 38px;
+                  cursor: pointer;
+
                   &-heading {
+                    display: block;
                     font-family: $font;
                     font-size: 12px;
                     line-height: 130%;
                     color: $gray;
                     position: absolute;
-                    @include absCenter();
-                    display: block;
+                    left: 1rem;
+                    top: 50%;
+                    transform: translate(0, -50%);
                     width: 80%;
                   }
                   &-icon {
@@ -159,6 +168,7 @@
                   overflow: hidden;
                   border: 1px solid $gray;
                   position: relative;
+                  cursor: pointer;
 
                   &-heading {
                     font-family: $font;
@@ -166,9 +176,11 @@
                     line-height: 130%;
                     color: $gray;
                     position: absolute;
-                    @include absCenter();
                     display: block;
                     width: 80%;
+                    left: 1rem;
+                    top: 50%;
+                    transform: translate(0, -50%);
                   }
                   &-icon {
                     width: 10px;
