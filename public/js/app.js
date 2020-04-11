@@ -37661,6 +37661,9 @@ var DeliveryFormController = /*#__PURE__*/function () {
           var lis = ul.querySelectorAll('li');
           lis.forEach(function (el) {
             el.addEventListener('click', function (e) {
+              console.warn(e.path);
+              var span = e.path[2].querySelector('span');
+              span.innerText = e.currentTarget.innerText;
               var input = e.path[3].querySelector('input');
               input.setAttribute('value', e.currentTarget.innerText);
             });

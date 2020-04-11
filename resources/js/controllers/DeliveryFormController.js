@@ -26,6 +26,10 @@ class DeliveryFormController {
 
                     lis.forEach((el) => {
                         el.addEventListener('click', function(e) {
+                            console.warn(e.path);
+                            let span = e.path[2].querySelector('span');
+                                span.innerText = e.currentTarget.innerText;
+
                             let input = e.path[3].querySelector('input');
                                 input.setAttribute('value', e.currentTarget.innerText);
                         });
