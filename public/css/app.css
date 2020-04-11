@@ -5877,6 +5877,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cart_wrap-item_inner-table_row .col_amount {
   display: none;
   margin-bottom: 0 !important;
+  margin-left: 17px !important;
 }
 @media screen and (min-width: 1030px) {
   .cart_wrap-item_inner-table_row .col_amount {
@@ -6063,6 +6064,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   justify-content: space-between;
   align-items: center;
 }
+.cart_wrap-item_inner-table_row-col_price-val {
+  position: relative;
+}
 .cart_wrap-item_inner-table_row-col_price-val-item {
   font-family: "Montserrat";
   font-weight: 500;
@@ -6071,6 +6075,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #292930;
+}
+.cart_wrap-item_inner-table_row-col_price img {
+  position: absolute;
+  right: -15px;
+  top: 5px;
 }
 .cart_wrap-item_inner-table_row-col_price-item {
   font-family: "Montserrat";
