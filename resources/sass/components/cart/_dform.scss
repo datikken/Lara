@@ -15,12 +15,15 @@
 
   &_wrap {
     display: flex;
+    min-width: 783px;
+    position: relative;
 
     &-col {
       padding: 0 16px;
 
       &:nth-child(2) {
-        margin-left: -200px;
+        position: absolute;
+        right: 0;
       }
 
       .delivery_type {

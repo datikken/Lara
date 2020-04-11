@@ -66,6 +66,8 @@
                     </div>
                 </form>
 
+                <div class="step_wrap">
+
               <div class="form_group address_group">
                   @csrf
                     <label
@@ -135,6 +137,7 @@
 
                 </div>
             </div>
+         </div>
          </div>
 
          <div class="dform_wrap-col">
