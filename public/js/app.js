@@ -37517,6 +37517,7 @@ var CartController = /*#__PURE__*/function () {
 
       var _token = $('input[name="_token"]').val();
 
+      var that = this;
       $.ajax({
         method: "GET",
         url: url,
@@ -37524,7 +37525,10 @@ var CartController = /*#__PURE__*/function () {
           token: _token
         },
         success: function success(data, status, XHR) {
-          console.log(data);
+          var cart = $('.cart_wrap');
+          $(cart).html(data);
+
+          that._fixValues('', '', 'addClass');
         },
         error: function error(_error, status, XHR) {
           console.warn(_error);
@@ -37532,9 +37536,23 @@ var CartController = /*#__PURE__*/function () {
       });
     }
   }, {
+    key: "_fixValues",
+    value: function _fixValues(cart, price) {
+      var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+      $('#cartAmount').html(cart);
+      $('#cartPrice').html(price);
+
+      if (type != 0) {
+        $('.menu_wrapper-item_cart_currency').addClass('invisible');
+      } else {
+        $('.menu_wrapper-item_cart_currency').removeClass('invisible');
+      }
+    }
+  }, {
     key: "_makeCall",
     value: function _makeCall(e) {
       e.preventDefault();
+      var that = this;
       var url = e.currentTarget.getAttribute('data-url');
 
       var _token = $('input[name="_token"]').val();
@@ -37546,10 +37564,7 @@ var CartController = /*#__PURE__*/function () {
           token: _token
         },
         success: function success(data, status, XHR) {
-          $('#cartAmount').html(data.cart);
-          $('#cartPrice').html(data.price);
-          $('.menu_wrapper-item_cart_currency ').removeClass('invisible');
-          console.log(data);
+          that._fixValues(data.cart, data.price);
         },
         error: function error(_error2, status, XHR) {
           console.warn(_error2);

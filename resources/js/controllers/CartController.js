@@ -21,21 +21,34 @@ class CartController {
     _deleteFromCart(item) {
         let url = item.getAttribute('data-href');
         let _token = $('input[name="_token"]').val();
+        let that = this;
 
         $.ajax({
             method: "GET",
             url: url,
             data: {token: _token},
             success: function (data, status, XHR) {
-               console.log(data);
+                let cart = $('.cart_wrap');
+                $(cart).html(data)
+                that._fixValues('', '', 'addClass');
             },
             error: function (error, status, XHR) {
                 console.warn(error);
             }
         });
     }
+    _fixValues(cart, price, type = 0) {
+        $('#cartAmount').html(cart);
+        $('#cartPrice').html(price);
+        if(type != 0) {
+            $('.menu_wrapper-item_cart_currency').addClass('invisible');
+        } else {
+            $('.menu_wrapper-item_cart_currency').removeClass('invisible');
+        }
+    }
     _makeCall(e) {
         e.preventDefault();
+        let that = this;
 
         let url = e.currentTarget.getAttribute('data-url');
         let _token = $('input[name="_token"]').val();
@@ -45,11 +58,7 @@ class CartController {
             url: url,
             data: {token: _token},
             success: function (data, status, XHR) {
-                $('#cartAmount').html(data.cart);
-                $('#cartPrice').html(data.price);
-                $('.menu_wrapper-item_cart_currency ').removeClass('invisible');
-
-                console.log(data);
+                that._fixValues(data.cart, data.price);
             },
             error: function (error, status, XHR) {
                 console.warn(error);

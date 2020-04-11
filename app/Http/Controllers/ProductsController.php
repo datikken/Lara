@@ -82,7 +82,14 @@ class ProductsController extends Controller
             $request->session()->put('cart', $updatedCart);
         }
 
-        return response()->json((object) array('cart' => $cart));
+        $view = view('components.cart.cart_empty');
+
+        if(empty($cart->items)) {
+            return view('components.cart.cart_empty');
+        } else {
+            return view('pages.cart.cartProducts', ['cartItems' => $cart]);
+        }
+
     }
 
     public function increaseSingleProduct(Request $request, $id)
