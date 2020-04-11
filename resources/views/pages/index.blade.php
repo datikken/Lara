@@ -39,7 +39,7 @@
 
         @include('components.sales.sales_best')
 
-        <div class="mobile-hide">w
+        <div class="mobile-hide">
             @include('components.sales.sales_eco')
         </div>
 
