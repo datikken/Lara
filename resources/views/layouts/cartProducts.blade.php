@@ -5,26 +5,28 @@
 @include('layouts.header')
 @include('components.menu.menu')
 
-<div class="cart">
-    <div class="cart_wrap">
-        @if(Session::get('cart'))
-        <div class="cart_wrap-crumb active">
-            <div class="active-item"></div>
-            <div class="cart_wrap-crumb-item">
-                <span>Ваша корзина</span>
+<div class="page_content">
+    <div class="cart">
+        <div class="cart_wrap">
+            @if(Session::get('cart'))
+            <div class="cart_wrap-crumb active">
+                <div class="active-item"></div>
+                <div class="cart_wrap-crumb-item">
+                    <span>Ваша корзина</span>
+                </div>
+                <div class="cart_wrap-crumb-item">
+                    <span>Авторизация</span>
+                </div>
+                <div class="cart_wrap-crumb-item">
+                    <span>Доставка</span>
+                </div>
+                <div class="cart_wrap-crumb-item">
+                    <span>Оплата</span>
+                </div>
             </div>
-            <div class="cart_wrap-crumb-item">
-                <span>Авторизация</span>
-            </div>
-            <div class="cart_wrap-crumb-item">
-                <span>Доставка</span>
-            </div>
-            <div class="cart_wrap-crumb-item">
-                <span>Оплата</span>
-            </div>
+            @endif
+            @yield('center')
         </div>
-        @endif
-        @yield('center')
     </div>
 </div>
 

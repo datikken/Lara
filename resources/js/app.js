@@ -1,4 +1,4 @@
-require('./bootstrap');
+// require('./bootstrap');
 // window.Vue = require('vue');
 import './components/Menu';
 import './components/Swiper';
@@ -12,11 +12,13 @@ import SearchController from './controllers/SearchController'
 import DeliveryController from './controllers/DeliveryController'
 import DeliveryFormController from './controllers/DeliveryFormController'
 import CartController from './controllers/CartController'
+// import PageController from './controllers/PagesController'
 
 $(document).ready(function() {
     new LoginFormController();
     new ContactsFormController();
     new SearchController();
+    // new PageController();
 
     cart = document.querySelector('.cart');
 

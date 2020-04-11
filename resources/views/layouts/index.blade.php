@@ -14,12 +14,14 @@
 </head>
 <body>
 
-    @include('layouts.header')
-    @include('components.menu.menu')
+        @include('layouts.header')
+        @include('components.menu.menu')
 
-    @yield('center')
+        <div class="page_content">
+             @yield('center')
+        </div>
 
-    @include('components.subscriptions.subscriptions')
-    @include('layouts.footer')
+        @include('components.subscriptions.subscriptions')
+        @include('layouts.footer')
     {{--@include('alert.success_cart');--}}
 </body>

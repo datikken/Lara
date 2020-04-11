@@ -1072,6 +1072,9 @@ input::placeholder, textarea::placeholder {
   z-index: 999999;
   order: 2 !important;
 }
+.menu_wrapper-item_menuText-link div {
+  color: black;
+}
 
 .menu_wrapper-item_secondary {
   position: absolute;

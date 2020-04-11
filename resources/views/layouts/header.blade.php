@@ -52,3 +52,4 @@
         </div>
     </div>
 </div>
+@include('components.scripts.scripts')
