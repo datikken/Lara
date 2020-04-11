@@ -246,15 +246,17 @@
             </span>
         </div>
         <div class="menu_wrapper-item_cart_value">
-            @php
-                if(Session::get('cart')) { echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalPrice); }
-            @endphp
+            <span id="cartPrice">
+                @php
+                    if(Session::get('cart')) { echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalPrice); }
+                @endphp
+            </span>
         </div>
-        <div class="menu_wrapper-item_cart_currency">
-            @php
-                if(Session::get('cart')) { echo '<img src="/images/menu/rub.svg" alt="rub"/>'; }
-            @endphp
-        </div>
+
+            <div class="menu_wrapper-item_cart_currency @php if(!Session::get('cart')) { echo 'invisible'; } @endphp">
+               <img src="/images/menu/rub.svg" alt="rub"/>
+            </div>
+
         </a>
     </div>
 </div>

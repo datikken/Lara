@@ -19,8 +19,11 @@ $(document).ready(function() {
     new SearchController();
 
     cart = document.querySelector('.cart');
+
     let domEl, map, dform, cart, pgrid;
         pgrid = document.querySelector('.products_grid');
+        if(!pgrid) pgrid = document.querySelector('.cart_wrap');
+
         domEl = document.querySelector('.ymap-coords');
 
     cart && new DeliveryController();

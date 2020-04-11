@@ -7,7 +7,7 @@
         </div>
         <div class="cart_wrap-item_inner-table_row-col_img">
 
-            <a href="{{route('DeleteItemFromCart', ['id' => $cartItem['data']['id']])}}" class="remove_icon" style="background-image: url('/images/unnecessary/cart_close.svg')"></a>
+            <a data-href="{{route('DeleteItemFromCart', ['id' => $cartItem['data']['id']])}}" class="remove_icon" style="background-image: url('/images/unnecessary/cart_close.svg')"></a>
             <img src="{{Storage::disk('local')->url('product_images/' . $cartItem['data']['image'])}}" alt="product"/>
         </div>
         <div class="cart_wrap-item_inner-table_row-col_desc">

@@ -76,10 +76,13 @@ class ProductsController extends Controller
 
         $updatedCart = new Cart($prevCart);
         $updatedCart->updatePriceAndQuantity();
+        if(empty($updatedCart->items)) {
+            $request->session()->forget('cart');
+        } else {
+            $request->session()->put('cart', $updatedCart);
+        }
 
-        $request->session()->put('cart', $updatedCart);
-
-        return redirect()->route('cartItems');
+        return response()->json((object) array('cart' => $cart));
     }
 
     public function increaseSingleProduct(Request $request, $id)
@@ -247,6 +250,6 @@ class ProductsController extends Controller
         $cart->addItem($id, $product);
         $request->session()->put('cart', $cart);
 
-        return response()->json((object) array('cart' => $cart->totalQuantity));
+        return response()->json((object) array('cart' => $cart->totalQuantity, 'price' => $cart->totalPrice));
     }
 }

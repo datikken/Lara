@@ -37089,6 +37089,7 @@ $(document).ready(function () {
   cart = document.querySelector('.cart');
   var domEl, map, dform, cart, pgrid;
   pgrid = document.querySelector('.products_grid');
+  if (!pgrid) pgrid = document.querySelector('.cart_wrap');
   domEl = document.querySelector('.ymap-coords');
   cart && new _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_8__["default"]();
   pgrid && new _controllers_CartController__WEBPACK_IMPORTED_MODULE_10__["default"](pgrid);
@@ -37496,7 +37497,13 @@ var CartController = /*#__PURE__*/function () {
     var that = this;
     this.el = el;
     var btns = this.el.querySelectorAll('.ajaxGETproduct');
-    btns.forEach(function (btn) {
+    var closes = this.el.querySelectorAll('.remove_icon');
+    closes && closes.forEach(function (el, i) {
+      el.addEventListener('click', function (e) {
+        that._deleteFromCart(closes[i], el);
+      });
+    });
+    btns && btns.forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         that._makeCall(e);
       });
@@ -37504,6 +37511,27 @@ var CartController = /*#__PURE__*/function () {
   }
 
   _createClass(CartController, [{
+    key: "_deleteFromCart",
+    value: function _deleteFromCart(item) {
+      var url = item.getAttribute('data-href');
+
+      var _token = $('input[name="_token"]').val();
+
+      $.ajax({
+        method: "GET",
+        url: url,
+        data: {
+          token: _token
+        },
+        success: function success(data, status, XHR) {
+          console.log(data);
+        },
+        error: function error(_error, status, XHR) {
+          console.warn(_error);
+        }
+      });
+    }
+  }, {
     key: "_makeCall",
     value: function _makeCall(e) {
       e.preventDefault();
@@ -37519,9 +37547,12 @@ var CartController = /*#__PURE__*/function () {
         },
         success: function success(data, status, XHR) {
           $('#cartAmount').html(data.cart);
+          $('#cartPrice').html(data.price);
+          $('.menu_wrapper-item_cart_currency ').removeClass('invisible');
+          console.log(data);
         },
-        error: function error(_error, status, XHR) {
-          console.warn(_error);
+        error: function error(_error2, status, XHR) {
+          console.warn(_error2);
         }
       });
     }

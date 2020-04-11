@@ -77,7 +77,7 @@ input {
 }
 
 .invisible {
-  display: none;
+  display: none !important;
 }
 
 .as-visible {
