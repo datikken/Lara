@@ -212,8 +212,7 @@
 </div>
 <div class="menu_wrapper-item">
     <a href="/tracking" class="menu_wrapper-item_tracking">
-    <div class="menu_wrapper-item_tracking_icon">
-        <img src="/images/menu/tracking.svg" alt="icon"/>
+    <div class="menu_wrapper-item_tracking_icon" style="background-image: url('/images/menu/tracking.svg')">
     </div>
     <div class="menu_wrapper-item_tracking_text">
         <span>Трекинг заказа</span>
@@ -222,9 +221,7 @@
 </div>
 <div class="menu_wrapper-item">
     <a href="/login" class="menu_wrapper-item_personal">
-    <div class="menu_wrapper-item_personal_icon">
-        <img src="/images/menu/login.svg" alt=""/>
-    </div>
+    <div class="menu_wrapper-item_personal_icon" style="background-image: url('/images/menu/login.svg')"></div>
     <div class="menu_wrapper-item_personal_text">
         <span>Личный кабинет</span>
         <img

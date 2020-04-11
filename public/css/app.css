@@ -303,6 +303,14 @@ input::placeholder, textarea::placeholder {
   display: none !important;
 }
 
+a:hover {
+  text-decoration: none !important;
+}
+
+span {
+  display: block !important;
+}
+
 .header {
   display: none;
   font-family: "MontserratSemiBold";
@@ -534,6 +542,11 @@ input::placeholder, textarea::placeholder {
     max-width: 1170px;
   }
 }
+@media screen and (min-width: 1030px) {
+  .menu_wrapper-item {
+    margin-left: 0px;
+  }
+}
 .menu_wrapper-item:nth-child(3), .menu_wrapper-item:nth-child(4) {
   display: none;
 }
@@ -629,10 +642,15 @@ input::placeholder, textarea::placeholder {
 .menu_wrapper-item:first-child {
   display: flex;
   align-items: center;
-  margin-left: 10px;
 }
 .menu_wrapper-item:first-child .menu_wrapper-item_menuText {
   display: none;
+  margin-left: 0;
+}
+@media screen and (min-width: 1030px) {
+  .menu_wrapper-item:first-child .menu_wrapper-item_menuText {
+    margin-left: 10px;
+  }
 }
 @media screen and (min-width: 600px) {
   .menu_wrapper-item {
@@ -651,8 +669,8 @@ input::placeholder, textarea::placeholder {
   z-index: 9999;
   list-style: none;
   padding: 0;
-  left: -18px;
-  top: 38px;
+  left: -10px;
+  top: 50px;
   width: 200px;
   overflow: hidden;
   display: none;
@@ -708,8 +726,8 @@ input::placeholder, textarea::placeholder {
   padding: 0;
   z-index: 99;
   width: 130px;
-  top: 12.4rem;
-  right: -13.3rem;
+  top: 13.1rem;
+  right: -13.8rem;
   font-weight: 300;
   display: none;
 }
@@ -814,6 +832,9 @@ input::placeholder, textarea::placeholder {
   margin-left: 15px;
   cursor: pointer;
 }
+.menu_wrapper-item_personal:hover {
+  text-decoration: none;
+}
 @media screen and (min-width: 1030px) {
   .menu_wrapper-item_personal {
     margin-left: 30px;
@@ -849,6 +870,9 @@ input::placeholder, textarea::placeholder {
   flex-wrap: wrap;
   margin-left: 30px;
   cursor: pointer;
+}
+.menu_wrapper-item_tracking:hover {
+  text-decoration: none;
 }
 .menu_wrapper-item_tracking_icon {
   width: 24px;

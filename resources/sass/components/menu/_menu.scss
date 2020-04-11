@@ -16,6 +16,10 @@
     }
 
     &-item {
+        @include breakpoint($medium) {
+          margin-left: 0px;
+        }
+
         &:last-child {
             @include breakpoint(1030px) {
                 //margin: 10px;
@@ -122,10 +126,13 @@
       &:first-child {
         display: flex;
         align-items:center;
-        margin-left: 10px;
 
         .menu_wrapper-item_menuText {
           display: none;
+          margin-left: 0;
+          @include breakpoint($medium) {
+            margin-left: 10px;
+          }
         }
       }
 
@@ -144,8 +151,8 @@
         z-index: 9999;
         list-style: none;
         padding: 0;
-        left: -18px;
-        top: 38px;
+        left: -10px;
+        top: 50px;
         width: 200px;
         overflow: hidden;
         display: none;
@@ -204,8 +211,8 @@
               padding: 0;
               z-index: 99;
               width: 130px;
-              top: 12.4rem;
-              right: -13.3rem;
+              top: 13.1rem;
+              right: -13.8rem;
               font-weight: 300;
               display: none;
 
@@ -306,6 +313,9 @@
         @include flex(center, space-between, wrap);
         margin-left: 15px;
         cursor: pointer;
+        &:hover {
+          text-decoration: none;
+        }
 
         @include breakpoint(1030px) {
           margin-left: 30px;
@@ -338,6 +348,9 @@
         @include flex(center, space-between, wrap);
         margin-left: 30px;
         cursor: pointer;
+        &:hover {
+          text-decoration: none;
+        }
 
         &_icon {
           width: 24px;
