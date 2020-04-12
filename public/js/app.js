@@ -37241,13 +37241,16 @@ var Checkbox = /*#__PURE__*/function () {
           }
         });
         a.addEventListener('click', function (e) {
+          var input = a.querySelector('input');
           var img = e.target.querySelector('img');
 
           if (!clicked) {
             img.classList.add('invisible');
+            input.removeAttribute('checked');
             clicked = true;
           } else {
-            img.classList.remove('invisible');
+            img && img.classList.remove('invisible');
+            input.setAttribute('checked', true);
             clicked = false;
           }
         });
@@ -37744,6 +37747,12 @@ var ContactsFormController = function ContactsFormController() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -37762,28 +37771,68 @@ var DeliveryAuthController = /*#__PURE__*/function () {
   }
 
   _createClass(DeliveryAuthController, [{
+    key: "_makeCall",
+    value: function _makeCall() {
+      var url = document.querySelector('.cart_check-wrap').getAttribute('data-href');
+
+      var _token = document.querySelector('[name="_token"]').getAttribute('value');
+
+      var inputs = document.querySelectorAll('input');
+      var dataObj = {};
+      inputs.forEach(function (npt, i) {
+        var name = npt.getAttribute('name');
+        var val = $(npt).val();
+        dataObj[name] = val;
+
+        if (name === 'save') {
+          if (npt.getAttribute('checked')) {
+            dataObj.save = true;
+          } else {
+            dataObj.save = false;
+          }
+        }
+      });
+      $.ajax({
+        method: "GET",
+        url: url,
+        data: _objectSpread({
+          token: _token
+        }, dataObj),
+        success: function success(data, status, XHR) {
+          var host = window.location.host;
+          var protocol = window.location.protocol;
+          window.location.href = protocol + '//' + host + "/product/deliveryForm";
+        },
+        error: function error(_error, status, XHR) {
+          console.warn(_error);
+        }
+      });
+    }
+  }, {
     key: "validate",
     value: function validate(form) {
-      console.log(form);
       var submit = form.querySelector('[type="submit"]');
       var groups = form.querySelectorAll('.cart_check-wrap_item-group');
+      var that = this;
       submit.addEventListener('click', function (e) {
         e.preventDefault();
+        var valid = false;
         groups.forEach(function (group) {
           var input = group.querySelector('input');
           var label = group.querySelector('.invisible');
           var btn = form.querySelector('.cart_check-button');
           var item = form.querySelector('.cart_check-wrap_item');
 
-          if (input.value == '') {
+          if (input && input.value === '') {
             input.classList.add('errorBorder');
             label && label.classList.remove('invisible');
             btn.style.alignSelf = 'center';
             item.style.marginBottom = 0;
+          } else {
+            valid = true;
           }
-
-          console.warn(input.value);
         });
+        valid && that._makeCall();
       });
     }
   }]);
@@ -37792,6 +37841,7 @@ var DeliveryAuthController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (DeliveryAuthController);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -38058,21 +38108,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var LoginFormController = /*#__PURE__*/function () {
-  _createClass(LoginFormController, [{
-    key: "_pickFaceType",
-    value: function _pickFaceType(etc) {
-      var inputs = document.querySelectorAll('.form_type-item');
-      var el = etc.currentTarget;
-      inputs.forEach(function (el) {
-        el.classList.remove('activeFormItem');
-        var faceInput = document.querySelector('[name="face"]');
-        var text = el.querySelector('.form_type-itemText_inner');
-        if (text) faceInput.setAttribute('value', '');
-      });
-      el.classList.toggle('activeFormItem');
-    }
-  }]);
-
   function LoginFormController() {
     _classCallCheck(this, LoginFormController);
 
@@ -38099,6 +38134,21 @@ var LoginFormController = /*#__PURE__*/function () {
       });
     });
   }
+
+  _createClass(LoginFormController, [{
+    key: "_pickFaceType",
+    value: function _pickFaceType(etc) {
+      var inputs = document.querySelectorAll('.form_type-item');
+      var el = etc.currentTarget;
+      inputs.forEach(function (el) {
+        el.classList.remove('activeFormItem');
+        var faceInput = document.querySelector('[name="face"]');
+        var text = el.querySelector('.form_type-itemText_inner');
+        if (text) faceInput.setAttribute('value', '');
+      });
+      el.classList.toggle('activeFormItem');
+    }
+  }]);
 
   return LoginFormController;
 }();

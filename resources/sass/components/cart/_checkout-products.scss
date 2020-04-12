@@ -23,6 +23,10 @@
       grid-gap: 30px;
       margin-bottom: 10px;
 
+      &:last-child {
+        margin-top: 10px;
+      }
+
       .checkbox {
         flex-direction: row!important;
         align-items: center;
@@ -32,6 +36,7 @@
           flex-direction: column;
           border: none;
           outline: none;
+          user-select: none;
 
           &_btn {
             outline: none;
@@ -54,7 +59,7 @@
           }
           [for='save'] {
             margin-bottom: 0;
-            margin-left: 10px;
+            margin-left: 35px;
           }
           input[type='checkbox'] {
               width: 20px;

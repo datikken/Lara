@@ -173,16 +173,17 @@ class ProductsController extends Controller
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
         $tel = $request->input('tel');
+        $save = $request->input('save');
 
         $arr = [
             'firstname' => $firstname,
             'lastname' => $lastname,
-            'fio' => $tel
+            'fio' => $tel,
+            'save' => $save
         ];
 
         $request->session()->put('cart-customerFio', $arr);
-
-        return redirect()->route('deliveryForm');
+        return response()->json((object) array('customer_fio' => $arr));
     }
 
     public function setDelivery()

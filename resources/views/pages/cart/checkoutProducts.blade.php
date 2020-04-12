@@ -2,7 +2,7 @@
 @section('center')
     <div class="cart_check-wrapper">
         <div class="cart_check">
-            <form class="cart_check-wrap" method="POST" action="{{ route('setCustomerFio') }}">
+            <div class="cart_check-wrap" data-href="{{ route('setCustomerFio') }}">
                 @csrf
                 <div class="cart_check-wrap_head">
                     <h1>Получатель заказа</h1>
@@ -34,13 +34,12 @@
 
                 <div class="cart_check-wrap_item">
                     <div class="cart_check-wrap_item-group checkbox">
-                        <input type="checkbox" name="save" />
                         @include('components.checkbox.simple_check', ['name' => 'save'])
                         <label for="save">Сохранить данные</label>
                     </div>
                 </div>
 
-            </form>
+            </div>
         </div>
         @include('components.cart.order_list')
     </div>

@@ -193,6 +193,7 @@ p {
   position: absolute;
   margin-right: 20px;
   cursor: pointer;
+  user-select: auto;
 
   &-wrap {
     width: 20px;

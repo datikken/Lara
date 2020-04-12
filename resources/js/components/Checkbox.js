@@ -55,6 +55,7 @@ class Checkbox {
             let clicked = false;
             let img = a.querySelector('img');
 
+
             img.addEventListener('click', function(e) {
                 if(!clicked) {
                     img.classList.add('invisible');
@@ -65,12 +66,16 @@ class Checkbox {
                 }
             });
             a.addEventListener('click', function (e) {
+                let input = a.querySelector('input');
                 let img = e.target.querySelector('img');
+
                 if(!clicked) {
                     img.classList.add('invisible');
+                    input.removeAttribute('checked');
                     clicked = true;
                 } else {
-                    img.classList.remove('invisible');
+                    img && img.classList.remove('invisible');
+                    input.setAttribute('checked', true);
                     clicked = false;
                 }
             });
