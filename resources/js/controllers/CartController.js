@@ -34,12 +34,17 @@ class CartController {
             success: function (data, status, XHR) {
                 if($(data).hasClass('empty_cart')) {
                     let cart = $('.cart_wrap');
-                    let amount = $('#cartAmount');
-                    let price = $('#cartPrice');
                     $(cart).html(data);
                     that._fixValues('', '', 'addClass');
                 } else {
-                    $('.cart_content').html(data);
+                    let item = $(data).find('.cart_wrap-item_inner-table');
+                    let price = item[0].dataset.cartprice;
+                    let amount = item[0].dataset.cartamount;
+
+                    let cart = $('.cart_content');
+                      $(cart).html($(data)[0]);
+
+                    that._fixValues(amount, price);
                     that._setDeleteListeners();
                 }
             },
@@ -49,8 +54,11 @@ class CartController {
         });
     }
     _fixValues(cart, price, type = 0) {
-        $('#cartAmount').html(cart);
-        $('#cartPrice').html(price);
+
+        console.log(cart,price,type);
+
+        $('[data-cartAmountVal]').html(cart);
+        $('[data-cartPriceVal]').html(price);
         if(type != 0) {
             $('.menu_wrapper-item_cart_currency').addClass('invisible');
         } else {

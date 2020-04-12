@@ -3672,7 +3672,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   line-height: 14px;
   letter-spacing: 0.02em;
   font-family: "Montserrat";
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 @media screen and (min-width: 600px) {
   .carousel_card-wrapper_item-name {
@@ -3680,7 +3680,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     line-height: 14px;
     letter-spacing: 0.02em;
     color: #292930;
-    margin-bottom: 10px;
   }
 }
 .carousel_card-wrapper_item-heading {
@@ -5718,9 +5717,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 .cart_wrap-item_inner-total_inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   text-align: center;
   padding-bottom: 10px;
 }

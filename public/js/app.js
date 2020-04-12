@@ -37588,13 +37588,20 @@ var CartController = /*#__PURE__*/function () {
         success: function success(data, status, XHR) {
           if ($(data).hasClass('empty_cart')) {
             var cart = $('.cart_wrap');
-            var amount = $('#cartAmount');
-            var price = $('#cartPrice');
             $(cart).html(data);
 
             that._fixValues('', '', 'addClass');
           } else {
-            $('.cart_content').html(data);
+            var _item = $(data).find('.cart_wrap-item_inner-table');
+
+            var price = _item[0].dataset.cartprice;
+            var amount = _item[0].dataset.cartamount;
+
+            var _cart = $('.cart_content');
+
+            $(_cart).html($(data)[0]);
+
+            that._fixValues(amount, price);
 
             that._setDeleteListeners();
           }
@@ -37608,8 +37615,9 @@ var CartController = /*#__PURE__*/function () {
     key: "_fixValues",
     value: function _fixValues(cart, price) {
       var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-      $('#cartAmount').html(cart);
-      $('#cartPrice').html(price);
+      console.log(cart, price, type);
+      $('[data-cartAmountVal]').html(cart);
+      $('[data-cartPriceVal]').html(price);
 
       if (type != 0) {
         $('.menu_wrapper-item_cart_currency').addClass('invisible');

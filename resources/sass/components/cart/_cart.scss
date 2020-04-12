@@ -84,9 +84,9 @@
           }
 
           &_inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex!important;
+            justify-content: center!important;
+            align-items: center!important;
             text-align: center;
             padding-bottom: 10px;
 

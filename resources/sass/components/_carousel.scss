@@ -226,13 +226,13 @@
         line-height: 14px;
         letter-spacing: 0.02em;
         font-family: $font;
-        margin-bottom: 5px;
+        margin-bottom: 7px;
+
         @include breakpoint($phone) {
           font-size: 12px;
           line-height: 14px;
           letter-spacing: 0.02em;
           color: $dblack;
-          margin-bottom: 10px;
         }
       }
 
