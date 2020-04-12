@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Product;
 use Illuminate\Support\ServiceProvider;
 use Auth;
 use View;
@@ -26,7 +27,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        View::share('Name', "tikken");
+        $products = Product::all();
+        View::share('products', $products);
         View::composer('*', function($view) {
             $view->with('userData', Auth::user());
         });

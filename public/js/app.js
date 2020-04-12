@@ -37174,13 +37174,59 @@ var Checkbox = /*#__PURE__*/function () {
 
     var inited = false;
     var checkboxes = document.querySelectorAll('.checkbox');
+    var helper = document.querySelector('.delivery_type');
 
-    if (!inited) {
-      this.changeState(checkboxes);
+    if (!helper) {
+      if (!inited) {
+        this.changeState(checkboxes);
+      }
+    } else {
+      this._helperController(helper);
     }
   }
 
   _createClass(Checkbox, [{
+    key: "_helperController",
+    value: function _helperController(el) {
+      var checkboxes = el.querySelectorAll('.checkbox');
+      checkboxes.forEach(function (el) {
+        var inited = false;
+        el.addEventListener('click', function (e) {
+          var img = el.querySelector('img');
+          var input = el.querySelector('input');
+          console.log(input); //очищает прежние значения
+
+          checkboxes.forEach(function (check) {
+            var input = el.querySelector('input');
+            var img = check.querySelector('img');
+
+            if (!img.classList.contains('invisible')) {
+              img.classList.add('invisible');
+              input.removeAttribute('checked', '');
+              input.removeAttribute('value', '');
+            }
+          });
+          img.addEventListener('click', function (e) {
+            if (!inited) {
+              img.classList.add('invisible');
+              inited = true;
+            } else {
+              img.classList.remove('invisible');
+              inited = false;
+            }
+          });
+
+          if (!inited) {
+            img.classList.add('invisible');
+            inited = true;
+          } else {
+            img.classList.remove('invisible');
+            inited = false;
+          }
+        });
+      }); // console.warn('helper', el, checkboxes);
+    }
+  }, {
     key: "changeState",
     value: function changeState(els) {
       els.forEach(function (a) {

@@ -1,6 +1,9 @@
 .dform {
   &_outer {
     display: flex;
+    @include breakpoint($medium) {
+      justify-content: space-between;
+    }
   }
   &_head {
     font-family: $semifont;
@@ -31,8 +34,9 @@
           display: flex;
           align-items: center;
           margin-bottom: 20px;
-          
-            span {
+          user-select: none;
+
+          span {
               font-family: $font;
               font-size: 12px;
               line-height: 14px;

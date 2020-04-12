@@ -6451,6 +6451,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dform_outer {
   display: flex;
 }
+@media screen and (min-width: 1030px) {
+  .dform_outer {
+    justify-content: space-between;
+  }
+}
 .dform_head {
   font-family: "MontserratSemiBold";
   font-weight: 500;
@@ -6478,6 +6483,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .dform_wrap-col .delivery_type-item span {
   font-family: "Montserrat";

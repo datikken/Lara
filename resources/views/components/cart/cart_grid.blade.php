@@ -2,7 +2,7 @@
 
 <div class="cart_wrap-item_inner">
     <div class="cart_wrap-item_inner-table"
-         @if(isset($cartItems))
+         @if(isset($cartItems->totalQuantity))
              data-cartPrice="{{ $cartItems->totalPrice }}"
              data-cartAmount="{{ $cartItems->totalQuantity }}"
         @endif
