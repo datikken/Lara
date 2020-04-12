@@ -15,11 +15,12 @@ class DeliveryFormController {
         const _token = formEl.querySelector('[name="_token"]').getAttribute('value');
         const inputs = formEl.querySelectorAll('input');
         const delTypeBlock = document.querySelector('#delivery_type');
+        const step = document.querySelector('.step_wrap');
 
         let dataObj = {};
 
         btn.addEventListener('click', function (e) {
-            let delType = delTypeBlock.querySelector('[value="checked"]');
+            let delType = delTypeBlock.querySelector('[checked="true"]');
             if(!delType) {
                 delTypeBlock.classList.add('deliveryTypeError');
                 window.scrollTo(0, 0);
@@ -43,7 +44,9 @@ class DeliveryFormController {
                     deliveryType: delType.getAttribute('name')
                 },
                 success: function (data, status, XHR) {
-                    console.log(data);
+                    console.log('Delivery address have been successfully set');
+                    step.classList.remove('invisible');
+                    window.scrollTo(0, 616);
                 },
                 error: function (error, status, XHR) {
                     console.warn('set delivery form error', error.responseJSON.message);
@@ -104,11 +107,6 @@ class DeliveryFormController {
                     if(block.classList.contains('deliveryTypeError')) {
                         block.classList.remove('deliveryTypeError');
                     }
-                    // let checkbox = e.currentTarget.querySelector('[type="checkbox"]');
-                    //     checkbox.setAttribute('value', 'checked');
-                    //
-                    // let item = e.currentTarget.querySelector('img');
-                    //     item.classList.remove('display');
                 });
             })
     }

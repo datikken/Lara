@@ -13,10 +13,9 @@ class Checkbox {
         }
     }
     _clearCheckboxes(item) {
-        console.log('_clearCheckboxes', item)
         let img = item.querySelector('img');
         let input = item.querySelector('input');
-
+            input.removeAttribute('checked');
             img.classList.add('invisible');
     }
     _helperController(el) {
@@ -28,6 +27,9 @@ class Checkbox {
 
                 el.addEventListener('click', function(e) {
                     let img = e.currentTarget.querySelector('img');
+                    let input = e.currentTarget.querySelector('input');
+
+                    console.log(img, input);
 
                     checkboxes.forEach((box)=> {
                         that._clearCheckboxes(box);
@@ -36,9 +38,13 @@ class Checkbox {
 
                     if(!clicked) {
                         img.classList.remove('invisible');
+                        input.setAttribute('checked', true);
+
                         clicked = true;
                     } else {
                         img.classList.add('invisible');
+                        input.removeAttribute('checked', true);
+
                         clicked = false;
                     }
                 });

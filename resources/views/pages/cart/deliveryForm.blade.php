@@ -46,7 +46,7 @@
                         @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn', 'text' => 'применить'])
                     </button>
                 </div>
-           <div class="step_wrap">
+           <div class="step_wrap invisible">
                 <form action="{{ route('setIndex') }}" class="index_group" method="POST">
                     {{--@csrf--}}
                     <div class="index_heading">

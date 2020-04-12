@@ -37188,9 +37188,9 @@ var Checkbox = /*#__PURE__*/function () {
   _createClass(Checkbox, [{
     key: "_clearCheckboxes",
     value: function _clearCheckboxes(item) {
-      console.log('_clearCheckboxes', item);
       var img = item.querySelector('img');
       var input = item.querySelector('input');
+      input.removeAttribute('checked');
       img.classList.add('invisible');
     }
   }, {
@@ -37202,6 +37202,8 @@ var Checkbox = /*#__PURE__*/function () {
         var clicked = false;
         el.addEventListener('click', function (e) {
           var img = e.currentTarget.querySelector('img');
+          var input = e.currentTarget.querySelector('input');
+          console.log(img, input);
           checkboxes.forEach(function (box) {
             that._clearCheckboxes(box);
 
@@ -37210,9 +37212,11 @@ var Checkbox = /*#__PURE__*/function () {
 
           if (!clicked) {
             img.classList.remove('invisible');
+            input.setAttribute('checked', true);
             clicked = true;
           } else {
             img.classList.add('invisible');
+            input.removeAttribute('checked', true);
             clicked = false;
           }
         });
@@ -37825,9 +37829,10 @@ var DeliveryFormController = /*#__PURE__*/function () {
 
       var inputs = formEl.querySelectorAll('input');
       var delTypeBlock = document.querySelector('#delivery_type');
+      var step = document.querySelector('.step_wrap');
       var dataObj = {};
       btn.addEventListener('click', function (e) {
-        var delType = delTypeBlock.querySelector('[value="checked"]');
+        var delType = delTypeBlock.querySelector('[checked="true"]');
 
         if (!delType) {
           delTypeBlock.classList.add('deliveryTypeError');
@@ -37850,7 +37855,9 @@ var DeliveryFormController = /*#__PURE__*/function () {
             deliveryType: delType.getAttribute('name')
           }),
           success: function success(data, status, XHR) {
-            console.log(data);
+            console.log('Delivery address have been successfully set');
+            step.classList.remove('invisible');
+            window.scrollTo(0, 616);
           },
           error: function error(_error, status, XHR) {
             console.warn('set delivery form error', _error.responseJSON.message);
@@ -37908,12 +37915,7 @@ var DeliveryFormController = /*#__PURE__*/function () {
 
           if (block.classList.contains('deliveryTypeError')) {
             block.classList.remove('deliveryTypeError');
-          } // let checkbox = e.currentTarget.querySelector('[type="checkbox"]');
-          //     checkbox.setAttribute('value', 'checked');
-          //
-          // let item = e.currentTarget.querySelector('img');
-          //     item.classList.remove('display');
-
+          }
         });
       });
     }
