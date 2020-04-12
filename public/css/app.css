@@ -310,6 +310,10 @@ span {
   border-bottom: 1px solid #FF0000;
 }
 
+.errorBorder {
+  border: 1px solid #FF0000;
+}
+
 .header {
   display: none;
   font-family: "MontserratSemiBold";
@@ -6384,6 +6388,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cart_check {
   max-width: 630px;
 }
+.cart_check-button {
+  align-self: flex-end;
+}
 .cart_check-wrap {
   display: flex;
   flex-direction: column;
@@ -6393,6 +6400,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   grid-gap: 30px;
+  margin-bottom: 10px;
 }
 .cart_check-wrap_item .checkbox {
   flex-direction: row !important;
@@ -6433,7 +6441,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cart_check-wrap_item-group input {
   width: 300px;
   height: 40px;
-  border: 1px solid #FF0000;
   outline: none;
   padding-left: 16px;
 }

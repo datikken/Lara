@@ -13,6 +13,7 @@ import DeliveryController from './controllers/DeliveryController'
 import DeliveryFormController from './controllers/DeliveryFormController'
 import CartController from './controllers/CartController'
 import Checkbox from './components/Checkbox'
+import DeliveryAuthController from './controllers/DeliveryAuthController'
 // import PageController from './controllers/PagesController'
 
 $(document).ready(function() {
@@ -21,6 +22,7 @@ $(document).ready(function() {
     new SearchController();
     new Checkbox();
     new CartController();
+    new DeliveryAuthController();
     // new PageController();
 
     cart = document.querySelector('.cart');
