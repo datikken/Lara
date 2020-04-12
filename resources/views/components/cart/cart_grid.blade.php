@@ -1,6 +1,8 @@
+<?php #dump($cartItems); ?>
+
 <div class="cart_wrap-item_inner">
     <div class="cart_wrap-item_inner-table"
-         @if(!empty($cartItems))
+         @if(isset($cartItems))
              data-cartPrice="{{ $cartItems->totalPrice }}"
              data-cartAmount="{{ $cartItems->totalQuantity }}"
         @endif

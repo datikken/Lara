@@ -37615,7 +37615,6 @@ var CartController = /*#__PURE__*/function () {
     key: "_fixValues",
     value: function _fixValues(cart, price) {
       var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-      console.log(cart, price, type);
       $('[data-cartAmountVal]').html(cart);
       $('[data-cartPriceVal]').html(price);
 

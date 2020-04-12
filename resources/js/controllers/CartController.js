@@ -34,7 +34,8 @@ class CartController {
             success: function (data, status, XHR) {
                 if($(data).hasClass('empty_cart')) {
                     let cart = $('.cart_wrap');
-                    $(cart).html(data);
+                      $(cart).html(data);
+
                     that._fixValues('', '', 'addClass');
                 } else {
                     let item = $(data).find('.cart_wrap-item_inner-table');
@@ -54,11 +55,9 @@ class CartController {
         });
     }
     _fixValues(cart, price, type = 0) {
-
-        console.log(cart,price,type);
-
         $('[data-cartAmountVal]').html(cart);
         $('[data-cartPriceVal]').html(price);
+
         if(type != 0) {
             $('.menu_wrapper-item_cart_currency').addClass('invisible');
         } else {

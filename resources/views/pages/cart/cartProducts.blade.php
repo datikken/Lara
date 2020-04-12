@@ -31,7 +31,7 @@
             <div class="cart_wrap-item_inner-total">
                 <div class="cart_wrap-item_inner-total_inner">
                     <span class="cart_wrap-item_inner-total_inner-item">Общая сумма</span>
-                    <span class="cart_wrap-item_inner-total_inner-item">
+                    <span class="cart_wrap-item_inner-total_inner-item" data-cartpriceval>
                     {{$cartItems->totalPrice}}
             </span>
                 </div>
