@@ -12,46 +12,37 @@ class Checkbox {
             this._helperController(helper)
         }
     }
+    _clearCheckboxes(item) {
+        console.log('_clearCheckboxes', item)
+        let img = item.querySelector('img');
+        let input = item.querySelector('input');
+
+            img.classList.add('invisible');
+    }
     _helperController(el) {
+        let that = this;
         let checkboxes = el.querySelectorAll('.checkbox');
+
             checkboxes.forEach((el) => {
-                let inited = false;
+                let clicked = false;
 
-                el.addEventListener('click', function (e) {
-                    let img = el.querySelector('img');
-                    let input = el.querySelector('input');
-                    console.log(input);
-                    //очищает прежние значения
-                    checkboxes.forEach((check) => {
-                        let input = el.querySelector('input');
-                        let img = check.querySelector('img');
+                el.addEventListener('click', function(e) {
+                    let img = e.currentTarget.querySelector('img');
 
-                        if(!img.classList.contains('invisible')) {
-                            img.classList.add('invisible');
-                            input.removeAttribute('checked', '');
-                            input.removeAttribute('value', '');
-                        }
+                    checkboxes.forEach((box)=> {
+                        that._clearCheckboxes(box);
+                        clicked = false;
                     });
 
-                    img.addEventListener('click', function(e) {
-                        if(!inited) {
-                            img.classList.add('invisible');
-                            inited = true;
-                        } else {
-                            img.classList.remove('invisible');
-                            inited = false;
-                        }
-                    });
-                    if(!inited) {
-                        img.classList.add('invisible');
-                        inited = true;
-                    } else {
+                    if(!clicked) {
                         img.classList.remove('invisible');
-                        inited = false;
+                        clicked = true;
+                    } else {
+                        img.classList.add('invisible');
+                        clicked = false;
                     }
                 });
             });
-        // console.warn('helper', el, checkboxes);
     }
     changeState(els) {
         els.forEach((a) => {

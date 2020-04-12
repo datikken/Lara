@@ -1,10 +1,55 @@
 class DeliveryFormController {
     constructor(form) {
+        let addressForm = document.querySelector('.getSetAddress');
         if(form) {
             this._initMap(form);
             this._checkBoxes();
             this._listsHandler();
         }
+
+        addressForm && this._setDeliveryAddress(addressForm);
+    }
+    _setDeliveryAddress(formEl) {
+        const url = formEl.querySelector('[data-url]').getAttribute('data-url');
+        const btn = formEl.querySelector('.setAddressSubmit');
+        const _token = formEl.querySelector('[name="_token"]').getAttribute('value');
+        const inputs = formEl.querySelectorAll('input');
+        const delTypeBlock = document.querySelector('#delivery_type');
+
+        let dataObj = {};
+
+        btn.addEventListener('click', function (e) {
+            let delType = delTypeBlock.querySelector('[value="checked"]');
+            if(!delType) {
+                delTypeBlock.classList.add('deliveryTypeError');
+                window.scrollTo(0, 0);
+            }
+
+            inputs.forEach((npt,i) => {
+                if(i > 0) {
+                    let name = npt.getAttribute('name');
+                    let val = $(npt).val();
+
+                    dataObj[name] = val;
+                }
+            });
+
+             $.ajax({
+                method: "GET",
+                url: url,
+                data: {
+                    token: _token,
+                    ...dataObj,
+                    deliveryType: delType.getAttribute('name')
+                },
+                success: function (data, status, XHR) {
+                    console.log(data);
+                },
+                error: function (error, status, XHR) {
+                    console.warn('set delivery form error', error.responseJSON.message);
+                }
+            });
+        })
     }
     _listsHandler() {
         let items = [];
@@ -38,6 +83,7 @@ class DeliveryFormController {
             });
     }
     _checkBoxes() {
+        let block = document.querySelector('.delivery_type');
         let check = document.querySelectorAll('.delivery_type-item');
             function clear() {
                 check.forEach((el) => {
@@ -48,18 +94,21 @@ class DeliveryFormController {
 
                     if(item.classList.contains('display')) {
                             item.classList.remove('display')
-                        }
+                    }
                 })
             }
             check.forEach((el) => {
                 el.addEventListener('click', function(e) {
                     clear();
 
-                    let checkbox = e.currentTarget.querySelector('[type="checkbox"]');
-                        checkbox.setAttribute('value', 'checked');
-
-                    let item = e.currentTarget.querySelector('img');
-                        item && $(item).toggleClass('display');
+                    if(block.classList.contains('deliveryTypeError')) {
+                        block.classList.remove('deliveryTypeError');
+                    }
+                    // let checkbox = e.currentTarget.querySelector('[type="checkbox"]');
+                    //     checkbox.setAttribute('value', 'checked');
+                    //
+                    // let item = e.currentTarget.querySelector('img');
+                    //     item.classList.remove('display');
                 });
             })
     }
@@ -71,12 +120,10 @@ class DeliveryFormController {
                 }, {
                     searchControlProvider: 'yandex#search'
                 }),
-
                 // Создаём макет содержимого.
                 MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
                     '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
                 ),
-
                 myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
                     hintContent: 'Собственный значок метки',
                     balloonContent: 'Это красивая метка'

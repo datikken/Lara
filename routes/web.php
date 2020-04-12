@@ -56,14 +56,15 @@ Route::post('product/setCustomerFio',['uses' => 'ProductsController@setCustomerF
 Route::get('product/delivery',['uses' => 'ProductsController@setDelivery','as'=>'setDelivery']);
 Route::get('product/deliveryForm',['uses' => 'ProductsController@deliveryForm','as'=>'deliveryForm']);
 Route::post('product/setIndex',['uses' => 'ProductsController@setIndex','as'=>'setIndex']);
-Route::post('product/setAddress',['uses' => 'ProductsController@setAddress','as'=>'setAddress']);
+
+Route::get('product/setAddress',['uses' => 'ProductsController@setAddress','as'=>'setAddress']);
 Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'setIssue']);
 
 //Email Subscriptions
 Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'subscribe']);
 
 //AJAX
-Route::post('products/addToCartAjaxPost', ['uses' => 'ProductsController@addToCartAjaxPost', 'as' => 'AddToCartAjaxPost']);
+//Route::post('products/addToCartAjaxPost', ['uses' => 'ProductsController@addToCartAjaxPost', 'as' => 'AddToCartAjaxPost']);
 Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
 
 //Test file storage

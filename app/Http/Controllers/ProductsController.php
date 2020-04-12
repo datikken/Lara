@@ -213,16 +213,19 @@ class ProductsController extends Controller
         $house = $request->input('house');
         $body = $request->input('body');
         $building = $request->input('building');
+        $delType = $request->input('deliveryType');
 
         $arr = [
             'city' => $city,
             'street' => $street,
             'house' => $house,
             'body' => $body,
-            'building' => $building
+            'building' => $building,
+            'deliveryType' => $delType
         ];
 
         $request->session()->put('cart-address', $arr);
+        return response()->json((object) array('delivery-address' => $arr));
     }
 
     public function setIssue(Request $request)

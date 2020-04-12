@@ -310,6 +310,10 @@ span {
   display: block !important;
 }
 
+.deliveryTypeError {
+  border-bottom: 1px solid #FF0000;
+}
+
 .header {
   display: none;
   font-family: "MontserratSemiBold";

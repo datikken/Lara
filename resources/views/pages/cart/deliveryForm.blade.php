@@ -14,42 +14,41 @@
                  <span class="form_group-heading">Введите город, улицу и номер дома.</span>
               </div>
 
-                <form action="{{ route('setAddress') }}" class="index_group" method="POST">
+                <div class="index_group getSetAddress">
                     @csrf
+                     <div class="form_group">
+                         <label for="city" class="form_group-label">Город</label>
+                         <input type="text" name="city"/>
+                      </div>
 
-                 <div class="form_group">
-                     <label for="city" class="form_group-label">Город</label>
-                     <input type="text" name="city"/>
-                  </div>
+                      <div class="form_group">
+                         <label for="street" class="form_group-label">Улица</label>
+                         <input type="text" name="street"/>
+                      </div>
 
-                  <div class="form_group">
-                     <label for="street" class="form_group-label">Улица</label>
-                     <input type="text" name="street"/>
-                  </div>
+                      <div class="form_group inline_group">
+                         <div class="label_wrap">
+                            <label for="house" class="form_group-label">Дом</label>
+                            <input type="text" name="house"/>
+                         </div>
 
-                  <div class="form_group inline_group">
-                     <div class="label_wrap">
-                        <label for="house" class="form_group-label">Дом</label>
-                        <input type="text" name="house"/>
-                     </div>
+                         <div class="label_wrap">
+                            <label for="body" class="form_group-label">Корпус</label>
+                            <input type="text" name="body"/>
+                         </div>
 
-                     <div class="label_wrap">
-                        <label for="body" class="form_group-label">Корпус</label>
-                        <input type="text" name="body"/>
-                     </div>
-
-                     <div class="label_wrap">
-                        <label for="building" class="form_group-label">Строение</label>
-                        <input type="text" name="building"/>
-                     </div>
-                  </div>
-                    <button type="submit">
+                         <div class="label_wrap">
+                            <label for="building" class="form_group-label">Строение</label>
+                            <input type="text" name="building"/>
+                         </div>
+                      </div>
+                    <button type="submit" class="setAddressSubmit" data-url="{{ route('setAddress') }}">
                         @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn', 'text' => 'применить'])
                     </button>
-                </form>
+                </div>
            <div class="step_wrap">
                 <form action="{{ route('setIndex') }}" class="index_group" method="POST">
-                    @csrf
+                    {{--@csrf--}}
                     <div class="index_heading">
                         <span class="index_heading-item">Или почтовый индекс</span>
                     </div>
@@ -66,7 +65,7 @@
                 </form>
 
               <div class="form_group address_group">
-                  @csrf
+                  {{--@csrf--}}
                     <label
                         for="lastaddress"
                         class="form_group-label">
@@ -138,7 +137,7 @@
          </div>
 
          <div class="dform_wrap-col">
-            <div class="dform_wrap-col_item delivery_type">
+            <div class="dform_wrap-col_item delivery_type" id="delivery_type">
                 <div class="delivery_type-item">
                     @include('components.checkbox.simple_check', ['name' => 'selfpick'])
                     <span>Самовывоз</span>
@@ -159,6 +158,9 @@
          </div>
       </div>
    </div>
+
     @include('components.cart.order_list')
+    <script async="false" src="//api-maps.yandex.ru/2.1/?lang=ru_RU" id="scriptonload-__api_maps_yandex_ru_2_1__lang_ru_RU"></script>
+
 </div>
 @endsection

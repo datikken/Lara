@@ -37186,45 +37186,37 @@ var Checkbox = /*#__PURE__*/function () {
   }
 
   _createClass(Checkbox, [{
+    key: "_clearCheckboxes",
+    value: function _clearCheckboxes(item) {
+      console.log('_clearCheckboxes', item);
+      var img = item.querySelector('img');
+      var input = item.querySelector('input');
+      img.classList.add('invisible');
+    }
+  }, {
     key: "_helperController",
     value: function _helperController(el) {
+      var that = this;
       var checkboxes = el.querySelectorAll('.checkbox');
       checkboxes.forEach(function (el) {
-        var inited = false;
+        var clicked = false;
         el.addEventListener('click', function (e) {
-          var img = el.querySelector('img');
-          var input = el.querySelector('input');
-          console.log(input); //очищает прежние значения
+          var img = e.currentTarget.querySelector('img');
+          checkboxes.forEach(function (box) {
+            that._clearCheckboxes(box);
 
-          checkboxes.forEach(function (check) {
-            var input = el.querySelector('input');
-            var img = check.querySelector('img');
-
-            if (!img.classList.contains('invisible')) {
-              img.classList.add('invisible');
-              input.removeAttribute('checked', '');
-              input.removeAttribute('value', '');
-            }
-          });
-          img.addEventListener('click', function (e) {
-            if (!inited) {
-              img.classList.add('invisible');
-              inited = true;
-            } else {
-              img.classList.remove('invisible');
-              inited = false;
-            }
+            clicked = false;
           });
 
-          if (!inited) {
-            img.classList.add('invisible');
-            inited = true;
-          } else {
+          if (!clicked) {
             img.classList.remove('invisible');
-            inited = false;
+            clicked = true;
+          } else {
+            img.classList.add('invisible');
+            clicked = false;
           }
         });
-      }); // console.warn('helper', el, checkboxes);
+      });
     }
   }, {
     key: "changeState",
@@ -37794,7 +37786,13 @@ var DeliveryController = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+/* WEBPACK VAR INJECTION */(function($) {function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
@@ -37804,6 +37802,8 @@ var DeliveryFormController = /*#__PURE__*/function () {
   function DeliveryFormController(form) {
     _classCallCheck(this, DeliveryFormController);
 
+    var addressForm = document.querySelector('.getSetAddress');
+
     if (form) {
       this._initMap(form);
 
@@ -37811,9 +37811,54 @@ var DeliveryFormController = /*#__PURE__*/function () {
 
       this._listsHandler();
     }
+
+    addressForm && this._setDeliveryAddress(addressForm);
   }
 
   _createClass(DeliveryFormController, [{
+    key: "_setDeliveryAddress",
+    value: function _setDeliveryAddress(formEl) {
+      var url = formEl.querySelector('[data-url]').getAttribute('data-url');
+      var btn = formEl.querySelector('.setAddressSubmit');
+
+      var _token = formEl.querySelector('[name="_token"]').getAttribute('value');
+
+      var inputs = formEl.querySelectorAll('input');
+      var delTypeBlock = document.querySelector('#delivery_type');
+      var dataObj = {};
+      btn.addEventListener('click', function (e) {
+        var delType = delTypeBlock.querySelector('[value="checked"]');
+
+        if (!delType) {
+          delTypeBlock.classList.add('deliveryTypeError');
+          window.scrollTo(0, 0);
+        }
+
+        inputs.forEach(function (npt, i) {
+          if (i > 0) {
+            var name = npt.getAttribute('name');
+            var val = $(npt).val();
+            dataObj[name] = val;
+          }
+        });
+        $.ajax({
+          method: "GET",
+          url: url,
+          data: _objectSpread({
+            token: _token
+          }, dataObj, {
+            deliveryType: delType.getAttribute('name')
+          }),
+          success: function success(data, status, XHR) {
+            console.log(data);
+          },
+          error: function error(_error, status, XHR) {
+            console.warn('set delivery form error', _error.responseJSON.message);
+          }
+        });
+      });
+    }
+  }, {
     key: "_listsHandler",
     value: function _listsHandler() {
       var items = [];
@@ -37842,6 +37887,7 @@ var DeliveryFormController = /*#__PURE__*/function () {
   }, {
     key: "_checkBoxes",
     value: function _checkBoxes() {
+      var block = document.querySelector('.delivery_type');
       var check = document.querySelectorAll('.delivery_type-item');
 
       function clear() {
@@ -37859,10 +37905,15 @@ var DeliveryFormController = /*#__PURE__*/function () {
       check.forEach(function (el) {
         el.addEventListener('click', function (e) {
           clear();
-          var checkbox = e.currentTarget.querySelector('[type="checkbox"]');
-          checkbox.setAttribute('value', 'checked');
-          var item = e.currentTarget.querySelector('img');
-          item && $(item).toggleClass('display');
+
+          if (block.classList.contains('deliveryTypeError')) {
+            block.classList.remove('deliveryTypeError');
+          } // let checkbox = e.currentTarget.querySelector('[type="checkbox"]');
+          //     checkbox.setAttribute('value', 'checked');
+          //
+          // let item = e.currentTarget.querySelector('img');
+          //     item.classList.remove('display');
+
         });
       });
     }
