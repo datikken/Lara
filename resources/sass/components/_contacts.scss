@@ -215,7 +215,6 @@
             line-height: 14px;
             letter-spacing: 0.02em;
             color: $dblack;
-            display: block;
             margin-bottom: 20px;
             @include flex(center, flex-start, no-wrap);
             background-image: url("/images/icons/tel.svg");

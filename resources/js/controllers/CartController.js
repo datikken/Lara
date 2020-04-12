@@ -2,11 +2,10 @@ class CartController {
     constructor(el) {
         let that = this;
         this.el = el;
-        let btns = this.el.querySelectorAll('.ajaxGETproduct');
-
+        let btns = document.querySelectorAll('.ajaxGETproduct');
         this._setDeleteListeners();
 
-       btns && btns.forEach((btn) => {
+        btns.forEach((btn) => {
             btn.addEventListener('click', function(e) {
                 that._makeCall(e);
             })
@@ -15,12 +14,12 @@ class CartController {
 
     _setDeleteListeners() {
         let that = this;
-        let closes = this.el.querySelectorAll('.remove_icon');
-        closes.forEach((el,i) => {
-            el.addEventListener('click', function(e) {
-                that._deleteFromCart(closes[i],el);
+        let closes = document.querySelectorAll('.remove_icon');
+            closes && closes.forEach((el,i) => {
+                el.addEventListener('click', function(e) {
+                    that._deleteFromCart(closes[i],el);
+                });
             });
-        });
     }
 
     _deleteFromCart(item) {
@@ -37,10 +36,6 @@ class CartController {
                     let cart = $('.cart_wrap');
                     let amount = $('#cartAmount');
                     let price = $('#cartPrice');
-
-                    console.log('test',$(data).find('#cartPrice'));
-
-
                     $(cart).html(data);
                     that._fixValues('', '', 'addClass');
                 } else {
@@ -65,7 +60,6 @@ class CartController {
     _makeCall(e) {
         e.preventDefault();
         let that = this;
-
         let url = e.currentTarget.getAttribute('data-url');
         let _token = $('input[name="_token"]').val();
 

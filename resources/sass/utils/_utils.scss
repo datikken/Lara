@@ -32,7 +32,7 @@
 }
 
 @mixin flex($align, $justify, $wrap) {
-  display: flex;
+  display: flex!important;
   align-items: $align;
   justify-content: $justify;
   flex-wrap: $wrap;
