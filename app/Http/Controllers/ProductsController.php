@@ -265,4 +265,9 @@ class ProductsController extends Controller
 
         return response()->json((object) array('cart' => $cart->totalQuantity, 'price' => $cart->totalPrice));
     }
+
+    public function payment(Request $request)
+    {
+        return view('pages.cart.payment');
+    }
 }
