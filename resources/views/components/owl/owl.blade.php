@@ -1,8 +1,3 @@
-
-<script>
-
-</script>
-
 <div class="owl-wrapper">
     <div class="owl-controls-heading">
         <div class="owl-controls-heading-item">Новинки</div>
@@ -18,6 +13,7 @@
 
     <div class="swiper-container owl_swiper">
         <div class="swiper-wrapper">
+
             @foreach ($products as $product)
                 <div class="swiper-slide" key="1">
                     @include('components.owl.owl_card', $product)
@@ -26,6 +22,5 @@
 
         </div>
     </div>
-
 </div>
 </div>
