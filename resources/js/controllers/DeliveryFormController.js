@@ -44,7 +44,7 @@ class DeliveryFormController {
                     deliveryType: delType.getAttribute('name')
                 },
                 success: function (data, status, XHR) {
-                    console.log('Delivery address have been successfully set');
+                    console.log('Delivery address have been successfully set', data);
                     step.classList.remove('invisible');
                     window.scrollTo(0, 616);
                 },

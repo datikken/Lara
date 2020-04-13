@@ -124,7 +124,7 @@ class ProductsController extends Controller
         return redirect()->route('cartItems');
     }
 
-    public function createOrder()
+    public function createOrder(Request $request)
     {
         $cart = Session::get('cart');
 
@@ -157,7 +157,10 @@ class ProductsController extends Controller
             Session::forget('cart');
             Session::flush();
 
-            return redirect()->route('allProducts')->withsuccess('thanks for choosing us');
+            $payment_info = $newOrderArray;
+            $request->session()->put('payment_info', $payment_info);
+
+            return redirect()->route('proceedPayment')->withsuccess('thanks for choosing us');
         } else {
             return redirect()->route('allProducts');
         }
@@ -264,10 +267,5 @@ class ProductsController extends Controller
         $request->session()->put('cart', $cart);
 
         return response()->json((object) array('cart' => $cart->totalQuantity, 'price' => $cart->totalPrice));
-    }
-
-    public function payment(Request $request)
-    {
-        return view('pages.cart.payment');
     }
 }

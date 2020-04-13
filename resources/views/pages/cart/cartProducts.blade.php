@@ -7,20 +7,20 @@
                 <span class="cart_wrap-item_inner-heading-text">корзина</span>
             </div>
         </div>
-            <div class="cart_wrap-item_inner-table_row cart_table-headings">
-                <div class="cart_wrap-item_inner-table_row-col">
-                    <span class="cart_wrap-item_inner-table_row-col-heading">Картридж</span>
-                </div>
-                <div class="cart_wrap-item_inner-table_row-col">
-                    <span class="cart_wrap-item_inner-table_row-col-heading">Цена (шт)</span>
-                </div>
-                <div class="cart_wrap-item_inner-table_row-col">
-                    <span class="cart_wrap-item_inner-table_row-col-heading">Количество</span>
-                </div>
-                <div class="cart_wrap-item_inner-table_row-col">
-                    <span class="cart_wrap-item_inner-table_row-col-heading">Общая сумма</span>
-                </div>
+        <div class="cart_wrap-item_inner-table_row cart_table-headings">
+            <div class="cart_wrap-item_inner-table_row-col">
+                <span class="cart_wrap-item_inner-table_row-col-heading">Картридж</span>
             </div>
+            <div class="cart_wrap-item_inner-table_row-col">
+                <span class="cart_wrap-item_inner-table_row-col-heading">Цена (шт)</span>
+            </div>
+            <div class="cart_wrap-item_inner-table_row-col">
+                <span class="cart_wrap-item_inner-table_row-col-heading">Количество</span>
+            </div>
+            <div class="cart_wrap-item_inner-table_row-col">
+                <span class="cart_wrap-item_inner-table_row-col-heading">Общая сумма</span>
+            </div>
+        </div>
         @endif
 
         <div class="cart_content">

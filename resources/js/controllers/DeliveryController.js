@@ -5,6 +5,7 @@ class DeliveryController {
         let bar = page.querySelector('.active-item');
         let deliveryStep = page.querySelector('.order_list');
         let formStep = page.querySelector('.dform');
+        let paymentStep = page.querySelector('.payment');
 
         if(deliveryStep) {
             $(bar).css('width', '37%');
@@ -12,6 +13,10 @@ class DeliveryController {
         if(formStep) {
             $(bar).css('width', '65%');
         }
+        if(paymentStep) {
+            $(bar).css('width', '100%');
+        }
+
     }
     constructor() {
         let cart = $('.cart_wrap');

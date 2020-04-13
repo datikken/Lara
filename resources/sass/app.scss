@@ -1,13 +1,14 @@
 @import "./variables/variables";
 @import "./utils/utils";
 @import "./utils/classes";
+
 @import "./components/header";
-@import "components/menu/menu";
+@import "./components/menu/menu";
 @import "./components/menu/menu_secondary";
 @import "./components/subscription.scss";
 @import "./components/footer/footer";
 @import "./components/footer/footer_categories";
-@import "./components/footer/payments";
+@import "./components/cart/checkout";
 @import "./components/slider";
 @import "./components/layout";
 @import "./components/banner";
@@ -35,9 +36,9 @@
 //cart
 @import "./components/cart/cart";
 @import "./components/cart/cart_item";
-@import "components/cart/order_list";
-@import "components/cart/checkout-products";
-@import "components/cart/dform";
+@import "./components/cart/order_list";
+@import "./components/cart/checkout-products";
+@import "./components/cart/dform";
 
 @import "./components/sales_mob";
 @import "./components/information";

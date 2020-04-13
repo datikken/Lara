@@ -56,8 +56,7 @@ Route::get('product/setCustomerFio',['uses' => 'ProductsController@setCustomerFi
 Route::get('product/delivery',['uses' => 'ProductsController@setDelivery','as'=>'setDelivery']);
 Route::get('product/deliveryForm',['uses' => 'ProductsController@deliveryForm','as'=>'deliveryForm']);
 Route::post('product/setIndex',['uses' => 'ProductsController@setIndex','as'=>'setIndex']);
-Route::get('product/payment',['uses' => 'ProductsController@payment','as'=>'payment']);
-Route::get('product/proceedPayment',['uses' => 'ProductsController@proceedPayment','as'=>'proceedPayment']);
+Route::get('product/proceedPayment',['uses' => 'PaymentsController@proceedPayment','as'=>'proceedPayment']);
 
 Route::get('product/setAddress',['uses' => 'ProductsController@setAddress','as'=>'setAddress']);
 Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'setIssue']);

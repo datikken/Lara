@@ -1661,151 +1661,142 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 
-.payments {
-  width: 100%;
-  height: 60px;
-  background: #c4c4c4;
-}
-@media screen and (min-width: 600px) {
-  .payments {
-    height: 50px;
-  }
-}
-.payments_wrap {
+.payments_wrapper {
+  display: flex;
+  justify-content: space-between;
   max-width: 1170px;
   margin: 0 auto;
+  width: 100%;
+}
+
+.payment_wrap-form_inner {
+  margin-left: 20px;
+}
+.payment_wrap-form_inner .payment_wrap-form_group, .payment_wrap-form_inner .payment_wrap-form_group-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.payment_wrap-form_inner .payment_wrap-form_group .row_alignment, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment {
+  display: flex;
+}
+.payment_wrap-form_inner .payment_wrap-form_group .row_alignment label, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment label {
+  font-family: "Montserrat" !important;
+}
+.payment_wrap-form_inner .payment_wrap-form_group .row_alignment .payment_wrap-form_group-cvv, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment .payment_wrap-form_group-cvv {
+  padding-left: 20px;
+  outline: none;
+}
+.payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner {
+  display: flex;
+  flex-direction: row !important;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+.payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .payment_wrap-form_group-date, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .payment_wrap-form_group-date {
   height: 100%;
-  position: relative;
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  position: relative;
 }
-@media screen and (min-width: 600px) {
-  .payments_wrap {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-  }
+.payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .payment_wrap-form_group-date:first-child, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .payment_wrap-form_group-date:first-child {
+  border-right: 1px solid #d4d4d5;
 }
-.payments_wrap-item {
+.payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .month .arrow, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .month .arrow {
+  margin-right: 15px !important;
+}
+.payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .year, .payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .month, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .year, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .month {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 }
-@media screen and (min-width: 600px) {
-  .payments_wrap-item {
-    margin-top: 0;
-    justify-content: space-between;
-    margin-bottom: 5px;
-  }
+.payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .year .year_label-input, .payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .month .year_label-input, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .year .year_label-input, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .month .year_label-input {
+  border: none !important;
+  padding-left: 20px;
 }
-.payments_wrap-item span {
+.payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .year span:first-child, .payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .month span:first-child, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .year span:first-child, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .month span:first-child {
+  margin-left: 20px;
   font-family: "Montserrat";
-  font-size: 12px !important;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  color: #3559fd;
-  width: 100px;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-}
-@media screen and (min-width: 1030px) {
-  .payments_wrap-item span {
-    width: initial;
-    position: relative;
-    transform: none;
-    top: initial;
-  }
-}
-.payments_wrap-item span, .payments_wrap-item p {
-  font-size: 10px;
-  line-height: 16px;
-}
-.payments_wrap-item span {
-  margin-left: 15px;
-}
-.payments_wrap-item p {
-  ont-family: "Montserrat";
   font-size: 12px;
-  line-height: 16px;
-  text-align: right;
+  line-height: 14px;
   letter-spacing: 0.02em;
-  width: 100%;
-  text-align: right;
-  margin: 0;
-  margin-right: 16px;
-  padding: 0;
-  color: black;
-  padding-top: 5px;
+  color: #d4d4d5;
 }
-@media screen and (min-width: 600px) {
-  .payments_wrap-item p {
-    padding-top: 0px;
-    width: initial;
-    text-align: left;
-    margin-right: 20px;
-    color: #40404c !important;
-  }
-}
-@media screen and (min-width: 600px) {
-  .payments_wrap-item span,
-.payments_wrap-item p {
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.02em;
-    color: #3559fd;
-    cursor: pointer;
-  }
-}
-.payments_wrap-item_inner {
-  display: flex;
-  width: 100%;
-  background: #c4c4c4;
-  justify-content: flex-end;
-  align-items: center;
-}
-@media screen and (min-width: 600px) {
-  .payments_wrap-item_inner {
-    margin-left: 7px;
-    width: initial;
-  }
-}
-.payments_wrap-item_inner-icon {
-  margin: 0 5px;
-}
-.payments_wrap-item_inner-icon:nth-child(1) {
-  display: none;
-}
-.payments_wrap-item_inner-icon:nth-child(2) {
-  display: none;
-}
-.payments_wrap-item_inner-icon img {
-  width: 20px;
-  height: 20px;
+.payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .year .arrow, .payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .month .arrow, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .year .arrow, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .month .arrow {
+  width: 10px;
+  height: 10px;
+  background-position: center;
+  background-size: cover;
+  transform: rotate(90deg);
+  margin-right: 20px;
 }
 @media screen and (min-width: 1030px) {
-  .payments_wrap-item_inner-icon img {
-    width: 30px;
-    height: 30px;
-  }
-  .payments_wrap-item_inner-icon:nth-child(1), .payments_wrap-item_inner-icon:nth-child(2) {
-    display: block;
+  .payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner {
+    width: 200px;
+    height: 40px;
+    border: 1px solid #d4d4d5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
   }
 }
-.payments_wrap-item_inner-icon:last-child {
-  margin-right: 15px;
+.payment_wrap-form_inner .payment_wrap-form_group-inner {
+  margin-top: 25px;
 }
-.payments_wrap-item_inner-icon:first-child {
-  margin-left: 0;
-}
-@media screen and (min-width: 600px) {
-  .payments_wrap-item_inner-icon {
-    margin-left: 13px;
+@media screen and (min-width: 1030px) {
+  .payment_wrap-form_inner .payment_wrap-form_group-inner input {
+    width: 430px;
+    height: 40px;
+    outline: none;
+    padding-left: 20px;
+    border-radius: 30px;
   }
+}
+.payment_wrap-form_inner .payment_wrap-form_group-inner .cart_num {
+  font-family: "Montserrat" !important;
+}
+.payment_wrap-form_group label {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  margin-bottom: 13px;
+  display: block;
+}
+.payment_wrap-form_group-inner {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.payment_wrap-form_group-inner span {
+  display: block;
+  margin-left: 35px;
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+.payment_wrap-head h1 {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+  margin-bottom: 30px;
 }
 
 .swiper-container {
@@ -6323,6 +6314,14 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   width: 240px;
   border: 1px solid #d4d4d5;
   padding: 40px 30px;
+}
+.order_list-wrap .proceedPayment-btn {
+  margin-top: 50px;
+  width: 230px;
+  height: 40px;
+}
+.order_list-wrap .proceedPayment-btn .action_btn {
+  width: 100% !important;
 }
 .order_list-wrap_footer-row {
   display: grid;

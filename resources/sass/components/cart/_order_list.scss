@@ -4,6 +4,15 @@
     border: 1px solid $gray;
     padding: 40px 30px;
 
+    .proceedPayment-btn {
+      margin-top: 50px;
+      width: 230px;
+      height: 40px;
+      .action_btn {
+        width: 100%!important;
+      }
+    }
+
     &_footer {
       &-row {
         display: grid;

@@ -37868,6 +37868,7 @@ var DeliveryController = /*#__PURE__*/function () {
       var bar = page.querySelector('.active-item');
       var deliveryStep = page.querySelector('.order_list');
       var formStep = page.querySelector('.dform');
+      var paymentStep = page.querySelector('.payment');
 
       if (deliveryStep) {
         $(bar).css('width', '37%');
@@ -37875,6 +37876,10 @@ var DeliveryController = /*#__PURE__*/function () {
 
       if (formStep) {
         $(bar).css('width', '65%');
+      }
+
+      if (paymentStep) {
+        $(bar).css('width', '100%');
       }
     }
   }]);
@@ -37968,7 +37973,7 @@ var DeliveryFormController = /*#__PURE__*/function () {
             deliveryType: delType.getAttribute('name')
           }),
           success: function success(data, status, XHR) {
-            console.log('Delivery address have been successfully set');
+            console.log('Delivery address have been successfully set', data);
             step.classList.remove('invisible');
             window.scrollTo(0, 616);
           },
