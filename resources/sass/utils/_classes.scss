@@ -181,3 +181,10 @@ span {
 .errorBorder {
   border: 1px solid $red;
 }
+
+button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: #fff;
+}
