@@ -27,6 +27,7 @@ Route::get('/contacts', 'ContactsController@index');
 
 //Admin pannel
 Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts'])->middleware('restrictToAdmin');
+Route::get('admin/banners', ['uses' => "AdminProductsController@banners", 'as' => 'setBanner'])->middleware('restrictToAdmin');
 
 Route::get('product/increaseSingleProduct/{id}', ['uses' => 'ProductsController@increaseSingleProduct', 'as' => 'IncreaseSingleProduct']);
 Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@decreaseSingleProduct', 'as' => 'DecreaseSingleProduct']);
