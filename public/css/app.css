@@ -8956,8 +8956,21 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border: 1px solid #d4d4d5 !important;
 }
 
-.upload_file {
-  border: none !important;
+.admin_pannel {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+.uk-pagination .pagination .page-item {
+  margin: 0 5px;
+}
+
+.uk-sidebar {
+  margin-top: 10px;
+}
+
+.uk-icon {
+  width: 20px !important;
 }
 
 html {

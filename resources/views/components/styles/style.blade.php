@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="/css/app.css">
+<link rel="stylesheet" href="/css/uikit.min.css">
+<link rel="stylesheet" href="/css/uikit-rtl.min.css">
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">

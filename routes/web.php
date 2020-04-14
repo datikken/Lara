@@ -1,13 +1,14 @@
 <?php
+//Main page
 
 Route::get('/',['uses' => "ProductsController@showIndex", 'as' => 'index']);
-//Catalog
+//Catalog page
 Route::get('catalog', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
 
-//Search
+//Search page
 Route::get('search', ['uses'=> "ProductsController@search", 'as' => 'searchProducts']);
 
-//Cart
+//Cart page
 Route::get('cart', ['uses' => "ProductsController@showCart", 'as' => 'cartItems']);
     //Add items to cart
 Route::get('product/AddToCart/{id}', ['uses' => 'ProductsController@addProductToCart', 'as' => 'AddToCartProduct']);
@@ -25,32 +26,40 @@ Route::get('/about', 'AboutController@index');
 Route::get('/landing', 'LandingController@index',['as' => 'landing']);
 Route::get('/contacts', 'ContactsController@index');
 
-//Admin pannel
+
+//ADMIN
+    //products
 Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts'])->middleware('restrictToAdmin');
-Route::get('admin/banners', ['uses' => "AdminProductsController@banners", 'as' => 'setBanner'])->middleware('restrictToAdmin');
-
-Route::get('product/increaseSingleProduct/{id}', ['uses' => 'ProductsController@increaseSingleProduct', 'as' => 'IncreaseSingleProduct']);
-Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@decreaseSingleProduct', 'as' => 'DecreaseSingleProduct']);
-
-//Display Edit Product form
-Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);
-
-//Display edit Product form
-Route::get('admin/editProductImageForm/{id}', ['uses' => "AdminProductsController@editProductImageForm", 'as' => 'adminEditProductImageForm']);
+    //Display Edit Product form
+    Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);
+    //Display edit Product form
+    Route::get('admin/editProductImageForm/{id}', ['uses' => "AdminProductsController@editProductImageForm", 'as' => 'adminEditProductImageForm']);
     //update product image
     Route::post('admin/updateProductImage/{id}', ['uses' => 'AdminProductsController@updateProductImage', 'as' => 'adminUpdateProductImage']);
     //update product fields
     Route::post('admin/updateProduct/{id}', ['uses' => 'AdminProductsController@updateProduct', 'as' => 'adminUpdateProduct']);
-
-//Display create Product form
-Route::get('admin/createProductForm', ['uses' => "AdminProductsController@createProductForm", 'as' => 'adminCreateProductForm']);
+    //Display create Product form
+    Route::get('admin/createProductForm', ['uses' => "AdminProductsController@createProductForm", 'as' => 'adminCreateProductForm']);
     //send data create Product form
     Route::post('admin/sendCreateProductForm', ['uses' => "AdminProductsController@sendCreateProductForm", 'as' => 'adminSendCreateProductForm']);
+    //Delete product
+    Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
 
-//Delete product
-Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
 
-//Orders
+//BANNERS
+Route::get('admin/adminCreateBannerForm', ['uses' => "AdminBannersController@createBannerForm", 'as' => 'adminCreateBannerForm']);
+    //banners
+    Route::get('admin/banners', ['uses' => "AdminBannersController@index", 'as' => 'setBanner'])->middleware('restrictToAdmin');
+
+
+//CART
+Route::get('product/increaseSingleProduct/{id}', ['uses' => 'ProductsController@increaseSingleProduct', 'as' => 'IncreaseSingleProduct']);
+Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@decreaseSingleProduct', 'as' => 'DecreaseSingleProduct']);
+    //Route::post('products/addToCartAjaxPost', ['uses' => 'ProductsController@addToCartAjaxPost', 'as' => 'AddToCartAjaxPost']);
+    Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
+
+
+//ORDERS
 Route::get('product/checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
 Route::get('product/createOrder/', ['uses' => 'ProductsController@createOrder', 'as'=> 'createOrder']);
 Route::get('product/setCustomerFio',['uses' => 'ProductsController@setCustomerFio','as'=>'setCustomerFio']);
@@ -58,16 +67,11 @@ Route::get('product/delivery',['uses' => 'ProductsController@setDelivery','as'=>
 Route::get('product/deliveryForm',['uses' => 'ProductsController@deliveryForm','as'=>'deliveryForm']);
 Route::post('product/setIndex',['uses' => 'ProductsController@setIndex','as'=>'setIndex']);
 Route::get('product/proceedPayment',['uses' => 'PaymentsController@proceedPayment','as'=>'proceedPayment']);
-
 Route::get('product/setAddress',['uses' => 'ProductsController@setAddress','as'=>'setAddress']);
 Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'setIssue']);
 
 //Email Subscriptions
 Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'subscribe']);
-
-//AJAX
-//Route::post('products/addToCartAjaxPost', ['uses' => 'ProductsController@addToCartAjaxPost', 'as' => 'AddToCartAjaxPost']);
-Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
 
 //Test file storage
 Route::get('/testStorage', function() {

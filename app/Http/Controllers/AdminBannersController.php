@@ -4,60 +4,60 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Product;
+use App\Banner;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
-class BannersController extends Controller
+class AdminBannersController extends Controller
 {
     public function index()
     {
-        $banners = Banners::all();
+        $banners = Banner::all();
 
         if (!Auth::check()) {
             return redirect()->route('home');
         } else {
-            return view('admin.displayBanners', ['banners' => $banners]);
+            return view('admin.banners.displayBanners', ['banners' => $banners]);
         }
     }
 
     //Display edit product form
-    public function editProductForm($id)
+    public function editBannersForm($id)
     {
-        $product = Product::find($id);
-        return view('admin.editProductForm', ['product' => $product]);
+        $product = Banner::find($id);
+        return view('admin.banners.editBannersForm', ['product' => $product]);
     }
     //Display edit product image
-    public function editProductImageForm($id)
+    public function editBannersImageForm($id)
     {
-        $product = Product::find($id);
-        return view('admin.editProductImageForm', ['product' => $product]);
+        $product = Banner::find($id);
+        return view('admin.banners.editBannersImageForm', ['product' => $product]);
     }
 
-    public function updateProductImage(Request $request, $id)
+    public function updateBannersImage(Request $request, $id)
     {
         Validator::make( $request->all(), ['image' => 'max:5000'])->validate();
 
         if($request->hasFile('image')) {
-            $product = Product::find($id);
-            $exists =  Storage::disk('local')->exists('public/product_images' . $product->image);
+            $product = Banner::find($id);
+            $exists =  Storage::disk('local')->exists('public/banners_images' . $product->image);
 
             //delete old image
             if($exists) {
-                Storage::delete('public/product_images' . $product->image);
+                Storage::delete('public/banners_images' . $product->image);
             }
 
             $ext = $request->file('image')->getClientOriginalExtension();
 
-            $request->image->storeAs('public/product_images/', $product->image);
+            $request->image->storeAs('public/banners_images/', $product->image);
 
             $arrToUpdate = array('image' => $product->image);
 
             DB::table('products')->where('id', $id)->update($arrToUpdate);
 
-            return redirect()->route('adminDisplayProducts');
+            return redirect()->route('adminDisplayBanners');
 
         } else {
             $error = 'no image was selected';
@@ -65,7 +65,7 @@ class BannersController extends Controller
         }
     }
 
-    public function updateProduct(Request $request, $id)
+    public function updateBanners(Request $request, $id)
     {
         $name = $request->input('name');
         $type = $request->input('type');
@@ -75,15 +75,15 @@ class BannersController extends Controller
 
         DB::table('products')->where('id', $id)->update($updateArr);
 
-        return redirect()->route('adminDisplayProducts');
+        return redirect()->route('adminDisplayBanners');
     }
 
-    public function createProductForm()
+    public function createBannerForm()
     {
-        return view('admin.createProduct');
+        return view('admin.banners.createBanner');
     }
 
-    public function sendCreateProductForm(Request $request)
+    public function sendCreateBannersForm(Request $request)
     {
         $name = $request->input('name');
         $description = $request->input('description');
@@ -98,9 +98,9 @@ class BannersController extends Controller
         $imageName = $stringImageReFormat . '.' . $ext;
 
         $imageEncoded = File::get($request->image);
-        Storage::disk('local')->put('public/product_images/' . $imageName, $imageEncoded);
+        Storage::disk('local')->put('public/banners_images/' . $imageName, $imageEncoded);
 
-        $newProductArray = array(
+        $newBannersArray = array(
             'name' => $name,
             'description' => $description,
             'image'=>$imageName,
@@ -109,25 +109,25 @@ class BannersController extends Controller
             'category' => $category
         );
 
-        $created = DB::table('products')->insert($newProductArray);
+        $created = DB::table('products')->insert($newBannersArray);
 
         if($created) {
-            return redirect()->route('adminDisplayProducts');
+            return redirect()->route('adminDisplayBanners');
         } else {
-            return 'Product was not created';
+            return 'Banners was not created';
         }
     }
 
-    public function deleteProduct($id) {
-        $product = Product::find($id);
+    public function deleteBanners($id) {
+        $product = Banner::find($id);
         $exists = Storage::disk('local')->exists('public/product_image/'.$product->image);
 
         if($exists) {
-            Storage::delete('public/product_images'.$product->image);
+            Storage::delete('public/banners_images'.$product->image);
         }
 
-        Product::destroy($id);
+        Banner::destroy($id);
 
-        return redirect()->route('adminDisplayProducts');
+        return redirect()->route('adminDisplayBanners');
     }
 }

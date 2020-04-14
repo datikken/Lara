@@ -65,7 +65,24 @@
 @import "./components/landing/feed";
 @import "./components/landing/landswipe";
 @import "./components/bestPrinters/bestPrintersSwipe";
-@import "./admin/admin";
+
+.admin_pannel {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+.uk-pagination {
+    .pagination {
+        .page-item {
+            margin: 0 5px;
+        }
+    }
+}
+.uk-sidebar {
+    margin-top: 10px;
+}
+.uk-icon {
+    width: 20px!important;
+}
 
 html {
     scroll-behavior: smooth;
@@ -189,7 +206,7 @@ main {
                 flex-direction: column;
                 margin-bottom: 10px;
                 position: relative!important;
-                
+
                 .col-form-label {
                     font-family: $font;
                     font-style: normal;

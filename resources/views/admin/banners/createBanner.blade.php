@@ -3,24 +3,20 @@
 @section('center')
 
     <div class="table-responsive">
-        @if($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    <li>{!! print_r($errors->all()) !!}</li>
-                </ul>
-            </div>
-        @endif
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        <li>{!! print_r($errors->all()) !!}</li>
+                    </ul>
+                </div>
+            @endif
 
-            <h2>Добавить новый продукт</h2>
+            <h2>Добавить новый баннер</h2>
 
             <form action="/admin/sendCreateProductForm" method="post" enctype="multipart/form-data">
 
                 {{ csrf_field() }}
 
-                <div class="form-group">
-                    <label for="name">Имя</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Название продукта" required>
-                </div>
 
                 <div class="form-group">
                     <label for="description">Описание</label>
