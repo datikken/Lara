@@ -2,7 +2,7 @@
 
 @section('center')
 
-    <div class="table-responsive test">
+    <div class="table-responsive">
         <table class="uk-table">
             <thead>
             <tr>

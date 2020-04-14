@@ -1,30 +1,26 @@
 @extends('layouts.admin')
 
 @section('center')
+    <h2 class="uk-heading-small">Редактировать продукт</h2>
 
-    <div class="table-responsive">
-        <form action="/admin/updateProduct/{{$product->id}}" method="post">
+        <form action="/admin/updateProduct/{{$product->id}}" method="post" enctype="multipart/form-data">
 
             {{csrf_field()}}
 
-            <div class="form-group">
-                <label for="name">Имя</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Product Name" value="{{$product->name}}" required>
+            <div class="uk-margin">
+                <input class="uk-input" type="text" name="name" id="name" placeholder="Название продукта" required>
             </div>
 
-            <div class="form-group">
-                <label for="type">Тип</label>
-                <input type="text" class="form-control" name="type" id="type" placeholder="Product Type" value="{{$product->type}}" required>
+            <div class="uk-margin">
+                <input class="uk-input" type="text" name="type" id="type" placeholder="Тип" required>
             </div>
 
-            <div class="form-group">
-                <label for="type">Цена</label>
-                <input type="text" class="form-control" name="price" id="price" placeholder="Product Price" value="{{$product->price}}" required>
+            <div class="uk-margin">
+                <input type="text" class="uk-input" name="price" id="price" placeholder="Цена"  required>
             </div>
 
-            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" name="submit" class="btn btn-primary uk-button uk-button-default">Отправить</button>
 
         </form>
-    </div>
 
 @endsection
