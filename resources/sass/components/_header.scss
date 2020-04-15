@@ -142,7 +142,8 @@
             transition: visibility $transition;
             font-weight: 300;
             font-family: $font;
-            z-index: 999999;
+            z-index: 99999999;
+
             @media not all and (min-resolution: 0.001dpcm) {
               left: -15px!important;
               top: 32px;

@@ -142,6 +142,7 @@
             <div class="details_wrap-info_item price_wrap">
                 <div class="details_wrap-info_item-price">
                    <div class="details_wrap-info_item-price_item">
+                       <img src="/images/icons/alot.svg" alt="amount">
                        <span>Много</span>
                    </div>
                     <div class="details_wrap-info_item-price_item">
@@ -149,15 +150,33 @@
                     </div>
                 </div>
 
-                <div class="details_wrap-info_item-price">
+                <div class="details_wrap-info_item-price discount">
                     <div class="details_wrap-info_item-price_item">
-                        <span>Много</span>
+                        <span>с купоном</span>
+                        <img src="/images/icons/tip.svg" alt="amount">
                     </div>
                     <div class="details_wrap-info_item-price_item">
                         <span class="details_wrap-info_item-price_item-price">29900</span>
                     </div>
                 </div>
             </div>
+
+
+
+            <div class="details_wrap-info_item">
+                <div class="details_wrap-info_item-left">
+                    <div class="cart_wrap-item_inner-table_row-col col_amount">
+                        <span>Количество (шт)</span>
+                    </div>
+                    @include('components.btn.amount_btn', ['id' => $product['id']])
+                </div>
+                <div class="details_wrap-info_item-right">
+                    <a href="#" class="ajaxGETproduct" data-url="{{ route('AddToCartAjaxGet', ['id' => $product['id']]) }}">
+                        @include('components.btn.buy_btn', [ 'class' => 'empty_cart-btn', 'text' => 'в корзину'])
+                    </a>
+                </div>
+            </div>
+
 
 
 

@@ -340,6 +340,23 @@ button {
   background: #fff;
 }
 
+.text_buy-btn {
+  width: 200px !important;
+  height: 40px !important;
+}
+.text_buy-btn span {
+  margin-left: 10px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #40404c;
+  border-radius: 30px;
+}
+
 .header {
   display: none;
   font-family: "MontserratSemiBold";
@@ -519,7 +536,7 @@ button {
   transition: visibility 0.2s;
   font-weight: 300;
   font-family: "Montserrat";
-  z-index: 999999;
+  z-index: 99999999;
 }
 @media not all and (min-resolution: 0.001dpcm) {
   .header_wrapper-item_menu-item-secondary {
@@ -870,7 +887,7 @@ button {
 }
 @media screen and (min-width: 1030px) {
   .menu_wrapper-item_personal {
-    margin-left: 30px;
+    margin-left: 20px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -4752,6 +4769,25 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .details_wrap-info .price_wrap {
   display: flex;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+.details_wrap-info .price_wrap .discount {
+  margin-bottom: 3px;
+  margin-left: 40px;
+}
+.details_wrap-info .price_wrap .discount .details_wrap-info_item-price_item span {
+  margin-right: 5px;
+}
+.details_wrap-info .price_wrap .discount .details_wrap-info_item-price_item-price {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #3559fd;
 }
 .details_wrap-info .price_wrap .details_wrap-info_item-price_item {
   font-family: "Montserrat";
@@ -4761,6 +4797,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   line-height: 14px;
   letter-spacing: 0.02em;
   color: #40404C;
+  display: flex;
+  margin-bottom: 5px;
+}
+.details_wrap-info .price_wrap .details_wrap-info_item-price_item span {
+  margin-left: 5px;
 }
 .details_wrap-info .price_wrap .details_wrap-info_item-price_item-price {
   font-family: "Montserrat";
@@ -4770,6 +4811,29 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   line-height: 26px;
   text-transform: uppercase;
   color: #3559fd;
+}
+.details_wrap-info_item:last-child {
+  display: flex;
+  align-items: center;
+}
+.details_wrap-info_item-left {
+  margin-right: 30px;
+}
+.details_wrap-info_item-left .col_amount {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404C;
+  margin-bottom: 12px !important;
+}
+.details_wrap-info_item-left .col_amount span {
+  margin: 0 auto;
+}
+.details_wrap-info_item-left .cart_wrap-item_inner-table_row-col_btns-btn-items {
+  margin-bottom: 16px;
 }
 .details_wrap-info_item-field {
   font-family: "Montserrat";

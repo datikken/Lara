@@ -200,3 +200,21 @@ button {
     -webkit-appearance: none;
     background: #fff;
 }
+
+.text_buy-btn {
+    width: 200px!important;
+    height: 40px!important;
+
+    span {
+        margin-left: 10px;
+        font-family: $font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $black;
+        border-radius: 30px;
+    }
+}

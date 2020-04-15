@@ -13,6 +13,29 @@
 
             .price_wrap {
                 display: flex;
+                align-items: flex-end;
+                margin-bottom: 30px;
+
+                .discount {
+                    margin-bottom: 3px;
+                    margin-left: 40px;
+
+                    .details_wrap-info_item-price_item {
+                        span {
+                            margin-right: 5px;
+                        }
+                        &-price {
+                            font-family: Montserrat;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 12px;
+                            line-height: 14px;
+                            letter-spacing: 0.02em;
+                            text-transform: uppercase;
+                            color: $blue;
+                        }
+                    }
+                }
                 .details_wrap-info_item-price {
                     &_item {
                         font-family: $font;
@@ -22,6 +45,12 @@
                         line-height: 14px;
                         letter-spacing: 0.02em;
                         color: #40404C;
+                        display: flex;
+                        margin-bottom: 5px;
+
+                        span {
+                            margin-left: 5px;
+                        }
 
                         &-price {
                             font-family: $font;
@@ -34,10 +63,35 @@
                         }
                     }
                 }
-
             }
 
             &_item {
+                &:last-child {
+                    display: flex;
+                    align-items: center;
+                }
+
+                &-left {
+                    margin-right: 30px;
+
+                    .col_amount {
+                        font-family: $font;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 12px;
+                        line-height: 14px;
+                        letter-spacing: 0.02em;
+                        color: #40404C;
+                        margin-bottom: 12px!important;
+
+                        span {
+                            margin: 0 auto;
+                        }
+                    }
+                    .cart_wrap-item_inner-table_row-col_btns-btn-items {
+                        margin-bottom: 16px;
+                    }
+                }
                 &-field {
                     font-family: $font;
                     font-size: 12px;
