@@ -200,7 +200,7 @@ a:hover {
 
 .as-filter-visible {
   padding: 0 !important;
-  padding-top: 13px !important;
+  padding-top: 16px !important;
   border-bottom: none !important;
 }
 
@@ -1950,6 +1950,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 @media screen and (min-width: 600px) {
   .columns .left_column {
     max-width: 270px;
+    margin-right: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -4220,6 +4221,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+.filters_wrapper-item_label img {
+  transition: all 0.2s;
 }
 .filters_wrapper-item:first-child {
   border-top: none;

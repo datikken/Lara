@@ -1,6 +1,4 @@
-{{ csrf_field()  }}
-
-<div class="product">
+<div class="product" data-category="{{ $category }}">
     <a href="{{ route('ShowProductDetails',['id' => $id]) }}">
         <div class="product_wrapper">
             <div class="product_wrapper-item">

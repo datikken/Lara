@@ -37738,14 +37738,26 @@ var CatalogFiltersController = /*#__PURE__*/function () {
       items.forEach(function (el, i) {
         el.addEventListener('click', function (e) {
           var elem = e.currentTarget;
+          var opn = false;
           var list = elem.querySelector('ul');
           var label = elem.querySelector('.filters_wrapper-item_label');
           var arrow = elem.querySelector('img');
-          var li = elem.querySelectorAll('.filters_wrapper-item_list-text');
-          arrow.classList.toggle('rotate');
-          label.classList.toggle('filter-label-visible');
-          list.classList.toggle('as-visible');
-          items[i].classList.toggle('as-filter-visible');
+          var lis = elem.querySelectorAll('.filters_wrapper-item_list-text');
+
+          if (!opn) {
+            arrow.classList.toggle('rotate');
+            label.classList.toggle('filter-label-visible');
+            list.classList.toggle('as-visible');
+            items[i].classList.toggle('as-filter-visible');
+            opn = true;
+          }
+
+          lis.forEach(function (item) {
+            item.addEventListener('click', function (e) {
+              console.log(e.target);
+              opn = false;
+            });
+          });
         });
       });
     }

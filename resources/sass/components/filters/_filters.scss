@@ -29,6 +29,10 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
+
+            img {
+                transition: all $transition;
+            }
         }
 
       &:first-child {
