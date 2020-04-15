@@ -6807,6 +6807,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     margin: 0 auto;
   }
 }
+@media screen and (min-width: 1030px) {
+  .info {
+    padding-top: 50px;
+  }
+}
 @media screen and (min-width: 600px) {
   .info .info_menu {
     max-width: 400px;
@@ -6816,7 +6821,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 30px 15px 20px 15px;
+  margin: 0 0 20px 0;
 }
 @media screen and (min-width: 600px) {
   .info .info_menu-wrap {
@@ -6864,25 +6869,28 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .info .info_content-item {
   display: flex;
-  padding: 20px 20px 0 10px;
+  flex-direction: column;
+  padding: 0 0 40px 0;
   border-bottom: 1px solid #fdd935;
   outline: none;
+  margin-bottom: 20px;
 }
 .info .info_content-item:last-child {
   border: none;
 }
-.info .info_content-item_inner {
-  padding-bottom: 70px;
+.info .info_content-item .concrete_content {
+  flex-direction: column;
+  align-items: flex-start;
 }
-.info .info_content-item_inner:nth-child(2) {
-  margin-left: 10px;
+.info .info_content-item_inner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 .info .info_content-item_inner-icon {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  position: relative;
-  top: -13px;
 }
 .info .info_content-item_inner-icon img {
   min-height: 40px;
@@ -6896,7 +6904,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #292930;
-  margin-bottom: 20px;
+  margin-left: 20px;
 }
 .info .info_content-item_inner-desc {
   font-family: "Montserrat";
