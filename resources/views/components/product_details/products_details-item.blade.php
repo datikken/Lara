@@ -109,6 +109,61 @@
         </div>
 
 
+        <div class="details_wrap-info">
+            <div class="details_wrap-info_item">
+                <div class="details_wrap-info_item-head">
+                    <h1>{{$product['name']}}</h1>
+                </div>
+            </div>
+            <div class="details_wrap-info_item">
+                <div class="details_wrap-info_item-desc">
+                    <p>{{$product['description']}}</p>
+                </div>
+            </div>
+
+            <div class="details_wrap-info_item">
+                <div class="details_wrap-info_item-field">
+                    <span>Фотобарабан Mitsubishi Chemical Corporation, тонер Mitsubishi Chemical Corporation</span>
+                </div>
+            </div>
+
+            <div class="details_wrap-info_item">
+                <div class="details_wrap-info_item-field">
+                    <span>ОЕМ-номер: CE285A.</span>
+                </div>
+            </div>
+
+            <div class="details_wrap-info_item">
+                <div class="details_wrap-info_item-field">
+                    <span>1 600 текстовых страниц А4 <br/> согласно ASTM F1856/STMC для картриджей «Всё в одном».</span>
+                </div>
+            </div>
+
+            <div class="details_wrap-info_item price_wrap">
+                <div class="details_wrap-info_item-price">
+                   <div class="details_wrap-info_item-price_item">
+                       <span>Много</span>
+                   </div>
+                    <div class="details_wrap-info_item-price_item">
+                        <span class="details_wrap-info_item-price_item-price">29900</span>
+                    </div>
+                </div>
+
+                <div class="details_wrap-info_item-price">
+                    <div class="details_wrap-info_item-price_item">
+                        <span>Много</span>
+                    </div>
+                    <div class="details_wrap-info_item-price_item">
+                        <span class="details_wrap-info_item-price_item-price">29900</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
 
     </div>
 </div>

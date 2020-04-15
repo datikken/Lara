@@ -2,9 +2,72 @@
     &_wrap {
         max-width: $layoutw;
         margin: 0 auto;
+        display: flex;
 
         &-slider {
             width: 600px;
+        }
+
+        &-info {
+            margin-left: 70px;
+
+            .price_wrap {
+                display: flex;
+                .details_wrap-info_item-price {
+                    &_item {
+                        font-family: $font;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 9px;
+                        line-height: 14px;
+                        letter-spacing: 0.02em;
+                        color: #40404C;
+
+                        &-price {
+                            font-family: $font;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 24px;
+                            line-height: 26px;
+                            text-transform: uppercase;
+                            color: $blue;
+                        }
+                    }
+                }
+
+            }
+
+            &_item {
+                &-field {
+                    font-family: $font;
+                    font-size: 12px;
+                    line-height: 20px;
+                    letter-spacing: 0.02em;
+                    color: $dblack;
+                    margin-bottom: 15px;
+                }
+                &-desc {
+                    font-family: $semifont;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    color: $dblack;
+                }
+                &-head {
+                    h1 {
+                        font-family: $semifont;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 18px;
+                        letter-spacing: 0.02em;
+                        color: $dblack;
+                        margin-top: 50px;
+                    }
+                }
+            }
         }
     }
 }
