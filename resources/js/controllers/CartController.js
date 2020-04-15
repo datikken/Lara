@@ -2,7 +2,9 @@ class CartController {
     constructor(el) {
         let that = this;
         this.el = el;
+        let grid = document.querySelector('.products_grid');
         let btns = document.querySelectorAll('.ajaxGETproduct');
+
         this._setDeleteListeners();
 
         btns.forEach((btn) => {
@@ -66,21 +68,28 @@ class CartController {
     }
     _makeCall(e) {
         e.preventDefault();
+
         let that = this;
         let url = e.currentTarget.getAttribute('data-url');
         let _token = $('input[name="_token"]').val();
 
-        $.ajax({
-            method: "GET",
-            url: url,
-            data: {token: _token},
-            success: function (data, status, XHR) {
-                that._fixValues(data.cart, data.price);
-            },
-            error: function (error, status, XHR) {
-                console.warn(error);
-            }
-        });
+        let executed = false;
+
+        if(!executed) {
+            executed = true;
+            $.ajax({
+                method: "GET",
+                url: url,
+                data: {token: _token},
+                success: function (data, status, XHR) {
+                    that._fixValues(data.cart, data.price);
+                },
+                error: function (error, status, XHR) {
+                    console.warn(error);
+                }
+            });
+        }
+
     }
 }
 

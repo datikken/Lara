@@ -37601,6 +37601,7 @@ var CartController = /*#__PURE__*/function () {
 
     var that = this;
     this.el = el;
+    var grid = document.querySelector('.products_grid');
     var btns = document.querySelectorAll('.ajaxGETproduct');
 
     this._setDeleteListeners();
@@ -37685,19 +37686,24 @@ var CartController = /*#__PURE__*/function () {
 
       var _token = $('input[name="_token"]').val();
 
-      $.ajax({
-        method: "GET",
-        url: url,
-        data: {
-          token: _token
-        },
-        success: function success(data, status, XHR) {
-          that._fixValues(data.cart, data.price);
-        },
-        error: function error(_error2, status, XHR) {
-          console.warn(_error2);
-        }
-      });
+      var executed = false;
+
+      if (!executed) {
+        executed = true;
+        $.ajax({
+          method: "GET",
+          url: url,
+          data: {
+            token: _token
+          },
+          success: function success(data, status, XHR) {
+            that._fixValues(data.cart, data.price);
+          },
+          error: function error(_error2, status, XHR) {
+            console.warn(_error2);
+          }
+        });
+      }
     }
   }]);
 

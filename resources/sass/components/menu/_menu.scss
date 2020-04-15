@@ -350,7 +350,7 @@
       }
       &_tracking {
         @include flex(center, space-between, wrap);
-        margin-left: 30px;
+        margin-left: 20px;
         cursor: pointer;
         &:hover {
           text-decoration: none;
