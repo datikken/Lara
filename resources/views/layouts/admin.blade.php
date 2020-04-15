@@ -45,13 +45,18 @@
             <li class="uk-open">
                 <a class="uk-accordion-title" href="#">База данных</a>
                 <div class="uk-accordion-content">
-                    <div class="uk-flex-between uk-flex">
+                    <div class="uk-flex-between uk-flex uk-margin-bottom">
                         <a href="/admin/products">Продукты</a>
                         <a href="/admin/createProductForm" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>
                     </div>
-                    <p>
+                    <div class="uk-flex-between uk-flex uk-margin-bottom">
                         <a href="/admin/banners">Баннеры</a>
-                    </p>
+                        <a href="/admin/createProductForm" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>
+                    </div>
+                    <div class="uk-flex-between uk-flex uk-margin-bottom">
+                        <a href="/admin/information">Информация</a>
+                        <a href="/admin/createProductForm" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>
+                    </div>
                 </div>
             </li>
         </ul>

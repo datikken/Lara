@@ -51,6 +51,10 @@ Route::get('admin/adminCreateBannerForm', ['uses' => "AdminBannersController@cre
     //banners
     Route::get('admin/banners', ['uses' => "AdminBannersController@index", 'as' => 'setBanner'])->middleware('restrictToAdmin');
 
+//INFORMATION
+Route::get('admin/information', ['uses' => "AdminInformationController@index", 'as' => 'adminCreateInfoForm']);
+
+
 
 //CART
 Route::get('product/increaseSingleProduct/{id}', ['uses' => 'ProductsController@increaseSingleProduct', 'as' => 'IncreaseSingleProduct']);

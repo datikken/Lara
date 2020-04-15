@@ -1,127 +1,111 @@
-<?php //dump($product); ?>
+<?php #dump($product['image']); ?>
 
 <div class="details">
-  <div class="details_wrapper">
-    <div class="details_wrapper-item">
-      <div class="details_wrapper-item_product">
-        <div class="details_wrapper-item_product-item">
-          <div class="details_Wrapper-item_product-item_images">
+    <div class="details_wrap">
 
-            {{--<ProductDetailsCarousel />--}}
 
-          </div>
+        <div class="details_wrap-slider">
+            <style>
+                .details_slide {
+                    background-size: contain!important;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                .swiper-container {
+                    width: 100%;
+                    height: 300px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    overflow: hidden;
+                    margin-bottom: 0;
+                }
+                .swiper-slide {
+                    background-size: cover;
+                    background-position: center;
+                }
+                .gallery-top {
+                    width: 600px!important;
+                    height: 370px!important;
+                }
+                .gallery-thumbs {
+                    height: 65px!important;
+                    width: 600px!important;
+                    box-sizing: border-box;
+                    padding: 10px 0;
+                    overflow: hidden;
+                }
+                .gallery-thumbs .swiper-slide {
+                    width: 100px;
+                    height: 100%;
+                    opacity: 0.4;
+                }
+                .gallery-thumbs .swiper-slide-active {
+                    opacity: 1;
+                }
+                .details_nav-left {
+                    position: absolute!important;
+                    bottom: -55px!important;
+                    z-index: 99999999;
+                    top:initial;
+                }
+                .details_nav-right:after {
+                    background-image: url('/images/icons/arrow_right.svg');
+                }
+                .details_nav-right {
+                    position: absolute!important;
+                    bottom: -55px!important;
+                    z-index: 99999999;
+                    top:initial;
+                    height: 20px;
+                    width:20px;
+                }
+            </style>
+
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+                </div>
+
+                <div class="swiper-button-next swiper-button-white details_nav-right" style="background-image: url('/images/icons/arrow_right.svg')"></div>
+                <div class="swiper-button-prev swiper-button-white details_nav-left"></div>
+
+            </div>
+            <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+                </div>
+            </div>
+
+            <script>
+                var galleryTop = new Swiper('.gallery-top', {
+                    spaceBetween: 10
+                });
+                var galleryThumbs = new Swiper('.gallery-thumbs', {
+                    spaceBetween: 10,
+                    centeredSlides: true,
+                    slidesPerView: 'auto',
+                    touchRatio: 0.2,
+                    slideToClickedSlide: true,
+                    initialSlide: 2,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    }
+                });
+                galleryTop.controller.control = galleryThumbs;
+                galleryThumbs.controller.control = galleryTop;
+            </script>
         </div>
-        <div class="details_wrapper-item_product-item">
-          <div class="details_wrapper-item_product-item_info">
-            <div class="details_wrapper-item_product-item_info-heading">
-              <span class="details_wrapper-item_product-item_info-heading-item">
-                {{ $product->name }}
-              </span>
-            </div>
-            <div class="details_wrapper-item_product-item_info-subheading">
-              <span class="details_wrapper-item_product-item_info-subheading-item">
-                {{ $product->type }}
-              </span>
-            </div>
-            {{--slider--}}
-            <div class="details_wrapper-item_product-item_info-props">
-              <div class="details_wrapper-item_product-item_info-props-color"></div>
-              <div class="details_wrapper-item_product-item_info-props-chip"></div>
-              <div class="details_wrapper-item_product-item_info-props-new"></div>
-              <div class="details_wrapper-item_product-item_info-props-standart"></div>
-            </div>
-            <div class="details_wrapper-item_product-item_info-desc">
-              <span class="details_wrapper-item_product-item_info-desc-item">
-                {{ $product->description }}
-              </span>
-            </div>
-            <div class="details_wrapper-item_product-item_info-info">
-              <span class="details_wrapper-item_product-item_info-desc-item">
-                ОЕМ-номер: CE285A.
-              </span>
-            </div>
-            <div class="details_wrapper-item_product-item_info-text">
-              <span class="details_wrapper-item_product-item_info-text-item">
-                1 600 текстовых страниц А4 согласно ASTM F1856/STMC для
-                картриджей «Всё в одном».
-              </span>
-            </div>
-            <div class="details_wrapper-item_product-item_info-amount">
-              <div class="details_wrapper-item_product-item_info-amount-item">
-                <div class="details_wrapper-item_product-item_info-amount-item-text">
-                  <span class="details_wrapper-item_product-item_info-amount-item-text_item">
-                    Много
-                  </span>
-                </div>
-                <div class="details_wrapper-item_product-item_info-amount-item-price">
-                  <span class="details_wrapper-item_product-item_info-amount-item-price_item">
-                    {{$product->price}}
-                  </span>
-                </div>
-              </div>
-
-              <div class="details_wrapper-item_product-item_info-discount-item">
-                <div class="details_wrapper-item_product-item_info-discount-item-text">
-                  <span class="details_wrapper-item_product-item_info-discount-item-text_item">
-                    C купоном
-                  </span>
-                </div>
-                <div class="details_wrapper-item_product-item_info-discount-item-price">
-                  <span class="details_wrapper-item_product-item_info-discount-item-price_item">
-                    {{$product->price / 100 * 80 }}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="details_wrapper-item_product-item_info-actions">
 
 
 
-              <div class="details_wrapper-item_product-item_info-actions-item">
-                <div class="details_wrapper-item_product-item_info-actions-item-text">
-                  <span>количество (шт)</span>
-                </div>
-
-
-                <div class="details_wrapper-item_product-item_info-actions-item-button">
-                  <div class="desktop-hide">
-                    <div class="details_wrapper-item_product-item_info-actions-item-button-buttons-plus">
-                      <span>-</span>
-                    </div>
-                  </div>
-                  <span class="details_wrapper-item_product-item_info-actions-item-button-num">
-                    25
-                  </span>
-                  <div class="details_wrapper-item_product-item_info-actions-item-button-buttons">
-                    <div class="mobile-hide">
-                      <div class="details_wrapper-item_product-item_info-actions-item-button-buttons-plus">
-                        <span>-</span>
-                      </div>
-                    </div>
-                    <div class="details_wrapper-item_product-item_info-actions-item-button-buttons-min">
-                      <span>+</span>
-                    </div>
-                  </div>
-                </div>
-
-
-
-              </div>
-
-              <div class="details_wrapper-item_product-item_info-actions-item">
-                <div class="details_wrapper-item_product-item_info-actions-item_text">
-                  <span class="details_wrapper-item_product-item_info-actions-item_text-item">
-                    в корзину
-                  </span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="details_wrapper-item"></div>
-    <div class="details_wrapper-item"></div>
-  </div>
 </div>
