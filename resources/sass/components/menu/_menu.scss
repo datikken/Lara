@@ -504,6 +504,7 @@
         align-items: center;
         height: 50px;
 
+
         &-header {
           display: none;
           @include  breakpoint($medium) {
@@ -523,9 +524,9 @@
 
         &:hover {
           .menu_wrapper-item-main_menu {
-            z-index: 9999999;
-            display: block;
-            color: black;
+              z-index: 99999999999;
+              display: block;
+              color: black;
           }
         }
       }

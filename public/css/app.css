@@ -1116,7 +1116,7 @@ button {
   }
 }
 .menu_wrapper-item_menuText:hover .menu_wrapper-item-main_menu {
-  z-index: 9999999;
+  z-index: 99999999999;
   display: block;
   color: black;
 }
@@ -4199,6 +4199,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   padding: 0px 20px 0 20px;
   margin-bottom: 50px;
   display: none;
+  position: relative;
+  z-index: 9999999;
 }
 @media screen and (min-width: 600px) {
   .filters {

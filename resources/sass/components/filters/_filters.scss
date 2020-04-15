@@ -4,6 +4,9 @@
   padding: 0px 20px 0 20px;
   margin-bottom: 50px;
   display: none;
+  position: relative;
+  z-index: 9999999;
+
   @include breakpoint($phone) {
     display: block;
   }

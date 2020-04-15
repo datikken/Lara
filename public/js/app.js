@@ -37209,7 +37209,6 @@ var Checkbox = /*#__PURE__*/function () {
         el.addEventListener('click', function (e) {
           var img = e.currentTarget.querySelector('img');
           var input = e.currentTarget.querySelector('input');
-          console.log(img, input);
           checkboxes.forEach(function (box) {
             that._clearCheckboxes(box);
 
@@ -37231,30 +37230,32 @@ var Checkbox = /*#__PURE__*/function () {
   }, {
     key: "changeState",
     value: function changeState(els) {
+      // console.log('els',els);
       els.forEach(function (a) {
         var clicked = false;
         var img = a.querySelector('img');
         img.addEventListener('click', function (e) {
-          if (!clicked) {
+          if (clicked) {
             img.classList.add('invisible');
-            clicked = true;
+            clicked = false;
           } else {
             img.classList.remove('invisible');
-            clicked = false;
+            clicked = true;
           }
         });
         a.addEventListener('click', function (e) {
-          var input = a.querySelector('input');
+          // console.log(e.target, clicked)
+          var input = e.target.querySelector('input');
           var img = e.target.querySelector('img');
 
-          if (!clicked) {
+          if (clicked) {
             img.classList.add('invisible');
             input.removeAttribute('checked');
-            clicked = true;
+            clicked = false;
           } else {
             img && img.classList.remove('invisible');
             input.setAttribute('checked', true);
-            clicked = false;
+            clicked = true;
           }
         });
       });
