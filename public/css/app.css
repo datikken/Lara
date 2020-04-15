@@ -437,6 +437,7 @@ button {
   flex-wrap: wrap;
   position: relative;
   margin: 0;
+  padding-right: 0;
 }
 .header_wrapper-item_menu-item {
   margin-right: 20px;
