@@ -102,6 +102,16 @@ a:hover {
 .as-none {
   opacity: 0!important;
 }
+
+.as-filter-visible {
+    padding: 0!important;
+    padding-top: 13px!important;
+    border-bottom: none!important;
+}
+.filter-label-visible {
+    border-bottom: 1px solid $light_gray;
+    padding-bottom: 16px;
+}
 .as-visible {
   display: block!important;
 }
@@ -112,7 +122,9 @@ a:hover {
     height: 100%;
   }
 }
-
+.rotate {
+    transform: rotate(90deg);
+}
 .mobile_menu {
   height: 98vh!important;
 }

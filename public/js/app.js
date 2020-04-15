@@ -37070,7 +37070,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_CartController__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./controllers/CartController */ "./resources/js/controllers/CartController.js");
 /* harmony import */ var _components_Checkbox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/Checkbox */ "./resources/js/components/Checkbox.js");
 /* harmony import */ var _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./controllers/DeliveryAuthController */ "./resources/js/controllers/DeliveryAuthController.js");
+/* harmony import */ var _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./controllers/CatalogFiltersController */ "./resources/js/controllers/CatalogFiltersController.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
+
 
 
 
@@ -37093,7 +37095,8 @@ $(document).ready(function () {
   new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__["default"]();
   new _components_Checkbox__WEBPACK_IMPORTED_MODULE_11__["default"]();
   new _controllers_CartController__WEBPACK_IMPORTED_MODULE_10__["default"]();
-  new _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_12__["default"](); // new PageController();
+  new _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_12__["default"]();
+  new _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_13__["default"](); // new PageController();
 
   cart = document.querySelector('.cart');
   var mapEl, map, dform, cart;
@@ -37702,6 +37705,56 @@ var CartController = /*#__PURE__*/function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (CartController);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/js/controllers/CatalogFiltersController.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/controllers/CatalogFiltersController.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CatalogFiltersController = /*#__PURE__*/function () {
+  function CatalogFiltersController() {
+    _classCallCheck(this, CatalogFiltersController);
+
+    var filters = document.querySelector('.filters');
+    filters && this.activate(filters);
+  }
+
+  _createClass(CatalogFiltersController, [{
+    key: "activate",
+    value: function activate(filters) {
+      var items = filters.querySelectorAll('.filters_wrapper-item');
+      items.forEach(function (el, i) {
+        el.addEventListener('click', function (e) {
+          var elem = e.currentTarget;
+          var list = elem.querySelector('ul');
+          var label = elem.querySelector('.filters_wrapper-item_label');
+          var arrow = elem.querySelector('img');
+          var li = elem.querySelectorAll('.filters_wrapper-item_list-text');
+          arrow.classList.toggle('rotate');
+          label.classList.toggle('filter-label-visible');
+          list.classList.toggle('as-visible');
+          items[i].classList.toggle('as-filter-visible');
+        });
+      });
+    }
+  }]);
+
+  return CatalogFiltersController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (CatalogFiltersController);
 
 /***/ }),
 

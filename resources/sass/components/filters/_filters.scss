@@ -10,12 +10,26 @@
 
   &_wrapper {
     &-item {
-      border-bottom: 1px solid $light_gray;
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      cursor: pointer;
-      padding: 15px 0 15px 0;
+        border-bottom: 1px solid #e9e9ea;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        position: relative;
+        cursor: pointer;
+        padding: 16px 0;
+
+        &:last-child {
+            .filters_wrapper-item_list {
+                border-bottom: none;
+            }
+        }
+
+        &_label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
 
       &:first-child {
         border-top:none;
@@ -23,9 +37,9 @@
       &:last-child {
         border: none;
       }
-      &:hover .filters_wrapper-item_list {
-        display: block;
-      }
+      //&:hover .filters_wrapper-item_list {
+      //  display: block;
+      //}
       &_text {
         font-family: $font;
         font-size: 12px;
@@ -51,6 +65,8 @@
         margin: 0;
         list-style: none;
         border-bottom: 1px solid $light_gray;
+        display: none;
+
 
         &-text {
           border-bottom: 1px solid $light_gray;
@@ -61,6 +77,19 @@
           color: $dblack;
           display: flex;
           align-items: center;
+          padding: 12.5px 0;
+          margin-left: 10px;
+
+            .checkbox {
+                .checkbox-wrap {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+
+            span {
+                margin-left: 20px;
+            }
 
           &:last-child {
             border: none;
