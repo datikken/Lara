@@ -225,6 +225,9 @@
                 a {
                   text-decoration: none;
                   color: $dblack;
+                    &:hover {
+                        color: #fff;
+                    }
                 }
 
                 &:hover {
@@ -504,7 +507,6 @@
         align-items: center;
         height: 50px;
 
-
         &-header {
           display: none;
           @include  breakpoint($medium) {
@@ -537,6 +539,10 @@
   position: relative;
   z-index: 999999;
   order:2!important;
+
+    &:hover {
+        color: #fff!important;
+    }
 
    div {
      color: black;

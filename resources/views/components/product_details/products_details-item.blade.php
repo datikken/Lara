@@ -3,7 +3,6 @@
 <div class="details">
     <div class="details_wrap">
 
-
         <div class="details_wrap-slider">
             <style>
                 .details_slide {
@@ -26,18 +25,22 @@
                 .gallery-top {
                     width: 600px!important;
                     height: 370px!important;
+                    border: 1px solid #D4D4D5;
+                    margin-top: 30px;
                 }
                 .gallery-thumbs {
-                    height: 65px!important;
                     width: 600px!important;
                     box-sizing: border-box;
                     padding: 10px 0;
                     overflow: hidden;
+
                 }
                 .gallery-thumbs .swiper-slide {
                     width: 100px;
+                    height: 65px!important;
                     height: 100%;
                     opacity: 0.4;
+                    border: 1px solid #D4D4D5;
                 }
                 .gallery-thumbs .swiper-slide-active {
                     opacity: 1;

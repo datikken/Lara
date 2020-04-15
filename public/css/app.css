@@ -50,10 +50,6 @@ p {
   color: #fff !important;
 }
 
-a:hover {
-  color: #40404c !important;
-}
-
 .checkbox {
   position: absolute;
   margin-right: 20px;
@@ -776,6 +772,9 @@ button {
   text-decoration: none;
   color: #292930;
 }
+.menu_wrapper-item-main_menu-item-text_secondary-text a:hover {
+  color: #fff;
+}
 .menu_wrapper-item-main_menu-item-text_secondary-text:hover {
   background-color: #40404c;
 }
@@ -1129,6 +1128,9 @@ button {
   position: relative;
   z-index: 999999;
   order: 2 !important;
+}
+.menu_wrapper-item_menuText-link:hover {
+  color: #fff !important;
 }
 .menu_wrapper-item_menuText-link div {
   color: black;
