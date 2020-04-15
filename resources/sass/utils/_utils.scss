@@ -110,7 +110,7 @@
     background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
     left: $left;
     top: 30px;
-    transition: $transition;  
+    transition: $transition;
   }
   &:hover {
     &:before {
@@ -188,12 +188,15 @@ p {
     background-color: $dblack!important;
     color: $white!important;
 }
+a:hover {
+    color: $black!important;
+}
 
 .checkbox {
   position: absolute;
   margin-right: 20px;
   cursor: pointer;
-  user-select: auto;
+  user-select: none!important;
 
   &-wrap {
     width: 20px;
