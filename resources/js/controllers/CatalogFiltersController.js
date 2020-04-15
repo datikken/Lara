@@ -1,7 +1,6 @@
 class CatalogFiltersController {
     constructor() {
         let filters = document.querySelector('.filters');
-
         filters && this.activate(filters);
     }
 

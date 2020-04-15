@@ -1,4 +1,4 @@
-require('./bootstrap');
+// require('./bootstrap');
 // window.Vue = require('vue');
 import './components/Menu';
 import './components/Swiper';
@@ -17,7 +17,7 @@ import DeliveryAuthController from './controllers/DeliveryAuthController'
 import CatalogFiltersController from './controllers/CatalogFiltersController'
 // import PageController from './controllers/PagesController'
 
-$(document).ready(function() {
+// $(document).ready(function() {
     new LoginFormController();
     new ContactsFormController();
     new SearchController();
@@ -40,4 +40,4 @@ $(document).ready(function() {
        if(dform) {
          new DeliveryFormController(dform);
        }
-});
+// });

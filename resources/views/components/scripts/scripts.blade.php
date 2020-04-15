@@ -1,6 +1,4 @@
-
-{{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
-<script rel="stylesheet" href="/js/app.js">
+<script src="{{ asset('js/app.js') }}" defer></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 <script src="uikit/dist/js/uikit-icons.min.js"></script>
