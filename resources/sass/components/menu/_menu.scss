@@ -11,11 +11,22 @@
     position: relative;
 
     @include breakpoint($medium) {
+        margin-left: 10px;
         @include flex(center, flex-start, wrap);
         max-width: $layoutw;
     }
 
+    @include breakpoint($large) {
+        margin: 0 auto;
+    }
+
     &-item {
+        &:first-child {
+            margin-left: 10px;
+            @include breakpoint($medium) {
+                margin-left: 0;
+            }
+        }
         @include breakpoint($medium) {
           margin-left: 0px;
         }
@@ -488,6 +499,7 @@
 
         &-logo {
           margin-left: 1rem;
+          max-width: none;
 
           @include  breakpoint($medium) {
             display: none;

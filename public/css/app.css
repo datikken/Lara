@@ -582,11 +582,25 @@ button {
 }
 @media screen and (min-width: 1030px) {
   .menu_wrapper {
+    margin-left: 10px;
     display: flex !important;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
     max-width: 1170px;
+  }
+}
+@media screen and (min-width: 1120px) {
+  .menu_wrapper {
+    margin: 0 auto;
+  }
+}
+.menu_wrapper-item:first-child {
+  margin-left: 10px;
+}
+@media screen and (min-width: 1030px) {
+  .menu_wrapper-item:first-child {
+    margin-left: 0;
   }
 }
 @media screen and (min-width: 1030px) {
@@ -1096,6 +1110,7 @@ button {
 }
 .menu_wrapper-item_hamburger-logo {
   margin-left: 1rem;
+  max-width: none;
 }
 @media screen and (min-width: 1030px) {
   .menu_wrapper-item_hamburger-logo {
