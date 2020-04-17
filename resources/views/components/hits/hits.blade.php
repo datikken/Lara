@@ -1,5 +1,5 @@
 <div class="hits_hero">
-    <div class="hits_hero-wrap">
+    <div class="hits_hero-wrap" style="background-image: url('/images/hits/hits_hero.svg');">
     </div>
 </div>
 
@@ -7,7 +7,7 @@
     <div class="hits_desc-item">
         <div class="hits_desc-item_txt">
             <span>
-                Ответьте - Вам важно знать, сколько времени занимает прогрев принтера до печати первой страницы?
+                Ответьте - Вам важно знать, сколько времени занимает прогрев принтера до печати первой страницы?<br/>
                 А объём встроенной в принтер памяти? Уверены, что нет.
             </span>
         </div>
@@ -16,7 +16,7 @@
         <div class="hits_desc-item_txt">
             <span>
                 Опираясь на более, чем 10-ти летний опыт работы на рынке печатающих устройств и регулярно отвечая на
-                вопрос <strong>«Какой принтер посоветуете приобрести?»</strong>, мы составили этот Рейтинг.
+                вопрос <b>«Какой принтер посоветуете приобрести?»</b>, мы составили этот Рейтинг.
                 Рейтинг с учётом действительных потребностей пользователя в зависимости от задачи. Мы будем регулярно
                 обновлять Рейтинг.
             </span>
@@ -25,7 +25,7 @@
     <div class="hits_desc-item">
         <div class="hits_desc-item_txt">
             <span>
-                Наш выбор субъективен и он может не совпадать с Вашим.
+                Наш выбор субъективен и он может не совпадать с Вашим.<br/><br/>
                 Если у Вас есть собственный вариант устройства для описанных целей или Вы хотите задать вопрос -
                 пришлите его нам на адрес hitparade@xn--80aairftm.ru
             </span>
@@ -36,8 +36,10 @@
 <div class="hits_recs">
     <div class="hits_recs-item">
         <div class="hits_recs-item_inner">
-            <span>Для получения нашей рекомендации по типу принтера, пожалуйста выберите место установки и необходимое
-                вам количество цветов
+            <span>
+                 <b>
+                    Для получения нашей рекомендации по типу принтера, пожалуйста выберите место установки и необходимое вам количество цветов
+                 </b>
             </span>
         </div>
     </div>
@@ -85,7 +87,7 @@
     <div class="hits-recs-content_item">
         <div class="hits-recs-content_item-inner">
                     <span class="hits-recs-content_item-inner-heading">
-                        Основные параметры выбора цветного принтера для дома:
+                       Основные параметры выбора цветного принтера для дома:
                     </span>
             <span class="hits-recs-content_item-inner-txt">
                         - Wi-Fi - можно поставить его где удобно, не тянуть провода и печатать с любого устройства
@@ -317,9 +319,9 @@
 
             <div class="hits_offers-wrap_heading-item">
                 <div class="hits_offers-wrap_heading-item_head">
-                            <span>
-                                Наше <span class="blue">предложение</span> по картриджам
-                            </span>
+                    <span>
+                        Наше <span class="blue">предложение</span> по картриджам
+                    </span>
                 </div>
 
                 <div class="hits_offers-wrap_heading-item_btns">
@@ -332,172 +334,50 @@
                 </div>
             </div>
 
-            <div class="hits_offers-wrap_item">
-                <div class="hits_offers-wrap_inner">
-                    <div class="hits_offers-wrap_inner-item">
-                        <div class="hits_offers-wrap_inner-item_image">
-                        </div>
-                    </div>
-                    <div class="hits_offers-wrap_inner-item">
-                        <div class="hits_offers-wrap_inner-item_heading">
-                            <span>СОВМЕСТИМАЯ ТУБА С ТОНЕРОМ ZVK TK-570K (АНАЛОГ KYOCERA TK-570K) (BLACK)</span>
-                        </div>
-                        <div class="hits_offers-wrap_inner-item_props">
-                            <div class="hits_offers-wrap_inner-item_props-item">
-                                <span>Бренд</span>
-                                <span>Производитель</span>
-                                <span>Артикул</span>
-                                <span>Модель</span>
-                                <span>Цвет печати картриджа</span>
-                                <span>Тип картриджа</span>
-                                <span>Совместимость с аппаратами</span>
-                            </div>
-                            <div class="hits_offers-wrap_inner-item_props-item">
-                                <span>KYOCERA</span>
-                                <span>ZVK</span>
-                                <span>K-ZVK</span>
-                                <span>TK-570K-ZVK</span>
-                                <span>Black</span>
-                                <span>Тонер-картридж/Туба с тонером</span>
-                                <span>ECOSYS P7035cdn, FS-C5400dn</span>
+            @for ($i = 0; $i < 3; $i++)
+                <div class="hits_offers-wrap_item">
+                    <div class="hits_offers-wrap_inner">
+                        <div class="hits_offers-wrap_inner-item">
+                            <div class="hits_offers-wrap_inner-item_image">
                             </div>
                         </div>
-
-
-                        <div class="hits_offers-wrap_item-actions">
-                            <div class="hits_offers-wrap_item-actions-price">
-                                <span>456738</span>
+                        <div class="hits_offers-wrap_inner-item">
+                            <div class="hits_offers-wrap_inner-item_heading">
+                                <span>СОВМЕСТИМАЯ ТУБА С ТОНЕРОМ ZVK TK-570K (АНАЛОГ KYOCERA TK-570K) (BLACK)</span>
                             </div>
-
-                            <div class="hits_offers-wrap_item-actions-amount">
-                                <div class="hits_offers-wrap_item-actions-amount-label">
-                                    <span>количество</span>
+                            <div class="hits_offers-wrap_inner-item_props">
+                                <div class="hits_offers-wrap_inner-item_props-item">
+                                    <span>Бренд</span>
+                                    <span>Производитель</span>
+                                    <span>Артикул</span>
+                                    <span>Модель</span>
+                                    <span>Цвет печати картриджа</span>
+                                    <span>Тип картриджа</span>
+                                    <span>Совместимость с аппаратами</span>
+                                </div>
+                                <div class="hits_offers-wrap_inner-item_props-item">
+                                    <span>KYOCERA</span>
+                                    <span>ZVK</span>
+                                    <span>K-ZVK</span>
+                                    <span>TK-570K-ZVK</span>
+                                    <span>Black</span>
+                                    <span>Тонер-картридж/Туба с тонером</span>
+                                    <span>ECOSYS P7035cdn, FS-C5400dn</span>
                                 </div>
                             </div>
 
-                            <div class="hits_offers-wrap_item-actions-cta">
-                                <div class="hits_offers-wrap_item-actions-cta_item">В корзину</div>
-                            </div>
 
-                            <div class="hits_offers-wrap_item-actions-about">
-                                <div class="hits_offers-wrap_item-actions-about-item">подробнее</div>
+                            <div class="hits_offers-wrap_item-actions">
+                                <div class="hits_offers-wrap_item-actions-price">
+                                    <span>456738</span>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endfor
 
-
-            <div class="hits_offers-wrap_item">
-                <div class="hits_offers-wrap_inner">
-                    <div class="hits_offers-wrap_inner-item">
-                        <div class="hits_offers-wrap_inner-item_image">
-                        </div>
-                    </div>
-                    <div class="hits_offers-wrap_inner-item">
-                        <div class="hits_offers-wrap_inner-item_heading">
-                            <span>СОВМЕСТИМАЯ ТУБА С ТОНЕРОМ ZVK TK-570K (АНАЛОГ KYOCERA TK-570K) (BLACK)</span>
-                        </div>
-                        <div class="hits_offers-wrap_inner-item_props">
-                            <div class="hits_offers-wrap_inner-item_props-item">
-                                <span>Бренд</span>
-                                <span>Производитель</span>
-                                <span>Артикул</span>
-                                <span>Модель</span>
-                                <span>Цвет печати картриджа</span>
-                                <span>Тип картриджа</span>
-                                <span>Совместимость с аппаратами</span>
-                            </div>
-                            <div class="hits_offers-wrap_inner-item_props-item">
-                                <span>KYOCERA</span>
-                                <span>ZVK</span>
-                                <span>K-ZVK</span>
-                                <span>TK-570K-ZVK</span>
-                                <span>Black</span>
-                                <span>Тонер-картридж/Туба с тонером</span>
-                                <span>ECOSYS P7035cdn, FS-C5400dn</span>
-                            </div>
-                        </div>
-
-
-                        <div class="hits_offers-wrap_item-actions">
-                            <div class="hits_offers-wrap_item-actions-price">
-                                <span>456738</span>
-                            </div>
-
-                            <div class="hits_offers-wrap_item-actions-amount">
-                                <div class="hits_offers-wrap_item-actions-amount-label">
-                                    <span>количество</span>
-                                </div>
-                            </div>
-
-                            <div class="hits_offers-wrap_item-actions-cta">
-                                <div class="hits_offers-wrap_item-actions-cta_item">В корзину</div>
-                            </div>
-
-                            <div class="hits_offers-wrap_item-actions-about">
-                                <div class="hits_offers-wrap_item-actions-about-item">подробнее</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="hits_offers-wrap_item">
-                <div class="hits_offers-wrap_inner">
-                    <div class="hits_offers-wrap_inner-item">
-                        <div class="hits_offers-wrap_inner-item_image">
-                        </div>
-                    </div>
-                    <div class="hits_offers-wrap_inner-item">
-                        <div class="hits_offers-wrap_inner-item_heading">
-                            <span>СОВМЕСТИМАЯ ТУБА С ТОНЕРОМ ZVK TK-570K (АНАЛОГ KYOCERA TK-570K) (BLACK)</span>
-                        </div>
-                        <div class="hits_offers-wrap_inner-item_props">
-                            <div class="hits_offers-wrap_inner-item_props-item">
-                                <span>Бренд</span>
-                                <span>Производитель</span>
-                                <span>Артикул</span>
-                                <span>Модель</span>
-                                <span>Цвет печати картриджа</span>
-                                <span>Тип картриджа</span>
-                                <span>Совместимость с аппаратами</span>
-                            </div>
-                            <div class="hits_offers-wrap_inner-item_props-item">
-                                <span>KYOCERA</span>
-                                <span>ZVK</span>
-                                <span>K-ZVK</span>
-                                <span>TK-570K-ZVK</span>
-                                <span>Black</span>
-                                <span>Тонер-картридж/Туба с тонером</span>
-                                <span>ECOSYS P7035cdn, FS-C5400dn</span>
-                            </div>
-                        </div>
-
-
-                        <div class="hits_offers-wrap_item-actions">
-                            <div class="hits_offers-wrap_item-actions-price">
-                                <span>456738</span>
-                            </div>
-
-                            <div class="hits_offers-wrap_item-actions-amount">
-                                <div class="hits_offers-wrap_item-actions-amount-label">
-                                    <span>количество</span>
-                                </div>
-                            </div>
-
-                            <div class="hits_offers-wrap_item-actions-cta">
-                                <div class="hits_offers-wrap_item-actions-cta_item">В корзину</div>
-                            </div>
-
-                            <div class="hits_offers-wrap_item-actions-about">
-                                <div class="hits_offers-wrap_item-actions-about-item">подробнее</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

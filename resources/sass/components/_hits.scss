@@ -1,7 +1,8 @@
 .hits_hero {
   width: $layoutw;
   margin: 0 auto;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
+  padding-top: 50px;
 
   &-wrap {
     width: 100%;
@@ -19,10 +20,26 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 65px;
+  grid-gap: 64px;
   margin-bottom: 50px;
 
   &-item {
+      display: flex;
+      position: relative;
+
+      &:last-child:after {
+          display: none;
+      }
+
+      &:after {
+          content: '';
+          display: block;
+          height: 100%;
+          border-right: 1px solid $gray;
+          width: 1px;
+          position: absolute;
+          right: -32px;
+      }
     &_txt {
       font-family: $font;
       font-size: 12px;
@@ -43,12 +60,25 @@
   margin-bottom: 40px;
 
   &_item {
+      &:first-child:after {
+          content: '';
+          display: block;
+          height: 100%;
+          width: 1px;
+          position: absolute;
+          right: -85px;
+          top: 0;
+          background: $gray;
+      }
+      &:first-child {
+         position: relative;
+      }
     &-inner {
       display: flex;
       flex-direction: column;
 
       &-heading {
-        font-family: $font;
+        font-family: $semifont;
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
@@ -75,7 +105,7 @@
   width: $layoutw;
   background: $light_gray;
   margin: 0 auto;
-  padding: 30px;
+  padding: 16px 30px 25px 30px;
   padding-bottom: 10px;
   margin-bottom: 50px;
 
@@ -83,8 +113,8 @@
     .second-hits_recs-row {
       .hits_recs-item_inner-item {
         &:first-child {
-          background: $white;
-          color: black;
+            background: $light_gray;
+            color: black;
         }
         &:nth-child(2) {
           border-top-right-radius: 30px;
@@ -150,14 +180,24 @@
   grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 50px;
 
+
   &_column {
     display: flex;
     flex-direction: column;
     border-right: 1px solid $light_gray;
     border-top: 1px solid $light_gray;
     border-bottom: 1px solid $light_gray;
+
     &:first-child {
       border-left: 1px solid $light_gray;
+    }
+
+    &:nth-child(2), &:nth-child(3) {
+      .hits-items_column-item {
+          .hits-items_column-item-text {
+              font-family: $semifont;
+          }
+      }
     }
 
     &:nth-child(2) {
@@ -189,6 +229,11 @@
     &-item {
       padding: 10px 40px;
       border-bottom: 1px solid $light_gray;
+
+    &:first-child {
+        border-bottom: none;
+    }
+
       &:first-child {
         height: 90px;
         display: flex;
@@ -215,7 +260,7 @@
         border: none;
       }
       &-heading {
-        font-family: $font;
+        font-family: $semifont;
         font-weight: bold;
         font-size: 36px;
         line-height: 100%;
@@ -224,14 +269,14 @@
         color: $blue;
 
         &-small {
-          font-family: $font;
+          font-family: $semifont;
           font-weight: 600;
           font-size: 12px;
           line-height: 14px;
           letter-spacing: 0.02em;
           color: $dblack;
           display: block;
-          margin-bottom: 10px;
+          margin-bottom: 17px;
         }
         &-big {
           display: block;
@@ -244,7 +289,7 @@
           color: $dblack;
         }
         &-strong {
-          font-family: $font;
+          font-family: $semifont;
           font-weight: bold;
           font-size: 36px;
           line-height: 100%;
