@@ -1869,6 +1869,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     height: 450px;
   }
 }
+.swiper-container .swiper-scrollbar {
+  display: none;
+}
 
 .swiper-container {
   width: 100% !important;

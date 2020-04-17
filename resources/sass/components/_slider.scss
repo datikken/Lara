@@ -4,6 +4,9 @@
   @include  breakpoint($medium) {
     height: 450px;
   }
+    .swiper-scrollbar {
+        display: none;
+    }
 }
 .swiper-container {
   width: 100% !important;
