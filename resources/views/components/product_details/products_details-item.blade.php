@@ -4,65 +4,6 @@
     <div class="details_wrap">
 
         <div class="details_wrap-slider">
-            <style>
-                .details_slide {
-                    background-size: contain!important;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                }
-                .swiper-container {
-                    width: 100%;
-                    height: 300px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    overflow: hidden;
-                    margin-bottom: 0;
-                }
-                .swiper-slide {
-                    background-size: cover;
-                    background-position: center;
-                }
-                .gallery-top {
-                    width: 600px!important;
-                    height: 370px!important;
-                    border: 1px solid #D4D4D5;
-                    margin-top: 30px;
-                }
-                .gallery-thumbs {
-                    width: 600px!important;
-                    box-sizing: border-box;
-                    padding: 10px 0;
-                    overflow: hidden;
-
-                }
-                .gallery-thumbs .swiper-slide {
-                    width: 100px;
-                    height: 65px!important;
-                    height: 100%;
-                    opacity: 0.4;
-                    border: 1px solid #D4D4D5;
-                }
-                .gallery-thumbs .swiper-slide-active {
-                    opacity: 1;
-                }
-                .details_nav-left {
-                    position: absolute!important;
-                    bottom: -55px!important;
-                    z-index: 99999999;
-                    top:initial;
-                }
-                .details_nav-right:after {
-                    background-image: url('/images/icons/arrow_right.svg');
-                }
-                .details_nav-right {
-                    position: absolute!important;
-                    bottom: -55px!important;
-                    z-index: 99999999;
-                    top:initial;
-                    height: 20px;
-                    width:20px;
-                }
-            </style>
 
             <div class="swiper-container gallery-top">
                 <div class="swiper-wrapper">

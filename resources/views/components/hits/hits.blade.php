@@ -372,6 +372,19 @@
                                     <span>456738</span>
                                 </div>
 
+                                <div class="hits_offers-wrap_item-actions-btns">
+                                    <a href="#" class="ajaxGETproduct" data-url="{{ route('AddToCartAjaxGet', ['id' => '1']) }}">
+                                        @include('components.btn.buy_btn', [ 'class' => 'empty_cart-btn', 'text' => 'в корзину'])
+                                    </a>
+
+                                    <div class="details_wrap-info_item-left">
+                                        <div class="cart_wrap-item_inner-table_row-col col_amount">
+                                            <span>Количество (шт)</span>
+                                        </div>
+                                        @include('components.btn.amount_btn', ['id' => '1'])
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
