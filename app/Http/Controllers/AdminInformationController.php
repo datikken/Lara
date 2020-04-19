@@ -25,22 +25,35 @@ class AdminInformationController extends Controller
     public function editInformationForm(Request $request, $id)
     {
         $category = $request->input('category');
-        $ftitle = $request->input('fizik_title');
-        $utitle = $request->input('urik_title');
-        $ftext = $request->input('fizik_text');
-        $utext = $request->input('urik_text');
+        $urik_title = $request->input('urik_title');
+        $fizik_title = $request->input('fizik_title');
+        $urik_text = $request->input('urik_text');
+        $fizik_text = $request->input('fizik_text');
 
-        $updateArr = array(
+        $ext = $request->file('image')->getClientOriginalExtension();
+        $stringImageReFormat = str_replace(' ', '', $request->input('category'));
+
+        $imageName = $stringImageReFormat . '.' . $ext;
+
+        $imageEncoded = File::get($request->image);
+        Storage::disk('local')->put('public/information_icons/' . $imageName, $imageEncoded);
+
+        $newInformationArray = array(
             'category' => $category,
-            'fizik_title' => $ftitle,
-            'urik_title' => $utitle,
-            'fizik_text' => $ftext,
-            'urik_text' => $utext
+            'urik_title' => $urik_title,
+            'fizik_title'=>$fizik_title,
+            'urik_text' => $urik_text,
+            'fizik_text' => $fizik_text,
+            'image' => $imageName
         );
 
-        DB::table('information')->where('id', $id)->update($updateArr);
+        $created = DB::table('information')->insert($newInformationArray);
 
-        return redirect()->route('informationList');
+        if($created) {
+            return redirect()->route('informationList');
+        } else {
+            return 'Information was not created';
+        }
     }
 
     public function showCreateInfoForm()

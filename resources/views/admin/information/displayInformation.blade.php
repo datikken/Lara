@@ -9,10 +9,10 @@
                 <th>#</th>
                 <th>Иконка</th>
                 <th>Категория</th>
-                <th>Заг физ лица</th>
-                <th>Заг юр лица</th>
-                <th>Описание для физ лица</th>
-                <th>Описание для юр лица</th>
+                <th>Заг. физ лица</th>
+                <th>Заг. юр лица</th>
+                <th>Опис. для физ лица</th>
+                <th>Опис. для юр лица</th>
             </tr>
             </thead>
             <tbody>
@@ -24,8 +24,9 @@
                     <td>{{$info['category']}}</td>
                     <td>{{$info['fizik_title']}}</td>
                     <td>{{$info['urik_title']}}</td>
-                    <td>{{$info['fizik_text']}}</td>
-                    <td>{{$info['urik_text']}}</td>
+
+                    <td>{{Str::limit($info['fizik_text'], 20)}}</td>
+                    <td>{{Str::limit($info['urik_text'], 20)}}</td>
 
                     <td>
                         <a href="{{route('adminEditInformation', ['id' => $info['id']]) }}" class="btn btn-outline-primary">

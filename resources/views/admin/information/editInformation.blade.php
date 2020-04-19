@@ -26,6 +26,13 @@
             <textarea cols="4" rows="4" class="uk-text-area" type="text" name="fizik_text" id="fizik_text" placeholder="Текст физ лица" required></textarea>
         </div>
 
+        <div class="uk-margin" uk-margin>
+            <div uk-form-custom="target: true">
+                <input type="file" class="upload_file" name="image" id="image" required>
+                <input class="uk-input uk-form-width-medium" type="text" placeholder="Выберите иконку" disabled>
+            </div>
+        </div>
+
         <button type="submit" name="submit" class="btn btn-primary uk-button uk-button-default">Отправить</button>
 
     </form>
