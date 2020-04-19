@@ -15,6 +15,31 @@ class AdminInformationController extends Controller
         $information = Information::all();
         return view('admin.information.displayInformation', ['information' => $information]);
     }
+    //Display edit product form
+    public function editInformation($id)
+    {
+        $item = Information::find($id);
+        return view('admin.information.editInformation', ['item' => $item]);
+    }
+
+    public function editInformationForm(Request $request, $id)
+    {
+        $ftitle = $request->input('fizik_title');
+        $utitle = $request->input('urik_title');
+        $ftext = $request->input('fizik_text');
+        $utext = $request->input('urik_text');
+
+        $updateArr = array(
+            'fizik_title' => $ftitle,
+            'urik_title' => $utitle,
+            'fizik_text' => $ftext,
+            'urik_text' => $utext
+        );
+
+        DB::table('information')->where('id', $id)->update($updateArr);
+
+        return redirect()->route('informationList');
+    }
 
     public function showCreateInfoForm()
     {

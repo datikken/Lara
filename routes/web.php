@@ -55,7 +55,9 @@ Route::get('admin/adminCreateBannerForm', ['uses' => "AdminBannersController@cre
 Route::get('admin/information', ['uses' => "AdminInformationController@index", 'as' => 'informationList']);
     Route::get('admin/createInformation', ['uses' => 'AdminInformationController@showCreateInfoForm', 'as' => 'adminCreateInfo']);
     Route::get('admin/deleteInfo/{id}', ['uses' => 'AdminInformationController@deleteInfo', 'as' => 'adminDeleteInfo']);
-    Route::post('admin/createInfo', ['uses' => "AdminInformationController@createInfo", 'as' => 'adminCreateInfo']);
+    Route::get('admin/editInformation/{id}', ['uses' => "AdminInformationController@editInformation", 'as' => 'adminEditInformation']);
+
+    Route::post('admin/editInformationForm/{id}', ['uses' => "AdminInformationController@editInformationForm", 'as' => 'editInformationForm']);
 
 //CART
 Route::get('product/increaseSingleProduct/{id}', ['uses' => 'ProductsController@increaseSingleProduct', 'as' => 'IncreaseSingleProduct']);
