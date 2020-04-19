@@ -12,6 +12,6 @@ class Information extends Model
      * @var array
      */
     protected $fillable = [
-        'category', 'type', 'title', 'text'
+        'urik_title', 'fizik_title', 'urik_text', 'fizik_text'
     ];
 }

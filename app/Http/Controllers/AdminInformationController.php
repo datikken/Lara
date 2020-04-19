@@ -22,12 +22,10 @@ class AdminInformationController extends Controller
     }
     public function createInfo(Request $request)
     {
-
-        $category = $request->input('category');
-        $title = $request->input('title');
-        $text = $request->input('text');
-
-        dump($request->file('image'));
+        $urik_title = $request->input('urik_title');
+        $fizik_title = $request->input('fizik_title');
+        $urik_text = $request->input('urik_text');
+        $fizik_text = $request->input('fizik_text');
 
         $ext = $request->file('image')->getClientOriginalExtension();
         $stringImageReFormat = str_replace(' ', '', $request->input('title'));
@@ -38,9 +36,10 @@ class AdminInformationController extends Controller
         Storage::disk('local')->put('public/information_icons/' . $imageName, $imageEncoded);
 
         $newInformationArray = array(
-            'category' => $category,
-            'title'=>$title,
-            'text' => $text,
+            'urik_title' => $urik_title,
+            'fizik_title'=>$fizik_title,
+            'urik_text' => $urik_text,
+            'fizik_text' => $fizik_text,
             'image' => $imageName
         );
 

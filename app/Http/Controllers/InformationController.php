@@ -14,6 +14,8 @@ class InformationController extends Controller
 {
     public function index()
     {
-        return view('pages.information');
+        $infos = Information::all();
+
+        return view('pages.information',['info' => $infos]);
     }
 }

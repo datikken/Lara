@@ -18,27 +18,26 @@
             {{ csrf_field() }}
 
             <div class="uk-margin">
-                <input class="uk-input" type="text" name="category" id="category" placeholder="Название категории" required>
+                <input class="uk-input" type="text" name="urik_title" id="urik_title" placeholder="Заг юр лица" required>
             </div>
 
             <div class="uk-margin">
-                <select class="uk-select" name="type" id="type">
-                    <option value="fizicheskoe_litso">Физическое лицо</option>
-                    <option value="uridicheskoe_litso">Юридическое лицо</option>
-                </select>
-            </div>
-
-            <div class="uk-margin">
-                <input class="uk-input" type="text" name="title" id="title" placeholder="Название элемента" required>
+                <input class="uk-input" type="text" name="fizik_title" id="fizik_title" placeholder="Заг физ лица" required>
             </div>
 
             <div class="uk-margin uk-form-row">
-                <textarea cols="4" rows="4" class="uk-text-area" type="text" name="text" id="text" placeholder="Содержание" required></textarea>
+                <textarea cols="4" rows="4" class="uk-text-area" type="text" name="urik_text" id="urik_text" placeholder="Текст ор лица" required></textarea>
+            </div>
+
+            <div class="uk-margin uk-form-row">
+                <textarea cols="4" rows="4" class="uk-text-area" type="text" name="fizik_text" id="fizik_text" placeholder="Текст физ лица" required></textarea>
             </div>
 
             <div class="uk-margin" uk-margin>
-                <input type="file" class="upload_file" name="image" id="image" required>
-                {{--<input class="uk-input uk-form-width-medium" type="file" placeholder="Выберите иконку" disabled>--}}
+                <div uk-form-custom="target: true">
+                    <input type="file" class="upload_file" name="image" id="image" required>
+                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Выберите иконку" disabled>
+                </div>
             </div>
 
             <button type="submit" name="submit" class="btn btn-primary uk-button uk-button-default">Отправить</button>

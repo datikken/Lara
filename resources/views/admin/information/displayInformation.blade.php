@@ -7,10 +7,11 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Категория</th>
+                <th>Заг физ лица</th>
+                <th>Заг юр лица</th>
                 <th>Иконка</th>
-                <th>Заголовок</th>
-                <th>Текст</th>
+                <th>Описание для физ лица</th>
+                <th>Описание для юр лица</th>
             </tr>
             </thead>
             <tbody>
@@ -18,10 +19,11 @@
             @foreach($information as $info)
                 <tr>
                     <td>{{$info['id']}}</td>
-                    <td>{{$info['category']}}</td>
+                    <td>{{$info['fizik_title']}}</td>
+                    <td>{{$info['urik_title']}}</td>
                     <td><img uk-img style="height: 30px;widht:30px; object-fit: contain" src="{{ Storage::url('information_icons/' . $info['image']) }}"/></td>
-                    <td>{{$info['title']}}</td>
-                    <td>{{$info['text']}}</td>
+                    <td>{{$info['fizik_text']}}</td>
+                    <td>{{$info['urik_text']}}</td>
 
                     <td>
                         <a href="{{route('adminEditProductForm', ['id' => $info['id']]) }}" class="btn btn-outline-primary">
@@ -32,6 +34,7 @@
                         </span>
                         </a>
                     </td>
+
                     <td>
                         <a href="{{route('adminDeleteInfo', ['id' => $info['id']])}}" class="btn btn-danger">
                             <span class="ui-icon" uk-icon="close"></span>

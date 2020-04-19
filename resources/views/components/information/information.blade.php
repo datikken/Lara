@@ -1,3 +1,7 @@
+@foreach($info as $inf)
+    {{ $inf }}
+@endforeach
+
 <div class="info">
     <div class="info_content">
 
