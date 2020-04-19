@@ -127,21 +127,13 @@
                 <div>МЕНЮ</div>
                 <ul class="menu_wrapper-item-main_menu-item-text_secondary">
 
-                    <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
-                        <a href="/information#payments">
-                        <span>Оплата</span>
-                        </a>
-                    </li>
-                    <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
-                        <a href="/information#delivery">
-                        <span>Доставка</span>
-                        </a>
-                    </li>
-                    <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
-                        <a href="/information#guaranty">
-                        <span>Гарантия</span>
-                        </a>
-                    </li>
+                    @foreach($information as $inf)
+                        <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
+                            <a href="/information#{{$inf['category']}}">
+                                <span>{{$inf['category']}}</span>
+                            </a>
+                        </li>
+                    @endforeach
 
                 </ul>
 
