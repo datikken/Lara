@@ -5,7 +5,7 @@ import './components/Swiper';
 import './components/Search';
 import './components/Form';
 
-import SimpleMap from './components/Map';
+import SimpleMap from './components/Map'
 import ContactsFormController from './controllers/ContactsFormController'
 import LoginFormController from './controllers/LoginFormController'
 import SearchController from './controllers/SearchController'
@@ -27,19 +27,13 @@ import InformationController from './controllers/InformationController'
     new DeliveryAuthController();
     new CatalogFiltersController();
     new InformationController();
-    // new PageController();
+    new DeliveryFormController(dform);
+    new SimpleMap();
+// new PageController();
 
     cart = document.querySelector('.cart');
-    let mapEl, map, dform, cart;
 
+    let mapEl, map, dform, cart;
         mapEl = document.querySelector('.ymaps');
 
-    cart && new DeliveryController();
-
-    if(mapEl) map = new SimpleMap(mapEl);
-       dform = document.querySelector('.dform');
-
-       if(dform) {
-         new DeliveryFormController(dform);
-       }
 // });

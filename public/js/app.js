@@ -10749,18 +10749,13 @@ new _components_Checkbox__WEBPACK_IMPORTED_MODULE_11__["default"]();
 new _controllers_CartController__WEBPACK_IMPORTED_MODULE_10__["default"]();
 new _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_12__["default"]();
 new _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_13__["default"]();
-new _controllers_InformationController__WEBPACK_IMPORTED_MODULE_14__["default"](); // new PageController();
+new _controllers_InformationController__WEBPACK_IMPORTED_MODULE_14__["default"]();
+new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__["default"](dform);
+new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"](); // new PageController();
 
 cart = document.querySelector('.cart');
 var mapEl, map, dform, cart;
-mapEl = document.querySelector('.ymaps');
-cart && new _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_8__["default"]();
-if (mapEl) map = new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"](mapEl);
-dform = document.querySelector('.dform');
-
-if (dform) {
-  new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__["default"](dform);
-} // });
+mapEl = document.querySelector('.ymaps'); // });
 
 /***/ }),
 
@@ -10914,12 +10909,12 @@ var SimpleMap = /*#__PURE__*/function () {
   function SimpleMap(el) {
     _classCallCheck(this, SimpleMap);
 
-    this._simpleMap(el);
+    this._simpleMap();
   }
 
   _createClass(SimpleMap, [{
     key: "_simpleMap",
-    value: function _simpleMap(maps) {
+    value: function _simpleMap() {
       if (typeof ymaps != 'undefined') {
         ymaps.ready(function () {
           var myMap = new ymaps.Map('map', {

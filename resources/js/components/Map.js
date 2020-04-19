@@ -1,10 +1,10 @@
 class SimpleMap {
     constructor(el) {
-        this._simpleMap(el)
+        this._simpleMap()
     }
-    _simpleMap(maps) {
+    _simpleMap() {
         if(typeof ymaps != 'undefined') {
-        ymaps.ready(function () {
+            ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {
                     center: [55.751574, 37.573856],
                     zoom: 9
