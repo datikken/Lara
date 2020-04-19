@@ -55,7 +55,7 @@
                     </div>
                     <div class="uk-flex-between uk-flex uk-margin-bottom">
                         <a href="/admin/information">Информация</a>
-                        <a href="/admin/createProductForm" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>
+                        <a href="/admin/createInformation" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>
                     </div>
                 </div>
             </li>

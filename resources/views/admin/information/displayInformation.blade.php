@@ -8,9 +8,8 @@
             <tr>
                 <th>#</th>
                 <th>Категория</th>
-                <th>Тип</th>
+                <th>Иконка</th>
                 <th>Заголовок</th>
-                <th>Описание</th>
                 <th>Текст</th>
             </tr>
             </thead>
@@ -20,16 +19,10 @@
                 <tr>
                     <td>{{$info['id']}}</td>
                     <td>{{$info['category']}}</td>
-                    <td>{{$info['type']}}</td>
+                    <td><img uk-img style="height: 30px;widht:30px; object-fit: contain" src="{{ Storage::url('information_icons/' . $info['image']) }}"/></td>
                     <td>{{$info['title']}}</td>
-                    <td><img uk-img style="height: 100px; object-fit: contain" src="{{ Storage::url('product_images/' . $info['image']) }}"/></td>
                     <td>{{$info['text']}}</td>
 
-                    <td>
-                        <a href="{{route('adminEditProductImageForm', ['id' => $info['id']]) }}" class="btn btn-outline-primary">
-                            <span uk-icon="camera" class="uk-margin-small-right uk-icon"></span>
-                        </a>
-                    </td>
                     <td>
                         <a href="{{route('adminEditProductForm', ['id' => $info['id']]) }}" class="btn btn-outline-primary">
                         <span uk-icon="pencil" class="uk-margin-small-right uk-icon">
@@ -40,7 +33,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="{{route('adminDeleteProduct', ['id' => $info['id']])}}" class="btn btn-danger">
+                        <a href="{{route('adminDeleteInfo', ['id' => $info['id']])}}" class="btn btn-danger">
                             <span class="ui-icon" uk-icon="close"></span>
                         </a>
                     </td>
@@ -53,8 +46,6 @@
         {{--<ul class="uk-pagination">--}}
             {{--{{ $information->links() }}--}}
         {{--</ul>--}}
-
-
 
     </div>
 

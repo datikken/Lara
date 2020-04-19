@@ -27,8 +27,9 @@ Route::get('/landing', 'LandingController@index',['as' => 'landing']);
 Route::get('/contacts', 'ContactsController@index');
 
 
-//ADMIN
-    //products
+//ADMIN - functionality
+
+    //PRODUCTS
 Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts'])->middleware('restrictToAdmin');
     //Display Edit Product form
     Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);
@@ -45,23 +46,22 @@ Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' =>
     //Delete product
     Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
 
-
 //BANNERS
 Route::get('admin/adminCreateBannerForm', ['uses' => "AdminBannersController@createBannerForm", 'as' => 'adminCreateBannerForm']);
     //banners
     Route::get('admin/banners', ['uses' => "AdminBannersController@index", 'as' => 'setBanner'])->middleware('restrictToAdmin');
 
 //INFORMATION
-Route::get('admin/information', ['uses' => "AdminInformationController@index", 'as' => 'adminCreateInfoForm']);
-
-
+Route::get('admin/information', ['uses' => "AdminInformationController@index", 'as' => 'informationList']);
+    Route::get('admin/createInformation', ['uses' => 'AdminInformationController@showCreateInfoForm', 'as' => 'adminCreateInfo']);
+    Route::get('admin/deleteInfo/{id}', ['uses' => 'AdminInformationController@deleteInfo', 'as' => 'adminDeleteInfo']);
+    Route::post('admin/createInfo', ['uses' => "AdminInformationController@createInfo", 'as' => 'adminCreateInfo']);
 
 //CART
 Route::get('product/increaseSingleProduct/{id}', ['uses' => 'ProductsController@increaseSingleProduct', 'as' => 'IncreaseSingleProduct']);
 Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@decreaseSingleProduct', 'as' => 'DecreaseSingleProduct']);
     //Route::post('products/addToCartAjaxPost', ['uses' => 'ProductsController@addToCartAjaxPost', 'as' => 'AddToCartAjaxPost']);
     Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
-
 
 //ORDERS
 Route::get('product/checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);

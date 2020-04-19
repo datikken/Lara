@@ -8903,6 +8903,58 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border: 1px solid #d4d4d5 !important;
 }
 
+.uk-text-area {
+  min-height: 100px;
+  width: 99%;
+  border: 1px solid #e5e5e5;
+  padding: 10px 0 0 10px;
+}
+
+.uk-input::-webkit-input-placeholder {
+  color: #d4d4d5;
+}
+
+.uk-input::-moz-placeholder {
+  color: #d4d4d5;
+}
+
+.uk-input:-ms-input-placeholder {
+  color: #d4d4d5;
+}
+
+.uk-input::-ms-input-placeholder {
+  color: #d4d4d5;
+}
+
+.uk-input::placeholder {
+  color: #d4d4d5;
+}
+
+.uk-text-area::-webkit-input-placeholder {
+  color: #d4d4d5;
+  resize: none;
+}
+
+.uk-text-area::-moz-placeholder {
+  color: #d4d4d5;
+  resize: none;
+}
+
+.uk-text-area:-ms-input-placeholder {
+  color: #d4d4d5;
+  resize: none;
+}
+
+.uk-text-area::-ms-input-placeholder {
+  color: #d4d4d5;
+  resize: none;
+}
+
+.uk-text-area::placeholder {
+  color: #d4d4d5;
+  resize: none;
+}
+
 .admin_pannel {
   display: grid;
   grid-template-columns: 300px 1fr;
