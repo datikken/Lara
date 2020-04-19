@@ -24,12 +24,14 @@ class AdminInformationController extends Controller
 
     public function editInformationForm(Request $request, $id)
     {
+        $category = $request->input('category');
         $ftitle = $request->input('fizik_title');
         $utitle = $request->input('urik_title');
         $ftext = $request->input('fizik_text');
         $utext = $request->input('urik_text');
 
         $updateArr = array(
+            'category' => $category,
             'fizik_title' => $ftitle,
             'urik_title' => $utitle,
             'fizik_text' => $ftext,
@@ -47,6 +49,7 @@ class AdminInformationController extends Controller
     }
     public function createInfo(Request $request)
     {
+        $category = $request->input('category');
         $urik_title = $request->input('urik_title');
         $fizik_title = $request->input('fizik_title');
         $urik_text = $request->input('urik_text');
@@ -61,6 +64,7 @@ class AdminInformationController extends Controller
         Storage::disk('local')->put('public/information_icons/' . $imageName, $imageEncoded);
 
         $newInformationArray = array(
+            'category' => $category,
             'urik_title' => $urik_title,
             'fizik_title'=>$fizik_title,
             'urik_text' => $urik_text,

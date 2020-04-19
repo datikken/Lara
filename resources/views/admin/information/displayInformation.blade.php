@@ -7,9 +7,10 @@
             <thead>
             <tr>
                 <th>#</th>
+                <th>Иконка</th>
+                <th>Категория</th>
                 <th>Заг физ лица</th>
                 <th>Заг юр лица</th>
-                <th>Иконка</th>
                 <th>Описание для физ лица</th>
                 <th>Описание для юр лица</th>
             </tr>
@@ -19,9 +20,10 @@
             @foreach($information as $info)
                 <tr>
                     <td>{{$info['id']}}</td>
+                    <td><img uk-img style="height: 30px;widht:30px; object-fit: contain" src="{{ Storage::url('information_icons/' . $info['image']) }}"/></td>
+                    <td>{{$info['category']}}</td>
                     <td>{{$info['fizik_title']}}</td>
                     <td>{{$info['urik_title']}}</td>
-                    <td><img uk-img style="height: 30px;widht:30px; object-fit: contain" src="{{ Storage::url('information_icons/' . $info['image']) }}"/></td>
                     <td>{{$info['fizik_text']}}</td>
                     <td>{{$info['urik_text']}}</td>
 

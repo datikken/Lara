@@ -7,6 +7,10 @@
 
         {{csrf_field()}}
         <div class="uk-margin">
+            <input class="uk-input" type="text" name="category" id="category" placeholder="Категория" required>
+        </div>
+
+        <div class="uk-margin">
             <input class="uk-input" type="text" name="urik_title" id="urik_title" placeholder="Заг юр лица" required>
         </div>
 

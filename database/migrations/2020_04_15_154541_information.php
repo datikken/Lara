@@ -15,6 +15,7 @@ class Information extends Migration
     {
         Schema::create('information', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('category');
             $table->string('urik_title');
             $table->string('fizik_title');
             $table->text('urik_text');
