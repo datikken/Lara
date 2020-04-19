@@ -56,7 +56,7 @@ class AdminInformationController extends Controller
         $fizik_text = $request->input('fizik_text');
 
         $ext = $request->file('image')->getClientOriginalExtension();
-        $stringImageReFormat = str_replace(' ', '', $request->input('title'));
+        $stringImageReFormat = str_replace(' ', '', $request->input('category'));
 
         $imageName = $stringImageReFormat . '.' . $ext;
 
