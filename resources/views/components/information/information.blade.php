@@ -4,7 +4,7 @@
     <div class="info_content">
 
         @foreach($info as $inf)
-            <div class="info_content-item">
+            <div class="info_content-item" id="{{ $inf['category'] }}">
                 <div class="info_content-item_inner">
                     <div class="info_content-item_inner-icon payment">
                         <img src="{{ Storage::url('information_icons/' . $inf['image']) }}"/>

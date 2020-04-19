@@ -13,15 +13,13 @@
                 <li class="header_wrapper-item_menu-item">
                     <a href="/information">Информация</a>
                     <ul class="header_wrapper-item_menu-item-secondary">
-                        <a class="header_wrapper-item_menu-item-secondary_item" href="/information#payments">
-                        <li>Оплата</li>
-                        </a>
-                        <a class="header_wrapper-item_menu-item-secondary_item" href="/information#delivery">
-                        <li>Доставка</li>
-                        </a>
-                        <a class="header_wrapper-item_menu-item-secondary_item" href="/information#guaranty">
-                        <li>Гарантия</li>
-                        </a>
+
+                        @foreach($information as $inf)
+                            <a class="header_wrapper-item_menu-item-secondary_item" href="/information#{{$inf['category']}}">
+                                <li>{{ $inf['category'] }}</li>
+                            </a>
+                        @endforeach
+
                     </ul>
                 </li>
                 <li class="header_wrapper-item_menu-item">

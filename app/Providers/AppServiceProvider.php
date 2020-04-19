@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Information;
 use App\Product;
 use Illuminate\Support\ServiceProvider;
 use Auth;
@@ -29,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
         //
         $products = Product::all();
         View::share('products', $products);
+
+        $information = Information::all();
+        View::share('information', $information);
+
         View::composer('*', function($view) {
             $view->with('userData', Auth::user());
         });
