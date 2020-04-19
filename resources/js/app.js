@@ -15,6 +15,7 @@ import CartController from './controllers/CartController'
 import Checkbox from './components/Checkbox'
 import DeliveryAuthController from './controllers/DeliveryAuthController'
 import CatalogFiltersController from './controllers/CatalogFiltersController'
+import InformationController from './controllers/InformationController'
 // import PageController from './controllers/PagesController'
 
 // $(document).ready(function() {
@@ -25,6 +26,7 @@ import CatalogFiltersController from './controllers/CatalogFiltersController'
     new CartController();
     new DeliveryAuthController();
     new CatalogFiltersController();
+    new InformationController();
     // new PageController();
 
     cart = document.querySelector('.cart');
