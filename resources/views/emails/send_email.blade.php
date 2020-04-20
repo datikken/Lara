@@ -5,9 +5,9 @@
     <h2 class="uk-heading-small">Отправить письмо</h2>
 
     @if($message = Session::get('success'))
-        <div class="uk-alert-success" uk-alert>
+        <div class="uk-alert-success" uk-alert uk-flex>
             <a class="uk-alert-close" uk-close></a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <p>Письмо успешно отправленно.</p>
         </div>
     @endif
 
