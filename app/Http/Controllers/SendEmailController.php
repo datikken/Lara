@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
 
 class SendEmailController extends Controller
 {
@@ -19,5 +21,14 @@ class SendEmailController extends Controller
             'email' => 'required|email',
             'message' => 'required'
         ]);
+
+        $data = array(
+            'name' => 'required',
+            'message' => 'required'
+        );
+
+        Mail::to('tikken23@gmail.com')->send(new SendMail($data));
+
+        return back()->with('success', 'Thanks for contacting us');
     }
 }
