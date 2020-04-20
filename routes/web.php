@@ -88,3 +88,8 @@ Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'su
 Route::get('/testStorage', function() {
     return "<img src=".Storage::url('product_images/product1.png').">";
 });
+
+Route::get('/mailtest', function()
+{
+    dd(Config::get('mail'));
+});
