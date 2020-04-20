@@ -16,21 +16,22 @@ class SendEmailController extends Controller
 
     public function send(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email',
-            'message' => 'required'
-        ]);
 
+//        $this->validate($request, [
+//            'name' => 'required',
+//            'email' => 'required|email',
+//            'message' => 'required'
+//        ]);
+//
         $data = array(
-            'name' => 'required',
-            'message' => 'required'
+            'name' => $request->name,
+            'message' => $request->message
         );
-
-        Mail::to('tikken23@gmail.com')->send(new SendMail($data));
 
         dump($data);
 
-//        return back()->with('success', 'Thanks for contacting us');
+        Mail::to('tikken23@gmail.com')->send(new SendMail($data));
+
+        return back()->with('success', 'Thanks for contacting us');
     }
 }

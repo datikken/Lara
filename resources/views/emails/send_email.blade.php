@@ -8,7 +8,7 @@
         <span>{{ $message }}</span>
     @endif
 
-    <form action="{{ url('sendemail/send') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ url('admin/sendemail/send') }}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
 
         <div class="uk-margin">

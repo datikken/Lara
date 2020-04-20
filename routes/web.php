@@ -68,7 +68,7 @@ Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@
 
 //EMAILS
     Route::get('admin/sendemail', 'SendEmailController@index');
-    Route::post('/sendemail/send', 'SendEmailController@send');
+    Route::post('admin/sendemail/send', 'SendEmailController@send');
 
 //ORDERS
 Route::get('product/checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
