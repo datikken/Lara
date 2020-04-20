@@ -10906,48 +10906,50 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var SimpleMap = /*#__PURE__*/function () {
-  function SimpleMap(el) {
+  function SimpleMap() {
     _classCallCheck(this, SimpleMap);
 
     this._simpleMap();
+
+    console.log('executed');
   }
 
   _createClass(SimpleMap, [{
     key: "_simpleMap",
     value: function _simpleMap() {
-      if (typeof ymaps != 'undefined') {
-        ymaps.ready(function () {
-          var myMap = new ymaps.Map('map', {
-            center: [55.751574, 37.573856],
-            zoom: 9
-          }, {
-            searchControlProvider: 'yandex#search'
-          }),
-              MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
-              myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-            hintContent: 'Собственный значок метки',
-            balloonContent: 'Это красивая метка'
-          }, {
-            iconLayout: 'default#image',
-            iconImageHref: 'images/myIcon.gif',
-            iconImageSize: [30, 42],
-            iconImageOffset: [-5, -38]
-          }),
-              myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-            hintContent: 'Собственный значок метки с контентом',
-            balloonContent: 'А эта — новогодняя',
-            iconContent: '12'
-          }, {
-            iconLayout: 'default#imageWithContent',
-            iconImageHref: 'images/ball.png',
-            iconImageSize: [48, 48],
-            iconImageOffset: [-24, -24],
-            iconContentOffset: [15, 15],
-            iconContentLayout: MyIconContentLayout
-          });
-          myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
+      // if(typeof ymaps != 'undefined') {
+      console.log('tested');
+      ymaps.ready(function () {
+        var myMap = new ymaps.Map('map', {
+          center: [55.751574, 37.573856],
+          zoom: 9
+        }, {
+          searchControlProvider: 'yandex#search'
+        }),
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+          hintContent: 'Собственный значок метки',
+          balloonContent: 'Это красивая метка'
+        }, {
+          iconLayout: 'default#image',
+          iconImageHref: 'images/myIcon.gif',
+          iconImageSize: [30, 42],
+          iconImageOffset: [-5, -38]
+        }),
+            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+          hintContent: 'Собственный значок метки с контентом',
+          balloonContent: 'А эта — новогодняя',
+          iconContent: '12'
+        }, {
+          iconLayout: 'default#imageWithContent',
+          iconImageHref: 'images/ball.png',
+          iconImageSize: [48, 48],
+          iconImageOffset: [-24, -24],
+          iconContentOffset: [15, 15],
+          iconContentLayout: MyIconContentLayout
         });
-      }
+        myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
+      }); // }
     }
   }]);
 
