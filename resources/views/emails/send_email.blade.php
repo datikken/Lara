@@ -7,7 +7,7 @@
     @if($message = Session::get('success'))
         <div class="uk-alert-success" uk-alert uk-flex>
             <a class="uk-alert-close" uk-close></a>
-            <p>Письмо успешно отправленно.</p>
+            <p style="margin-left: 30px;">Письмо успешно отправленно.</p>
         </div>
     @endif
 
