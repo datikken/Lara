@@ -10,3 +10,4 @@
 <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
 <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
 <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/css/uikit.min.css" />

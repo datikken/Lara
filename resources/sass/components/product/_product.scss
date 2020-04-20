@@ -114,12 +114,17 @@
 
     &-itemContent {
       height: 100%;
+
       @include breakpoint($medium) {
         margin-bottom: 20px;
         min-height: 170px;
         border: 1px solid $light_gray;
         margin-bottom: 13px!important;
       }
+        a {
+            flex: initial;
+            width: 100%;
+        }
     }
 
     &-item {
@@ -256,13 +261,10 @@
         }
 
         img {
-          width: 70px;
           display: block;
-          @include breakpoint($medium) {
-            width: 177px;
-            max-height: 160px;
-            object-fit: contain;
-          }
+          max-width: 100%;
+          object-fit: cover;
+          object-position: 0 20px;
         }
       }
       &_overlay {
@@ -273,6 +275,8 @@
         @include btnShadow();
         padding: 20px 0;
         transition: bottom $transition;
+        display: block;
+
         @include breakpoint($phone) {
           max-width: 270px;
         }

@@ -17,13 +17,13 @@
                 <div class="product_wrapper-item_image">
                     <img src="{{Storage::disk('local')->url('/product_images/' . $image )}}" alt="{{$image}}" />
                 </div>
-                <div class="product_wrapper-item_overlay">
+                <a class="product_wrapper-item_overlay" href="#modal-center" uk-toggle>
                     <div class="product_wrapper-item_overlay_wrapper">
                         <div class="product_wrapper-item_overlay_wrapper-item">
                             <span class="product_wrapper-item_overlay_wrapper-item_text">быстрый просмотр</span>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="product_wrapper-item">
                 <div class="product_wrapper-item_head">
@@ -42,4 +42,16 @@
             </div>
         </div>
     </a>
+</div>
+
+
+
+<div id="modal-center" class="uk-flex-top" uk-modal>
+    <div id="modal_content" class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+        {{--<button class="uk-modal-close-default" type="button" uk-close></button>--}}
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
 </div>

@@ -361,6 +361,14 @@ b {
   font-family: "MontserratSemiBold";
 }
 
+.uk-button-default {
+  border: none !important;
+  font-family: "Montserrat";
+  font-size: 12px !important;
+  line-height: 14px !important;
+  letter-spacing: 0.02em !important;
+}
+
 .header {
   display: none;
   font-family: "MontserratSemiBold";
@@ -3971,6 +3979,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     margin-bottom: 13px !important;
   }
 }
+.product_wrapper-itemContent a {
+  flex: initial;
+  width: 100%;
+}
 .product_wrapper-item {
   position: relative;
   display: flex;
@@ -4108,16 +4120,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 .product_wrapper-item_image img {
-  width: 70px;
   display: block;
-}
-@media screen and (min-width: 1030px) {
-  .product_wrapper-item_image img {
-    width: 177px;
-    max-height: 160px;
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 20px;
+     object-position: 0 20px;
 }
 .product_wrapper-item_overlay {
   width: 100%;
@@ -4127,6 +4135,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   padding: 20px 0;
   transition: bottom 0.2s;
+  display: block;
 }
 @media screen and (min-width: 600px) {
   .product_wrapper-item_overlay {
@@ -4247,6 +4256,32 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 
+.uk-modal-dialog {
+  width: 1030px !important;
+  height: 567px !important;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+#modal-center {
+  background-color: transparent !important;
+  overflow: hidden;
+}
+
+#modal_content {
+  margin-top: 60px !important;
+  position: relative;
+}
+#modal_content:after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  display: block;
+  position: absolute;
+  background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
+  left: 0;
+  top: 0;
+}
+
 .filters {
   max-width: 270px;
   border: 1px solid #e9e9ea;
@@ -4254,7 +4289,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 50px;
   display: none;
   position: relative;
-  z-index: 9999999;
+  z-index: 999;
 }
 @media screen and (min-width: 600px) {
   .filters {

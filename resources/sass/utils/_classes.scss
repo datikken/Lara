@@ -222,3 +222,11 @@ button {
 b {
     font-family: $semifont;
 }
+
+.uk-button-default  {
+    border:none!important;
+    font-family: $font;
+    font-size: 12px!important;
+    line-height: 14px!important;
+    letter-spacing: 0.02em!important;
+}
