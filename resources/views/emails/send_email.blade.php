@@ -5,7 +5,10 @@
     <h2 class="uk-heading-small">Отправить письмо</h2>
 
     @if($message = Session::get('success'))
-        <span>{{ $message }}</span>
+        <div class="uk-alert-success" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        </div>
     @endif
 
     <form action="{{ url('admin/sendemail/send') }}" method="POST" enctype="multipart/form-data">
