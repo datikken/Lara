@@ -66,6 +66,10 @@ Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@
     //Route::post('products/addToCartAjaxPost', ['uses' => 'ProductsController@addToCartAjaxPost', 'as' => 'AddToCartAjaxPost']);
     Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
 
+//EMAILS
+    Route::get('admin/sendemail', 'SendEmailController@index');
+    Route::post('/sendemail/send', 'SendEmailController@send');
+
 //ORDERS
 Route::get('product/checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
 Route::get('product/createOrder/', ['uses' => 'ProductsController@createOrder', 'as'=> 'createOrder']);

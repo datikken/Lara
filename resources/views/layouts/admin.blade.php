@@ -42,7 +42,7 @@
     <div class="uk-sidebar">
 
         <ul uk-accordion="multiple: true" class="uk-margin-left">
-            <li class="uk-open">
+            <li class="uk-closed">
                 <a class="uk-accordion-title" href="#">База данных</a>
                 <div class="uk-accordion-content">
                     <div class="uk-flex-between uk-flex uk-margin-bottom">
@@ -56,6 +56,14 @@
                     <div class="uk-flex-between uk-flex uk-margin-bottom">
                         <a href="/admin/information">Информация</a>
                         <a href="/admin/createInformation" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>
+                    </div>
+                </div>
+            </li>
+            <li class="uk-closed">
+                <a class="uk-accordion-title" href="#">Письма</a>
+                <div class="uk-accordion-content">
+                    <div class="uk-flex-between uk-flex uk-margin-bottom">
+                        <a href="/admin/sendemail">Свободное письмо</a>
                     </div>
                 </div>
             </li>
