@@ -38,7 +38,7 @@
   text-align: center;
   max-height: 200px;
   margin: 0 20px;
-  @include breakpoint($phone) {   
+  @include breakpoint($phone) {
     max-height: initial;
   }
   &:before {
@@ -136,7 +136,7 @@
     display: none;
 
     @include breakpoint($medium) {
-      right: -15.5px;
+      right: -5px;
       top: 43%;
       display: block;
       transform: translate(-50%, -50%);
@@ -186,7 +186,7 @@
           text-transform: uppercase;
           color: $blue;
           position: relative;
-       
+
           &-currency {
             height: 11px!important;
             width: 8px!important;
@@ -217,9 +217,11 @@
 
       &-image {
         background-image: url("/img/unnecessary/image.svg");
-        @include bg(cover, center);
+        @include bg(contain, center);
+        background-size: contain!important;
+        background-position: 50% 60%!important;
         width: 200px;
-        height: 93.29px;
+        height: 100%;
       }
       &-name {
         font-size: 9px;

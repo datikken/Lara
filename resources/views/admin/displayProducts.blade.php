@@ -25,7 +25,7 @@
                 <td>{{$product['price']}}</td>
                 <td>{{$product['type']}}</td>
                 <td>{{$product['description']}}</td>
-                <td><img uk-img style="height: 100px; object-fit: contain" src="{{ Storage::url('product_images/' . $product['image']) }}"/></td>
+                <td><img uk-img style="height: 99px; object-fit: cover" src="{{ Storage::url('product_images/' . $product['image']) }}"/></td>
                 <td>{{$product['created_at']}}</td>
                 <td>{{$product['updated_at']}}</td>
 

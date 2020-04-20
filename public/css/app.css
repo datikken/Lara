@@ -3654,7 +3654,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .owl-item:after {
-    right: -15.5px;
+    right: -5px;
     top: 43%;
     display: block;
     transform: translate(-50%, -50%);
@@ -3733,10 +3733,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .carousel_card-wrapper_item-image {
   background-image: url("/img/unnecessary/image.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-size: contain !important;
+  background-position: 50% 60% !important;
   width: 200px;
-  height: 93.29px;
+  height: 100%;
 }
 .carousel_card-wrapper_item-name {
   font-size: 9px;
