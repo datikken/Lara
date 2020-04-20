@@ -2,11 +2,12 @@
 
 @section('center')
 
-    <h2 class="uk-heading-small">Отправить свободное письмо</h2>
+    <h2 class="uk-heading-small">Отправить письмо</h2>
 
     @if($message = Session::get('success'))
         <span>{{ $message }}</span>
     @endif
+
     <form action="{{ url('sendemail/send') }}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
 
