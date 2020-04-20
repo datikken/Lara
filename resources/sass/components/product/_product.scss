@@ -138,10 +138,11 @@
       top: 5px;
       flex: 1;
       margin-bottom: 16px;
+      padding-top: 1px;
 
       @include breakpoint($medium) {
         margin-bottom: 12px;
-        margin-top: 5px;
+        margin-top: 10px;
         padding-top: 5px;
         top: initial;
       }

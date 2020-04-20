@@ -3994,11 +3994,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   top: 5px;
   flex: 1;
   margin-bottom: 16px;
+  padding-top: 1px;
 }
 @media screen and (min-width: 1030px) {
   .product_wrapper-item {
     margin-bottom: 12px;
-    margin-top: 5px;
+    margin-top: 10px;
     padding-top: 5px;
     top: initial;
   }
