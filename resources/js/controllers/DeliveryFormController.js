@@ -44,7 +44,7 @@ class DeliveryFormController {
                     deliveryType: delType.getAttribute('name')
                 },
                 success: function (data, status, XHR) {
-                    console.log('Delivery address have been successfully set', data);
+                    // console.log('Delivery address have been successfully set', data);
                     step.classList.remove('invisible');
                     window.scrollTo(0, 616);
                 },
@@ -74,7 +74,7 @@ class DeliveryFormController {
 
                     lis.forEach((el) => {
                         el.addEventListener('click', function(e) {
-                            console.warn(e.path);
+                            // console.warn(e.path);
                             let span = e.path[2].querySelector('span');
                                 span.innerText = e.currentTarget.innerText;
 

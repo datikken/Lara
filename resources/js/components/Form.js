@@ -1,6 +1,6 @@
 class Form {
     constructor() {
-        console.log('inited');
+        // console.log('inited');
     }
 }
 

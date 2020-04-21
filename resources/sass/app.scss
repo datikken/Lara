@@ -34,7 +34,7 @@
 @import "./components/product_comments";
 @import "./components/product_gallery";
 @import "./components/product_feedback-form";
-//cart
+
 @import "./components/cart/cart";
 @import "./components/cart/cart_item";
 @import "./components/cart/order_list";
@@ -67,6 +67,7 @@
 @import "./components/landing/landswipe";
 @import "./components/bestPrinters/bestPrintersSwipe";
 @import "./components/admin/admin";
+@import "./components/dash/dash";
 
 .admin_pannel {
     display: grid;

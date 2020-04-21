@@ -8992,6 +8992,76 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   resize: none;
 }
 
+.dash {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+}
+.dash_logout div span {
+  color: #D4D4D5;
+}
+.dash_active div span {
+  font-family: "MontserratSemiBold" !important;
+}
+.dash_left {
+  width: 170px;
+}
+.dash_left-wrap_item {
+  cursor: pointer;
+  border-bottom: 1px solid #d4d4d5;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dash_left-wrap_item:last-child {
+  border: none;
+}
+.dash_left-wrap_item-icon {
+  height: 15px;
+  width: 15px;
+}
+.dash_left-wrap_item-text {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  display: block;
+}
+.dash_right {
+  margin-left: 30px;
+  padding-top: 20px;
+}
+.dash_right_sale {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 24px;
+}
+.dash_right_sale-item {
+  width: 285px;
+  height: 270px;
+}
+.dash_right-wrap-head {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  margin-bottom: 10px;
+}
+.dash_right-wrap-text {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+
 .admin_pannel {
   display: grid;
   grid-template-columns: 300px 1fr;

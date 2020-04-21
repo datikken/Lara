@@ -2,9 +2,7 @@ class SearchController {
     setListener(search) {
         $(search).on('focus keypress', function() {
             let val = $(search).val();
-
-            console.log(val);
-
+            // console.log(val);
         })
     }
     constructor() {

@@ -10880,10 +10880,9 @@ var Checkbox = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Form = function Form() {
-  _classCallCheck(this, Form);
+var Form = function Form() {// console.log('inited');
 
-  console.log('inited');
+  _classCallCheck(this, Form);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Form);
@@ -10909,9 +10908,8 @@ var SimpleMap = /*#__PURE__*/function () {
   function SimpleMap() {
     _classCallCheck(this, SimpleMap);
 
-    this._simpleMap();
+    this._simpleMap(); // console.log('executed')
 
-    console.log('executed');
   }
 
   _createClass(SimpleMap, [{
@@ -11363,7 +11361,7 @@ var CatalogFiltersController = /*#__PURE__*/function () {
 
           lis.forEach(function (item) {
             item.addEventListener('click', function (e) {
-              console.log(e.target);
+              // console.log(e.target);
               opn = false;
             });
           });
@@ -11396,8 +11394,7 @@ var ContactsFormController = function ContactsFormController() {
   $(document).ready(function () {
     $('.cfeedback_wrap-row_item-row_inner').on('click', function (e) {
       $('.cfeedback_wrap-row_item-row_inner').each(function (i, el) {
-        console.log(el);
-
+        // console.log(el)
         if (el.classList.contains('active')) {
           el.classList.remove('active');
         }
@@ -11647,7 +11644,7 @@ var DeliveryFormController = /*#__PURE__*/function () {
             deliveryType: delType.getAttribute('name')
           }),
           success: function success(data, status, XHR) {
-            console.log('Delivery address have been successfully set', data);
+            // console.log('Delivery address have been successfully set', data);
             step.classList.remove('invisible');
             window.scrollTo(0, 616);
           },
@@ -11673,7 +11670,7 @@ var DeliveryFormController = /*#__PURE__*/function () {
           var lis = ul.querySelectorAll('li');
           lis.forEach(function (el) {
             el.addEventListener('click', function (e) {
-              console.warn(e.path);
+              // console.warn(e.path);
               var span = e.path[2].querySelector('span');
               span.innerText = e.currentTarget.innerText;
               var input = e.path[3].querySelector('input');
@@ -11852,6 +11849,10 @@ var LoginFormController = /*#__PURE__*/function () {
     var that = this;
     var wraps = document.querySelectorAll('.password_field');
     var formType = document.querySelectorAll('.form_type-item');
+    var loginBtn = document.querySelector('.login-btn');
+    loginBtn.addEventListener('click', function (e) {
+      that._login(e);
+    });
     $('.form_type-item').on('click', function (e) {
       that._pickFaceType(e);
     });
@@ -11874,6 +11875,35 @@ var LoginFormController = /*#__PURE__*/function () {
   }
 
   _createClass(LoginFormController, [{
+    key: "_login",
+    value: function _login(e) {
+      e.preventDefault();
+      var form = document.querySelector('.login-form');
+      var url = form.querySelector('form').getAttribute('action');
+      var token = form.querySelector('[name="_token"]').value;
+      var login = form.querySelector('[name="email"]').value;
+      var password = form.querySelector('[name="password"]').value;
+      console.log(url, token, login, password);
+      $.ajax({
+        method: "post",
+        url: "".concat(url),
+        data: {
+          email: login,
+          password: password,
+          token: token
+        },
+        success: function success(data, status, XHR) {
+          console.log(status);
+        },
+        error: function error(_error, status, XHR) {
+          console.warn(_error);
+        }
+      });
+    }
+  }, {
+    key: "_register",
+    value: function _register() {}
+  }, {
     key: "_pickFaceType",
     value: function _pickFaceType(etc) {
       var inputs = document.querySelectorAll('.form_type-item');
@@ -11916,8 +11946,7 @@ var SearchController = /*#__PURE__*/function () {
     key: "setListener",
     value: function setListener(search) {
       $(search).on('focus keypress', function () {
-        var val = $(search).val();
-        console.log(val);
+        var val = $(search).val(); // console.log(val);
       });
     }
   }]);

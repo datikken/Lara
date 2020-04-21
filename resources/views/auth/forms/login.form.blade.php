@@ -16,7 +16,7 @@
                                     </span>
                             @enderror
 
-                            <input id="email" type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         </div>
                         <div class="form-group row password_field">
                             <span class="password_field-label"></span>
@@ -31,7 +31,7 @@
                                     </span>
                             @enderror
 
-                            <input id="password" type="password" placeholder="Введите ваш пароль" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <input type="password" placeholder="Введите ваш пароль" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                         </div>
 

@@ -1,7 +1,7 @@
 class SimpleMap {
     constructor() {
         this._simpleMap()
-        console.log('executed')
+        // console.log('executed')
     }
     _simpleMap() {
         // if(typeof ymaps != 'undefined') {

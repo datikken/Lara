@@ -3,6 +3,11 @@ class LoginFormController {
         let that = this;
         let wraps = document.querySelectorAll('.password_field');
         let formType = document.querySelectorAll('.form_type-item');
+        let loginBtn = document.querySelector('.login-btn');
+
+        loginBtn.addEventListener('click', function(e) {
+            that._login(e);
+        });
 
         $('.form_type-item').on('click', function (e) {
             that._pickFaceType(e)
@@ -25,6 +30,38 @@ class LoginFormController {
                     }
                 });
         })
+    }
+    _login(e) {
+        e.preventDefault();
+        let form = document.querySelector('.login-form');
+
+        let url = form.querySelector('form').getAttribute('action');
+        let token = form.querySelector('[name="_token"]').value;
+        let login = form.querySelector('[name="email"]').value;
+        let password = form.querySelector('[name="password"]').value;
+
+        console.log(url, token, login, password);
+
+        $.ajax({
+            method: "post",
+            url: `${url}`,
+            data: {
+                email: login,
+                password,
+                token
+            },
+            success: function (data, status, XHR) {
+                console.log(status)
+            },
+            error: function (error, status, XHR) {
+                console.warn(error);
+            }
+        });
+
+
+    }
+    _register() {
+
     }
     _pickFaceType(etc) {
         let inputs = document.querySelectorAll('.form_type-item');

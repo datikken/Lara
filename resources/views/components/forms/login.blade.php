@@ -9,7 +9,7 @@
                     Войдите в свой аккаунт
                 </p>
             </div>
-            <div class="card-body">
+            <div class="card-body login-form">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group row">
@@ -19,7 +19,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                         @enderror
-                        <input id="email" type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <input type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     </div>
                     <div class="form-group row password_field">
                         <span class="password_field-label"></span>
@@ -34,7 +34,7 @@
                                 </span>
                             @enderror
 
-                            <input id="password" type="password" placeholder="Введите ваш пароль"  class="form-control password_hide @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <input type="password" placeholder="Введите ваш пароль"  class="form-control password_hide @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                         </div>
                     </div>
 
@@ -66,7 +66,7 @@
 
                     </div>
 
-                    <div class="form-group row mb-0">
+                    <div class="form-group row mb-0 login-btn">
                         <button type="submit" class="btn btn-primary">
                             {{ __('Войти') }}
                         </button>

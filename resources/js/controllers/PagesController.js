@@ -35,7 +35,7 @@ class PagesController {
                             if(el.src != '') {
                                 document.head.appendChild(script);
                                 if(el.src.indexOf('app') > 0) {
-                                    console.log(el);
+                                    // console.log(el);
                                 }
                             }
                         });
@@ -46,7 +46,6 @@ class PagesController {
                         console.warn(error.statusText);
                     }
                 });
-                console.log(url);
             });
         });
     }

@@ -29,7 +29,7 @@ class CatalogFiltersController {
 
                 lis.forEach((item) => {
                     item.addEventListener('click',function (e) {
-                        console.log(e.target);
+                        // console.log(e.target);
                         opn = false;
                     });
                 });
