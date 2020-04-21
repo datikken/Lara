@@ -8,7 +8,7 @@
 
 namespace App\Http\Controllers;
 use App\Information;
-use http\Env\Request;
+use Illuminate\Http\Request;
 
 class InformationController extends Controller
 {

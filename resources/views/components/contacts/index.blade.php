@@ -84,7 +84,10 @@
                         <div class="contacts_wrap-item_inner-item">
 
 
-                            <div class="cfeedback">
+                            <form class="cfeedback" method="post" action="/contacts/feedback">
+
+                                @csrf
+
                                 <div class="cfeedback_wrap">
                                     {{--Имя Фамилия--}}
                                     <div class="cfeedback_wrap-row fio_fields">
@@ -94,7 +97,7 @@
                                             </div>
 
                                             <div class="cfeedback_wrap-row_item_input">
-                                                <input type="text" class="cfeedback_wrap-row_item_input-item" placeholder="Введите ваше имя">
+                                                <input type="text" name="name" class="cfeedback_wrap-row_item_input-item" placeholder="Введите ваше имя">
                                             </div>
                                         </div>
 
@@ -104,12 +107,15 @@
                                             </div>
 
                                             <div class="cfeedback_wrap-row_item_input">
-                                                <input type="text" class="cfeedback_wrap-row_item_input-item" placeholder="Введите вашу фамилию">
+                                                <input type="text" name="lastname" class="cfeedback_wrap-row_item_input-item" placeholder="Введите вашу фамилию">
                                             </div>
                                         </div>
                                     </div>
                                     {{--Тема--}}
                                     <div class="cfeedback_wrap-row">
+
+                                        <input type="text" name="theme" class="invisible" />
+
                                         <div class="cfeedback_wrap-row_item_label">
                                             <span>Тема обращения</span>
                                         </div>
@@ -129,19 +135,18 @@
                                     </div>
 
                                     <div class="cfeedback_wrap-row">
-
                                         <div class="cfeedback_wrap-row_item_textarea">
-                                            <textarea name="" id="" cols="30" rows="10" placeholder="Напишите свое обращение. Мы будем рады ответить вам на ваши вопросы"></textarea>
+                                            <textarea name="message" id="" cols="30" rows="10" placeholder="Напишите свое обращение. Мы будем рады ответить вам на ваши вопросы"></textarea>
                                         </div>
                                     </div>
 
-                                    <div class="cfeedback_wrap-row">
+                                    <button type="submit" class="cfeedback_wrap-row">
                                         @include('components.btn.text_btn', [ 'class' => 'cfeedback_wrap-row_btn', 'text' => 'Отправить'])
-                                    </div>
+                                    </button>
 
 
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

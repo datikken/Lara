@@ -26,9 +26,10 @@ Route::get('/about', 'AboutController@index');
 Route::get('/landing', 'LandingController@index',['as' => 'landing']);
 Route::get('/contacts', 'ContactsController@index');
 
+//Contacts feedback
+Route::post('/contacts/feedback', 'ContactsController@collectFeedback');
 
 //ADMIN - functionality
-
     //PRODUCTS
 Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts'])->middleware('restrictToAdmin');
     //Display Edit Product form
