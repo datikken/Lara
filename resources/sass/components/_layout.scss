@@ -14,7 +14,7 @@
 
     @include breakpoint($phone) {
       max-width: 270px;
-      margin-right: 10px;
+      //margin-right: 10px;
     }
 
     @include breakpoint(1200px) {

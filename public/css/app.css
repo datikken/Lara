@@ -2007,7 +2007,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 @media screen and (min-width: 600px) {
   .columns .left_column {
     max-width: 270px;
-    margin-right: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
