@@ -8995,8 +8995,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dash {
   max-width: 1170px;
   margin: 0 auto;
-  padding-top: 20px;
   display: flex;
+  padding-top: 20px;
+  margin-bottom: 50px;
 }
 .dash_logout div span {
   color: #D4D4D5;
@@ -9034,6 +9035,47 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-left: 30px;
   padding-top: 20px;
 }
+.dash_right_coupone {
+  display: flex;
+  margin: 0 auto;
+  width: 870px;
+  margin-top: 55px;
+}
+.dash_right_coupone-item {
+  height: 200px;
+  background: #E9E9EA;
+}
+.dash_right_coupone-item:first-child {
+  -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 85%, 0 15%);
+          clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 85%, 0 15%);
+  box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  border-right: 2px dashed;
+}
+.dash_right_coupone-item:nth-child(2) {
+  width: 470px;
+}
+.dash_right_coupone-item:last-child {
+  -webkit-clip-path: polygon(85% 0, 100% 15%, 100% 85%, 85% 100%, 0 100%, 0 0);
+          clip-path: polygon(85% 0, 100% 15%, 100% 85%, 85% 100%, 0 100%, 0 0);
+  box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  border-left: 2px dashed;
+}
+.dash_right_profit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  width: 570px;
+  margin: 0 auto;
+  margin-top: 65px;
+  margin-bottom: 80px;
+}
+.dash_right_profit-item {
+  cursor: pointer;
+  width: 285px;
+  height: 270px;
+}
 .dash_right_sale {
   width: 100%;
   display: grid;
@@ -9043,6 +9085,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dash_right_sale-item {
   width: 285px;
   height: 270px;
+  cursor: pointer;
 }
 .dash_right-wrap-head {
   font-family: "Montserrat";

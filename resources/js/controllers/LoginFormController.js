@@ -6,7 +6,7 @@ class LoginFormController {
         let loginBtn = document.querySelector('.login-btn');
 
         loginBtn.addEventListener('click', function(e) {
-            that._login(e);
+            // that._login(e);
         });
 
         $('.form_type-item').on('click', function (e) {

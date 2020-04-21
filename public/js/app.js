@@ -11850,8 +11850,7 @@ var LoginFormController = /*#__PURE__*/function () {
     var wraps = document.querySelectorAll('.password_field');
     var formType = document.querySelectorAll('.form_type-item');
     var loginBtn = document.querySelector('.login-btn');
-    loginBtn.addEventListener('click', function (e) {
-      that._login(e);
+    loginBtn.addEventListener('click', function (e) {// that._login(e);
     });
     $('.form_type-item').on('click', function (e) {
       that._pickFaceType(e);
