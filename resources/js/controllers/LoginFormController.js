@@ -5,7 +5,7 @@ class LoginFormController {
         let formType = document.querySelectorAll('.form_type-item');
         let loginBtn = document.querySelector('.login-btn');
 
-        loginBtn.addEventListener('click', function(e) {
+        loginBtn && loginBtn.addEventListener('click', function(e) {
             // that._login(e);
         });
 
