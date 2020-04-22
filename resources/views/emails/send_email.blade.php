@@ -22,6 +22,10 @@
             <input class="uk-input" type="text" name="email" id="email" placeholder="Введите свою почту" required>
         </div>
 
+        <div class="uk-margin">
+            <input class="uk-input" type="text" name="customer" id="customer" placeholder="Введите адресат" required>
+        </div>
+
         <div class="uk-margin uk-form-row">
             <textarea cols="4" rows="4" class="uk-text-area" type="text" name="message" id="message" placeholder="Текст физ лица" required></textarea>
         </div>

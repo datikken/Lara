@@ -16,12 +16,14 @@ class SendEmailController extends Controller
 
     public function send(Request $request)
     {
+        $customer = $request->customer;
+
         $data = array(
             'name' => $request->name,
             'message' => $request->message
         );
 
-        Mail::to('tikken23@gmail.com')->send(new SendMail($data));
+        Mail::to($customer)->send(new SendMail($data));
 
         return back()->with('success', 'Thanks for contacting us');
     }
