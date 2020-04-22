@@ -65,6 +65,67 @@
             &-item {
                 height: 200px;
                 background: #E9E9EA;
+                box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.15);
+
+                &_inner {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    flex-direction: column;
+
+                    &-text {
+                        font-family: $font;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 12px;
+                        line-height: 14px;
+                        text-align: center;
+                        letter-spacing: 0.02em;
+                        color: $dblack;
+                        max-width: 134px;
+                        margin-top: 20px;
+
+                        p {
+                            text-align: left;
+                        }
+                    }
+
+                    &-sale {
+                        height: 100px;
+                        width: 100px;
+                        border: 2px dashed $blue;
+                        border-radius: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 30px;
+
+                        &-item {
+                            position: relative;
+                            p {
+                                margin: 0;
+                                font-family: $semifont;
+                                font-style: normal;
+                                font-weight: bold;
+                                font-size: 36px;
+                                line-height: 100%;
+                                text-align: center;
+                                letter-spacing: -0.02em;
+                                text-transform: uppercase;
+                                color: $blue;
+                            }
+
+                            img {
+                                height: 14px;
+                                width: 10px;
+                                bottom: 0;
+                                position: absolute;
+                                right: -13px;
+                            }
+                       }
+                    }
+                }
 
                 &:first-child {
                     clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 85%, 0 15%);

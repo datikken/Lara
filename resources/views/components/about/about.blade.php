@@ -73,13 +73,6 @@
             <div class="mobile-hide">
                 <div class="navigator_wrap-line descline"></div>
             </div>
-            {{--{data.map((i) =>--}}
-            {{--<div--}}
-                {{--onClick={() => handler(i)}--}}
-            {{--class={`navigator_wrap-items-item per_${i}`}--}}
-            {{--key={i}>--}}
-            {{--{i}</div>--}}
-        {{--)}--}}
     </div>
 </div>
 

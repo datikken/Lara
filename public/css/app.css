@@ -9044,6 +9044,61 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dash_right_coupone-item {
   height: 200px;
   background: #E9E9EA;
+  box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.15);
+}
+.dash_right_coupone-item_inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}
+.dash_right_coupone-item_inner-text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #292930;
+  max-width: 134px;
+  margin-top: 20px;
+}
+.dash_right_coupone-item_inner-text p {
+  text-align: left;
+}
+.dash_right_coupone-item_inner-sale {
+  height: 100px;
+  width: 100px;
+  border: 2px dashed #3559fd;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.dash_right_coupone-item_inner-sale-item {
+  position: relative;
+}
+.dash_right_coupone-item_inner-sale-item p {
+  margin: 0;
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #3559fd;
+}
+.dash_right_coupone-item_inner-sale-item img {
+  height: 14px;
+  width: 10px;
+  bottom: 0;
+  position: absolute;
+  right: -13px;
 }
 .dash_right_coupone-item:first-child {
   -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 85%, 0 15%);

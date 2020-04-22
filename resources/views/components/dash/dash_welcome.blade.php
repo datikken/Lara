@@ -19,9 +19,35 @@
 
 
     <div class="dash_right_coupone">
+        <div class="dash_right_coupone-item">
+
+            <div class="dash_right_coupone-item_inner">
+                <div class="dash_right_coupone-item_inner-sale">
+                    <div class="dash_right_coupone-item_inner-sale-item">
+                        <p>50</p>
+                        <img src="/images/icons/rub.svg" alt="currency" />
+                    </div>
+                </div>
+                <div class="dash_right_coupone-item_inner-text">
+                    <p>при покупке картриджа <b>easyprint</b></p>
+                </div>
+            </div>
+
+        </div>
         <div class="dash_right_coupone-item"></div>
-        <div class="dash_right_coupone-item"></div>
-        <div class="dash_right_coupone-item"></div>
+        <div class="dash_right_coupone-item">
+            <div class="dash_right_coupone-item_inner">
+                <div class="dash_right_coupone-item_inner-sale">
+                    <div class="dash_right_coupone-item_inner-sale-item">
+                        <p>150</p>
+                        <img src="/images/icons/rub.svg" alt="currency" />
+                    </div>
+                </div>
+                <div class="dash_right_coupone-item_inner-text">
+                    <p>при покупке картриджа <b>easyprint</b></p>
+                </div>
+            </div>
+        </div>
     </div>
 
 
