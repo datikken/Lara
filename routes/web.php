@@ -19,7 +19,11 @@ Route::get('product/details/{id}',['uses' => 'ProductsController@productDetails'
 //Auth routes
 Auth::routes();
 
+//PROFILE
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/fillProfile', ['uses' => 'HomeController@showFillProfileForm', 'as' => 'fillProfile']);
+
+//PAGES
 Route::get('/information', 'InformationController@index');
 Route::get('/hits', 'HitsController@index');
 Route::get('/about', 'AboutController@index');

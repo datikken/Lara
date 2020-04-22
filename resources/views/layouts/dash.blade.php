@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @include('components.styles.style')
+    @include('components.scripts.scripts')
+    <title>Printers</title>
+</head>
+<body>
+
+@include('components.header.header')
+@include('components.menu.menu')
+
+<div class="dash">
+    <div class="dash_left">
+        <div class="dash_left-wrap">
+
+            <div class="dash_left-wrap_item dash_active">
+                <a class="dash_left-wrap_item-text" href="{{ route('home') }}">
+                    <span>Dashboard</span>
+                </a>
+                <div class="dash_left-wrap_item-icon" style="background-image: url('/images/dash/dash_user.svg')"></div>
+            </div>
+
+            <div class="dash_left-wrap_item">
+                <a class="dash_left-wrap_item-text">
+                    <span>Заказы</span>
+                </a>
+                <div class="dash_left-wrap_item-icon" style="background-image: url('/images/dash/dash_orders.svg')"></div>
+            </div>
+
+            <div class="dash_left-wrap_item">
+                <a class="dash_left-wrap_item-text">
+                    <span>Адреса</span>
+                </a>
+                <div class="dash_left-wrap_item-icon" style="background-image: url('/images/dash/dash_addr.svg')"></div>
+            </div>
+
+            <div class="dash_left-wrap_item">
+                <a class="dash_left-wrap_item-text"  href="{{ route('fillProfile') }}">
+                    <span>Заполнить аккаунт</span>
+                </a>
+                <div class="dash_left-wrap_item-icon" style="background-image: url('/images/dash/dash_fill.svg')"></div>
+            </div>
+
+            <div class="dash_left-wrap_item dash_logout">
+                <a href="{{ route('logout') }}" class="dash_left-wrap_item-text">
+                    <span>Выйти</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    @yield('center')
+
+</div>
+
+@include('components.subscriptions.subscriptions')
+@include('layouts.footer')
+{{--@include('alert.success_cart');--}}
+</body>

@@ -10,13 +10,11 @@
         <p>Мы заботимся об окружающей среде и поэтому разработали програму утилизации старых картриджей, за которые вы получаете бонусы</p>
     </div>
 
-
     <div class="dash_right_sale">
         <div class="dash_right_sale-item" style="background-image: url('./images/dash/dash_sdav.svg')"></div>
         <div class="dash_right_sale-item" style="background-image: url('./images/dash/dash_saved.svg')"></div>
         <div class="dash_right_sale-item" style="background-image: url('./images/dash/dash_bonuses.svg')"></div>
     </div>
-
 
     <div class="dash_right_coupone">
         <div class="dash_right_coupone-item">
