@@ -24,7 +24,7 @@
         justify-content: flex-start;
         align-items: center;
         position: relative;
-        background: $feedItem;
+        background: $light_gray;
 
         .menu_Wrapper-item_secondary-item_list-item-text_inner {
           display: flex;
@@ -54,7 +54,7 @@
         line-height: 14px;
         letter-spacing: 0.02em;
         color: $black;
-        border-bottom: 1px solid $feedItem;
+        border-bottom: 1px solid $light_gray;
         display: flex;
         justify-content: space-between;
 

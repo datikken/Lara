@@ -11952,17 +11952,16 @@ var ProductDetailsController = /*#__PURE__*/function () {
         var product = document.querySelector("#product-".concat(id));
         var img = product.querySelector('.product_wrapper-item_image').querySelector('img').getAttribute('src');
 
-        that._setDetailsImg(img);
-
-        console.log(product, img);
+        that._setDetailsImg(img, id);
       });
     });
   }
 
   _createClass(ProductDetailsController, [{
     key: "_setDetailsImg",
-    value: function _setDetailsImg(src) {
-      var img = document.querySelector('.prdet_wrap-item_img');
+    value: function _setDetailsImg(src, id) {
+      var modal = document.querySelector("#modal-".concat(id));
+      var img = modal.querySelector('.prdet_wrap-item_img');
       img.style.backgroundImage = "url(".concat(src, ")");
     }
   }]);

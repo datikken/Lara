@@ -2,6 +2,12 @@
     &_wrap {
         display: flex;
 
+        &-icons {
+            &_ctas {
+                display: flex;
+            }
+        }
+
         &-item {
             &:nth-child(2) {
                 margin-left: 30px;
@@ -26,6 +32,7 @@
                 background-color: #fff;
                 background-repeat: no-repeat;
                 background-position: center;
+                border: 1px solid $light_gray;
             }
         }
     }

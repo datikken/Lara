@@ -1205,7 +1205,7 @@ b {
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  background: #E9E9EA;
+  background: #e9e9ea;
 }
 .menu_wrapper-item_secondary .menu_Wrapper-item_secondary-item_list .vip-item .menu_Wrapper-item_secondary-item_list-item-text_inner {
   display: flex;
@@ -1233,7 +1233,7 @@ b {
   line-height: 14px;
   letter-spacing: 0.02em;
   color: #40404c;
-  border-bottom: 1px solid #E9E9EA;
+  border-bottom: 1px solid #e9e9ea;
   display: flex;
   justify-content: space-between;
 }
@@ -2427,7 +2427,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   width: 50%;
   bottom: -1px;
   right: 35px;
-  border-bottom: 1px solid #E9E9EA;
+  border-bottom: 1px solid #e9e9ea;
 }
 .viewed_wrapper-item_text-heading {
   font-family: "Montserrat";
@@ -4259,9 +4259,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
-#modal-center {
-  background-color: transparent !important;
+.uk-modal {
   overflow: hidden;
+  background-color: transparent !important;
 }
 
 #modal_content {
@@ -8578,7 +8578,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .land_block-item_slider-item_benefit-item_card {
   display: grid;
   grid-template-rows: 125px 50px;
-  border: 1px solid #E9E9EA;
+  border: 1px solid #e9e9ea;
 }
 .land_block-item_slider-item_benefit-item_card-image {
   margin: 20px;
@@ -8591,7 +8591,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   line-height: 26px;
   text-transform: uppercase;
   color: #292930;
-  background: #E9E9EA;
+  background: #e9e9ea;
   width: 100%;
   height: 100%;
   display: flex;
@@ -8693,7 +8693,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .feed_item {
   width: 198px;
   height: 100px;
-  background: #E9E9EA;
+  background: #e9e9ea;
   padding: 10px;
 }
 .feed_item-wrap_item {
@@ -9285,7 +9285,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border-bottom-right-radius: 20px;
   cursor: pointer;
   outline: none;
-  background: #E9E9EA;
+  background: #e9e9ea;
   width: 100px;
 }
 .dfill_wrap-form_top-right .form-group-btn span {
@@ -9349,6 +9349,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .prdet_wrap {
   display: flex;
 }
+.prdet_wrap-icons_ctas {
+  display: flex;
+}
 .prdet_wrap-item:nth-child(2) {
   margin-left: 30px;
 }
@@ -9367,6 +9370,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
+  border: 1px solid #e9e9ea;
 }
 
 .admin_pannel {

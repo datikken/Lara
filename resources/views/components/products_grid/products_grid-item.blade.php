@@ -17,7 +17,7 @@
                 <div class="product_wrapper-item_image">
                     <img src="{{Storage::disk('local')->url('/product_images/' . $image )}}" alt="{{$image}}" />
                 </div>
-                <a class="product_wrapper-item_overlay" href="#modal-center" uk-toggle data-id="{{ $id }}">
+                <a class="product_wrapper-item_overlay" href="#modal-{{ $id }}" uk-toggle data-id="{{ $id }}">
                     <div class="product_wrapper-item_overlay_wrapper">
                         <div class="product_wrapper-item_overlay_wrapper-item">
                             <span class="product_wrapper-item_overlay_wrapper-item_text">быстрый просмотр</span>
@@ -45,7 +45,7 @@
 </div>
 
 
-<div id="modal-center" class="uk-flex-top" uk-modal>
+<div id="modal-{{ $id }}" class="uk-flex-top" uk-modal>
     <div id="modal_content" class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
            <div class="prdet">
                <div class="prdet_wrap">
