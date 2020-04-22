@@ -47,7 +47,6 @@
 
 <div id="modal-center" class="uk-flex-top" uk-modal>
     <div id="modal_content" class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-        <div class="product_wrapper">
            <div class="prdet">
                <div class="prdet_wrap">
                    <div class="prdet_wrap-item">
@@ -80,10 +79,8 @@
                            </div>
                        </div>
 
-
                    </div>
                </div>
            </div>
-        </div>
     </div>
 </div>

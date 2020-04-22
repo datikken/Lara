@@ -11936,18 +11936,39 @@ var LoginFormController = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ProductDetailsController = function ProductDetailsController() {
-  _classCallCheck(this, ProductDetailsController);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  var overlays = document.querySelectorAll('.product_wrapper-item_overlay');
-  overlays.forEach(function (el) {
-    el.addEventListener('click', function (e) {
-      var id = e.currentTarget.getAttribute('data-id');
-      var product = document.querySelector("#product-".concat(id));
-      console.log(product);
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var ProductDetailsController = /*#__PURE__*/function () {
+  function ProductDetailsController() {
+    _classCallCheck(this, ProductDetailsController);
+
+    var that = this;
+    var overlays = document.querySelectorAll('.product_wrapper-item_overlay');
+    overlays.forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        var id = e.currentTarget.getAttribute('data-id');
+        var product = document.querySelector("#product-".concat(id));
+        var img = product.querySelector('.product_wrapper-item_image').querySelector('img').getAttribute('src');
+
+        that._setDetailsImg(img);
+
+        console.log(product, img);
+      });
     });
-  });
-};
+  }
+
+  _createClass(ProductDetailsController, [{
+    key: "_setDetailsImg",
+    value: function _setDetailsImg(src) {
+      var img = document.querySelector('.prdet_wrap-item_img');
+      img.style.backgroundImage = "url(".concat(src, ")");
+    }
+  }]);
+
+  return ProductDetailsController;
+}();
 
 /* harmony default export */ __webpack_exports__["default"] = (ProductDetailsController);
 

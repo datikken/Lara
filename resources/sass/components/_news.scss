@@ -190,12 +190,9 @@
               font-family: $font;
               font-size: 12px;
               line-height: 14px;
-              display: flex;
-              align-items: center;
-              text-align: center;
               letter-spacing: 0.02em;
               color: $blue;
-              display: block;
+              display: block!important;
             }
           }
         }

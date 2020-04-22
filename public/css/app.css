@@ -3504,12 +3504,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   font-family: "Montserrat";
   font-size: 12px;
   line-height: 14px;
-  display: flex;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.02em;
   color: #3559fd;
-  display: block;
+  display: block !important;
 }
 
 .owl-carousel,
@@ -9367,7 +9364,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .prdet_wrap-item_img {
   width: 270px;
   height: 300px;
-  background: purple;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .admin_pannel {
