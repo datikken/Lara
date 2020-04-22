@@ -9248,6 +9248,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border-radius: 30px;
   padding-left: 20px;
 }
+.dfill_wrap {
+  margin-top: 15px;
+}
 .dfill_wrap-heading {
   font-family: "Montserrat";
   font-size: 12px;
