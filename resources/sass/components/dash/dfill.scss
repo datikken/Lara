@@ -1,6 +1,74 @@
 .dfill {
     margin-left: 30px;
 
+    .dchange {
+        width: 100%;
+        margin: 50px 0;
+
+        &_remind {
+            margin-top: 30px;
+
+            p {
+                display: flex;
+                font-family: $font;
+                font-size: 12px;
+                line-height: 14px;
+                letter-spacing: 0.02em;
+                color: $dblack;
+            }
+
+            span {
+                color: $red;
+                display: block;
+                padding: 0 5px;
+            }
+        }
+
+        &_btn {
+            width: 270px!important;
+            height: 40px;
+            box-shadow: none!important;
+        }
+
+        form {
+            button {
+                -webkit-appearance: none;
+                -moz-appearance:    none;
+                appearance:         none;
+                border: none;
+            }
+        }
+        .form-group {
+            margin-bottom: 20px;
+
+           label {
+               font-family: $font;
+               font-size: 12px;
+               line-height: 14px;
+               letter-spacing: 0.02em;
+               color: $dblack;
+               display: flex;
+               margin-bottom: 10px;
+
+               span {
+                   display: block;
+                   color: $red;
+               }
+           }
+
+            input {
+                width: 870px;
+                height: 40px;
+                left: 575px;
+                top: 686px;
+                border: 1px solid #D4D4D5;
+                box-sizing: border-box;
+                border-radius: 30px;
+                padding-left: 20px;
+            }
+        }
+    }
+
     &_wrap {
         &-heading {
             font-family: $font;
@@ -25,13 +93,34 @@
             }
 
             &-right {
-                margin-left: 30px;
+                margin-left: 70px;
                 border-bottom: 1px solid $yellow;
 
                 .form-group {
                     display: flex;
                     flex-direction: column;
                     margin-bottom: 20px;
+                    position: relative;
+
+                    &-btn {
+                        position: absolute;
+                        right: -3px;
+                        height: 40px;
+                        border-top-right-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        cursor: pointer;
+                        outline: none;
+                        background: $feedItem;
+                        width: 100px;
+
+                        span {
+                            font-family: $font;
+                            font-size: 12px;
+                            line-height: 14px;
+                            letter-spacing: 0.02em;
+                            color: #40404C;
+                        }
+                    }
 
                     input {
                         width: 500px;

@@ -9181,6 +9181,63 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dfill {
   margin-left: 30px;
 }
+.dfill .dchange {
+  width: 100%;
+  margin: 50px 0;
+}
+.dfill .dchange_remind {
+  margin-top: 30px;
+}
+.dfill .dchange_remind p {
+  display: flex;
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+.dfill .dchange_remind span {
+  color: #FF0000;
+  display: block;
+  padding: 0 5px;
+}
+.dfill .dchange_btn {
+  width: 270px !important;
+  height: 40px;
+  box-shadow: none !important;
+}
+.dfill .dchange form button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+}
+.dfill .dchange .form-group {
+  margin-bottom: 20px;
+}
+.dfill .dchange .form-group label {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  display: flex;
+  margin-bottom: 10px;
+}
+.dfill .dchange .form-group label span {
+  display: block;
+  color: #FF0000;
+}
+.dfill .dchange .form-group input {
+  width: 870px;
+  height: 40px;
+  left: 575px;
+  top: 686px;
+  border: 1px solid #D4D4D5;
+  box-sizing: border-box;
+  border-radius: 30px;
+  padding-left: 20px;
+}
 .dfill_wrap-heading {
   font-family: "Montserrat";
   font-size: 12px;
@@ -9201,13 +9258,32 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   height: 350px;
 }
 .dfill_wrap-form_top-right {
-  margin-left: 30px;
+  margin-left: 70px;
   border-bottom: 1px solid #fdd935;
 }
 .dfill_wrap-form_top-right .form-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  position: relative;
+}
+.dfill_wrap-form_top-right .form-group-btn {
+  position: absolute;
+  right: -3px;
+  height: 40px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  background: #E9E9EA;
+  width: 100px;
+}
+.dfill_wrap-form_top-right .form-group-btn span {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404C;
 }
 .dfill_wrap-form_top-right .form-group input {
   width: 500px;
