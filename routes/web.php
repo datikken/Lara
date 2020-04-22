@@ -90,6 +90,8 @@ Route::get('/testStorage', function() {
     return "<img src=".Storage::url('product_images/product1.png').">";
 });
 
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 Route::get('/mailtest', function()
 {
     dd(Config::get('mail'));
