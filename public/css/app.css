@@ -9181,6 +9181,16 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dfill {
   margin-left: 30px;
 }
+.dfill a {
+  float: right;
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #3559fd;
+  margin-top: 20px;
+  cursor: pointer;
+}
 .dfill .dchange {
   width: 100%;
   margin: 50px 0;

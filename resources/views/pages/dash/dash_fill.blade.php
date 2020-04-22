@@ -72,6 +72,8 @@
             </div>
        </div>
 
+       <a href="#">изменить пароль</a>
+
         <div class="dchange">
             <form action="/" method="post">
                 {{csrf_field()}}
