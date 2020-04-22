@@ -16,6 +16,8 @@ import Checkbox from './components/Checkbox'
 import DeliveryAuthController from './controllers/DeliveryAuthController'
 import CatalogFiltersController from './controllers/CatalogFiltersController'
 import InformationController from './controllers/InformationController'
+import ProductDetailsController from './controllers/ProductDetailsController'
+
 // import PageController from './controllers/PagesController'
 
 // $(document).ready(function() {
@@ -27,13 +29,9 @@ import InformationController from './controllers/InformationController'
     new DeliveryAuthController();
     new CatalogFiltersController();
     new InformationController();
-    new DeliveryFormController(dform);
+    new DeliveryFormController();
     new SimpleMap();
+    new ProductDetailsController();
 // new PageController();
-
-    cart = document.querySelector('.cart');
-
-    let mapEl, map, dform, cart;
-        mapEl = document.querySelector('.ymaps');
 
 // });

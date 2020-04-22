@@ -1,4 +1,4 @@
-<div class="product" data-category="{{ $category }}">
+<div class="product" data-category="{{ $category }}" id="product-{{ $id }}">
     <a href="{{ route('ShowProductDetails',['id' => $id]) }}">
         <div class="product_wrapper">
             <div class="product_wrapper-item">
@@ -17,7 +17,7 @@
                 <div class="product_wrapper-item_image">
                     <img src="{{Storage::disk('local')->url('/product_images/' . $image )}}" alt="{{$image}}" />
                 </div>
-                <a class="product_wrapper-item_overlay" href="#modal-center" uk-toggle>
+                <a class="product_wrapper-item_overlay" href="#modal-center" uk-toggle data-id="{{ $id }}">
                     <div class="product_wrapper-item_overlay_wrapper">
                         <div class="product_wrapper-item_overlay_wrapper-item">
                             <span class="product_wrapper-item_overlay_wrapper-item_text">быстрый просмотр</span>
@@ -45,13 +45,45 @@
 </div>
 
 
-
 <div id="modal-center" class="uk-flex-top" uk-modal>
     <div id="modal_content" class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <div class="product_wrapper">
+           <div class="prdet">
+               <div class="prdet_wrap">
+                   <div class="prdet_wrap-item">
+                        <div class="prdet_wrap-item_img"></div>
+                   </div>
+                   <div class="prdet_wrap-item">
 
-        {{--<button class="uk-modal-close-default" type="button" uk-close></button>--}}
+                       <div class="prdet_wrap-item-head"></div>
+                       <div class="prdet_wrap-item-desc"></div>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                       <div class="prdet_wrap-item-icons">
+                           <div class="prdet_wrap-item-icons-item"></div>
+                           <div class="prdet_wrap-item-icons-item"></div>
+                           <div class="prdet_wrap-item-icons-item"></div>
+                           <div class="prdet_wrap-item-icons-item"></div>
+                       </div>
 
+                       <div class="prdet_wrap-icons_ctas">
+                           <div class="prdet_wrap-icons_ctas-amount">
+                               @include('components.btn.price')
+                           </div>
+                           <div class="prdet_wrap-icons_ctas-increase">
+                               @include('components.btn.amount_btn')
+                           </div>
+                           <div class="prdet_wrap-icons_ctas-buy">
+                               @include('components.btn.buy_btn', [ 'class' => 'empty_cart-btn', 'text' => 'в корзину'])
+                           </div>
+                           <div class="prdet_wrap-icons_ctas-details">
+                               @include('components.btn.text_btn', [ 'class' => 'flat_btn', 'text' => 'подробнее'])
+                           </div>
+                       </div>
+
+
+                   </div>
+               </div>
+           </div>
+        </div>
     </div>
 </div>

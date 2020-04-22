@@ -10723,8 +10723,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./controllers/DeliveryAuthController */ "./resources/js/controllers/DeliveryAuthController.js");
 /* harmony import */ var _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./controllers/CatalogFiltersController */ "./resources/js/controllers/CatalogFiltersController.js");
 /* harmony import */ var _controllers_InformationController__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./controllers/InformationController */ "./resources/js/controllers/InformationController.js");
+/* harmony import */ var _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./controllers/ProductDetailsController */ "./resources/js/controllers/ProductDetailsController.js");
 // require('./bootstrap');
 // window.Vue = require('vue');
+
 
 
 
@@ -10750,12 +10752,10 @@ new _controllers_CartController__WEBPACK_IMPORTED_MODULE_10__["default"]();
 new _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_12__["default"]();
 new _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_13__["default"]();
 new _controllers_InformationController__WEBPACK_IMPORTED_MODULE_14__["default"]();
-new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__["default"](dform);
-new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"](); // new PageController();
-
-cart = document.querySelector('.cart');
-var mapEl, map, dform, cart;
-mapEl = document.querySelector('.ymaps'); // });
+new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__["default"]();
+new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
+new _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_15__["default"](); // new PageController();
+// });
 
 /***/ }),
 
@@ -10915,39 +10915,39 @@ var SimpleMap = /*#__PURE__*/function () {
   _createClass(SimpleMap, [{
     key: "_simpleMap",
     value: function _simpleMap() {
-      // if(typeof ymaps != 'undefined') {
-      console.log('tested');
-      ymaps.ready(function () {
-        var myMap = new ymaps.Map('map', {
-          center: [55.751574, 37.573856],
-          zoom: 9
-        }, {
-          searchControlProvider: 'yandex#search'
-        }),
-            MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
-            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-          hintContent: 'Собственный значок метки',
-          balloonContent: 'Это красивая метка'
-        }, {
-          iconLayout: 'default#image',
-          iconImageHref: 'images/myIcon.gif',
-          iconImageSize: [30, 42],
-          iconImageOffset: [-5, -38]
-        }),
-            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-          hintContent: 'Собственный значок метки с контентом',
-          balloonContent: 'А эта — новогодняя',
-          iconContent: '12'
-        }, {
-          iconLayout: 'default#imageWithContent',
-          iconImageHref: 'images/ball.png',
-          iconImageSize: [48, 48],
-          iconImageOffset: [-24, -24],
-          iconContentOffset: [15, 15],
-          iconContentLayout: MyIconContentLayout
+      if (typeof ymaps != 'undefined') {
+        ymaps.ready(function () {
+          var myMap = new ymaps.Map('map', {
+            center: [55.751574, 37.573856],
+            zoom: 9
+          }, {
+            searchControlProvider: 'yandex#search'
+          }),
+              MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+              myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            hintContent: 'Собственный значок метки',
+            balloonContent: 'Это красивая метка'
+          }, {
+            iconLayout: 'default#image',
+            iconImageHref: 'images/myIcon.gif',
+            iconImageSize: [30, 42],
+            iconImageOffset: [-5, -38]
+          }),
+              myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+            hintContent: 'Собственный значок метки с контентом',
+            balloonContent: 'А эта — новогодняя',
+            iconContent: '12'
+          }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/ball.png',
+            iconImageSize: [48, 48],
+            iconImageOffset: [-24, -24],
+            iconContentOffset: [15, 15],
+            iconContentLayout: MyIconContentLayout
+          });
+          myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
         });
-        myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
-      }); // }
+      }
     }
   }]);
 
@@ -11922,6 +11922,34 @@ var LoginFormController = /*#__PURE__*/function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (LoginFormController);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/js/controllers/ProductDetailsController.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/controllers/ProductDetailsController.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ProductDetailsController = function ProductDetailsController() {
+  _classCallCheck(this, ProductDetailsController);
+
+  var overlays = document.querySelectorAll('.product_wrapper-item_overlay');
+  overlays.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      var id = e.currentTarget.getAttribute('data-id');
+      var product = document.querySelector("#product-".concat(id));
+      console.log(product);
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ProductDetailsController);
 
 /***/ }),
 
