@@ -3496,6 +3496,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   box-sizing: border-box;
   border-radius: 30px;
   display: flex;
+  align-items: center;
   justify-content: center;
   cursor: pointer;
 }
@@ -3508,6 +3509,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   text-align: center;
   letter-spacing: 0.02em;
   color: #3559fd;
+  display: block;
 }
 
 .owl-carousel,

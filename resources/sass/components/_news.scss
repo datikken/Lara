@@ -182,6 +182,7 @@
             box-sizing: border-box;
             border-radius: 30px;
             display: flex;
+            align-items: center;
             justify-content: center;
             cursor: pointer;
 
@@ -194,6 +195,7 @@
               text-align: center;
               letter-spacing: 0.02em;
               color: $blue;
+              display: block;
             }
           }
         }
