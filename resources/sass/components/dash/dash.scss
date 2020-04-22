@@ -67,6 +67,28 @@
                 background: #E9E9EA;
                 box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.15);
 
+                &:nth-child(2) {
+                    .dash_right_coupone-item_inner {
+
+                        &-text {
+                            max-width: 235px!important;
+                            font-family: $font;
+                            font-style: normal;
+                            text-align: center;
+                            text-transform: uppercase;
+                            color: $dblack;
+                            text-align: center;
+
+                            p {
+                                text-align: center;
+                                font-weight: 600;
+                                font-size: 24px;
+                                line-height: 35px;
+                            }
+                        }
+                    }
+                }
+
                 &_inner {
                     display: flex;
                     align-items: center;

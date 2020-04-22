@@ -34,8 +34,17 @@
             </div>
 
         </div>
-        <div class="dash_right_coupone-item"></div>
         <div class="dash_right_coupone-item">
+
+            <div class="dash_right_coupone-item_inner">
+                <div class="dash_right_coupone-item_inner-text">
+                   <p><b>* 1 купон</b><br/>дает скидку <br/><b>на 1 картридж</b></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="dash_right_coupone-item">
+
             <div class="dash_right_coupone-item_inner">
                 <div class="dash_right_coupone-item_inner-sale">
                     <div class="dash_right_coupone-item_inner-sale-item">
@@ -47,6 +56,7 @@
                     <p>при покупке картриджа <b>easyprint</b></p>
                 </div>
             </div>
+
         </div>
     </div>
 
