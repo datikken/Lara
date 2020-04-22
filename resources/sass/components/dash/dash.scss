@@ -6,9 +6,9 @@
     margin-bottom: 50px;
 
     &_logout {
-        div {
+        a {
             span {
-                color: #D4D4D5;
+                color: #D4D4D5!important;
             }
         }
     }
@@ -22,6 +22,7 @@
 
     &_left {
         width: 170px;
+
         &-wrap {
             &_item {
                 cursor: pointer;
@@ -47,6 +48,10 @@
                     letter-spacing: 0.02em;
                     color: $dblack;
                     display: block;
+
+                    &:hover {
+                        color: $black;
+                    }
                 }
             }
         }

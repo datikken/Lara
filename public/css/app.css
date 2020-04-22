@@ -8999,8 +8999,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   padding-top: 20px;
   margin-bottom: 50px;
 }
-.dash_logout div span {
-  color: #D4D4D5;
+.dash_logout a span {
+  color: #D4D4D5 !important;
 }
 .dash_active div span {
   font-family: "MontserratSemiBold" !important;
@@ -9030,6 +9030,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   letter-spacing: 0.02em;
   color: #292930;
   display: block;
+}
+.dash_left-wrap_item-text:hover {
+  color: #40404c;
 }
 .dash_right {
   margin-left: 30px;
