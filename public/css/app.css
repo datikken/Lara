@@ -9175,6 +9175,59 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #292930;
 }
 
+.dfill {
+  margin-left: 30px;
+}
+.dfill_wrap-heading {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+.dfill_wrap-form_top {
+  display: flex;
+}
+.dfill_wrap-form_top-left {
+  cursor: pointer;
+}
+.dfill_wrap-form_top-left_inner {
+  width: 300px;
+  height: 350px;
+}
+.dfill_wrap-form_top-right {
+  margin-left: 30px;
+  border-bottom: 1px solid #fdd935;
+}
+.dfill_wrap-form_top-right .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.dfill_wrap-form_top-right .form-group input {
+  width: 500px;
+  height: 40px;
+  border: 1px solid #D4D4D5;
+  box-sizing: border-box;
+  border-radius: 30px;
+  padding-left: 20px;
+}
+.dfill_wrap-form_top-right .form-group label {
+  display: flex;
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  margin-bottom: 10px;
+}
+.dfill_wrap-form_top-right .form-group label span {
+  margin-left: 3px;
+  color: #FF0000;
+}
+
 .admin_pannel {
   display: grid;
   grid-template-columns: 300px 1fr;
