@@ -2,16 +2,14 @@
 
 <div class="details">
     <div class="details_wrap">
-
         <div class="details_wrap-slider">
-
             <div class="swiper-container gallery-top">
                 <div class="swiper-wrapper">
-
                     @foreach($product['images'] as $img)
+                        <div class="swiper-slide-img">
                             <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $img->image) }})"></div>
+                        </div>
                     @endforeach
-
                 </div>
 
                 <div class="swiper-button-next swiper-button-white details_nav-right" style="background-image: url('/images/icons/arrow_right.svg')"></div>

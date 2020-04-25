@@ -8026,6 +8026,16 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   width: 20px;
 }
 
+.details_wrap-slider .swiper-container .swiper-wrapper .swiper-slide-img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.details_wrap-slider .swiper-container .swiper-wrapper .swiper-slide-img .details_slide {
+  width: 580px;
+}
+
 .owl-wrapper {
   overflow: hidden;
 }

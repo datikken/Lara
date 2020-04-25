@@ -92,7 +92,6 @@
 }
 .details_nav-right:after {
     display: none;
-    //background-image: url('/images/icons/arrow_right.svg');
 }
 .details_nav-right {
     position: absolute!important;
@@ -104,5 +103,18 @@
 }
 
 .details_wrap-slider {
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide-img {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
+                .details_slide {
+                    width: 580px;
+                }
+            }
+        }
+    }
 }
