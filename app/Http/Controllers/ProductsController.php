@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Cart;
+use App\Product_Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Includes\HelperString;
@@ -32,6 +33,15 @@ class ProductsController extends Controller
     public function productDetails(Request $request, $id)
     {
         $product = Product::find($id);
+
+        $images = DB::table('product_images')->where('product_id', $product['id'])->get();
+        $imgArr = array();
+
+        foreach ($images as $image ) {
+            array_push($imgArr, $image);
+        }
+
+        $product['images'] = $imgArr;
 
         return view('layouts.product_details', ['product' => $product]);
     }

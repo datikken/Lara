@@ -54,6 +54,7 @@ class AdminProductsController extends Controller
                 $product = Product::find($id);
                 $ext = $request->file('file')->getClientOriginalExtension();
                 $fileName = $request->file('file')->getClientOriginalName();
+                $exists = DB::table('product_images')->where('image', $fileName);
 
                 //TODO: existance check
                 $arr = array(
@@ -63,6 +64,9 @@ class AdminProductsController extends Controller
                 );
 
                 DB::table('product_images')->insert($arr);
+                $imageEncoded = File::get($request->file('file'));
+
+                Storage::disk('local')->put('public/product_images/'. $fileName, $imageEncoded);
             }
     }
 
@@ -130,8 +134,8 @@ class AdminProductsController extends Controller
         $stringImageReFormat = str_replace(' ', '', $request->input('name'));
 
         $imageName = $stringImageReFormat . '.' . $ext;
-
         $imageEncoded = File::get($request->image);
+
         Storage::disk('local')->put('public/product_images/' . $imageName, $imageEncoded);
 
         $newProductArray = array(

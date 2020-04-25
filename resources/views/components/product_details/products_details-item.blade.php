@@ -1,4 +1,4 @@
-<?php #dump($product['image']); ?>
+<?php #dump(gettype($product['images'])); ?>
 
 <div class="details">
     <div class="details_wrap">
@@ -7,11 +7,11 @@
 
             <div class="swiper-container gallery-top">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
-                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
-                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
-                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
-                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+
+                    @foreach($product['images'] as $img)
+                            <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $img->image) }})"></div>
+                    @endforeach
+
                 </div>
 
                 <div class="swiper-button-next swiper-button-white details_nav-right" style="background-image: url('/images/icons/arrow_right.svg')"></div>
@@ -20,11 +20,9 @@
             </div>
             <div class="swiper-container gallery-thumbs">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
-                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
-                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
-                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
-                    <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+                    @foreach($product['images'] as $img)
+                        <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $img->image) }})"></div>
+                    @endforeach
                 </div>
             </div>
 
