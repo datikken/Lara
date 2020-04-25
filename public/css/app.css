@@ -9373,6 +9373,14 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .prdet_table-col_head span {
   padding-left: 20px;
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
 }
 .prdet_btn {
   width: 170px;
@@ -9449,6 +9457,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.prdet_wrap-item-head {
+  margin-bottom: 10px;
 }
 .prdet_wrap-item-head-item {
   font-family: "MontserratSemiBold";
