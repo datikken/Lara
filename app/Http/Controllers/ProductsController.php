@@ -21,6 +21,11 @@ class ProductsController extends Controller
     {
         $products = Product::paginate(15);
 
+        foreach ($products as $product) {
+            $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');
+
+        }
+
         return view('pages.catalog', compact("products"));
     }
 

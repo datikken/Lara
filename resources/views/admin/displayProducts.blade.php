@@ -25,7 +25,7 @@
                 <td>{{$product['price']}}</td>
                 <td>{{$product['type']}}</td>
                 <td>{{$product['description']}}</td>
-                <td><img uk-img style="height: 40px; object-fit: contain" src="{{ Storage::url('product_images/' . DB::table('product_images')->where('product_id', $product['id'])->value('image')) }}"/></td>
+                <td><img uk-img style="height: 40px; object-fit: contain" src="{{ Storage::url('product_images/' . $product['image']) }}"/></td>
                 <td>{{$product['created_at']}}</td>
                 <td>{{$product['updated_at']}}</td>
 
@@ -34,6 +34,7 @@
                         <span uk-icon="camera" class="uk-margin-small-right uk-icon"></span>
                     </a>
                 </td>
+
                 <td>
                     <a href="{{route('adminEditProductForm', ['id' => $product['id']]) }}" class="btn btn-outline-primary">
                         <span uk-icon="pencil" class="uk-margin-small-right uk-icon">
@@ -43,11 +44,13 @@
                         </span>
                     </a>
                 </td>
+
                 <td>
                     <a href="{{route('adminDeleteProduct', ['id' => $product['id']])}}" class="btn btn-danger">
                         <span class="ui-icon" uk-icon="close"></span>
                     </a>
                 </td>
+
             </tr>
             @endforeach
 

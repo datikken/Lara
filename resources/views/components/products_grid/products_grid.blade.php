@@ -3,7 +3,7 @@
         [
             'id' => $product->id,
             'name' => $product->name,
-            'image' => DB::table('product_images')->where('product_id', $product['id'])->value('image'),
+            'image' => $product->image,
             'price' => $product->price,
             'category' => $product->category
         ]

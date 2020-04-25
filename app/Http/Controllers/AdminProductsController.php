@@ -17,6 +17,10 @@ class AdminProductsController extends Controller
     {
         $products = Product::paginate(3);
 
+        foreach ($products as $product) {
+            $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');
+        }
+
         if (!Auth::check()) {
             return redirect()->route('home');
         } else {
