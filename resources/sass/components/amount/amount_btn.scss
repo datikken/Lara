@@ -15,6 +15,10 @@
     }
     &-value {
         &-wrap {
+            &_inner {
+                position: relative;
+            }
+
             font-family: $font;
             font-weight: 600;
             font-size: 24px;
@@ -26,7 +30,7 @@
 
             img {
                 position: absolute;
-                right: -1px;
+                right: -13px;
                 bottom: -2px;
             }
         }

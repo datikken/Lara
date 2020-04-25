@@ -6,8 +6,10 @@
     <div class="amount_btn-value">
 
         <div class="amount_btn-value-wrap">
-            <span>29900</span>
-            <img src="/images/icons/rub.svg" alt="cur" />
+            <div class="amount_btn-value-wrap_inner">
+                <span>29900</span>
+                <img src="/images/icons/rub.svg" alt="cur" />
+            </div>
         </div>
 
     </div>

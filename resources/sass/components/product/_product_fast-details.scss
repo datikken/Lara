@@ -1,30 +1,148 @@
 .prdet {
+    &_table {
+        display: grid;
+        grid-template-columns: 270px 700px;
+
+        &-col {
+            height: 40px;
+
+            &:first-child {
+                border-right: 1px solid #fff;
+            }
+
+            &_item {
+                padding-left: 20px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+            }
+
+            &_head {
+                background: $light_gray;
+                height: 40px;
+                display: flex;
+                align-items: center;
+
+                span {
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+    &_btn {
+      width: 170px;
+      height: 38px;
+      box-shadow: none!important;
+      background: transparent;
+      border: 1px solid $yellow;
+
+      .action_btn-item {
+        font-family: $font!important;
+      }
+    }
+
+    &_comp {
+        margin: 10px 0 0 0;
+
+        &-item {
+            &-head {
+                font-family: $font;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 14px;
+                letter-spacing: 0.02em;
+                color: $dblack;
+                margin: 20px 0 10px 0;
+            }
+        }
+    }
     &_wrap {
         display: flex;
 
         &-icons {
             &_ctas {
                 display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &-buy {
+                    .text_buy-btn {
+                         cursor: pointer;
+                    }
+                }
+
+                &-amount {
+                    margin: 0 15px 12px 0;
+                    pointer-events: none;
+                }
+
+                &-increase {
+                    margin-bottom: 22px;
+
+                    &-text {
+                        text-align: center;
+                        font-family: $font;
+                        font-size: 12px;
+                        line-height: 14px;
+                        letter-spacing: 0.02em;
+                        color: $black;
+                        margin-bottom: 12px;
+                    }
+                    .cart_wrap-item_inner-table_row-col_btns-btn-items {
+                        margin-bottom: 0;
+                    }
+                }
             }
         }
 
         &-item {
             &:nth-child(2) {
+                width: 100%;
                 margin-left: 30px;
+                margin-top: 15px;
+            }
+
+            &-stuff {
+                font-family: $font;
+                font-size: 12px;
+                line-height: 20px;
+                letter-spacing: 0.02em;
+                color: $dblack;
+                margin-bottom: 15px;
             }
 
             &-icons {
                 display: flex;
 
                 &-item {
-                    height: 20px;
-                    width: 20px;
-                    background: red;
-                    margin: 0 16.5px;
+                    width: 50px;
+                    height: 51px;
+                    margin: 30px 16.5px 20px 0;
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
                 }
             }
-            &-head {}
-            &-desc {}
+            &-head {
+                &-item {
+                    font-family: $semifont;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 18px;
+                    letter-spacing: 0.02em;
+                    color: $black;
+                }
+            }
+            &-desc {
+                &-item {
+                    font-family: $font;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    color: $dblack;
+                }
+            }
 
             &_img {
                 width: 270px;
