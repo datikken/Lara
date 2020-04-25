@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use App\Product_Image;
 
 class AdminProductsController extends Controller
 {
@@ -39,23 +40,26 @@ class AdminProductsController extends Controller
     public function updateProductImage(Request $request, $id)
     {
         Validator::make( $request->all(), ['image' => 'max:5000'])->validate();
-
         if($request->hasFile('image')) {
             $product = Product::find($id);
             $exists =  Storage::disk('local')->exists('public/product_images' . $product->image);
 
+            $name = DB::table('product_images')->where('product_id', 46)->value('image');
+
             //delete old image
             if($exists) {
-                Storage::delete('public/product_images' . $product->image);
+                Storage::delete('public/product_images' . $name);
             }
 
             $ext = $request->file('image')->getClientOriginalExtension();
 
-            $request->image->storeAs('public/product_images/', $product->image);
+            $newStr = explode(".", $name);
+            $name = $newStr[0] . '.' . $ext;
 
-            $arrToUpdate = array('image' => $product->image);
+            $request->image->storeAs('public/product_images/', $name);
 
-            DB::table('products')->where('id', $id)->update($arrToUpdate);
+            $arrToUpdate = array('image' => $name);
+            DB::table('product_images')->where('product_id', $id)->update($arrToUpdate);
 
             return redirect()->route('adminDisplayProducts');
 
@@ -104,13 +108,22 @@ class AdminProductsController extends Controller
         $newProductArray = array(
             'name' => $name,
             'description' => $description,
-            'image'=>$imageName,
             'type' => $type,
             'price' => $price,
-            'category' => $category
+            'category' => $category,
+            'created_at' => date('Y-m-d H:i:s')
         );
 
         $created = DB::table('products')->insert($newProductArray);
+
+        //Adding product images
+        $product_id =  DB::table('products')->where('name', $name)->value('id');
+        $imgArr = array(
+            'image' => $imageName,
+            'product_id' => $product_id
+        );
+
+        $created_img = DB::table('product_images')->insert($imgArr);
 
         if($created) {
             return redirect()->route('adminDisplayProducts');

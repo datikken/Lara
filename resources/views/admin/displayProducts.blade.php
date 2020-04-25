@@ -25,7 +25,7 @@
                 <td>{{$product['price']}}</td>
                 <td>{{$product['type']}}</td>
                 <td>{{$product['description']}}</td>
-                <td><img uk-img style="height: 40px; object-fit: contain" src="{{ Storage::url('product_images/' . $product['image']) }}"/></td>
+                <td><img uk-img style="height: 40px; object-fit: contain" src="{{ Storage::url('product_images/' . DB::table('product_images')->where('product_id', $product['id'])->value('image')) }}"/></td>
                 <td>{{$product['created_at']}}</td>
                 <td>{{$product['updated_at']}}</td>
 
@@ -57,8 +57,6 @@
         <ul class="uk-pagination">
             {{ $products->links() }}
         </ul>
-
-
 
     </div>
 

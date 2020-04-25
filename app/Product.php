@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Product_Image;
 
 class Product extends Model
 {
@@ -20,5 +21,10 @@ class Product extends Model
         $newForm = "$" . $value;
 
         return $value;
+    }
+
+    public function images()
+    {
+        return $this->belongsToMany(Product_Image::class);
     }
 }
