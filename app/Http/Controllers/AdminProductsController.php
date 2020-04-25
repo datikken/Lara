@@ -40,6 +40,31 @@ class AdminProductsController extends Controller
         $product = Product::find($id);
         return view('admin.editProductImageForm', ['product' => $product]);
     }
+    //Display dropzone
+    public function dropZoneForm($id)
+    {
+        $id = Product::find($id)->id;
+        return view('admin.productDropZone', ['id' => $id]);
+    }
+
+    public function addMultipleProductImages(Request $request, $id)
+    {
+        if($request->hasFile('file'))
+            {
+                $product = Product::find($id);
+                $ext = $request->file('file')->getClientOriginalExtension();
+                $fileName = $request->file('file')->getClientOriginalName();
+
+                //TODO: existance check
+                $arr = array(
+                    'product_id' => $product->id,
+                    'image' => $fileName,
+                    'created_at' => date('Y-m-d H:i:s')
+                );
+
+                DB::table('product_images')->insert($arr);
+            }
+    }
 
     public function updateProductImage(Request $request, $id)
     {

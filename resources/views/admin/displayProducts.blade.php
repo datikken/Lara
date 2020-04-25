@@ -46,8 +46,15 @@
                 </td>
 
                 <td>
-                    <a href="{{route('adminDeleteProduct', ['id' => $product['id']])}}" class="btn btn-danger">
+                    <a href="{{ route('adminDeleteProduct', ['id' => $product['id']])}}" class="btn btn-danger">
                         <span class="ui-icon" uk-icon="close"></span>
+                    </a>
+                </td>
+
+
+                <td>
+                    <a href="{{ route('dropZoneForm', ['id' => $product['id']])}}" class="btn btn-danger">
+                        test
                     </a>
                 </td>
 
