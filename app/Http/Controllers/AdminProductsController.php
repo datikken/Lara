@@ -149,8 +149,10 @@ class AdminProductsController extends Controller
 
         $created = DB::table('products')->insert($newProductArray);
 
+        //REDO find method product id
         //Adding product images
-        $product_id =  DB::table('products')->where('name', $name)->value('id');
+        $product_id = DB::table('products')->where('name', $name)->value('id');
+
         $imgArr = array(
             'image' => $imageName,
             'product_id' => $product_id
@@ -167,10 +169,12 @@ class AdminProductsController extends Controller
 
     public function deleteProduct($id) {
         $product = Product::find($id);
-        $exists = Storage::disk('local')->exists('public/product_image/'.$product->image);
+        $product_img = DB::table('product_images')->where('product_id', $id)->value('image');
+
+        $exists = Storage::disk('local')->exists('public/product_image/' . $product_img);
 
         if($exists) {
-            Storage::delete('public/product_images'.$product->image);
+            Storage::delete('public/product_images' . $product_img);
         }
 
         Product::destroy($id);

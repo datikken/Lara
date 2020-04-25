@@ -4123,6 +4123,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  max-height: 122px;
 }
 .product_wrapper-item_overlay {
   width: 100%;

@@ -1,4 +1,4 @@
-<?php #dump($userData->email) ?>
+<?php #dump($cartItem); ?>
 
 <div class="cart_wrap-item_inner-table_row">
     <div class="cart_wrap-item_inner-table_row-col">
@@ -6,9 +6,8 @@
             <span>Картридж</span>
         </div>
         <div class="cart_wrap-item_inner-table_row-col_img">
-
             <a data-href="{{route('DeleteItemFromCart', ['id' => $cartItem['data']['id']])}}" class="remove_icon" style="background-image: url('/images/unnecessary/cart_close.svg')"></a>
-            <img src="{{Storage::disk('local')->url('product_images/' . $cartItem['data']['image'])}}" alt="product"/>
+            <img src="{{Storage::disk('local')->url('product_images/' . DB::table('product_images')->where('product_id', $cartItem['data']['id'])->value('image'))}}" alt="product"/>
         </div>
         <div class="cart_wrap-item_inner-table_row-col_desc">
 

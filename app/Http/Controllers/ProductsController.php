@@ -24,7 +24,6 @@ class ProductsController extends Controller
 
         foreach ($products as $product) {
             $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');
-
         }
 
         return view('pages.catalog', compact("products"));
@@ -96,6 +95,7 @@ class ProductsController extends Controller
 
         $updatedCart = new Cart($prevCart);
         $updatedCart->updatePriceAndQuantity();
+
         if(empty($updatedCart->items)) {
             $request->session()->forget('cart');
         } else {

@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('center')
-
     <div class="table-responsive">
         @if($errors->any())
             <div class="alert alert-danger">
@@ -10,7 +9,6 @@
                 </ul>
             </div>
         @endif
-
         <h2 class="uk-heading-small">Добавить новый продукт</h2>
 
         <form action="/admin/sendCreateProductForm" method="post" enctype="multipart/form-data">
@@ -47,7 +45,6 @@
             <button type="submit" name="submit" class="btn btn-primary uk-button uk-button-default">Отправить</button>
 
         </form>
-
     </div>
 
 @endsection
