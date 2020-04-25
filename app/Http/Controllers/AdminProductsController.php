@@ -92,6 +92,7 @@ class AdminProductsController extends Controller
         $category = $request->input('category');
 
         //Validator::make( $request->all(), ['image' => 'max:5000'])->validate();
+
         $ext = $request->file('image')->getClientOriginalExtension();
         $stringImageReFormat = str_replace(' ', '', $request->input('name'));
 
