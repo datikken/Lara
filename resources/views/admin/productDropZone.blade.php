@@ -7,8 +7,6 @@
 
     <form action="/admin/addMultipleProductImages/{{ $id }}" method="post" enctype="multipart/form-data" class="dropzone">
         {{csrf_field()}}
-        {{--<input name="file" type="file" multiple />--}}
     </form>
-
 
 @endsection
