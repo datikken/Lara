@@ -5905,6 +5905,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   width: 20px;
 }
 
+.details_wrap-slider .swiper-container .swiper-button-next, .details_wrap-slider .swiper-container .swiper-button-prev {
+  display: none !important;
+}
+.details_wrap-slider .swiper-container .swiper-button-next:after, .details_wrap-slider .swiper-container .swiper-button-prev:after {
+  display: none;
+}
 .details_wrap-slider .swiper-container .swiper-wrapper .swiper-slide-img {
   width: 100%;
   display: flex;

@@ -10752,8 +10752,8 @@ $(document).ready(function () {
   new _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_13__["default"]();
   new _controllers_InformationController__WEBPACK_IMPORTED_MODULE_14__["default"]();
   new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__["default"]();
-  new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
   new _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_15__["default"]();
+  new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 

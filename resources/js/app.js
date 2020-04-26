@@ -28,6 +28,6 @@ $(document).ready(function() {
     new CatalogFiltersController();
     new InformationController();
     new DeliveryFormController();
-    new SimpleMap();
     new ProductDetailsController();
+    new SimpleMap();
 });
