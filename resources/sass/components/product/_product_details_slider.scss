@@ -64,7 +64,7 @@
 .gallery-top {
     width: 600px!important;
     height: 370px!important;
-    border: 1px solid #D4D4D5;
+    border: 1px solid $light_gray;
     margin-top: 30px;
 }
 .gallery-thumbs {
@@ -79,7 +79,7 @@
     height: 65px!important;
     height: 100%;
     opacity: 0.4;
-    border: 1px solid #D4D4D5;
+    border: 1px solid $light_gray;
 }
 .gallery-thumbs .swiper-slide-active {
     opacity: 1;

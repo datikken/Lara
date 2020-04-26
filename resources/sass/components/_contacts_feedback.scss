@@ -31,6 +31,7 @@
       &_btn {
         width: 187px!important;
         height: 40px!important;
+        box-shadow: none!important;
       }
 
       &:last-child {
@@ -78,6 +79,7 @@
             padding: 10px 10px 0 20px;
             max-width: 746px;
             border: 1px solid $light_gray;
+            outline: none;
 
             &::placeholder {
               padding: 6px;
