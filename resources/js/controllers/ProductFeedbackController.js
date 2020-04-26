@@ -22,17 +22,17 @@ class ProductFeedbackController {
         }
 
         if(type === 'yes') {
-            fblock.style.opacity = .5;
-            mblock.style.opacity = 1;
-
-            blockInput(fblock, 'disable');
-            blockInput(mblock, 'enable');
-        } else {
             fblock.style.opacity = 1;
             mblock.style.opacity = .5;
 
             blockInput(fblock, 'enable');
             blockInput(mblock, 'disable');
+        } else {
+            fblock.style.opacity = .5;
+            mblock.style.opacity = 1;
+
+            blockInput(fblock, 'disable');
+            blockInput(mblock, 'enable');
         }
     }
 
@@ -54,11 +54,12 @@ class ProductFeedbackController {
                 let input = target.querySelector('input');
                 let img = target.querySelector('img');
                     img.classList.toggle('invisible');
-                    input.value = 'true';
 
                     if(target.dataset.block != 'yes') {
+                        input.value = 'false';
                         that._disableEnableBlocks('no',el);
                     } else {
+                        input.value = 'true';
                         that._disableEnableBlocks('yes',el);
                     }
             })
@@ -69,13 +70,42 @@ class ProductFeedbackController {
         let that = this;
         let btn = el.querySelector('.action_btn');
         let inputs = el.querySelectorAll('input');
+        let txtarea = el.querySelector('textarea');
 
         btn && btn.addEventListener('click', function(e) {
-           inputs.forEach((inpt) => {
+            e.preventDefault();
+
+            let dataObj = {};
+
+            inputs.forEach((inpt) => {
                if(inpt.value != '') {
-                   console.log('input', inpt);
+                   let name = inpt.getAttribute('name');
+                       dataObj[name] = inpt.value;
                }
-           })
+
+               if(txtarea.value != '') {
+                   let name = txtarea.getAttribute('name');
+                   dataObj[name] = txtarea.value;
+               }
+            })
+
+
+            let url = el.querySelector('form').getAttribute('action');
+            let _token = document.querySelector('[name="_token"]').value;
+
+            console.log(dataObj, url, _token);
+
+            $.ajax({
+                method: "get",
+                url: `${url}`,
+                data: dataObj,
+                success: function (data, status, XHR) {
+                    console.log(data)
+                },
+                error: function (error, status, XHR) {
+                    console.warn(error);
+                }
+            });
         });
     }
 }

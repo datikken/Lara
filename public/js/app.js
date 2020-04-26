@@ -11984,7 +11984,7 @@ var ProductDetailsController = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
@@ -12020,15 +12020,15 @@ var ProductFeedbackController = /*#__PURE__*/function () {
       }
 
       if (type === 'yes') {
-        fblock.style.opacity = .5;
-        mblock.style.opacity = 1;
-        blockInput(fblock, 'disable');
-        blockInput(mblock, 'enable');
-      } else {
         fblock.style.opacity = 1;
         mblock.style.opacity = .5;
         blockInput(fblock, 'enable');
         blockInput(mblock, 'disable');
+      } else {
+        fblock.style.opacity = .5;
+        mblock.style.opacity = 1;
+        blockInput(fblock, 'disable');
+        blockInput(mblock, 'enable');
       }
     }
   }, {
@@ -12048,11 +12048,14 @@ var ProductFeedbackController = /*#__PURE__*/function () {
           var input = target.querySelector('input');
           var img = target.querySelector('img');
           img.classList.toggle('invisible');
-          input.value = 'true';
 
           if (target.dataset.block != 'yes') {
+            input.value = 'false';
+
             that._disableEnableBlocks('no', el);
           } else {
+            input.value = 'true';
+
             that._disableEnableBlocks('yes', el);
           }
         });
@@ -12064,10 +12067,34 @@ var ProductFeedbackController = /*#__PURE__*/function () {
       var that = this;
       var btn = el.querySelector('.action_btn');
       var inputs = el.querySelectorAll('input');
+      var txtarea = el.querySelector('textarea');
       btn && btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var dataObj = {};
         inputs.forEach(function (inpt) {
           if (inpt.value != '') {
-            console.log('input', inpt);
+            var name = inpt.getAttribute('name');
+            dataObj[name] = inpt.value;
+          }
+
+          if (txtarea.value != '') {
+            var _name = txtarea.getAttribute('name');
+
+            dataObj[_name] = txtarea.value;
+          }
+        });
+        var url = el.querySelector('form').getAttribute('action');
+        var _token = document.querySelector('[name="_token"]').value;
+        console.log(dataObj, url, _token);
+        $.ajax({
+          method: "get",
+          url: "".concat(url),
+          data: dataObj,
+          success: function success(data, status, XHR) {
+            console.log(data);
+          },
+          error: function error(_error, status, XHR) {
+            console.warn(_error);
           }
         });
       });
@@ -12078,6 +12105,7 @@ var ProductFeedbackController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (ProductFeedbackController);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 

@@ -128,7 +128,8 @@
 
 <div class="pfeedback">
     <div class="pfeedback_wrap">
-        <form action="/product/feedback" method="POST">
+        <form action="/product/feedback/" method="get">
+
 
             <div class="pfeedback_wrap-item">
                 <div class="pfeedback_wrap-item_head">
@@ -169,7 +170,7 @@
             <div class="pfeedback_wrap-item pfeedback_features">
                 <div class="pfeedback_wrap-item_inputs-wrap">
                     <label for="email">Плюсы</label>
-                    <input type="text" name="features" placeholder="Преимущества" />
+                    <input type="text" name="features" placeholder="Преимущества" value="false" />
                 </div>
             </div>
 
@@ -181,18 +182,23 @@
             <div class="pfeedback_wrap-item pfeedback_minuses">
                 <div class="pfeedback_wrap-item_inputs-wrap">
                     <label for="email">Минусы</label>
-                    <input type="text" name="minuses" placeholder="Недостатки"></input>
+                    <input type="text" name="minuses" placeholder="Недостатки" value="false"></input>
                 </div>
             </div>
 
             <div class="pfeedback_wrap-item">
                 <div class="pfeedback_wrap-item_inputs-wrap">
                     <label for="email">Отзыв</label>
-                    <textarea type="text" name="email" placeholder="Опишите свое впечатление, опыт. Что понравилось или наоборот."></textarea>
+                    <textarea type="text" name="feedback" placeholder="Опишите свое впечатление, опыт. Что понравилось или наоборот."></textarea>
                 </div>
             </div>
 
-            @include('components.btn.text_btn', [ 'class' => 'cfeedback_wrap-row_btn', 'text' => 'Отправить'])
+            <input type="text" name="product_id" class="invisible" value="{{ $product['id'] }}">
+
+            <button type="submit">
+                @include('components.btn.text_btn', [ 'class' => 'cfeedback_wrap-row_btn', 'text' => 'Отправить'])
+            </button>
+
         </form>
 
     </div>

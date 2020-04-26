@@ -32,7 +32,7 @@ Route::get('/contacts', 'ContactsController@index');
 
 //Contacts feedback
 Route::post('/contacts/feedback', 'ContactsController@collectFeedback');
-Route::post('/product/feedback', 'ProductFeedbackController@index');
+Route::get('/product/feedback', 'ProductFeedbackController@index');
 
 //ADMIN - functionality
 
