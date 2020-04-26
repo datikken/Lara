@@ -1,6 +1,8 @@
 class SimpleMap {
     constructor() {
-        this._simpleMap();
+        if(document.querySelector('#map')) {
+            this._simpleMap();
+        }
     }
     _simpleMap() {
             ymaps.ready(function () {

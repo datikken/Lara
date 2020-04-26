@@ -10724,8 +10724,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./controllers/CatalogFiltersController */ "./resources/js/controllers/CatalogFiltersController.js");
 /* harmony import */ var _controllers_InformationController__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./controllers/InformationController */ "./resources/js/controllers/InformationController.js");
 /* harmony import */ var _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./controllers/ProductDetailsController */ "./resources/js/controllers/ProductDetailsController.js");
+/* harmony import */ var _controllers_ProductFeedbackController__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./controllers/ProductFeedbackController */ "./resources/js/controllers/ProductFeedbackController.js");
 // require('./bootstrap');
 // window.Vue = require('vue');
+
 
 
 
@@ -10754,6 +10756,7 @@ $(document).ready(function () {
   new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__["default"]();
   new _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_15__["default"]();
   new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
+  new _controllers_ProductFeedbackController__WEBPACK_IMPORTED_MODULE_16__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -10908,7 +10911,9 @@ var SimpleMap = /*#__PURE__*/function () {
   function SimpleMap() {
     _classCallCheck(this, SimpleMap);
 
-    this._simpleMap();
+    if (document.querySelector('#map')) {
+      this._simpleMap();
+    }
   }
 
   _createClass(SimpleMap, [{
@@ -11967,6 +11972,112 @@ var ProductDetailsController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (ProductDetailsController);
+
+/***/ }),
+
+/***/ "./resources/js/controllers/ProductFeedbackController.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/controllers/ProductFeedbackController.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var ProductFeedbackController = /*#__PURE__*/function () {
+  function ProductFeedbackController() {
+    _classCallCheck(this, ProductFeedbackController);
+
+    var el = document.querySelector('.pfeedback');
+
+    if (el) {
+      this.setListeners(el);
+
+      this._checkBoxHandler(el);
+    }
+  }
+
+  _createClass(ProductFeedbackController, [{
+    key: "_disableEnableBlocks",
+    value: function _disableEnableBlocks(type, el) {
+      var fblock = el.querySelector('.pfeedback_features');
+      var mblock = el.querySelector('.pfeedback_minuses');
+
+      function blockInput(el, type) {
+        var input = el.querySelector('input');
+
+        if (type === 'disable') {
+          input.setAttribute('disabled', true);
+        } else {
+          input.removeAttribute('disabled');
+        }
+      }
+
+      if (type === 'yes') {
+        fblock.style.opacity = .5;
+        mblock.style.opacity = 1;
+        blockInput(fblock, 'disable');
+        blockInput(mblock, 'enable');
+      } else {
+        fblock.style.opacity = 1;
+        mblock.style.opacity = .5;
+        blockInput(fblock, 'enable');
+        blockInput(mblock, 'disable');
+      }
+    }
+  }, {
+    key: "_checkBoxHandler",
+    value: function _checkBoxHandler(el) {
+      var b = el.querySelectorAll('.rcheckbox');
+      var that = this;
+      b.forEach(function (box) {
+        box.addEventListener('click', function (e) {
+          var target = e.currentTarget;
+          b.forEach(function (el) {
+            var img = el.querySelector('img');
+            var input = el.querySelector('input');
+            input.value = '';
+            img.classList.add('invisible');
+          });
+          var input = target.querySelector('input');
+          var img = target.querySelector('img');
+          img.classList.toggle('invisible');
+          input.value = 'true';
+
+          if (target.dataset.block != 'yes') {
+            that._disableEnableBlocks('no', el);
+          } else {
+            that._disableEnableBlocks('yes', el);
+          }
+        });
+      });
+    }
+  }, {
+    key: "setListeners",
+    value: function setListeners(el) {
+      var that = this;
+      var btn = el.querySelector('.action_btn');
+      var inputs = el.querySelectorAll('input');
+      btn && btn.addEventListener('click', function (e) {
+        inputs.forEach(function (inpt) {
+          if (inpt.value != '') {
+            console.log('input', inpt);
+          }
+        });
+      });
+    }
+  }]);
+
+  return ProductFeedbackController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (ProductFeedbackController);
 
 /***/ }),
 

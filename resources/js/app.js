@@ -17,6 +17,7 @@ import DeliveryAuthController from './controllers/DeliveryAuthController'
 import CatalogFiltersController from './controllers/CatalogFiltersController'
 import InformationController from './controllers/InformationController'
 import ProductDetailsController from './controllers/ProductDetailsController'
+import ProductfeedbackController from './controllers/ProductFeedbackController'
 
 $(document).ready(function() {
     new LoginFormController();
@@ -30,4 +31,5 @@ $(document).ready(function() {
     new DeliveryFormController();
     new ProductDetailsController();
     new SimpleMap();
+    new ProductfeedbackController();
 });

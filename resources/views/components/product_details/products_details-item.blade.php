@@ -162,26 +162,26 @@
             </div>
 
             <div class="pfeedback_wrap-item">
-                @include('components.checkbox.round_check', ['name' => 'recommendation'])
+                @include('components.checkbox.round_check', ['name' => 'recommendation', 'data' => 'yes'])
                 <span>Да</span>
             </div>
 
-            <div class="pfeedback_wrap-item">
+            <div class="pfeedback_wrap-item pfeedback_features">
                 <div class="pfeedback_wrap-item_inputs-wrap">
                     <label for="email">Плюсы</label>
-                    <input type="text" name="email" placeholder="Преимущества" />
+                    <input type="text" name="features" placeholder="Преимущества" />
                 </div>
             </div>
 
             <div class="pfeedback_wrap-item">
-                @include('components.checkbox.round_check', ['name' => 'recommendation'])
+                @include('components.checkbox.round_check', ['name' => 'recommendation', 'data' => 'no'])
                 <span>Нет</span>
             </div>
 
-            <div class="pfeedback_wrap-item">
+            <div class="pfeedback_wrap-item pfeedback_minuses">
                 <div class="pfeedback_wrap-item_inputs-wrap">
                     <label for="email">Минусы</label>
-                    <input type="text" name="email" placeholder="Недостатки"></input>
+                    <input type="text" name="minuses" placeholder="Недостатки"></input>
                 </div>
             </div>
 

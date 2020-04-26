@@ -1,4 +1,4 @@
-<div class="rcheckbox">
+<div class="rcheckbox" data-block="{{ $data }}">
     <div class="rcheckbox-wrap">
         <input
             class="rcheckbox-wrap_input invisible"

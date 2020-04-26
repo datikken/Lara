@@ -35,6 +35,7 @@ Route::post('/contacts/feedback', 'ContactsController@collectFeedback');
 Route::post('/product/feedback', 'ProductFeedbackController@index');
 
 //ADMIN - functionality
+
     //PRODUCTS
 Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts'])->middleware('restrictToAdmin');
     //Display Edit Product form
