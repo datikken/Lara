@@ -170,7 +170,7 @@
             <div class="pfeedback_wrap-item pfeedback_features">
                 <div class="pfeedback_wrap-item_inputs-wrap">
                     <label for="email">Плюсы</label>
-                    <input type="text" name="features" placeholder="Преимущества" value="false" />
+                    <input type="text" name="features" placeholder="Преимущества"/>
                 </div>
             </div>
 
@@ -182,7 +182,7 @@
             <div class="pfeedback_wrap-item pfeedback_minuses">
                 <div class="pfeedback_wrap-item_inputs-wrap">
                     <label for="email">Минусы</label>
-                    <input type="text" name="minuses" placeholder="Недостатки" value="false"></input>
+                    <input type="text" name="minuses" placeholder="Недостатки"></input>
                 </div>
             </div>
 
