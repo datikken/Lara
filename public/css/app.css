@@ -4872,6 +4872,20 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   text-transform: uppercase;
   color: #3559fd;
 }
+.details_wrap-info_item-icons {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin: 10px 0 20px 0;
+}
+.details_wrap-info_item-icons_icon {
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 30px;
+}
 .details_wrap-info_item:last-child {
   display: flex;
   align-items: center;
@@ -4920,7 +4934,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   line-height: 18px;
   letter-spacing: 0.02em;
   color: #292930;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .details-swiper {
@@ -9495,6 +9509,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid #e9e9ea;
+  background-size: contain;
 }
 
 .admin_pannel {

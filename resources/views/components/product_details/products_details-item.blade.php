@@ -40,8 +40,10 @@
                         prevEl: '.swiper-button-prev',
                     }
                 });
+
                 galleryTop.controller.control = galleryThumbs;
                 galleryThumbs.controller.control = galleryTop;
+
             </script>
         </div>
 
@@ -55,6 +57,15 @@
             <div class="details_wrap-info_item">
                 <div class="details_wrap-info_item-desc">
                     <p>{{$product['description']}}</p>
+                </div>
+            </div>
+
+            <div class="details_wrap-info_item">
+                <div class="details_wrap-info_item-icons">
+                    <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/drip.svg')"></div>
+                    <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/chip.svg')"></div>
+                    <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/new.svg')"></div>
+                    <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/stmc.svg')"></div>
                 </div>
             </div>
 
@@ -98,8 +109,6 @@
                 </div>
             </div>
 
-
-
             <div class="details_wrap-info_item">
                 <div class="details_wrap-info_item-left">
                     <div class="cart_wrap-item_inner-table_row-col col_amount">
@@ -114,12 +123,6 @@
                 </div>
             </div>
 
-
-
-
-
         </div>
-
-
     </div>
 </div>
