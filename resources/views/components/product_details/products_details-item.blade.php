@@ -2,19 +2,16 @@
 
 <div class="details">
     <div class="details_wrap">
+
         <div class="details_wrap-slider">
             <div class="swiper-container gallery-top">
                 <div class="swiper-wrapper">
                     @foreach($product['images'] as $img)
-                        <div class="swiper-slide-img">
-                            <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $img->image) }})"></div>
-                        </div>
+                        <div class="swiper-slide details_slide" style="background-image:url({{ Storage::url('product_images/' . $img->image) }})"></div>
                     @endforeach
                 </div>
-
-                <div class="swiper-button-next swiper-button-white details_nav-right" style="background-image: url('/images/icons/arrow_right.svg')"></div>
-                <div class="swiper-button-prev swiper-button-white details_nav-left"></div>
-
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
             <div class="swiper-container gallery-thumbs">
                 <div class="swiper-wrapper">
@@ -26,7 +23,13 @@
 
             <script>
                 var galleryTop = new Swiper('.gallery-top', {
-                    spaceBetween: 10
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    loop: true,
+                    loopedSlides: 4
                 });
                 var galleryThumbs = new Swiper('.gallery-thumbs', {
                     spaceBetween: 10,
@@ -34,16 +37,11 @@
                     slidesPerView: 'auto',
                     touchRatio: 0.2,
                     slideToClickedSlide: true,
-                    initialSlide: 2,
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    }
+                    loop: true,
+                    loopedSlides: 4
                 });
-
                 galleryTop.controller.control = galleryThumbs;
                 galleryThumbs.controller.control = galleryTop;
-
             </script>
         </div>
 
