@@ -18,7 +18,7 @@
       .arrow_left, .arrow_right {
         cursor: pointer;
       }
-      
+
       .arrow_left {
         transform: rotate(180deg);
         margin-right: 55px;
@@ -47,7 +47,7 @@
   }
 
     &:nth-child(3) {
-      border: 1px solid $gray;
+      border: 1px solid $light_gray;
 
       @include breakpoint($medium) {
         height: 270px;

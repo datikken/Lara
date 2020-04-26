@@ -1,6 +1,6 @@
 .active_bullet {
   background: #fff !important;
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
 }
 
 .active_info:after {
@@ -62,7 +62,7 @@ p {
 .checkbox-wrap {
   width: 20px;
   height: 20px;
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +87,7 @@ p {
 .rcheckbox-wrap {
   width: 20px;
   height: 20px;
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +101,7 @@ p {
 }
 
 input {
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
 }
 
 .invisible {
@@ -323,7 +323,7 @@ input::placeholder, textarea::placeholder {
   padding: 0;
   margin-top: 0;
   padding-left: 0;
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
   z-index: 9999;
   max-height: 121px;
   overflow-y: scroll;
@@ -1798,7 +1798,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   justify-content: space-between;
 }
 .payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .payment_wrap-form_group-date:first-child, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .payment_wrap-form_group-date:first-child {
-  border-right: 1px solid #d4d4d5;
+  border-right: 1px solid #e9e9ea;
 }
 .payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .month .arrow, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .month .arrow {
   margin-right: 15px !important;
@@ -1834,7 +1834,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   .payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner {
     width: 200px;
     height: 40px;
-    border: 1px solid #d4d4d5;
+    border: 1px solid #e9e9ea;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -2357,7 +2357,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .viewed::-webkit-scrollbar {
   display: none;
-  background-color: #d4d4d5;
+  background-color: #e9e9ea;
   width: 2px;
 }
 @media screen and (min-width: 600px) {
@@ -2413,7 +2413,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: none;
 }
 .viewed_wrapper-item_image {
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
   min-width: 100px;
   margin-left: 16px;
   background-repeat: no-repeat;
@@ -3176,7 +3176,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
 }
 .sales_best-wrapper_item-content_heading {
   font-family: "Montserrat", sans-serif;
@@ -3359,7 +3359,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 @media screen and (min-width: 600px) {
   .news_wrapper::-webkit-scrollbar {
     display: block;
-    background-color: #d4d4d5;
+    background-color: #e9e9ea;
     width: 2px;
   }
 }
@@ -3565,7 +3565,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 600px) {
   .owl-wrapper {
-    border-top: 1px solid #d4d4d5;
+    border-top: 1px solid #e9e9ea;
     position: relative;
     margin-bottom: 50px;
     z-index: 0;
@@ -3768,7 +3768,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-position: center;
   background-size: contain !important;
   background-position: 50% 60% !important;
-  width: 200px;
+  width: 196px;
   height: 100%;
 }
 .carousel_card-wrapper_item-name {
@@ -3929,7 +3929,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
   border-radius: 50%;
   margin: 0 10px 0 0;
 }
@@ -6598,7 +6598,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .order_list-wrap {
   width: 240px;
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
   padding: 40px 30px;
 }
 .order_list-wrap .proceedPayment-btn {
@@ -6863,7 +6863,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 30px;
 }
 .dform_wrap-col_item .metro_form .metro_group .form_group .postamat_list-wrap {
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
   border-left: none;
   position: relative;
   width: 400px;
@@ -6899,7 +6899,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dform_wrap-col_item .metro_form .metro_group .form_group .metro_group_wrap_list-wrap {
   height: 38px;
   width: 231px;
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
   position: relative;
   cursor: pointer;
 }
@@ -6934,9 +6934,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dform_wrap-col_item .metro_form .metro_group .form_group:first-child input {
   width: 230px;
   border: none;
-  border-top: 1px solid #d4d4d5;
-  border-bottom: 1px solid #d4d4d5;
-  border-left: 1px solid #d4d4d5;
+  border-top: 1px solid #e9e9ea;
+  border-bottom: 1px solid #e9e9ea;
+  border-left: 1px solid #e9e9ea;
 }
 .dform_wrap-col_item .address_group {
   margin-bottom: 50px !important;
@@ -7857,7 +7857,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 200px;
 }
 .hits_offers-wrap_item {
-  border-bottom: 1px solid #d4d4d5;
+  border-bottom: 1px solid #e9e9ea;
 }
 .hits_offers-wrap_item-actions {
   display: grid !important;
@@ -8377,7 +8377,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-size: cover;
 }
 .carousel_card-wrapper_item:nth-child(3) {
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
 }
 @media screen and (min-width: 1030px) {
   .carousel_card-wrapper_item:nth-child(3) {
@@ -9765,7 +9765,7 @@ main {
   margin-left: 35px !important;
 }
 .main .card-body form .agreement .form-check_box {
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
   width: 20px;
   height: 20px;
   position: absolute;
@@ -9833,7 +9833,7 @@ main {
   align-items: center;
 }
 .main .card-body form .form-group .form-check_box {
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
   width: 20px;
   height: 20px;
   position: absolute;
@@ -9928,7 +9928,7 @@ main {
   height: 40px;
   align-items: center;
   justify-items: center;
-  border: 1px solid #d4d4d5;
+  border: 1px solid #e9e9ea;
   border-radius: 30px;
   overflow: hidden;
 }

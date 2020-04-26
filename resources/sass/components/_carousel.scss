@@ -22,7 +22,7 @@
   padding-bottom: 30px;
 
   @include breakpoint($phone) {
-    border-top: 1px solid $gray;
+    border-top: 1px solid $light_gray;
     position: relative;
     margin-bottom: 50px;
     z-index: 0;
@@ -220,7 +220,7 @@
         @include bg(contain, center);
         background-size: contain!important;
         background-position: 50% 60%!important;
-        width: 200px;
+        width: 196px;
         height: 100%;
       }
       &-name {

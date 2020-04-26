@@ -132,7 +132,7 @@
 
               .form_group {
                 .postamat_list-wrap {
-                  border: 1px solid $gray;
+                  border: 1px solid $light_gray;
                   border-left: none;
                   position: relative;
                   width: 400px;
@@ -171,7 +171,7 @@
                   height: 38px;
                   width: 231px;
                   //overflow: hidden;
-                  border: 1px solid $gray;
+                  border: 1px solid $light_gray;
                   position: relative;
                   cursor: pointer;
 
@@ -210,9 +210,9 @@
                   input {
                     width: 230px;
                     border: none;
-                    border-top: 1px solid $gray;
-                    border-bottom: 1px solid $gray;
-                    border-left: 1px solid $gray;
+                    border-top: 1px solid $light_gray;
+                    border-bottom: 1px solid $light_gray;
+                    border-left: 1px solid $light_gray;
                   }
                 }
               }

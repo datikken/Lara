@@ -16,7 +16,7 @@
     @include breakpoint($phone) {
       display: block;
     }
-    background-color: $gray;
+    background-color: $light_gray;
     width: 2px;
   }
   &::-webkit-scrollbar-thumb {
@@ -67,7 +67,7 @@
       }
 
       &_image {
-        border: 1px solid $gray;
+        border: 1px solid $light_gray;
         min-width: 100px;
         margin-left: 16px;
         @include bg(contain, center);

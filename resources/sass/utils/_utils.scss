@@ -46,7 +46,7 @@
 }
 .active_bullet {
   background: $white !important;
-  border: 1px solid $gray;
+  border: 1px solid $light_gray;
 }
 
 @mixin underline() {
@@ -198,7 +198,7 @@ p {
   &-wrap {
     width: 20px;
     height: 20px;
-    border: 1px solid $gray;
+    border: 1px solid $light_gray;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -222,7 +222,7 @@ p {
     &-wrap {
         width: 20px;
         height: 20px;
-        border: 1px solid $gray;
+        border: 1px solid $light_gray;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -238,7 +238,7 @@ p {
 }
 
 input {
-  border: 1px solid $gray;
+  border: 1px solid $light_gray;
 }
 
 .invisible {

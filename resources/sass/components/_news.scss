@@ -23,7 +23,7 @@
       display: none;
       @include breakpoint($phone) {
         display: block;
-        background-color: $gray;
+        background-color: $light_gray;
         width: 2px;
       }
     }

@@ -41,7 +41,7 @@
                  justify-content: space-between;
 
                  &:first-child {
-                   border-right: 1px solid $gray;
+                   border-right: 1px solid $light_gray;
                  }
                }
               .month {
@@ -87,7 +87,7 @@
                @include breakpoint($medium) {
                  width: 200px;
                  height: 40px;
-                 border: 1px solid $gray;
+                 border: 1px solid $light_gray;
                  display: grid;
                  grid-template-columns: 1fr 1fr;
                  align-items: center;

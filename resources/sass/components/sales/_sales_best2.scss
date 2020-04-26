@@ -119,7 +119,7 @@
             height: 310px;
             margin-left: 35px;
             @include bg(cover, center);
-            border: 1px solid $gray;
+            border: 1px solid $light_gray;
           }
         }
         &_heading {
