@@ -213,6 +213,30 @@ p {
   }
 }
 
+.rcheckbox {
+    position: absolute;
+    margin-right: 20px;
+    cursor: pointer;
+    user-select: none!important;
+
+    &-wrap {
+        width: 20px;
+        height: 20px;
+        border: 1px solid $gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        &_arrow {
+            display: block;
+            height: 80%;
+            width: 80%;
+            margin-top: 2px;
+        }
+    }
+}
+
 input {
   border: 1px solid $gray;
 }

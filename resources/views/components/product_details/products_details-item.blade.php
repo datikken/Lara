@@ -126,3 +126,76 @@
         </div>
     </div>
 </div>
+
+
+<div class="pfeedback">
+    <div class="pfeedback_wrap">
+        <form action="" method="POST">
+
+            <div class="pfeedback_wrap-item">
+                <div class="pfeedback_wrap-item_head">
+                    <h2>Написать отзыв</h2>
+                </div>
+            </div>
+
+            <div class="pfeedback_wrap-item">
+                <div class="pfeedback_wrap-item_desc">
+                    <p>Спасибо, что делитесь опытом! Ваш отзыв поможет кому-то сделать выбор.</p>
+                </div>
+            </div>
+
+            <div class="pfeedback_wrap-item">
+                <div class="pfeedback_wrap-item_inputs">
+                    <div class="pfeedback_wrap-item_inputs-wrap">
+                        <label for="name">Имя <span>*</span></label>
+                        <input type="text" name="name" />
+                    </div>
+                    <div class="pfeedback_wrap-item_inputs-wrap">
+                        <label for="email">Почтовый адрес</label>
+                        <input type="text" name="email" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="pfeedback_wrap-item">
+                <div class="pfeedback_wrap-item-desc">
+                    <p>Порекомендовали бы этот товар?</p>
+                </div>
+            </div>
+
+            <div class="pfeedback_wrap-item">
+                @include('components.checkbox.round_check', ['name' => 'recommendation'])
+                <span>Да</span>
+            </div>
+
+            <div class="pfeedback_wrap-item">
+                <div class="pfeedback_wrap-item_inputs-wrap">
+                    <label for="email">Плюсы</label>
+                    <input type="text" name="email" placeholder="Преимущества" />
+                </div>
+            </div>
+
+            <div class="pfeedback_wrap-item">
+                @include('components.checkbox.round_check', ['name' => 'recommendation'])
+                <span>Нет</span>
+            </div>
+
+            <div class="pfeedback_wrap-item">
+                <div class="pfeedback_wrap-item_inputs-wrap">
+                    <label for="email">Минусы</label>
+                    <input type="text" name="email" placeholder="Недостатки"></input>
+                </div>
+            </div>
+
+            <div class="pfeedback_wrap-item">
+                <div class="pfeedback_wrap-item_inputs-wrap">
+                    <label for="email">Отзыв</label>
+                    <textarea type="text" name="email" placeholder="Опишите свое впечатление, опыт. Что понравилось или наоборот."></textarea>
+                </div>
+            </div>
+
+            @include('components.btn.text_btn', [ 'class' => 'cfeedback_wrap-row_btn', 'text' => 'Отправить'])
+        </form>
+
+    </div>
+</div>

@@ -14,11 +14,11 @@
 @import "./components/banner";
 @import "./components/banners_mob";
 @import "./components/viewed";
-@import "./components/sales";
-@import "./components/sales_slider";
-@import "./components/sales_slider_card";
-@import "./components/sales_best2";
-@import "./components/sales_eco";
+@import "./components/sales/sales";
+@import "./components/sales/sales_slider";
+@import "./components/sales/sales_slider_card";
+@import "./components/sales/sales_best2";
+@import "./components/sales/sales_eco";
 @import "./components/news";
 @import "./components/carousel";
 @import "./components/breadcrumbs";
@@ -28,12 +28,16 @@
 @import "./components/filters/mfilters";
 @import "./components/pagination";
 @import "./components/history";
-@import "./components/product_details";
-@import "./components/product_details-swiper";
-@import "./components/product_info";
-@import "./components/product_comments";
-@import "./components/product_gallery";
-@import "./components/product_feedback-form";
+
+@import "./components/product/product_details";
+@import "./components/product/product_details-swiper";
+@import "./components/product/product_info";
+@import "./components/product/product_comments";
+@import "./components/product/product_gallery";
+@import "./components/product/product_feedback-form";
+@import "./components/product/product_fast-details";
+@import "./components/product/product_feedback";
+@import "./components/product/product_details_slider";
 
 @import "./components/cart/cart";
 @import "./components/cart/cart_item";
@@ -41,7 +45,7 @@
 @import "./components/cart/checkout-products";
 @import "./components/cart/dform";
 
-@import "./components/sales_mob";
+@import "./components/sales/sales_mob";
 @import "./components/information";
 @import "./components/contacts";
 @import "./components/contacts_feedback";
@@ -53,7 +57,6 @@
 @import "./components/buttons";
 @import "./components/tip";
 @import "./components/swiper/main_page";
-@import "./components/product_details_slider";
 @import "./components/swiper/owl-swiper.scss";
 @import "./components/about/mission";
 @import "./components/about/navigator";
@@ -70,7 +73,6 @@
 @import "./components/dash/dash";
 @import "./components/dash/dfill";
 @import "./components/amount/amount_btn";
-@import "./components/product/product_fast-details";
 
 .admin_pannel {
     display: grid;
