@@ -130,7 +130,7 @@
 
 <div class="pfeedback">
     <div class="pfeedback_wrap">
-        <form action="" method="POST">
+        <form action="/product/feedback" method="POST">
 
             <div class="pfeedback_wrap-item">
                 <div class="pfeedback_wrap-item_head">
