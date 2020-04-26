@@ -1,10 +1,8 @@
 class SimpleMap {
     constructor() {
-        this._simpleMap()
-        // console.log('executed')
+        this._simpleMap();
     }
     _simpleMap() {
-        if(typeof ymaps != 'undefined') {
             ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {
                     center: [55.751574, 37.573856],
@@ -41,7 +39,6 @@ class SimpleMap {
                 .add(myPlacemark)
                 .add(myPlacemarkWithContent);
         });
-        }
     }
 }
 

@@ -10705,7 +10705,7 @@ return jQuery;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Menu */ "./resources/js/components/Menu.js");
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Menu */ "./resources/js/components/Menu.js");
 /* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_Menu__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Swiper */ "./resources/js/components/Swiper.js");
 /* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_Swiper__WEBPACK_IMPORTED_MODULE_1__);
@@ -10741,21 +10741,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import PageController from './controllers/PagesController'
-// $(document).ready(function() {
 
-new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
-new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_5__["default"]();
-new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__["default"]();
-new _components_Checkbox__WEBPACK_IMPORTED_MODULE_11__["default"]();
-new _controllers_CartController__WEBPACK_IMPORTED_MODULE_10__["default"]();
-new _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_12__["default"]();
-new _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_13__["default"]();
-new _controllers_InformationController__WEBPACK_IMPORTED_MODULE_14__["default"]();
-new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__["default"]();
-new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
-new _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_15__["default"](); // new PageController();
-// });
+$(document).ready(function () {
+  new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
+  new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_5__["default"]();
+  new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_7__["default"]();
+  new _components_Checkbox__WEBPACK_IMPORTED_MODULE_11__["default"]();
+  new _controllers_CartController__WEBPACK_IMPORTED_MODULE_10__["default"]();
+  new _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_12__["default"]();
+  new _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_13__["default"]();
+  new _controllers_InformationController__WEBPACK_IMPORTED_MODULE_14__["default"]();
+  new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_9__["default"]();
+  new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
+  new _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_15__["default"]();
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -10908,46 +10908,43 @@ var SimpleMap = /*#__PURE__*/function () {
   function SimpleMap() {
     _classCallCheck(this, SimpleMap);
 
-    this._simpleMap(); // console.log('executed')
-
+    this._simpleMap();
   }
 
   _createClass(SimpleMap, [{
     key: "_simpleMap",
     value: function _simpleMap() {
-      if (typeof ymaps != 'undefined') {
-        ymaps.ready(function () {
-          var myMap = new ymaps.Map('map', {
-            center: [55.751574, 37.573856],
-            zoom: 9
-          }, {
-            searchControlProvider: 'yandex#search'
-          }),
-              MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
-              myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-            hintContent: 'Собственный значок метки',
-            balloonContent: 'Это красивая метка'
-          }, {
-            iconLayout: 'default#image',
-            iconImageHref: 'images/myIcon.gif',
-            iconImageSize: [30, 42],
-            iconImageOffset: [-5, -38]
-          }),
-              myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-            hintContent: 'Собственный значок метки с контентом',
-            balloonContent: 'А эта — новогодняя',
-            iconContent: '12'
-          }, {
-            iconLayout: 'default#imageWithContent',
-            iconImageHref: 'images/ball.png',
-            iconImageSize: [48, 48],
-            iconImageOffset: [-24, -24],
-            iconContentOffset: [15, 15],
-            iconContentLayout: MyIconContentLayout
-          });
-          myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
+      ymaps.ready(function () {
+        var myMap = new ymaps.Map('map', {
+          center: [55.751574, 37.573856],
+          zoom: 9
+        }, {
+          searchControlProvider: 'yandex#search'
+        }),
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+          hintContent: 'Собственный значок метки',
+          balloonContent: 'Это красивая метка'
+        }, {
+          iconLayout: 'default#image',
+          iconImageHref: 'images/myIcon.gif',
+          iconImageSize: [30, 42],
+          iconImageOffset: [-5, -38]
+        }),
+            myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+          hintContent: 'Собственный значок метки с контентом',
+          balloonContent: 'А эта — новогодняя',
+          iconContent: '12'
+        }, {
+          iconLayout: 'default#imageWithContent',
+          iconImageHref: 'images/ball.png',
+          iconImageSize: [48, 48],
+          iconImageOffset: [-24, -24],
+          iconContentOffset: [15, 15],
+          iconContentLayout: MyIconContentLayout
         });
-      }
+        myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
+      });
     }
   }]);
 
