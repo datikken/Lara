@@ -1201,8 +1201,9 @@ b {
 .menu_wrapper-item_menuText-link:hover {
   color: #fff !important;
 }
-.menu_wrapper-item_menuText-link div {
+.menu_wrapper-item_menuText-link span {
   color: black;
+  font-family: "MontserratSemiBold";
 }
 
 .menu_wrapper-item_secondary {
@@ -9667,6 +9668,49 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   position: absolute;
   right: -13px;
   bottom: -2px;
+}
+
+.fadress {
+  margin-left: 30px;
+}
+.fadress_wrap-form-btn {
+  width: 270px;
+  height: 40px;
+}
+.fadress_wrap-form .second_row .fadress_wrap-form_group_inner input {
+  width: 870px;
+  height: 40px;
+}
+.fadress_wrap-form .first_row .fadress_wrap-form_group_inner {
+  margin-right: 10px;
+}
+.fadress_wrap-form .first_row .fadress_wrap-form_group_inner input {
+  width: 430px;
+  height: 40px;
+}
+.fadress_wrap-form_group {
+  display: flex;
+}
+.fadress_wrap-form_group_inner {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.fadress_wrap-form_group_inner label {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  color: #292930;
+  margin-bottom: 10px;
+}
+.fadress_wrap-form_group_inner input {
+  border: 1px solid #d4d4d5;
+  box-sizing: border-box;
+  border-radius: 30px;
+  padding-left: 20px;
+  outline: none;
 }
 
 .admin_pannel {

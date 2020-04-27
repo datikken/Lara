@@ -2,7 +2,6 @@
 
 @section('center')
    <div class="dfill">
-
        <div class="dfill_wrap">
            <div class="dfill_wrap-heading">
                 <span>Для дальнейшего удобства заказа, рекомендуем вам заполнить аккаунт. Эти данные потребуются при формировании корзины.</span>
@@ -77,7 +76,6 @@
         <div class="dchange">
             <form action="/" method="post">
                 {{csrf_field()}}
-
                 <div class="form-group">
                     <label for="name">Действуйщий пароль <span>*</span></label>
                     <input type="text" class="form-control" name="password" placeholder="Имя" required>
@@ -96,14 +94,11 @@
                 <button>
                     @include('components.btn.text_btn', [ 'class' => 'dchange_btn', 'text' => 'Сохранить изменения'])
                 </button>
-
             </form>
 
             <div class="dchange_remind">
                <p>Поля отмеченые <span>*</span> обязательны к заполнению</p>
             </div>
-
-
         </div>
    </div>
 

@@ -124,7 +124,7 @@
             />
 
             <div class="menu_wrapper-item_menuText-header">
-                <div>МЕНЮ</div>
+                <span class="menu_wrapper-item_menuText-header_item">МЕНЮ</span>
                 <ul class="menu_wrapper-item-main_menu-item-text_secondary">
 
                     @foreach($information as $inf)
