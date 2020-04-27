@@ -4,7 +4,9 @@
 
     <div class="fadress">
         <div class="fadress_wrap">
-            <form action="#" class="fadress_wrap-form" method="get">
+            <form action="/home/fillAdresses" class="fadress_wrap-form" method="get">
+                {{csrf_field()}}
+
                 <div class="fadress_wrap-form_group first_row">
                     <div class="fadress_wrap-form_group_inner">
                         <label for="country">Страна</label>
@@ -54,7 +56,9 @@
                     </div>
                 </div>
 
-                @include('components.btn.text_btn', [ 'class' => 'fadress_wrap-form-btn', 'text' => 'Сохранить адрес'])
+                <button type="submit">
+                    @include('components.btn.text_btn', [ 'class' => 'fadress_wrap-form-btn', 'text' => 'Сохранить адрес'])
+                </button>
 
             </form>
         </div>

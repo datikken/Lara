@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -33,6 +35,41 @@ class HomeController extends Controller
     public function showFillAdressesForm()
     {
         return view('pages.dash.adresses_fill');
+    }
+
+    public function FillAdresses(Request $request)
+    {
+
+        $user_id = auth()->user()->id;
+        $country = $request->input('country');
+        $city = $request->input('city');
+        $street = $request->input('street');
+        $home = $request->input('home');
+        $wing = $request->input('wing');
+        $building = $request->input('building');
+        $porch = $request->input('porch');
+        $intercom = $request->input('intercom');
+        $floor = $request->input('floor');
+        $flat = $request->input('flat');
+
+        $arr = array(
+            'user_id' => $user_id,
+            'country' => $country,
+            'city' => $city,
+            'street' => $street,
+            'home' => $home,
+            'wing' => $wing,
+            'building' => $building,
+            'porch' => $porch,
+            'intercom' => $intercom,
+            'floor' => $floor,
+            'flat' => $flat
+        );
+
+        DB::table('users_adresses')->insert($arr);
+
+        return redirect()->route('home');
+
     }
 
 }

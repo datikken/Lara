@@ -22,7 +22,8 @@ Auth::routes();
 //PROFILE
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/fillProfile', ['uses' => 'HomeController@showFillProfileForm', 'as' => 'fillProfile']);
-Route::get('/home/fillAdresses', ['uses' => 'HomeController@showFillAdressesForm', 'as' => 'fillAdresses']);
+Route::get('/home/fillAdressesForm', ['uses' => 'HomeController@showFillAdressesForm', 'as' => 'fillAdresses']);
+Route::get('/home/fillAdresses', ['uses' => 'HomeController@FillAdresses', 'as' => 'FillAdressesDB']);
 
 //PAGES
 Route::get('/information', 'InformationController@index');
