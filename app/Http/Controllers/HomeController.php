@@ -34,4 +34,5 @@ class HomeController extends Controller
     {
         return view('pages.dash.adresses_fill');
     }
+
 }
