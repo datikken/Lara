@@ -9673,6 +9673,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .fadress {
   margin-left: 30px;
   margin-bottom: 300px;
+  padding-top: 17px;
+}
+.fadress_wrap-form button {
+  padding: 0;
 }
 .fadress_wrap-form-btn {
   width: 270px;

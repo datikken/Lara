@@ -1,9 +1,13 @@
 .fadress {
     margin-left: 30px;
     margin-bottom: 300px;
+    padding-top: 17px;
 
     &_wrap {
         &-form {
+            button {
+                padding: 0;
+            }
             &-btn {
                 width: 270px;
                 height: 40px;
