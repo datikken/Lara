@@ -9676,10 +9676,78 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .fadress_wrap-form-btn {
   width: 270px;
   height: 40px;
+  box-shadow: none !important;
+}
+.fadress_wrap-form .third_row .fadress_wrap-form_group_inner {
+  margin-right: 20px;
+}
+.fadress_wrap-form .third_row .fadress_wrap-form_group_inner input {
+  width: 100px;
+  height: 40px;
+}
+.fadress_wrap-form .third_row .fadress_wrap-form_group_inner input::-webkit-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .third_row .fadress_wrap-form_group_inner input::-moz-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .third_row .fadress_wrap-form_group_inner input:-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .third_row .fadress_wrap-form_group_inner input::-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .third_row .fadress_wrap-form_group_inner input::placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
 }
 .fadress_wrap-form .second_row .fadress_wrap-form_group_inner input {
   width: 870px;
   height: 40px;
+}
+.fadress_wrap-form .second_row .fadress_wrap-form_group_inner input::-webkit-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .second_row .fadress_wrap-form_group_inner input::-moz-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .second_row .fadress_wrap-form_group_inner input:-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .second_row .fadress_wrap-form_group_inner input::-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .second_row .fadress_wrap-form_group_inner input::placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
 }
 .fadress_wrap-form .first_row .fadress_wrap-form_group_inner {
   margin-right: 10px;
@@ -9687,6 +9755,36 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .fadress_wrap-form .first_row .fadress_wrap-form_group_inner input {
   width: 430px;
   height: 40px;
+}
+.fadress_wrap-form .first_row .fadress_wrap-form_group_inner input::-webkit-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .first_row .fadress_wrap-form_group_inner input::-moz-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .first_row .fadress_wrap-form_group_inner input:-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .first_row .fadress_wrap-form_group_inner input::-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form .first_row .fadress_wrap-form_group_inner input::placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
 }
 .fadress_wrap-form_group {
   display: flex;
@@ -9697,7 +9795,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 20px;
 }
 .fadress_wrap-form_group_inner label {
-  font-family: "MontserratSemiBold";
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -9711,6 +9809,36 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border-radius: 30px;
   padding-left: 20px;
   outline: none;
+}
+.fadress_wrap-form_group_inner input::-webkit-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form_group_inner input::-moz-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form_group_inner input:-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form_group_inner input::-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+.fadress_wrap-form_group_inner input::placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
 }
 
 .admin_pannel {

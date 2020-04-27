@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div class="fadress_wrap-form_group">
+                <div class="fadress_wrap-form_group third_row">
                     <div class="fadress_wrap-form_group_inner">
                         <label for="home">Дом</label>
                         <input type="text" name="home" placeholder="номер">

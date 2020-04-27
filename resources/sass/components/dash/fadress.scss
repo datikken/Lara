@@ -6,13 +6,37 @@
             &-btn {
                 width: 270px;
                 height: 40px;
+                box-shadow: none!important;
             }
 
+            .third_row {
+                .fadress_wrap-form_group_inner {
+                    margin-right: 20px;
+
+                    input {
+                        width: 100px;
+                        height: 40px;
+
+                        &::placeholder {
+                            font-size: 12px;
+                            line-height: 14px;
+                            letter-spacing: 0.02em;
+                            color: $gray;
+                        }
+                    }
+                }
+            }
             .second_row {
                 .fadress_wrap-form_group_inner {
                     input {
                         width: 870px;
                         height: 40px;
+                        &::placeholder {
+                            font-size: 12px;
+                            line-height: 14px;
+                            letter-spacing: 0.02em;
+                            color: $gray;
+                        }
                     }
                 }
             }
@@ -23,6 +47,12 @@
                     input {
                         width: 430px;
                         height: 40px;
+                        &::placeholder {
+                            font-size: 12px;
+                            line-height: 14px;
+                            letter-spacing: 0.02em;
+                            color: $gray;
+                        }
                     }
                 }
             }
@@ -35,7 +65,7 @@
                     margin-bottom: 20px;
 
                     label {
-                        font-family: $semifont;
+                        font-family: $font;
                         font-style: normal;
                         font-weight: 500;
                         font-size: 12px;
@@ -48,9 +78,15 @@
                         border: 1px solid $gray;
                         box-sizing: border-box;
                         border-radius: 30px;
-
                         padding-left: 20px;
                         outline: none;
+
+                        &::placeholder {
+                            font-size: 12px;
+                            line-height: 14px;
+                            letter-spacing: 0.02em;
+                            color: $gray;
+                        }
                     }
                 }
             }
