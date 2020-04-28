@@ -1,4 +1,102 @@
 .pfitem {
     max-width: $layoutw;
     margin: 0 auto;
+    border-bottom: 1px solid $yellow;
+    margin-bottom: 30px;
+
+    &_wrap {
+        display: flex;
+        padding-bottom: 10px;
+
+        &-item {
+            &:first-child {
+                margin-right: 30px;
+            }
+            &:nth-child(2) {
+                max-width: 870px;
+                width: 100%;
+            }
+
+            &_row {
+                min-height: 60px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                border-bottom: 1px solid $light_gray;
+                max-width: 870px;
+                width: 100%;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &-head {
+                    font-family: $semifont;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 20px;
+                    letter-spacing: 0.02em;
+                    color: $black;
+                }
+
+                &-desc {
+                    font-family: Montserrat;
+                    font-size: 12px;
+                    line-height: 20px;
+                    letter-spacing: 0.02em;
+                    color: $black;
+                }
+            }
+
+            &_summary {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+
+                &-total {
+                    font-family: $font;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    color: $gray;
+                }
+
+                &-icon {
+                    background-image: url('/images/icons/like.svg');
+                    height: 30px;
+                    width: 30px;
+                    margin-right: 10px;
+                }
+            }
+            &_head {
+                font-family: $semifont;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 18px;
+                letter-spacing: 0.02em;
+                color: $black;
+                margin: 20px 0 10px 0;
+                display: flex;
+                align-items: center;
+
+                &-date {
+                    font-family: $font;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    color: $gray;
+                    margin-left: 24px;
+                }
+            }
+            &_ava {
+                height: 70px;
+                width: 70px;
+                background-image: url('/images/icons/avatar.svg');
+            }
+        }
+    }
 }
