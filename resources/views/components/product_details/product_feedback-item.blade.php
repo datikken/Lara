@@ -35,6 +35,4 @@
             </div>
         </div>
     </div>
-    <h1>{{ $feed->name }}</h1>
-
 @endforeach

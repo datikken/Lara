@@ -9847,6 +9847,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #d4d4d5;
 }
 
+.pfitem {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
 .admin_pannel {
   display: grid;
   grid-template-columns: 300px 1fr;
