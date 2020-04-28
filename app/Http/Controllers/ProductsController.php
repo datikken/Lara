@@ -39,6 +39,8 @@ class ProductsController extends Controller
         $product = Product::find($id);
 
         $images = DB::table('product_images')->where('product_id', $product['id'])->get();
+        $feedItems = DB::table('product_feedback')->where('product_id', $product['id'])->get();
+
         $imgArr = array();
 
         foreach ($images as $image ) {
@@ -47,7 +49,8 @@ class ProductsController extends Controller
 
         $product['images'] = $imgArr;
 
-        return view('layouts.product_details', ['product' => $product]);
+
+        return view('layouts.product_details', ['product' => $product, 'feedbacks' => $feedItems]);
     }
 
     public function search(Request $request)
