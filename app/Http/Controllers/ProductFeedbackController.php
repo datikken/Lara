@@ -18,6 +18,7 @@ class ProductFeedbackController extends Controller
         $id = $request->input('product_id');
         $plus = $request->input('features');
         $minus = $request->input('minuses');
+        $date = date('Y-m-d H:i:s');
 
         $arr = array(
             'product_id' => $id,
@@ -26,7 +27,8 @@ class ProductFeedbackController extends Controller
             'recommendation' => $recommendation,
             'minus' => $minus,
             'plus' => $plus,
-            'feedback' => $feedback
+            'feedback' => $feedback,
+            'created_at' => $date
         );
 
         DB::table('product_feedback')->insert($arr);
