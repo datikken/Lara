@@ -7,7 +7,7 @@
  */
 
 namespace App\Http\Controllers;
-
+use League\Flysystem\Config;
 
 class AboutController
 {
