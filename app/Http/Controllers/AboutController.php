@@ -13,6 +13,7 @@ class AboutController
 {
     public function index()
     {
+
         $years = Config::get('constants.ABOUTYEARS');
 
         return view('pages.about', ['years' => $years]);
