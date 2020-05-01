@@ -1,5 +1,3 @@
-<? dump($years); ?>
-
 <div class="mission">
     <div class="mission_wrap">
         <div class="mission_wrap-item">
@@ -73,9 +71,9 @@
 
           <div class="navigator_wrap-line descline">
             <div class="navigator_wrap-line_items">
-                {{--@foreach ($years as $year)--}}
-                    {{--<span class="navigator_wrap-line_items-item">{{ $year }}</span>--}}
-                {{--@endforeach--}}
+                @foreach ($years as $year)
+                    <span class="navigator_wrap-line_items-item">{{ $year }}</span>
+                @endforeach
             </div>
           </div>
     </div>
