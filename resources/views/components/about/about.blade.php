@@ -38,7 +38,6 @@
                 alt="about_hero"
             />
         </div>
-
         <div class="about_hero-wrap_item">
             <div class="about_hero-wrap_item-top">
                 <p class="about_hero-wrap_item-top_text">
@@ -60,173 +59,33 @@
             </div>
         </div>
     </div>
-
 </div>
 
 
 <div class="navigator">
     <div class="navigator_wrap">
         <div class="navigator_wrap-items">
-            <div class="desktop-hide">
-                <div class="navigator_wrap-line"></div>
+          <div class="desktop-hide">
+            <div class="navigator_wrap-line"></div>
+          </div>
+
+          <div class="navigator_wrap-line descline">
+            <div class="navigator_wrap-line_items">
+                @foreach (Config::get('constants.ABOUTYEARS') as $year)
+                    <span class="navigator_wrap-line_items-item">{{ $year }}</span>
+                @endforeach
             </div>
-            <div class="mobile-hide">
-                <div class="navigator_wrap-line descline"></div>
-            </div>
+          </div>
     </div>
 </div>
 
-<div class="navigator_content">
-
-    <div class="navigator_content-wrap">
-
-        <img src="/images/about/delimeter.svg" alt="delimeter" class="navigator_content-wrap_delimeter" />
-
-        <div class="navigator_content-wrap_item">
-
-            <div class="navigator_content-wrap_item-wrap">
-                <div class="navigator_content-wrap_item-heading">
-                    <p class="navigator_content-wrap_item-heading-item">2017</p>
-                    <div class="navigator_content-wrap_item-heading-decor"></div>
-                </div>
-
-                <div class="navigator_content-wrap_item-paragraph">
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <img src="/images/about/search.svg" alt="Search" />
-                        <p>
-                            Партнёрская программа начисления бонусов при покупке картриджей Т2 в Ситилинк.
-                        </p>
-                    </div>
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <img src="/images/about/search.svg" alt="Search" />
-                        <p>
-                            Бесплатная доставка картриджей Т2 от компании НИКС.
-                        </p>
-                    </div>
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <img src="/images/about/search.svg" alt="Search" />
-                        <p>
-                            Новинки ассортимента картриджей Т2 для печатающей техники Brother, Canon и HP.
-                        </p>
-                    </div>
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <img src="/images/about/search.svg" alt="Search" />
-                        <p>
-                            Новинки ассортимента картриджей Т2 для печатающей техники Ricoh.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="navigator_content-wrap_item-wrap">
-                <div class="navigator_content-wrap_item-heading">
-                    <div class="navigator_content-wrap_item-heading-decor"></div>
-                </div>
-
-                <div class="navigator_content-wrap_item-paragraph">
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <p>
-                            Об изменении условий логистики и финансовых выгод нашим Оптовым Партнёрам.
-                        </p>
-                        <img src="/images/about/search.svg" alt="Search" />
-                    </div>
-
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <p>
-                            Подарок при покупке картриджей Т2 в компании Бизнес Техника г.Краснодар.
-                        </p>
-                        <img src="/images/about/search.svg" alt="Search" />
-                    </div>
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <p>
-                            Полный ассортимент струйных картриджей Т2 в компании Домотехника г.Владивосток .
-                        </p>
-                        <img src="/images/about/search.svg" alt="Search" />
-                    </div>
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <p>
-                            Картриджи Т2 стало доступнее приобрести в  регионах РФ.
-                        </p>
-                        <img src="/images/about/search.svg" alt="Search" />
-                    </div>
-                </div>
-            </div>
+<div class="aboutc">
+    <div class="aboutc_wrap">
+        <div class="aboutc_wrap-head">
+            <div class="aboutc_wrap-head_year"></div>
+            <div class="aboutc_wrap-head_line"></div>
         </div>
 
 
-        <div class="navigator_content-wrap_item">
-            <div class="navigator_content-wrap_item-wrap">
-                <div class="navigator_content-wrap_item-heading">
-                    <p class="navigator_content-wrap_item-heading-item">2017</p>
-                    <div class="navigator_content-wrap_item-heading-decor"></div>
-                </div>
-
-                <div class="navigator_content-wrap_item-paragraph">
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <img src="/images/about/search.svg" alt="Search" />
-                        <p>
-                            Партнёрская программа начисления бонусов при покупке картриджей Т2 в Ситилинк.
-                        </p>
-                    </div>
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <img src="/images/about/search.svg" alt="Search" />
-                        <p>
-                            Бесплатная доставка картриджей Т2 от компании НИКС.
-                        </p>
-                    </div>
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <img src="/images/about/search.svg" alt="Search" />
-                        <p>
-                            Новинки ассортимента картриджей Т2 для печатающей техники Brother, Canon и HP.
-                        </p>
-                    </div>
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <img src="/images/about/search.svg" alt="Search" />
-                        <p>
-                            Новинки ассортимента картриджей Т2 для печатающей техники Ricoh.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="navigator_content-wrap_item-wrap">
-                <div class="mobile-hide">
-                    <div class="navigator_content-wrap_item-heading">
-                        <div class="navigator_content-wrap_item-heading-decor"></div>
-                    </div>
-                </div>
-
-                <div class="navigator_content-wrap_item-paragraph">
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <p>
-                            Об изменении условий логистики и финансовых выгод нашим Оптовым Партнёрам.
-                        </p>
-                        <img src="/images/about/search.svg" alt="Search" />
-                    </div>
-
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <p>
-                            Подарок при покупке картриджей Т2 в компании Бизнес Техника г.Краснодар.
-                        </p>
-                        <img src="/images/about/search.svg" alt="Search" />
-                    </div>
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <p>
-                            Полный ассортимент струйных картриджей Т2 в компании Домотехника г.Владивосток .
-                        </p>
-                        <img src="/images/about/search.svg" alt="Search" />
-                    </div>
-                    <div class="navigator_content-wrap_item-paragraph-item">
-                        <p>
-                            Картриджи Т2 стало доступнее приобрести в  регионах РФ.
-                        </p>
-                        <img src="/images/about/search.svg" alt="Search" />
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
 </div>
