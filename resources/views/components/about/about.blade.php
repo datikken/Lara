@@ -71,7 +71,7 @@
 
           <div class="navigator_wrap-line descline">
             <div class="navigator_wrap-line_items">
-                @foreach (Config::get('constants.ABOUTYEARS') as $year)
+                @foreach ($years as $year)
                     <span class="navigator_wrap-line_items-item">{{ $year }}</span>
                 @endforeach
             </div>
