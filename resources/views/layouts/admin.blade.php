@@ -57,6 +57,10 @@
                         <a href="/admin/information">Информация</a>
                         <a href="/admin/createInformation" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>
                     </div>
+                    <div class="uk-flex-between uk-flex uk-margin-bottom">
+                        <a href="/admin/about">О нас</a>
+                        <a href="/admin/createAbout" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>
+                    </div>
                 </div>
             </li>
             <li class="uk-closed">
