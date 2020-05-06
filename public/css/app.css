@@ -2907,6 +2907,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   align-items: center;
 }
+.sales_slider-card_items-wrap {
+  margin-top: 10px;
+}
 .sales_slider-card_items-wrap-heading {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -2917,7 +2920,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   align-items: center;
   letter-spacing: 0.02em;
   color: #292930;
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
 }
 @media screen and (min-width: 600px) {
   .sales_slider-card_items-wrap-heading {
@@ -2956,7 +2959,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   align-items: center;
   letter-spacing: 0.02em;
   color: #292930;
-  margin-bottom: 19px;
+  margin-bottom: 15px;
 }
 @media screen and (min-width: 600px) {
   .sales_slider-card_items-wrap-desc {
@@ -5844,7 +5847,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 
 .swiper-container {
   width: 100%;
-  height: 300px;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
