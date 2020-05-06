@@ -13,7 +13,7 @@ class About extends Migration
      */
     public function up()
     {
-        Schema::create('about', function (Blueprint $table) {
+        Schema::create('abouts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('year');
             $table->string('heading');

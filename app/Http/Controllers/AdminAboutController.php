@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use App\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +16,8 @@ class AdminAboutController
 {
     public function index()
     {
-        return view('admin.about.display');
+        $years = About::all();
+        return view('admin.about.display', ['years' => $years]);
     }
 
     public function displayCreateAbout()
@@ -39,10 +41,10 @@ class AdminAboutController
             'updated_at' => '',
         );
 
-        $exists = DB::table('about')->where('year', $year)->value('year');
+        $exists = DB::table('abouts')->where('year', $year)->value('year');
 
         if(is_null($exists)) {
-            $created = DB::table('about')->insert($arr);
+            $created = DB::table('abouts')->insert($arr);
         }
 
         return redirect()->route('adminDisplayAbout');
