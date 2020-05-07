@@ -9862,6 +9862,58 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-image: url("/images/icons/avatar.svg");
 }
 
+.aboutc {
+  margin-top: 25px;
+}
+.aboutc_wrap_head {
+  display: flex;
+  align-items: flex-end;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.aboutc_cols {
+  display: flex;
+  justify-content: center;
+}
+.aboutc_line {
+  width: 100%;
+  border-bottom: 1px solid #fdd935;
+  margin-left: 25px;
+}
+.aboutc .right_row {
+  grid-template-columns: 1fr 0.01fr;
+}
+.aboutc_row {
+  display: grid;
+  grid-template-columns: 0.01fr 1fr;
+  grid-gap: 25px;
+  margin-bottom: 30px;
+  max-width: 465px;
+}
+.aboutc_year {
+  font-family: "MontserratSemiBold";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: #40404c;
+}
+.aboutc_search {
+  background-image: url("/images/about/search.svg");
+  display: block;
+  height: 30px;
+  width: 30px;
+}
+.aboutc_prgf {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  margin: 0;
+}
+
 .admin_pannel {
   display: grid;
   grid-template-columns: 300px 1fr;

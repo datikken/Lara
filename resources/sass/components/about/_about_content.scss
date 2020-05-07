@@ -1,0 +1,57 @@
+.aboutc {
+    margin-top: 25px;
+
+    &_wrap_head {
+        display: flex;
+        align-items: flex-end;
+        max-width: 800px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    &_cols {
+        display: flex;
+        justify-content: center;
+    }
+
+    &_line {
+        width: 100%;
+        border-bottom: 1px solid $yellow;
+        margin-left: 25px;
+    }
+
+    .right_row {
+        grid-template-columns: 1fr .01fr;
+    }
+    &_row {
+        display: grid;
+        grid-template-columns: .01fr 1fr;
+        grid-gap: 25px;
+        margin-bottom: 30px;
+        max-width: 465px;
+    }
+
+    &_year {
+        font-family: $semifont;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 26px;
+        text-transform: uppercase;
+        color: $black;
+    }
+    &_search {
+        background-image: url('/images/about/search.svg');
+        display: block;
+        height: 30px;
+        width: 30px;
+    }
+
+    &_prgf {
+        font-family: $font;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        color: $black;
+        margin: 0;
+    }
+}
