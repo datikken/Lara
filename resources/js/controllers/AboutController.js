@@ -16,8 +16,6 @@ class AboutController {
                 console.log(target, target.offsetLeft)
             })
         })
-
-        console.warn('pizdec', els);
     }
 
     constructor() {
