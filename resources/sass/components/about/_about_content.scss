@@ -1,5 +1,9 @@
 .aboutc {
-    margin-top: 25px;
+    &_col {
+        &:nth-child(2) {
+            margin-top: 33px;
+        }
+    }
 
     &_wrap_head {
         display: flex;
@@ -10,8 +14,10 @@
     }
 
     &_cols {
-        display: flex;
-        justify-content: center;
+        width: 1030px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     &_line {
@@ -22,10 +28,16 @@
 
     .right_row {
         grid-template-columns: 1fr .01fr;
+        align-items: center;
+
+        .aboutc_prgf {
+            text-align: right;
+        }
     }
     &_row {
         display: grid;
         grid-template-columns: .01fr 1fr;
+        align-items: center;
         grid-gap: 25px;
         margin-bottom: 30px;
         max-width: 465px;
