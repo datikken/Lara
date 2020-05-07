@@ -9886,6 +9886,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .aboutc .right_row {
   grid-template-columns: 1fr 0.01fr;
   align-items: center;
+  cursor: pointer;
 }
 .aboutc .right_row .aboutc_prgf {
   text-align: right;
@@ -9897,6 +9898,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   grid-gap: 25px;
   margin-bottom: 30px;
   max-width: 465px;
+  cursor: pointer;
 }
 .aboutc_year {
   font-family: "MontserratSemiBold";

@@ -29,6 +29,7 @@
     .right_row {
         grid-template-columns: 1fr .01fr;
         align-items: center;
+        cursor: pointer;
 
         .aboutc_prgf {
             text-align: right;
@@ -41,6 +42,7 @@
         grid-gap: 25px;
         margin-bottom: 30px;
         max-width: 465px;
+        cursor: pointer;
     }
 
     &_year {
