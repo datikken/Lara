@@ -3,6 +3,12 @@ class AboutController {
         let els = nav.querySelectorAll('.navigator_wrap-line_items-item');
         let line = nav.querySelector('.descline_item');
         let headings = nav.querySelectorAll('.aboutc_year');
+        let contWraps = nav.querySelectorAll('.aboutc');
+        let ww = window.screen.width;
+
+        if(ww < 1000) {
+            contWraps[1].style.display = 'none';
+        }
 
         els.forEach((el) => {
             el.addEventListener('click', function (e) {

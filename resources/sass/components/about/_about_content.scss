@@ -1,7 +1,20 @@
 .aboutc {
+    padding: 0 30px;
+    max-height: 400px;
+
+    @include breakpoint($medium) {
+        padding: 0;
+        max-height: initial;
+    }
+
     &_col {
         &:nth-child(2) {
-            margin-top: 33px;
+            display: none;
+
+            @include breakpoint($medium) {
+                margin-top: 33px;
+                display: block;
+            }
         }
     }
 
@@ -14,35 +27,53 @@
     }
 
     &_cols {
-        width: 1030px;
+        width: 100%;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        @include breakpoint($medium) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: none;
+            width: 1030px;
+        }
     }
 
     &_line {
+        display: none;
         width: 100%;
         border-bottom: 1px solid $yellow;
         margin-left: 25px;
+
+        @include breakpoint($medium) {
+            display: block;
+        }
     }
 
     .right_row {
-        grid-template-columns: 1fr .01fr;
         align-items: center;
         cursor: pointer;
 
         .aboutc_prgf {
             text-align: right;
         }
+
+        @include breakpoint($medium) {
+            grid-template-columns: 1fr .01fr;
+        }
     }
     &_row {
         display: grid;
-        grid-template-columns: .01fr 1fr;
         align-items: center;
         grid-gap: 25px;
-        margin-bottom: 30px;
         max-width: 465px;
         cursor: pointer;
+        margin-bottom: 20px;
+
+        @include breakpoint($medium) {
+            margin-bottom: 30px;
+            grid-template-columns: .01fr 1fr;
+        }
     }
 
     &_year {
@@ -58,6 +89,11 @@
         display: block;
         height: 30px;
         width: 30px;
+        display: none;
+
+        @include breakpoint($medium) {
+            display: block;
+        }
     }
 
     &_prgf {

@@ -1,11 +1,15 @@
 .navigator {
-    padding-bottom: 100px;
     position: relative;
     max-width: $layoutw;
     margin: 0 auto;
+    padding-bottom: 100px;
 
     &_wrap {
-      margin: 25px 0 35px 0;
+      margin: 25px 0 35px 30px;
+
+      @include breakpoint($medium) {
+          margin: 25px 0 35px 0;
+      }
 
       &-line {
           width: 100%;
@@ -17,6 +21,7 @@
               margin-top: 10px;
 
               &-item {
+                  margin: 0 20px 0 0;
                   font-family: $semifont;
                   font-style: normal;
                   font-weight: 600;
@@ -25,6 +30,10 @@
                   letter-spacing: 0.02em;
                   color: $black;
                   cursor: pointer;
+
+                  @include  breakpoint($medium) {
+                      margin: 0;
+                  }
               }
           }
       }
@@ -36,8 +45,12 @@
       &-items {
         display: flex;
         overflow: scroll;
-        margin-right: 10px;
+        margin-right: 30px;
         -ms-overflow-style: none;
+
+        @include breakpoint($medium) {
+          margin-right: 10px;
+        }
 
         &-item {
           margin: 0 10px;
@@ -62,6 +75,7 @@
 
 .descline {
     &_item {
+        margin-left: 30px;
         display: block;
         background: $gradient;
         height: 5px;
@@ -70,5 +84,9 @@
         left: 0;
         top: -5px;
         transition: width $transition;
+
+        @include breakpoint($medium) {
+            margin-left: 0;
+        }
     }
 }

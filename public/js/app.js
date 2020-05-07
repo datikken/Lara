@@ -11207,6 +11207,13 @@ var AboutController = /*#__PURE__*/function () {
       var els = nav.querySelectorAll('.navigator_wrap-line_items-item');
       var line = nav.querySelector('.descline_item');
       var headings = nav.querySelectorAll('.aboutc_year');
+      var contWraps = nav.querySelectorAll('.aboutc');
+      var ww = window.screen.width;
+
+      if (ww < 1000) {
+        contWraps[1].style.display = 'none';
+      }
+
       els.forEach(function (el) {
         el.addEventListener('click', function (e) {
           var target = e.target;
