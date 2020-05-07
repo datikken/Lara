@@ -2,18 +2,20 @@ class AboutController {
     _setListeners(nav) {
         let els = nav.querySelectorAll('.navigator_wrap-line_items-item');
         let line = nav.querySelector('.descline_item');
+        let headings = nav.querySelectorAll('.aboutc_year');
 
         els.forEach((el) => {
             el.addEventListener('click', function (e) {
                 let target = e.target;
                 let offset = target.offsetLeft;
                 let twidth = target.offsetWidth;
-
+                let val = parseFloat(target.outerText);
                 let w = offset + twidth;
 
                 line.style.width = `${w}px`;
 
-                console.log(target, target.offsetLeft)
+                headings[0].innerText = val;
+                headings[1].innerText = val - 1;
             })
         })
     }

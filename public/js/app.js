@@ -11206,17 +11206,19 @@ var AboutController = /*#__PURE__*/function () {
     value: function _setListeners(nav) {
       var els = nav.querySelectorAll('.navigator_wrap-line_items-item');
       var line = nav.querySelector('.descline_item');
+      var headings = nav.querySelectorAll('.aboutc_year');
       els.forEach(function (el) {
         el.addEventListener('click', function (e) {
           var target = e.target;
           var offset = target.offsetLeft;
           var twidth = target.offsetWidth;
+          var val = parseFloat(target.outerText);
           var w = offset + twidth;
           line.style.width = "".concat(w, "px");
-          console.log(target, target.offsetLeft);
+          headings[0].innerText = val;
+          headings[1].innerText = val - 1;
         });
       });
-      console.warn('pizdec', els);
     }
   }]);
 
