@@ -10725,8 +10725,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_InformationController__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./controllers/InformationController */ "./resources/js/controllers/InformationController.js");
 /* harmony import */ var _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./controllers/ProductDetailsController */ "./resources/js/controllers/ProductDetailsController.js");
 /* harmony import */ var _controllers_ProductFeedbackController__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./controllers/ProductFeedbackController */ "./resources/js/controllers/ProductFeedbackController.js");
+/* harmony import */ var _controllers_AboutController__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./controllers/AboutController */ "./resources/js/controllers/AboutController.js");
 // require('./bootstrap');
 // window.Vue = require('vue');
+
 
 
 
@@ -10757,6 +10759,7 @@ $(document).ready(function () {
   new _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_15__["default"]();
   new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
   new _controllers_ProductFeedbackController__WEBPACK_IMPORTED_MODULE_16__["default"]();
+  new _controllers_AboutController__WEBPACK_IMPORTED_MODULE_17__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -11179,6 +11182,58 @@ window.onload = function () {
     });
   }
 };
+
+/***/ }),
+
+/***/ "./resources/js/controllers/AboutController.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/controllers/AboutController.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var AboutController = /*#__PURE__*/function () {
+  _createClass(AboutController, [{
+    key: "_setListeners",
+    value: function _setListeners(nav) {
+      var els = nav.querySelectorAll('.navigator_wrap-line_items-item');
+      var line = nav.querySelector('.descline_item');
+      els.forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          var target = e.target;
+          var offset = target.offsetLeft;
+          var twidth = target.offsetWidth;
+          var w = offset + twidth;
+          line.style.width = "".concat(w, "px");
+          console.log(target, target.offsetLeft);
+        });
+      });
+      console.warn('pizdec', els);
+    }
+  }]);
+
+  function AboutController() {
+    _classCallCheck(this, AboutController);
+
+    var nav = document.querySelector('.navigator');
+
+    if (nav) {
+      this._setListeners(nav);
+    }
+  }
+
+  return AboutController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (AboutController);
 
 /***/ }),
 

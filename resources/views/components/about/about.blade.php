@@ -70,6 +70,7 @@
           </div>
 
           <div class="navigator_wrap-line descline">
+              <span class="descline_item"></span>
             <div class="navigator_wrap-line_items">
                 @foreach ($years as $year)
                     <span class="navigator_wrap-line_items-item">{{ $year }}</span>

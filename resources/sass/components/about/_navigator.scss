@@ -16,17 +16,6 @@
               justify-content: space-between;
               margin-top: 10px;
 
-              &:after {
-                  content: '';
-                  background: $gradient;
-                  height: 5px;
-                  position: absolute;
-                  width: 83%;
-                  left: 0;
-                  top: -5px;
-                  transition: width $transition;
-              }
-
               &-item {
                   font-family: $semifont;
                   font-style: normal;
@@ -68,5 +57,18 @@
           }
         }
       }
+    }
+}
+
+.descline {
+    &_item {
+        display: block;
+        background: $gradient;
+        height: 5px;
+        position: absolute;
+        width: 83%;
+        left: 0;
+        top: -5px;
+        transition: width $transition;
     }
 }

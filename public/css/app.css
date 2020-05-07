@@ -8473,16 +8473,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   justify-content: space-between;
   margin-top: 10px;
 }
-.navigator_wrap-line_items:after {
-  content: "";
-  background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
-  height: 5px;
-  position: absolute;
-  width: 83%;
-  left: 0;
-  top: -5px;
-  transition: width 0.2s;
-}
 .navigator_wrap-line_items-item {
   font-family: "MontserratSemiBold";
   font-style: normal;
@@ -8519,6 +8509,17 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     min-width: 79px;
     text-align: center;
   }
+}
+
+.descline_item {
+  display: block;
+  background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
+  height: 5px;
+  position: absolute;
+  width: 83%;
+  left: 0;
+  top: -5px;
+  transition: width 0.2s;
 }
 
 .about_hero {

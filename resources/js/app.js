@@ -18,6 +18,7 @@ import CatalogFiltersController from './controllers/CatalogFiltersController'
 import InformationController from './controllers/InformationController'
 import ProductDetailsController from './controllers/ProductDetailsController'
 import ProductfeedbackController from './controllers/ProductFeedbackController'
+import AboutController from './controllers/AboutController'
 
 $(document).ready(function() {
     new LoginFormController();
@@ -32,4 +33,5 @@ $(document).ready(function() {
     new ProductDetailsController();
     new SimpleMap();
     new ProductfeedbackController();
+    new AboutController();
 });
