@@ -12,7 +12,7 @@ use App\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class AdminAboutController
+class AdminAboutController extends Controller
 {
     public function index()
     {

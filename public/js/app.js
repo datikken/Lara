@@ -11109,10 +11109,10 @@ window.onload = function () {
       activeSlideKey: '5',
       centeredSlides: true,
       loop: true,
-      // autoplay: {
-      //     delay: 2500,
-      //     disableOnInteraction: false
-      // },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
       breakpoints: {
         1024: {
           slidesPerView: 4,
@@ -11150,10 +11150,10 @@ window.onload = function () {
       activeSlideKey: '5',
       centeredSlides: true,
       loop: true,
-      // autoplay: {
-      //     delay: 2500,
-      //     disableOnInteraction: false
-      // },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
       breakpoints: {
         1024: {
           slidesPerView: 4,
@@ -12214,8 +12214,11 @@ var SearchController = /*#__PURE__*/function () {
     _classCallCheck(this, SearchController);
 
     var el = document.querySelector('.menu_wrapper-item_search_input');
-    var search = el.querySelector('input');
-    this.setListener(search);
+
+    if (el) {
+      var search = el.querySelector('input');
+      search && this.setListener(search);
+    }
   }
 
   return SearchController;

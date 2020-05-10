@@ -7,9 +7,10 @@ class SearchController {
     }
     constructor() {
         let el = document.querySelector('.menu_wrapper-item_search_input');
-        let search = el.querySelector('input');
-
-        this.setListener(search);
+        if(el) {
+            let search = el.querySelector('input');
+            search && this.setListener(search);
+        }
     }
 }
 

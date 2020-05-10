@@ -11,9 +11,9 @@
 
     <title>Админка</title>
 
-    @include('components.styles.style')
     @include('components.scripts.scripts')
-    @include('components.bootstrap.bootstrap')
+    @include('components.styles.style')
+    <link rel="stylesheet" href="/css/app.css">
 
 </head>
 <body>
@@ -62,7 +62,7 @@
                         <a href="/admin/createAbout" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>
                     </div>
                     <div class="uk-flex-between uk-flex uk-margin-bottom">
-                        <a href="/admin/blog">О нас</a>
+                        <a href="/admin/blog">Блог</a>
                         <a href="/admin/createPost" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
         </ul>
     </div>
 
-    <div class="uk-container">
+    <div class="admin_container">
         @yield('center')
     </div>
 

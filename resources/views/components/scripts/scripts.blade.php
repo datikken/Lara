@@ -4,4 +4,6 @@
 <script src="uikit/dist/js/uikit-icons.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/js/uikit-icons.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>

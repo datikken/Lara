@@ -11,14 +11,14 @@
             </div>
         @endif
 
-        <h2 class="uk-heading-small">Описать год</h2>
+        <h2 class="uk-heading-small">Блог пост</h2>
 
-        <form action="/admin/sendCreateAbout" method="post" enctype="multipart/form-data">
+        <form action="/admin/sendCreatePost" method="post" enctype="multipart/form-data">
 
             {{ csrf_field() }}
 
             <div class="uk-margin">
-                <input class="uk-input" type="text" name="year" id="year" placeholder="Год" required>
+                <input class="uk-input" type="text" name="category" id="category" placeholder="Категория" required>
             </div>
 
             <div class="uk-margin">
@@ -26,17 +26,30 @@
             </div>
 
             <div class="uk-margin">
-                <input class="uk-input" type="text" name="description" id="description" placeholder="Описание" required>
+                <input class="uk-input" type="text" name="author" id="author" placeholder="Описание" required>
             </div>
 
-            <div class="uk-margin uk-form-row">
-                <textarea cols="4" rows="4" class="uk-text-area" type="text" name="text" id="text" placeholder="Текст" required></textarea>
+
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <textarea name="content" id="content" class="form-control ckeditor"></textarea>
+                    </div>
+                </div>
             </div>
+
 
             <button type="submit" name="submit" class="btn btn-primary uk-button uk-button-default">Отправить</button>
 
         </form>
 
-    </div>
 
+            <script>
+                CKEDITOR.replace( 'content', {
+                    height: 300,
+                    filebrowserUploadUrl: "upload.php"
+                });
+            </script>
+
+    </div>
 @endsection

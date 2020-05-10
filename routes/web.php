@@ -39,6 +39,9 @@ Route::get('/product/feedback', 'ProductFeedbackController@index');
 //ADMIN - functionality
 
 //BLOG
+Route::get('admin/blog',['uses' => 'AdminPostController@index', 'as' => 'adminDisplayBlog']);
+Route::get('admin/createPost',['uses' => 'AdminPostController@showCreateForm', 'as' => 'adminDisplayCreateForm']);
+Route::get('admin/sendCreatePost',['uses' => 'AdminPostController@sendCreatePost', 'as' => 'adminSendCreateForm']);
 
 //ABOUT
 Route::get('admin/about', ['uses' => "AdminAboutController@index", 'as' => 'adminDisplayAbout']);

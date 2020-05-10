@@ -9266,6 +9266,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   resize: none;
 }
 
+.admin_container {
+  max-width: 500px;
+  margin-left: 40px;
+}
+
 .dash {
   max-width: 1170px;
   margin: 0 auto;
