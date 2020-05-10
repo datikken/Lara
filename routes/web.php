@@ -38,6 +38,8 @@ Route::get('/product/feedback', 'ProductFeedbackController@index');
 
 //ADMIN - functionality
 
+//BLOG
+
 //ABOUT
 Route::get('admin/about', ['uses' => "AdminAboutController@index", 'as' => 'adminDisplayAbout']);
 Route::get('admin/createAbout', ['uses' => "AdminAboutController@displayCreateAbout", 'as' => 'adminDisplayCreateAbout']);
