@@ -12017,6 +12017,10 @@ var ProductDetailsController = /*#__PURE__*/function () {
         var id = e.currentTarget.getAttribute('data-id');
         var product = document.querySelector("#product-".concat(id));
         var img = product.querySelector('.product_wrapper-item_image').querySelector('img').getAttribute('src');
+        var url = product.querySelector('.product_link').getAttribute('href');
+        var price = product.querySelector('.product_wrapper-item_price-item').innerHTML;
+
+        that._setDetailsLink(url, id, price);
 
         that._setDetailsImg(img, id);
       });
@@ -12024,6 +12028,14 @@ var ProductDetailsController = /*#__PURE__*/function () {
   }
 
   _createClass(ProductDetailsController, [{
+    key: "_setDetailsLink",
+    value: function _setDetailsLink(url, id, price) {
+      var modal = document.querySelector("#modal-".concat(id));
+      var dtlbtn = modal.querySelector('.prdet_wrap-icons_ctas-details').setAttribute('href', url);
+      var priceItem = modal.querySelector('.amount_btn-value-wrap_inner_val');
+      priceItem.innerText = price;
+    }
+  }, {
     key: "_setDetailsImg",
     value: function _setDetailsImg(src, id) {
       var modal = document.querySelector("#modal-".concat(id));

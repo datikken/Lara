@@ -1,5 +1,5 @@
 <div class="product" data-category="{{ $category }}" id="product-{{ $id }}">
-    <a href="{{ route('ShowProductDetails',['id' => $id]) }}">
+    <a href="{{ route('ShowProductDetails',['id' => $id]) }}" class="product_link">
         <div class="product_wrapper">
             <div class="product_wrapper-item">
                 <div class="product_wrapper-item_name">
@@ -31,7 +31,7 @@
                     <span class="product_wrapper-item_head-item">IC-HLOR70A</span>
                 </div>
                 <div class="product_wrapper-item_price">
-                    <span class="product_wrapper-item_price-item">{{$price}}</span>
+                    <span class="product_wrapper-item_price-item">@php echo floor($price) @endphp</span>
                     <img src="/images/icons/rub.svg" alt="cur" />
                 </div>
 
@@ -88,9 +88,9 @@
                            <div class="prdet_wrap-icons_ctas-buy">
                                @include('components.btn.buy_btn', [ 'class' => 'empty_cart-btn', 'text' => 'в корзину'])
                            </div>
-                           <div class="prdet_wrap-icons_ctas-details">
+                           <a class="prdet_wrap-icons_ctas-details">
                                @include('components.btn.text_btn', [ 'class' => 'prdet_btn', 'text' => 'подробнее'])
-                           </div>
+                           </a>
                        </div>
                    </div>
                </div>

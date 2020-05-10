@@ -7,7 +7,7 @@
 
         <div class="amount_btn-value-wrap">
             <div class="amount_btn-value-wrap_inner">
-                <span>29900</span>
+                <span class="amount_btn-value-wrap_inner_val">29900</span>
                 <img src="/images/icons/rub.svg" alt="cur" />
             </div>
         </div>
