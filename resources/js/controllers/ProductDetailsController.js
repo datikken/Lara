@@ -18,7 +18,7 @@ class ProductDetailsController {
     _setDetailsImg(src,id) {
         let modal = document.querySelector(`#modal-${id}`);
 
-        let img = modal.querySelector('.prdet_wrap-item_img');
+        let img = modal.querySelector('.prdet_wrap-item_img_inner');
             img.style.backgroundImage = `url(${src})`;
 
     }

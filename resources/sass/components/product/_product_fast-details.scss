@@ -163,6 +163,12 @@
                 background-position: center;
                 border: 1px solid $light_gray;
                 background-size: contain;
+
+                &_inner {
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
             }
         }
     }

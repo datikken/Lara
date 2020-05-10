@@ -41,10 +41,15 @@
 }
 
 .details_slide {
-    background-size: contain!important;
+    background-size: inherit!important;
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.details_slide_thumb {
+    background-size: 50%!important;
+}
+
 .swiper-container {
     width: 100%;
     margin-left: auto;

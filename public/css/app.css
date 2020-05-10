@@ -5665,6 +5665,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border: 1px solid #e9e9ea;
   background-size: contain;
 }
+.prdet_wrap-item_img_inner {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .pfeedback {
   margin: 0 auto;
@@ -5840,9 +5845,13 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .details_slide {
-  background-size: contain !important;
+  background-size: inherit !important;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.details_slide_thumb {
+  background-size: 50% !important;
 }
 
 .swiper-container {

@@ -12027,7 +12027,7 @@ var ProductDetailsController = /*#__PURE__*/function () {
     key: "_setDetailsImg",
     value: function _setDetailsImg(src, id) {
       var modal = document.querySelector("#modal-".concat(id));
-      var img = modal.querySelector('.prdet_wrap-item_img');
+      var img = modal.querySelector('.prdet_wrap-item_img_inner');
       img.style.backgroundImage = "url(".concat(src, ")");
     }
   }]);
