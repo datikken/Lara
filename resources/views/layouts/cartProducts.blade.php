@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/css/app.css">
 @include('components.styles.style')
 @include('components.header.header')
 @include('components.menu.menu')

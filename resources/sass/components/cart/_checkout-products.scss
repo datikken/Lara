@@ -19,24 +19,35 @@
     &_item {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      align-items: center;
+      align-items: flex-start;
       grid-gap: 30px;
       margin-bottom: 10px;
 
-      &:last-child {
-        margin-top: 10px;
+      .cart_check-button {
+        align-self: flex-start;
+        margin-top: 24px;
       }
 
       .checkbox {
         flex-direction: row!important;
         align-items: center;
       }
+
       &-group {
           display: flex;
           flex-direction: column;
           border: none;
           outline: none;
           user-select: none;
+
+          label {
+              display: flex;
+
+              span {
+                  color: $red;
+                  margin-left: 5px;
+              }
+          }
 
           &_btn {
             outline: none;

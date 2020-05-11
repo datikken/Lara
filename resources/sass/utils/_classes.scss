@@ -190,6 +190,9 @@ span {
 .deliveryTypeError {
   border-bottom: 1px solid $red;
 }
+.errorLabel {
+    color: $red;
+}
 .errorBorder {
   border: 1px solid $red;
 }

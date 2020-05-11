@@ -11503,11 +11503,18 @@ var DeliveryAuthController = /*#__PURE__*/function () {
     var form = document.querySelector('.cart_check');
 
     if (form) {
+      this._focusClearListeners();
+
       this.validate(form);
     }
   }
 
   _createClass(DeliveryAuthController, [{
+    key: "_focusClearListeners",
+    value: function _focusClearListeners() {
+      var groups = document.querySelectorAll('.cart_check-wrap_item-group');
+    }
+  }, {
     key: "_makeCall",
     value: function _makeCall() {
       var url = document.querySelector('.cart_check-wrap').getAttribute('data-href');
@@ -11537,8 +11544,7 @@ var DeliveryAuthController = /*#__PURE__*/function () {
         }, dataObj),
         success: function success(data, status, XHR) {
           var host = window.location.host;
-          var protocol = window.location.protocol;
-          window.location.href = protocol + '//' + host + "/product/deliveryForm";
+          var protocol = window.location.protocol; // window.location.href = protocol + '//' + host + `/product/deliveryForm`;
         },
         error: function error(_error, status, XHR) {
           console.warn(_error);
@@ -11562,9 +11568,8 @@ var DeliveryAuthController = /*#__PURE__*/function () {
 
           if (input && input.value === '') {
             input.classList.add('errorBorder');
-            label && label.classList.remove('invisible');
-            btn.style.alignSelf = 'center';
-            item.style.marginBottom = 0;
+            label && label.classList.remove('invisible'); // btn.style.alignSelf = 'center';
+            // item.style.marginBottom = '10px';
           } else {
             valid = true;
           }

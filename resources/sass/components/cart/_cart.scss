@@ -121,6 +121,11 @@
               font-weight: 500;
               text-decoration: none;
               color: $black;
+
+                &:hover {
+                    color: $black;
+                }
+
               @include breakpoint($phone) {
                 font-size: 12px;
               }
