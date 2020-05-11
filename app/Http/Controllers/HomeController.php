@@ -83,8 +83,21 @@ class HomeController extends Controller
         $imageEncoded = File::get($request->img);
 
         Storage::disk('local')->put('public/user_avatars/' . $imageName, $imageEncoded);
-//        DB::table('users_info')->insert();
 
+        $arr = array(
+            'image'=> $imageName,
+            'user_id' => $userId,
+            'created_at' => \Carbon\Carbon::now()
+        );
+
+        $exst = DB::table('users_info')->where('user_id', $userId);
+
+        if($exst) {
+            DB::table('users_info')->where('user_id', $userId)->update($arr);
+            return;
+        }
+
+        DB::table('users_info')->insert($arr);
     }
 
 }
