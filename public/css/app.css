@@ -10019,6 +10019,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin: 0;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .admin_pannel {
   display: grid;
   grid-template-columns: 300px 1fr;

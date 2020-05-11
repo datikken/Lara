@@ -77,6 +77,11 @@
 @import "./components/product/pfitem";
 @import "./components/about/about_content";
 
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 .admin_pannel {
     display: grid;
     grid-template-columns: 300px 1fr;
