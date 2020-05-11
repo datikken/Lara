@@ -9,7 +9,15 @@
 
             <div class="dfill_wrap-form_top">
                 <div class="dfill_wrap-form_top-left">
+
+                    <form action="/home/userAvatar" method="post" class="invisible" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <input type="file" class="upload_file" name="img" id="img" required>
+                        <button type="submit">send</button>
+                    </form>
+
                     <div class="dfill_wrap-form_top-left_inner" style="background-image: url('/images/dash/dash_avatar.svg')"></div>
+
                 </div>
                 <div class="dfill_wrap-form_top-right">
                     <form action="/" method="post">

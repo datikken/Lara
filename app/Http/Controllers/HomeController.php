@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Auth;
 
 class HomeController extends Controller
@@ -69,6 +71,19 @@ class HomeController extends Controller
         DB::table('users_adresses')->insert($arr);
 
         return redirect()->route('home');
+    }
+
+    public function setUsersAvatar(Request $request)
+    {
+        $userId = Auth::id();
+
+        $ext = $request->file('img')->getClientOriginalExtension();
+        $stringImageReFormat = str_replace(' ', '', $userId);
+        $imageName = $stringImageReFormat . '.' . $ext;
+        $imageEncoded = File::get($request->img);
+
+        Storage::disk('local')->put('public/user_avatars/' . $imageName, $imageEncoded);
+//        DB::table('users_info')->insert();
 
     }
 
