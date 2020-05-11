@@ -14,7 +14,7 @@ class AboutController
 {
     public function index()
     {
-        $years = About::all()->sortBy('year');;
+        $years = About::all()->sortBy('year');
 
         return view('pages.about', ['years' => $years]);
     }
