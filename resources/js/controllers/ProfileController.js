@@ -20,7 +20,6 @@ class ProfileController {
                       dataObj[name] = val;
 
                       //TODO: JS VALIDATION
-
                       // console.log(window.app.validator.validate(a));
 
                       $.ajax({
