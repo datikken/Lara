@@ -14,7 +14,8 @@ class AboutTableSeeder extends Seeder
     {
         $faker = Faker::create('App\About');
 
-        for($i = 0; $i <= 100; $i++) {
+
+        for($i = 0; $i <= 10; $i++) {
 
             DB::table('abouts')->insert([
                 'year' => $faker->year,

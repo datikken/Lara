@@ -73,12 +73,12 @@
               <span class="descline_item"></span>
             <div class="navigator_wrap-line_items">
                 @foreach ($years as $year)
-                    <span class="navigator_wrap-line_items-item">{{ $year }}</span>
+                    <span class="navigator_wrap-line_items-item">{{ $year['year'] }}</span>
                 @endforeach
             </div>
           </div>
     </div>
 </div>
 
-@include('components.about.about_content', ['year' => 2017])
-@include('components.about.about_content', ['year' => 2016])
+@include('components.about.about_content', ['year' => $years[0]])
+@include('components.about.about_content', ['year' => $years[1]])

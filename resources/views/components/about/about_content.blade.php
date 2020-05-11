@@ -1,7 +1,7 @@
 <div class="aboutc">
     <div class="aboutc_wrap">
         <div class="aboutc_wrap_head">
-            <div class="aboutc_year">{{$year}}</div>
+            <div class="aboutc_year">{{ $year['year'] }}</div>
             <div class="aboutc_line"></div>
         </div>
         <div class="aboutc_cols">
