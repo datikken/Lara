@@ -1,7 +1,7 @@
 .dfill {
     margin-left: 30px;
 
-    a {
+    &_change {
         float: right;
         font-family: $font;
         font-size: 12px;
@@ -9,7 +9,7 @@
         letter-spacing: 0.02em;
         color: $blue;
         margin-top: 20px;
-        cursor: pointer;
+        pointer-events: none;
     }
 
     .dchange {

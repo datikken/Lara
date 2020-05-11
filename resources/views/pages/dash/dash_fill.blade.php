@@ -11,7 +11,14 @@
                 <div class="dfill_wrap-form_top-left">
 
                     <form action="/home/userAvatar" method="post" class="invisible" enctype="multipart/form-data">
+                        @if ($errors->any())
+                            @foreach ($errors->all() as $error)
+                                <span>{{ $error }}</span>
+                            @endforeach
+                        @endif
+
                         {{ csrf_field() }}
+
                         <input type="file" class="upload_file" name="img" id="img" required>
                         <button type="submit">send</button>
                     </form>
@@ -20,63 +27,72 @@
 
                 </div>
                 <div class="dfill_wrap-form_top-right">
-                    <form action="/" method="post">
-                        {{csrf_field()}}
+                    <div class="dfill_wrap-form_top-right_inner">
+                        <form class="form-group" enctype="multipart/form-data" action="/home/collectProfileData" method="post">
 
-                        <div class="form-group">
+                            {{csrf_field()}}
                             <label for="name">Имя <span>*</span></label>
                             <div class="input_wrap">
+
                                 <input type="text" class="form-control" name="name" placeholder="Имя" required>
-                                <button class="form-group-btn">
+
+                                <button class="form-group-btn" type="submit">
                                     <span>
                                         изменить
                                     </span>
                                 </button>
                             </div>
-                        </div>
+                        </form>
 
-                        <div class="form-group">
+                        <form class="form-group" enctype="multipart/form-data" action="/home/collectProfileData" method="post">
+
+                            {{csrf_field()}}
                             <label for="name">Фамилия <span>*</span></label>
                             <div class="input_wrap">
                                 <input type="text" class="form-control" name="lastname" placeholder="Фамилия" required>
-                                <button class="form-group-btn">
+                                <button class="form-group-btn" type="submit">
                                      <span>
                                         изменить
                                     </span>
                                 </button>
                             </div>
-                        </div>
+                        </form>
 
-                        <div class="form-group">
+                        <form class="form-group" enctype="multipart/form-data" action="/home/collectProfileData" method="post">
+
+                            {{csrf_field()}}
                             <label for="name">Телефон <span>*</span></label>
 
                             <div class="input_wrap">
                                 <input type="text" class="form-control" name="tel" placeholder="Телефон" required>
-                                <button class="form-group-btn">
+                                <button class="form-group-btn" type="submit">
                                     <span>
                                         изменить
                                     </span>
                                 </button>
                             </div>
-                        </div>
+                        </form>
 
-                        <div class="form-group">
+                        <form class="form-group" enctype="multipart/form-data" action="/home/collectProfileData" method="post">
+                            {{csrf_field()}}
+
                             <label for="name">Адрес электронной почты <span>*</span></label>
-                            <div class="input_wrap">
-                                <input type="text" class="form-control" name="email" placeholder="Адрес электронной почты" required>
-                                <button class="form-group-btn">
+                            <div class="input_wrap" data-required>
+                                <input type="text" class="form-control" name="email" placeholder="Адрес электронной почты">
+                                <button class="form-group-btn" type="submit">
                                     <span>
                                         изменить
                                     </span>
                                 </button>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+
+                    </div>
                 </div>
             </div>
        </div>
 
-       <a href="#">изменить пароль</a>
+       <a class="dfill_change" href="#">изменить пароль</a>
 
         <div class="dchange">
             <form action="/" method="post">

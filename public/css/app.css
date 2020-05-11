@@ -9475,7 +9475,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dfill {
   margin-left: 30px;
 }
-.dfill a {
+.dfill_change {
   float: right;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
@@ -9483,7 +9483,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   letter-spacing: 0.02em;
   color: #3559fd;
   margin-top: 20px;
-  cursor: pointer;
+  pointer-events: none;
 }
 .dfill .dchange {
   width: 100%;

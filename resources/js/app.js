@@ -1,10 +1,13 @@
 // require('./bootstrap');
 // window.Vue = require('vue');
+
+import _ from 'lodash';
 import './components/Menu';
 import './components/Swiper';
 import './components/Search';
 import './components/Form';
 
+import Validator from './functions/validator';
 import SimpleMap from './components/Map'
 import ContactsFormController from './controllers/ContactsFormController'
 import LoginFormController from './controllers/LoginFormController'
@@ -23,6 +26,7 @@ import CartProgressController from './controllers/CartProgressController'
 import ProfileController from './controllers/ProfileController'
 
 $(document).ready(function() {
+    new Validator();
     new LoginFormController();
     new ContactsFormController();
     new SearchController();

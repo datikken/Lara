@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Auth;
 
 class HomeController extends Controller
 {
@@ -31,6 +32,7 @@ class HomeController extends Controller
 
     public function showFillProfileForm()
     {
+
         return view('pages.dash.dash_fill');
     }
 
@@ -94,10 +96,49 @@ class HomeController extends Controller
 
         if($exst) {
             DB::table('users_info')->where('user_id', $userId)->update($arr);
-            return;
+        } else {
+            DB::table('users_info')->insert($arr);
         }
 
-        DB::table('users_info')->insert($arr);
+        return redirect()->route('fillProfile');
+    }
+
+    public function collectProfileData(Request $request)
+    {
+        $userId = Auth::id();
+
+        $name = $request->input('name');
+        $lastname = $request->input('lastname');
+        $tel = $request->input('tel');
+        $mail = $request->input('email');
+
+        if($name) {
+            Validator::make( $request->all(), [
+                'name' => 'max:500',
+            ])->validate();
+
+            DB::table('users')->where('id', $userId)->update(['name'=> $name]);
+        }
+
+        if($mail) {
+            DB::table('users')->where('id', $userId)->update(['email' => $mail]);
+        }
+
+        if($lastname) {
+            Validator::make( $request->all(), [
+                'lastname' => 'max:500'
+            ])->validate();
+
+            DB::table('users_info')->where('user_id', $userId)->update(['lastname' => $lastname]);
+        }
+
+        if($tel) {
+            Validator::make( $request->all(), [
+                'tel' => 'required|numeric',
+            ])->validate();
+
+            DB::table('users_info')->where('user_id', $userId)->update(['tel' => $tel]);
+        }
     }
 
 }
