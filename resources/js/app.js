@@ -19,6 +19,7 @@ import InformationController from './controllers/InformationController'
 import ProductDetailsController from './controllers/ProductDetailsController'
 import ProductfeedbackController from './controllers/ProductFeedbackController'
 import AboutController from './controllers/AboutController'
+import CartProgressController from './controllers/CartProgressController'
 
 $(document).ready(function() {
     new LoginFormController();
@@ -34,4 +35,5 @@ $(document).ready(function() {
     new SimpleMap();
     new ProductfeedbackController();
     new AboutController();
+    new CartProgressController();
 });

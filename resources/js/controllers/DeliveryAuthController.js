@@ -10,8 +10,6 @@ class DeliveryAuthController {
     _focusClearListeners() {
         let groups = document.querySelectorAll('.cart_check-wrap_item-group');
 
-
-
     }
     _makeCall() {
         let url = document.querySelector('.cart_check-wrap').getAttribute('data-href');
@@ -44,7 +42,7 @@ class DeliveryAuthController {
                 let host = window.location.host;
                 let protocol = window.location.protocol;
 
-                // window.location.href = protocol + '//' + host + `/product/deliveryForm`;
+                window.location.href = protocol + '//' + host + `/product/deliveryForm`;
             },
             error: function (error, status, XHR) {
                 console.warn(error);
@@ -69,9 +67,6 @@ class DeliveryAuthController {
                 if(input && input.value === '') {
                     input.classList.add('errorBorder');
                     label && label.classList.remove('invisible');
-
-                    // btn.style.alignSelf = 'center';
-                    // item.style.marginBottom = '10px';
                 } else {
                     valid = true;
                 }

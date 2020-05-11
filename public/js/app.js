@@ -10726,8 +10726,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./controllers/ProductDetailsController */ "./resources/js/controllers/ProductDetailsController.js");
 /* harmony import */ var _controllers_ProductFeedbackController__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./controllers/ProductFeedbackController */ "./resources/js/controllers/ProductFeedbackController.js");
 /* harmony import */ var _controllers_AboutController__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./controllers/AboutController */ "./resources/js/controllers/AboutController.js");
+/* harmony import */ var _controllers_CartProgressController__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./controllers/CartProgressController */ "./resources/js/controllers/CartProgressController.js");
 // require('./bootstrap');
 // window.Vue = require('vue');
+
 
 
 
@@ -10760,6 +10762,7 @@ $(document).ready(function () {
   new _components_Map__WEBPACK_IMPORTED_MODULE_4__["default"]();
   new _controllers_ProductFeedbackController__WEBPACK_IMPORTED_MODULE_16__["default"]();
   new _controllers_AboutController__WEBPACK_IMPORTED_MODULE_17__["default"]();
+  new _controllers_CartProgressController__WEBPACK_IMPORTED_MODULE_18__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -11381,6 +11384,53 @@ var CartController = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./resources/js/controllers/CartProgressController.js":
+/*!************************************************************!*\
+  !*** ./resources/js/controllers/CartProgressController.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CartProgressController = /*#__PURE__*/function () {
+  function CartProgressController() {
+    _classCallCheck(this, CartProgressController);
+
+    var el = document.querySelector('.cart');
+    el && this._fixProgress(el);
+  }
+
+  _createClass(CartProgressController, [{
+    key: "_fixProgress",
+    value: function _fixProgress(el) {
+      var line = el.querySelector('.cart_wrap-crumb').querySelector('.active-item');
+      var authStep = el.querySelector('.cart_check-wrap_head');
+      var delStep = el.querySelector('.dform');
+
+      if (authStep) {
+        line.style.width = '37%';
+      }
+
+      if (delStep) {
+        line.style.width = '65%';
+      }
+    }
+  }]);
+
+  return CartProgressController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (CartProgressController);
+
+/***/ }),
+
 /***/ "./resources/js/controllers/CatalogFiltersController.js":
 /*!**************************************************************!*\
   !*** ./resources/js/controllers/CatalogFiltersController.js ***!
@@ -11544,7 +11594,8 @@ var DeliveryAuthController = /*#__PURE__*/function () {
         }, dataObj),
         success: function success(data, status, XHR) {
           var host = window.location.host;
-          var protocol = window.location.protocol; // window.location.href = protocol + '//' + host + `/product/deliveryForm`;
+          var protocol = window.location.protocol;
+          window.location.href = protocol + '//' + host + "/product/deliveryForm";
         },
         error: function error(_error, status, XHR) {
           console.warn(_error);
@@ -11568,8 +11619,7 @@ var DeliveryAuthController = /*#__PURE__*/function () {
 
           if (input && input.value === '') {
             input.classList.add('errorBorder');
-            label && label.classList.remove('invisible'); // btn.style.alignSelf = 'center';
-            // item.style.marginBottom = '10px';
+            label && label.classList.remove('invisible');
           } else {
             valid = true;
           }
