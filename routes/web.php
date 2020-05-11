@@ -118,3 +118,7 @@ Route::get('/mailtest', function()
 {
     dd(Config::get('mail'));
 });
+
+//Reset password
+Route::post('reset_password_without_token', 'HomeController@validatePasswordRequest');
+Route::post('reset_password_with_token', 'HomeController@resetPassword');

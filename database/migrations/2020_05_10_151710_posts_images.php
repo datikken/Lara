@@ -14,7 +14,6 @@ class PostsImages extends Migration
     public function up()
     {
         Schema::create('posts_images', function (Blueprint $table) {
-
             $table->bigIncrements('id');
             $table->string('image');
             $table->string('product_id');
