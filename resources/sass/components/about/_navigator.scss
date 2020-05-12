@@ -32,7 +32,7 @@
                   cursor: pointer;
 
                   @include  breakpoint($medium) {
-                      margin: 0;
+                      margin: 0 20px 0 0;
                   }
               }
           }

@@ -8515,7 +8515,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .navigator_wrap-line_items-item {
-    margin: 0;
+    margin: 0 20px 0 0;
   }
 }
 .navigator_wrap-items::-webkit-scrollbar {
