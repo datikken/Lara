@@ -2,7 +2,6 @@
 
 @section('center')
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
     <h2 class="mt-3">Продукты</h2>
 
     <div class="table-responsive">
@@ -17,6 +16,7 @@
                 <th>Изображение</th>
                 <th>Создан</th>
                 <th>Обновлен</th>
+                <th>Создать</th>
                 <th>Изм.</th>
                 <th>Фотки</th>
                 <th>Изменить</th>
@@ -35,6 +35,14 @@
                 <td><img uk-img style="height: 40px; object-fit: contain" src="{{ Storage::url('product_images/' . $product['image']) }}"/></td>
                 <td>{{$product['created_at']}}</td>
                 <td>{{$product['updated_at']}}</td>
+                <td>
+                    <a href="{{ route('adminCreateProductForm') }}">
+                        <svg class="bi bi-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                </td>
                 <td>
                     <a href="{{route('adminEditProductImageForm', ['id' => $product['id']]) }}">
                         <svg class="bi bi-arrows-move" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -73,11 +81,10 @@
             </tr>
         @endforeach
 
-        {{ $products->links() }}
-
         </tbody>
     </table>
     </div>
-    </main>
+
+    {{ $products->links() }}
 
 @endsection
