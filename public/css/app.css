@@ -10390,6 +10390,7 @@ main {
   top: 2rem;
   cursor: pointer;
   right: 10px;
+  margin-right: 20px;
 }
 @media screen and (min-width: 1030px) {
   .password_field-label {

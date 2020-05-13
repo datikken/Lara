@@ -13,6 +13,11 @@ use App\Product_Image;
 
 class AdminProductsController extends Controller
 {
+    public function main()
+    {
+        return view('admin.main');
+    }
+
     public function index()
     {
         $products = Product::paginate(3);

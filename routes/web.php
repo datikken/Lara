@@ -40,7 +40,7 @@ Route::get('/product/feedback', 'ProductFeedbackController@index');
 
 //ADMIN - functionality
 //BLOG
-Route::get('admin/blog',['uses' => 'AdminPostController@index', 'as' => 'adminDisplayBlog']);
+Route::get('admin/blog',['uses' => 'AdminPostController@main', 'as' => 'adminDisplayBlog']);
 Route::get('admin/createPost',['uses' => 'AdminPostController@showCreateForm', 'as' => 'adminDisplayCreateForm']);
 Route::get('admin/sendCreatePost',['uses' => 'AdminPostController@sendCreatePost', 'as' => 'adminSendCreateForm']);
 
@@ -50,6 +50,7 @@ Route::get('admin/createAbout', ['uses' => "AdminAboutController@displayCreateAb
 Route::post('admin/sendCreateAbout', ['uses' => "AdminAboutController@sendCreateAbout", 'as' => 'adminSendCreateAbout']);
 
 //PRODUCTS
+Route::get('admin', ['uses' => "AdminProductsController@main", 'as' => 'adminDisplayProducts'])->middleware('restrictToAdmin');
 Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts'])->middleware('restrictToAdmin');
 //Display Edit Product form
 Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);

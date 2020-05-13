@@ -450,6 +450,7 @@ main {
         top: 2rem;
         cursor: pointer;
         right: 10px;
+        margin-right: 20px;
 
         @include breakpoint($medium) {
             right:0;
