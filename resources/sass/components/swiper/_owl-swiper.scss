@@ -2,7 +2,7 @@
   overflow: hidden;
 
   @include breakpoint($medium) {
-    margin-bottom: 0;
+    margin-bottom: 100px;
     padding-top: 70px;
   }
 

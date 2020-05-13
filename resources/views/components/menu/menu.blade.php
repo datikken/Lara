@@ -191,7 +191,9 @@
     <div class="menu_wrapper-item">
         <div class="menu_wrapper-item_search">
         <div class="menu_wrapper-item_search_input">
-            <form action="search" method="get" style="margin-bottom: 0;">
+            <form action="{{ route('searchProducts') }}" method="get" style="margin-bottom: 0;" data-searchForm>
+                {{ csrf_field() }}
+
                 <input
                         type="search"
                         name="searchText"

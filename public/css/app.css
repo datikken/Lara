@@ -8381,7 +8381,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .owl-wrapper {
-    margin-bottom: 0;
+    margin-bottom: 100px;
     padding-top: 70px;
   }
 }

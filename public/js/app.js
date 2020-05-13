@@ -29533,22 +29533,47 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var SearchController = /*#__PURE__*/function () {
   _createClass(SearchController, [{
+    key: "_call",
+    value: function _call(url, token, val) {
+      $.ajax({
+        method: "get",
+        url: "".concat(url),
+        data: {
+          searchText: 't2',
+          token: token
+        },
+        success: function success(data, status, XHR) {
+          console.log(status);
+        },
+        error: function error(_error, status, XHR) {
+          console.warn(_error);
+        }
+      });
+    }
+  }, {
+    key: "_makeAjax",
+    value: function _makeAjax() {
+      var form = document.querySelector('[data-searchForm]');
+      var url = form.getAttribute('action');
+      var token = form.querySelector('[name="_token"]');
+      var val = form.querySelector('[name="searchText"]');
+
+      this._call(url, token, val);
+    }
+  }, {
     key: "setListener",
     value: function setListener(search) {
-      $(search).on('focus keypress', function () {
-        var val = $(search).val(); // console.log(val);
-      });
+      that._makeAjax();
     }
   }]);
 
   function SearchController() {
     _classCallCheck(this, SearchController);
 
-    var el = document.querySelector('.menu_wrapper-item_search_input');
+    var el = document.querySelector('[type="search"]');
 
     if (el) {
-      var search = el.querySelector('input');
-      search && this.setListener(search);
+      this.setListener(el);
     }
   }
 
