@@ -19,7 +19,7 @@
                 <input type="text" class="uk-input" name="price" id="price" placeholder="Цена"  required>
             </div>
 
-            <button type="submit" name="submit" class="btn btn-primary uk-button uk-button-default">Отправить</button>
+            <button type="submit" name="submit" class="btn btn-primary">Отправить</button>
 
         </form>
 

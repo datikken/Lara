@@ -7,6 +7,12 @@
 
     <form action="/admin/addMultipleProductImages/{{ $id }}" method="post" enctype="multipart/form-data" class="dropzone">
         {{csrf_field()}}
+
     </form>
+
+    <a href="{{'adminDisplayProducts'}}" class="mt-5" style="display: block;">
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </a>
+
 
 @endsection

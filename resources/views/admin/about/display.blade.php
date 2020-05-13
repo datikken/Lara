@@ -2,17 +2,19 @@
 
 @section('center')
 
+    <h2 class="mt-3">О нас</h2>
+
     <div class="table-responsive">
-        <table class="uk-table">
+        <table class="table table-striped table-sm">
             <thead>
             <tr>
-                <th>#</th>
                 <th>Год</th>
                 <th>Заголовок</th>
                 <th>Описание</th>
                 <th>Содержание</th>
                 <th>Создан</th>
                 <th>Обновлен</th>
+                <th>Удалить</th>
             </tr>
             </thead>
             <tbody>
@@ -27,19 +29,8 @@
                     <td>{{$year['updated_at']}}</td>
 
                     <td>
-                        <a href="{{route('adminEditInformation', ['id' => $year['id']]) }}" class="btn btn-outline-primary">
-                        <span uk-icon="pencil" class="uk-margin-small-right uk-icon">
-                        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="pencil">
-                            <path fill="none" stroke="#000" d="M17.25,6.01 L7.12,16.1 L3.82,17.2 L5.02,13.9 L15.12,3.88 C15.71,3.29 16.66,3.29 17.25,3.88 C17.83,4.47 17.83,5.42 17.25,6.01 L17.25,6.01 Z"></path>
-                            <path fill="none" stroke="#000" d="M15.98,7.268 L13.851,5.148"></path>
-                        </svg>
-                        </span>
-                        </a>
-                    </td>
-
-                    <td>
-                        <a href="{{route('adminDeleteInfo', ['id' => $year['id']])}}" class="btn btn-danger">
-                            <span class="ui-icon" uk-icon="close"></span>
+                        <a href="{{ route('AdminDeleteAbout', ['id' => $year['id']]) }}" class="btn btn-danger">
+                            <span class="ui-icon uk-icon" uk-icon="close"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="close"><path fill="none" stroke="#000" stroke-width="1.06" d="M16,16 L4,4"></path><path fill="none" stroke="#000" stroke-width="1.06" d="M16,4 L4,16"></path></svg></span>
                         </a>
                     </td>
                 </tr>
@@ -47,7 +38,8 @@
 
             </tbody>
         </table>
-
     </div>
+
+    {{ $years->links() }}
 
 @endsection

@@ -33,7 +33,7 @@
                 <textarea cols="4" rows="4" class="uk-text-area" type="text" name="text" id="text" placeholder="Текст" required></textarea>
             </div>
 
-            <button type="submit" name="submit" class="btn btn-primary uk-button uk-button-default">Отправить</button>
+            <button type="submit" name="submit" class="btn btn-primary">Отправить</button>
 
         </form>
 

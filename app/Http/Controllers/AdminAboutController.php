@@ -16,8 +16,16 @@ class AdminAboutController extends Controller
 {
     public function index()
     {
-        $years = About::all();
+        $years = About::paginate(4);
         return view('admin.about.display', ['years' => $years]);
+    }
+
+    public function deleteAbout($id)
+    {
+        $about = About::find($id);
+        About::destroy($id);
+
+        return redirect()->route('adminDisplayAbout');
     }
 
     public function displayCreateAbout()
