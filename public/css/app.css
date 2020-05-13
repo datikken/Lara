@@ -113,6 +113,10 @@ input {
   display: block;
 }
 
+.display {
+  display: block;
+}
+
 .overflow {
   overflow: hidden !important;
   position: fixed;
@@ -9286,6 +9290,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-left: 40px;
 }
 
+.nav-link {
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
 .dash {
   max-width: 1170px;
   margin: 0 auto;
@@ -10023,23 +10033,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   box-sizing: border-box;
 }
 
-.admin_pannel {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-}
-
-.uk-pagination .pagination .page-item {
-  margin: 0 5px;
-}
-
-.uk-sidebar {
-  margin-top: 10px;
-}
-
-.uk-icon {
-  width: 20px !important;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -10406,8 +10399,4 @@ main {
   height: 300px;
   overflow: hidden;
   margin-bottom: 20px;
-}
-
-.display {
-  display: block;
 }
