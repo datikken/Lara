@@ -43,7 +43,8 @@
             <script>
                 CKEDITOR.replace( 'content', {
                     height: 300,
-                    filebrowserUploadUrl: "upload.php"
+                    filebrowserUploadUrl: "{{route('adminSendCreateForm', ['_token' => csrf_token() ])}}",
+                    filebrowserUploadMethod: 'form'
                 });
             </script>
 

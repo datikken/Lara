@@ -37,7 +37,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="{{ route('AdminDeleteAbout', ['id' => $post['id']]) }}" class="btn btn-danger">
+                        <a href="{{ route('AdminDeletePost', ['id' => $post['id']]) }}" class="btn btn-danger">
                             <span class="ui-icon uk-icon" uk-icon="close"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="close"><path fill="none" stroke="#000" stroke-width="1.06" d="M16,16 L4,4"></path><path fill="none" stroke="#000" stroke-width="1.06" d="M16,4 L4,16"></path></svg></span>
                         </a>
                     </td>

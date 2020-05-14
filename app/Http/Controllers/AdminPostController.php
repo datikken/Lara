@@ -8,7 +8,8 @@
 
 namespace App\Http\Controllers;
 use App\Post;
-use http\Env\Request;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminPostController extends Controller
 {
@@ -25,6 +26,56 @@ class AdminPostController extends Controller
 
     public function sendCreatePost(Request $request)
     {
-        dump($request);
+        if($request->hasFile('upload')) {
+            //get filename with extension
+            $filenamewithextension = $request->file('upload')->getClientOriginalName();
+
+            //get filename without extension
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+
+            //get file extension
+            $extension = $request->file('upload')->getClientOriginalExtension();
+
+            //filename to store
+            $filenametostore = $filename.'_'.time().'.'.$extension;
+
+            //Upload File
+            $request->file('upload')->storeAs('public/uploads', $filenametostore);
+
+//            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+//            $url = asset('storage/uploads/'.$filenametostore);
+//            $msg = 'Image successfully uploaded';
+//            $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+//
+//            // Render HTML output
+//            @header('Content-type: text/html; charset=utf-8');
+//            echo $re;
+        }
+
+
+        $category = $request->input('category');
+        $heading = $request->input('heading');
+        $author = $request->input('author');
+        $content = $request->input('content');
+        dump($request->hasFile('upload'));
+
+//        $arr = array(
+//            'category' => $category,
+//            'heading' => $heading,
+//            'author' => $author,
+//            'content' => $content,
+//            'created_at' => \Carbon\Carbon::now()
+//        );
+//
+//        DB::table('posts')->insert($arr);
+//
+//        return redirect()->route('adminDisplayBlog');
     }
+
+    public function deletePost($id)
+    {
+        Post::destroy($id);
+        return redirect()->route('adminDisplayBlog');
+    }
+
 }
