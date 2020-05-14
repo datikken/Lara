@@ -29,17 +29,13 @@
                 <input class="uk-input" type="text" name="author" id="author" placeholder="Описание" required>
             </div>
 
-
-            <div class="container">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <textarea name="content" id="content" class="form-control ckeditor"></textarea>
-                    </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <textarea name="content" id="content" class="form-control ckeditor"></textarea>
                 </div>
             </div>
 
-
-            <button type="submit" name="submit" class="btn btn-primary">Отправить</button>
+            <button type="submit" name="submit" class="btn btn-primary mt-5">Отправить</button>
 
         </form>
 

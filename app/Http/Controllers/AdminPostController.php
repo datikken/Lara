@@ -7,15 +7,15 @@
  */
 
 namespace App\Http\Controllers;
-
-
+use App\Post;
 use http\Env\Request;
 
 class AdminPostController extends Controller
 {
     public function index()
     {
-        return view('admin.blog.display');
+        $posts = Post::paginate(5);
+        return view('admin.blog.display', ['posts' => $posts]);
     }
 
     public function showCreateForm()

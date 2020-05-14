@@ -39,7 +39,7 @@ Route::get('/product/feedback', 'ProductFeedbackController@index');
 //Users
 Route::get('admin/users', ['uses' => 'AdminUsersController@index', 'as' => 'adminDisplayUsers']);
 //BLOG
-Route::get('admin/blog',['uses' => 'AdminPostController@main', 'as' => 'adminDisplayBlog']);
+Route::get('admin/blog',['uses' => 'AdminPostController@index', 'as' => 'adminDisplayBlog']);
 Route::get('admin/createPost',['uses' => 'AdminPostController@showCreateForm', 'as' => 'adminDisplayCreateForm']);
 Route::get('admin/sendCreatePost',['uses' => 'AdminPostController@sendCreatePost', 'as' => 'adminSendCreateForm']);
 
