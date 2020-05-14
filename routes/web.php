@@ -36,6 +36,8 @@ Route::post('/contacts/feedback', 'ContactsController@collectFeedback');
 Route::get('/product/feedback', 'ProductFeedbackController@index');
 
 //ADMIN - functionality
+//Tracking
+Route::get('admin/tracking', ['uses' => 'AdminTrackingController@index', 'as' => 'AdminDisplayTracking']);
 //Users
 Route::get('admin/users', ['uses' => 'AdminUsersController@index', 'as' => 'adminDisplayUsers']);
 //BLOG

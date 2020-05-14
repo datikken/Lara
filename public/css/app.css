@@ -9285,17 +9285,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   resize: none;
 }
 
-.admin_container {
-  max-width: 500px;
-  margin-left: 40px;
-}
-
-.nav-link {
-  font-weight: 500;
-  color: #333;
-  font-size: 14px;
-}
-
 .dash {
   max-width: 1170px;
   margin: 0 auto;
