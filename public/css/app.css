@@ -2695,7 +2695,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .sales_slider {
   width: 100%;
   height: 166px;
-  margin: 10px 0 20px !important;
+  margin: 10px 0 45px !important;
 }
 @media screen and (min-width: 600px) {
   .sales_slider {
@@ -3182,8 +3182,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #3559fd;
 }
 .sales_best-wrapper_item-content_inner-image {
-  width: 459px;
-  height: 310px;
+  width: 470px;
+  height: 320px;
   margin-left: 35px;
   background-repeat: no-repeat;
   background-size: cover;
