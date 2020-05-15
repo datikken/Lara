@@ -23,6 +23,7 @@ import ProductfeedbackController from './controllers/ProductFeedbackController'
 import AboutController from './controllers/AboutController'
 import CartProgressController from './controllers/CartProgressController'
 import ProfileController from './controllers/ProfileController'
+import TrackingFeedController from './controllers/TrackingFeedController'
 
 $(document).ready(function() {
     new Validator();
@@ -41,4 +42,5 @@ $(document).ready(function() {
     new AboutController();
     new CartProgressController();
     new ProfileController();
+    new TrackingFeedController();
 });

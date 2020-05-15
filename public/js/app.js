@@ -10729,8 +10729,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_AboutController__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./controllers/AboutController */ "./resources/js/controllers/AboutController.js");
 /* harmony import */ var _controllers_CartProgressController__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./controllers/CartProgressController */ "./resources/js/controllers/CartProgressController.js");
 /* harmony import */ var _controllers_ProfileController__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./controllers/ProfileController */ "./resources/js/controllers/ProfileController.js");
+/* harmony import */ var _controllers_TrackingFeedController__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./controllers/TrackingFeedController */ "./resources/js/controllers/TrackingFeedController.js");
 // window.Vue = require('vue');
 // import _ from 'lodash';
+
 
 
 
@@ -10769,6 +10771,7 @@ $(document).ready(function () {
   new _controllers_AboutController__WEBPACK_IMPORTED_MODULE_18__["default"]();
   new _controllers_CartProgressController__WEBPACK_IMPORTED_MODULE_19__["default"]();
   new _controllers_ProfileController__WEBPACK_IMPORTED_MODULE_20__["default"]();
+  new _controllers_TrackingFeedController__WEBPACK_IMPORTED_MODULE_21__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -12398,6 +12401,88 @@ var SearchController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchController);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/js/controllers/TrackingFeedController.js":
+/*!************************************************************!*\
+  !*** ./resources/js/controllers/TrackingFeedController.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var TrackingFeedController = /*#__PURE__*/function () {
+  _createClass(TrackingFeedController, [{
+    key: "_makeCall",
+    value: function _makeCall(el, theme) {
+      var message = el.querySelector('textarea').value;
+      var url = el.querySelector('.trackfeed_content').getAttribute('action');
+      var token = el.querySelector('[name="_token"]').value;
+      var dataObj = {
+        theme: theme,
+        message: message,
+        token: token
+      };
+      $.ajax({
+        method: "get",
+        url: url,
+        data: dataObj,
+        processData: false,
+        contentType: false,
+        success: function success(data, status, XHR) {
+          console.log(status, data, XHR);
+        },
+        error: function error(_error, status, XHR) {
+          console.warn(_error);
+        }
+      });
+    }
+  }, {
+    key: "_setListeners",
+    value: function _setListeners(el) {
+      var themeBtns = el.querySelectorAll('.trackfeed_feedItem');
+      var input = el.querySelector('[name="feed_theme"]');
+      var submit = el.querySelector('.action_btn ');
+      var that = this;
+      themeBtns.forEach(function (el, i) {
+        el.addEventListener('click', function (e) {
+          themeBtns.forEach(function (el) {
+            el.classList.remove('feedActive');
+          });
+          e.currentTarget.classList.add('feedActive');
+          var text = e.currentTarget.innerText;
+          input.value = text;
+        });
+      });
+      submit.addEventListener('click', function () {
+        that._makeCall(el, input.value);
+      });
+    }
+  }]);
+
+  function TrackingFeedController() {
+    _classCallCheck(this, TrackingFeedController);
+
+    var el = document.querySelector('.trackfeed');
+
+    if (el) {
+      this._setListeners(el);
+    }
+  }
+
+  return TrackingFeedController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (TrackingFeedController);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

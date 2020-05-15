@@ -16,7 +16,7 @@ Route::get('product/AddToCart/{id}', ['uses' => 'ProductsController@addProductTo
 Route::get('product/deleteItemFromCart/{id}', ['uses' => 'ProductsController@deleteItemFromCart', 'as' => 'DeleteItemFromCart']);
 Route::get('product/details/{id}',['uses' => 'ProductsController@productDetails', 'as' => 'ShowProductDetails']);
 //Tracking
-Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking']);
+Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking'])->middleware('restrictToAdmin');
 
 //PROFILE
 Route::get('/home', 'HomeController@index')->name('home');
@@ -40,6 +40,7 @@ Route::get('/product/feedback', 'ProductFeedbackController@index');
 //ADMIN - functionality
 //Tracking
 Route::get('admin/tracking', ['uses' => 'AdminTrackingController@index', 'as' => 'AdminDisplayTracking']);
+Route::get('admin/collectData', ['uses' => 'AdminTrackingController@collectData', 'as' => 'AdminCollectTracking']);
 //Users
 Route::get('admin/users', ['uses' => 'AdminUsersController@index', 'as' => 'adminDisplayUsers']);
 //BLOG

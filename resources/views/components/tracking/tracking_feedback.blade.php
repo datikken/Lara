@@ -7,6 +7,8 @@
         <label for="trackfeed" class="trackfeed_themeLabel">Выберите тему обращения</label>
 
         <div class="trackfeed_theme">
+            <input type="text" class="invisible" name="feed_theme">
+
             <div class="trackfeed_feedItem feedActive">
                 <span>Пожелания</span>
             </div>
@@ -18,7 +20,8 @@
             </div>
         </div>
 
-        <form class="trackfeed_content" action="/" method="post">
+        <form class="trackfeed_content" action="{{ route('AdminCollectTracking') }}" method="get">
+            {{ csrf_field() }}
             <label for="trackfeed" class="trackfeed_label">Оставить отзыв о заказе</label>
             <textarea name="" id="" class="trackfeed_textarea" cols="30" rows="10"></textarea>
         </form>
