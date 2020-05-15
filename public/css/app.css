@@ -5901,6 +5901,49 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   width: 580px;
 }
 
+.trackp {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: flex-start;
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+.trackp_progress {
+  width: 25%;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
+  position: absolute;
+  top: 32px;
+}
+.trackp_item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: #292930;
+  max-width: 200px;
+}
+.trackp_item_head {
+  font-family: "MontserratSemiBold";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 40px;
+}
+.trackp_item_footer {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+}
+
 @media screen and (min-width: 1030px) {
   .cart {
     margin-bottom: 300px;
