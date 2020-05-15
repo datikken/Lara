@@ -1348,7 +1348,7 @@ b {
 .subscription_wrapper-item_button {
   position: absolute;
   right: -3.2rem;
-  top: 52%;
+  top: 50%;
   transform: translate(-50%, -50%);
   background: #40404c;
   height: 100%;
@@ -5909,6 +5909,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   max-width: 1170px;
   margin: 0 auto;
   position: relative;
+  margin-bottom: 100px;
 }
 .trackp_progress {
   width: 25%;
