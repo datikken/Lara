@@ -3817,84 +3817,44 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 
-.breadcrumbs {
-  padding-left: 25px;
+.breadcrumb {
   max-width: 1170px;
   margin: 0 auto;
-  margin-bottom: 20px;
-}
-@media screen and (min-width: 600px) {
-  .breadcrumbs {
-    padding-left: 0;
-  }
-}
-.breadcrumbs_list {
-  max-width: 314px;
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 20px 20px 15px 0;
-}
-.breadcrumbs_list--item {
-  margin-right: 35px;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  color: #d4d4d5;
+  height: 24px;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
-.breadcrumbs_list--item_text {
-  transition: color 0.2s;
-  color: #d4d4d5;
+.breadcrumb_wrap {
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+  border-bottom: 1px solid #FDD935;
 }
-.breadcrumbs_list--item:after {
-  content: "";
-  background-image: url("/img/icons/arrow_right.svg");
-  height: 10px;
-  width: 4px;
+.breadcrumb_arrow {
   display: block;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  background-image: url("/images/icons/arrow_right.svg");
+  width: 4px;
+  height: 10px;
   margin-left: 5px;
 }
-
-.MuiBreadcrumbs-root {
-  border-bottom: 1px solid #fdd935;
-  padding-bottom: 10px;
-  display: inline-block;
+.breadcrumb_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px 10px 0;
+  cursor: pointer;
 }
-
-.MuiSvgIcon-root {
+.breadcrumb_item:last-child {
+  padding-right: 0;
+}
+.breadcrumb_item_inner {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
   color: #d4d4d5;
-}
-
-.MuiBreadcrumbs-ol {
-  padding-top: 20px !important;
-}
-
-.MuiBreadcrumbs-li, .MuiTypography-body1 {
-  font-size: 12px !important;
-  line-height: 14px !important;
-  letter-spacing: 0.02em !important;
-}
-.MuiBreadcrumbs-li a, .MuiBreadcrumbs-li p, .MuiTypography-body1 a, .MuiTypography-body1 p {
-  color: #d4d4d5;
-}
-.MuiBreadcrumbs-li p, .MuiTypography-body1 p {
-  pointer-events: none;
-}
-.MuiBreadcrumbs-li:hover, .MuiTypography-body1:hover {
-  text-decoration: none;
-  color: #40404c;
-}
-
-.crumbs_wrap {
-  max-width: 1170px;
-  margin-top: 20px;
-  margin: 0 auto;
 }
 
 .products_grid {

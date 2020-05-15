@@ -1,4 +1,7 @@
 <?php
+//Auth routes
+Auth::routes();
+
 //Main page
 Route::get('/',['uses' => "ProductsController@showIndex", 'as' => 'index']);
 //Catalog page
@@ -12,9 +15,8 @@ Route::get('product/AddToCart/{id}', ['uses' => 'ProductsController@addProductTo
     //Remove items from cart
 Route::get('product/deleteItemFromCart/{id}', ['uses' => 'ProductsController@deleteItemFromCart', 'as' => 'DeleteItemFromCart']);
 Route::get('product/details/{id}',['uses' => 'ProductsController@productDetails', 'as' => 'ShowProductDetails']);
-
-//Auth routes
-Auth::routes();
+//Tracking
+Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking']);
 
 //PROFILE
 Route::get('/home', 'HomeController@index')->name('home');
