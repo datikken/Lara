@@ -5945,6 +5945,108 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   letter-spacing: 0.02em;
 }
 
+.trackfeed {
+  width: 1920px;
+  height: 547px;
+  background: #e9e9ea;
+}
+.trackfeed_textarea {
+  height: 175px;
+  border: 1px solid #292930;
+  background: #e9e9ea;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  width: 700px;
+  resize: none;
+  outline: none;
+}
+.trackfeed_label {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  padding-bottom: 10px;
+}
+.trackfeed_content {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.trackfeed_themeLabel {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  padding-bottom: 10px;
+}
+.trackfeed_wrap {
+  display: flex;
+  max-width: 700px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.trackfeed_feedItem {
+  text-align: center;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+}
+.trackfeed_feedItem:nth-child(1) {
+  border-right: 1px solid #292930;
+}
+.trackfeed_feedItem:nth-child(2) {
+  border-right: 1px solid #292930;
+}
+.trackfeed_head {
+  padding: 50px 0 15px 0;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #292930;
+  max-width: 530px;
+  margin: 0 auto;
+  border-bottom: 1px solid #fdd935;
+  margin-bottom: 40px;
+}
+.trackfeed_theme {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 700px;
+  border: 1px solid;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.feedActive {
+  background: #292930;
+  color: #fff;
+}
+
 @media screen and (min-width: 1030px) {
   .cart {
     margin-bottom: 300px;

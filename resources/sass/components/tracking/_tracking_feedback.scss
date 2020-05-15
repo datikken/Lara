@@ -1,0 +1,111 @@
+.trackfeed {
+    width: 1920px;
+    height: 547px;
+    background: $light_gray;
+
+    &_textarea {
+        height: 175px;
+        border: 1px solid $dblack;
+        background: $light_gray;
+        border-radius: 30px;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+        width: 700px;
+        resize: none;
+        outline: none;
+    }
+
+    &_label {
+        font-family: $semifont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        padding-bottom: 10px;
+    }
+
+    &_content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &_themeLabel {
+        font-family: $semifont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        padding-bottom: 10px;
+    }
+
+    &_wrap {
+        display: flex;
+        max-width: 700px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &_feedItem {
+        text-align: center;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+
+        &:nth-child(1) {
+            border-right: 1px solid $dblack;
+        }
+        &:nth-child(2) {
+            border-right: 1px solid $dblack;
+        }
+    }
+
+    &_head {
+        padding: 50px 0 15px 0;
+        font-family: $font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        max-width: 530px;
+        margin: 0 auto;
+        border-bottom: 1px solid $yellow;
+        margin-bottom: 40px;
+    }
+
+    &_theme {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 700px;
+        border: 1px solid;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        margin-bottom: 30px;
+        overflow: hidden;
+    }
+}
+
+.feedActive {
+    background: $dblack;
+    color: #fff;
+}

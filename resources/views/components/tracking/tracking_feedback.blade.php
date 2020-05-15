@@ -4,8 +4,10 @@
             <span>Мы любим, когда товар доставлен надлежащего качества и в назначенный срок. Поэтому, мы будем рады вашему отклику относительно доставки.</span>
         </div>
 
+        <label for="trackfeed" class="trackfeed_themeLabel">Выберите тему обращения</label>
+
         <div class="trackfeed_theme">
-            <div class="trackfeed_feedItem">
+            <div class="trackfeed_feedItem feedActive">
                 <span>Пожелания</span>
             </div>
             <div class="trackfeed_feedItem">
@@ -16,9 +18,12 @@
             </div>
         </div>
 
-        <div class="trackfeed_content">
-            <label for="trackfeed" class="trackfeed_label"></label>
+        <form class="trackfeed_content" action="/" method="post">
+            <label for="trackfeed" class="trackfeed_label">Оставить отзыв о заказе</label>
             <textarea name="" id="" class="trackfeed_textarea" cols="30" rows="10"></textarea>
-        </div>
+        </form>
+
+        @include('components.btn.text_btn', [ 'class' => 'tracking_submit', 'text' => 'Отправить'])
+
     </div>
 </div>
