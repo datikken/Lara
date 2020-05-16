@@ -2,7 +2,16 @@
 
 @section('center')
 
-    <h2 class="mt-3">Продукты</h2>
+    <div class="d-flex flex-row align-items-center m-2 ml-0">
+        <h2 class="mr-3">Продукты</h2>
+
+        <a href="{{ route('adminCreateProductForm') }}">
+            <button class="btn btn-primary">
+                Создать
+            </button>
+        </a>
+
+    </div>
 
     <div class="table-responsive">
     <table class="table table-striped table-sm">
@@ -16,8 +25,7 @@
                 <th>Изображение</th>
                 <th>Создан</th>
                 <th>Обновлен</th>
-                <th>Создать</th>
-                <th>Изм.</th>
+                <th>Фото в каталоге</th>
                 <th>Фотки</th>
                 <th>Изменить</th>
                 <th>Удалить</th>
@@ -35,14 +43,6 @@
                 <td><img uk-img style="height: 40px; object-fit: contain" src="{{ Storage::url('product_images/' . $product['image']) }}"/></td>
                 <td>{{$product['created_at']}}</td>
                 <td>{{$product['updated_at']}}</td>
-                <td>
-                    <a href="{{ route('adminCreateProductForm') }}">
-                        <svg class="bi bi-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>
-                        </svg>
-                    </a>
-                </td>
                 <td>
                     <a href="{{route('adminEditProductImageForm', ['id' => $product['id']]) }}">
                         <svg class="bi bi-arrows-move" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

@@ -14,7 +14,7 @@ class TrackingFeedController {
             data: dataObj,
             headers: {'X-CSRF-TOKEN': token},
             success: function (data, status, XHR) {
-                console.log(status,data,XHR)
+                console.log(status)
             },
             error: function (error, status, XHR) {
                 console.warn(error);

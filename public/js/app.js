@@ -12439,7 +12439,7 @@ var TrackingFeedController = /*#__PURE__*/function () {
           'X-CSRF-TOKEN': token
         },
         success: function success(data, status, XHR) {
-          console.log(status, data, XHR);
+          console.log(status);
         },
         error: function error(_error, status, XHR) {
           console.warn(_error);
