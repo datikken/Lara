@@ -2,7 +2,15 @@
 
 @section('center')
 
-    <h2 class="mt-3">О нас</h2>
+    <div class="d-flex flex-row align-items-center m-2 ml-0">
+        <h2 class="mr-3">Блог</h2>
+
+        <a href="{{ route('adminDisplayCreateForm') }}">
+            <button class="btn btn-primary">
+                Создать
+            </button>
+        </a>
+    </div>
 
     <div class="table-responsive">
         <table class="table table-striped table-sm">

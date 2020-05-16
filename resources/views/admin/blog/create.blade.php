@@ -10,9 +10,6 @@
                 </ul>
             </div>
         @endif
-
-        <h2 class="uk-heading-small">Блог пост</h2>
-
         <form action="/admin/sendCreatePost" method="post" enctype="multipart/form-data">
 
             {{ csrf_field() }}
@@ -35,7 +32,7 @@
                 </div>
             </div>
 
-            <button type="submit" name="submit" class="btn btn-primary mt-5">Отправить</button>
+            <button type="submit" name="submit" class="btn btn-primary mt-1">Отправить</button>
 
         </form>
 

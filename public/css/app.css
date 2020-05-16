@@ -4817,7 +4817,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   max-width: 1170px;
   margin: 0 auto;
   display: flex;
-  max-height: 490px;
+  max-height: 485px;
   overflow: hidden;
 }
 .details_wrap-slider {
@@ -5850,7 +5850,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   box-sizing: border-box;
   padding: 10px 0;
   overflow: hidden;
-  margin-top: 10px;
 }
 
 .gallery-thumbs .swiper-slide {
