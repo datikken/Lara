@@ -12064,7 +12064,7 @@ var LoginFormController = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
@@ -12083,18 +12083,46 @@ var ProductDetailsController = /*#__PURE__*/function () {
         var img = product.querySelector('.product_wrapper-item_image').querySelector('img').getAttribute('src');
         var url = product.querySelector('.product_link').getAttribute('href');
         var price = product.querySelector('.product_wrapper-item_price-item').innerHTML;
+        var modal = document.querySelector("#modal-".concat(id));
 
-        that._setDetailsLink(url, id, price);
+        that._setDetailsLink(url, id, price, modal);
 
         that._setDetailsImg(img, id);
+
+        that._setListeners(product, modal, id, product);
       });
     });
   }
 
   _createClass(ProductDetailsController, [{
+    key: "_setListeners",
+    value: function _setListeners(el, modal, pid, product) {
+      var toCart = modal.querySelector('.prdet_wrap-icons_ctas-buy');
+      var url = product.querySelector('.ajaxGETproduct').dataset.url; // AddToCartProduct
+
+      toCart.addEventListener('click', function () {
+        $.ajax({
+          method: "get",
+          url: "".concat(url),
+          data: {
+            id: pid
+          },
+          success: function success(data, status, XHR) {
+            var amount = data.cart;
+            var price = data.price;
+            $('.menu_wrapper-item_cart_icon-amount').text(amount);
+            $('[data-cartpriceval]').text(price);
+          },
+          error: function error(_error, status, XHR) {
+            console.warn(_error);
+          }
+        });
+      });
+      console.warn(el, modal, pid, url);
+    }
+  }, {
     key: "_setDetailsLink",
-    value: function _setDetailsLink(url, id, price) {
-      var modal = document.querySelector("#modal-".concat(id));
+    value: function _setDetailsLink(url, id, price, modal) {
       var dtlbtn = modal.querySelector('.prdet_wrap-icons_ctas-details').setAttribute('href', url);
       var priceItem = modal.querySelector('.amount_btn-value-wrap_inner_val');
       priceItem.innerText = price;
@@ -12112,6 +12140,7 @@ var ProductDetailsController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (ProductDetailsController);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
