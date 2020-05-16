@@ -1,8 +1,10 @@
 .land_feed {
   max-width: $layoutw;
+  max-height: 200px;
   margin: 0 auto;
   overflow: hidden;
   margin-bottom: 50px;
+  padding-top: 80px;
 
   &-wrap {
     &_item {

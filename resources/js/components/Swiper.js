@@ -1,16 +1,16 @@
 window.onload = function () {
    if(typeof Swiper !== 'undefined') {
-    let main = new Swiper('.landswipe', {
+    let main = new Swiper('.landswiper', {
         slidesPerView: 'auto',
         containerClass: 'landswipe_swiper',
         centeredSlides: true,
         initialSlide: '2',
         spaceBetween: 100,
-        loop: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false
-        },
+        // loop: true,
+        // autoplay: {
+        //     delay: 2500,
+        //     disableOnInteraction: false
+        // },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,

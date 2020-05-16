@@ -2,14 +2,17 @@
   max-width: $layoutw;
   margin: 0 auto;
 
+    &:nth-child(2) {
+        background: red;
+        border-bottom: 1px solid $light_gray;
+    }
+
   &_block {
     display: flex;
     max-width: 870px;
-    padding-bottom: 80px;
     margin: 0 auto;
 
     &-item {
-
       &_slider {
         margin-left: 70px;
         margin-top: 1.85rem;
@@ -198,4 +201,25 @@
       }
     }
   }
+}
+.land_delimeter {
+    position: relative;
+
+    .land {
+        margin-bottom: 50px;
+        padding-bottom: 30px;
+    }
+
+    &:after {
+        content: "";
+        height: 1px;
+        width: 90%;
+        height: 1px;
+        bottom: 0;
+        left: 50%;
+        display: block;
+        position: absolute;
+        background: $light_gray;
+        transform: translate(-50%, 0);
+    }
 }

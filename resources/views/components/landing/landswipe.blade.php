@@ -1,4 +1,4 @@
-<div class="swiper-container landswipe">
+<div class="swiper-container landswiper">
     <div class="swiper-wrapper ">
         <div class="swiper-slide" key="1">
             @include('components.landing.landswipe_item')
