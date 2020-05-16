@@ -19,8 +19,10 @@ class LandingController {
                         TweenMax.to(icon, 2, {
                             x:100,
                             ease: Bounce.easeOut,
-                            left: `-20%`
+                            left: `-20%`,
                         });
+                    } else {
+                        icon.style.left = '-600px'
                     }
                 });
             },

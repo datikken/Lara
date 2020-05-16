@@ -3,12 +3,32 @@
     margin: 0 auto;
     border-bottom: 1px solid $yellow;
     margin-bottom: 30px;
+    position: relative;
+
+    &_best {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $dblack;
+        margin-bottom: 6px;
+        position: absolute;
+        top: 0;
+    }
 
     &_wrap {
         display: flex;
         padding-bottom: 10px;
 
         &-item {
+            .pfitem_btn_all {
+                position: absolute;
+                right: 0;
+            }
+
             &:first-child {
                 margin-right: 30px;
             }
@@ -38,6 +58,8 @@
                     line-height: 20px;
                     letter-spacing: 0.02em;
                     color: $black;
+
+
                 }
 
                 &-desc {
@@ -79,7 +101,7 @@
                 color: $black;
                 margin: 20px 0 10px 0;
                 display: flex;
-                align-items: center;
+                align-items: flex-end;
 
                 &-date {
                     font-family: $font;

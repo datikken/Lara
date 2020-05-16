@@ -12005,6 +12005,8 @@ var LandingController = /*#__PURE__*/function () {
               ease: Bounce.easeOut,
               left: "-20%"
             });
+          } else {
+            icon.style.left = '-600px';
           }
         });
       }, {

@@ -9959,10 +9959,28 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin: 0 auto;
   border-bottom: 1px solid #fdd935;
   margin-bottom: 30px;
+  position: relative;
+}
+.pfitem_best {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+  margin-bottom: 6px;
+  position: absolute;
+  top: 0;
 }
 .pfitem_wrap {
   display: flex;
   padding-bottom: 10px;
+}
+.pfitem_wrap-item .pfitem_btn_all {
+  position: absolute;
+  right: 0;
 }
 .pfitem_wrap-item:first-child {
   margin-right: 30px;
@@ -10027,7 +10045,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #40404c;
   margin: 20px 0 10px 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 .pfitem_wrap-item_head-date {
   font-family: "Montserrat", sans-serif;
@@ -10533,11 +10551,13 @@ main {
 }
 .animland_icon_inner {
   background-image: url("/images/landing/buddies.svg");
+  background-repeat: no-repeat;
   transform: translate(0, -50%);
   position: absolute;
   width: 425px;
   height: 420px;
   top: 50%;
+  pointer-events: none;
   left: -1000px;
 }
 .animland_heading {
@@ -10549,6 +10569,7 @@ main {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #292930;
+  pointer-events: none;
 }
 .animland_wrap {
   display: grid;

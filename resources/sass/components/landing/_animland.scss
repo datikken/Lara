@@ -9,11 +9,13 @@
 
        &_inner {
            background-image: url('/images/landing/buddies.svg');
+           background-repeat: no-repeat;
            transform: translate(0, -50%);
            position: absolute;
            width: 425px;
            height: 420px;
            top: 50%;
+           pointer-events: none;
            left: -1000px;
        }
     }
@@ -27,6 +29,7 @@
         letter-spacing: 0.02em;
         text-transform: uppercase;
         color: $dblack;
+        pointer-events: none;
     }
 
     &_wrap {

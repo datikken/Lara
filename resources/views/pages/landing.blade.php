@@ -44,4 +44,6 @@
 
     @include('components.landing.animated')
 
+    @include('components.landing.landfeedback', ['feed' => ''])
+
 @endsection
