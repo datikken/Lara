@@ -40,7 +40,6 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 10px;
-      padding-top: 10px;
 
       &-desc {
         &_item {
@@ -93,7 +92,7 @@
     .swiper-wrapper {
         .swiper-slide {
             max-width: 198px!important;
-            max-height: 100px!important;
+            height: 100px!important;
         }
     }
 }
