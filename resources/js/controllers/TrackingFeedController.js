@@ -5,15 +5,14 @@ class TrackingFeedController {
         let token = el.querySelector('[name="_token"]').value;
 
         let dataObj = {
-            theme, message, token
+            theme, message
         }
 
         $.ajax({
-            method: "get",
+            method: "post",
             url: url,
             data: dataObj,
-            processData: false,
-            contentType: false,
+            headers: {'X-CSRF-TOKEN': token},
             success: function (data, status, XHR) {
                 console.log(status,data,XHR)
             },

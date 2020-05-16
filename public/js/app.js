@@ -12429,15 +12429,15 @@ var TrackingFeedController = /*#__PURE__*/function () {
       var token = el.querySelector('[name="_token"]').value;
       var dataObj = {
         theme: theme,
-        message: message,
-        token: token
+        message: message
       };
       $.ajax({
-        method: "get",
+        method: "post",
         url: url,
         data: dataObj,
-        processData: false,
-        contentType: false,
+        headers: {
+          'X-CSRF-TOKEN': token
+        },
         success: function success(data, status, XHR) {
           console.log(status, data, XHR);
         },

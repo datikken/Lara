@@ -7,7 +7,7 @@
         <label for="trackfeed" class="trackfeed_themeLabel">Выберите тему обращения</label>
 
         <div class="trackfeed_theme">
-            <input type="text" class="invisible" name="feed_theme">
+            <input type="text" class="invisible" name="feed_theme" value="Пожелания">
 
             <div class="trackfeed_feedItem feedActive">
                 <span>Пожелания</span>
