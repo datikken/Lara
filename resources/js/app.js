@@ -24,11 +24,13 @@ import AboutController from './controllers/AboutController'
 import CartProgressController from './controllers/CartProgressController'
 import ProfileController from './controllers/ProfileController'
 import TrackingFeedController from './controllers/TrackingFeedController'
+import LandingController from './controllers/LandingController'
 
 $(document).ready(function() {
     new Validator();
     new LoginFormController();
     new ContactsFormController();
+    new LandingController();
     // new SearchController();
     new Checkbox();
     new CartController();

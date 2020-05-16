@@ -10730,8 +10730,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_CartProgressController__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./controllers/CartProgressController */ "./resources/js/controllers/CartProgressController.js");
 /* harmony import */ var _controllers_ProfileController__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./controllers/ProfileController */ "./resources/js/controllers/ProfileController.js");
 /* harmony import */ var _controllers_TrackingFeedController__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./controllers/TrackingFeedController */ "./resources/js/controllers/TrackingFeedController.js");
+/* harmony import */ var _controllers_LandingController__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./controllers/LandingController */ "./resources/js/controllers/LandingController.js");
 // window.Vue = require('vue');
 // import _ from 'lodash';
+
 
 
 
@@ -10757,7 +10759,8 @@ __webpack_require__.r(__webpack_exports__);
 $(document).ready(function () {
   new _functions_validator__WEBPACK_IMPORTED_MODULE_4__["default"]();
   new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_7__["default"]();
-  new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_6__["default"](); // new SearchController();
+  new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_6__["default"]();
+  new _controllers_LandingController__WEBPACK_IMPORTED_MODULE_22__["default"](); // new SearchController();
 
   new _components_Checkbox__WEBPACK_IMPORTED_MODULE_12__["default"]();
   new _controllers_CartController__WEBPACK_IMPORTED_MODULE_11__["default"]();
@@ -11959,6 +11962,64 @@ var InformationController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (InformationController);
+
+/***/ }),
+
+/***/ "./resources/js/controllers/LandingController.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/controllers/LandingController.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var LandingController = /*#__PURE__*/function () {
+  function LandingController() {
+    _classCallCheck(this, LandingController);
+
+    var el = document.querySelector('.animland');
+
+    if (el) {
+      this._setListeners(el);
+    }
+  }
+
+  _createClass(LandingController, [{
+    key: "_setListeners",
+    value: function _setListeners(el) {
+      var icon = el.querySelector('.animland_icon_inner');
+      var testlist = document.querySelectorAll('.animland'),
+          test = Array.prototype.slice.call(testlist, 0);
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.intersectionRatio > 0) {
+            TweenMax.to(icon, 2, {
+              x: 100,
+              ease: Bounce.easeOut,
+              left: "-20%"
+            });
+          }
+        });
+      }, {
+        rootMargin: '0px 0px'
+      });
+      test.forEach(function (test) {
+        observer.observe(test);
+      });
+    }
+  }]);
+
+  return LandingController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (LandingController);
 
 /***/ }),
 

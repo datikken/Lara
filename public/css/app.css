@@ -10528,6 +10528,18 @@ main {
   margin: 170px 0;
   background: #fdd935;
 }
+.animland_icon {
+  position: relative;
+}
+.animland_icon_inner {
+  background-image: url("/images/landing/buddies.svg");
+  transform: translate(0, -50%);
+  position: absolute;
+  width: 425px;
+  height: 420px;
+  top: 50%;
+  left: -1000px;
+}
 .animland_heading {
   font-family: "Montserrat", sans-serif;
   font-style: normal;

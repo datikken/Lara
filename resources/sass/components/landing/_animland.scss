@@ -5,7 +5,17 @@
     background: $yellow;
 
     &_icon {
+       position: relative;
 
+       &_inner {
+           background-image: url('/images/landing/buddies.svg');
+           transform: translate(0, -50%);
+           position: absolute;
+           width: 425px;
+           height: 420px;
+           top: 50%;
+           left: -1000px;
+       }
     }
 
     &_heading {
