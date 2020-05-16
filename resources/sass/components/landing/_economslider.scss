@@ -1,0 +1,155 @@
+.economslider {
+    margin-left: 70px;
+    position: relative;
+
+    &_economy {
+        font-family: $font;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: $black;
+    }
+
+    &_footer {
+        padding-top: 30px;
+        width: 300px;
+        margin: 0 auto;
+        cursor: pointer;
+
+        &_head {
+            span {
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 14px;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                color: $black;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+
+        &_btn {
+            background-color: $yellow;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 300px;
+            height: 50px;
+        }
+
+    }
+
+    &_image {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 80px;
+        width: 200px;
+
+        &-left {
+            background-image: url('/images/landing/card.svg');
+        }
+        &-right {
+            background-image: url('/images/landing/card2.svg');
+        }
+    }
+
+    &_value {
+        font-family: $font;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 26px;
+        text-transform: uppercase;
+        color: #292930;
+    }
+
+    &_card {
+        width: 200px;
+        display: grid;
+        grid-template-rows: 150px 50px;
+        border: 1px solid $light_gray;
+
+        &_head {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &_footer {
+            background: $light_gray;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &_cards {
+        padding-top: 50px;
+        display: grid;
+        max-width: 430px;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    &_line {
+        position: absolute;
+        height: 10px;
+        background: $black;
+        width: 100%;
+        cursor: pointer;
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            height: 20px;
+            width: 4px;
+            background: $black;
+            top: -5px;
+        }
+
+        &:before {
+            left: 0;
+        }
+
+        &:after {
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    &_labels {
+        display: flex;
+        justify-content: space-between;
+        width: 495px;
+        font-family: $font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: right;
+        letter-spacing: 0.02em;
+        color: $black;
+        margin-bottom: 15px;
+    }
+
+    &_outer {
+        max-width: 870px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+
+        .land {
+            margin: 0;
+            max-width: initial;
+        }
+    }
+}

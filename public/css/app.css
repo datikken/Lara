@@ -4813,6 +4813,141 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #292930;
 }
 
+.economslider {
+  margin-left: 70px;
+  position: relative;
+}
+.economslider_economy {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #40404c;
+}
+.economslider_footer {
+  padding-top: 30px;
+  width: 300px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.economslider_footer_head span {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #40404c;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.economslider_footer_btn {
+  background-color: #fdd935;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 300px;
+  height: 50px;
+}
+.economslider_image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80px;
+  width: 200px;
+}
+.economslider_image-left {
+  background-image: url("/images/landing/card.svg");
+}
+.economslider_image-right {
+  background-image: url("/images/landing/card2.svg");
+}
+.economslider_value {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: #292930;
+}
+.economslider_card {
+  width: 200px;
+  display: grid;
+  grid-template-rows: 150px 50px;
+  border: 1px solid #e9e9ea;
+}
+.economslider_card_head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.economslider_card_footer {
+  background: #e9e9ea;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.economslider_cards {
+  padding-top: 50px;
+  display: grid;
+  max-width: 430px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+.economslider_line {
+  position: absolute;
+  height: 10px;
+  background: #40404c;
+  width: 100%;
+  cursor: pointer;
+}
+.economslider_line:before, .economslider_line:after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 4px;
+  background: #40404c;
+  top: -5px;
+}
+.economslider_line:before {
+  left: 0;
+}
+.economslider_line:after {
+  position: absolute;
+  right: 0;
+}
+.economslider_labels {
+  display: flex;
+  justify-content: space-between;
+  width: 495px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  margin-bottom: 15px;
+}
+.economslider_outer {
+  max-width: 870px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+}
+.economslider_outer .land {
+  margin: 0;
+  max-width: initial;
+}
+
 .details_wrap {
   max-width: 1170px;
   margin: 0 auto;
