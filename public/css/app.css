@@ -10990,7 +10990,7 @@ main {
 }
 
 .questions {
-  max-width: 1170px;
+  max-width: 1030px;
   margin: 0 auto;
 }
 .questions_heading {
@@ -11001,7 +11001,7 @@ main {
   line-height: 26px;
   text-transform: uppercase;
   color: #40404c;
-  margin: 0;
+  margin: 0 0 50px 0;
 }
 .questions_head {
   font-family: "MontserratSemiBold";
