@@ -210,9 +210,9 @@
             color: $dblack;
             border-bottom: 1px solid $light_gray;
             justify-content: space-between;
-            width: 88%;
             transition: all $transition;
             display: flex!important;
+            width: 100%;
 
             &_secondary {
               background: $white;

@@ -1,7 +1,12 @@
 <div class="swiper-container main_slider">
     <div class="swiper-wrapper">
-        <a href="/landing" class="swiper-slide" style="background-image: url('/images/swiper/Slider-image1.png')"></a>
-        <a href="/landing" class="swiper-slide" style="background-image: url('/images/swiper/Slider-image2.png')"></a>
+        <div class="swiper-slide" style="background-image: url('/images/swiper/Slider-image1.png')"></div>
+        <div class="swiper-slide" style="background-image: url('/images/swiper/Slider-image2.png')"></div>
+    </div>
+
+    <div class="main_swiper_links">
+        <a href="/landing"></a>
+        <a href="/landingt2"></a>
     </div>
 
     <div class="swiper-pagination"></div>

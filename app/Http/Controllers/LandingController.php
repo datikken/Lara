@@ -13,6 +13,11 @@ class LandingController extends Controller
 {
     public function index()
     {
-        return view('pages.landing');
+        return view('pages.landings.landing');
+    }
+
+    public function second()
+    {
+        return view('pages.landings.landingt2');
     }
 }
