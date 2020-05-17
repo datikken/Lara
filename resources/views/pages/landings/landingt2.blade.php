@@ -1,6 +1,11 @@
 @extends('layouts.index')
 @section('center')
 
-@include('components.landingt2.thead')
+<div class="landingt">
+    @include('components.landingt.thead')
+    @include('components.landing.feedback')
+    @include('components.landingt.features')
+
+</div>
 
 @endsection

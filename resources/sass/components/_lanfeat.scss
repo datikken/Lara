@@ -1,0 +1,153 @@
+.lanfeat {
+    max-width: $layoutw;
+    margin: 0 auto;
+    margin-bottom: 100px;
+
+    &:before {
+        content: '';
+        display: block;
+        border-top: 1px solid $gray;
+    }
+
+    &_color {
+        display: grid;
+        grid-template-columns: 80px repeat(3,40px);
+        position: absolute;
+        height: 40px;
+
+        &_item {
+            &:first-child {
+                background-color: $ruby;
+            }
+            &:nth-child(2) {
+                background-color: $druby;
+            }
+            &:nth-child(3) {
+                background-color: $mruby;
+            }
+            &:nth-child(4) {
+                background-color: $lruby;
+            }
+        }
+    }
+
+    &_wrap {
+        max-width: 970px;
+        margin: 0 auto;
+    }
+
+    &_head {
+        font-family: $font;
+        font-size: 18px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color: black;
+        position: relative;
+
+        &-item {
+            margin-bottom: 15px;
+            padding-top: 20px;
+
+            bold {
+                font-family: $semifont;
+            }
+        }
+
+    }
+    &_table {
+        display: grid;
+        grid-template-columns: 1fr 200px 270px;
+    }
+
+    &_col {
+        &:first-child {
+            border-left: 1px solid $gray;
+        }
+
+        &:nth-child(2) {
+            .lanfeat_col_item {
+                pointer-events: none;
+
+                &:nth-child(12) {
+                    padding-left: 20px;
+                    &:before {
+                        display: none;
+                    }
+                }
+                &:before {
+                    content: "";
+                    display: block;
+                    background-image: url('/images/icons/green_ok.svg');
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        &:last-child {
+            .lanfeat_col_head {
+                background: $gray;
+            }
+
+            .lanfeat_col_item {
+                &:nth-child(12) {
+                    padding-left: 20px;
+                    &:before {
+                        display: none;
+                    }
+                }
+                &:nth-child(3) {
+                    &:before {
+                        background-image: url('/images/icons/red_close.svg');
+                        background-repeat: no-repeat;
+                    }
+                }
+                &:before {
+                    content: "";
+                    display: block;
+                    background-image: url('/images/icons/yellow_ok.svg');
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        &_item {
+            padding-left: 20px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid  $gray;
+            border-right: 1px solid $gray;
+
+            font-family: $font;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            color: #292930;
+        }
+
+        &_head {
+            height: 40px;
+            font-family: $font;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
+            background: $black;
+            display: flex;
+            align-items: center;
+
+            span {
+                z-index: 99;
+                margin-left: 20px;
+            }
+
+        }
+    }
+
+}

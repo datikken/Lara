@@ -2,9 +2,9 @@
     <div class="land_feed-wrap">
         <div class="land_feed-wrap_item">
             <div class="land_feed-wrap_item-heading">
-                        <span class="land_feed-wrap_item-heading-item">
-                            Отзывы
-                        </span>
+                <span class="land_feed-wrap_item-heading-item">
+                    Отзывы
+                </span>
             </div>
         </div>
         <div class="land_feed-wrap_item">
