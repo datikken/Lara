@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class ProductFeedbackController extends Controller
 {
     //
     public function index(Request $request)
     {
-
+        $user_id = Auth::id();
         $name = $request->input('name');
         $email = $request->input('email');
         $recommendation = $request->input('recommendation');
@@ -20,10 +21,15 @@ class ProductFeedbackController extends Controller
         $minus = $request->input('minuses');
         $date = date('Y-m-d H:i:s');
 
+        if(!$user_id) {
+            $user_id = 'not authorized';
+        }
+
         $arr = array(
             'product_id' => $id,
             'name' => $name,
             'email' => $email,
+            'user_id' => $user_id,
             'recommendation' => $recommendation,
             'minus' => $minus,
             'plus' => $plus,

@@ -66,6 +66,16 @@ class ProductFeedbackController {
         });
     }
 
+    _cleanFields() {
+        let inputs = document.querySelectorAll('input');
+        let textareas = document.querySelectorAll('textarea')
+
+        let arr = [...inputs, ...textareas];
+
+        arr.forEach((el) => {
+            el.value = ''
+        })
+    }
     setListeners(el) {
         let that = this;
         let btn = el.querySelector('.action_btn');
@@ -100,7 +110,7 @@ class ProductFeedbackController {
                 url: `${url}`,
                 data: dataObj,
                 success: function (data, status, XHR) {
-                    console.log(data)
+                    that._cleanFields();
                 },
                 error: function (error, status, XHR) {
                     console.warn(error);
