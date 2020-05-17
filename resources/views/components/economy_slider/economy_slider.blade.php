@@ -4,11 +4,20 @@
         <div class="economslider_slide">
             <div class="economslider_labels">
                 <div class="economslider_label-left"><span>1 год</span></div>
-                <div class="economslider_label"></div>
-                <div class="economslider_label-right"><span>10 год</span></div>
+                <div class="economslider_label-center">5 лет</div>
+                <div class="economslider_label-right"><span>10 лет</span></div>
             </div>
 
-            <div class="economslider_line"></div>
+            <div class="economslider_line">
+
+                <div class="economslider_breaks">
+                    @for ($i = 1; $i < 11; $i++)
+                        <div class="economslider_breaks-{{$i}}"></div>
+                    @endfor
+                </div>
+
+                <div class="economslider_line_inner"></div>
+            </div>
         </div>
 
         <div class="economslider_cards">
@@ -36,7 +45,7 @@
                 <span>экономия</span>
             </div>
             <div class="economslider_footer_btn">
-                <span class="economslider_economy">40000</span>
+                <span class="economslider_economy">50000</span>
             </div>
         </div>
 

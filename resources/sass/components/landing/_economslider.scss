@@ -2,6 +2,22 @@
     margin-left: 70px;
     position: relative;
 
+    &_label-center {
+        position: absolute;
+        left: 50%;
+        min-width: 38px;
+        transform: translate(-20px, 0);
+    }
+
+    &_breaks {
+        grid-template-columns: repeat(10, 1fr);
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        display: grid;
+        z-index: 99999;
+    }
+
     &_economy {
         font-family: $font;
         font-style: normal;
@@ -101,28 +117,55 @@
     }
 
     &_line {
-        position: absolute;
-        height: 10px;
-        background: $black;
-        width: 100%;
+        border: 1px solid $black;
+        height: 11px;
+        position: relative;
         cursor: pointer;
 
-        &:before, &:after {
+        &:after {
             content: "";
             position: absolute;
             height: 20px;
-            width: 4px;
+            width: 1px;
             background: $black;
             top: -5px;
+            right: -1px;
         }
 
-        &:before {
-            left: 0;
-        }
-
-        &:after {
+        &_inner {
             position: absolute;
-            right: 0;
+            height: 10px;
+            background: $black;
+            width: 50%;
+            cursor: pointer;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 20px;
+                width: 1px;
+                background: $black;
+                top: -5px;
+                left: -1px;
+            }
+
+             &:after {
+                content: "";
+                position: absolute;
+                height: 20px;
+                width: 4px;
+                background: $black;
+                top: -5px;
+            }
+
+            &:before {
+                left: -1px;
+            }
+
+            &:after {
+                position: absolute;
+                right: 0;
+            }
         }
     }
 
