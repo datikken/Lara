@@ -26,6 +26,9 @@ Route::get('/home/fillAdresses', ['uses' => 'HomeController@FillAdresses', 'as' 
 Route::post('/home/userAvatar', ['uses' => 'HomeController@setUsersAvatar', 'as' => 'FillUserAvatar']);
 Route::get('/home/collectProfileData', ['uses' => 'HomeController@collectProfileData', 'as' => 'collectProfileData']);
 
+//Blog
+Route::get('blog', ['uses' => 'BlogController@index', 'as' => 'blog']);
+
 //PAGES
 Route::get('/information', 'InformationController@index');
 Route::get('/hits', 'HitsController@index');
@@ -73,7 +76,6 @@ Route::get('/mailtest', function()
 //Reset password
 Route::post('reset_password_without_token', 'HomeController@validatePasswordRequest');
 Route::post('reset_password_with_token', 'HomeController@resetPassword');
-
 
 
 
