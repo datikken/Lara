@@ -26,6 +26,25 @@ class AdminPostController extends Controller
 
     public function sendCreatePost(Request $request)
     {
+        $category = $request->input('category');
+        $heading = $request->input('heading');
+        $author = $request->input('author');
+        $content = $request->input('content');
+
+        $arr = array(
+            'category' => $category,
+            'heading' => $heading,
+            'author' => $author,
+            'content' => $content,
+            'created_at' => \Carbon\Carbon::now()
+        );
+
+        DB::table('posts')->insert($arr);
+        return redirect()->route('adminDisplayBlog');
+    }
+
+    public function savePostImage(Request $request)
+    {
         if($request->hasFile('upload')) {
             //get filename with extension
             $filenamewithextension = $request->file('upload')->getClientOriginalName();
@@ -37,39 +56,19 @@ class AdminPostController extends Controller
             $extension = $request->file('upload')->getClientOriginalExtension();
 
             //filename to store
-            $filenametostore = $filename.'_'.time().'.'.$extension;
+            $filenametostore = time().'.'.$extension;
 
             //Upload File
             $request->file('upload')->storeAs('public/uploads', $filenametostore);
 
-//            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-//            $url = asset('storage/uploads/'.$filenametostore);
-//            $msg = 'Image successfully uploaded';
-//            $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
-//
-//            // Render HTML output
-//            @header('Content-type: text/html; charset=utf-8');
-//            echo $re;
+            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+            $url = asset('storage/uploads/'.$filenametostore);
+            $msg = 'Изображение успешно загруженно';
+            $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+
+            @header('Content-type: text/html; charset=utf-8');
+            echo $re;
         }
-
-
-        $category = $request->input('category');
-        $heading = $request->input('heading');
-        $author = $request->input('author');
-        $content = $request->input('content');
-        dump($request->hasFile('upload'));
-
-//        $arr = array(
-//            'category' => $category,
-//            'heading' => $heading,
-//            'author' => $author,
-//            'content' => $content,
-//            'created_at' => \Carbon\Carbon::now()
-//        );
-//
-//        DB::table('posts')->insert($arr);
-//
-//        return redirect()->route('adminDisplayBlog');
     }
 
     public function deletePost($id)

@@ -91,7 +91,8 @@ Route::get('admin/users', ['uses' => 'AdminUsersController@index', 'as' => 'admi
 //BLOG
 Route::get('admin/blog',['uses' => 'AdminPostController@index', 'as' => 'adminDisplayBlog']);
 Route::get('admin/createPost',['uses' => 'AdminPostController@showCreateForm', 'as' => 'adminDisplayCreateForm']);
-Route::post('admin/sendCreatePost',['uses' => 'AdminPostController@sendCreatePost', 'as' => 'adminSendCreateForm']);
+Route::get('admin/sendCreatePost',['uses' => 'AdminPostController@sendCreatePost', 'as' => 'adminSendCreateForm']);
+Route::post('admin/sendCreatePost',['uses' => 'AdminPostController@savePostImage', 'as' => 'adminSavePhoto']);
 Route::get('admin/deletePost/{id}', ['uses' => "AdminPostController@deletePost", 'as' => 'AdminDeletePost']);
 
 //ABOUT

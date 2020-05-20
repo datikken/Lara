@@ -10,7 +10,7 @@
                 </ul>
             </div>
         @endif
-        <form action="/admin/sendCreatePost" method="post" enctype="multipart/form-data">
+        <form action="/admin/sendCreatePost" method="get" enctype="multipart/form-data">
 
             {{ csrf_field() }}
 
@@ -40,7 +40,7 @@
             <script>
                 CKEDITOR.replace( 'content', {
                     height: 300,
-                    filebrowserUploadUrl: "{{route('adminSendCreateForm', ['_token' => csrf_token() ])}}",
+                    filebrowserUploadUrl: "{{route('adminSavePhoto', ['_token' => csrf_token() ])}}",
                     filebrowserUploadMethod: 'form'
                 });
             </script>
