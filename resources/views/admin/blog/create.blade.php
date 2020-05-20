@@ -10,7 +10,7 @@
                 </ul>
             </div>
         @endif
-        <form action="/admin/sendCreatePost" method="get" enctype="multipart/form-data">
+        <form action="{{route('sendCreatePost')}}" method="post" enctype="multipart/form-data">
 
             {{ csrf_field() }}
 
