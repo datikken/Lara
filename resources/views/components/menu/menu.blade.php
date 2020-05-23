@@ -21,14 +21,14 @@
                         </a>
                         <img src="/images/icons/arrow_right.svg" alt="right" />
                     </li>
-                    <li class="menu_Wrapper-item_secondary-item_list-item">
-                        <a href="/sales">
-                        <span class="menu_Wrapper-item_secondary-item_list-item-text">
-                                        Акции
-                                      </span>
-                        </a>
-                        <img src="/images/icons/arrow_right.svg" alt="right" />
-                    </li>
+                    {{--<li class="menu_Wrapper-item_secondary-item_list-item">--}}
+                        {{--<a href="/sales">--}}
+                        {{--<span class="menu_Wrapper-item_secondary-item_list-item-text">--}}
+                            {{--Акции--}}
+                        {{--</span>--}}
+                        {{--</a>--}}
+                        {{--<img src="/images/icons/arrow_right.svg" alt="right" />--}}
+                    {{--</li>--}}
                     <li class="menu_Wrapper-item_secondary-item_list-item">
                         <a href="/about">
                         <span class="menu_Wrapper-item_secondary-item_list-item-text">
