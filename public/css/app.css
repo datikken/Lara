@@ -7440,6 +7440,67 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: block;
 }
 
+.treq {
+  margin-bottom: 500px;
+}
+.treq_inputs {
+  display: flex;
+  margin-bottom: 30px;
+}
+.treq_wrap {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.treq_form {
+  max-width: 1030px;
+  margin: 0 auto;
+}
+.treq_form_gr {
+  display: flex;
+  flex-direction: column;
+}
+.treq_form_gr:nth-child(2) {
+  margin-left: 30px;
+}
+.treq_form_gr input {
+  width: 500px;
+  height: 40px;
+  border: 1px solid #D4D4D5;
+  border-radius: 30px;
+  outline: none;
+  padding-left: 20px;
+}
+.treq_form_gr label {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  margin-bottom: 10px;
+}
+.treq_desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+.treq_heading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+.treq_head {
+  margin-bottom: 45px;
+}
+
 @media screen and (min-width: 600px) {
   .sales_mob {
     display: none;
