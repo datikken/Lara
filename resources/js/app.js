@@ -1,6 +1,6 @@
 // window.Vue = require('vue');
 
-// import _ from 'lodash';
+import _ from 'lodash';
 import './components/Menu';
 import './components/Swiper';
 import './components/Search';

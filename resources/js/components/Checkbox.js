@@ -15,6 +15,7 @@ class Checkbox {
     _clearCheckboxes(item) {
         let img = item.querySelector('img');
         let input = item.querySelector('input');
+
             input.removeAttribute('checked');
             img.classList.add('invisible');
     }
@@ -49,8 +50,6 @@ class Checkbox {
             });
     }
     changeState(els) {
-        // console.log('els',els);
-
         els.forEach((a) => {
             let clicked = false;
             let img = a.querySelector('img');
@@ -65,18 +64,16 @@ class Checkbox {
                 }
             });
             a.addEventListener('click', function (e) {
-                // console.log(e.target, clicked)
-
                 let input = e.target.querySelector('input');
                 let img = e.target.querySelector('img');
 
                 if(clicked) {
                     img.classList.add('invisible');
-                    input.removeAttribute('checked');
+                    input && input.removeAttribute('checked');
                     clicked = false;
                 } else {
                     img && img.classList.remove('invisible');
-                    input.setAttribute('checked', true);
+                    input && input.setAttribute('checked', true);
                     clicked = true;
                 }
             });

@@ -1,3 +1,4 @@
+
 class RegisterController {
     constructor() {
         let auth = document.querySelector('.auth-decor');
@@ -5,10 +6,21 @@ class RegisterController {
         auth && this._setListeners();
     }
 
+    _agreementCheck() {
+        let agreement = document.querySelector('.agreement');
+        let check = agreement.querySelector('.checkbox-wrap_arrow');
+        let span = agreement.querySelector('span');
+
+        if(check.classList.contains('invisible')) {
+            span.classList.add('invalid')
+        } else {
+            span.classList.remove('invalid')
+        }
+    }
     _validator(form) {
-        console.warn(form);
+        app.validator.formValidate([], $(form));
 
-
+        this._agreementCheck();
     }
 
     _registerHandler() {}
@@ -33,7 +45,7 @@ class RegisterController {
                 }
 
                 if(e.target.dataset.registerform) {
-                    that._validator(regSubmit)
+                    that._validator(registerForm)
                 }
             })
         })

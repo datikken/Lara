@@ -5,7 +5,7 @@ class Validator {
         window.app.validator = {
             validateMessage: '',
             config: {
-                selectorFieldItem: '.input_wrap',
+                selectorFieldItem: '.form-block, .form-item, .form-item-big',
                 classInvalid: 'invalid',
                 classValid: 'valid',
             },

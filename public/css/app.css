@@ -406,6 +406,10 @@ b {
   float: right;
 }
 
+.invalid {
+  color: #9C1006 !important;
+}
+
 .header {
   display: none;
   font-family: "MontserratSemiBold";

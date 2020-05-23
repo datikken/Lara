@@ -22,15 +22,18 @@
                                         {{--<strong>{{ $message }}</strong>--}}
                                     {{--</span>--}}
                                 {{--@enderror--}}
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="registration" autocomplete="name" autofocus>
+                                <input
+                                    id="name"
+                                    type="text"
+                                    class="form-control @error('name') is-invalid @enderror"
+                                    name="name" value="registration" autocomplete="name" autofocus>
                             </div>
                         </div>
 
-
                         <div class="form-group row">
-                        <span>
-                            {{ __('Вы регистрируетесь как') }}
-                        </span>
+                            <span>
+                                {{ __('Вы регистрируетесь как') }}
+                            </span>
 
                             <div class="form_type">
                                 <div class="form_type-item activeFormItem">
@@ -44,11 +47,11 @@
                                     </div>
                                 </div>
                             </div>
-                            {{--@error('type')--}}
-                            {{--<span class="invalid-feedback" role="alert">--}}
-                               {{--<strong>{{ $message }}</strong>--}}
-                            {{--</span>--}}
-                            {{--@enderror--}}
+                            @error('type')
+                            <span class="invalid-feedback" role="alert">
+                               <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                             <input id="type" type="text"
                                    class="form-control @error('name') is-invalid @enderror"
                                    name="type"
@@ -62,13 +65,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Почта') }}</label>
 
                             <div class="col-md-6">
-                                {{--@error('email')--}}
-                                {{--<span class="invalid-feedback" role="alert">--}}
-                                        {{--<strong>{{ $message }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@enderror--}}
-
-                                <input id="email" type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
+                                <input id="email"type="email" data-email placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
                             </div>
                         </div>
 
@@ -77,12 +74,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Пароль') }}</label>
 
                             <div class="col-md-6">
-                                {{--@error('password')--}}
-                                {{--<span class="invalid-feedback" role="alert">--}}
-                                        {{--<strong>{{ $message }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@enderror--}}
-                                <input id="password" placeholder="Введите пароль" type="password" class="form-control password_hide @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
+                                <input id="password" data-required placeholder="Введите пароль" type="password" class="form-control password_hide @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
                             </div>
                         </div>
                         <div class="form-group row" style="display: none;">
@@ -90,11 +82,6 @@
 
                             <div class="col-md-6">
                                 <input id="face" type="text" class="form-control @error('password') is-invalid @enderror" name="face" value="face" autocomplete="face">
-                                {{--@error('face')--}}
-                                {{--<span class="invalid-face" role="alert">--}}
-                                        {{--<strong>{{ $message }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@enderror--}}
                             </div>
                         </div>
 
@@ -103,7 +90,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label password_hide text-md-right">{{ __('Подтверждение пароля') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" placeholder="Подтвердите пароль" type="password" class="form-control password_hide" name="password_confirmation" autocomplete="new-password">
+                                <input id="password-confirm" data-required placeholder="Подтвердите пароль" type="password" class="form-control password_hide" name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
 
@@ -122,6 +109,8 @@
                             </div>
                         </div>
                     </form>
+
+
                 </div>
         </div>
     </div>
