@@ -1,3 +1,7 @@
+import {fromEvent} from 'rxjs';
+import {switchMap} from 'rxjs/operators';
+import {Observable} from 'rxjs/Rx';
+
 class SearchController {
     _call (url, token, val) {
         $.ajax({
@@ -15,22 +19,36 @@ class SearchController {
             }
         });
     }
-    _makeAjax() {
+    setListener(search) {
         let form = document.querySelector('[data-searchForm]');
         let url = form.getAttribute('action');
-        let token = form.querySelector('[name="_token"]');
-        let val = form.querySelector('[name="searchText"]');
+        let _token = form.querySelector('[name="_token"]');
+        let input = form.querySelector('[name="searchText"]');
 
-        this._call(url, token, val);
-
-    }
-    setListener(search) {
-
-        that._makeAjax();
+        Observable
+            .fromEvent(input, 'keyup')
+            .subscribe((e) => {
+                $.ajax({
+                    method: "get",
+                    url: `${url}`,
+                    data: {
+                        searchText: input.value,
+                        token: _token.value
+                    },
+                    success: function (data, status, XHR) {
+                        console.log(status,data)
+                    },
+                    error: function (error, status, XHR) {
+                        console.warn(error);
+                    }
+                });
+            })
 
     }
     constructor() {
         let el = document.querySelector('[type="search"]');
+
+        console.log('module started')
 
         if(el) {
            this.setListener(el);

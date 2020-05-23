@@ -31,7 +31,7 @@ $(document).ready(function() {
     new LoginFormController();
     new ContactsFormController();
     new LandingController();
-    // new SearchController();
+    new SearchController();
     new Checkbox();
     new CartController();
     new DeliveryAuthController();
