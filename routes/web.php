@@ -80,6 +80,8 @@ Route::post('reset_password_with_token', 'HomeController@resetPassword');
 
 
 //ADMIN - functionality
+//Subscriptions
+Route::get('admin/subscriptions',['uses' => 'AdminSubscriptionsController@index', 'as' => 'AdminSubscriptions']);
 //Tracking
 Route::get('admin/tracking', ['uses' => 'AdminTrackingController@index', 'as' => 'AdminDisplayTracking']);
 Route::post('admin/collectData', ['uses' => 'AdminTrackingController@collectData', 'as' => 'AdminCollectTracking']);
