@@ -1,7 +1,7 @@
 <div class="sales">
     <div class="sales-wrapper">
 
-        <div class="sales-wrapper_item">
+        <a href="/landing" class="sales-wrapper_item">
             <div class="sales-wrapper_item-inner">
                 <div class="sales-wrapper_item-inner_image image1">
                     <img src='/images/sales/item1.png' alt=""/>
@@ -18,9 +18,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
 
-        <div class="sales-wrapper_item">
+        <a href="/landingt2" class="sales-wrapper_item">
             <div class="sales-wrapper_item-inner">
                 <div class="sales-wrapper_item-inner_image image2">
                     <img src='/images/sales/item.png' alt=""/>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
 
     </div>
 </div>
