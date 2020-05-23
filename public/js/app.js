@@ -34899,6 +34899,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var SearchController = /*#__PURE__*/function () {
   _createClass(SearchController, [{
+    key: "_filterSearchResults",
+    value: function _filterSearchResults(html) {
+      console.warn(html);
+    }
+  }, {
     key: "_call",
     value: function _call(url, token, val) {
       $.ajax({
@@ -34925,6 +34930,7 @@ var SearchController = /*#__PURE__*/function () {
       var _token = form.querySelector('[name="_token"]');
 
       var input = form.querySelector('[name="searchText"]');
+      var that = this;
       rxjs_Rx__WEBPACK_IMPORTED_MODULE_2__["Observable"].fromEvent(input, 'keyup').subscribe(function (e) {
         $.ajax({
           method: "get",
@@ -34934,7 +34940,7 @@ var SearchController = /*#__PURE__*/function () {
             token: _token.value
           },
           success: function success(data, status, XHR) {
-            console.log(status, data);
+            that._filterSearchResults(data);
           },
           error: function error(_error2, status, XHR) {
             console.warn(_error2);

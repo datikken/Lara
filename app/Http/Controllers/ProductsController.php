@@ -56,9 +56,9 @@ class ProductsController extends Controller
     public function search(Request $request)
     {
         $searchText = $request->get('searchText');
-        $products = Product::where('name', 'Like', $searchText."%")->paginate(3);
+        $products = Product::where('name', 'Like', $searchText."%")->get();
 
-        return view('components.products_grid/products_grid', compact('products'));
+        return $products;
     }
 
     public function addProductToCart(Request $request, $id)

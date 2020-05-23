@@ -3,6 +3,9 @@ import {switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs/Rx';
 
 class SearchController {
+    _filterSearchResults(html) {
+        console.warn(html)
+    }
     _call (url, token, val) {
         $.ajax({
             method: "get",
@@ -24,6 +27,7 @@ class SearchController {
         let url = form.getAttribute('action');
         let _token = form.querySelector('[name="_token"]');
         let input = form.querySelector('[name="searchText"]');
+        let that = this;
 
         Observable
             .fromEvent(input, 'keyup')
@@ -36,7 +40,7 @@ class SearchController {
                         token: _token.value
                     },
                     success: function (data, status, XHR) {
-                        console.log(status,data)
+                        that._filterSearchResults(data);
                     },
                     error: function (error, status, XHR) {
                         console.warn(error);
