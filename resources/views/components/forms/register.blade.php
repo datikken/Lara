@@ -56,7 +56,7 @@
                                    class="form-control @error('name') is-invalid @enderror"
                                    name="type"
                                    style="display: none;"
-                                   value="fizik"
+                                   value="Физ. лицо"
                                    autocomplete="type" autofocus>
                         </div>
 

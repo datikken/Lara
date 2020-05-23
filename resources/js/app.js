@@ -9,7 +9,6 @@ import './components/Form';
 import Validator from './functions/validator';
 import SimpleMap from './components/Map'
 import ContactsFormController from './controllers/ContactsFormController'
-import LoginFormController from './controllers/LoginFormController'
 import SearchController from './controllers/SearchController'
 import DeliveryController from './controllers/DeliveryController'
 import DeliveryFormController from './controllers/DeliveryFormController'
@@ -29,7 +28,6 @@ import RegisterController from './controllers/RegisterController'
 
 $(document).ready(function() {
     new Validator();
-    new LoginFormController();
     new ContactsFormController();
     new LandingController();
     new SearchController();

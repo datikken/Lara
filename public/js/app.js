@@ -50236,25 +50236,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_validator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./functions/validator */ "./resources/js/functions/validator.js");
 /* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Map */ "./resources/js/components/Map.js");
 /* harmony import */ var _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./controllers/ContactsFormController */ "./resources/js/controllers/ContactsFormController.js");
-/* harmony import */ var _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/LoginFormController */ "./resources/js/controllers/LoginFormController.js");
-/* harmony import */ var _controllers_SearchController__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./controllers/SearchController */ "./resources/js/controllers/SearchController.js");
-/* harmony import */ var _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./controllers/DeliveryController */ "./resources/js/controllers/DeliveryController.js");
-/* harmony import */ var _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./controllers/DeliveryFormController */ "./resources/js/controllers/DeliveryFormController.js");
-/* harmony import */ var _controllers_CartController__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./controllers/CartController */ "./resources/js/controllers/CartController.js");
-/* harmony import */ var _components_Checkbox__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Checkbox */ "./resources/js/components/Checkbox.js");
-/* harmony import */ var _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./controllers/DeliveryAuthController */ "./resources/js/controllers/DeliveryAuthController.js");
-/* harmony import */ var _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./controllers/CatalogFiltersController */ "./resources/js/controllers/CatalogFiltersController.js");
-/* harmony import */ var _controllers_InformationController__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./controllers/InformationController */ "./resources/js/controllers/InformationController.js");
-/* harmony import */ var _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./controllers/ProductDetailsController */ "./resources/js/controllers/ProductDetailsController.js");
-/* harmony import */ var _controllers_ProductFeedbackController__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./controllers/ProductFeedbackController */ "./resources/js/controllers/ProductFeedbackController.js");
-/* harmony import */ var _controllers_AboutController__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./controllers/AboutController */ "./resources/js/controllers/AboutController.js");
-/* harmony import */ var _controllers_CartProgressController__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./controllers/CartProgressController */ "./resources/js/controllers/CartProgressController.js");
-/* harmony import */ var _controllers_ProfileController__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./controllers/ProfileController */ "./resources/js/controllers/ProfileController.js");
-/* harmony import */ var _controllers_TrackingFeedController__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./controllers/TrackingFeedController */ "./resources/js/controllers/TrackingFeedController.js");
-/* harmony import */ var _controllers_LandingController__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./controllers/LandingController */ "./resources/js/controllers/LandingController.js");
-/* harmony import */ var _controllers_RegisterController__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./controllers/RegisterController */ "./resources/js/controllers/RegisterController.js");
+/* harmony import */ var _controllers_SearchController__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/SearchController */ "./resources/js/controllers/SearchController.js");
+/* harmony import */ var _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./controllers/DeliveryController */ "./resources/js/controllers/DeliveryController.js");
+/* harmony import */ var _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./controllers/DeliveryFormController */ "./resources/js/controllers/DeliveryFormController.js");
+/* harmony import */ var _controllers_CartController__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./controllers/CartController */ "./resources/js/controllers/CartController.js");
+/* harmony import */ var _components_Checkbox__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/Checkbox */ "./resources/js/components/Checkbox.js");
+/* harmony import */ var _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./controllers/DeliveryAuthController */ "./resources/js/controllers/DeliveryAuthController.js");
+/* harmony import */ var _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./controllers/CatalogFiltersController */ "./resources/js/controllers/CatalogFiltersController.js");
+/* harmony import */ var _controllers_InformationController__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./controllers/InformationController */ "./resources/js/controllers/InformationController.js");
+/* harmony import */ var _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./controllers/ProductDetailsController */ "./resources/js/controllers/ProductDetailsController.js");
+/* harmony import */ var _controllers_ProductFeedbackController__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./controllers/ProductFeedbackController */ "./resources/js/controllers/ProductFeedbackController.js");
+/* harmony import */ var _controllers_AboutController__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./controllers/AboutController */ "./resources/js/controllers/AboutController.js");
+/* harmony import */ var _controllers_CartProgressController__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./controllers/CartProgressController */ "./resources/js/controllers/CartProgressController.js");
+/* harmony import */ var _controllers_ProfileController__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./controllers/ProfileController */ "./resources/js/controllers/ProfileController.js");
+/* harmony import */ var _controllers_TrackingFeedController__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./controllers/TrackingFeedController */ "./resources/js/controllers/TrackingFeedController.js");
+/* harmony import */ var _controllers_LandingController__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./controllers/LandingController */ "./resources/js/controllers/LandingController.js");
+/* harmony import */ var _controllers_RegisterController__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./controllers/RegisterController */ "./resources/js/controllers/RegisterController.js");
 // window.Vue = require('vue');
-
 
 
 
@@ -50281,24 +50279,23 @@ __webpack_require__.r(__webpack_exports__);
 
 $(document).ready(function () {
   new _functions_validator__WEBPACK_IMPORTED_MODULE_5__["default"]();
-  new _controllers_LoginFormController__WEBPACK_IMPORTED_MODULE_8__["default"]();
   new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_7__["default"]();
-  new _controllers_LandingController__WEBPACK_IMPORTED_MODULE_23__["default"]();
-  new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_9__["default"]();
-  new _components_Checkbox__WEBPACK_IMPORTED_MODULE_13__["default"]();
-  new _controllers_CartController__WEBPACK_IMPORTED_MODULE_12__["default"]();
-  new _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_14__["default"]();
-  new _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_15__["default"]();
-  new _controllers_InformationController__WEBPACK_IMPORTED_MODULE_16__["default"]();
-  new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_11__["default"]();
-  new _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_17__["default"]();
+  new _controllers_LandingController__WEBPACK_IMPORTED_MODULE_22__["default"]();
+  new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_8__["default"]();
+  new _components_Checkbox__WEBPACK_IMPORTED_MODULE_12__["default"]();
+  new _controllers_CartController__WEBPACK_IMPORTED_MODULE_11__["default"]();
+  new _controllers_DeliveryAuthController__WEBPACK_IMPORTED_MODULE_13__["default"]();
+  new _controllers_CatalogFiltersController__WEBPACK_IMPORTED_MODULE_14__["default"]();
+  new _controllers_InformationController__WEBPACK_IMPORTED_MODULE_15__["default"]();
+  new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_10__["default"]();
+  new _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_16__["default"]();
   new _components_Map__WEBPACK_IMPORTED_MODULE_6__["default"]();
-  new _controllers_ProductFeedbackController__WEBPACK_IMPORTED_MODULE_18__["default"]();
-  new _controllers_AboutController__WEBPACK_IMPORTED_MODULE_19__["default"]();
-  new _controllers_CartProgressController__WEBPACK_IMPORTED_MODULE_20__["default"]();
-  new _controllers_ProfileController__WEBPACK_IMPORTED_MODULE_21__["default"]();
-  new _controllers_TrackingFeedController__WEBPACK_IMPORTED_MODULE_22__["default"]();
-  new _controllers_RegisterController__WEBPACK_IMPORTED_MODULE_24__["default"]();
+  new _controllers_ProductFeedbackController__WEBPACK_IMPORTED_MODULE_17__["default"]();
+  new _controllers_AboutController__WEBPACK_IMPORTED_MODULE_18__["default"]();
+  new _controllers_CartProgressController__WEBPACK_IMPORTED_MODULE_19__["default"]();
+  new _controllers_ProfileController__WEBPACK_IMPORTED_MODULE_20__["default"]();
+  new _controllers_TrackingFeedController__WEBPACK_IMPORTED_MODULE_21__["default"]();
+  new _controllers_RegisterController__WEBPACK_IMPORTED_MODULE_23__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -51596,104 +51593,6 @@ var LandingController = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./resources/js/controllers/LoginFormController.js":
-/*!*********************************************************!*\
-  !*** ./resources/js/controllers/LoginFormController.js ***!
-  \*********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var LoginFormController = /*#__PURE__*/function () {
-  function LoginFormController() {
-    _classCallCheck(this, LoginFormController);
-
-    var that = this;
-    var wraps = document.querySelectorAll('.password_field');
-    var formType = document.querySelectorAll('.form_type-item');
-    var loginBtn = document.querySelector('.login-btn');
-    loginBtn && loginBtn.addEventListener('click', function (e) {// that._login(e);
-    });
-    $('.form_type-item').on('click', function (e) {
-      that._pickFaceType(e);
-    });
-    wraps.forEach(function (el) {
-      var span = el.querySelector('.password_field-label');
-      var clicked = false;
-      span.addEventListener('click', function () {
-        var input = el.querySelector('input');
-        var attr = input.getAttribute('type');
-
-        if (!clicked) {
-          input.setAttribute('type', 'text');
-          clicked = true;
-        } else {
-          input.setAttribute('type', 'password');
-          clicked = false;
-        }
-      });
-    });
-  }
-
-  _createClass(LoginFormController, [{
-    key: "_login",
-    value: function _login(e) {
-      e.preventDefault();
-      var form = document.querySelector('.login-form');
-      var url = form.querySelector('form').getAttribute('action');
-      var token = form.querySelector('[name="_token"]').value;
-      var login = form.querySelector('[name="email"]').value;
-      var password = form.querySelector('[name="password"]').value;
-      console.log(url, token, login, password);
-      $.ajax({
-        method: "post",
-        url: "".concat(url),
-        data: {
-          email: login,
-          password: password,
-          token: token
-        },
-        success: function success(data, status, XHR) {
-          console.log(status);
-        },
-        error: function error(_error, status, XHR) {
-          console.warn(_error);
-        }
-      });
-    }
-  }, {
-    key: "_register",
-    value: function _register() {}
-  }, {
-    key: "_pickFaceType",
-    value: function _pickFaceType(etc) {
-      var inputs = document.querySelectorAll('.form_type-item');
-      var el = etc.currentTarget;
-      inputs.forEach(function (el) {
-        el.classList.remove('activeFormItem');
-        var faceInput = document.querySelector('[name="face"]');
-        var text = el.querySelector('.form_type-itemText_inner');
-        if (text) faceInput.setAttribute('value', '');
-      });
-      el.classList.toggle('activeFormItem');
-    }
-  }]);
-
-  return LoginFormController;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (LoginFormController);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
-
-/***/ }),
-
 /***/ "./resources/js/controllers/ProductDetailsController.js":
 /*!**************************************************************!*\
   !*** ./resources/js/controllers/ProductDetailsController.js ***!
@@ -52046,10 +51945,27 @@ var RegisterController = /*#__PURE__*/function () {
     _classCallCheck(this, RegisterController);
 
     var auth = document.querySelector('.auth-decor');
+    var that = this;
     auth && this._setListeners();
+    $('.form_type-item').on('click', function (e) {
+      that._pickFaceType(e);
+    });
   }
 
   _createClass(RegisterController, [{
+    key: "_pickFaceType",
+    value: function _pickFaceType(etc) {
+      var inputs = document.querySelectorAll('.form_type-item');
+      var el = etc.currentTarget;
+      var text = el.querySelector('.form_type-itemText_inner').innerText;
+      inputs.forEach(function (el) {
+        el.classList.remove('activeFormItem');
+        var faceInput = document.querySelector('[name="type"]');
+        if (text) faceInput.setAttribute('value', text);
+      });
+      el.classList.toggle('activeFormItem');
+    }
+  }, {
     key: "_agreementCheck",
     value: function _agreementCheck() {
       var agreement = document.querySelector('.agreement');
@@ -52058,23 +51974,53 @@ var RegisterController = /*#__PURE__*/function () {
 
       if (check.classList.contains('invisible')) {
         span.classList.add('invalid');
+        return false;
       } else {
         span.classList.remove('invalid');
+        return true;
       }
     }
   }, {
     key: "_validator",
     value: function _validator(form) {
+      var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
       app.validator.formValidate([], $(form));
+      var status;
 
-      this._agreementCheck();
+      if (type != '') {
+        status = this._agreementCheck();
+      } else {
+        status = true;
+      }
+
+      status && this._ajaxCall(form);
     }
   }, {
-    key: "_registerHandler",
-    value: function _registerHandler() {}
-  }, {
-    key: "_loginHandler",
-    value: function _loginHandler() {}
+    key: "_ajaxCall",
+    value: function _ajaxCall(form) {
+      var url = form.getAttribute('action');
+      var method = form.getAttribute('method');
+      var inputs = form.querySelectorAll('input');
+      var dataObj = {};
+      inputs.forEach(function (npt, i) {
+        var name = npt.getAttribute('name');
+        var val = $(npt).val();
+        dataObj[name] = val;
+      });
+      $.ajax({
+        method: method,
+        url: "".concat(url),
+        data: dataObj,
+        success: function success(data, status, XHR) {
+          var host = window.location.host;
+          var protocol = window.location.protocol;
+          window.location.href = protocol + '//' + host + "/home";
+        },
+        error: function error(_error, status, XHR) {
+          console.warn(_error);
+        }
+      });
+    }
   }, {
     key: "_setListeners",
     value: function _setListeners() {
@@ -52093,7 +52039,7 @@ var RegisterController = /*#__PURE__*/function () {
           }
 
           if (e.target.dataset.registerform) {
-            that._validator(registerForm);
+            that._validator(registerForm, 'register');
           }
         });
       });
