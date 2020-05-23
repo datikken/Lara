@@ -25,6 +25,7 @@ import CartProgressController from './controllers/CartProgressController'
 import ProfileController from './controllers/ProfileController'
 import TrackingFeedController from './controllers/TrackingFeedController'
 import LandingController from './controllers/LandingController'
+import RegisterController from './controllers/RegisterController'
 
 $(document).ready(function() {
     new Validator();
@@ -45,4 +46,5 @@ $(document).ready(function() {
     new CartProgressController();
     new ProfileController();
     new TrackingFeedController();
+    new RegisterController();
 });

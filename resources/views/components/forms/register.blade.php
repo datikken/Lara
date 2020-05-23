@@ -10,22 +10,19 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" data-registerForm="true">
                         @csrf
 
                         <div class="form-group row" style="display: none;">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="registration" required autocomplete="name" autofocus>
-
+                                {{--@error('name')--}}
+                                {{--<span class="invalid-feedback" role="alert">--}}
+                                        {{--<strong>{{ $message }}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@enderror--}}
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="registration" autocomplete="name" autofocus>
                             </div>
                         </div>
 
@@ -47,18 +44,17 @@
                                     </div>
                                 </div>
                             </div>
-
-                            @error('type')
-                            <span class="invalid-feedback" role="alert">
-                               <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                            {{--@error('type')--}}
+                            {{--<span class="invalid-feedback" role="alert">--}}
+                               {{--<strong>{{ $message }}</strong>--}}
+                            {{--</span>--}}
+                            {{--@enderror--}}
                             <input id="type" type="text"
                                    class="form-control @error('name') is-invalid @enderror"
                                    name="type"
                                    style="display: none;"
                                    value="fizik"
-                                   required autocomplete="type" autofocus>
+                                   autocomplete="type" autofocus>
                         </div>
 
 
@@ -66,13 +62,13 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Почта') }}</label>
 
                             <div class="col-md-6">
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                {{--@error('email')--}}
+                                {{--<span class="invalid-feedback" role="alert">--}}
+                                        {{--<strong>{{ $message }}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@enderror--}}
 
-                                <input id="email" type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
                             </div>
                         </div>
 
@@ -81,25 +77,24 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Пароль') }}</label>
 
                             <div class="col-md-6">
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                <input id="password" placeholder="Введите пароль" type="password" class="form-control password_hide @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                {{--@error('password')--}}
+                                {{--<span class="invalid-feedback" role="alert">--}}
+                                        {{--<strong>{{ $message }}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@enderror--}}
+                                <input id="password" placeholder="Введите пароль" type="password" class="form-control password_hide @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
                             </div>
                         </div>
                         <div class="form-group row" style="display: none;">
                             <label for="face" class="col-md-4 col-form-label text-md-right">{{ __('Face') }}</label>
 
                             <div class="col-md-6">
-                                <input id="face" type="text" class="form-control @error('password') is-invalid @enderror" name="face" value="face" required autocomplete="face">
-
-                                @error('face')
-                                <span class="invalid-face" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input id="face" type="text" class="form-control @error('password') is-invalid @enderror" name="face" value="face" autocomplete="face">
+                                {{--@error('face')--}}
+                                {{--<span class="invalid-face" role="alert">--}}
+                                        {{--<strong>{{ $message }}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@enderror--}}
                             </div>
                         </div>
 
@@ -108,19 +103,12 @@
                             <label for="password-confirm" class="col-md-4 col-form-label password_hide text-md-right">{{ __('Подтверждение пароля') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" placeholder="Подтвердите пароль" type="password" class="form-control password_hide" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" placeholder="Подтвердите пароль" type="password" class="form-control password_hide" name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
 
                         <div class="agreement">
                             @include('components.checkbox.simple_check', ['name' => 'agreement'])
-                            {{----}}
-                            {{--<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>--}}
-                            {{--<div class="form-check_box">--}}
-                                {{--<div class="form-check_box-wrap">--}}
-                                    {{--<div class="form-check_box-wrap_item"></div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
                             <span>
                                 {{ __('Я принимаю условия политики конфиденциальности') }}
                             </span>
@@ -128,7 +116,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" data-registerForm="true">
                                     {{ __('Зарегистрироваться') }}
                                 </button>
                             </div>

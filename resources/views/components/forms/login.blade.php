@@ -10,16 +10,16 @@
                 </p>
             </div>
             <div class="card-body login-form">
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('login') }}" data-loginForm="true">
                     @csrf
                     <div class="form-group row">
                         <label for="email" class="row_label">{{ __('Почта') }}</label>
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                        @enderror
-                        <input type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        {{--@error('email')--}}
+                        {{--<span class="invalid-feedback" role="alert">--}}
+                            {{--<strong>{{ $message }}</strong>--}}
+                        {{--</span>--}}
+                        {{--@enderror--}}
+                        <input type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
                     </div>
                     <div class="form-group row password_field">
                         <span class="password_field-label"></span>
@@ -27,14 +27,13 @@
                         <label for="email" class="row_label password_hide">{{ __('Пароль') }}</label>
 
                         <div class="col-md-6">
+                            {{--@error('password')--}}
+                            {{--<span class="invalid-feedback" role="alert">--}}
+                                    {{--<strong>{{ $message }}</strong>--}}
+                                {{--</span>--}}
+                            {{--@enderror--}}
 
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-
-                            <input type="password" placeholder="Введите ваш пароль"  class="form-control password_hide @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <input type="password" placeholder="Введите ваш пароль"  class="form-control password_hide @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
                         </div>
                     </div>
 
@@ -67,7 +66,7 @@
                     </div>
 
                     <div class="form-group row mb-0 login-btn">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary" data-loginForm="true">
                             {{ __('Войти') }}
                         </button>
                     </div>

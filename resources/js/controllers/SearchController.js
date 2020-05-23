@@ -52,8 +52,6 @@ class SearchController {
     constructor() {
         let el = document.querySelector('[type="search"]');
 
-        console.log('module started')
-
         if(el) {
            this.setListener(el);
         }

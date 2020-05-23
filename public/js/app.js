@@ -33101,8 +33101,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_ProfileController__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./controllers/ProfileController */ "./resources/js/controllers/ProfileController.js");
 /* harmony import */ var _controllers_TrackingFeedController__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./controllers/TrackingFeedController */ "./resources/js/controllers/TrackingFeedController.js");
 /* harmony import */ var _controllers_LandingController__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./controllers/LandingController */ "./resources/js/controllers/LandingController.js");
+/* harmony import */ var _controllers_RegisterController__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./controllers/RegisterController */ "./resources/js/controllers/RegisterController.js");
 // window.Vue = require('vue');
 // import _ from 'lodash';
+
 
 
 
@@ -33145,6 +33147,7 @@ $(document).ready(function () {
   new _controllers_CartProgressController__WEBPACK_IMPORTED_MODULE_19__["default"]();
   new _controllers_ProfileController__WEBPACK_IMPORTED_MODULE_20__["default"]();
   new _controllers_TrackingFeedController__WEBPACK_IMPORTED_MODULE_21__["default"]();
+  new _controllers_RegisterController__WEBPACK_IMPORTED_MODULE_23__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -34874,6 +34877,72 @@ var ProfileController = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./resources/js/controllers/RegisterController.js":
+/*!********************************************************!*\
+  !*** ./resources/js/controllers/RegisterController.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var RegisterController = /*#__PURE__*/function () {
+  function RegisterController() {
+    _classCallCheck(this, RegisterController);
+
+    var auth = document.querySelector('.auth-decor');
+    auth && this._setListeners();
+  }
+
+  _createClass(RegisterController, [{
+    key: "_validator",
+    value: function _validator(form) {
+      console.warn(form);
+    }
+  }, {
+    key: "_registerHandler",
+    value: function _registerHandler() {}
+  }, {
+    key: "_loginHandler",
+    value: function _loginHandler() {}
+  }, {
+    key: "_setListeners",
+    value: function _setListeners() {
+      var loginForm = document.querySelector('[data-loginform]');
+      var registerForm = document.querySelector('[data-registerform]');
+      var loginSubmit = loginForm.querySelector('[type="submit"]');
+      var regSubmit = registerForm.querySelector('[type="submit"]');
+      var that = this;
+      var arr = [loginSubmit, regSubmit];
+      arr.forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          if (e.target.dataset.loginform) {
+            that._validator(loginForm);
+          }
+
+          if (e.target.dataset.registerform) {
+            that._validator(regSubmit);
+          }
+        });
+      });
+    }
+  }]);
+
+  return RegisterController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (RegisterController);
+
+/***/ }),
+
 /***/ "./resources/js/controllers/SearchController.js":
 /*!******************************************************!*\
   !*** ./resources/js/controllers/SearchController.js ***!
@@ -34954,7 +35023,6 @@ var SearchController = /*#__PURE__*/function () {
     _classCallCheck(this, SearchController);
 
     var el = document.querySelector('[type="search"]');
-    console.log('module started');
 
     if (el) {
       this.setListener(el);
