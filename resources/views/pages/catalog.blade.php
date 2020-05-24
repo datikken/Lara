@@ -2,17 +2,7 @@
 @extends('layouts.index')
 
 @section('center')
-<div class="crumbs_wrap mobile-hide">
-<!--    <Breadcrumbs-->
-<!--        separator={<NavigateNextIcon fontSize="small" />}-->
-<!--    aria-label="breadcrumb"-->
-<!--    >-->
-<!--    <Link color="inherit" href="/" onClick={() => {}}>-->
-<!--    Главная-->
-<!--    </Link>-->
-<!--    <Typography color="textPrimary">Каталог</Typography>-->
-<!--    </Breadcrumbs>-->
-</div>
+
 
 <div class="columns catalog_columns">
     <div class="left_column mobile-hide">
