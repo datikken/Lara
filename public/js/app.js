@@ -56078,9 +56078,16 @@ var DeliveryAuthController = /*#__PURE__*/function () {
       var groups = form.querySelectorAll('.cart_check-wrap_item-group');
       var tel = form.querySelector('[name="tel"]');
       var that = this;
+      groups.forEach(function (el) {
+        var input = el.querySelector('input');
+        var label = el.querySelector('[data-err]');
+        input && input.addEventListener('focus', function () {
+          input.classList.remove('errorBorder');
+          label.classList.add('invisible');
+        });
+      });
       submit.addEventListener('click', function (e) {
         e.preventDefault();
-        var valid = false;
         groups.forEach(function (group) {
           var input = group.querySelector('input');
           var label = group.querySelector('.invisible');
@@ -56090,10 +56097,10 @@ var DeliveryAuthController = /*#__PURE__*/function () {
           if (input && input.value === '') {
             input.classList.add('errorBorder');
             label && label.classList.remove('invisible');
-          } else {
-            valid = true;
           }
         });
+        var fform = $(form);
+        var valid = app.validator.formValidate([], fform);
         valid && that._makeCall();
       });
     }

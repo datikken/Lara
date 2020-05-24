@@ -1,7 +1,5 @@
-<h1>Posts list</h1>
-
 @foreach ($posts as $post)
-    <div class="postContent">
+    <div class="postList">
         @php echo $post['content'] @endphp
     </div>
 @endforeach

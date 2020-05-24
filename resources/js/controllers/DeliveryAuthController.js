@@ -16,7 +16,6 @@ class DeliveryAuthController {
     }
     _focusClearListeners() {
         let groups = document.querySelectorAll('.cart_check-wrap_item-group');
-
     }
     _makeCall() {
         let url = document.querySelector('.cart_check-wrap').getAttribute('data-href');
@@ -62,10 +61,18 @@ class DeliveryAuthController {
         let tel = form.querySelector('[name="tel"]')
         let that = this;
 
+        groups.forEach((el) => {
+            let input = el.querySelector('input');
+            let label = el.querySelector('[data-err]');
+
+            input && input.addEventListener('focus', () => {
+                input.classList.remove('errorBorder')
+                label.classList.add('invisible')
+            })
+        })
+
         submit.addEventListener('click', function(e) {
             e.preventDefault();
-            let valid = false;
-
             groups.forEach((group) => {
                 let input = group.querySelector('input');
                 let label = group.querySelector('.invisible');
@@ -75,10 +82,11 @@ class DeliveryAuthController {
                 if(input && input.value === '') {
                     input.classList.add('errorBorder');
                     label && label.classList.remove('invisible');
-                } else {
-                    valid = true;
                 }
             });
+
+            let fform = $(form)
+            let valid = app.validator.formValidate([], fform);
 
             valid && that._makeCall();
         });
