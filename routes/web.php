@@ -58,6 +58,8 @@ Route::get('product/proceedPayment',['uses' => 'PaymentsController@proceedPaymen
 Route::get('product/setAddress',['uses' => 'ProductsController@setAddress','as'=>'setAddress']);
 Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'setIssue']);
 
+Route::get('checkOrderStatus', ['uses' => 'AdminTrackingController@checkOrderStatus', 'as' => 'checkOrderStatus']);
+
 //Email Subscriptions
 Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'subscribe']);
 
@@ -76,7 +78,6 @@ Route::get('/mailtest', function()
 //Reset password
 Route::post('reset_password_without_token', 'HomeController@validatePasswordRequest');
 Route::post('reset_password_with_token', 'HomeController@resetPassword');
-
 
 
 //ADMIN - functionality

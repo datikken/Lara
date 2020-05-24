@@ -40,4 +40,14 @@ class AdminTrackingController extends Controller
 
         DB::table('delivery_feedback')->insert($arr);
     }
+
+    public function checkOrderStatus(Request $request)
+    {
+        $order_id = $request->input('numb');
+        $email = $request->input('email');
+
+        $order = DB::table('orders')->where('id', $order_id)->get();
+
+        return view('pages.tracking_result', ['order' => $order]);
+    }
 }
