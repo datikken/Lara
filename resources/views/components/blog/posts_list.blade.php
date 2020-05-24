@@ -7,6 +7,10 @@
                 <div class="postList_head">
                     <span>{{ $post['heading'] }}</span>
                 </div>
+
+                @php preg_match('/<img[^>]+>/i',$post['content'], $result); @endphp
+                @php echo implode($result); @endphp
+
             </a>
     @endforeach
 </div>
