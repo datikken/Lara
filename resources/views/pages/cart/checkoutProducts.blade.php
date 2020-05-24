@@ -24,7 +24,7 @@
                 <div class="cart_check-wrap_item">
                     <div class="cart_check-wrap_item-group">
                         <label for="tel">Телефон <span>*</span></label>
-                        <input type="text" name="tel" placeholder="+7 (___) ___ - __ - __"/>
+                        <input type="text" name="tel" placeholder="+7 (___) ___ - __ - __" class="masked"/>
                         <label for="required" class="invisible errorLabel">Поле телефон обязательно к заполнению</label>
                     </div>
                     <button type="submit" class="cart_check-wrap_item-group cart_check-button">

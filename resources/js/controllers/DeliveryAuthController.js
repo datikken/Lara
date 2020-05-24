@@ -1,3 +1,5 @@
+import IMask from 'imask';
+
 class DeliveryAuthController {
     constructor() {
         let form = document.querySelector('.cart_check');
@@ -5,6 +7,11 @@ class DeliveryAuthController {
         if(form) {
             this._focusClearListeners();
             this.validate(form);
+
+            var phoneMask = IMask(
+                document.querySelector('.masked'), {
+                    mask: '+{7}(000)000-00-00'
+                });
         }
     }
     _focusClearListeners() {
@@ -52,6 +59,7 @@ class DeliveryAuthController {
     validate(form) {
         let submit = form.querySelector('[type="submit"]');
         let groups = form.querySelectorAll('.cart_check-wrap_item-group');
+        let tel = form.querySelector('[name="tel"]')
         let that = this;
 
         submit.addEventListener('click', function(e) {

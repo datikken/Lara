@@ -25,6 +25,8 @@
     },
     "dependencies": {
         "fs": "0.0.1-security",
+        "imask": "^6.0.5",
+        "inputmask": "^5.0.3",
         "rxjs": "^6.5.5",
         "rxjs-compat": "^6.5.5",
         "ymaps": "^0.2.1"
