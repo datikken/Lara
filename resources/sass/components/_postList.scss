@@ -1,0 +1,29 @@
+.postList {
+    max-width: $layoutw;
+    margin: 0 auto;
+
+    &_cat {
+        font-family: $font;
+        display: inline-block;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: justify;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #292930;
+        border-bottom: 1px solid $yellow;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+
+    &_head {
+        font-family: $semifont;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        color: $dblack;
+    }
+}

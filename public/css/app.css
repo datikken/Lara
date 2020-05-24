@@ -2069,11 +2069,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .catalog_columns {
   overflow: hidden;
 }
-@media screen and (min-width: 1030px) {
-  .catalog_columns {
-    padding-top: 20px;
-  }
-}
 
 @media screen and (min-width: 600px) {
   .mobile-layout {
@@ -3832,7 +3827,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   align-items: center;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .breadcrumb_wrap {
   display: flex;
@@ -7493,7 +7488,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #292930;
 }
 .treq_heading {
-  font-family: "Montserrat", sans-serif;
+  font-family: "MontserratSemiBold";
   font-weight: 600;
   font-size: 18px;
   line-height: 18px;
@@ -11111,4 +11106,31 @@ main {
   color: #E34A02;
   text-align: center;
   padding-top: 17px;
+}
+.postList {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.postList_cat {
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+  border-bottom: 1px solid #fdd935;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+.postList_head {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #292930;
 }

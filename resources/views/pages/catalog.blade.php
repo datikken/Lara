@@ -3,6 +3,8 @@
 
 @section('center')
 
+@include('components.breadcrumbs.breadcrumbs', ['crumbs' =>[['title' => 'Главная','url' => '/'],
+    ['title' => 'Каталог', 'url' => '/home']]])
 
 <div class="columns catalog_columns">
     <div class="left_column mobile-hide">
@@ -14,8 +16,6 @@
     </div>
 
     <div class="right_column">
-<!--        <CatalogFiltersMob/>-->
-
         <div class="products_grid">
             @include('components.products_grid.products_grid')
         </div>

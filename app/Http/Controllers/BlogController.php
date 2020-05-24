@@ -10,6 +10,12 @@ class BlogController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('pages.blog',['posts' => $posts]);
+        return view('pages.blog.blog',['posts' => $posts]);
+    }
+
+    public function postDetails($id)
+    {
+        $post = Post::find($id);
+        return view('pages.blog.blog_post',['post' => $post]);
     }
 }

@@ -32,10 +32,6 @@
 }
 .catalog_columns {
   overflow: hidden;
-
-  @include  breakpoint($medium) {
-    padding-top: 20px;
-  }
 }
 
 .mobile-layout {
