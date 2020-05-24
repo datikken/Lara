@@ -6,6 +6,7 @@ class CartController {
         let btns = document.querySelectorAll('.ajaxGETproduct');
 
         this._setDeleteListeners();
+        this._setAmoundListeners();
 
         btns.forEach((btn) => {
             btn.addEventListener('click', function(e) {
@@ -13,7 +14,31 @@ class CartController {
             })
         });
     }
+    _setAmoundListeners() {
+        let block = document.querySelectorAll('.cart_wrap-item_inner-table_row-col_btns-btn-items');
 
+        block.forEach((el) => {
+            let links = el.querySelectorAll('a');
+
+            links.forEach((el) => {
+                el.addEventListener('click', (e) => {
+                    let url = e.currentTarget.getAttribute('href');
+                    e.preventDefault();
+
+                    $.ajax({
+                        method: "get",
+                        url: `${url}`,
+                        success: function (data, status, XHR) {
+                            console.log(data, status)
+                        },
+                        error: function (error, status, XHR) {
+                            console.warn(error);
+                        }
+                    });
+                })
+            })
+        })
+    }
     _setDeleteListeners() {
         let that = this;
         let closes = document.querySelectorAll('.remove_icon');

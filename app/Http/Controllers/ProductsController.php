@@ -126,7 +126,9 @@ class ProductsController extends Controller
         $cart->addItem($id, $product);
         $request->session()->put('cart', $cart);
 
-        return redirect()->route('cartItems');
+        $merged = Session::get('cart');
+
+        return response()->json($merged);
     }
 
     public function decreaseSingleProduct(Request $request, $id)
@@ -144,7 +146,9 @@ class ProductsController extends Controller
             $request->session()->put('cart', $cart);
         }
 
-        return redirect()->route('cartItems');
+        $merged = Session::get('cart');
+
+        return response()->json($merged);
     }
 
     public function createOrder(Request $request)
