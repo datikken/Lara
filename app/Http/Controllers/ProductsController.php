@@ -61,19 +61,6 @@ class ProductsController extends Controller
         return $products;
     }
 
-    public function addProductToCart(Request $request, $id)
-    {
-        $prevCart = $request->session()->get('cart');
-
-        $cart = new Cart($prevCart);
-
-        $product = Product::find($id);
-        $cart->addItem($id, $product);
-        $request->session()->put('cart', $cart);
-
-        return redirect()->route('allProducts');
-    }
-
     public function showCart()
     {
         $cart = Session::get('cart');
@@ -123,7 +110,7 @@ class ProductsController extends Controller
         $cart = new Cart($prevCart);
 
         $product = Product::find($id);
-        $cart->addItem($id, $product);
+        $cart->addItem($id, $product, 1);
         $request->session()->put('cart', $cart);
 
         $merged = Session::get('cart');
@@ -149,6 +136,18 @@ class ProductsController extends Controller
         $merged = Session::get('cart');
 
         return response()->json($merged);
+    }
+
+    public function addToCartAjaxGet(Request $request, $id)
+    {
+        $amount = $request->input('amount');
+        $prevCart = $request->session()->get('cart');
+        $cart = new Cart($prevCart);
+        $product = Product::find($id);
+        $cart->addItem($id, $product, $amount ? $amount : 1);
+        $request->session()->put('cart', $cart);
+
+        return response()->json((object) array('cart' => $cart->totalQuantity, 'price' => $cart->totalPrice));
     }
 
     public function createOrder(Request $request)
@@ -270,29 +269,5 @@ class ProductsController extends Controller
         ];
 
         $request->session()->put('cart-issue', $arr);
-    }
-
-    public function addToCartAjaxPost(Request $request)
-    {
-        $id = $request->input('id');
-        $prevCart = $request->session()->get('cart');
-        $cart = new Cart($prevCart);
-
-        $product = Product::find($id);
-        $cart->addItem($id, $product);
-        $request->session()->put('cart', $cart);
-
-        return response()->json('cart', $cart->totalQuantity);
-    }
-
-    public function addToCartAjaxGet(Request $request, $id)
-    {
-        $prevCart = $request->session()->get('cart');
-        $cart = new Cart($prevCart);
-        $product = Product::find($id);
-        $cart->addItem($id, $product);
-        $request->session()->put('cart', $cart);
-
-        return response()->json((object) array('cart' => $cart->totalQuantity, 'price' => $cart->totalPrice));
     }
 }

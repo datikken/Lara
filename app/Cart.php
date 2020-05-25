@@ -28,7 +28,7 @@ class Cart
         }
     }
 
-    public function addItem($id, $product)
+    public function addItem($id, $product,$amount)
     {
         $price = (int) str_replace('$', '', $product->price);
         //check if item already in cart
@@ -38,12 +38,12 @@ class Cart
             $productToAdd['quantity']++;
             $productToAdd['totalPrice'] =  $productToAdd['quantity'] * $productToAdd['price'];
         } else {
-            $productToAdd = ['quantity' => 1,'price' => $price, 'totalPrice' => $price,'data'=> $product];
+            $productToAdd = ['quantity' => $amount ? $amount : 1,'price' => $price, 'totalPrice' => $price * $amount,'data'=> $product];
         }
 
         $this->items[$id] = $productToAdd;
         $this->totalQuantity++;
-        $this->totalPrice = $this->totalPrice + $price;
+        $this->totalPrice = $this->totalPrice + $price * $amount;
     }
 
     public function updatePriceAndQuantity()
