@@ -200,6 +200,9 @@
                         placeholder="Введите модель принтера или артикул картриджа"
                 />
             </form>
+
+            @include('components.search.search_results')
+
         </div>
         <div class="menu_wrapper-item_search_button">
         <img src="/images/menu/zoomin.svg" alt="icon"/>
