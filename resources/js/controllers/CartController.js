@@ -6,7 +6,7 @@ class CartController {
         let btns = document.querySelectorAll('.ajaxGETproduct');
 
         this._setDeleteListeners();
-        this._setAmoundListeners();
+        this._setAmountListeners();
 
         btns.forEach((btn) => {
             btn.addEventListener('click', function(e) {
@@ -14,7 +14,9 @@ class CartController {
             })
         });
     }
-    _setAmoundListeners() {
+
+    _setAmountListeners() {
+        let that = this;
         let block = document.querySelectorAll('.cart_wrap-item_inner-table_row-col_btns-btn-items');
 
         block.forEach((el) => {
@@ -24,7 +26,6 @@ class CartController {
                 el.addEventListener('click', (e) => {
                     let url = e.currentTarget.getAttribute('href');
                     e.preventDefault();
-
                     $.ajax({
                         method: "get",
                         url: `${url}`,
@@ -63,7 +64,7 @@ class CartController {
                     let cart = $('.cart_wrap');
                       $(cart).html(data);
 
-                    that._fixValues('', '', 'addClass');
+                    that._fixDeletion('', '', 'addClass');
                 } else {
                     let item = $(data).find('.cart_wrap-item_inner-table');
                     let price = item[0].dataset.cartprice;
@@ -72,7 +73,7 @@ class CartController {
                     let cart = $('.cart_content');
                       $(cart).html($(data)[0]);
 
-                    that._fixValues(amount, price);
+                    that._fixDeletion(amount, price);
                     that._setDeleteListeners();
                 }
             },
@@ -81,7 +82,7 @@ class CartController {
             }
         });
     }
-    _fixValues(cart, price, type = 0) {
+    _fixDeletion(cart, price, type = 0) {
         $('[data-cartAmountVal]').html(cart);
         $('[data-cartPriceVal]').html(price);
 
@@ -91,7 +92,7 @@ class CartController {
             $('.menu_wrapper-item_cart_currency').removeClass('invisible');
         }
     }
-    _makeCall(e) {
+    _makeCall(e, amount = 1) {
         e.preventDefault();
 
         let that = this;
@@ -102,12 +103,16 @@ class CartController {
 
         if(!executed) {
             executed = true;
+
             $.ajax({
                 method: "GET",
                 url: url,
-                data: {token: _token},
+                data: {
+                    token: _token,
+                    amount
+                },
                 success: function (data, status, XHR) {
-                    that._fixValues(data.cart, data.price);
+                    that._fixDeletion(data.cart, data.price);
                 },
                 error: function (error, status, XHR) {
                     console.warn(error);

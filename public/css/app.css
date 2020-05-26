@@ -11136,6 +11136,9 @@ main {
   margin-bottom: 10px;
 }
 
+.sres {
+  display: none;
+}
 .sres_color {
   width: 15px;
   height: 15px;

@@ -55712,7 +55712,7 @@ var CartController = /*#__PURE__*/function () {
 
     this._setDeleteListeners();
 
-    this._setAmoundListeners();
+    this._setAmountListeners();
 
     btns.forEach(function (btn) {
       btn.addEventListener('click', function (e) {
@@ -55722,8 +55722,9 @@ var CartController = /*#__PURE__*/function () {
   }
 
   _createClass(CartController, [{
-    key: "_setAmoundListeners",
-    value: function _setAmoundListeners() {
+    key: "_setAmountListeners",
+    value: function _setAmountListeners() {
+      var that = this;
       var block = document.querySelectorAll('.cart_wrap-item_inner-table_row-col_btns-btn-items');
       block.forEach(function (el) {
         var links = el.querySelectorAll('a');
@@ -55775,7 +55776,7 @@ var CartController = /*#__PURE__*/function () {
             var cart = $('.cart_wrap');
             $(cart).html(data);
 
-            that._fixValues('', '', 'addClass');
+            that._fixDeletion('', '', 'addClass');
           } else {
             var _item = $(data).find('.cart_wrap-item_inner-table');
 
@@ -55786,7 +55787,7 @@ var CartController = /*#__PURE__*/function () {
 
             $(_cart).html($(data)[0]);
 
-            that._fixValues(amount, price);
+            that._fixDeletion(amount, price);
 
             that._setDeleteListeners();
           }
@@ -55797,8 +55798,8 @@ var CartController = /*#__PURE__*/function () {
       });
     }
   }, {
-    key: "_fixValues",
-    value: function _fixValues(cart, price) {
+    key: "_fixDeletion",
+    value: function _fixDeletion(cart, price) {
       var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
       $('[data-cartAmountVal]').html(cart);
       $('[data-cartPriceVal]').html(price);
@@ -55812,6 +55813,7 @@ var CartController = /*#__PURE__*/function () {
   }, {
     key: "_makeCall",
     value: function _makeCall(e) {
+      var amount = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
       e.preventDefault();
       var that = this;
       var url = e.currentTarget.getAttribute('data-url');
@@ -55826,10 +55828,11 @@ var CartController = /*#__PURE__*/function () {
           method: "GET",
           url: url,
           data: {
-            token: _token
+            token: _token,
+            amount: amount
           },
           success: function success(data, status, XHR) {
-            that._fixValues(data.cart, data.price);
+            that._fixDeletion(data.cart, data.price);
           },
           error: function error(_error3, status, XHR) {
             console.warn(_error3);

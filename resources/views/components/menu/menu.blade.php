@@ -195,9 +195,9 @@
                 {{ csrf_field() }}
 
                 <input
-                        type="search"
-                        name="searchText"
-                        placeholder="Введите модель принтера или артикул картриджа"
+                    type="search"
+                    name="searchText"
+                    placeholder="Введите модель принтера или артикул картриджа"
                 />
             </form>
 
