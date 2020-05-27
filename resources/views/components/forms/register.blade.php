@@ -81,7 +81,7 @@
                             <label for="face" class="col-md-4 col-form-label text-md-right">{{ __('Face') }}</label>
 
                             <div class="col-md-6">
-                                <input id="face" type="text" class="form-control @error('password') is-invalid @enderror" name="face" value="face" autocomplete="face">
+                                <input id="face" type="text" class="form-control" name="face" value="urik">
                             </div>
                         </div>
 

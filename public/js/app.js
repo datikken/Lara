@@ -56904,8 +56904,16 @@ var RegisterController = /*#__PURE__*/function () {
       var text = el.querySelector('.form_type-itemText_inner').innerText;
       inputs.forEach(function (el) {
         el.classList.remove('activeFormItem');
-        var faceInput = document.querySelector('[name="type"]');
-        if (text) faceInput.setAttribute('value', text);
+        var faceInput = document.querySelector('[name="face"]');
+        var name;
+
+        if (text === 'Физ. лицо') {
+          name = 'fizik';
+        } else {
+          name = 'urik';
+        }
+
+        if (text) faceInput.setAttribute('value', name);
       });
       el.classList.toggle('activeFormItem');
     }

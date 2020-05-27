@@ -18,9 +18,16 @@ class RegisterController {
 
         inputs.forEach((el) => {
             el.classList.remove('activeFormItem');
-            let faceInput = document.querySelector('[name="type"]');
+            let faceInput = document.querySelector('[name="face"]');
+            let name;
 
-            if(text) faceInput.setAttribute('value', text);
+            if(text === 'Физ. лицо') {
+                name = 'fizik'
+            } else {
+                name = 'urik'
+            }
+
+            if(text) faceInput.setAttribute('value', name);
         });
 
         el.classList.toggle('activeFormItem');
