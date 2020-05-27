@@ -1,4 +1,27 @@
 .company {
+    &_table {
+        &_inner {
+            border-bottom: 1px solid $yellow;
+        }
+        &_item {
+            display: grid;
+            grid-template-columns: 200px 470px;
+            align-items: center;
+            border-bottom: 1px solid $light_gray;
+            min-height: 40px;
+            padding: 10px;
+
+            font-family: $font;
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0.02em;
+            color: #292930;
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
     &_header {
         font-family: $semifont;
         font-style: normal;
@@ -54,12 +77,6 @@
                     margin-left: 5px;
                 }
             }
-        }
-    }
-    &_wrap {
-
-        &_data {
-
         }
     }
 }
