@@ -11220,3 +11220,54 @@ main {
 .sres_color {
   margin: 0;
 }
+
+.company_header {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fdd935;
+}
+.company_input {
+  height: 40px;
+  width: 220px;
+  padding-left: 20px;
+  outline: none;
+}
+.company_head_item {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+  margin-bottom: 30px;
+}
+.company_inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  margin-bottom: 30px;
+}
+.company_inputs_items_label {
+  display: flex;
+  margin-bottom: 10px;
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+.company_inputs_items_label span {
+  color: #9C1006;
+  margin-left: 5px;
+}
