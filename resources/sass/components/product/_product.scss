@@ -81,6 +81,10 @@
   align-items: center;
   justify-content: center;
 
+    &_details {
+        display: none;
+    }
+
   @include breakpoint($medium) {
     margin: 0px 10px 20px 10px;
     width: 270px;
@@ -102,7 +106,8 @@
   }
 
   &_wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     position: relative;
     padding: 10px;
     width: 100%;
@@ -142,7 +147,7 @@
 
       @include breakpoint($medium) {
         margin-bottom: 12px;
-        margin-top: 10px;
+        margin-top: 5px;
         padding-top: 5px;
         top: initial;
       }
@@ -190,6 +195,7 @@
       }
 
       &_name {
+          display: none;
         @include breakpoint($medium) {
           flex-basis: 100%;
           margin-bottom: 10px;
@@ -234,6 +240,7 @@
         display: flex;
         align-items: center;
         margin-top: 7px;
+        margin-left: 10px;
         @include breakpoint($medium) {
           margin-top: 0;
         }
@@ -276,10 +283,11 @@
         @include btnShadow();
         padding: 20px 0;
         transition: bottom $transition;
-        display: block;
+        display: none;
 
         @include breakpoint($phone) {
-          max-width: 270px;
+            display: block;
+            max-width: 270px;
         }
 
 

@@ -2,10 +2,14 @@
     max-width: $layoutw;
     margin: 0 auto;
     height: 24px;
-    display: flex;
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    display: none;
+
+    @include breakpoint($medium) {
+        display: flex;
+    }
 
     &_wrap {
         display: flex;

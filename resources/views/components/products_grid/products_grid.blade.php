@@ -8,7 +8,8 @@
             'category' => $product->category
         ]
     )
-    @endforeach
+@endforeach
+
 <div class="pagination_links">
     {{ $products->links() }}
 </div>
