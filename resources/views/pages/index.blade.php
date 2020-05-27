@@ -50,6 +50,6 @@
     @include('components.banner.banner')
 </div>
 
-@include('components.owl.owl', ['products' => $product])
+@include('components.owl.owl', ['products' => $products])
 
 @endsection

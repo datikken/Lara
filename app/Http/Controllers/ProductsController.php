@@ -21,7 +21,7 @@ class ProductsController extends Controller
             $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');
         }
 
-        return view('pages.index', ['product' => $products]);
+        return view('pages.index', ['products' => $products]);
     }
     public function index()
     {
