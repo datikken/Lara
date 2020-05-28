@@ -11221,6 +11221,15 @@ main {
   margin: 0;
 }
 
+.company_table_item span:nth-child(2) {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
 .company_table_inner {
   border-bottom: 1px solid #fdd935;
 }

@@ -56784,6 +56784,26 @@ var DadataController = /*#__PURE__*/function () {
   }
 
   _createClass(DadataController, [{
+    key: "_fillFields",
+    value: function _fillFields(obj, block) {
+      var name = block.querySelector('.company_head_value');
+      var shortName = block.querySelector('.company_shhead_value');
+      var adress = block.querySelector('.company_adress_value');
+      var dir = block.querySelector('.company_dir_value');
+      var okvd = block.querySelector('.company_okvd_value');
+      var inn = block.querySelector('.company_inn_value');
+      var ogrn = block.querySelector('.company_ogrn_value');
+      var postal = block.querySelector('.company_postal_value');
+      name.innerText = obj[0].data.name.full_with_opf;
+      shortName.innerText = obj[0].data.name["short"];
+      adress.innerText = obj[0].data.address.unrestricted_value;
+      dir.innerText = obj[0].data.management.name;
+      okvd.innerText = obj[0].data.okved;
+      inn.innerText = obj[0].data.inn;
+      ogrn.innerText = obj[0].data.ogrn;
+      postal.innerText = obj[0].data.address.data.postal_code;
+    }
+  }, {
     key: "_setListeners",
     value: function _setListeners(block) {
       var url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party';
@@ -56843,10 +56863,11 @@ var DadataController = /*#__PURE__*/function () {
       }
 
       rxjs_Rx__WEBPACK_IMPORTED_MODULE_1__["Observable"].fromEvent(bik, 'keyup').subscribe(function (e) {
-        if (bik.value.length === 10) postData(url, {
+        // if(bik.value.length === 10)
+        postData(url, {
           "query": "".concat(bik.value)
         }).then(function (data) {
-          console.log(data);
+          that._fillFields(data.suggestions, block);
         });
       });
     }

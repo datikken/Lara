@@ -1,5 +1,18 @@
 .company {
     &_table {
+        &_item {
+            span {
+                &:nth-child(2) {
+                    font-family: $semifont;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 20px;
+                    letter-spacing: 0.02em;
+                    color: $dblack;
+                }
+            }
+        }
         &_inner {
             border-bottom: 1px solid $yellow;
         }
