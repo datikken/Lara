@@ -56632,7 +56632,7 @@ var CartProgressController = /*#__PURE__*/function () {
     key: "_fixProgress",
     value: function _fixProgress(el) {
       var line = el.querySelector('.cart_wrap-crumb').querySelector('.active-item');
-      var authStep = el.querySelector('.cart_check-wrap_head');
+      var authStep = el.querySelector('.cart_check-wrap_head') || el.querySelector('.company');
       var delStep = el.querySelector('.dform');
 
       if (authStep) {
@@ -56792,6 +56792,7 @@ var DadataController = /*#__PURE__*/function () {
       var dir = block.querySelector('.company_dir_value');
       var okvd = block.querySelector('.company_okvd_value');
       var inn = block.querySelector('.company_inn_value');
+      var inn2 = block.querySelector('[name="inn"]');
       var ogrn = block.querySelector('.company_ogrn_value');
       var postal = block.querySelector('.company_postal_value');
       name.innerText = obj[0].data.name.full_with_opf;
@@ -56800,6 +56801,7 @@ var DadataController = /*#__PURE__*/function () {
       dir.innerText = obj[0].data.management.name;
       okvd.innerText = obj[0].data.okved;
       inn.innerText = obj[0].data.inn;
+      inn2.value = obj[0].data.inn;
       ogrn.innerText = obj[0].data.ogrn;
       postal.innerText = obj[0].data.address.data.postal_code;
     }

@@ -14,6 +14,7 @@ class DadataController {
         let dir = block.querySelector('.company_dir_value');
         let okvd = block.querySelector('.company_okvd_value');
         let inn = block.querySelector('.company_inn_value');
+        let inn2 = block.querySelector('[name="inn"]');
         let ogrn = block.querySelector('.company_ogrn_value');
         let postal = block.querySelector('.company_postal_value');
 
@@ -23,6 +24,7 @@ class DadataController {
             dir.innerText = obj[0].data.management.name;
             okvd.innerText = obj[0].data.okved;
             inn.innerText = obj[0].data.inn;
+            inn2.value = obj[0].data.inn;
             ogrn.innerText = obj[0].data.ogrn;
             postal.innerText = obj[0].data.address.data.postal_code;
     }

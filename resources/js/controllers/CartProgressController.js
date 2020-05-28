@@ -6,7 +6,7 @@ class CartProgressController {
 
     _fixProgress(el) {
         let line = el.querySelector('.cart_wrap-crumb').querySelector('.active-item');
-        let authStep = el.querySelector('.cart_check-wrap_head');
+        let authStep = el.querySelector('.cart_check-wrap_head') || el.querySelector('.company');
         let delStep = el.querySelector('.dform');
 
             if(authStep) {
