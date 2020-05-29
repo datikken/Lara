@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Product_Image;
+use GuzzleHttp\Client;
 
 class AdminProductsController extends Controller
 {
@@ -185,5 +186,25 @@ class AdminProductsController extends Controller
         Product::destroy($id);
 
         return redirect()->route('adminDisplayProducts');
+    }
+
+    public function fetchProducts(Request $request) {
+
+        $client = new Client([
+            'headers' => [ 'Content-Type' => 'application/json' ]
+        ]);
+
+        $response = $client->post('http://93.184.160.194:8085/mainbase/hs/RETAIL/TradeItems',
+            ['body' => json_encode(
+                [
+                    'IDToken' => '84ad0475-1f3c-4ec6-ac4b-8ee6bd4430b6'
+                ]
+            )]
+        );
+
+        $res = $response->getBody()->getContents();
+
+        dump($res);
+
     }
 }

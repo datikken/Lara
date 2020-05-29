@@ -11,6 +11,13 @@
             </button>
         </a>
 
+        <form action="{{ route('fetchProducts') }}" method="post" class="ml-2">
+            @csrf
+            <button class="btn btn-primary" type="submit">
+                Синхронизироваться
+            </button>
+        </form>
+
     </div>
 
     <div class="table-responsive">
