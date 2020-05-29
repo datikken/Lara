@@ -207,13 +207,16 @@ class ProductsController extends Controller
         $arr = [
             'firstname' => $firstname,
             'lastname' => $lastname,
-            'fio' => $tel,
+            'tel' => $tel,
             'save' => $save
         ];
 
         $request->session()->put('cart-customerFio', $arr);
         return response()->json((object) array('customer_fio' => $arr));
     }
+
+
+
 
     public function setDelivery()
     {

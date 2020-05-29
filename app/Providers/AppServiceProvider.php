@@ -5,8 +5,8 @@ namespace App\Providers;
 use App\Information;
 use App\Product;
 use Illuminate\Support\ServiceProvider;
-use Auth;
 use View;
+use Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,7 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
         $products = Product::all();
         View::share('products', $products);
 

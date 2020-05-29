@@ -16,17 +16,18 @@
                     <span class="order_list-wrap_inner-row_item-head">Стоимость</span>
                 </div>
             </div>
-
-            @foreach (Session::get('cart')->items as $item)
-                <div class="order_list-wrap_inner-row">
-                    <div class="order_list-wrap_inner-row_item">
-                        <span class="order_list-wrap_inner-row_item-text">{{ $item['data']['name'] }}</span>
+            @if(Session::get('cart'))
+                @foreach (Session::get('cart')->items as $item)
+                    <div class="order_list-wrap_inner-row">
+                        <div class="order_list-wrap_inner-row_item">
+                            <span class="order_list-wrap_inner-row_item-text">{{ $item['data']['name'] }}</span>
+                        </div>
+                        <div class="order_list-wrap_inner-row_item">
+                            <span class="order_list-wrap_inner-row_item-text"> {{ $item['price'] }}</span>
+                        </div>
                     </div>
-                    <div class="order_list-wrap_inner-row_item">
-                        <span class="order_list-wrap_inner-row_item-text"> {{ $item['price'] }}</span>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            @endif
         </div>
 
         @if(Session::get('cart-address'))

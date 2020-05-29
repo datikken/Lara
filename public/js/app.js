@@ -57788,6 +57788,17 @@ var RegisterController = /*#__PURE__*/function () {
   }
 
   _createClass(RegisterController, [{
+    key: "_setError",
+    value: function _setError(str) {
+      var item = document.querySelector('.card-greet_text');
+      console.warn(str);
+
+      if (str === 'The given data was invalid.') {
+        item.innerText = 'Проверьте введенные данные.';
+        item.classList.add('invalid');
+      }
+    }
+  }, {
     key: "_pickFaceType",
     value: function _pickFaceType(etc) {
       var inputs = document.querySelectorAll('.form_type-item');
@@ -57844,6 +57855,7 @@ var RegisterController = /*#__PURE__*/function () {
       var url = form.getAttribute('action');
       var method = form.getAttribute('method');
       var inputs = form.querySelectorAll('input');
+      var that = this;
       var dataObj = {};
       inputs.forEach(function (npt, i) {
         var name = npt.getAttribute('name');
@@ -57860,7 +57872,7 @@ var RegisterController = /*#__PURE__*/function () {
           window.location.href = protocol + '//' + host + "/home";
         },
         error: function error(_error, status, XHR) {
-          console.warn(_error);
+          console.log(_error);
         }
       });
     }

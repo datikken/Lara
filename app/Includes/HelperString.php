@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Includes;
+use Auth;
+use DB;
 
 class HelperString{
 
@@ -88,5 +90,12 @@ class HelperString{
     {
         $str = preg_replace('/[^0-9.]+/', '', $num);
         return (int)$str;
+    }
+
+    public static function userType() {
+        $user_id = Auth::id();
+        $user = DB::table('users')->where('id',$user_id)->select('face')->first();
+
+        return $user->face;
     }
 }

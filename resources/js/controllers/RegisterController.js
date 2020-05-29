@@ -11,6 +11,16 @@ class RegisterController {
         });
     }
 
+    _setError(str) {
+        let item = document.querySelector('.card-greet_text');
+
+        console.warn(str);
+
+        if(str === 'The given data was invalid.') {
+            item.innerText = 'Проверьте введенные данные.'
+            item.classList.add('invalid');
+        }
+    }
     _pickFaceType(etc) {
         let inputs = document.querySelectorAll('.form_type-item');
         let el = etc.currentTarget;
@@ -63,7 +73,7 @@ class RegisterController {
         let url = form.getAttribute('action');
         let method = form.getAttribute('method');
         let inputs = form.querySelectorAll('input')
-
+        let that = this;
         let dataObj = {};
 
         inputs.forEach((npt,i) => {
@@ -83,7 +93,7 @@ class RegisterController {
                 window.location.href = protocol + '//' + host + `/home`;
             },
             error: function (error, status, XHR) {
-                console.warn(error);
+                console.log(error);
             }
         });
     }

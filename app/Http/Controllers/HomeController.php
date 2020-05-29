@@ -39,7 +39,11 @@ class HomeController extends Controller
 
     public function showFillAdressesForm()
     {
-        return view('pages.dash.adresses_fill');
+
+        $user_id = Auth::id();
+        $address = DB::table('users_adresses')->where('user_id', $user_id)->get();
+
+        return view('pages.dash.adresses_fill',['address' => $address]);
     }
 
     public function FillAdresses(Request $request)
