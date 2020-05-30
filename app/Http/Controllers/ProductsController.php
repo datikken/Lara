@@ -162,7 +162,7 @@ class ProductsController extends Controller
             $date = date('Y-m-d H:i:s');
 
             $newOrderArray = array(
-                'status'=> Config::get('constants.ORDER_STATUSES')[0],
+                'status'=> 'on_hold',
                 'date'=>$date,
                 'del date' => $date,
                 'price' => $cart->totalPrice,
