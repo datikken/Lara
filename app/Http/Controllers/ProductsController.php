@@ -160,6 +160,7 @@ class ProductsController extends Controller
 
         if($cart) {
             $date = date('Y-m-d H:i:s');
+
             $newOrderArray = array(
                 'status'=> Config::get('constants.ORDER_STATUSES')[0],
                 'date'=>$date,
