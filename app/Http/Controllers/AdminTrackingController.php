@@ -53,6 +53,7 @@ class AdminTrackingController extends Controller
         $email = $request->input('email');
         $order = DB::table('orders')->where('id', $order_id)->get();
 
+
         return view('pages.tracking_result', ['order' => $order]);
     }
 }
