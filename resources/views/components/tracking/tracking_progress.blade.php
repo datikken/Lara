@@ -1,5 +1,8 @@
+{{--@php dump(empty($order[0])); @endphp--}}
+<? if(!empty($order[0])) { ?>
 <div class="trackp">
-    <div class="trackp_progress"></div>
+    <div class="trackp_progress" @php if($order[0]->status === 'on_hold') { echo 'style="width:25%"';} @endphp></div>
+
     <div class="trackp_item">
         <div class="trackp_item_head">
             <span>Товар на складе</span>
@@ -35,3 +38,9 @@
         </div>
     </div>
 </div>
+
+@include('components.tracking.tracking_feedback')
+
+<? } else { ?>
+    @include('components.orders.empty_order')
+<? } ?>

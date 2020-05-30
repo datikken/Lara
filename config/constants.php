@@ -1,6 +1,12 @@
 <?php
 
 return ([
+    'ORDER_STATUSES' => [
+        'on_hold',
+        'on_delivery',
+        'delivery_progress',
+        'arrived'
+    ],
     'POSTAMATS' => [
         'Дикси. Москва, ул. Бориса Годунова, д. 198,',
         'Азбука вкуса. Москва, ул. Бориса Годунова, д. 198, корп. 65, стр. 78.,',

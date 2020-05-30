@@ -6,10 +6,12 @@ use App\Product;
 use App\Cart;
 use App\Product_Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 use App\Includes\HelperString;
 use Illuminate\Support\Facades\DB;
 use stdClass;
+use Auth;
 
 class ProductsController extends Controller
 {
@@ -153,14 +155,16 @@ class ProductsController extends Controller
     public function createOrder(Request $request)
     {
         $cart = Session::get('cart');
+        $user_id = Auth::id();
 
         if($cart) {
             $date = date('Y-m-d H:i:s');
             $newOrderArray = array(
-                'status'=>'on_hold',
+                'status'=> Config::get('constants.ORDER_STATUSES')[0],
                 'date'=>$date,
                 'del date' => $date,
-                'price' => $cart->totalPrice
+                'price' => $cart->totalPrice,
+                'user_id' => $user_id
             );
 
             $created_order = DB::table('orders')->insert($newOrderArray);

@@ -11299,3 +11299,37 @@ main {
   color: #9C1006;
   margin-left: 5px;
 }
+
+.empty_order {
+  width: 100%;
+  max-width: 1170px;
+  min-height: 500px;
+  margin-left: 10px;
+}
+@media screen and (min-width: 1030px) {
+  .empty_order {
+    margin: 0 auto;
+  }
+}
+.empty_order_head {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+  margin: 60px 0;
+}
+.empty_order_paragraph {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  margin: 0;
+  margin-bottom: 60px;
+  max-width: 730px;
+  text-align: left !important;
+}

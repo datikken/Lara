@@ -8,6 +8,7 @@
         <table class="table table-striped table-sm">
             <thead>
             <tr>
+                <th>№</th>
                 <th>Статус</th>
                 <th>Создан</th>
                 <th>Удален</th>
@@ -19,6 +20,7 @@
 
             @foreach($orders as $order)
                 <tr>
+                    <td>{{$order['id']}}</td>
                     <td>{{$order['status']}}</td>
                     <td>{{$order['date']}}</td>
                     <td>{{$order['del date']}}</td>
