@@ -4545,16 +4545,15 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .history {
-  max-width: 1170px;
+  width: 100%;
+  max-width: 900px;
   margin: 0 auto;
   overflow: hidden;
-  display: none;
 }
 @media screen and (min-width: 1030px) {
   .history {
     margin-bottom: 365px;
     margin-left: 20px;
-    display: none;
   }
 }
 .history_wrapper-item {

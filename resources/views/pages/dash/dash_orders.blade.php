@@ -1,6 +1,5 @@
 @extends('layouts.dash')
 
 @section('center')
-    <h1>Dashboard orders</h1>
-
+    @include('components.orders.orders_history',['orders_history' => $orders_history])
 @endsection

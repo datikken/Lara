@@ -55906,6 +55906,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_LandingController__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./controllers/LandingController */ "./resources/js/controllers/LandingController.js");
 /* harmony import */ var _controllers_RegisterController__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./controllers/RegisterController */ "./resources/js/controllers/RegisterController.js");
 /* harmony import */ var _controllers_DadataController__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./controllers/DadataController */ "./resources/js/controllers/DadataController.js");
+/* harmony import */ var _controllers_OrdersHistoryController__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./controllers/OrdersHistoryController */ "./resources/js/controllers/OrdersHistoryController.js");
 // window.Vue = require('vue');
 
 
@@ -55932,7 +55933,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 $(document).ready(function () {
+  new _controllers_OrdersHistoryController__WEBPACK_IMPORTED_MODULE_25__["default"]();
   new _controllers_DadataController__WEBPACK_IMPORTED_MODULE_24__["default"]();
   new _functions_validator__WEBPACK_IMPORTED_MODULE_5__["default"]();
   new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_7__["default"]();
@@ -57425,6 +57428,43 @@ var LandingController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (LandingController);
+
+/***/ }),
+
+/***/ "./resources/js/controllers/OrdersHistoryController.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/controllers/OrdersHistoryController.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var OrdersHistoryController = /*#__PURE__*/function () {
+  _createClass(OrdersHistoryController, [{
+    key: "_setListeners",
+    value: function _setListeners() {
+      console.warn(block);
+    }
+  }]);
+
+  function OrdersHistoryController() {
+    _classCallCheck(this, OrdersHistoryController);
+
+    var block = document.querySelector('.history');
+    block && this._setListeners(block);
+  }
+
+  return OrdersHistoryController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (OrdersHistoryController);
 
 /***/ }),
 

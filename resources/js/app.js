@@ -26,8 +26,10 @@ import TrackingFeedController from './controllers/TrackingFeedController'
 import LandingController from './controllers/LandingController'
 import RegisterController from './controllers/RegisterController'
 import DadataController from './controllers/DadataController'
+import OrdersHistoryController from './controllers/OrdersHistoryController'
 
 $(document).ready(function() {
+    new OrdersHistoryController();
     new DadataController();
     new Validator();
     new ContactsFormController();

@@ -58,9 +58,10 @@ Route::get('product/setAddress',['uses' => 'ProductsController@setAddress','as'=
 Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'setIssue']);
 Route::get('checkOrderStatus', ['uses' => 'AdminTrackingController@checkOrderStatus', 'as' => 'checkOrderStatus']);
 Route::post('fetchProducts',['uses' => 'AdminProductsController@fetchProducts', 'as' => 'fetchProducts']);
-
 Route::get('product/createOrder/', ['uses' => 'ProductsController@createOrder', 'as'=> 'createOrder']);
 Route::get('product/proceedPayment',['uses' => 'PaymentsController@proceedPayment','as'=>'proceedPayment']);
+
+Route::post('/home/getOrderInfo/{id}',['uses' => 'HomeController@getOrderInfo', 'as' => 'GetOrderInfo']);
 
 //Email Subscriptions
 Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'subscribe']);
@@ -80,7 +81,6 @@ Route::post('admin/collectData', ['uses' => 'AdminTrackingController@collectData
 
 //Orders
 Route::get('admin/orders', ['uses' => 'AdminOrdersController@index', 'as' => 'AdminDisplayOrders']);
-
 //Users
 Route::get('admin/users', ['uses' => 'AdminUsersController@index', 'as' => 'adminDisplayUsers']);
 

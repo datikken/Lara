@@ -110,7 +110,16 @@ class HomeController extends Controller
 
     public function displayOrders()
     {
-        return view('pages.dash.dash_orders');
+        $user_id = Auth::id();
+        $orders_history = DB::table('orders')->where('user_id', $user_id)->where('status', 'arrived')->get();
+        return view('pages.dash.dash_orders',['orders_history' => $orders_history]);
+    }
+
+    public function getOrderInfo($id)
+    {
+        $order = DB::table('orders')->where('id', $id)->get;
+
+        return response()->json($order);
     }
 
     public function collectProfileData(Request $request)

@@ -1,3 +1,5 @@
+{{--@php dump($orders_history); @endphp--}}
+
 <div class="history">
     <div class="history_wrapper">
         <div class="history_wrapper-item">
@@ -21,35 +23,37 @@
                 </div>
             </div>
 
-            <div class="history_wrapper-item_row">
-                <div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">
-                    <span class="history_wrapper-item_row-item_val">07.12.2019</span>
-                </div>
-                <div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">
-                    <span class="history_wrapper-item_row-item_val">1001</span>
-                </div>
-                <div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">
-                    <span class="history_wrapper-item_row-item_val">OOO "Рога и копыта"</span>
-                </div>
-                <div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">
-                    <span class="history_wrapper-item_row-item_val">234545 руб.</span>
-                </div>
-            </div>
+            {{--<div class="history_wrapper-item_row">--}}
+                {{--<div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">--}}
+                    {{--<span class="history_wrapper-item_row-item_val">07.12.2019</span>--}}
+                {{--</div>--}}
+                {{--<div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">--}}
+                    {{--<span class="history_wrapper-item_row-item_val">1001</span>--}}
+                {{--</div>--}}
+                {{--<div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">--}}
+                    {{--<span class="history_wrapper-item_row-item_val">OOO "Рога и копыта"</span>--}}
+                {{--</div>--}}
+                {{--<div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">--}}
+                    {{--<span class="history_wrapper-item_row-item_val">234545 руб.</span>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="history_wrapper-item_row">
-                <div class="history_wrapper-item_row-item">
-                    <span class="history_wrapper-item_row-item_val">10.07.2019</span>
+            @foreach($orders_history as $order)
+                <div class="history_wrapper-item_row">
+                    <div class="history_wrapper-item_row-item">
+                        <span class="history_wrapper-item_row-item_val">{{ $order->date }}</span>
+                    </div>
+                    <div class="history_wrapper-item_row-item">
+                        <span class="history_wrapper-item_row-item_val">{{ $order->id }}</span>
+                    </div>
+                    <div class="history_wrapper-item_row-item">
+                        <span class="history_wrapper-item_row-item_val">ИП "Рога и копыта"</span>
+                    </div>
+                    <div class="history_wrapper-item_row-item">
+                        <span class="history_wrapper-item_row-item_val">{{ $order->price }}</span>
+                    </div>
                 </div>
-                <div class="history_wrapper-item_row-item">
-                    <span class="history_wrapper-item_row-item_val">2773</span>
-                </div>
-                <div class="history_wrapper-item_row-item">
-                    <span class="history_wrapper-item_row-item_val">ИП "Рога и копыта"</span>
-                </div>
-                <div class="history_wrapper-item_row-item">
-                    <span class="history_wrapper-item_row-item_val">543 руб.</span>
-                </div>
-            </div>
+            @endforeach
 
             <div class="history_wrapper-item_row">
                 <div class="history_wrapper-item_row-info history_wrapper-item_row-item-header">
