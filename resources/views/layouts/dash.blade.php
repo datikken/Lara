@@ -25,7 +25,7 @@
             </div>
 
             <div class="dash_left-wrap_item">
-                <a class="dash_left-wrap_item-text">
+                <a class="dash_left-wrap_item-text" href="{{ route('displayUserOrders') }}">
                     <span>Заказы</span>
                 </a>
                 <div class="dash_left-wrap_item-icon" style="background-image: url('/images/dash/dash_orders.svg')"></div>

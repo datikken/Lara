@@ -25,6 +25,7 @@ Route::get('/home/fillAdressesForm', ['uses' => 'HomeController@showFillAdresses
 Route::get('/home/fillAdresses', ['uses' => 'HomeController@FillAdresses', 'as' => 'FillAdressesDB']);
 Route::post('/home/userAvatar', ['uses' => 'HomeController@setUsersAvatar', 'as' => 'FillUserAvatar']);
 Route::get('/home/collectProfileData', ['uses' => 'HomeController@collectProfileData', 'as' => 'collectProfileData']);
+Route::get('/home/orders',['uses'=> 'HomeController@displayOrders', 'as'=>'displayUserOrders']);
 
 //Blog
 Route::get('blog', ['uses' => 'BlogController@index', 'as' => 'blog']);
@@ -64,22 +65,11 @@ Route::get('product/proceedPayment',['uses' => 'PaymentsController@proceedPaymen
 //Email Subscriptions
 Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'subscribe']);
 
-//Test file storage
-Route::get('/testStorage', function() {
-    return "<img src=".Storage::url('product_images/product1.png').">";
-});
-
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-Route::get('/mailtest', function()
-{
-    dd(Config::get('mail'));
-});
 
 //Reset password
 Route::post('reset_password_without_token', 'HomeController@validatePasswordRequest');
 Route::post('reset_password_with_token', 'HomeController@resetPassword');
-
 
 //ADMIN - functionality
 //Subscriptions
@@ -144,3 +134,13 @@ Route::post('admin/editInformationForm/{id}', ['uses' => "AdminInformationContro
 //EMAILS
 Route::get('admin/sendemail', 'SendEmailController@index')->middleware('restrictToAdmin');
 Route::post('admin/sendemail/send', 'SendEmailController@send')->middleware('restrictToAdmin');
+
+//Test file storage
+Route::get('/testStorage', function() {
+    return "<img src=".Storage::url('product_images/product1.png').">";
+});
+//Test smtp
+Route::get('/mailtest', function()
+{
+    dd(Config::get('mail'));
+});

@@ -108,6 +108,11 @@ class HomeController extends Controller
         return redirect()->route('fillProfile');
     }
 
+    public function displayOrders()
+    {
+        return view('pages.dash.dash_orders');
+    }
+
     public function collectProfileData(Request $request)
     {
         $userId = Auth::id();
