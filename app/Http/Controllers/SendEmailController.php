@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
+use Auth;
 
 class SendEmailController extends Controller
 {
@@ -14,6 +16,19 @@ class SendEmailController extends Controller
         return view('emails.send_email');
     }
 
+    public static function sendOrderWasCreated($id)
+    {
+        $user_id = Auth::id();
+        $customer = DB::table('users')->where('id', $user_id)->select('email')->get();
+        $order = DB::table('orders')->where('id', $id)->get();
+
+        $data = array(
+            'name' => 'Tikken',
+            'message' => $order
+        );
+
+        Mail::to($customer)->send(new SendMail($data));
+    }
     public function send(Request $request)
     {
         $customer = $request->customer;

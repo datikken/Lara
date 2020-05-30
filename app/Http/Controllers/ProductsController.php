@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 use App\Includes\HelperString;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\SendEmailController;
 use stdClass;
 use Auth;
 
@@ -189,6 +190,9 @@ class ProductsController extends Controller
 
             $payment_info = $newOrderArray;
             $request->session()->put('payment_info', $payment_info);
+
+            $mailer = new SendEmailController();
+            $mailer::sendOrderWasCreated($order_id);
 
             return redirect()->route('proceedPayment')->withsuccess('thanks for choosing us');
         } else {
