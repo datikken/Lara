@@ -28,12 +28,14 @@ class AdminPostController extends Controller
     {
         $category = $request->input('category');
         $heading = $request->input('heading');
+        $description = $request->input('description');
         $author = $request->input('author');
         $content = $request->input('content');
 
         $arr = array(
             'category' => $category,
             'heading' => $heading,
+            'description' => $description,
             'author' => $author,
             'content' => $content,
             'created_at' => \Carbon\Carbon::now()
@@ -45,7 +47,7 @@ class AdminPostController extends Controller
 
     public function savePostImage(Request $request)
     {
-        if($request->hasFile('upload')) {
+        if ($request->hasFile('upload')) {
             //get filename with extension
             $filenamewithextension = $request->file('upload')->getClientOriginalName();
 
@@ -56,13 +58,13 @@ class AdminPostController extends Controller
             $extension = $request->file('upload')->getClientOriginalExtension();
 
             //filename to store
-            $filenametostore = time().'.'.$extension;
+            $filenametostore = time() . '.' . $extension;
 
             //Upload File
             $request->file('upload')->storeAs('public/uploads', $filenametostore);
 
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            $url = asset('storage/uploads/'.$filenametostore);
+            $url = asset('storage/uploads/' . $filenametostore);
             $msg = 'Изображение успешно загруженно';
             $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
 
@@ -75,6 +77,13 @@ class AdminPostController extends Controller
     {
         Post::destroy($id);
         return redirect()->route('adminDisplayBlog');
+    }
+
+    public function editPost($id)
+    {
+        $post = Post::find($id);
+//        dump($post->content, gettype($post));
+        return view('admin.blog.edit', ['post' => $post]);
     }
 
 }

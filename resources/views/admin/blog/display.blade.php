@@ -22,7 +22,7 @@
                 <th>Контент</th>
                 <th>Создан</th>
                 <th>Обновлен</th>
-                <th>Создать</th>
+                <th>Редактировать</th>
                 <th>Удалить</th>
             </tr>
             </thead>
@@ -31,13 +31,13 @@
             @foreach($posts as $post)
                 <tr>
                     <td>{{$post['category']}}</td>
-                    <td>{{$post['heading']}}</td>
-                    <td>{{$post['author']}}</td>
-                    <td>{{$post['content']}}</td>
+                    <td>{{\App\Includes\HelperString::truncate($post['heading'], 50)}}</td>
+                    <td>{{ \App\Includes\HelperString::truncate($post['description'], 50)  }}</td>
+                    <td>{{\App\Includes\HelperString::truncate($post['content'], 50)}}</td>
                     <td>{{$post['created_at']}}</td>
                     <td>{{$post['updated_at']}}</td>
                     <td>
-                        <a href="{{ route('adminDisplayCreateForm') }}" class="btn btn-primary">
+                        <a href="{{ route('AdminEditPost', ['id' => $post['id']]) }}" class="btn btn-primary">
                             <svg class="bi bi-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"></path>
                                 <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"></path>

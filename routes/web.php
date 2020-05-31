@@ -90,6 +90,7 @@ Route::get('admin/createPost',['uses' => 'AdminPostController@showCreateForm', '
 Route::post('admin/sendCreatePost',['uses' => 'AdminPostController@sendCreatePost', 'as' => 'sendCreatePost']);
 Route::post('admin/sendCreatePhoto',['uses' => 'AdminPostController@savePostImage', 'as' => 'adminSavePhoto']);
 Route::get('admin/deletePost/{id}', ['uses' => "AdminPostController@deletePost", 'as' => 'AdminDeletePost']);
+Route::get('admin/editPost/{id}', ['uses' => "AdminPostController@editPost", 'as' => 'AdminEditPost']);
 
 //ABOUT
 Route::get('admin/about', ['uses' => "AdminAboutController@index", 'as' => 'adminDisplayAbout']);

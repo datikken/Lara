@@ -11236,6 +11236,15 @@ main {
   color: #292930;
 }
 
+.postItem {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.postItem p {
+  font-size: 12px;
+}
+
 .sres {
   display: none;
 }

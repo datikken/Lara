@@ -3,6 +3,6 @@
     @include('components.breadcrumbs.breadcrumbs', ['crumbs' =>[['title' => 'Главная','url' => '/'],
         ['title' => 'Блог', 'url' => '#']]])
 
-@php dump($post); @endphp
+    @include('components.blog.post_item',['post' => $post])
 
 @endsection
