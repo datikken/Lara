@@ -11124,6 +11124,38 @@ main {
   max-width: 1170px;
   margin: 0 auto;
 }
+.postList_posted {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #e9e9ea;
+  padding-left: 25px;
+}
+.postList_posted_author {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+.postList_posted_date {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  color: #292930;
+  margin-left: 10px;
+}
+.postList_item {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e9e9ea;
+}
 .postList_cat {
   font-family: "Montserrat", sans-serif;
   display: inline-block;
@@ -11147,6 +11179,50 @@ main {
   letter-spacing: 0.02em;
   color: #292930;
   margin-bottom: 10px;
+}
+.postList_like, .postList_dislike, .postList_comment, .postList_share {
+  display: flex;
+  align-items: center;
+}
+.postList_like_icon, .postList_dislike_icon, .postList_comment_icon, .postList_share_icon {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.postList_like_val, .postList_dislike_val, .postList_comment_val, .postList_share_val {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+  margin: 0 10px;
+}
+.postList_like_icon {
+  background-image: url("/images/icons/likeGray.svg");
+}
+.postList_dislike_icon {
+  background-image: url("/images/icons/dislikeGray.svg");
+}
+.postList_comment_icon {
+  background-image: url("/images/icons/CommentsGray.svg");
+}
+.postList_share_icon {
+  background-image: url("/images/icons/shares.svg");
+}
+.postList_btns {
+  display: flex;
+  justify-content: space-between;
+}
+.postList_btns_inner {
+  display: flex;
+  align-items: center;
+}
+.postList_btns_actions {
+  display: flex;
+  margin-left: 30px;
 }
 .postList_description span {
   margin: 20px 50px 25px 50px;
