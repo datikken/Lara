@@ -23,7 +23,7 @@
             </div>
 
             <div class="uk-margin">
-                <input class="uk-input" type="text" name="author" id="author" placeholder="Описание" required>
+                <input class="uk-input" type="text" name="description" id="description" placeholder="Описание" required>
             </div>
 
             <div class="panel panel-default">
