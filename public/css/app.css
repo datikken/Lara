@@ -11148,6 +11148,17 @@ main {
   color: #292930;
   margin-bottom: 10px;
 }
+.postList_description span {
+  margin: 20px 50px 25px 50px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
 
 .sres {
   display: none;
