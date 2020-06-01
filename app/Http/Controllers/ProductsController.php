@@ -224,9 +224,6 @@ class ProductsController extends Controller
         return response()->json((object) array('customer_fio' => $arr));
     }
 
-
-
-
     public function setDelivery()
     {
         return view('pages.delivery');

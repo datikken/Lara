@@ -112,9 +112,18 @@ class HomeController extends Controller
     {
         $user_id = Auth::id();
         $type = DB::table('users')->where('id', $user_id)->select('face','email', 'name')->first();
-        $orders_history = DB::table('orders')->where('user_id', $user_id)->where('status', 'on_hold')->get();
+        $orders_history = DB::table('orders')->where('user_id', $user_id)->where('status', 'arrived')->get();
 
-        return view('pages.dash.dash_orders',['orders_history' => $orders_history, 'user' => $type]);
+        $last_order_id = DB::table('orders')->where('user_id', $user_id)->get()->last()->id;
+        $last_order = DB::table('order_items')->where('order_id', $last_order_id)->get();
+
+        return view('pages.dash.dash_orders',
+            [
+                'orders_history' => $orders_history,
+                'user' => $type,
+                'last_order' => $last_order
+            ]
+        );
     }
 
     public function getOrderInfo($id)
