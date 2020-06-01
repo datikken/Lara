@@ -16,7 +16,10 @@
                     <span class="history_wrapper-item_row-item_text">Номер заказа</span>
                 </div>
                 <div class="history_wrapper-item_row-item history_wrapper-item_row-item-title">
-                    <span class="history_wrapper-item_row-item_text">Юр. лицо</span>
+                    <span class="history_wrapper-item_row-item_text">
+<? if($user->face === 'fizik') {?>
+<? echo 'Физ. лицо'; } else { echo 'Юр. лицо'; }?>
+                    </span>
                 </div>
                 <div class="history_wrapper-item_row-item history_wrapper-item_row-item-title">
                     <span class="history_wrapper-item_row-item_text">Сумма</span>
@@ -47,7 +50,10 @@
                         <span class="history_wrapper-item_row-item_val">{{ $order->id }}</span>
                     </div>
                     <div class="history_wrapper-item_row-item">
-                        <span class="history_wrapper-item_row-item_val">ИП "Рога и копыта"</span>
+                        <span class="history_wrapper-item_row-item_val">
+<? if($user->face === 'fizik') {?>
+<? echo $user->email; } else { echo $user->name; }?>
+                        </span>
                     </div>
                     <div class="history_wrapper-item_row-item">
                         <span class="history_wrapper-item_row-item_val">{{ $order->price }}</span>
