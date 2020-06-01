@@ -49,7 +49,7 @@ Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@
 Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
 
 //ORDERS
-Route::get('product/checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
+Route::get('product/checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts'])->middleware('restrictToAdmin');
 Route::get('product/setCustomerFio',['uses' => 'ProductsController@setCustomerFio','as'=>'setCustomerFio']);
 Route::get('product/delivery',['uses' => 'ProductsController@setDelivery','as'=>'setDelivery']);
 Route::get('product/deliveryForm',['uses' => 'ProductsController@deliveryForm','as'=>'deliveryForm']);
