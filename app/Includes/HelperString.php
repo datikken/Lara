@@ -94,9 +94,14 @@ class HelperString{
 
     public static function userType() {
         $user_id = Auth::id();
-        $user = DB::table('users')->where('id',$user_id)->select('face')->first();
 
-        return $user->face;
+        if($user_id) {
+            $user = DB::table('users')->where('id',$user_id)->select('face')->first();
+            return $user->face;
+        } else {
+            return;
+        }
+
     }
     public static function truncate($string, $length = 150) {
 
