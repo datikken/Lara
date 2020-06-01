@@ -20,7 +20,7 @@
             @include('components.products_grid.products_grid')
         </div>
 
-        @include('components.orders.orders_history')
+        {{--@include('components.orders.orders_history')--}}
 
     </div>
 </div>
