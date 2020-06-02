@@ -567,6 +567,7 @@
     flex-direction: column;
     max-width: $layoutw;
     padding-top: 50px;
+    min-height: 500px;
 
   @include breakpoint($medium) {
     margin: 0 auto;

@@ -163,7 +163,7 @@ class ProductsController extends Controller
         $newOrderArray = array(
             'status'=> 'on_hold',
             'date'=>$date,
-            'del date' => $date,
+            'del date' => '',
             'price' => $order[0]->price,
             'user_id' => $user_id
         );
@@ -202,7 +202,7 @@ class ProductsController extends Controller
             $newOrderArray = array(
                 'status'=> 'on_hold',
                 'date'=>$date,
-                'del date' => $date,
+                'del date' => '',
                 'price' => $cart->totalPrice,
                 'user_id' => $user_id
             );

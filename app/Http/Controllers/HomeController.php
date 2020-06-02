@@ -114,20 +114,24 @@ class HomeController extends Controller
         $type = DB::table('users')->where('id', $user_id)->select('face','email', 'name')->first();
         $orders_history = DB::table('orders')->where('user_id', $user_id)->where('status', 'arrived')->get();
 
-        $last_order_id = DB::table('orders')->where('user_id', $user_id)->get()->last()->id;
-        $last_order = DB::table('order_items')->where('order_id', $last_order_id)->get();
-        $last_order->id = $last_order_id;
+        if(DB::table('orders')->where('user_id', $user_id)->get()->last()) {
+            $last_order_id = DB::table('orders')->where('user_id', $user_id)->get()->last()->id;
+            $last_order = DB::table('order_items')->where('order_id', $last_order_id)->get();
+            $last_order->id = $last_order_id;
 
-        $last_order_total = DB::table('orders')->where('id', $last_order_id)->value('price');
+            $last_order_total = DB::table('orders')->where('id', $last_order_id)->value('price');
 
-        return view('pages.dash.dash_orders',
-            [
-                'orders_history' => $orders_history,
-                'user' => $type,
-                'last_order' => $last_order,
-                'last_order_total' => $last_order_total
-            ]
-        );
+            return view('pages.dash.dash_orders',
+                [
+                    'orders_history' => $orders_history,
+                    'user' => $type,
+                    'last_order' => $last_order,
+                    'last_order_total' => $last_order_total
+                ]
+            );
+        } else {
+            return view('pages.dash.dash_orders');
+        }
     }
 
     public function getOrderInfo($id)
