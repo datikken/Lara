@@ -251,8 +251,6 @@
                 }
             }
 
-            .product_delete {}
-
             &-col {
               display: flex;
               align-items: center;
@@ -271,8 +269,7 @@
               @include breakpoint($medium) {
                 margin: 15px;
               }
-              //justify-content: space-between;
-              //border-bottom: 1px solid $light_gray;
+
               @include breakpoint($medium) {
                 border: none;
               }

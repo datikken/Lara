@@ -176,11 +176,14 @@ class ProductsController extends Controller
                 $item_id = $cart_item['data']['id'];
                 $item_name = $cart_item['data']['name'];
                 $item_price = $cart_item['data']['price'];
+                $item_quantity = $cart_item['quantity'];
+
                 $newItemsInCurrentOrder = array(
                     'item_id' => $item_id,
                     'order_id'=>$order_id,
                     'item_name' => $item_name,
-                    'item_price'=>$item_price
+                    'item_price'=>$item_price,
+                    'quantity'=> $item_quantity
                 );
 
                 $created_order_items = DB::table('order_items')->insert($newItemsInCurrentOrder);

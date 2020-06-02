@@ -4656,6 +4656,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     display: grid;
     min-width: 125px;
     height: initial;
+    padding-left: 20px;
   }
 }
 .history_wrapper-item_row-total_content-title {

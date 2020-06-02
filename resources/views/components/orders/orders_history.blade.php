@@ -26,23 +26,6 @@
                 </div>
             </div>
 
-            {{--<div class="history_wrapper-item_row">--}}
-                {{--<div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">--}}
-                    {{--<span class="history_wrapper-item_row-item_val">07.12.2019</span>--}}
-                {{--</div>--}}
-                {{--<div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">--}}
-                    {{--<span class="history_wrapper-item_row-item_val">1001</span>--}}
-                {{--</div>--}}
-                {{--<div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">--}}
-                    {{--<span class="history_wrapper-item_row-item_val">OOO "Рога и копыта"</span>--}}
-                {{--</div>--}}
-                {{--<div class="history_wrapper-item_row-item history_wrapper-item_row-item-selected">--}}
-                    {{--<span class="history_wrapper-item_row-item_val">234545 руб.</span>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-
-            {{--@php dump($last_order); @endphp--}}
-
             @foreach($orders_history as $order)
                 <div class="history_wrapper-item_row">
                     <div class="history_wrapper-item_row-item">
@@ -82,30 +65,26 @@
                 </div>
             </div>
 
-
             @foreach($last_order as $item)
-                {{--@php dump($item); @endphp--}}
-
                 <div class="history_wrapper-item_row">
                     <div class="history_wrapper-item_row-info">
-                        <span class="history_wrapper-item_row-item_val"></span>
+                        <span class="history_wrapper-item_row-item_val">{{ $last_order->id }}</span>
                     </div>
                     <div class="history_wrapper-item_row-info">
                         <span class="history_wrapper-item_row-item_val">{{ $item->item_name }}</span>
                     </div>
 
                     <div class="history_wrapper-item_row-info">
-                        <span class="history_wrapper-item_row-item_val">01</span>
+                        <span class="history_wrapper-item_row-item_val">{{ $item->quantity }}</span>
                     </div>
                     <div class="history_wrapper-item_row-info">
                         <span class="history_wrapper-item_row-item_val">{{ $item->item_price }}</span>
                     </div>
                     <div class="history_wrapper-item_row-info">
-                        <span class="history_wrapper-item_row-item_val">10298 руб.</span>
+                        <span class="history_wrapper-item_row-item_val">@php echo $item->quantity * $item->item_price; @endphp</span>
                     </div>
                 </div>
             @endforeach
-
 
             <div class="history_wrapper-item_row">
                 <div class="history_wrapper-item_row-total-cta">
@@ -114,23 +93,20 @@
                 <div class="history_wrapper-item_row-total">
                     <div class="history_wrapper-item_row-total_content">
                         <span class="history_wrapper-item_row-total_content-title">Итого:</span>
-                        <span class="history_wrapper-item_row-total_content-value">265 ед.</span>
+                        <span class="history_wrapper-item_row-total_content-value">{{ $item->quantity }} ед.</span>
                     </div>
                 </div>
                 <div class="history_wrapper-item_row-total">
-                    <div class="history_wrapper-item_row-total_content">
+                    <div class="history_wrapper-item_row-total_content" style="padding-left: 10px;">
                         <span class="history_wrapper-item_row-total_content-title">Итого:</span>
-                        <span class="history_wrapper-item_row-total_content-value">123 484 958 руб.</span>
+                        <span class="history_wrapper-item_row-total_content-value">{{ $last_order_total }}</span>
                     </div>
 
                     <div class="history_wrapper-item_row-total_btns">
                         <div class="history_wrapper-item_row-total_btns-btn"><span>Закрыть</span></div>
                         <div class="history_wrapper-item_row-total_btns-btn"><span>Повторить заказ</span></div>
                     </div>
-
-
                 </div>
-
             </div>
         </div>
     </div>
