@@ -153,6 +153,44 @@ class ProductsController extends Controller
         return response()->json((object) array('cart' => $cart->totalQuantity, 'price' => $cart->totalPrice));
     }
 
+    public function repeatOrder($id)
+    {
+        $user_id = Auth::id();
+        $order = DB::table('orders')->where('id', $id)->get();
+        $order_items = DB::table('order_items')->where('order_id', $id)->get();
+        $date = date('Y-m-d H:i:s');
+
+        $newOrderArray = array(
+            'status'=> 'on_hold',
+            'date'=>$date,
+            'del date' => $date,
+            'price' => $order[0]->price,
+            'user_id' => $user_id
+        );
+
+        $created_order = DB::table('orders')->insert($newOrderArray);
+        $order_id = DB::getPdo()->lastInsertId();
+
+        foreach($order_items as $cart_item) {
+            $item_id = $cart_item->id;
+            $item_name = $cart_item->item_name;
+            $item_price = $cart_item->item_price;
+            $item_quantity = $cart_item->quantity;
+
+            $newItemsInCurrentOrder = array(
+                'item_id' => $item_id,
+                'order_id'=>$order_id,
+                'item_name' => $item_name,
+                'item_price'=>$item_price,
+                'quantity'=> $item_quantity
+            );
+
+            $created_order_items = DB::table('order_items')->insert($newItemsInCurrentOrder);
+        }
+
+        return response()->json((object) array('success' => 'Thanks!'));
+    }
+
     public function createOrder(Request $request)
     {
         $cart = Session::get('cart');

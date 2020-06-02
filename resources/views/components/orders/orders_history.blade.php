@@ -87,9 +87,9 @@
             @endforeach
 
             <div class="history_wrapper-item_row">
-                <div class="history_wrapper-item_row-total-cta">
+                <a href="{{ route('repeatOrder', ['id' => $last_order->id ]) }}" class="history_wrapper-item_row-total-cta">
                     <span class="history_wrapper-item_row-total-cta_content">Положить в корзину</span>
-                </div>
+                </a>
                 <div class="history_wrapper-item_row-total">
                     <div class="history_wrapper-item_row-total_content">
                         <span class="history_wrapper-item_row-total_content-title">Итого:</span>

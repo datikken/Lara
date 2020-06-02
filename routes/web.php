@@ -59,6 +59,7 @@ Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'s
 Route::get('checkOrderStatus', ['uses' => 'AdminTrackingController@checkOrderStatus', 'as' => 'checkOrderStatus']);
 Route::post('fetchProducts',['uses' => 'AdminProductsController@fetchProducts', 'as' => 'fetchProducts']);
 Route::get('product/createOrder/', ['uses' => 'ProductsController@createOrder', 'as'=> 'createOrder']);
+Route::get('product/repeatOrder/{id}', ['uses' => 'ProductsController@repeatOrder', 'as'=> 'repeatOrder']);
 Route::get('product/proceedPayment',['uses' => 'PaymentsController@proceedPayment','as'=>'proceedPayment']);
 
 Route::post('/home/getOrderInfo/{id}',['uses' => 'HomeController@getOrderInfo', 'as' => 'GetOrderInfo']);
@@ -141,7 +142,6 @@ Route::get('/testStorage', function() {
     return "<img src=".Storage::url('product_images/product1.png').">";
 });
 //Test smtp
-Route::get('/mailtest', function()
-{
+Route::get('/mailtest', function() {
     dd(Config::get('mail'));
 });
