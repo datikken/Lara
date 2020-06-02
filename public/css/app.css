@@ -4564,6 +4564,15 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     margin-left: 0;
   }
 }
+.history_wrapper-item .history_selected {
+  background-color: #40404c;
+}
+.history_wrapper-item .history_selected .history_wrapper-item_row-item {
+  border-right: 1px solid #fff;
+}
+.history_wrapper-item .history_selected .history_wrapper-item_row-item_val {
+  color: white;
+}
 .history_wrapper-item_row {
   display: flex;
   position: relative;
@@ -4587,8 +4596,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .history_wrapper-item_row-total {
   background-color: #e9e9ea;
-  width: 200px;
-  flex-basis: 152%;
+  flex-basis: 102%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -4656,7 +4664,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     display: grid;
     min-width: 125px;
     height: initial;
-    padding-left: 20px;
   }
 }
 .history_wrapper-item_row-total_content-title {
@@ -4771,7 +4778,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   min-width: 90px;
 }
 .history_wrapper-item_row-item:nth-child(3), .history_wrapper-item_row-info:nth-child(3) {
-  flex-basis: 65%;
+  flex-basis: 50%;
 }
 .history_wrapper-item_row-item:last-child, .history_wrapper-item_row-info:last-child {
   margin: 0;
@@ -4819,7 +4826,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 .history_wrapper-item_heading {
-  padding: 20px 20px 20px 0;
+  padding: 20px 20px 10px 0;
   border-bottom: 1px solid #fdd935;
 }
 .history_wrapper-item_heading-text {
@@ -11397,6 +11404,12 @@ main {
   margin-left: 5px;
 }
 
+.orders {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .empty_order {
   width: 100%;
   max-width: 1170px;
@@ -11429,4 +11442,20 @@ main {
   margin-bottom: 60px;
   max-width: 730px;
   text-align: left !important;
+}
+
+.actorders {
+  max-width: 900px;
+  margin-left: 30px;
+}
+.actorders_head {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  border-bottom: 1px solid #fdd935;
+  padding-bottom: 10px;
 }

@@ -58,9 +58,6 @@
                     <span class="history_wrapper-item_row-item_text">Количество</span>
                 </div>
                 <div class="history_wrapper-item_row-info history_wrapper-item_row-item-header">
-                    <span class="history_wrapper-item_row-item_text">Стоимость</span>
-                </div>
-                <div class="history_wrapper-item_row-info history_wrapper-item_row-item-header">
                     <span class="history_wrapper-item_row-item_text">Сумма</span>
                 </div>
             </div>
@@ -76,9 +73,6 @@
 
                     <div class="history_wrapper-item_row-info">
                         <span class="history_wrapper-item_row-item_val">{{ $item->quantity }}</span>
-                    </div>
-                    <div class="history_wrapper-item_row-info">
-                        <span class="history_wrapper-item_row-item_val">{{ $item->item_price }}</span>
                     </div>
                     <div class="history_wrapper-item_row-info">
                         <span class="history_wrapper-item_row-item_val">@php echo $item->quantity * $item->item_price; @endphp</span>
@@ -97,7 +91,7 @@
                     </div>
                 </div>
                 <div class="history_wrapper-item_row-total">
-                    <div class="history_wrapper-item_row-total_content" style="padding-left: 10px;">
+                    <div class="history_wrapper-item_row-total_content">
                         <span class="history_wrapper-item_row-total_content-title">Итого:</span>
                         <span class="history_wrapper-item_row-total_content-value">{{ $last_order_total[0]->price }} р.</span>
                     </div>

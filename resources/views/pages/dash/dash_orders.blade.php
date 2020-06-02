@@ -2,10 +2,14 @@
 
 @section('center')
 
-    <? if(isset($orders_history)) { ?>
-        @include('components.orders.orders_history',['orders_history' => $orders_history])
-    <? } else { ?>
-        @include('components.orders.orders_empty')
-    <? } ?>
+    <div class="orders">
+        @include('components.orders.orders_actual')
+
+        <? if(isset($orders_history)) { ?>
+            @include('components.orders.orders_history',['orders_history' => $orders_history])
+        <? } else { ?>
+            {{--@include('components.orders.orders_empty')--}}
+        <? } ?>
+    </div>
 
 @endsection

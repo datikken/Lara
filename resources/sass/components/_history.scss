@@ -19,10 +19,20 @@
       &:nth-child(2) {
         // overflow-x: auto;
       }
+        .history_selected {
+            background-color: $black;
+            .history_wrapper-item_row-item {
+                border-right: 1px solid #fff;
+            }
+            .history_wrapper-item_row-item_val {
+                color: white;
+            }
+        }
       &_row {
         display: flex;
         position: relative;
         overflow: hidden;
+
         &:last-child {
           justify-content: center;
         }
@@ -40,9 +50,7 @@
 
         &-total {
           background-color: $light_gray;
-          width: 200px;
-          // height: 70px;
-          flex-basis: 152%;
+          flex-basis: 102%;
           display: flex;
           align-items: center;
           justify-content: flex-end;
@@ -101,7 +109,6 @@
             display: flex;
             min-width: 170px;
             height: 14px;
-
             padding-top: 25px;
             margin-bottom: 10px;
 
@@ -111,7 +118,6 @@
               display: grid;
               min-width: 125px;
               height: initial;
-              padding-left: 20px;
             }
 
             &-title {
@@ -225,7 +231,7 @@
             min-width: 90px;
           }
           &:nth-child(3) {
-            flex-basis: 65%;
+            flex-basis: 50%;
           }
           &:last-child {
             margin: 0;
@@ -272,8 +278,9 @@
           }
         }
       }
+
       &_heading {
-        padding: 20px 20px 20px 0;
+        padding: 20px 20px 10px 0;
         border-bottom: 1px solid $yellow;
 
         &-text {
