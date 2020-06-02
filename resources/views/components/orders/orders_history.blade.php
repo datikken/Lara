@@ -99,7 +99,7 @@
                 <div class="history_wrapper-item_row-total">
                     <div class="history_wrapper-item_row-total_content" style="padding-left: 10px;">
                         <span class="history_wrapper-item_row-total_content-title">Итого:</span>
-                        <span class="history_wrapper-item_row-total_content-value">{{ $last_order_total }}</span>
+                        <span class="history_wrapper-item_row-total_content-value">{{ $last_order_total[0]->price }} р.</span>
                     </div>
 
                     <div class="history_wrapper-item_row-total_btns">
@@ -108,6 +108,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>
