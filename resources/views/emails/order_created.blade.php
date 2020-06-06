@@ -256,8 +256,8 @@
                             <span  style="padding-left: 18px;padding-bottom: 5px;">+7 (495) 775-50-53</span>
                         </div>
                         <div class="footer_item_contacts_right" style="float:left;padding-left: 40px;">
-                            <img src="{{URL::to('/')}}/images/emails/footer_mail.png" alt="" style="float:left;padding-top: 5px;" class="footer_mail">
-                            <span  style="padding-left: 18px;padding-bottom: 5px;color: white;text-decoration: none;">kakayto_pochta@brenddomen.com</span>
+                            <img src="{{URL::to('/')}}/images/emails/footer_mail.png" alt="" style="float:left;padding-top: 5px;">
+                            <span  style="padding-left: 18px;padding-bottom: 5px;color: white;text-decoration: none;" class="footer_mail">kakayto_pochta@brenddomen.com</span>
                         </div>
                     </div>
                 </div>
