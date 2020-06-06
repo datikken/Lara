@@ -238,7 +238,7 @@
     <!-- BODY -->
 
     <!-- FOOTER -->
-    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 600px;min-height: 500px;background-repeat: no-repeat;min-width: 300px;color: #fff;background-image: url({{URL::to('/')/images/emails/footer_iphone.svg)}}">
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 600px;min-height: 500px;background-repeat: no-repeat;min-width: 300px;color: #fff;background-image: url({{URL::to('/')/images/emails/footer_iphone.svg}})">
         <tr>
             <td class="footer_item" style="display: block;padding: 25px 50px 0 50px;">
                 <div class="footer_item_left" style="height: 65px;float:left;">
