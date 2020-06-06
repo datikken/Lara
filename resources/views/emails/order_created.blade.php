@@ -4,8 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica,Arial,sans-serif:wght@500;600&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Roboto,Helverica';
+        }
         .email_header {
             display: block;
             height: 40px;
@@ -33,11 +36,11 @@
             line-height: 20px;
             color: #292930;
             padding: 10px 0 0 10px;
-            font-family: "Montserrat";
+            font-family: "Helvetica,Arial,sans-serif";
         }
 
         .menu_link {
-            font-family: "Montserrat";
+            font-family: "Helvetica,Arial,sans-serif";
             font-style: normal;
             font-weight: 500;
             font-size: 12px;
@@ -65,7 +68,7 @@
             display: table-cell;
             vertical-align: middle;
             text-decoration: none;
-            font-family: "Montserrat";
+            font-family: "Helvetica,Arial,sans-serif";
             font-size: 12px;
             line-height: 20px;
             text-transform: uppercase;
@@ -73,7 +76,7 @@
 
         .main_heading {
             text-align: center;
-            font-family: "Montserrat";
+            font-family: "Helvetica,Arial,sans-serif";
             font-style: normal;
             font-weight: 600;
             font-size: 12px;
@@ -89,7 +92,7 @@
         }
 
         .main_description {
-            font-family: "Montserrat";
+            font-family: "Helvetica,Arial,sans-serif";
             font-style: normal;
             font-weight: 500;
             font-size: 12px;
@@ -102,7 +105,7 @@
         }
 
         .footer_item_right {
-            font-family: "Montserrat";
+            font-family: "Helvetica,Arial,sans-serif";
             font-style: normal;
             font-weight: normal;
             font-size: 12px;
@@ -269,11 +272,11 @@
             </td>
 
             <td style="float: left; width: 100%;padding: 33px 0 18px 135px;">
-                <a href="#" style="color: black;font-family: Montserrat;font-size: 12px;height: 14px; cursor: pointer;text-decoration: none;">Политика конфиденциальности</a>
+                <a href="#" style="color: black;font-family: Helvetica,Arial,sans-serif;font-size: 12px;height: 14px; cursor: pointer;text-decoration: none;">Политика конфиденциальности</a>
             </td>
 
             <td style="float: left;width: 100%;">
-                <a href="#" style="color: black;padding-left: 135px;font-size: 12px;line-height: 14px;font-family: Montserrat;cursor:pointer;text-decoration: none;">Платежные системы</a>
+                <a href="#" style="color: black;padding-left: 135px;font-size: 12px;line-height: 14px;font-family: Helvetica,Arial,sans-serif;cursor:pointer;text-decoration: none;">Платежные системы</a>
             </td>
 
         </tr>
