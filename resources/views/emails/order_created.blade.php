@@ -140,7 +140,7 @@
         .colors_e {
             background-color: #66CCCC;
         }
-        .footer_mail a {
+        .footer_link a {
             color: white;
             text-decoration: none;
         }
@@ -253,11 +253,11 @@
                     <div class="footer_item_contacts">
                         <div class="footer_item_contacts_left" style="float:left;">
                             <img src="{{URL::to('/')}}/images/emails/footer_tel.png" alt="" style="float:left;padding-top: 1px;">
-                            <a href="tel:74957755053" style="padding-left: 18px;padding-bottom: 5px;">+7 (495) 775-50-53</a>
+                            <a href="tel:74957755053" style="padding-left: 18px;padding-bottom: 5px;color: white; text-decoration: none;">+7 (495) 775-50-53</a>
                         </div>
                         <div class="footer_item_contacts_right" style="float:left;padding-left: 40px;">
                             <img src="{{URL::to('/')}}/images/emails/footer_mail.png" alt="" style="float:left;padding-top: 5px;">
-                            <span  style="padding-left: 18px;padding-bottom: 5px;color: white;text-decoration: none;" class="footer_mail">kakayto_pochta@brenddomen.com</span>
+                            <span  style="padding-left: 18px;padding-bottom: 5px;color: white;text-decoration: none;" class="footer_link">kakayto_pochta@brenddomen.com</span>
                         </div>
                     </div>
                 </div>
