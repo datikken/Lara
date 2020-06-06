@@ -4,153 +4,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        .email_header {
+            display: block;
+            height: 40px;
+            background: #FDD935;
+        }
+
+        .email_header_logo {
+            height: 20px;
+            width: 20px;
+            padding: 10px 0 0 20px;
+            float: left;
+        }
+
+        .email_header_alogo {
+            height: 20px;
+            width: 35px;
+            padding: 10px 50px 0 0;
+            float: right;
+        }
+
+        .email_header p {
+            float: left;
+            margin: 0;
+            font-size: 12px;
+            line-height: 20px;
+            color: #292930;
+            padding: 10px 0 0 10px;
+            font-family: "Montserrat";
+        }
+
+        .menu_link {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 20px;
+            color: #292930;
+            text-decoration: none;
+            margin: 0 15px;
+            padding-right: 30px;
+            border-right: 1px solid #D4D5D5;
+        }
+
+        .header_menu {
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .main_btn {
+            display: block;
+            margin-bottom: 10px;
+            width: 240px;
+            height: 40px;
+            background: #40404C;
+            border-radius: 30px;
+            color: white;
+            display: table-cell;
+            vertical-align: middle;
+            text-decoration: none;
+            font-family: "Montserrat";
+            font-size: 12px;
+            line-height: 20px;
+            text-transform: uppercase;
+        }
+
+        .main_heading {
+            text-align: center;
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 18px;
+            text-align: center;
+            text-indent: 10px;
+            text-transform: uppercase;
+            color: #292930;
+            padding-top: 15px;
+            display: block;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .main_description {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            text-align: center;
+            text-indent: 10px;
+            color: #292930;
+            padding: 0 50px 15px;
+            display: block;
+        }
+
+        .footer_item_right {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0.02em;
+        }
+
+        .main_content {
+            padding-bottom: 20px;
+            width: 100%;
+            max-width: 540px;
+            min-width: 300px;
+            margin: 0 auto;
+            background-image: url("{{URL::to('/')}}/images/emails/email_bg.png");
+            background-size: contain;
+            background-position: 0 16px;
+            background-repeat: no-repeat;
+        }
+
+        .colors {
+            padding: 54px 0 0 57px;
+        }
+        .colors_a, .colors_b, .colors_c, .colors_d, .colors_e {
+            width: 25px;
+            height: 25px;
+            border-radius: 30px;
+            display: block;
+            float: left;
+            margin-right: 12px;
+        }
+        .colors_a {
+            background-color: #FFCC33;
+        }
+        .colors_b {
+            background-color: #14B6E7;
+        }
+        .colors_c {
+            background-color: #FF9933;
+        }
+        .colors_d {
+            background-color: #FF3399;
+        }
+        .colors_e {
+            background-color: #66CCCC;
+        }
+    </style>
 </head>
-<style>
-    .email_header {
-        display: block;
-        height: 40px;
-        background: #FDD935;
-    }
-
-    .email_header_logo {
-        height: 20px;
-        width: 20px;
-        padding: 10px 0 0 20px;
-        float: left;
-    }
-
-    .email_header_alogo {
-        height: 20px;
-        width: 35px;
-        padding: 10px 50px 0 0;
-        float: right;
-    }
-
-    .email_header p {
-        float: left;
-        margin: 0;
-        font-size: 12px;
-        line-height: 20px;
-        color: #292930;
-        padding: 10px 0 0 10px;
-        font-family: "Montserrat";
-    }
-
-    .menu_link {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 20px;
-        color: #292930;
-        text-decoration: none;
-        margin: 0 15px;
-        padding-right: 30px;
-        border-right: 1px solid #D4D5D5;
-    }
-
-    .header_menu {
-        padding-top: 20px;
-        text-align: center;
-    }
-
-    .main_btn {
-        display: block;
-        margin-bottom: 10px;
-        width: 240px;
-        height: 40px;
-        background: #40404C;
-        border-radius: 30px;
-        color: white;
-        display: table-cell;
-        vertical-align: middle;
-        text-decoration: none;
-        font-family: "Montserrat";
-        font-size: 12px;
-        line-height: 20px;
-        text-transform: uppercase;
-    }
-
-    .main_heading {
-        text-align: center;
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 18px;
-        text-align: center;
-        text-indent: 10px;
-        text-transform: uppercase;
-        color: #292930;
-        padding-top: 15px;
-        display: block;
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-
-    .main_description {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 18px;
-        text-align: center;
-        text-indent: 10px;
-        color: #292930;
-        padding: 0 50px 15px;
-        display: block;
-    }
-
-    .footer_item_right {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 20px;
-        letter-spacing: 0.02em;
-    }
-
-    .main_content {
-        padding-bottom: 20px;
-        width: 100%;
-        max-width: 540px;
-        min-width: 300px;
-        margin: 0 auto;
-        background-image: url("{{URL::to('/')}}/images/emails/email_bg.png");
-        background-size: contain;
-        background-position: 0 16px;
-        background-repeat: no-repeat;
-    }
-
-    .colors {
-        padding: 54px 0 0 57px;
-    }
-    .colors_a, .colors_b, .colors_c, .colors_d, .colors_e {
-        width: 25px;
-        height: 25px;
-        border-radius: 30px;
-        display: block;
-        float: left;
-        margin-right: 12px;
-    }
-    .colors_a {
-        background-color: #FFCC33;
-    }
-    .colors_b {
-        background-color: #14B6E7;
-    }
-    .colors_c {
-        background-color: #FF9933;
-    }
-    .colors_d {
-        background-color: #FF3399;
-    }
-    .colors_e {
-        background-color: #66CCCC;
-    }
-</style>
 <body style="padding:0; margin:0;">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
 <table border="0" cellpadding="0" cellspacing="0" bgcolor="#f6f6f6" style="width:100%; min-width:320px;">
 <tr align="center">
 <td valign="top" align="center" style="padding:0 10px;">
