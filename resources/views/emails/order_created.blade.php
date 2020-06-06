@@ -156,7 +156,7 @@
         <td valign="top">
             <a class="email_header">
                 <img class="email_header_logo" src="{{URL::to('/')}}/images/emails/order_header_logo.png" alt="order_logo" />
-                <p>Заказ № {{ $id }}</p>
+                <p>Заказ № {{ $data['id'] }}</p>
                 <img class="email_header_alogo" src="{{URL::to('/')}}/images/emails/t2.png" alt="T2"/>
             </a>
         </td>
