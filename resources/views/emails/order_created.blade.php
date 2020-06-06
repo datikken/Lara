@@ -116,7 +116,7 @@
             max-width: 540px;
             min-width: 300px;
             margin: 0 auto;
-            background-image: url("{{URL::to('/')}}/images/emails/email_bg.svg");
+            background-image: url("{{URL::to('/')}}/images/emails/email_bg.png");
             background-size: contain;
             background-position: 0 16px;
             background-repeat: no-repeat;
