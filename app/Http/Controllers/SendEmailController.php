@@ -21,11 +21,10 @@ class SendEmailController extends Controller
     {
         $user_id = Auth::id();
         $customer = DB::table('users')->where('id', $user_id)->select('email')->get();
-        $order = DB::table('orders')->where('id', $id)->get();
 
         $data = array(
             'name' => 'Tikken',
-            'message' => $order
+            'id' => $id
         );
 
         Mail::to('tikken23@gmail.com')->send(new OrderCreatedEmail($data));
