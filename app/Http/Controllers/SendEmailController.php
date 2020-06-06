@@ -42,4 +42,9 @@ class SendEmailController extends Controller
 
         return back()->with('success', 'Thanks for contacting us');
     }
+
+    public function testEmailTemplate()
+    {
+        return view('emails.register_email');
+    }
 }

@@ -145,3 +145,5 @@ Route::get('/testStorage', function() {
 Route::get('/mailtest', function() {
     dd(Config::get('mail'));
 });
+//Test email template
+Route::get('/mailtemplate', ['uses' => "SendEmailController@testEmailTemplate", 'as' => 'mailtemplate']);
