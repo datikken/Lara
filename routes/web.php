@@ -66,12 +66,7 @@ Route::post('/home/getOrderInfo/{id}',['uses' => 'HomeController@getOrderInfo', 
 
 //Email Subscriptions
 Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'subscribe']);
-
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-//Reset password
-Route::post('reset_password_without_token', 'HomeController@validatePasswordRequest');
-Route::post('reset_password_with_token', 'HomeController@resetPassword');
 
 //ADMIN - functionality
 //Subscriptions
