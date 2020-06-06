@@ -190,14 +190,14 @@
                         <table border="0" cellpadding="0" cellspacing="0" width="300" style="margin: 0 auto;">
                             <tr>
                                 <td align="center" style="display: block;padding-bottom: 20px;">
-                                    <a href="#" class="main_btn" style="color: white;">
+                                    <a href="{{URL::to('/home')}}" class="main_btn" style="color: white;">
                                         Личный кабинет
                                     </a>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="center">
-                                    <a href="#" class="main_btn" style="background-color: #F8F8F8; color: black; border: 1px solid black;">
+                                    <a href="{{URL::to('/tracking')}}" class="main_btn" style="background-color: #F8F8F8; color: black; border: 1px solid black;">
                                         трекинг заказа
                                     </a>
                                 </td>
@@ -253,7 +253,7 @@
                     <div class="footer_item_contacts">
                         <div class="footer_item_contacts_left" style="float:left;">
                             <img src="{{URL::to('/')}}/images/emails/footer_tel.png" alt="" style="float:left;padding-top: 1px;">
-                            <span  style="padding-left: 18px;padding-bottom: 5px;">+7 (495) 775-50-53</span>
+                            <a href="tel:74957755053" style="padding-left: 18px;padding-bottom: 5px;">+7 (495) 775-50-53</a>
                         </div>
                         <div class="footer_item_contacts_right" style="float:left;padding-left: 40px;">
                             <img src="{{URL::to('/')}}/images/emails/footer_mail.png" alt="" style="float:left;padding-top: 5px;">
