@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
+use App\Mail\OrderCreatedEmail;
 use Auth;
 
 class SendEmailController extends Controller
@@ -27,7 +28,7 @@ class SendEmailController extends Controller
             'message' => $order
         );
 
-        Mail::to($customer)->send(new SendMail($data));
+        Mail::to($customer)->send(new OrderCreatedEmail($data));
     }
     public function send(Request $request)
     {
