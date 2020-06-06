@@ -140,6 +140,10 @@
         .colors_e {
             background-color: #66CCCC;
         }
+        .footer_mail a {
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body style="padding:0; margin:0;">
@@ -252,14 +256,14 @@
                             <span  style="padding-left: 18px;padding-bottom: 5px;">+7 (495) 775-50-53</span>
                         </div>
                         <div class="footer_item_contacts_right" style="float:left;padding-left: 40px;">
-                            <img src="{{URL::to('/')}}/images/emails/footer_mail.png" alt="" style="float:left;padding-top: 5px;">
+                            <img src="{{URL::to('/')}}/images/emails/footer_mail.png" alt="" style="float:left;padding-top: 5px;" class="footer_mail">
                             <span  style="padding-left: 18px;padding-bottom: 5px;color: white;text-decoration: none;">kakayto_pochta@brenddomen.com</span>
                         </div>
                     </div>
                 </div>
             </td>
 
-            <td style="float: left; width: 100%;padding: 33px 0 18px 135px;">
+            <td style="float: left; width: 100%;padding: 31px 0 14px 135px;">
                 <a href="#" style="color: black;font-size: 12px;height: 14px; cursor: pointer;text-decoration: none;">Политика конфиденциальности</a>
             </td>
 
