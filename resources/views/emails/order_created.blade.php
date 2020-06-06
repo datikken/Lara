@@ -116,7 +116,7 @@
             max-width: 540px;
             min-width: 300px;
             margin: 0 auto;
-            background-image: url(/images/emails/email_bg.svg);
+            background-image: url("{{URL::to('/')/images/emails/email_bg.svg}}");
             background-size: contain;
             background-position: 0 16px;
             background-repeat: no-repeat;
@@ -159,9 +159,9 @@
     <tr>
         <td valign="top">
             <a class="email_header">
-                <img class="email_header_logo" src="/images/emails/order_header_logo.png" alt="order_logo" />
+                <img class="email_header_logo" src="{{URL::to('/')/images/emails/order_header_logo.png}}" alt="order_logo" />
                 <p>Заказ №346730495836</p>
-                <img class="email_header_alogo" src="/images/emails/t2.png" alt="T2">
+                <img class="email_header_alogo" src="{{URL::to('/')/images/emails/t2.png}}" alt="T2"/>
             </a>
         </td>
     </tr>
@@ -222,14 +222,14 @@
                         <span class="colors_e"></span>
                     </div>
                     <div class="yellow_logo" style="float:right;width: 50px; padding-right: 56px; cursor: pointer;">
-                        <img src="/images/emails/colors_logo.svg" alt="logo">
+                        <img src="{{URL::to('/')/images/emails/colors_logo.svg}}" alt="logo">
                     </div>
                 </div>
-                <div style="background-image: url(/images/emails/email_bg2.svg);height: 111px;background-position: center;background-size: contain;background-repeat: no-repeat;text-align: center;" alt="">
+                <div style="background-image: url({{URL::to('/')/images/emails/email_bg2.svg)}};height: 111px;background-position: center;background-size: contain;background-repeat: no-repeat;text-align: center;" alt="">
                     <div class="socials" style="padding-top: 45px;">
-                        <img src="/images/emails/social_facebook.svg" style="margin-right: 35px;cursor: pointer;">
-                        <img src="/images/emails/social_instagram.svg" style="margin-right: 35px;">
-                        <img src="/images/emails/social_emails.svg">
+                        <img src="{{URL::to('/')/images/emails/social_facebook.svg}}" style="margin-right: 35px;cursor: pointer">
+                        <img src="{{URL::to('/')/images/emails/social_instagram.svg}}" style="margin-right: 35px;">
+                        <img src="{{URL::to('/')/images/emails/social_emails.svg}}">
                     </div>
                 </div>
             </table>
@@ -238,11 +238,11 @@
     <!-- BODY -->
 
     <!-- FOOTER -->
-    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 600px;min-height: 500px;background-repeat: no-repeat;min-width: 300px;color: #fff;background-image: url(/images/emails/footer_iphone.svg);">
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 600px;min-height: 500px;background-repeat: no-repeat;min-width: 300px;color: #fff;background-image: url({{URL::to('/')/images/emails/footer_iphone.svg)}}">
         <tr>
             <td class="footer_item" style="display: block;padding: 25px 50px 0 50px;">
                 <div class="footer_item_left" style="height: 65px;float:left;">
-                    <img src="/images/emails/footer_location.svg" alt="phone" style="float: left;padding-right: 10px;">
+                    <img src="{{URL::to('/')/images/emails/footer_location.svg}}" alt="phone" style="float: left;padding-right: 10px;"/>
                 </div>
                 <div class="footer_item_right" style="float:left; display: contents;">
                     <span style="padding-bottom: 10px; display: block;">АДРЕС:</span>
@@ -251,17 +251,17 @@
             </td>
             <td class="footer_item" style="display: block;padding: 0;padding: 10px 50px;">
                 <div class="footer_item_left" style="height: 65px;float:left;">
-                    <img src="/images/emails/footer_phone.svg" alt="phone" style="float: left;padding-right: 10px;">
+                    <img src="{{URL::to('/')/images/emails/footer_phone.svg}}" alt="phone" style="float: left;padding-right: 10px;">
                 </div>
                 <div class="footer_item_right" style="float:left; display: contents;">
                     <span style="padding-bottom: 5px; display: block;">КОНТАКТЫ:</span>
                     <div class="footer_item_contacts">
                         <div class="footer_item_contacts_left" style="float:left;">
-                            <img src="/images/emails/footer_tel.svg" alt="" style="float:left;padding-top: 1px;">
+                            <img src="{{URL::to('/')/images/emails/footer_tel.svg}}" alt="" style="float:left;padding-top: 1px;">
                             <span  style="padding-left: 18px;padding-bottom: 5px;">+7 (495) 775-50-53</span>
                         </div>
                         <div class="footer_item_contacts_right" style="float:left;padding-left: 40px;">
-                            <img src="/images/emails/footer_mail.svg" alt="" style="float:left;padding-top: 5px;">
+                            <img src="{{URL::to('/')/images/emails/footer_mail.svg}}" alt="" style="float:left;padding-top: 5px;">
                             <span  style="padding-left: 18px;padding-bottom: 5px;">kakayto_pochta@brenddomen.com</span>
                         </div>
                     </div>
@@ -279,25 +279,25 @@
             <td style="float:left;padding: 15px 135px;">
                 <div class="icons">
                     <div class="visa" style="float:left;margin-right: 20px;">
-                        <img src="/images/emails/pays/visa.svg" alt="">
+                        <img src="{{URL::to('/')/images/emails/pays/visa.svg}}" alt="">
                     </div>
                     <div class="paypal" style="float:left;margin-right: 20px;">
-                        <img src="/images/emails/pays/paypal.svg" alt="">
+                        <img src="{{URL::to('/')/images/emails/pays/paypal.svg}}" alt="">
                     </div>
                     <div class="maestro" style="float:left;margin-right: 20px;">
-                        <img src="/images/emails/pays/maestro.svg" alt="">
+                        <img src="{{URL::to('/')/images/emails/pays/maestro.svg}}" alt="">
                     </div>
                     <div class="master" style="float:left;margin-right: 20px;">
-                        <img src="/images/emails/pays/mastercard.svg" alt="">
+                        <img src="{{URL::to('/')/images/emails/pays/mastercard.svg}}" alt="">
                     </div>
                     <div class="ebay" style="float:left;margin-right: 20px;">
-                        <img src="/images/emails/pays/ebay.svg" alt="">
+                        <img src="{{URL::to('/')/images/emails/pays/ebay.svg}}" alt="">
                     </div>
                     <div class="apple" style="float:left;margin-right: 20px;">
-                        <img src="/images/emails/pays/apple.svg" alt="">
+                        <img src="{{URL::to('/')/images/emails/pays/apple.svg}}" alt="">
                     </div>
                     <div class="google" style="float:left;margin-right: 20px;">
-                        <img src="/images/emails/pays/google.svg" alt="">
+                        <img src="{{URL::to('/')/images/emails/pays/google.svg}}" alt="">
                     </div>
                 </div>
             </td>
@@ -308,6 +308,7 @@
     </td>
 
     </tr>
+</table>
 </table>
 </body>
 <html>
