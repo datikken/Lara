@@ -46,6 +46,6 @@ class SendEmailController extends Controller
 
     public function testEmailTemplate()
     {
-        return view('emails.register_email');
+        return view('emails.order_created');
     }
 }
