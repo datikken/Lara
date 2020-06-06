@@ -212,7 +212,7 @@
                 </tr>
                 <!--/ BUTTONS -->
             </table>
-            <table border="0" cellpadding="0" cellspacing="0" class="second_block">
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;" class="second_block">
                 <div style="width: 100%;height: 150px; background-color: #292930;">
                     <div class="colors">
                         <span class="colors_a"></span>
