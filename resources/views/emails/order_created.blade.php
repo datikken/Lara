@@ -225,7 +225,7 @@
                         <img src="{{URL::to('/')/images/emails/colors_logo.svg}}" alt="logo">
                     </div>
                 </div>
-                <div style="background-image: url({{URL::to('/')/images/emails/email_bg2.svg)}};height: 111px;background-position: center;background-size: contain;background-repeat: no-repeat;text-align: center;" alt="">
+                <div style="background-image: url({{ URL::to('/')/images/emails/email_bg2.svg }});height: 111px;background-position: center;background-size: contain;background-repeat: no-repeat;text-align: center;" alt="">
                     <div class="socials" style="padding-top: 45px;">
                         <img src="{{URL::to('/')/images/emails/social_facebook.svg}}" style="margin-right: 35px;cursor: pointer">
                         <img src="{{URL::to('/')/images/emails/social_instagram.svg}}" style="margin-right: 35px;">
