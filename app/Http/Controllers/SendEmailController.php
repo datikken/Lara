@@ -11,7 +11,6 @@ use Auth;
 
 class SendEmailController extends Controller
 {
-    //
     public function index()
     {
         return view('emails.send_email');
@@ -45,6 +44,6 @@ class SendEmailController extends Controller
 
     public function testEmailTemplate()
     {
-        return view('emails.order_created');
+        return view('emails.password_reset');
     }
 }
