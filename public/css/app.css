@@ -11370,6 +11370,13 @@ main {
   max-width: 900px;
   margin-left: 20px;
 }
+.actorders_items {
+  max-height: 200px;
+  overflow: auto;
+}
+.actorders_items::-webkit-scrollbar {
+  display: none;
+}
 .actorders_table_item {
   display: grid;
   grid-template-columns: 100px 120px 130px 280px 140px 130px;

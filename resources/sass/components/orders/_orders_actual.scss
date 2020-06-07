@@ -2,6 +2,15 @@
     max-width: 900px;
     margin-left: 20px;
 
+    &_items {
+        max-height: 200px;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
     &_table {
         &_item {
             display: grid;

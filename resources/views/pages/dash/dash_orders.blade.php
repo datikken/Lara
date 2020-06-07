@@ -2,7 +2,10 @@
 
 @section('center')
     <div class="orders">
-        @include('components.orders.orders_actual')
+
+        {{--@php dd($orders_actual); @endphp--}}
+
+        @include('components.orders.orders_actual', ['orders_actual' => $orders_actual])
 
         <? if(isset($orders_history)) { ?>
             @include('components.orders.orders_history',['orders_history' => $orders_history])

@@ -1,3 +1,6 @@
+
+{{--@php dump($orders_actual); @endphp--}}
+
 <div class="actorders">
     <div class="actorders_wrap">
         <div class="actorders_head">
@@ -5,6 +8,7 @@
         </div>
 
         <div class="actorders_table">
+
             <div class="actorders_table_head">
                 <div class="actorders_table_head_item"><span>Дата заказа</span></div>
                 <div class="actorders_table_head_item"><span>Номер заказа</span></div>
@@ -14,32 +18,45 @@
                 <div class="actorders_table_head_item"><span>Статус оплаты</span></div>
             </div>
 
-            <div class="actorders_table_item">
-                <div class="actorders_table_item_inner"><span>11.08.2019</span></div>
-                <div class="actorders_table_item_inner"><span>444-333-333</span></div>
-                <div class="actorders_table_item_inner"><span>829 987 344 руб.</span></div>
-                <div class="actorders_table_item_inner"><span>ООО “Рога и копыта”</span></div>
-                <div class="actorders_table_item_inner"><span>Отгружен</span></div>
-                <div class="actorders_table_item_inner"><span>Неоплачен</span></div>
+            <div class="actorders_items">
+                @foreach($orders_actual as $order)
+                        <div class="actorders_table_item">
+                            <div class="actorders_table_item_inner"><span>{{$order->date}}</span></div>
+                            <div class="actorders_table_item_inner"><span>{{$order->id}}</span></div>
+                            <div class="actorders_table_item_inner"><span>{{$order->price}} руб.</span></div>
+                            <div class="actorders_table_item_inner"><span>ООО “Рога и копыта”</span></div>
+
+                            <?
+                                switch ($order->status) {
+                                    case 'on_hold':
+                                        echo '<div class="actorders_table_item_inner"><span>Отгружен</span></div>';
+                                        break;
+                                    case 'on_delivery':
+                                        echo '<div class="actorders_table_item_inner"><span>Передан в доставку</span></div>';
+                                        break;
+                                    case 'delivery_progress':
+                                        echo '<div class="actorders_table_item_inner"><span>Не отгружен</span></div>';
+                                        break;
+                                    case 'arrived':
+                                        echo '<div class="actorders_table_item_inner"><span>Отгружен</span></div>';
+                                        break;
+                                }
+                            ?>
+
+                            <?
+                                switch ($order->status) {
+                                    case 1:
+                                        echo '<div class="actorders_table_item_inner"><span>Оплачен</span></div>';
+                                        break;
+                                    case 0:
+                                        echo '<div class="actorders_table_item_inner"><span>Неоплачен</span></div>';
+                                        break;
+                                    }
+                            ?>
+                    </div>
+                @endforeach
             </div>
 
-            <div class="actorders_table_item">
-                <div class="actorders_table_item_inner"><span>11.08.2019</span></div>
-                <div class="actorders_table_item_inner"><span>444-333-333</span></div>
-                <div class="actorders_table_item_inner"><span>829 987 344 руб.</span></div>
-                <div class="actorders_table_item_inner"><span>ООО “Рога и копыта”</span></div>
-                <div class="actorders_table_item_inner"><span>Отгружен</span></div>
-                <div class="actorders_table_item_inner"><span>Неоплачен</span></div>
-            </div>
-
-            <div class="actorders_table_item">
-                <div class="actorders_table_item_inner"><span>11.08.2019</span></div>
-                <div class="actorders_table_item_inner"><span>444-333-333</span></div>
-                <div class="actorders_table_item_inner"><span>829 987 344 руб.</span></div>
-                <div class="actorders_table_item_inner"><span>ООО “Рога и копыта”</span></div>
-                <div class="actorders_table_item_inner"><span>Отгружен</span></div>
-                <div class="actorders_table_item_inner"><span>Неоплачен</span></div>
-            </div>
         </div>
     </div>
 </div>

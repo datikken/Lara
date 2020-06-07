@@ -113,6 +113,7 @@ class HomeController extends Controller
         $user_id = Auth::id();
         $type = DB::table('users')->where('id', $user_id)->select('face','email', 'name')->first();
         $orders_history = DB::table('orders')->where('user_id', $user_id)->where('status', 'arrived')->get();
+        $orders_actual = DB::table('orders')->where('user_id', $user_id)->get();
 
         if(DB::table('orders')->where('user_id', $user_id)->where('status','arrived')->get()->last()) {
             $last_order_id = DB::table('orders')->where('user_id', $user_id)->where('status', 'arrived')->get()->last()->id;
@@ -122,6 +123,7 @@ class HomeController extends Controller
 
             return view('pages.dash.dash_orders',
                     [
+                        'orders_actual' => $orders_actual,
                         'orders_history' => $orders_history,
                         'user' => $type,
                         'last_order' => $last_order,
