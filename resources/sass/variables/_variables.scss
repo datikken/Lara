@@ -35,6 +35,19 @@ $lruby:  #E34A02;
 $mruby: #E30613;
 $druby: #D20A11;
 
+.on_hold {
+    background-color: #fff;
+};
+.on_delivery, .delivery_progress {
+    background-color: #3559FD;
+}
+.lost {
+    background-color: #E34A02;
+    .actorders_table_item_inner {
+        color: #fff;
+    }
+}
+
 //shadows
 $button_shadow: 0px 0px 3px rgba(41, 41, 48, 0.25);
 $card_shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

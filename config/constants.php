@@ -6,7 +6,8 @@ return ([
         'on_hold',
         'on_delivery',
         'delivery_progress',
-        'arrived'
+        'arrived',
+        'lost'
     ],
     'POSTAMATS' => [
         'Дикси. Москва, ул. Бориса Годунова, д. 198,',

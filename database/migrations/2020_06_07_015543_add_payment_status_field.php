@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class OrdersPaymentStatus extends Migration
+class AddPaymentStatusField extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class OrdersPaymentStatus extends Migration
     public function up()
     {
         Schema::table('orders', function(Blueprint $table) {
-            $table->boolean('payment_status')->after('user_id');
+            $table->string('payment_status')->after('user_id');
         });
     }
 
