@@ -24,6 +24,7 @@
         display: flex;
         position: relative;
         overflow: hidden;
+        cursor: pointer;
 
         &:last-child {
           justify-content: center;
@@ -115,7 +116,6 @@
             &-title {
               font-size: 9px;
               line-height: 14px;
-
               font-family: $font;
               letter-spacing: 0.02em;
               color: $dblack;

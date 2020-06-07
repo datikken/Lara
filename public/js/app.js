@@ -57720,7 +57720,7 @@ var LandingController = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+/* WEBPACK VAR INJECTION */(function($) {function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
@@ -57728,8 +57728,67 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var OrdersHistoryController = /*#__PURE__*/function () {
   _createClass(OrdersHistoryController, [{
+    key: "_fillItems",
+    value: function _fillItems(obj, id) {
+      var dest = document.querySelector('.order_items_container');
+      var btnLink = document.querySelector('.history_wrapper-item_row-total-cta');
+      var orderLength = document.querySelector('.history_wrapper-item_row-total_content-value');
+      var totalPrice = document.querySelector('.order_totalPrice');
+      var row = document.querySelectorAll('.order_items');
+      row.forEach(function (el) {
+        return el.remove();
+      });
+      obj.order_items.forEach(function (el) {
+        var block = "\n                    <div class=\"history_wrapper-item_row order_items\">\n                        <div class=\"history_wrapper-item_row-info\">\n                            <span class=\"history_wrapper-item_row-item_val\">".concat(obj.order[0].id, "</span>\n                        </div>\n                        <div class=\"history_wrapper-item_row-info\">\n                            <span class=\"history_wrapper-item_row-item_val\">").concat(el.item_name, "</span>\n                        </div>\n    \n                        <div class=\"history_wrapper-item_row-info\">\n                            <span class=\"history_wrapper-item_row-item_val\">").concat(el.item_price, "</span>\n                        </div>\n                        <div class=\"history_wrapper-item_row-info\">\n                            <span class=\"history_wrapper-item_row-item_val\">").concat(el.quantity, "</span>\n                        </div>\n                    </div>");
+        dest.insertAdjacentHTML('beforeend', block);
+      });
+      orderLength.innerText = "".concat(obj.order_items.length, " \u0435\u0434.");
+      totalPrice.innerText = "".concat(obj.order[0].price, " \u0440.");
+      var val = btnLink.getAttribute('href').split('/repeatOrder');
+      btnLink.setAttribute('href', val[0] + "/repeatOrder/".concat(id));
+      console.log(val, obj, totalPrice);
+    }
+  }, {
+    key: "_makeCall",
+    value: function _makeCall(id) {
+      var that = this;
+      var dataObj = {
+        id: id,
+        token: window.token
+      };
+      var url = window.getOrderInfo.split('getOrderInfo')[0] + 'getOrderInfo';
+      $.ajax({
+        method: "post",
+        url: url + "/".concat(id),
+        data: dataObj,
+        headers: {
+          'X-CSRF-TOKEN': window.token
+        },
+        success: function success(data, status, XHR) {
+          that._fillItems(data, id);
+        },
+        error: function error(_error, status, XHR) {
+          console.warn(_error);
+        }
+      });
+    }
+  }, {
     key: "_setListeners",
-    value: function _setListeners() {}
+    value: function _setListeners(el) {
+      var that = this;
+      var orders = el.querySelectorAll('.order_values');
+      orders.forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          var id = parseInt(e.currentTarget.querySelector('.order_id').innerText);
+          orders.forEach(function (el) {
+            el.classList.remove('last_order');
+          });
+          e.currentTarget.classList.add('last_order');
+
+          that._makeCall(id);
+        });
+      });
+    }
   }]);
 
   function OrdersHistoryController() {
@@ -57743,6 +57802,7 @@ var OrdersHistoryController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (OrdersHistoryController);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 

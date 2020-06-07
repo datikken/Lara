@@ -140,9 +140,15 @@ class HomeController extends Controller
 
     public function getOrderInfo($id)
     {
-        $order = DB::table('orders')->where('id', $id)->get;
+        $order = DB::table('orders')->where('id', $id)->get();
+        $order_items = DB::table('order_items')->where('order_id', $id)->get();
 
-        return response()->json($order);
+        $arr = array(
+            'order' => $order,
+            'order_items' => $order_items
+        );
+
+        return response()->json($arr);
     }
 
     public function collectProfileData(Request $request)

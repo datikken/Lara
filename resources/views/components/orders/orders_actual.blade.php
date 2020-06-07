@@ -1,6 +1,4 @@
 
-{{--@php dump($orders_actual); @endphp--}}
-
 <div class="actorders">
     <div class="actorders_wrap">
         <div class="actorders_head">

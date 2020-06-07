@@ -25,12 +25,12 @@
             </div>
 
             @foreach($orders_history as $order)
-                <div class="history_wrapper-item_row <? if($order->id === $last_order->id) { echo 'last_order'; } ?>">
+                <div class="history_wrapper-item_row  order_values<? if($order->id === $last_order->id) { echo ' last_order'; } ?>">
                     <div class="history_wrapper-item_row-item">
                         <span class="history_wrapper-item_row-item_val">{{ $order->date }}</span>
                     </div>
                     <div class="history_wrapper-item_row-item">
-                        <span class="history_wrapper-item_row-item_val">{{ $order->id }}</span>
+                        <span class="history_wrapper-item_row-item_val order_id">{{ $order->id }}</span>
                     </div>
                     <div class="history_wrapper-item_row-item">
                         <span class="history_wrapper-item_row-item_val">
@@ -60,23 +60,25 @@
                 </div>
             </div>
 
-            @foreach($last_order as $item)
-                <div class="history_wrapper-item_row">
-                    <div class="history_wrapper-item_row-info">
-                        <span class="history_wrapper-item_row-item_val">{{ $last_order->id }}</span>
-                    </div>
-                    <div class="history_wrapper-item_row-info">
-                        <span class="history_wrapper-item_row-item_val">{{ $item->item_name }}</span>
-                    </div>
+            <div class="order_items_container">
+                @foreach($last_order as $item)
+                    <div class="history_wrapper-item_row order_items">
+                        <div class="history_wrapper-item_row-info">
+                            <span class="history_wrapper-item_row-item_val">{{ $last_order->id }}</span>
+                        </div>
+                        <div class="history_wrapper-item_row-info">
+                            <span class="history_wrapper-item_row-item_val">{{ $item->item_name }}</span>
+                        </div>
 
-                    <div class="history_wrapper-item_row-info">
-                        <span class="history_wrapper-item_row-item_val">{{ $item->quantity }}</span>
+                        <div class="history_wrapper-item_row-info">
+                            <span class="history_wrapper-item_row-item_val">{{ $item->quantity }}</span>
+                        </div>
+                        <div class="history_wrapper-item_row-info">
+                            <span class="history_wrapper-item_row-item_val">@php echo $item->quantity * $item->item_price; @endphp</span>
+                        </div>
                     </div>
-                    <div class="history_wrapper-item_row-info">
-                        <span class="history_wrapper-item_row-item_val">@php echo $item->quantity * $item->item_price; @endphp</span>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
 
             <div class="history_wrapper-item_row">
                 <a href="{{ route('repeatOrder', ['id' => $last_order->id ]) }}" class="history_wrapper-item_row-total-cta">
@@ -91,7 +93,7 @@
                 <div class="history_wrapper-item_row-total">
                     <div class="history_wrapper-item_row-total_content">
                         <span class="history_wrapper-item_row-total_content-title">Итого:</span>
-                        <span class="history_wrapper-item_row-total_content-value">{{ $last_order_total[0]->price }} р.</span>
+                        <span class="history_wrapper-item_row-total_content-value order_totalPrice">{{ $last_order_total[0]->price }} р.</span>
                     </div>
 
                     <div class="history_wrapper-item_row-total_btns">
