@@ -57,3 +57,11 @@ $druby: #D20A11;
         color: #fff;
     }
 }
+.last_order {
+    .history_wrapper-item_row-item {
+        background-color: $black;
+    }
+    .history_wrapper-item_row-item .history_wrapper-item_row-item_val {
+        color: #fff;
+    }
+}

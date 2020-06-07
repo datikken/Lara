@@ -25,7 +25,7 @@
             </div>
 
             @foreach($orders_history as $order)
-                <div class="history_wrapper-item_row">
+                <div class="history_wrapper-item_row <? if($order->id === $last_order->id) { echo 'last_order'; } ?>">
                     <div class="history_wrapper-item_row-item">
                         <span class="history_wrapper-item_row-item_val">{{ $order->date }}</span>
                     </div>

@@ -20,6 +20,13 @@
   color: #fff;
 }
 
+.last_order .history_wrapper-item_row-item {
+  background-color: #40404c;
+}
+.last_order .history_wrapper-item_row-item .history_wrapper-item_row-item_val {
+  color: #fff;
+}
+
 .active_bullet {
   background: #fff !important;
   border: 1px solid #e9e9ea;
