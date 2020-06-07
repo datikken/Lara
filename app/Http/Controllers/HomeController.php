@@ -131,7 +131,10 @@ class HomeController extends Controller
                     ]
             );
         } else {
-            return view('pages.dash.dash_orders');
+            return view('pages.dash.dash_orders', [
+                'orders_actual' => $orders_actual,
+                'user' => $type
+            ]);
         }
     }
 

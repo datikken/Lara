@@ -204,7 +204,8 @@ class ProductsController extends Controller
                 'date'=>$date,
                 'del date' => '',
                 'price' => $cart->totalPrice,
-                'user_id' => $user_id
+                'user_id' => $user_id,
+                'payment_status' => 'not_paid'
             );
 
             $created_order = DB::table('orders')->insert($newOrderArray);

@@ -29,13 +29,13 @@
                         <?
                             switch ($order->status) {
                                 case 'on_hold':
-                                    echo '<div class="actorders_table_item_inner"><span>Отгружен</span></div>';
+                                    echo '<div class="actorders_table_item_inner"><span>Не отгружен</span></div>';
                                     break;
                                 case 'on_delivery':
                                     echo '<div class="actorders_table_item_inner"><span>Передан в доставку</span></div>';
                                     break;
                                 case 'delivery_progress':
-                                    echo '<div class="actorders_table_item_inner"><span>Не отгружен</span></div>';
+                                    echo '<div class="actorders_table_item_inner"><span>Доставка</span></div>';
                                     break;
                                 case 'arrived':
                                     echo '<div class="actorders_table_item_inner"><span>Отгружен</span></div>';
@@ -55,7 +55,7 @@
                                     echo '<div class="actorders_table_item_inner"><span>Неоплачен</span></div>';
                                     break;
                                 case 'lost':
-                                    echo '<div class="actorders_table_item_inner"><span>Пророчен</span></div>';
+                                    echo '<div class="actorders_table_item_inner"><span>Проcрочен</span></div>';
                                     break;
                                 }
                         ?>
