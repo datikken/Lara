@@ -244,3 +244,14 @@ b {
 .invalid {
     color: $ruby!important;
 }
+
+.menu_active {
+    &:after {
+        display: block;
+        content:"";
+        width: 100%;
+        height: 3px;
+        background: $gradient;
+        margin-top: 10px;
+    }
+}

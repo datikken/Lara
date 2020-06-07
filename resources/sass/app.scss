@@ -28,7 +28,7 @@
 @import "./components/pagination";
 @import "./components/history";
 @import "./components/landing/economslider";
-@import "components/landingt/thead";
+@import "./components/landingt/thead";
 @import "./components/product/product_details";
 @import "./components/product/product_details-swiper";
 @import "./components/product/product_info";
@@ -38,8 +38,8 @@
 @import "./components/product/product_fast-details";
 @import "./components/product/product_feedback";
 @import "./components/product/product_details_slider";
-@import "components/tracking/tracking";
-@import "components/tracking/tracking_feedback";
+@import "./components/tracking/tracking";
+@import "./components/tracking/tracking_feedback";
 @import "./components/cart/cart";
 @import "./components/cart/cart_item";
 @import "./components/cart/order_list";
@@ -87,3 +87,6 @@
 @import "./components/company";
 @import "./components/orders/empty_orders";
 @import "./components/orders/orders_actual";
+@import "./components/feedback/thanks";
+@import "./components/pdetails_menu";
+@import "./components/product/product_desc";

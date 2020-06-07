@@ -1,8 +1,7 @@
-<?php #dump(gettype($product['images'])); ?>
+<?php #dump($product['price']); ?>
 
 <div class="details">
     <div class="details_wrap">
-
         <div class="details_wrap-slider">
             <div class="swiper-container gallery-top">
                 <div class="swiper-wrapper">
@@ -92,7 +91,7 @@
                        <span>Много</span>
                    </div>
                     <div class="details_wrap-info_item-price_item">
-                        <span class="details_wrap-info_item-price_item-price">29900</span>
+                        <span class="details_wrap-info_item-price_item-price"><? echo floor($product['price']); ?></span>
                     </div>
                 </div>
 
@@ -102,7 +101,7 @@
                         <img src="/images/icons/tip.svg" alt="amount">
                     </div>
                     <div class="details_wrap-info_item-price_item">
-                        <span class="details_wrap-info_item-price_item-price">29900</span>
+                        <span class="details_wrap-info_item-price_item-price"><? echo floor($product['price']); ?></span>
                     </div>
                 </div>
             </div>
