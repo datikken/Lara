@@ -153,7 +153,7 @@ class ProductsController extends Controller
         return response()->json((object) array('cart' => $cart->totalQuantity, 'price' => $cart->totalPrice));
     }
 
-    public function repeatOrder($id)
+    public function repeatOrder(Request $request, $id)
     {
         $user_id = Auth::id();
         $order = DB::table('orders')->where('id', $id)->get();
@@ -173,22 +173,22 @@ class ProductsController extends Controller
 
         foreach($order_items as $cart_item) {
             $item_id = $cart_item->id;
-            $item_name = $cart_item->item_name;
-            $item_price = $cart_item->item_price;
             $item_quantity = $cart_item->quantity;
 
-            $newItemsInCurrentOrder = array(
-                'item_id' => $item_id,
-                'order_id'=>$order_id,
-                'item_name' => $item_name,
-                'item_price'=>$item_price,
-                'quantity'=> $item_quantity
-            );
+            $prevCart = $request->session()->get('cart');
+            $cart = new Cart($prevCart);
 
-            $created_order_items = DB::table('order_items')->insert($newItemsInCurrentOrder);
+            for ($x = 1; $x <= $item_quantity; $x++) {
+
+                $prevCart = $request->session()->get('cart');
+                $cart = new Cart($prevCart);
+                $product = Product::find($item_id);
+                $cart->addItem($item_id, $product, 1);
+                $request->session()->put('cart', $cart);
+            }
         }
 
-        return response()->json((object) array('success' => 'Thanks!'));
+        return redirect()->route('cartItems');
     }
 
     public function createOrder(Request $request)

@@ -28,10 +28,10 @@ class Cart
         }
     }
 
-    public function addItem($id, $product,$amount)
+    public function addItem($id, $product, $amount)
     {
         $price = (int) str_replace('$', '', $product->price);
-        //check if item already in cart
+
         if(array_key_exists($id, $this->items))
         {
             $productToAdd = $this->items[$id];
