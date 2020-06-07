@@ -11,14 +11,6 @@
 
   &_wrapper {
     &-item {
-      margin: 0 10px;
-      @include breakpoint($phone) {
-        margin-left: 0;
-      }
-
-      &:nth-child(2) {
-        // overflow-x: auto;
-      }
         .history_selected {
             background-color: $black;
             .history_wrapper-item_row-item {
@@ -196,7 +188,7 @@
         }
         &:first-child {
           min-width: 55px !important;
-          margin-top: 20px;
+          margin-top: 10px;
         }
         &-info {
           padding: 20px;
@@ -257,6 +249,7 @@
             color: $dblack;
             margin-left: 5px;
             font-size: 9px;
+
             @include breakpoint($phone) {
               font-size: 12px;
               margin-left: 10px;
@@ -280,8 +273,7 @@
       }
 
       &_heading {
-        padding: 20px 20px 10px 0;
-        border-bottom: 1px solid $yellow;
+        padding: 20px 20px 0 0;
 
         &-text {
           font-family: $font;

@@ -12,7 +12,6 @@ $btn_fs: 12px;
 $select-width: 220px;
 $select-height: 40px;
 
-//colors
 $white: #fff;
 $yellow: #fdd935;
 $dblack: #292930;
@@ -30,6 +29,11 @@ $red: #FF0000;
 $popupboxshadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
 $gradient: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
 
+$button_shadow: 0px 0px 3px rgba(41, 41, 48, 0.25);
+$card_shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$menu_shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
+$transition: .2s;
+
 $ruby: #9C1006;
 $lruby:  #E34A02;
 $mruby: #E30613;
@@ -40,6 +44,12 @@ $druby: #D20A11;
 };
 .on_delivery, .delivery_progress {
     background-color: #3559FD;
+    .actorders_table_item_inner {
+        color: #fff;
+    }
+}
+.reserved {
+    background-color: $yellow;
 }
 .lost {
     background-color: #E34A02;
@@ -47,9 +57,3 @@ $druby: #D20A11;
         color: #fff;
     }
 }
-
-//shadows
-$button_shadow: 0px 0px 3px rgba(41, 41, 48, 0.25);
-$card_shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-$menu_shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
-$transition: .2s;

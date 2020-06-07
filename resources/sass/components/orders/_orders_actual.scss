@@ -2,6 +2,12 @@
     max-width: 900px;
     margin-left: 20px;
 
+    &_wrap {
+        padding-bottom: 50px;
+        border-bottom: 1px solid $yellow;
+        margin-bottom: 30px;
+    }
+
     &_items {
         max-height: 200px;
         overflow: auto;

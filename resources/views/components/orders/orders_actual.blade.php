@@ -43,6 +43,9 @@
                                 case 'lost':
                                     echo '<div class="actorders_table_item_inner"><span>Отгружен</span></div>';
                                     break;
+                                case 'reserved':
+                                    echo '<div class="actorders_table_item_inner"><span>Не отгружен</span></div>';
+                                    break;
                             }
                         ?>
 
@@ -56,6 +59,9 @@
                                     break;
                                 case 'lost':
                                     echo '<div class="actorders_table_item_inner"><span>Проcрочен</span></div>';
+                                    break;
+                                case 'reserved':
+                                    echo '<div class="actorders_table_item_inner"><span>Резерв до 11.07.2019</span></div>';
                                     break;
                                 }
                         ?>

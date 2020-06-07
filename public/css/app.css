@@ -5,6 +5,13 @@
 .on_delivery, .delivery_progress {
   background-color: #3559FD;
 }
+.on_delivery .actorders_table_item_inner, .delivery_progress .actorders_table_item_inner {
+  color: #fff;
+}
+
+.reserved {
+  background-color: #fdd935;
+}
 
 .lost {
   background-color: #E34A02;
@@ -4545,14 +4552,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     margin-left: 20px;
   }
 }
-.history_wrapper-item {
-  margin: 0 10px;
-}
-@media screen and (min-width: 600px) {
-  .history_wrapper-item {
-    margin-left: 0;
-  }
-}
 .history_wrapper-item .history_selected {
   background-color: #40404c;
 }
@@ -4730,7 +4729,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .history_wrapper-item_row:first-child {
   min-width: 55px !important;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .history_wrapper-item_row-info {
   padding: 20px;
@@ -4815,8 +4814,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 .history_wrapper-item_heading {
-  padding: 20px 20px 10px 0;
-  border-bottom: 1px solid #fdd935;
+  padding: 20px 20px 0 0;
 }
 .history_wrapper-item_heading-text {
   font-family: "Montserrat", sans-serif;
@@ -11385,6 +11383,11 @@ main {
 .actorders {
   max-width: 900px;
   margin-left: 20px;
+}
+.actorders_wrap {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #fdd935;
+  margin-bottom: 30px;
 }
 .actorders_items {
   max-height: 200px;
