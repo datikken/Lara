@@ -6,6 +6,8 @@
 
         @include('components.product_details.product_details_menu')
 
+        @include('components.product_details.product_capacity')
+
         @include('components.product_details.product_chrst')
 
         @include('components.product_details.product_desc')

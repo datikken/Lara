@@ -11620,3 +11620,48 @@ main {
   align-items: center;
   border-bottom: 1px solid #e9e9ea;
 }
+
+.prcp_wrap {
+  width: 971px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e9e9ea;
+}
+.prcp_item {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.prcp_row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  height: 40px;
+}
+.prcp_row .prcp_item {
+  border-right: 1px solid #e9e9ea;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  cursor: pointer;
+}
+.prcp_head {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  height: 40px;
+  background: #e9e9ea;
+}
+.prcp_head .prcp_item {
+  border-right: 1px solid #fff;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #3559fd;
+  cursor: pointer;
+}

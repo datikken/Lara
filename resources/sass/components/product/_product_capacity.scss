@@ -1,0 +1,48 @@
+.prcp {
+    &_wrap {
+        width: 971px;
+        margin: 0 auto;
+        border-bottom: 1px solid $light_gray;
+    }
+    &_item {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+    }
+    &_row {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        height: 40px;
+
+        .prcp_item {
+            border-right: 1px solid $light_gray;
+            font-family: $font;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0.02em;
+            color: $dblack;
+            cursor: pointer;
+        }
+    }
+    &_head {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        height: 40px;
+        background: $light_gray;
+
+        .prcp_item {
+            border-right: 1px solid #fff;
+            font-family: $font;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: $blue;
+            cursor: pointer;
+        }
+    }
+}
