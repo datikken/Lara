@@ -1,0 +1,28 @@
+.prdch {
+    &_wrap {
+        margin: 0 auto;
+        max-width: $layoutw;
+    }
+
+    &_name, &_val {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        color: $dblack;
+    }
+
+    &_val {
+        font-family: $semifont;
+    }
+
+    &_item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 40px;
+        align-items: center;
+        border-bottom: 1px solid $light_gray;
+    }
+}

@@ -6,6 +6,8 @@
 
         @include('components.product_details.product_details_menu')
 
+        @include('components.product_details.product_chrst')
+
         @include('components.product_details.product_desc')
 
         @include('components.feedback.feedback_thanks')

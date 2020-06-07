@@ -11596,3 +11596,27 @@ main {
   max-width: 970px;
   margin: 0 auto;
 }
+
+.prdch_wrap {
+  margin: 0 auto;
+  max-width: 1170px;
+}
+.prdch_name, .prdch_val {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+.prdch_val {
+  font-family: "MontserratSemiBold";
+}
+.prdch_item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 40px;
+  align-items: center;
+  border-bottom: 1px solid #e9e9ea;
+}
