@@ -1,7 +1,6 @@
 @extends('layouts.dash')
 
 @section('center')
-
     <div class="orders">
         @include('components.orders.orders_actual')
 

@@ -1,5 +1,3 @@
-{{--@php dump($orders_history); @endphp--}}
-
 <div class="history">
     <div class="history_wrapper">
         <div class="history_wrapper-item">
