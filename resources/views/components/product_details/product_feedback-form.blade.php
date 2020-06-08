@@ -1,6 +1,6 @@
-@include('components.product_details.product_feedback-item', ['feedbacks' => $feedbacks,'class' => '' ])
-
 <div class="pfeedback <? if($class) { echo $class; } ?>">
+    @include('components.product_details.product_feedback-item', ['feedbacks' => $feedbacks,'class' => '' ])
+
     <div class="pfeedback_wrap">
         <form action="/product/feedback/" method="get">
             <div class="pfeedback_wrap-item">

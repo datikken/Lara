@@ -58064,6 +58064,17 @@ var ProductFeedbackController = /*#__PURE__*/function () {
       });
     }
   }, {
+    key: "_sayThanks",
+    value: function _sayThanks() {
+      var thanks = document.querySelector('.thanks');
+      var closeThanks = thanks.querySelector('.thanks_wrap_btn');
+      closeThanks.addEventListener('click', function () {
+        thanks.classList.add('as-none');
+      });
+      thanks.classList.remove('as-none');
+      window.scrollTo(0, 0);
+    }
+  }, {
     key: "_cleanFields",
     value: function _cleanFields() {
       var inputs = document.querySelectorAll('input');
@@ -58072,6 +58083,8 @@ var ProductFeedbackController = /*#__PURE__*/function () {
       arr.forEach(function (el) {
         el.value = '';
       });
+
+      this._sayThanks();
     }
   }, {
     key: "setListeners",

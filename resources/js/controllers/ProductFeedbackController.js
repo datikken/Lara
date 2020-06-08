@@ -65,7 +65,16 @@ class ProductFeedbackController {
             })
         });
     }
+    _sayThanks() {
+        let thanks = document.querySelector('.thanks');
+        let closeThanks = thanks.querySelector('.thanks_wrap_btn');
+            closeThanks.addEventListener('click', function() {
+                thanks.classList.add('as-none');
+            })
 
+            thanks.classList.remove('as-none');
+            window.scrollTo(0,0);
+    }
     _cleanFields() {
         let inputs = document.querySelectorAll('input');
         let textareas = document.querySelectorAll('textarea')
@@ -74,7 +83,9 @@ class ProductFeedbackController {
 
         arr.forEach((el) => {
             el.value = ''
-        })
+        });
+
+        this._sayThanks();
     }
     setListeners(el) {
         let that = this;
