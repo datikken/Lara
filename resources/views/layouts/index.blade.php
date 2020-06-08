@@ -14,10 +14,9 @@
         @include('components.menu.menu')
 
         <div class="page_content">
-             @yield('center')
+            @yield('center')
         </div>
 
         @include('components.subscriptions.subscriptions')
         @include('layouts.footer')
-        {{--@include('alert.success_cart');--}}
 </body>

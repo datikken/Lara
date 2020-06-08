@@ -1,4 +1,4 @@
-<div class="prcp">
+<div class="prcp  <? if($class) { echo $class; } ?>">
     <div class="prcp_wrap">
 
         <div class="prcp_head">

@@ -1,4 +1,4 @@
-<div class="prdch">
+<div class="prdch  <? if($class) { echo $class; } ?>">
     <div class="prdch_wrap">
         <div class="prdch_item">
             <div class="prdch_name">

@@ -1,6 +1,6 @@
 @foreach($feedbacks as $feed)
 
-    <div class="pfitem">
+    <div class="pfitem <? if($class) { echo $class; } ?>">
         <div class="pfitem_wrap">
             <div class="pfitem_wrap-item">
                 <div class="pfitem_wrap-item_ava"></div>

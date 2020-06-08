@@ -56187,7 +56187,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_RegisterController__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./controllers/RegisterController */ "./resources/js/controllers/RegisterController.js");
 /* harmony import */ var _controllers_DadataController__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./controllers/DadataController */ "./resources/js/controllers/DadataController.js");
 /* harmony import */ var _controllers_OrdersHistoryController__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./controllers/OrdersHistoryController */ "./resources/js/controllers/OrdersHistoryController.js");
-/* harmony import */ var _controllers_ProductDetaisMenuController__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./controllers/ProductDetaisMenuController */ "./resources/js/controllers/ProductDetaisMenuController.js");
+/* harmony import */ var _controllers_ProductDetailsMenuController__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./controllers/ProductDetailsMenuController */ "./resources/js/controllers/ProductDetailsMenuController.js");
 // window.Vue = require('vue');
 
 
@@ -56237,7 +56237,7 @@ $(document).ready(function () {
   new _controllers_ProfileController__WEBPACK_IMPORTED_MODULE_20__["default"]();
   new _controllers_TrackingFeedController__WEBPACK_IMPORTED_MODULE_21__["default"]();
   new _controllers_RegisterController__WEBPACK_IMPORTED_MODULE_23__["default"]();
-  new _controllers_ProductDetaisMenuController__WEBPACK_IMPORTED_MODULE_26__["default"]();
+  new _controllers_ProductDetailsMenuController__WEBPACK_IMPORTED_MODULE_26__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -57898,10 +57898,10 @@ var ProductDetailsController = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./resources/js/controllers/ProductDetaisMenuController.js":
-/*!*****************************************************************!*\
-  !*** ./resources/js/controllers/ProductDetaisMenuController.js ***!
-  \*****************************************************************/
+/***/ "./resources/js/controllers/ProductDetailsMenuController.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/controllers/ProductDetailsMenuController.js ***!
+  \******************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -57913,34 +57913,55 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var ProductDetaisMenuController = /*#__PURE__*/function () {
-  function ProductDetaisMenuController() {
-    _classCallCheck(this, ProductDetaisMenuController);
+var ProductDetailsMenuController = /*#__PURE__*/function () {
+  function ProductDetailsMenuController() {
+    _classCallCheck(this, ProductDetailsMenuController);
 
+    var container = document.querySelector('.page_content');
     var block = document.querySelector('.pdetails_menu');
-    block && this._setListeners(block);
+    block && this._setListeners(block, container);
+    this.prcp = container.querySelector('.prcp');
+    this.prdch = container.querySelector('.prdch');
+    this.prdesc = container.querySelector('.prdesc');
+    this.pfeedback = container.querySelector('.pfeedback');
   }
 
-  _createClass(ProductDetaisMenuController, [{
+  _createClass(ProductDetailsMenuController, [{
     key: "_setListeners",
-    value: function _setListeners(el) {
+    value: function _setListeners(el, block) {
+      var that = this;
       var items = el.querySelectorAll('.pdetails_menu_item');
       items.forEach(function (el) {
         el.addEventListener('click', function (e) {
           var item = e.currentTarget;
+          var id = parseInt(item.getAttribute('data-id'));
           items.forEach(function (el) {
             el.classList.remove('menu_active');
           });
           item.classList.add('menu_active');
+
+          that._showHideElements(id, block);
         });
+      });
+    }
+  }, {
+    key: "_showHideElements",
+    value: function _showHideElements(id, block) {
+      var items = [this.prcp, this.prdch, this.prdesc, this.pfeedback];
+      items.forEach(function (el, i) {
+        el.classList.add('as-none');
+
+        if (i === id) {
+          el.classList.remove('as-none');
+        }
       });
     }
   }]);
 
-  return ProductDetaisMenuController;
+  return ProductDetailsMenuController;
 }();
 
-/* harmony default export */ __webpack_exports__["default"] = (ProductDetaisMenuController);
+/* harmony default export */ __webpack_exports__["default"] = (ProductDetailsMenuController);
 
 /***/ }),
 

@@ -253,7 +253,7 @@ a:hover {
 }
 
 .as-none {
-  opacity: 0 !important;
+  display: none !important;
 }
 
 .as-filter-visible {
@@ -436,6 +436,10 @@ b {
   height: 3px;
   background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
   margin-top: 10px;
+}
+
+.page_content {
+  min-height: 750px;
 }
 
 .header {
@@ -11470,6 +11474,7 @@ main {
   transform: translate(-50%, -50%);
   z-index: 99999;
   display: none;
+  margin-bottom: 50px;
 }
 .thanks_wrap {
   width: 430px;
@@ -11544,6 +11549,9 @@ main {
   margin: 0 auto;
 }
 
+.prdesc {
+  margin-bottom: 50px;
+}
 .prdesc_footer {
   margin-top: 20px;
 }
@@ -11597,6 +11605,9 @@ main {
   margin: 0 auto;
 }
 
+.prdch {
+  margin-bottom: 50px;
+}
 .prdch_wrap {
   margin: 0 auto;
   max-width: 1170px;
@@ -11621,6 +11632,9 @@ main {
   border-bottom: 1px solid #e9e9ea;
 }
 
+.prcp {
+  margin-bottom: 50px;
+}
 .prcp_wrap {
   width: 971px;
   margin: 0 auto;

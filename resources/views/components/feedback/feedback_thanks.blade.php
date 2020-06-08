@@ -1,4 +1,4 @@
-<div class="thanks">
+<div class="thanks  <? if($class) { echo $class; } ?>">
     <div class="thanks_wrap">
         <div class="thanks_wrap_head">
             <span>Спасибо за ваш отзыв!</span>

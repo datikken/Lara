@@ -27,7 +27,7 @@ import LandingController from './controllers/LandingController'
 import RegisterController from './controllers/RegisterController'
 import DadataController from './controllers/DadataController'
 import OrdersHistoryController from './controllers/OrdersHistoryController'
-import ProductDetailsMenuController from './controllers/ProductDetaisMenuController'
+import ProductDetailsMenuController from './controllers/ProductDetailsMenuController'
 
 $(document).ready(function() {
     new OrdersHistoryController();

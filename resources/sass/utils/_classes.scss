@@ -102,8 +102,9 @@ a:hover {
 .graybg {
   background-color: #e9e9ea;
 }
+
 .as-none {
-  opacity: 0!important;
+  display: none!important;
 }
 
 .as-filter-visible {
@@ -254,4 +255,8 @@ b {
         background: $gradient;
         margin-top: 10px;
     }
+}
+
+.page_content {
+    min-height: 750px;
 }

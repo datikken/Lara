@@ -1,4 +1,4 @@
-<div class="prdesc">
+<div class="prdesc <? if($class) { echo $class; } ?>">
     <div class="prdesc_wrap">
 
         <div class="prdesc_item">
