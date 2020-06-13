@@ -13,7 +13,7 @@ footer {
     width: 100%;
     padding-top: 30px;
     overflow: hidden;
-    @include flex(flex-start, flex-start, wrap);
+    @include flex(flex-start, space-between, wrap);
 
     @include  breakpoint(600px) {
         max-width: $layoutw;
@@ -39,16 +39,20 @@ footer {
       justify-content: center;
       margin: 0 0 30px 16px;
 
+      @include breakpoint($phone) {
+        width: 350px;
+      }
+
+      &:last-child {
+          max-width: 200px;
+      }
+
       &:nth-child(1) {
          flex: 100%;
 
           @include breakpoint(400px) {
               flex: initial;
               margin-bottom: 30px;
-          }
-
-          @include breakpoint($medium) {
-              flex: 10%;
           }
       }
 
@@ -86,7 +90,7 @@ footer {
         }
 
         @include breakpoint($medium) {
-            margin-right: 50px;
+            margin-right: 130px;
             margin-left: 30px;
         }
       }
@@ -179,7 +183,6 @@ footer {
         color: $white;
         margin-bottom: 15px;
         font-weight: 300;
-        max-width: 200px;
       }
     }
   }
