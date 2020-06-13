@@ -116,6 +116,10 @@ a:hover {
     border-bottom: 1px solid $light_gray;
     padding-bottom: 16px;
 }
+
+.as-flex {
+    display: flex!important;
+}
 .as-visible {
   display: block!important;
 }

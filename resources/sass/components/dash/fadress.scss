@@ -2,6 +2,11 @@
     margin-left: 30px;
     margin-bottom: 300px;
     padding-top: 17px;
+    display: none;
+
+    &_cont {
+        margin-bottom: 250px;
+    }
 
     &_wrap {
         &-form {

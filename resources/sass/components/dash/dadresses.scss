@@ -1,0 +1,123 @@
+.dadresses {
+    padding-top: 15px;
+
+    &_selected {
+        background: $light_gray;
+        .dadresses_select, .dadresses_close {
+            display: flex;
+        }
+    }
+    &_text, &_select, &_close {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 130%;
+        color: $dblack;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all .2s;
+    }
+
+    &_select, &_close {
+        display: none;
+    }
+
+    &_text {
+        padding-left: 10px;
+    }
+
+    &_select {
+        text-align: center;
+        justify-content: center;
+        background: $yellow;
+    }
+
+    &_close {
+        justify-content: center;
+        color: white;
+        background: $dblack;
+    }
+
+    &_row {
+        height: 40px;
+        display: grid;
+        grid-template-columns: 670px 230px 70px;
+        border-bottom: 1px solid $light_gray;
+
+        &:last-child {
+            border: none;
+        }
+        &:hover {
+            .dadresses_select, .dadresses_close {
+                display:flex;
+            }
+        }
+    }
+
+    &_table {
+        margin-bottom: 40px;
+
+        &_bottom {
+            max-height: 159px;
+            overflow-y: scroll;
+        }
+
+        &_top {
+            font-family: $semifont;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 130%;
+            color: $dblack;
+            margin-bottom: 28px;
+        }
+    }
+    &_desc {
+        margin-bottom: 46px;
+
+        &_top {
+            font-family: $semifont;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 130%;
+            color: $dblack;
+            margin-bottom: 8px;
+        }
+
+        &_bottom {
+            font-family: $font;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 130%;
+            color: $black;
+            padding-left: 10px;
+        }
+    }
+
+    .form_group-btn {
+        height: 40px;
+        width: 270px;
+        box-shadow: none;
+    }
+
+    &_wrap {
+        margin-left: 30px;
+
+        &_head {
+            margin-bottom: 37px;
+
+            span {
+                font-family: $font;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 130%;
+                color: $dblack;
+            }
+        }
+    }
+}
