@@ -134,6 +134,8 @@ a:hover {
 }
 
 input, textarea {
+  font-family: "Montserrat", sans-serif;
+
   &::placeholder {
     font-family: $font;
     font-style: normal;

@@ -1,14 +1,21 @@
 @foreach($feedbacks as $feed)
-
     <div class="pfitem <? if($class) { echo $class; } ?>">
         <div class="pfitem_wrap">
             <div class="pfitem_wrap-item">
-                <div class="pfitem_wrap-item_ava"></div>
+                <div class="pfitem_wrap-item_ava">
+
+<? if($feed->user_avatar) { ?>
+    <img src="{{Storage::disk('local')->url('user_avatars/' . $feed->user_avatar )}}" alt="Logo">
+<? } else { ?>
+    <img src="/images/icons/avatar.svg" alt="">
+<? } ?>
+
+                </div>
             </div>
 
             <div class="pfitem_wrap-item">
                 <div class="pfitem_wrap-item_head">
-                    <div class="pfitem_wrap-item_head-text"><span>Волан де морт</span></div>
+                    <div class="pfitem_wrap-item_head-text"><span>{{ $feed->name }}</span></div>
                     <div class="pfitem_wrap-item_head-date">{{ $feed->created_at }}</div>
                 </div>
 

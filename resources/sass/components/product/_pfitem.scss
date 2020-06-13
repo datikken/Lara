@@ -118,6 +118,9 @@
                 height: 70px;
                 width: 70px;
                 background-image: url('/images/icons/avatar.svg');
+                background-repeat: no-repeat;
+                border-radius: 50%;
+                overflow: hidden;
             }
         }
     }

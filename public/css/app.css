@@ -289,6 +289,9 @@ a:hover {
   height: 98vh !important;
 }
 
+input, textarea {
+  font-family: "Montserrat", sans-serif;
+}
 input::-moz-placeholder, textarea::-moz-placeholder {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -298,7 +301,6 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   letter-spacing: 0.02em;
   color: #d4d4d5;
 }
-
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -308,7 +310,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   letter-spacing: 0.02em;
   color: #d4d4d5;
 }
-
 input::-ms-input-placeholder, textarea::-ms-input-placeholder {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -318,7 +319,6 @@ input::-ms-input-placeholder, textarea::-ms-input-placeholder {
   letter-spacing: 0.02em;
   color: #d4d4d5;
 }
-
 input::placeholder, textarea::placeholder {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -10382,6 +10382,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   height: 70px;
   width: 70px;
   background-image: url("/images/icons/avatar.svg");
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .aboutc {
