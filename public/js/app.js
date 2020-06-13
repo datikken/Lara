@@ -56545,11 +56545,11 @@ window.onload = function () {
       centeredSlides: true,
       initialSlide: '2',
       spaceBetween: 100,
-      // loop: true,
-      // autoplay: {
-      //     delay: 2500,
-      //     disableOnInteraction: false
-      // },
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true
@@ -56570,6 +56570,9 @@ window.onload = function () {
     }));
     var swiperV = new Swiper('.swiper-container-v', {
       spaceBetween: 50,
+      pagination: {
+        el: '.swiper-pagination-v'
+      },
       navigation: {
         nextEl: '.swiper-button-nextt',
         prevEl: '.swiper-button-prevv'
@@ -57749,7 +57752,6 @@ var OrdersHistoryController = /*#__PURE__*/function () {
       totalPrice.innerText = "".concat(obj.order[0].price, " \u0440.");
       var val = btnLink.getAttribute('href').split('/repeatOrder');
       btnLink.setAttribute('href', val[0] + "/repeatOrder/".concat(id));
-      console.log(val, obj, totalPrice);
     }
   }, {
     key: "_makeCall",

@@ -6,11 +6,11 @@ window.onload = function () {
         centeredSlides: true,
         initialSlide: '2',
         spaceBetween: 100,
-        // loop: true,
-        // autoplay: {
-        //     delay: 2500,
-        //     disableOnInteraction: false
-        // },
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+        },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -34,6 +34,9 @@ window.onload = function () {
 
     let swiperV = new Swiper('.swiper-container-v', {
         spaceBetween: 50,
+        pagination: {
+            el: '.swiper-pagination-v',
+        },
         navigation: {
             nextEl: '.swiper-button-nextt',
             prevEl: '.swiper-button-prevv',

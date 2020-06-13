@@ -2382,7 +2382,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     overflow-y: scroll;
     display: block;
     width: 270px;
-    height: 401px;
+    max-height: 401px;
   }
 }
 .viewed::-webkit-scrollbar {
@@ -4571,7 +4571,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 @media screen and (min-width: 1030px) {
   .history {
     margin-bottom: 365px;
-    margin-left: 20px;
+    margin-left: 30px;
   }
 }
 .history_wrapper-item .history_selected {
@@ -11411,7 +11411,7 @@ main {
 
 .actorders {
   max-width: 900px;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 .actorders_wrap {
   padding-bottom: 50px;

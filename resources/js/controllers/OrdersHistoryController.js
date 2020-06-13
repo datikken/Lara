@@ -31,11 +31,7 @@ class OrdersHistoryController {
         orderLength.innerText = `${obj.order_items.length} ед.`;
         totalPrice.innerText = `${obj.order[0].price} р.`;
         let val = btnLink.getAttribute('href').split('/repeatOrder');
-
-        btnLink.setAttribute('href', val[0] + `/repeatOrder/${id}`);
-
-        console.log(val, obj,totalPrice);
-
+                  btnLink.setAttribute('href', val[0] + `/repeatOrder/${id}`);
     }
     _makeCall(id) {
         let that = this;

@@ -8,7 +8,7 @@
     overflow-x: hidden;
     overflow-y: scroll; display: block;
     width: 270px;
-    height: 401px;
+    max-height: 401px;
   }
 
   &::-webkit-scrollbar {
