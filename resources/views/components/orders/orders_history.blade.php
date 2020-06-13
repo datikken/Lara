@@ -1,10 +1,12 @@
 <div class="history">
     <div class="history_wrapper">
+
         <div class="history_wrapper-item">
             <div class="history_wrapper-item_heading">
                 <span class="history_wrapper-item_heading-text">История заказов</span>
             </div>
         </div>
+
         <div class="history_wrapper-item">
             <div class="history_wrapper-item_row">
                 <div class="history_wrapper-item_row-item history_wrapper-item_row-item-title">
@@ -102,7 +104,6 @@
                     </div>
                 </div>
             </div>
-
 
         </div>
     </div>

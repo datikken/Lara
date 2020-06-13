@@ -99,7 +99,7 @@ class HomeController extends Controller
         );
 
         $exst = DB::table('users_info')->where('user_id', $userId)->value('id');
-//        dd($arr, gettype($exst), $userId, $exst);
+
         if($exst) {
             DB::table('users_info')->where('user_id', $userId)->update($arr);
         } else {

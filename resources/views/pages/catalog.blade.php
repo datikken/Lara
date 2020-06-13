@@ -20,7 +20,14 @@
             @include('components.products_grid.products_grid')
         </div>
 
-        {{--@include('components.orders.orders_history')--}}
+        @php  $hist = \App\Http\Controllers\OrdersController::ordersHistory(); @endphp
+
+        @include('components.orders.orders_history', [
+            'orders_history' => $hist['orders_history'],
+            'user' => $hist['user'],
+            'last_order' => $hist['last_order'],
+            'last_order_total' => $hist['last_order_total']
+        ])
 
     </div>
 </div>
