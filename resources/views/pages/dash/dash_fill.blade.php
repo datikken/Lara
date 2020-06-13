@@ -23,7 +23,11 @@
                         <button type="submit">send</button>
                     </form>
 
-                    <div class="dfill_wrap-form_top-left_inner" style="background-image: url('/images/dash/dash_avatar.svg')"></div>
+                    <? if($user_avatar) { ?>
+                        <div class="dfill_wrap-form_top-left_inner" style="background-image: url('{{Storage::disk('local')->url('user_avatars/' . $user_avatar )}}')"></div>
+                    <? } else { ?>
+                        <div class="dfill_wrap-form_top-left_inner" style="background-image: url('/images/dash/dash_avatar.svg')"></div>
+                    <? }?>
 
                 </div>
                 <div class="dfill_wrap-form_top-right">

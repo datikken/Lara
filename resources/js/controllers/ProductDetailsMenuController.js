@@ -4,10 +4,12 @@ class ProductDetailsMenuController {
         let block = document.querySelector('.pdetails_menu');
             block && this._setListeners(block, container);
 
-        this.prcp = container.querySelector('.prcp');
-        this.prdch = container.querySelector('.prdch');
-        this.prdesc = container.querySelector('.prdesc');
-        this.pfeedback = container.querySelector('.pfeedback');
+            if(container) {
+                this.prcp = container.querySelector('.prcp');
+                this.prdch = container.querySelector('.prdch');
+                this.prdesc = container.querySelector('.prdesc');
+                this.pfeedback = container.querySelector('.pfeedback');
+            }
     }
     _setListeners(el, block) {
         let that = this;

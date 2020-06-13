@@ -33,8 +33,9 @@ class HomeController extends Controller
 
     public function showFillProfileForm()
     {
-
-        return view('pages.dash.dash_fill');
+        $usr_id = Auth::id();
+        $userAvatar = DB::table('users_info')->where('user_id', $usr_id)->value('image');
+        return view('pages.dash.dash_fill', ['user_avatar' => $userAvatar]);
     }
 
     public function showFillAdressesForm()
@@ -97,8 +98,8 @@ class HomeController extends Controller
             'created_at' => \Carbon\Carbon::now()
         );
 
-        $exst = DB::table('users_info')->where('user_id', $userId);
-
+        $exst = DB::table('users_info')->where('user_id', $userId)->value('id');
+//        dd($arr, gettype($exst), $userId, $exst);
         if($exst) {
             DB::table('users_info')->where('user_id', $userId)->update($arr);
         } else {

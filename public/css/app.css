@@ -10036,6 +10036,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dfill_wrap-form_top-left_inner {
   width: 300px;
   height: 350px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .dfill_wrap-form_top-right {
   margin-left: 70px;

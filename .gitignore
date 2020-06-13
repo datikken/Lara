@@ -9,4 +9,4 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 public/storage
-/.idea
+.idea

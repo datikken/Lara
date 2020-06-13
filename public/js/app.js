@@ -57920,10 +57920,13 @@ var ProductDetailsMenuController = /*#__PURE__*/function () {
     var container = document.querySelector('.page_content');
     var block = document.querySelector('.pdetails_menu');
     block && this._setListeners(block, container);
-    this.prcp = container.querySelector('.prcp');
-    this.prdch = container.querySelector('.prdch');
-    this.prdesc = container.querySelector('.prdesc');
-    this.pfeedback = container.querySelector('.pfeedback');
+
+    if (container) {
+      this.prcp = container.querySelector('.prcp');
+      this.prdch = container.querySelector('.prdch');
+      this.prdesc = container.querySelector('.prdesc');
+      this.pfeedback = container.querySelector('.pfeedback');
+    }
   }
 
   _createClass(ProductDetailsMenuController, [{
@@ -58167,9 +58170,7 @@ var ProfileController = /*#__PURE__*/function () {
           var a = formGroups[i].querySelector('.input_wrap').querySelector('input');
           var name = a.getAttribute('name');
           var val = a.value;
-          dataObj[name] = val; //TODO: JS VALIDATION
-          // console.log(window.app.validator.validate(a));
-
+          dataObj[name] = val;
           $.ajax({
             method: "get",
             url: "".concat(url),
@@ -58851,8 +58852,8 @@ var Validator = function Validator() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/datikken/Desktop/Lara/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/datikken/Desktop/Lara/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/tikken/Sites/Lara/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/tikken/Sites/Lara/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
