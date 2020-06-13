@@ -40,11 +40,14 @@ class HomeController extends Controller
 
     public function showFillAdressesForm()
     {
-
         $user_id = Auth::id();
         $address = DB::table('users_adresses')->where('user_id', $user_id)->get();
 
-        return view('pages.dash.adresses_fill',['address' => $address]);
+        if($address->count() > 0) {
+            return view('pages.dash.adresses_fill', ['address' => $address]);
+        } else {
+            return view('pages.dash.adresses_fill');
+        }
     }
 
     public function FillAdresses(Request $request)

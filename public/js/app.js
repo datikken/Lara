@@ -56188,7 +56188,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_DadataController__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./controllers/DadataController */ "./resources/js/controllers/DadataController.js");
 /* harmony import */ var _controllers_OrdersHistoryController__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./controllers/OrdersHistoryController */ "./resources/js/controllers/OrdersHistoryController.js");
 /* harmony import */ var _controllers_ProductDetailsMenuController__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./controllers/ProductDetailsMenuController */ "./resources/js/controllers/ProductDetailsMenuController.js");
+/* harmony import */ var _controllers_DashController__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./controllers/DashController */ "./resources/js/controllers/DashController.js");
 // window.Vue = require('vue');
+
 
 
 
@@ -56238,6 +56240,7 @@ $(document).ready(function () {
   new _controllers_TrackingFeedController__WEBPACK_IMPORTED_MODULE_21__["default"]();
   new _controllers_RegisterController__WEBPACK_IMPORTED_MODULE_23__["default"]();
   new _controllers_ProductDetailsMenuController__WEBPACK_IMPORTED_MODULE_26__["default"]();
+  new _controllers_DashController__WEBPACK_IMPORTED_MODULE_27__["default"]();
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -57168,6 +57171,68 @@ var DadataController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (DadataController);
+
+/***/ }),
+
+/***/ "./resources/js/controllers/DashController.js":
+/*!****************************************************!*\
+  !*** ./resources/js/controllers/DashController.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var DashController = /*#__PURE__*/function () {
+  function DashController() {
+    _classCallCheck(this, DashController);
+
+    var block = document.querySelector('.dash');
+    block && this._setActiveTab();
+  }
+
+  _createClass(DashController, [{
+    key: "_setActiveTab",
+    value: function _setActiveTab() {
+      var location = window.location.href;
+      var tabs = document.querySelectorAll('.dash_left-wrap_item');
+      var coupons = document.querySelector('.dash_right_coupone');
+      tabs.forEach(function (el) {
+        var activeClass = el.classList.contains('dash_active');
+
+        if (activeClass) {
+          el.classList.remove('dash_active');
+        }
+      });
+
+      if (coupons) {
+        tabs[0].classList.add('dash_active');
+      }
+
+      if (location.indexOf('orders') >= 0) {
+        tabs[1].classList.add('dash_active');
+      }
+
+      if (location.indexOf('fillAdressesForm') >= 0) {
+        tabs[2].classList.add('dash_active');
+      }
+
+      if (location.indexOf('fillProfile') >= 0) {
+        tabs[3].classList.add('dash_active');
+      }
+    }
+  }]);
+
+  return DashController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (DashController);
 
 /***/ }),
 

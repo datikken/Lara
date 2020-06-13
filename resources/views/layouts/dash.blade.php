@@ -28,7 +28,6 @@
 <div class="dash">
     <div class="dash_left">
         <div class="dash_left-wrap">
-
             <div class="dash_left-wrap_item dash_active">
                 <a class="dash_left-wrap_item-text" href="{{ route('home') }}">
                     <span>Dashboard</span>

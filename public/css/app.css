@@ -429,6 +429,10 @@ b {
   color: #9C1006 !important;
 }
 
+.dash_active a {
+  font-family: "MontserratSemiBold";
+}
+
 .menu_active:after {
   display: block;
   content: "";
@@ -10249,7 +10253,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border: 1px solid #d4d4d5;
   box-sizing: border-box;
   border-radius: 30px;
-  padding-left: 20px;
+  padding-left: 10px;
   outline: none;
 }
 .fadress_wrap-form_group_inner input::-moz-placeholder {

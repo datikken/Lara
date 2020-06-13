@@ -28,6 +28,7 @@ import RegisterController from './controllers/RegisterController'
 import DadataController from './controllers/DadataController'
 import OrdersHistoryController from './controllers/OrdersHistoryController'
 import ProductDetailsMenuController from './controllers/ProductDetailsMenuController'
+import DashController from './controllers/DashController'
 
 $(document).ready(function() {
     new OrdersHistoryController();
@@ -51,4 +52,5 @@ $(document).ready(function() {
     new TrackingFeedController();
     new RegisterController();
     new ProductDetailsMenuController();
+    new DashController();
 });

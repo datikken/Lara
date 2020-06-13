@@ -248,6 +248,12 @@ b {
     color: $ruby!important;
 }
 
+.dash_active {
+    a {
+        font-family: $semifont;
+    }
+}
+
 .menu_active {
     &:after {
         display: block;
