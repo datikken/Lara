@@ -18,6 +18,7 @@ class CartController {
     _changeConcreteItem(a) {
         console.warn('_changeConcreteItem', a);
     }
+
     _findItemInCart(data, el) {
         let id = parseInt(el.getAttribute('data-prid'));
         let itemToReturn;
