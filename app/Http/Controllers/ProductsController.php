@@ -124,7 +124,6 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $cart->addItem($id, $product, 1);
         $request->session()->put('cart', $cart);
-
         $merged = Session::get('cart');
 
         return response()->json($merged);

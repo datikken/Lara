@@ -56769,6 +56769,30 @@ var CartController = /*#__PURE__*/function () {
   }
 
   _createClass(CartController, [{
+    key: "_changeConcreteItem",
+    value: function _changeConcreteItem(a) {
+      console.warn('_changeConcreteItem', a);
+    }
+  }, {
+    key: "_findItemInCart",
+    value: function _findItemInCart(data, el) {
+      var id = parseInt(el.getAttribute('data-prid'));
+      var itemToReturn;
+      var objects = data.items;
+
+      for (var _i = 0, _Object$values = Object.values(objects); _i < _Object$values.length; _i++) {
+        var item = _Object$values[_i];
+
+        if (item.data.id === id) {
+          itemToReturn = item;
+        }
+
+        id = item.data.id;
+      }
+
+      return itemToReturn;
+    }
+  }, {
     key: "_setAmountListeners",
     value: function _setAmountListeners() {
       var that = this;
@@ -56783,7 +56807,9 @@ var CartController = /*#__PURE__*/function () {
               method: "get",
               url: "".concat(url),
               success: function success(data, status, XHR) {
-                console.log(data, status);
+                var changeItemData = that._findItemInCart(data, el);
+
+                that._changeConcreteItem(changeItemData);
               },
               error: function error(_error, status, XHR) {
                 console.warn(_error);

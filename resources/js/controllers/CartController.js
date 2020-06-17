@@ -15,31 +15,53 @@ class CartController {
         });
     }
 
+    _changeConcreteItem(a) {
+        console.warn('_changeConcreteItem', a);
+    }
+    _findItemInCart(data, el) {
+        let id = parseInt(el.getAttribute('data-prid'));
+        let itemToReturn;
+        let objects = data.items;
+
+        for(let item of Object.values(objects)) {
+            if(item.data.id === id) {
+                itemToReturn = item
+            }
+
+            id = item.data.id;
+        }
+
+        return itemToReturn;
+    }
+
     _setAmountListeners() {
         let that = this;
         let block = document.querySelectorAll('.cart_wrap-item_inner-table_row-col_btns-btn-items');
 
         block.forEach((el) => {
             let links = el.querySelectorAll('a');
+                links.forEach((el) => {
+                    el.addEventListener('click', (e) => {
+                        let url = e.currentTarget.getAttribute('href');
+                        e.preventDefault();
 
-            links.forEach((el) => {
-                el.addEventListener('click', (e) => {
-                    let url = e.currentTarget.getAttribute('href');
-                    e.preventDefault();
-                    $.ajax({
-                        method: "get",
-                        url: `${url}`,
-                        success: function (data, status, XHR) {
-                            console.log(data, status)
-                        },
-                        error: function (error, status, XHR) {
-                            console.warn(error);
-                        }
-                    });
+                        $.ajax({
+                            method: "get",
+                            url: `${url}`,
+                            success: function (data, status, XHR) {
+                                let changeItemData = that._findItemInCart(data, el);
+
+                                that._changeConcreteItem(changeItemData);
+                            },
+                            error: function (error, status, XHR) {
+                                console.warn(error);
+                            }
+                        });
+                    })
                 })
-            })
         })
     }
+
     _setDeleteListeners() {
         let that = this;
         let closes = document.querySelectorAll('.remove_icon');

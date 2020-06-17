@@ -24,16 +24,13 @@
     </div>
     <div class="cart_wrap-item_inner-table_row-col">
         <div class="cart_wrap-item_inner-table_row-col_price">
-
             <span class="desktop-hide">Цена (шт)</span>
-
             <div class="cart_wrap-item_inner-table_row-col_price-val">
                 <span class="cart_wrap-item_inner-table_row-col_price-val-item">
                     {{$cartItem['price']}}
                 </span>
                 <img src="/images/icons/rub.svg" alt="currency" />
             </div>
-
         </div>
     </div>
     <div class="cart_wrap-item_inner-table_row-col">
@@ -43,7 +40,7 @@
                 <div class="cart_wrap-item_inner-table_row-col col_amount">
                     <span>Количество (шт)</span>
                 </div>
-                @include('components.btn.amount_btn')
+                @include('components.btn.amount_btn', ['id' => $cartItem['data']['id']])
             </div>
         </div>
     </div>
