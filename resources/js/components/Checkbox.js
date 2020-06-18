@@ -54,7 +54,7 @@ class Checkbox {
             let clicked = false;
             let img = a.querySelector('img');
 
-            img.addEventListener('click', function(e) {
+            img.addEventListener('click', function() {
                 if(clicked) {
                     img.classList.add('invisible');
                     clicked = false;

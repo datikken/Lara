@@ -1,29 +1,27 @@
 import IMask from 'imask';
+import $ from 'jquery';
 
 class DeliveryAuthController {
     constructor() {
         let form = document.querySelector('.cart_check');
 
         if(form) {
-            this._focusClearListeners();
+            // this._focusClearListeners();
             this.validate(form);
 
-            var phoneMask = IMask(
-                document.querySelector('.masked'), {
-                    mask: '+{7}(000)000-00-00'
-                });
+            IMask( document.querySelector('.masked'), { mask: '+{7}(000)000-00-00' });
         }
     }
-    _focusClearListeners() {
-        let groups = document.querySelectorAll('.cart_check-wrap_item-group');
-    }
+    // _focusClearListeners() {
+    //     let groups = document.querySelectorAll('.cart_check-wrap_item-group');
+    // }
     _makeCall() {
         let url = document.querySelector('.cart_check-wrap').getAttribute('data-href');
         let _token = document.querySelector('[name="_token"]').getAttribute('value');
         let inputs = document.querySelectorAll('input');
         let dataObj = {};
 
-        inputs.forEach((npt,i) => {
+        inputs.forEach((npt) => {
                 let name = npt.getAttribute('name');
                 let val = $(npt).val();
                 dataObj[name] = val;
@@ -44,13 +42,13 @@ class DeliveryAuthController {
                 token: _token,
                 ...dataObj
             },
-            success: function (data, status, XHR) {
+            success: function () {
                 let host = window.location.host;
                 let protocol = window.location.protocol;
 
                 window.location.href = protocol + '//' + host + `/product/deliveryForm`;
             },
-            error: function (error, status, XHR) {
+            error: function (error) {
                 console.warn(error);
             }
         });
@@ -58,7 +56,6 @@ class DeliveryAuthController {
     validate(form) {
         let submit = form.querySelector('[type="submit"]');
         let groups = form.querySelectorAll('.cart_check-wrap_item-group');
-        let tel = form.querySelector('[name="tel"]')
         let that = this;
 
         groups.forEach((el) => {
@@ -76,8 +73,6 @@ class DeliveryAuthController {
             groups.forEach((group) => {
                 let input = group.querySelector('input');
                 let label = group.querySelector('.invisible');
-                let btn = form.querySelector('.cart_check-button');
-                let item = form.querySelector('.cart_check-wrap_item');
 
                 if(input && input.value === '') {
                     input.classList.add('errorBorder');
@@ -86,7 +81,7 @@ class DeliveryAuthController {
             });
 
             let fform = $(form)
-            let valid = app.validator.formValidate([], fform);
+            let valid = window.app.validator.formValidate([], fform);
 
             valid && that._makeCall();
         });

@@ -1,3 +1,6 @@
+/* eslint-disable */
+import _ from 'lodash';
+
 class Validator {
     constructor() {
         window.app = {};

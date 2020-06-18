@@ -28,7 +28,7 @@ class CatalogFiltersController {
                 }
 
                 lis.forEach((item) => {
-                    item.addEventListener('click',function (e) {
+                    item.addEventListener('click',function () {
                         // console.log(e.target);
                         opn = false;
                     });

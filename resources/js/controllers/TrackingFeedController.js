@@ -1,3 +1,6 @@
+/* eslint-disable */
+import $ from 'jquery';
+
 class TrackingFeedController {
     _makeCall(el,theme) {
         let message = el.querySelector('textarea').value;
@@ -13,10 +16,10 @@ class TrackingFeedController {
             url: url,
             data: dataObj,
             headers: {'X-CSRF-TOKEN': token},
-            success: function (data, status, XHR) {
+            success: function (status) {
                 console.log(status)
             },
-            error: function (error, status, XHR) {
+            error: function (error) {
                 console.warn(error);
             }
         });
@@ -27,7 +30,7 @@ class TrackingFeedController {
         let submit = el.querySelector('.action_btn ');
         let that = this;
 
-        themeBtns.forEach((el, i) => {
+        themeBtns.forEach((el) => {
                 el.addEventListener('click', (e) => {
                     themeBtns.forEach((el) => {
                         el.classList.remove('feedActive');

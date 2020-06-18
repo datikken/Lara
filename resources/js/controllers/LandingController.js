@@ -1,3 +1,5 @@
+import TweenMax, { Bounce } from 'gsap';
+
 class LandingController {
     constructor() {
         let el = document.querySelector('.animland');
@@ -10,7 +12,6 @@ class LandingController {
     }
 
     _priceController(val, el) {
-        let values = el.querySelectorAll('.economslider_value');
         let economy = el.querySelector('.economslider_economy');
 
         economy.innerText = `${val}0000`;

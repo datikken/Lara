@@ -1,8 +1,9 @@
+import $ from 'jquery';
+
 class CartController {
     constructor(el) {
         let that = this;
         this.el = el;
-        let grid = document.querySelector('.products_grid');
         let btns = document.querySelectorAll('.ajaxGETproduct');
 
         this._setDeleteListeners();
@@ -49,12 +50,12 @@ class CartController {
                         $.ajax({
                             method: "get",
                             url: `${url}`,
-                            success: function (data, status, XHR) {
+                            success: function (data) {
                                 let changeItemData = that._findItemInCart(data, el);
 
                                 that._changeConcreteItem(changeItemData);
                             },
-                            error: function (error, status, XHR) {
+                            error: function (error) {
                                 console.warn(error);
                             }
                         });
@@ -67,7 +68,7 @@ class CartController {
         let that = this;
         let closes = document.querySelectorAll('.remove_icon');
             closes && closes.forEach((el,i) => {
-                el.addEventListener('click', function(e) {
+                el.addEventListener('click', function() {
                     that._deleteFromCart(closes[i],el);
                 });
             });
@@ -82,7 +83,7 @@ class CartController {
             method: "GET",
             url: url,
             data: {token: _token},
-            success: function (data, status, XHR) {
+            success: function (data) {
                 if($(data).hasClass('empty_cart')) {
                     let cart = $('.cart_wrap');
                       $(cart).html(data);
@@ -100,7 +101,7 @@ class CartController {
                     that._setDeleteListeners();
                 }
             },
-            error: function (error, status, XHR) {
+            error: function (error) {
                 console.warn(error);
             }
         });
@@ -134,10 +135,10 @@ class CartController {
                     token: _token,
                     amount
                 },
-                success: function (data, status, XHR) {
+                success: function (data) {
                     that._fixDeletion(data.cart, data.price);
                 },
-                error: function (error, status, XHR) {
+                error: function (error) {
                     console.warn(error);
                 }
             });

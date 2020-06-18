@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 class ProductDetailsMenuController {
     constructor() {
         let container = document.querySelector('.page_content');

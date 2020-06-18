@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class DeliveryController {
     _progressBar() {
         let page = document.querySelector('.cart');

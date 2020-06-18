@@ -1,4 +1,4 @@
-import Validator from "../functions/validator";
+import $ from 'jquery';
 
 class ProfileController {
     _ajaxInputsSubmit(el) {
@@ -24,10 +24,10 @@ class ProfileController {
                           url: `${url}`,
                           data: dataObj,
                           token,
-                          success: function (data, status, XHR) {
+                          success: function (status) {
                               alert(status);
                           },
-                          error: function (error, status, XHR) {
+                          error: function (error) {
                               console.warn(error);
                           }
                       });

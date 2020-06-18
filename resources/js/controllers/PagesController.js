@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class PagesController {
     constructor() {
         this.changeContent();
@@ -16,7 +18,7 @@ class PagesController {
                     method: "GET",
                     url: `http://${URL}`,
                     data: '',
-                    success: function (data, status, XHR) {
+                    success: function (data) {
                         let htmlDoc =new DOMParser().parseFromString(data, "text/html");
                         let currentContent = document.querySelector('.page_content');
                         let pageContent = htmlDoc.querySelector('.page_content');
@@ -42,7 +44,7 @@ class PagesController {
 
                         $(currentContent).html(pageContent);
                     },
-                    error: function (error, status, XHR) {
+                    error: function (error) {
                         console.warn(error.statusText);
                     }
                 });

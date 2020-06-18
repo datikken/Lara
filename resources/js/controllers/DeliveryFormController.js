@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class DeliveryFormController {
     constructor(form) {
         let addressForm = document.querySelector('.getSetAddress');
@@ -19,7 +21,7 @@ class DeliveryFormController {
 
         let dataObj = {};
 
-        btn.addEventListener('click', function (e) {
+        btn.addEventListener('click', function () {
             let delType = delTypeBlock.querySelector('[checked="true"]');
             if(!delType) {
                 delTypeBlock.classList.add('deliveryTypeError');
@@ -43,12 +45,12 @@ class DeliveryFormController {
                     ...dataObj,
                     deliveryType: delType.getAttribute('name')
                 },
-                success: function (data, status, XHR) {
+                success: function () {
                     // console.log('Delivery address have been successfully set', data);
                     step.classList.remove('invisible');
                     window.scrollTo(0, 616);
                 },
-                error: function (error, status, XHR) {
+                error: function (error) {
                     console.warn('set delivery form error', error.responseJSON.message);
                 }
             });
@@ -101,7 +103,7 @@ class DeliveryFormController {
                 })
             }
             check.forEach((el) => {
-                el.addEventListener('click', function(e) {
+                el.addEventListener('click', function() {
                     clear();
 
                     if(block.classList.contains('deliveryTypeError')) {
@@ -111,6 +113,8 @@ class DeliveryFormController {
             })
     }
     _initMap() {
+        /* eslint-disable */
+
         ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {
                     center: [55.751574, 37.573856],

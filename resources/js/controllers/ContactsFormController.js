@@ -1,3 +1,5 @@
+import $ from 'jquery';
+``
 class ContactsFormController {
     constructor() {
         $(document).ready(function() {

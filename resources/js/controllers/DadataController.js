@@ -4,8 +4,7 @@ import IMask from 'imask';
 class DadataController {
     constructor() {
         let block = document.querySelector('.company');
-
-        block && this._setListeners(block);
+            block && this._setListeners(block);
     }
     _fillFields(obj, block) {
         let name = block.querySelector('.company_head_value');
@@ -33,10 +32,7 @@ class DadataController {
         let bik = block.querySelector('[name="bik"]');
         let that = this;
 
-        var phoneMask = IMask(
-            bik,  {
-                mask: /^[0-9]\d{0,9}$/
-            });
+        IMask(bik,  { mask: /^[0-9]\d{0,9}$/ });
 
         async function postData(url = '', data = {}) {
             const response = await fetch(url, {
@@ -58,7 +54,7 @@ class DadataController {
 
         Observable
             .fromEvent(bik, 'keyup')
-            .subscribe((e) => {
+            .subscribe(() => {
                 // if(bik.value.length === 10)
                 postData(url, {"query":`${bik.value}`})
                     .then((data) => {

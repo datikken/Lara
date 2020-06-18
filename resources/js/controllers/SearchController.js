@@ -1,12 +1,13 @@
-import {fromEvent} from 'rxjs';
-import {switchMap} from 'rxjs/operators';
+/* eslint-disable */
+import { fromEvent } from 'rxjs';
 import {Observable} from 'rxjs/Rx';
+import $ from 'jquery';
 
 class SearchController {
     _filterSearchResults(html) {
         console.warn(html)
     }
-    _call (url, token, val) {
+    _call (url, token) {
         $.ajax({
             method: "get",
             url: `${url}`,
@@ -14,10 +15,10 @@ class SearchController {
                 searchText: 't2',
                 token
             },
-            success: function (data, status, XHR) {
+            success: function (status) {
                 console.log(status)
             },
-            error: function (error, status, XHR) {
+            error: function (error) {
                 console.warn(error);
             }
         });
@@ -31,7 +32,7 @@ class SearchController {
 
         Observable
             .fromEvent(input, 'keyup')
-            .subscribe((e) => {
+            .subscribe(() => {
                 $.ajax({
                     method: "get",
                     url: `${url}`,
@@ -39,10 +40,10 @@ class SearchController {
                         searchText: input.value,
                         token: _token.value
                     },
-                    success: function (data, status, XHR) {
+                    success: function (data) {
                         that._filterSearchResults(data);
                     },
-                    error: function (error, status, XHR) {
+                    error: function (error) {
                         console.warn(error);
                     }
                 });

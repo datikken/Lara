@@ -1,6 +1,6 @@
 // window.Vue = require('vue');
 
-import _ from 'lodash';
+import $ from 'jquery';
 import './components/Menu';
 import './components/Swiper';
 import './components/Search';
@@ -53,4 +53,5 @@ $(document).ready(function() {
     new RegisterController();
     new ProductDetailsMenuController();
     new DashController();
+    new DeliveryController();
 });

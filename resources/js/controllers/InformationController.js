@@ -14,7 +14,7 @@ class InformationController {
             let urik = el.querySelector('.urik_content');
             let fizik = el.querySelector('.fizik_content');
 
-            blockItems.forEach((item, i) => {
+            blockItems.forEach((item) => {
 
                 item.addEventListener('click', function(e) {
                     let target = e.currentTarget;

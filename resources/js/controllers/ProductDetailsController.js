@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class ProductDetailsController {
     constructor() {
         let that = this;
@@ -31,14 +33,14 @@ class ProductDetailsController {
                 data: {
                     id: pid
                 },
-                success: function (data, status, XHR) {
+                success: function (data) {
                     let amount = data.cart;
                     let price = data.price;
 
                     $('.menu_wrapper-item_cart_icon-amount').text(amount);
                     $('[data-cartpriceval]').text(price);
                 },
-                error: function (error, status, XHR) {
+                error: function (error) {
                     console.warn(error);
                 }
             });
@@ -48,7 +50,6 @@ class ProductDetailsController {
 
     }
     _setDetailsLink(url,id, price, modal) {
-        let dtlbtn = modal.querySelector('.prdet_wrap-icons_ctas-details').setAttribute('href', url);
         let priceItem = modal.querySelector('.amount_btn-value-wrap_inner_val')
 
         priceItem.innerText = price;

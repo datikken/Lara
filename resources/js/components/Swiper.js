@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 window.onload = function () {
    if(typeof Swiper !== 'undefined') {
-    let main = new Swiper('.landswiper', {
+      new Swiper('.landswiper', {
         slidesPerView: 'auto',
         containerClass: 'landswipe_swiper',
         centeredSlides: true,

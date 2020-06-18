@@ -1,3 +1,4 @@
+import $ from 'jquery';
 
 class RegisterController {
     constructor() {
@@ -57,7 +58,7 @@ class RegisterController {
         }
     }
     _validator(form, type='') {
-        app.validator.formValidate([], $(form));
+        window.app.validator.formValidate([], $(form));
         let status;
 
         if(type != '') {
@@ -73,10 +74,9 @@ class RegisterController {
         let url = form.getAttribute('action');
         let method = form.getAttribute('method');
         let inputs = form.querySelectorAll('input')
-        let that = this;
         let dataObj = {};
 
-        inputs.forEach((npt,i) => {
+        inputs.forEach((npt) => {
             let name = npt.getAttribute('name');
             let val = $(npt).val();
             dataObj[name] = val;
@@ -86,13 +86,13 @@ class RegisterController {
             method: method,
             url: `${url}`,
             data: dataObj,
-            success: function (data, status, XHR) {
+            success: function () {
                 let host = window.location.host;
                 let protocol = window.location.protocol;
 
                 window.location.href = protocol + '//' + host + `/home`;
             },
-            error: function (error, status, XHR) {
+            error: function (error) {
                 console.log(error);
             }
         });

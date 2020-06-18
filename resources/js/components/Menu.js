@@ -1,3 +1,4 @@
+import $ from 'jquery';
 
 let menuItems = document.querySelectorAll('.menu_wrapper-item-main_menu-item');
 let secondary = $('.menu_wrapper-item-main_menu-item-text_secondary');

@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class OrdersHistoryController {
     _fillItems(obj,id) {
         let dest = document.querySelector('.order_items_container');
@@ -47,10 +49,10 @@ class OrdersHistoryController {
             url: url + `/${id}`,
             data: dataObj,
             headers: {'X-CSRF-TOKEN':  window.token},
-            success: function (data, status, XHR) {
+            success: function (data) {
                 that._fillItems(data,id);
             },
-            error: function (error, status, XHR) {
+            error: function (error) {
                 console.warn(error);
             }
         });

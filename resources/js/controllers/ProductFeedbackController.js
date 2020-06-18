@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class ProductFeedbackController {
     constructor() {
         let el = document.querySelector('.pfeedback');
@@ -120,10 +122,10 @@ class ProductFeedbackController {
                 method: "get",
                 url: `${url}`,
                 data: dataObj,
-                success: function (data, status, XHR) {
+                success: function () {
                     that._cleanFields();
                 },
-                error: function (error, status, XHR) {
+                error: function (error) {
                     console.warn(error);
                 }
             });
