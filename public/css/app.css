@@ -8026,13 +8026,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cfeedback_wrap-row_item_textarea textarea {
   display: block;
   height: 200px;
-  width: calc(100% - 30px);
+  width: 100%;
   border: none;
   border-radius: 30px;
   resize: none;
   outline: none;
   padding: 10px 10px 0 20px;
-  max-width: 746px;
   border: 1px solid #e9e9ea;
   outline: none;
 }

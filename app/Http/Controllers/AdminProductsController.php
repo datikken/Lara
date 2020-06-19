@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use App\Product_Image;
 use GuzzleHttp\Client;
 
 class AdminProductsController extends Controller
@@ -194,10 +193,10 @@ class AdminProductsController extends Controller
             'headers' => [ 'Content-Type' => 'application/json' ]
         ]);
 
-        $response = $client->post('http://93.184.160.194:8085/mainbase/hs/RETAIL/TradeItems',
+        $response = $client->post('http://93.184.160.194:8085/mainbase/hs/ecom/getitems',
             ['body' => json_encode(
                 [
-                    'IDToken' => '84ad0475-1f3c-4ec6-ac4b-8ee6bd4430b6'
+                    'IDToken' => '298095c6-7f9e-11e1-a511-001b214bf52b'
                 ]
             )]
         );
