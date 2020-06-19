@@ -95,42 +95,42 @@ Route::post('admin/sendCreateAbout', ['uses' => "AdminAboutController@sendCreate
 Route::get('admin/deleteAbout/{id}', ['uses' => "AdminAboutController@deleteAbout", 'as' => 'AdminDeleteAbout']);
 
 //PRODUCTS
-Route::get('admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage'])->middleware('restrictToAdmin');
-Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts'])->middleware('restrictToAdmin');
-Route::get('admin/users', ['uses' => "AdminUsersController@index", 'as' => 'adminDisplayUsers'])->middleware('restrictToAdmin');
+Route::get('admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage'])->middleware('checkUserRole');
+Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts'])->middleware('checkUserRole');
+Route::get('admin/users', ['uses' => "AdminUsersController@index", 'as' => 'adminDisplayUsers'])->middleware('checkUserRole');
 //Display Edit Product form
-Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm'])->middleware('restrictToAdmin');
+Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm'])->middleware('checkUserRole');
 //Display edit Product form
-Route::get('admin/editProductImageForm/{id}', ['uses' => "AdminProductsController@editProductImageForm", 'as' => 'adminEditProductImageForm'])->middleware('restrictToAdmin');
+Route::get('admin/editProductImageForm/{id}', ['uses' => "AdminProductsController@editProductImageForm", 'as' => 'adminEditProductImageForm'])->middleware('checkUserRole');
 //update product image
-Route::post('admin/updateProductImage/{id}', ['uses' => 'AdminProductsController@updateProductImage', 'as' => 'adminUpdateProductImage'])->middleware('restrictToAdmin');
+Route::post('admin/updateProductImage/{id}', ['uses' => 'AdminProductsController@updateProductImage', 'as' => 'adminUpdateProductImage'])->middleware('checkUserRole');
 //update product fields
-Route::post('admin/updateProduct/{id}', ['uses' => 'AdminProductsController@updateProduct', 'as' => 'adminUpdateProduct'])->middleware('restrictToAdmin');
+Route::post('admin/updateProduct/{id}', ['uses' => 'AdminProductsController@updateProduct', 'as' => 'adminUpdateProduct'])->middleware('checkUserRole');
 //Display create Product form
-Route::get('admin/createProductForm', ['uses' => "AdminProductsController@createProductForm", 'as' => 'adminCreateProductForm'])->middleware('restrictToAdmin');
+Route::get('admin/createProductForm', ['uses' => "AdminProductsController@createProductForm", 'as' => 'adminCreateProductForm'])->middleware('checkUserRole');
 //send data create Product form
-Route::post('admin/sendCreateProductForm', ['uses' => "AdminProductsController@sendCreateProductForm", 'as' => 'adminSendCreateProductForm'])->middleware('restrictToAdmin');
+Route::post('admin/sendCreateProductForm', ['uses' => "AdminProductsController@sendCreateProductForm", 'as' => 'adminSendCreateProductForm'])->middleware('checkUserRole');
 //Delete product
-Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct'])->middleware('restrictToAdmin');
+Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct'])->middleware('checkUserRole');
 //Load multiple images for product
-Route::get('admin/dropZone/{id}', ['uses' => 'AdminProductsController@dropZoneForm', 'as' => 'dropZoneForm'])->middleware('restrictToAdmin');
-Route::post('admin/addMultipleProductImages/{id}', ['uses' => 'AdminProductsController@addMultipleProductImages', 'as' => 'addMultipleProductImages'])->middleware('restrictToAdmin');
+Route::get('admin/dropZone/{id}', ['uses' => 'AdminProductsController@dropZoneForm', 'as' => 'dropZoneForm'])->middleware('checkUserRole');
+Route::post('admin/addMultipleProductImages/{id}', ['uses' => 'AdminProductsController@addMultipleProductImages', 'as' => 'addMultipleProductImages'])->middleware('checkUserRole');
 
 //BANNERS
-Route::get('admin/adminCreateBannerForm', ['uses' => "AdminBannersController@createBannerForm", 'as' => 'adminCreateBannerForm'])->middleware('restrictToAdmin');
-Route::get('admin/banners', ['uses' => "AdminBannersController@index", 'as' => 'setBanner'])->middleware('restrictToAdmin')->middleware('restrictToAdmin');
+Route::get('admin/adminCreateBannerForm', ['uses' => "AdminBannersController@createBannerForm", 'as' => 'adminCreateBannerForm'])->middleware('checkUserRole');
+Route::get('admin/banners', ['uses' => "AdminBannersController@index", 'as' => 'setBanner'])->middleware('restrictToAdmin')->middleware('checkUserRole');
 
 //INFORMATION
-Route::get('admin/information', ['uses' => "AdminInformationController@index", 'as' => 'informationList'])->middleware('restrictToAdmin');
-Route::get('admin/createInformation', ['uses' => 'AdminInformationController@showCreateInfoForm', 'as' => 'adminCreateInfo'])->middleware('restrictToAdmin');
-Route::get('admin/deleteInfo/{id}', ['uses' => 'AdminInformationController@deleteInfo', 'as' => 'adminDeleteInfo'])->middleware('restrictToAdmin');
-Route::get('admin/editInformation/{id}', ['uses' => "AdminInformationController@editInformation", 'as' => 'adminEditInformation'])->middleware('restrictToAdmin');
-Route::post('admin/createInfo', ['uses' => 'AdminInformationController@createInfo', 'as' => 'adminCreateInfo'])->middleware('restrictToAdmin');
-Route::post('admin/editInformationForm/{id}', ['uses' => "AdminInformationController@editInformationForm", 'as' => 'editInformationForm'])->middleware('restrictToAdmin');
+Route::get('admin/information', ['uses' => "AdminInformationController@index", 'as' => 'informationList'])->middleware('checkUserRole');
+Route::get('admin/createInformation', ['uses' => 'AdminInformationController@showCreateInfoForm', 'as' => 'adminCreateInfo'])->middleware('checkUserRole');
+Route::get('admin/deleteInfo/{id}', ['uses' => 'AdminInformationController@deleteInfo', 'as' => 'adminDeleteInfo'])->middleware('checkUserRole');
+Route::get('admin/editInformation/{id}', ['uses' => "AdminInformationController@editInformation", 'as' => 'adminEditInformation'])->middleware('checkUserRole');
+Route::post('admin/createInfo', ['uses' => 'AdminInformationController@createInfo', 'as' => 'adminCreateInfo'])->middleware('checkUserRole');
+Route::post('admin/editInformationForm/{id}', ['uses' => "AdminInformationController@editInformationForm", 'as' => 'editInformationForm'])->middleware('checkUserRole');
 
 //EMAILS
-Route::get('admin/sendemail', 'SendEmailController@index')->middleware('restrictToAdmin');
-Route::post('admin/sendemail/send', 'SendEmailController@send')->middleware('restrictToAdmin');
+Route::get('admin/sendemail', 'SendEmailController@index')->middleware('checkUserRole');
+Route::post('admin/sendemail/send', 'SendEmailController@send')->middleware('checkUserRole');
 
 //Test file storage
 Route::get('/testStorage', function() {
