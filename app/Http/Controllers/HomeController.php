@@ -118,6 +118,11 @@ class HomeController extends Controller
         $type = DB::table('users')->where('id', $user_id)->select('face','email', 'name')->first();
         $orders_history = DB::table('orders')->where('user_id', $user_id)->where('status', 'arrived')->get();
         $orders_actual = DB::table('orders')->where('user_id', $user_id)->get();
+        $array = array_filter((array)$orders_actual);
+
+        if(empty($array)) {
+            $orders_actual = null;
+        }
 
         if(DB::table('orders')->where('user_id', $user_id)->where('status','arrived')->get()->last()) {
             $last_order_id = DB::table('orders')->where('user_id', $user_id)->where('status', 'arrived')->get()->last()->id;

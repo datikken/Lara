@@ -61574,7 +61574,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_OrdersHistoryController__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./controllers/OrdersHistoryController */ "./resources/js/controllers/OrdersHistoryController.js");
 /* harmony import */ var _controllers_ProductDetailsMenuController__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./controllers/ProductDetailsMenuController */ "./resources/js/controllers/ProductDetailsMenuController.js");
 /* harmony import */ var _controllers_DashController__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./controllers/DashController */ "./resources/js/controllers/DashController.js");
+/* harmony import */ var _controllers_AdminFetchProducts__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./controllers/AdminFetchProducts */ "./resources/js/controllers/AdminFetchProducts.js");
 // window.Vue = require('vue');
+
 
 
 
@@ -61627,6 +61629,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   new _controllers_ProductDetailsMenuController__WEBPACK_IMPORTED_MODULE_26__["default"]();
   new _controllers_DashController__WEBPACK_IMPORTED_MODULE_27__["default"]();
   new _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_9__["default"]();
+  new _controllers_AdminFetchProducts__WEBPACK_IMPORTED_MODULE_28__["default"]();
 });
 
 /***/ }),
@@ -62125,6 +62128,128 @@ var AboutController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (AboutController);
+
+/***/ }),
+
+/***/ "./resources/js/controllers/AdminFetchProducts.js":
+/*!********************************************************!*\
+  !*** ./resources/js/controllers/AdminFetchProducts.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var AdminFetchProducts = /*#__PURE__*/function () {
+  _createClass(AdminFetchProducts, [{
+    key: "setListeners",
+    value: function setListeners(btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var url = 'http://93.184.160.194:8085/mainbase/hs/ecom/getitems';
+        var token = {
+          IDToken: '298095c6-7f9e-11e1-a511-001b214bf52b'
+        }; // $.ajax({
+        //     method: "post",
+        //     url: `${url}`,
+        //     data: token,
+        //     headers: {
+        //         'Content-Type':'application/json',
+        //         'Access-Control-Allow-Origin': '*'
+        //     },
+        //     success: function (status) {
+        //         console.log(status)
+        //     },
+        //     error: function (error) {
+        //         console.warn(error);
+        //     }
+        // });
+
+        function postData() {
+          return _postData.apply(this, arguments);
+        }
+
+        function _postData() {
+          _postData = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+            var url,
+                data,
+                response,
+                _args = arguments;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    url = _args.length > 0 && _args[0] !== undefined ? _args[0] : '';
+                    data = _args.length > 1 && _args[1] !== undefined ? _args[1] : {};
+                    _context.next = 4;
+                    return fetch(url, {
+                      method: 'POST',
+                      mode: 'no-cors',
+                      cache: 'no-cache',
+                      credentials: 'same-origin',
+                      headers: {
+                        'Authorization': 'Token a799fcceda51c067cdb475e748d7e27e9b4f6fb9',
+                        'Content-Type': 'application/json'
+                      },
+                      redirect: 'follow',
+                      referrerPolicy: 'no-referrer',
+                      body: JSON.stringify(data)
+                    });
+
+                  case 4:
+                    response = _context.sent;
+                    _context.next = 7;
+                    return response.json();
+
+                  case 7:
+                    return _context.abrupt("return", _context.sent);
+
+                  case 8:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
+          return _postData.apply(this, arguments);
+        }
+
+        postData(url, token).then(function (data) {
+          console.log(data);
+        });
+      });
+    }
+  }]);
+
+  function AdminFetchProducts() {
+    _classCallCheck(this, AdminFetchProducts);
+
+    var btn = document.querySelector('.fetch_btn');
+    btn && this.setListeners(btn);
+  }
+
+  return AdminFetchProducts;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (AdminFetchProducts);
 
 /***/ }),
 
@@ -62808,11 +62933,16 @@ var DeliveryController = /*#__PURE__*/function () {
   _createClass(DeliveryController, [{
     key: "_progressBar",
     value: function _progressBar() {
+      var deliveryStep, formStep, paymentStep;
       var page = document.querySelector('.cart');
-      var bar = page.querySelector('.active-item');
-      var deliveryStep = page.querySelector('.order_list');
-      var formStep = page.querySelector('.dform');
-      var paymentStep = page.querySelector('.payment');
+
+      if (page) {
+        var _bar = page.querySelector('.active-item');
+
+        deliveryStep = page.querySelector('.order_list');
+        formStep = page.querySelector('.dform');
+        paymentStep = page.querySelector('.payment');
+      }
 
       if (deliveryStep) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(bar).css('width', '37%');

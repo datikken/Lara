@@ -11384,6 +11384,7 @@ main {
   width: 100%;
   padding-top: 18px;
   min-height: 500px;
+  max-width: 894px;
 }
 
 .empty_order {

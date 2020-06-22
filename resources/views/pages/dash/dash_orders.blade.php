@@ -3,7 +3,9 @@
 @section('center')
     <div class="orders">
 
-<? if(!empty($orders_actual)) { ?>
+        {{--@php dd(empty($orders_actual)); @endphp--}}
+
+<? if($orders_actual) { ?>
         @include('components.orders.orders_actual', ['orders_actual' => $orders_actual, 'user' => $user])
 <? } ?>
 

@@ -13,7 +13,7 @@
 
         <form action="{{ route('fetchProducts') }}" method="post" class="ml-2">
             @csrf
-            <button class="btn btn-primary" type="submit">
+            <button class="btn btn-primary fetch_btn" type="submit">
                 Синхронизироваться
             </button>
         </form>
