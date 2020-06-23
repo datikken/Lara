@@ -8,11 +8,10 @@
     <meta name="generator" content="Jekyll v3.8.6">
     <meta name="theme-color" content="#563d7c">
     <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
-
     <title>Админка</title>
 
-    @include('components.scripts.scripts')
     @include('components.styles.style')
+
     <style>
         .admin_container {
             max-width: 500px;
@@ -24,7 +23,6 @@
             font-size: 14px;
         }
     </style>
-    {{--<link rel="stylesheet" href="/css/app.css">--}}
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -154,52 +152,6 @@
         </main>
     </div>
 </div>
-
-{{--<div class="admin_pannel">--}}
-    {{--<div class="uk-sidebar">--}}
-
-        {{--<ul uk-accordion="multiple: true" class="uk-margin-left">--}}
-            {{--<li class="uk-closed">--}}
-                {{--<a class="uk-accordion-title" href="#">База данных</a>--}}
-                {{--<div class="uk-accordion-content">--}}
-                    {{--<div class="uk-flex-between uk-flex uk-margin-bottom">--}}
-                        {{--<a href="/admin/products">Продукты</a>--}}
-                        {{--<a href="/admin/createProductForm" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>--}}
-                    {{--</div>--}}
-                    {{--<div class="uk-flex-between uk-flex uk-margin-bottom">--}}
-                        {{--<a href="/admin/banners">Баннеры</a>--}}
-                        {{--<a href="/admin/createProductForm" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>--}}
-                    {{--</div>--}}
-                    {{--<div class="uk-flex-between uk-flex uk-margin-bottom">--}}
-                        {{--<a href="/admin/information">Информация</a>--}}
-                        {{--<a href="/admin/createInformation" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>--}}
-                    {{--</div>--}}
-                    {{--<div class="uk-flex-between uk-flex uk-margin-bottom">--}}
-                        {{--<a href="/admin/about">О нас</a>--}}
-                        {{--<a href="/admin/createAbout" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>--}}
-                    {{--</div>--}}
-                    {{--<div class="uk-flex-between uk-flex uk-margin-bottom">--}}
-                        {{--<a href="/admin/blog">Блог</a>--}}
-                        {{--<a href="/admin/createPost" uk-icon="plus" class="uk-margin-small-right uk-icon"></a>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</li>--}}
-            {{--<li class="uk-closed">--}}
-                {{--<a class="uk-accordion-title" href="#">Письма</a>--}}
-                {{--<div class="uk-accordion-content">--}}
-                    {{--<div class="uk-flex-between uk-flex uk-margin-bottom">--}}
-                        {{--<a href="/admin/sendemail">Свободное письмо</a>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</li>--}}
-        {{--</ul>--}}
-    {{--</div>--}}
-
-    {{--<div class="admin_container">--}}
-        {{--@yield('center')--}}
-    {{--</div>--}}
-{{--</div>--}}
-
 
 @include('components.scripts.scripts')
 </div>

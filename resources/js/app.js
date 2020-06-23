@@ -29,7 +29,6 @@ import DadataController from './controllers/DadataController'
 import OrdersHistoryController from './controllers/OrdersHistoryController'
 import ProductDetailsMenuController from './controllers/ProductDetailsMenuController'
 import DashController from './controllers/DashController'
-import AdminFetchProducts from './controllers/AdminFetchProducts';
 
 $(document).ready(function() {
     new OrdersHistoryController();
@@ -55,5 +54,4 @@ $(document).ready(function() {
     new ProductDetailsMenuController();
     new DashController();
     new DeliveryController();
-    new AdminFetchProducts();
 });

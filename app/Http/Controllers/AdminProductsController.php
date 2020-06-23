@@ -189,21 +189,24 @@ class AdminProductsController extends Controller
 
     public function fetchProducts(Request $request)
     {
-//        $client = new Client([
-//            'headers' => [ 'Content-Type' => 'application/json' ]
-//        ]);
-//
-//        $response = $client->post('http://93.184.160.194:8085/mainbase/hs/ecom/getitems',
-//            ['body' => json_encode(
-//                [
-//                    'IDToken' => '298095c6-7f9e-11e1-a511-001b214bf52b'
-//                ]
-//            )]
-//        );
-//
-//        $res = $response->getBody()->getContents();
-//
-//        dd(json_decode($res, true));
+        $client = new Client([
+            'headers' => [ 'Content-Type' => 'application/json' ]
+        ]);
+
+        $response = $client->post('http://93.184.160.194:8085/mainbase/hs/ecom/getitems',
+            ['body' => json_encode(
+                [
+                    'IDToken' => '298095c6-7f9e-11e1-a511-001b214bf52b'
+                ]
+            )]
+        );
+
+//        $response = $client->get('https://jsonplaceholder.typicode.com/photos');
+
+        $res = $response->getBody()->getContents();
+
+        dd(json_decode($res,true));
+
 
     }
 }

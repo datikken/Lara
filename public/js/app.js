@@ -62160,21 +62160,21 @@ var AdminFetchProducts = /*#__PURE__*/function () {
         var token = {
           IDToken: '298095c6-7f9e-11e1-a511-001b214bf52b'
         };
-        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
-          method: "post",
-          url: "".concat(url),
-          data: token,
+        fetch(url, {
+          method: 'POST',
+          body: token,
           headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-          },
-          success: function success(status) {
-            console.log(status);
-          },
-          error: function error(_error) {
-            console.warn(_error);
+            'content-type': 'application/json'
           }
-        });
+        }).then(function (response) {
+          alert(response.status); // 200
+
+          return response.json();
+        }).then(function (data) {
+          alert(data.id);
+          var elem = document.getElementById('h2o');
+          elem.innerText = data.id;
+        })["catch"](alert);
       });
     }
   }]);
@@ -62182,8 +62182,7 @@ var AdminFetchProducts = /*#__PURE__*/function () {
   function AdminFetchProducts() {
     _classCallCheck(this, AdminFetchProducts);
 
-    var btn = document.querySelector('.fetch_btn');
-    btn && this.setListeners(btn);
+    var btn = document.querySelector('.fetch_btn'); // btn && this.setListeners(btn);
   }
 
   return AdminFetchProducts;
