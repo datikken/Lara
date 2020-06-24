@@ -76,7 +76,6 @@
   border: 1px solid $light_gray;
   min-width: 270px;
   margin: 0 10px 10px 10px;
-  padding: 5px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,7 +113,7 @@
 
     @include breakpoint($phone) {
       display: block;
-      padding: 0px 20px 5px 20px;
+      padding: 0px 20px 10px 20px;
     }
 
     &-itemContent {
@@ -147,15 +146,18 @@
 
       @include breakpoint($medium) {
         margin-bottom: 12px;
-        margin-top: 5px;
-        padding-top: 5px;
         top: initial;
+        display: grid;
+        grid-template-columns: 3.1fr 1fr;
+        align-items: flex-start;
+        justify-items: flex-end;
+        padding-top: 13px;
       }
 
       &:first-child {
         position: absolute;
         z-index: 2;
-        padding-top: 2px;
+        //padding-top: 2px;
 
         @include breakpoint($phone) {
           position: relative;
@@ -216,12 +218,11 @@
       &_heading {
         font-family: $font;
         font-weight: 600;
-        font-size: 18px;
+        font-size: 17px;
         line-height: 18px;
         letter-spacing: 0.02em;
         color: $dblack;
         display: none;
-        padding-top: 5px;
 
         &-item {
           max-width: 197px;
@@ -229,6 +230,7 @@
 
         @include breakpoint($phone) {
           display: block;
+          line-height: 23px;
         }
       }
       &_amount {

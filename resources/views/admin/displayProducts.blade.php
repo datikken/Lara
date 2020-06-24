@@ -82,7 +82,7 @@
 
                 <td>
                     <a href="{{ route('adminDeleteProduct', ['id' => $product['id']])}}" class="btn btn-danger">
-                        <span class="ui-icon" uk-icon="close"></span>
+                        <span class="ui-icon" uk-icon="close">X</span>
                     </a>
                 </td>
             </tr>
