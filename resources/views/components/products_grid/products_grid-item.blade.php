@@ -5,8 +5,17 @@
                     <span class="product_wrapper-item_name-item">Картридж</span>
                 </div>
                 <div class="product_wrapper-item_heading">
-                    <span class="product_wrapper-item_heading-item">{{ $name }}</span>
+                    <span class="product_wrapper-item_heading-item">
+                        <?
+                            if(gettype($name) === 'array') {
+                                echo str_limit(json_decode($name_buh), $limit = 40, $end = '...');
+                            } else {
+                                echo str_limit($name, $limit = 40, $end = '...');
+                            }
+                        ?>
+                    </span>
                 </div>
+
                 <div class="product_wrapper-item_amount">
                     <img src="/images/icons/alot.svg" alt="amount"/>
                     <span class="product_wrapper-item_amount-item">Много</span>

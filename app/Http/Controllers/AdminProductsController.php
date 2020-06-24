@@ -214,10 +214,21 @@ class AdminProductsController extends Controller
               'name_econom' => isset($value->name_ecom) ?  json_encode($value->name_ecom) : json_encode(array()),
               'bro_color' => isset($value->bro_color) ? json_encode($value->bro_color) :  json_encode(array()),
               'bro_counter_brand' => isset($value->bro_counter_brand) ? json_encode($value->bro_counter_brand) :  json_encode(array()),
+              'name_buh' => isset($value->name_buh) ? json_encode($value->name_buh) :  json_encode(array()),
               'created_at' => date('Y-m-d H:i:s'),
             ];
 
-            $created = DB::table('products')->insert($arr);
+            $exist = DB::table('products')->where('uuid', $value->uuid )->value('uuid');
+
+//            dd($exist);
+
+            if(is_null($exist)) {
+                $created = DB::table('products')->insert($arr);
+            } else {
+                $created = DB::table('products')->update($arr);
+            }
         }
+
+        return redirect('/admin/products');
     }
 }
