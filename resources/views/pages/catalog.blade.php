@@ -11,7 +11,7 @@
             @include('components.catalog_filters.catalog_filters')
             @include('components.banner.catalog_banner')
         <div class="mobile-hide">
-            @include('components.viewed.viewed')
+            {{--@include('components.viewed.viewed')--}}
         </div>
     </div>
 
