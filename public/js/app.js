@@ -61574,9 +61574,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_OrdersHistoryController__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./controllers/OrdersHistoryController */ "./resources/js/controllers/OrdersHistoryController.js");
 /* harmony import */ var _controllers_ProductDetailsMenuController__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./controllers/ProductDetailsMenuController */ "./resources/js/controllers/ProductDetailsMenuController.js");
 /* harmony import */ var _controllers_DashController__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./controllers/DashController */ "./resources/js/controllers/DashController.js");
-/* harmony import */ var _controllers_AdminFetchProducts__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./controllers/AdminFetchProducts */ "./resources/js/controllers/AdminFetchProducts.js");
 // window.Vue = require('vue');
-
 
 
 
@@ -61629,7 +61627,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   new _controllers_ProductDetailsMenuController__WEBPACK_IMPORTED_MODULE_26__["default"]();
   new _controllers_DashController__WEBPACK_IMPORTED_MODULE_27__["default"]();
   new _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_9__["default"]();
-  new _controllers_AdminFetchProducts__WEBPACK_IMPORTED_MODULE_28__["default"]();
 });
 
 /***/ }),
@@ -62128,67 +62125,6 @@ var AboutController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (AboutController);
-
-/***/ }),
-
-/***/ "./resources/js/controllers/AdminFetchProducts.js":
-/*!********************************************************!*\
-  !*** ./resources/js/controllers/AdminFetchProducts.js ***!
-  \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var AdminFetchProducts = /*#__PURE__*/function () {
-  _createClass(AdminFetchProducts, [{
-    key: "setListeners",
-    value: function setListeners(btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        var url = 'http://93.184.160.194:8085/mainbase/hs/ecom/getitems';
-        var token = {
-          IDToken: '298095c6-7f9e-11e1-a511-001b214bf52b'
-        };
-        fetch(url, {
-          method: 'POST',
-          body: token,
-          headers: {
-            'content-type': 'application/json'
-          }
-        }).then(function (response) {
-          alert(response.status); // 200
-
-          return response.json();
-        }).then(function (data) {
-          alert(data.id);
-          var elem = document.getElementById('h2o');
-          elem.innerText = data.id;
-        })["catch"](alert);
-      });
-    }
-  }]);
-
-  function AdminFetchProducts() {
-    _classCallCheck(this, AdminFetchProducts);
-
-    var btn = document.querySelector('.fetch_btn'); // btn && this.setListeners(btn);
-  }
-
-  return AdminFetchProducts;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (AdminFetchProducts);
 
 /***/ }),
 

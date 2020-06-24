@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use GuzzleHttp\Client;
+use stdClass;
 
 class AdminProductsController extends Controller
 {
@@ -201,12 +202,23 @@ class AdminProductsController extends Controller
             )]
         );
 
-//        $response = $client->get('https://jsonplaceholder.typicode.com/photos');
-
         $res = $response->getBody()->getContents();
+        $json = json_decode($res);
 
-        dd(json_decode($res,true));
+        foreach ($json as &$value) {
+            $arr = [
+              'uuid' => isset($value->uuid) ? $value->uuid : json_encode(array()),
+              'name' => isset($value->name_buh) ? $value->name_buh :  json_encode(array()),
+              'currency_code' => isset($value->currency_code) ? $value->currency_code :  json_encode(array()),
+              'params' => isset($value->params) ? json_encode($value->params) :  json_encode(array()),
+              'name_econom' => isset($value->name_ecom) ?  json_encode($value->name_ecom) : json_encode(array()),
+              'bro_color' => isset($value->bro_color) ? json_encode($value->bro_color) :  json_encode(array()),
+              'bro_counter_brand' => isset($value->bro_counter_brand) ? json_encode($value->bro_counter_brand) :  json_encode(array()),
+              'created_at' => date('Y-m-d H:i:s'),
+            ];
 
-
+            $created = DB::table('products')->insert($arr);
+            dump($arr);
+        }
     }
 }
