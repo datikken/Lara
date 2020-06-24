@@ -218,7 +218,6 @@ class AdminProductsController extends Controller
             ];
 
             $created = DB::table('products')->insert($arr);
-            dump($arr);
         }
     }
 }
