@@ -69,7 +69,7 @@ class ProductsController extends Controller
     public function search(Request $request)
     {
         $searchText = $request->get('searchText');
-        $products = Product::where('name', 'Like', $searchText."%")->get();
+        $products = Product::where('name', 'Like','%'.$searchText."%")->get();
 
         return $products;
     }
