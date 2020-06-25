@@ -1,5 +1,6 @@
 @foreach ($products as $product)
     {{--@php dump($product->name_buh); @endphp--}}
+
     @include('components.products_grid.products_grid-item',
         [
             'id' => $product->id,

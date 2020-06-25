@@ -244,7 +244,7 @@ class AdminProductsController extends Controller
 
                 $arr = [
                     'product_id' => $pr_id,
-                    'image' => $product_image
+                    'image' => str_replace(' ', '', $product_image)
                 ];
 
                 if(DB::table('product_images')->where('product_id', $pr_id)->value('id')) {

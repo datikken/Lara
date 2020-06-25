@@ -4051,6 +4051,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 @media screen and (min-width: 600px) {
   .product_wrapper-item:nth-child(2) {
     padding-top: 0;
+    display: flex;
+    align-items: center;
   }
 }
 .product_wrapper-item:nth-child(3) {
