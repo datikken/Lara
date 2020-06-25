@@ -230,7 +230,7 @@ class AdminProductsController extends Controller
                 }
             }
 
-            $exist = DB::table('products')->where('uuid', $value->uuid )->value('uuid');
+            $exist = DB::table('products')->where('uuid', $arr['uuid'] )->value('uuid');
 
             if(is_null($exist)) {
                 $created = DB::table('products')->insert($arr);
