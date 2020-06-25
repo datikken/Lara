@@ -8,7 +8,7 @@
                     <span class="product_wrapper-item_heading-item">
                         <?
                             if(gettype($name) === 'array') {
-                                echo str_limit(json_decode($name_buh), $limit = 30, $end = '...');
+                                echo str_limit(json_decode($name_buh), $limit = 39, $end = '...');
                             } else {
                                 echo str_limit($name, $limit = 40, $end = '...');
                             }

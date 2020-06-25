@@ -42,13 +42,14 @@
                 galleryTop.controller.control = galleryThumbs;
                 galleryThumbs.controller.control = galleryTop;
             </script>
+
         </div>
 
 
         <div class="details_wrap-info">
             <div class="details_wrap-info_item">
                 <div class="details_wrap-info_item-head">
-                    <h1>{{$product['name']}}</h1>
+                    <h1>{{ $product['name_econom'] }}</h1>
                 </div>
             </div>
             <div class="details_wrap-info_item">
@@ -65,6 +66,18 @@
                     <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/stmc.svg')"></div>
                 </div>
             </div>
+
+
+            @foreach ($product['params'] as $key => $val)
+                {{--@php dump($key); @endphp--}}
+                <div class="details_wrap-info_item">
+                    <div class="details_wrap-info_item-field">
+                        <span>{{ $key }}</span> : <span>{{ $val }}</span>
+
+                    </div>
+                </div>
+            @endforeach
+
 
             <div class="details_wrap-info_item">
                 <div class="details_wrap-info_item-field">

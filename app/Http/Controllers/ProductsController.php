@@ -63,6 +63,18 @@ class ProductsController extends Controller
 
         $product['images'] = $imgArr;
 
+        $pr_params = array();
+
+        foreach (json_decode($product['params']) as $obj) {
+            foreach ($obj as $key => $val) {
+                $pr_params[$key] = $val;
+            }
+        }
+
+        $product['params'] = $pr_params;
+        $product['name_econom'] = json_decode($product['name_econom']);
+//        dd($product['params']);
+
         return view('layouts.product_details', ['product' => $product, 'feedbacks' => $feedItems]);
     }
 
