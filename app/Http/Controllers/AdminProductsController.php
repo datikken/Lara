@@ -205,7 +205,9 @@ class AdminProductsController extends Controller
         $res = $response->getBody()->getContents();
         $json = json_decode($res);
 
-        foreach ($json as &$value) {
+        foreach ($json as $key=>$value) {
+            $product_image = '';
+
             $arr = [
               'uuid' => isset($value->uuid) ? $value->uuid : json_encode(array()),
               'name' => isset($value->name_buh) ? $value->name_buh :  json_encode(array()),
@@ -218,14 +220,38 @@ class AdminProductsController extends Controller
               'created_at' => date('Y-m-d H:i:s'),
             ];
 
-            $exist = DB::table('products')->where('uuid', $value->uuid )->value('uuid');
+            if(!empty($value->params)) {
+                $data = json_decode(json_encode($value->params));
 
-//            dd($exist);
+                foreach ($data as $key=>$value) {
+                    if(isset($value->photo)) {
+                        $product_image = $value->photo;
+                    }
+                }
+            }
+
+            $exist = DB::table('products')->where('uuid', $value->uuid )->value('uuid');
 
             if(is_null($exist)) {
                 $created = DB::table('products')->insert($arr);
             } else {
-                $created = DB::table('products')->update($arr);
+                $created = DB::table('products')->where('uuid', $arr['uuid'])->update($arr);
+            }
+
+            //save product image
+            if($product_image != '') {
+                $pr_id = DB::table('products')->where('uuid', $arr['uuid'])->value('id');
+
+                $arr = [
+                    'product_id' => $pr_id,
+                    'image' => $product_image
+                ];
+
+                if(DB::table('product_images')->where('product_id', $pr_id)->value('id')) {
+                    DB::table('product_images')->where('product_id', $pr_id)->update($arr);
+                } else {
+                    DB::table('product_images')->insert($arr);
+                }
             }
         }
 
