@@ -1,4 +1,4 @@
-<?php #dump($product['price']); ?>
+<?php dump($product['params']); ?>
 
 <div class="details">
     <div class="details_wrap">

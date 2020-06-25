@@ -218,9 +218,9 @@
         }
       }
       &_heading {
-        font-family: $font;
+        font-family: $semifont;
         font-weight: 600;
-        font-size: 17px;
+        font-size: 12px;
         line-height: 18px;
         letter-spacing: 0.02em;
         color: $dblack;
@@ -245,8 +245,9 @@
         align-items: center;
         margin-top: 7px;
         margin-left: 10px;
+
         @include breakpoint($medium) {
-          margin-top: 0;
+          margin-top: 4px;
         }
 
         img {

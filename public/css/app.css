@@ -4102,9 +4102,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #292930;
 }
 .product_wrapper-item_heading {
-  font-family: "Montserrat", sans-serif;
+  font-family: "MontserratSemiBold";
   font-weight: 600;
-  font-size: 17px;
+  font-size: 12px;
   line-height: 18px;
   letter-spacing: 0.02em;
   color: #292930;
@@ -4132,7 +4132,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .product_wrapper-item_amount {
-    margin-top: 0;
+    margin-top: 4px;
   }
 }
 .product_wrapper-item_amount img {
