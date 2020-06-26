@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Product;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
 use GuzzleHttp\Client;
 use stdClass;
 
@@ -30,7 +30,7 @@ class AdminProductsController extends Controller
         if (!Auth::check()) {
             return redirect()->route('home');
         } else {
-            return view('admin.displayProducts', ['products' => $products]);
+            return view('admin.displayProducts', ['products' => $products, 'slides' => $slides]);
         }
     }
 

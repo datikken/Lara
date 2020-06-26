@@ -75,6 +75,12 @@ Route::get('admin/subscriptions',['uses' => 'AdminSubscriptionsController@index'
 Route::get('admin/tracking', ['uses' => 'AdminTrackingController@index', 'as' => 'AdminDisplayTracking']);
 Route::post('admin/collectData', ['uses' => 'AdminTrackingController@collectData', 'as' => 'AdminCollectTracking']);
 
+//Main slider
+Route::get('admin/slider', ['uses' => 'AdminMainSliderController@display', 'as' => 'AdminMainSlider']);
+Route::get('admin/slider/{id}', ['uses' => 'AdminMainSliderController@delete', 'as' => 'AdminDeleteMainSlider']);
+Route::get('admin/sliderDisplayCreate', ['uses' => 'AdminMainSliderController@showCreateForm', 'as' => 'AdminDisplayCreateMainSlider']);
+Route::post('admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider'])->middleware('checkUserRole');
+
 //Orders
 Route::get('admin/orders', ['uses' => 'AdminOrdersController@index', 'as' => 'AdminDisplayOrders']);
 //Users

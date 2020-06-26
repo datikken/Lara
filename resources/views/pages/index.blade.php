@@ -2,11 +2,11 @@
 
 @section('center')
     <div class="desktop-hide">
-        @include('components.main_swiper.main_swiper')
+        @include('components.main_swiper.main_swiper', ['slides' => $slides])
     </div>
 
     <div class="mobile-hide">
-        @include('components.main_swiper.main_swiper')
+        @include('components.main_swiper.main_swiper', ['slides' => $slides])
     </div>
 
     @include('components.banner.banner_mob')
