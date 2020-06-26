@@ -3,7 +3,7 @@
         <div class="header_wrapper-item">
             <a href="/">
             <div class="header_wrapper-item_logo">
-                <img class="header_wrapper-item_logo-item" src="/images/header/LOGO.png" alt="Logo"/>
+                <img class="header_wrapper-item_logo-item" src="/images/icons/main_logo.png" alt="Logo"/>
             </div>
             </a>
         </div>

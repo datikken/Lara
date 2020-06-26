@@ -5,7 +5,7 @@
     &_item div p {
         margin: 0;
     }
-    
+
     display: flex;
     background-color: $black;
     width: 100%;
@@ -69,21 +69,15 @@
 }
 .bestPrinters_swiper {
     position: relative;
-    height: 195px!important;
-    margin-bottom: 20px!important;
+    height: 195px !important;
+    margin-bottom: 20px !important;
 
     .swiper-wrapper {
-        height: 195px!important;
+        height: 195px !important;
 
         .swiper-slide {
             height: 195px;
         }
     }
 
-}
-
-.swiper-container {
-     .swiper-pagination {
-        display: none!important;
-    }
 }
