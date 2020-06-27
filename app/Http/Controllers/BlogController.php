@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\User;
 use App\Like;
@@ -13,6 +14,15 @@ class BlogController extends Controller
     public function index()
     {
         $posts = Post::all();
+
+        foreach($posts as $post) {
+           $likes = count(DB::table('likes')->where('post_id', $post['id'])->where('like', '>', 0 )->get());
+           $dislikes = count(DB::table('likes')->where('post_id', $post['id'])->where('like', '<=', 0 )->get());
+
+           $post['likes'] = $likes;
+           $post['dislikes'] = $dislikes;
+        }
+
         return view('pages.blog.blog',['posts' => $posts]);
     }
 
@@ -28,6 +38,7 @@ class BlogController extends Controller
         $is_like = $request['isLike'] === 'true';
         $update = false;
         $post = Post::find($post_id);
+
         if(!$post) {
             return null;
         }
