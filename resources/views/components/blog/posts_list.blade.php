@@ -1,6 +1,6 @@
 <div class="postList">
     @foreach ($posts as $post)
-            <div class="postList_item">
+            <div class="postList_item" data-id="{{ $post['id'] }}">
                 <div class="postList_cat">
                     <span>{{ $post['category'] }}</span>
                 </div>
@@ -34,7 +34,7 @@
 
                             <div class="postList_comment">
                                 <div class="postList_comment_icon"></div>
-                                <div class="postList_comment_val">{{ $post['dislikes'] }}</div>
+                                <div class="postList_comment_val">{{ $post['comments'] }}</div>
                             </div>
 
                             <div class="postList_share">

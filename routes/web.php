@@ -30,6 +30,7 @@ Route::get('/home/orders',['uses'=> 'HomeController@displayOrders', 'as'=>'displ
 //Blog
 Route::get('blog', ['uses' => 'BlogController@index', 'as' => 'blog']);
 Route::get('blog/{id}', ['uses' => 'BlogController@postDetails', 'as' => 'postDetails']);
+Route::post('blog/like/{id}', ['uses' => 'BlogController@like', 'as' => 'blogLike']);
 
 //PAGES
 Route::get('/information', 'InformationController@index');

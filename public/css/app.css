@@ -11135,6 +11135,10 @@ main {
   padding-bottom: 30px;
   border-bottom: 1px solid #e9e9ea;
 }
+.postList_item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .postList_cat {
   font-family: "Montserrat", sans-serif;
   display: inline-block;
@@ -11222,6 +11226,10 @@ main {
 }
 .postItem p {
   font-size: 12px;
+}
+.postItem p img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .sres {

@@ -35,6 +35,10 @@
         margin-bottom: 30px;
         padding-bottom: 30px;
         border-bottom: 1px solid $light_gray;
+
+        img {
+            object-fit: cover;
+        }
     }
 
     &_cat {

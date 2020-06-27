@@ -61574,7 +61574,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_OrdersHistoryController__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./controllers/OrdersHistoryController */ "./resources/js/controllers/OrdersHistoryController.js");
 /* harmony import */ var _controllers_ProductDetailsMenuController__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./controllers/ProductDetailsMenuController */ "./resources/js/controllers/ProductDetailsMenuController.js");
 /* harmony import */ var _controllers_DashController__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./controllers/DashController */ "./resources/js/controllers/DashController.js");
+/* harmony import */ var _controllers_BlogPostController__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./controllers/BlogPostController */ "./resources/js/controllers/BlogPostController.js");
 // window.Vue = require('vue');
+
 
 
 
@@ -61627,6 +61629,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   new _controllers_ProductDetailsMenuController__WEBPACK_IMPORTED_MODULE_26__["default"]();
   new _controllers_DashController__WEBPACK_IMPORTED_MODULE_27__["default"]();
   new _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_9__["default"]();
+  new _controllers_BlogPostController__WEBPACK_IMPORTED_MODULE_28__["default"]();
 });
 
 /***/ }),
@@ -62125,6 +62128,88 @@ var AboutController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (AboutController);
+
+/***/ }),
+
+/***/ "./resources/js/controllers/BlogPostController.js":
+/*!********************************************************!*\
+  !*** ./resources/js/controllers/BlogPostController.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var BlogPostController = /*#__PURE__*/function () {
+  _createClass(BlogPostController, [{
+    key: "setListeners",
+    value: function setListeners(block) {
+      var posts = block.querySelectorAll('.postList_item');
+      posts.forEach(function (el, i) {
+        var like = el.querySelector('.postList_like');
+        var dislike = el.querySelector('.postList_dislike');
+        var type;
+        var arr = [like, dislike];
+        arr.forEach(function (item) {
+          item.addEventListener('click', function (e) {
+            var id = posts[i].getAttribute('data-id');
+            var url = window.location.href + '/like/' + id;
+            var classList = e.currentTarget.classList.value;
+
+            if (classList.indexOf('dis') >= 0) {
+              type = 'false';
+            } else {
+              type = 'true';
+            }
+
+            var data = {
+              post_id: id,
+              isLike: type
+            };
+            jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajaxSetup({
+              headers: {
+                'X-CSRF-TOKEN': window.token
+              }
+            });
+            jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+              method: "post",
+              url: "".concat(url),
+              data: data,
+              success: function success(data) {
+                console.log(data);
+              },
+              error: function error(_error) {
+                console.warn(_error);
+              }
+            });
+            console.log(url, data);
+          });
+        });
+      });
+    }
+  }]);
+
+  function BlogPostController() {
+    _classCallCheck(this, BlogPostController);
+
+    var block = document.querySelector('.postList');
+    block && this.setListeners(block);
+  }
+
+  return BlogPostController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (BlogPostController);
 
 /***/ }),
 
@@ -62808,12 +62893,12 @@ var DeliveryController = /*#__PURE__*/function () {
   _createClass(DeliveryController, [{
     key: "_progressBar",
     value: function _progressBar() {
+      var bar;
       var deliveryStep, formStep, paymentStep;
       var page = document.querySelector('.cart');
 
       if (page) {
-        var _bar = page.querySelector('.active-item');
-
+        bar = page.querySelector('.active-item');
         deliveryStep = page.querySelector('.order_list');
         formStep = page.querySelector('.dform');
         paymentStep = page.querySelector('.payment');

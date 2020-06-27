@@ -11,6 +11,7 @@
     <title>Админка</title>
 
     @include('components.styles.style')
+    @include('components.scripts.scripts')
 
     <style>
         .admin_container {
@@ -152,8 +153,6 @@
         </main>
     </div>
 </div>
-
-@include('components.scripts.scripts')
 </div>
 
 </body>

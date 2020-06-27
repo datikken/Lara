@@ -21,4 +21,9 @@ class Post extends Model
     {
         return $this->belongsToMany(Post_Comments::class);
     }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    }
 }

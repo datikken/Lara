@@ -2,8 +2,11 @@
     width: 100%;
     max-width: $layoutw;
     margin: 0 auto;
-    
+
     p {
         font-size: 12px;
+        img {
+            object-fit: cover;
+        }
     }
 }

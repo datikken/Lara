@@ -2,14 +2,15 @@ import $ from 'jquery';
 
 class DeliveryController {
     _progressBar() {
+        let bar;
         let deliveryStep, formStep,paymentStep;
         let page = document.querySelector('.cart');
 
         if(page) {
-            let bar = page.querySelector('.active-item');
-                deliveryStep = page.querySelector('.order_list');
-                formStep = page.querySelector('.dform');
-                paymentStep = page.querySelector('.payment');
+            bar = page.querySelector('.active-item');
+            deliveryStep = page.querySelector('.order_list');
+            formStep = page.querySelector('.dform');
+            paymentStep = page.querySelector('.payment');
         }
 
         if(deliveryStep) {
