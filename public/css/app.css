@@ -1153,7 +1153,7 @@ b {
   position: absolute;
   right: 0;
   height: 100%;
-  background: #40404c;
+  background: #292930;
   color: #fff;
   cursor: pointer;
   max-height: 30px;
@@ -3741,7 +3741,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 600px) {
   .carousel_card-wrapper_item {
-    margin-bottom: 4px;
+    margin-bottom: -2px;
   }
 }
 .carousel_card-wrapper_item-buttons {
@@ -3809,7 +3809,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-position: center;
   background-size: contain !important;
   background-position: 50% 60% !important;
-  width: 196px;
+  width: 100%;
   height: 100%;
 }
 .carousel_card-wrapper_item-name {
@@ -3836,9 +3836,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 600px) {
   .carousel_card-wrapper_item-heading {
-    font-family: "Montserrat", sans-serif;
+    font-family: "MontserratSemiBold";
     font-weight: 600;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 18px;
     letter-spacing: 0.02em;
     color: #292930;

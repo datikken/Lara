@@ -152,7 +152,7 @@
   &-wrapper {
     &_item {
       @include breakpoint($phone) {
-        margin-bottom: 4px;
+        margin-bottom: -2px;
       }
 
       &-buttons {
@@ -220,7 +220,7 @@
         @include bg(contain, center);
         background-size: contain!important;
         background-position: 50% 60%!important;
-        width: 196px;
+        width: 100%;
         height: 100%;
       }
       &-name {
@@ -246,9 +246,9 @@
         padding-bottom: 20px;
 
         @include breakpoint($phone) {
-          font-family: $font;
+          font-family: $semifont;
           font-weight: 600;
-          font-size: 18px;
+          font-size: 12px;
           line-height: 18px;
           letter-spacing: 0.02em;
           color: $dblack;

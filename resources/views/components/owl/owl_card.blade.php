@@ -6,14 +6,21 @@
                 <span class="carousel_card-wrapper_item-name">Картридж</span>
             </div>
             <div class="carousel_card-wrapper_item">
-            <span class="carousel_card-wrapper_item-heading">
-              {{ $product->name }}
-            </span>
+                <span class="carousel_card-wrapper_item-heading">
+                    <?
+                    if(gettype($name) === 'array') {
+                        echo str_limit(json_decode($name_buh), $limit = 40, $end = '...');
+                    } else {
+                        echo str_limit($name, $limit = 40, $end = '...');
+                    }
+                    ?>
+                </span>
             </div>
 
             <div class="carousel_card-wrapper_item">
                 <div class="carousel_card-wrapper_item-image" style="background-image: url({{ Storage::url('product_images/' . $product['image']) }})">
-                    {{--<img src="/images/unnecessary/owl-swiper.svg" alt="cart" />--}}
+                    {{--<img src="{{Storage::disk('local')->url('/product_images/' . $image . 'png' )}}" alt="{{$image}}" />--}}
+                    <img src="/images/unnecessary/owl-swiper.svg" alt="cart" />
                 </div>
             </div>
 

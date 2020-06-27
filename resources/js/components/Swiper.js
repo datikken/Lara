@@ -47,7 +47,7 @@ window.onload = function () {
 
     let slider = new Swiper('.best_printers', {
         pagination: {
-            el: '.swiper-pagination',
+            el: '.swiper-pagination-v',
         },
         direction: 'vertical',
         navigation: {
@@ -107,7 +107,7 @@ window.onload = function () {
         loop: true,
         autoplay: {
             delay: 2500,
-            disableOnInteraction: false
+            disableOnInteraction: true
         },
         breakpoints: {
             1024: {

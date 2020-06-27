@@ -7,7 +7,6 @@
         <span>Рейтинг лучших принтеров</span>
     </div>
 
-
     <div class="sales_best">
         <div class="sales_best-wrapper">
 
