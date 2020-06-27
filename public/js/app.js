@@ -62158,6 +62158,8 @@ var BlogPostController = /*#__PURE__*/function () {
       posts.forEach(function (el, i) {
         var like = el.querySelector('.postList_like');
         var dislike = el.querySelector('.postList_dislike');
+        var like_val = el.querySelector('.postList_like_val');
+        var disl_val = el.querySelector('.postList_dislike_val');
         var type;
         var arr = [like, dislike];
         arr.forEach(function (item) {
@@ -62186,13 +62188,26 @@ var BlogPostController = /*#__PURE__*/function () {
               url: "".concat(url),
               data: data,
               success: function success(data) {
-                console.log(data);
+                fixData(data);
               },
               error: function error(_error) {
                 console.warn(_error);
               }
             });
-            console.log(url, data);
+
+            function fixData(data) {
+              if (data.likes) {
+                like_val.innerText = data.likes;
+              } else {
+                like_val.innerText = 0;
+              }
+
+              if (data.dislikes) {
+                disl_val.innerText = data.dislikes;
+              } else {
+                disl_val.innerText = 0;
+              }
+            }
           });
         });
       });

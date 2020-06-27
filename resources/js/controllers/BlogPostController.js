@@ -6,6 +6,10 @@ class BlogPostController {
             posts.forEach((el, i) => {
                 let like = el.querySelector('.postList_like');
                 let dislike = el.querySelector('.postList_dislike');
+
+                let like_val = el.querySelector('.postList_like_val');
+                let disl_val = el.querySelector('.postList_dislike_val');
+
                 let type;
 
                 let arr = [like, dislike];
@@ -31,15 +35,26 @@ class BlogPostController {
                                 url: `${url}`,
                                 data,
                                 success: function (data) {
-                                   console.log(data);
+                                    fixData(data);
                                 },
                                 error: function (error) {
                                     console.warn(error);
                                 }
                             });
 
-                            console.log(url, data);
+                            function fixData(data) {
+                                if(data.likes) {
+                                    like_val.innerText = data.likes;
+                                } else {
+                                    like_val.innerText = 0;
+                                }
 
+                                if(data.dislikes) {
+                                    disl_val.innerText = data.dislikes;
+                                } else {
+                                    disl_val.innerText = 0;
+                                }
+                            }
                         });
                     });
             })

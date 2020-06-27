@@ -67,9 +67,12 @@ class BlogController extends Controller
             $like->save();
         }
 
+        $likes = count(DB::table('likes')->where('post_id', $post_id)->where('like', '>', 0 )->get());
+        $dislikes = count(DB::table('likes')->where('post_id', $post_id)->where('like', '<=', 0 )->get());
+
         $arr = array(
-            'like' => $like,
-            'post_id' => $post_id
+            'likes' => $likes,
+            'dislikes' => $dislikes
         );
 
         return response()->json($arr);

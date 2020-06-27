@@ -1,6 +1,5 @@
 <div class="postList">
     @foreach ($posts as $post)
-<!--        --><?// dump($post['likes'], $post['dislikes']); ?>
             <div class="postList_item" data-id="{{ $post['id'] }}">
                 <div class="postList_cat">
                     <span>{{ $post['category'] }}</span>
