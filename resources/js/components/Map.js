@@ -1,8 +1,11 @@
 /* eslint-disable */
 class SimpleMap {
     constructor() {
+        let that = this;
         if(document.querySelector('#map')) {
-            this._simpleMap();
+            window.onload = function () {
+                that._simpleMap();
+            }
         }
     }
     _simpleMap() {
@@ -21,7 +24,7 @@ class SimpleMap {
                         balloonContent: 'Это красивая метка'
                     }, {
                         iconLayout: 'default#image',
-                        iconImageHref: 'images/myIcon.gif',
+                        // iconImageHref: 'images/myIcon.gif',
                         iconImageSize: [30, 42],
                         iconImageOffset: [-5, -38]
                     }),
@@ -31,7 +34,7 @@ class SimpleMap {
                         iconContent: '12'
                     }, {
                         iconLayout: 'default#imageWithContent',
-                        iconImageHref: 'images/ball.png',
+                        // iconImageHref: 'images/ball.png',
                         iconImageSize: [48, 48],
                         iconImageOffset: [-24, -24],
                         iconContentOffset: [15, 15],

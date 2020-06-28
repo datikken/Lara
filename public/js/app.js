@@ -61782,8 +61782,12 @@ var SimpleMap = /*#__PURE__*/function () {
   function SimpleMap() {
     _classCallCheck(this, SimpleMap);
 
+    var that = this;
+
     if (document.querySelector('#map')) {
-      this._simpleMap();
+      window.onload = function () {
+        that._simpleMap();
+      };
     }
   }
 
@@ -61803,7 +61807,7 @@ var SimpleMap = /*#__PURE__*/function () {
           balloonContent: 'Это красивая метка'
         }, {
           iconLayout: 'default#image',
-          iconImageHref: 'images/myIcon.gif',
+          // iconImageHref: 'images/myIcon.gif',
           iconImageSize: [30, 42],
           iconImageOffset: [-5, -38]
         }),
@@ -61813,7 +61817,7 @@ var SimpleMap = /*#__PURE__*/function () {
           iconContent: '12'
         }, {
           iconLayout: 'default#imageWithContent',
-          iconImageHref: 'images/ball.png',
+          // iconImageHref: 'images/ball.png',
           iconImageSize: [48, 48],
           iconImageOffset: [-24, -24],
           iconContentOffset: [15, 15],
