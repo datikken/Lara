@@ -15,7 +15,7 @@
                 <input type="password" name="password" placeholder="Введите пароль">
             </div>
 
-            <div class="form_group">
+            <div class="form_group btn_group">
                 @include('components.btn.text_btn', [ 'class' => '', 'text' => 'Войти'])
             </div>
         </form>
@@ -42,7 +42,7 @@
                 <input type="password" name="password" placeholder="Введите пароль">
             </div>
 
-            <div class="form_group">
+            <div class="form_group btn_group">
                 @include('components.btn.text_btn', [ 'class' => '', 'text' => 'Регистрация'])
             </div>
         </form>

@@ -1,13 +1,167 @@
 .postItem {
     width: 100%;
+    &_date {
+        margin-left: 20px;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: justify;
+        letter-spacing: 0.02em;
+        color: $gray;
+    }
+    &_comments {
+        margin-bottom: 20px;
+
+        &_responseBtn {
+            width: 130px;
+            height: 40px;
+            background-color: $gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &_icon {
+                width: 30px;
+                height: 30px;
+                background-image: url('/images/icons/postItem/comments.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-right: 10px;
+            }
+
+            &_item {
+                font-family: $font;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 14px;
+                text-align: justify;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                color: $dblack;
+            }
+        }
+        &_comment {
+            font-family: $font;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 20px;
+            text-align: justify;
+            letter-spacing: 0.02em;
+            color: $dblack;
+            padding-bottom: 20px;
+        }
+        &_likeCount, &_dislikeCount, &_responseCount {
+            font-family: $font;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: justify;
+            letter-spacing: 0.02em;
+            color: $gray;
+        }
+        &_like, &_dislike, &_response {
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        &_like {
+            background-image: url('/images/icons/postItem/likeGray.svg');
+        }
+        &_dislike {
+            background-image: url('/images/icons/postItem/dislikeGray.svg');
+        }
+        &_response {
+            background-image: url('/images/icons/postItem/commentsGray.svg');
+        }
+        &_col {
+            &:last-child {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+            &_item {
+                max-width: 130px;
+                display: flex;
+                align-items: center;
+                &:first-child {
+                    height: 20px;
+                }
+            }
+        }
+        &_nick {
+            font-family: $semifont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: justify;
+            letter-spacing: 0.02em;
+            color: $dblack;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        &_item {
+            display: grid;
+            grid-template-columns: 70px 3fr 170px;
+            grid-gap: 30px;
+            border-bottom: 1px solid $gray;
+            margin-bottom: 20px;
+        }
+        &_avatar {
+            width: 40px;
+            height: 40px;
+            background-image: url('/images/icons/postItem/avatar.svg');
+        }
+        &_header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 30px;
+
+            &_item {
+                font-family: $semifont;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 110%;
+                text-align: justify;
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                color: $dblack;
+
+                &:nth-child(2) {
+                    font-family: $font;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 110%;
+                    text-align: justify;
+                    letter-spacing: 0.02em;
+                    text-transform: uppercase;
+                    color: $gray;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
     &_block {
         max-width: $layoutw;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 340px 760px;
         grid-gap: 60px;
+        margin-top: 70px;
+        margin-bottom: 50px;
     }
-
     &_face, &_insta, &_tele, &_vk, &_like, &_dislike {
         height: 40px;
         width: 40px;
@@ -45,7 +199,6 @@
             object-fit: cover;
         }
     }
-
     &_footer {
         width: 100%;
         height: 70px;
