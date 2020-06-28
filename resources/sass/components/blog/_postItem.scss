@@ -1,5 +1,13 @@
 .postItem {
     width: 100%;
+    &_block {
+        max-width: $layoutw;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 340px 760px;
+        grid-gap: 60px;
+    }
+
     &_face, &_insta, &_tele, &_vk, &_like, &_dislike {
         height: 40px;
         width: 40px;

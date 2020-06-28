@@ -82,7 +82,7 @@
 @import "./components/lanfeat";
 @import "./components/landingt/questions";
 @import "./components/postList";
-@import "./components/postItem";
+@import "components/blog/postItem";
 @import "./components/search_results";
 @import "./components/company";
 @import "./components/orders/empty_orders";
@@ -94,3 +94,4 @@
 @import "./components/product/prdch";
 @import "./components/product/product_capacity";
 @import "./components/dash/dadresses";
+@import "./components/blog/postComments";

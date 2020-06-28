@@ -11222,6 +11222,13 @@ main {
 .postItem {
   width: 100%;
 }
+.postItem_block {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 340px 760px;
+  grid-gap: 60px;
+}
 .postItem_face, .postItem_insta, .postItem_tele, .postItem_vk, .postItem_like, .postItem_dislike {
   height: 40px;
   width: 40px;
@@ -11862,4 +11869,38 @@ main {
   font-size: 12px;
   line-height: 130%;
   color: #292930;
+}
+
+.postItem_auth_login .form_group {
+  display: flex;
+  flex-direction: column;
+}
+.postItem_auth_login .form_group input {
+  width: 340px;
+  height: 40px;
+  border: 1px solid #D4D4D5;
+  box-sizing: border-box;
+  border-radius: 30px;
+  padding-left: 20px;
+}
+.postItem_auth_login .form_group_label {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  margin-bottom: 10px;
+}
+.postItem_auth_login .form_group .postItem_login_head {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  max-width: 200px;
+  margin-bottom: 25px;
 }

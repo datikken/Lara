@@ -1,0 +1,67 @@
+.postItem_date {
+
+}
+.postItem_comments {
+    &_like {}
+    &_dislike {}
+    &_response {}
+
+    &_comment {
+
+    }
+    &_nick {
+
+    }
+    &_avatar {
+
+    }
+    &_col {
+
+    }
+    &_item {}
+    &_header {
+        &_item {}
+    }
+}
+
+.postItem_auth {
+    &_login {
+        .form_group {
+            display: flex;
+            flex-direction:column;
+
+            input {
+                width: 340px;
+                height: 40px;
+                border: 1px solid #D4D4D5;
+                box-sizing: border-box;
+                border-radius: 30px;
+                padding-left: 20px;
+            }
+
+            &_label {
+                font-family: $font;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 14px;
+                letter-spacing: 0.02em;
+                color: $dblack;
+                margin-bottom: 10px;
+            }
+
+            .postItem_login_head {
+                font-family: $semifont;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+                letter-spacing: 0.02em;
+                color: $black;
+                max-width: 200px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+    &_register {}
+}

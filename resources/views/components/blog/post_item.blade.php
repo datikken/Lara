@@ -20,7 +20,9 @@
         </div>
     </div>
 
-    @include('components.blog')
-
+    <div class="postItem_block">
+        @include('components.blog.post_auth')
+        @include('components.blog.post_comments')
+    </div>
 
 </div>
