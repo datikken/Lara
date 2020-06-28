@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Information;
 use App\Product;
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Support\ServiceProvider;
 use View;
 use Auth;
