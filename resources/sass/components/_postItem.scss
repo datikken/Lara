@@ -1,12 +1,69 @@
 .postItem {
     width: 100%;
-    max-width: $layoutw;
-    margin: 0 auto;
-
+    &_face, &_insta, &_tele, &_vk, &_like, &_dislike {
+        height: 40px;
+        width: 40px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    &_face {
+        background-image: url('/images/icons/postItem/face.svg');
+    }
+    &_insta {
+        background-image: url('/images/icons/postItem/insta.svg');
+    }
+    &_tele {
+        background-image: url('/images/icons/postItem/tele.svg');
+    }
+    &_vk {
+        background-image: url('/images/icons/postItem/vk.svg');
+    }
+    &_like {
+        background-image: url('/images/icons/postItem/like.svg');
+    }
+    &_dislike {
+        background-image: url('/images/icons/postItem/dislike.svg');
+    }
+    &_text {
+        margin: 0 10px;
+    }
+    &_wrap {
+        max-width: $layoutw;
+        margin: 0 auto;
+    }
     p {
         font-size: 12px;
         img {
             object-fit: cover;
+        }
+    }
+
+    &_footer {
+        width: 100%;
+        height: 70px;
+        background: $light_gray;
+
+        &_item {
+            font-family: $font;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            text-align: justify;
+            letter-spacing: 0.02em;
+            color: $black;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            min-width: 270px;
+        }
+        &_inner {
+            max-width: $layoutw;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
     }
 }
