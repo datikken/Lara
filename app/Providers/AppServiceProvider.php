@@ -27,8 +27,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        $products = Product::all();
-//        View::share('products', $products);
+
+        VerifyEmail::toMailUsing(function ($notifiable) {
+            $verifyUrl = $this->verificationUrl($notifiable);
+
+            // Return your mail here...
+            return (new MailMessage)
+                ->subject('Verify your email address')
+                ->markdown('emails.verify', ['url' => $verifyUrl]);
+        });
 
         $information = Information::all();
         View::share('information', $information);
