@@ -36,6 +36,7 @@ Route::post('blog/like/{id}', ['uses' => 'BlogController@like', 'as' => 'blogLik
 Route::get('/information', 'InformationController@index');
 Route::get('/hits', 'HitsController@index');
 Route::get('/about', 'AboutController@index');
+Route::get('/about/years/{$id}', 'AboutController@getTwoYears');
 Route::get('/landing', 'LandingController@index',['as' => 'landing']);
 Route::get('/landingt2', 'LandingController@second',['as' => 'landingt2']);
 Route::get('/contacts', 'ContactsController@index');

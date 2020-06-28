@@ -49,11 +49,11 @@ class AdminAboutController extends Controller
             'updated_at' => '',
         );
 
-        $exists = DB::table('abouts')->where('year', $year)->value('year');
-
-        if(is_null($exists)) {
+//        $exists = DB::table('abouts')->where('year', $year)->value('year');
+//
+//        if(is_null($exists)) {
             $created = DB::table('abouts')->insert($arr);
-        }
+//        }
 
         return redirect()->route('adminDisplayAbout');
     }

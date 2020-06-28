@@ -72,13 +72,18 @@
           <div class="navigator_wrap-line descline">
               <span class="descline_item"></span>
             <div class="navigator_wrap-line_items">
-                @foreach ($years as $year)
-                    <span class="navigator_wrap-line_items-item">{{ $year['year'] }}</span>
+                @foreach ($years as $key=>$year)
+                    <?
+                        if(isset($year['year'])) {
+                            echo $year['year'];
+                        } else {
+                            echo '<span class=' . 'navigator_wrap-line_items-item>' . $year[0]["year"] . '</span>';
+                        }
+                    ?>
                 @endforeach
             </div>
           </div>
     </div>
 </div>
 
-@include('components.about.about_content', ['year' => $years[0]])
-@include('components.about.about_content', ['year' => $years[1]])
+@include('components.about.about_content', ['years' => \App\Http\Controllers\AboutController::getLastYear()])

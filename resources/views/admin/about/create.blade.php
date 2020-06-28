@@ -29,8 +29,8 @@
                 <input class="uk-input" type="text" name="description" id="description" placeholder="Описание" required>
             </div>
 
-            <div class="uk-margin uk-form-row">
-                <textarea cols="4" rows="4" class="uk-text-area" type="text" name="text" id="text" placeholder="Текст" required></textarea>
+            <div class="form-group green-border-focus">
+                <textarea class="form-control" name="text" id="exampleFormControlTextarea5" rows="5" style="resize: none;"></textarea>
             </div>
 
             <button type="submit" name="submit" class="btn btn-primary">Отправить</button>

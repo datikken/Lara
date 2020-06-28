@@ -1,10 +1,19 @@
-<div class="aboutc">
+
+@foreach($years as $key=>$year)
+
+    @php #dump($key, $year); @endphp
+
+    <div class="aboutc">
     <div class="aboutc_wrap">
         <div class="aboutc_wrap_head">
-            <div class="aboutc_year">{{ $year['year'] }}</div>
+            <div class="aboutc_year">
+                {{ $key }}
+            </div>
             <div class="aboutc_line"></div>
         </div>
         <div class="aboutc_cols">
+
+
             <div class="aboutc_col">
                 <div class="aboutc_row">
                     <i class="aboutc_search"></i>
@@ -42,6 +51,9 @@
                     <i class="aboutc_search"></i>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>
+@endforeach
