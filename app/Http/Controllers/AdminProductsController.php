@@ -30,7 +30,7 @@ class AdminProductsController extends Controller
         if (!Auth::check()) {
             return redirect()->route('home');
         } else {
-            return view('admin.displayProducts', ['products' => $products, 'slides' => $slides]);
+            return view('admin.displayProducts', ['products' => $products]);
         }
     }
 
