@@ -36,12 +36,12 @@
                             </span>
 
                             <div class="form_type">
-                                <div class="form_type-item activeFormItem">
+                                <div class="form_type-item">
                                     <div class="form_type-itemText">
                                         <span class="form_type-itemText_inner">Юр. лицо</span>
                                     </div>
                                 </div>
-                                <div class="form_type-item">
+                                <div class="form_type-item activeFormItem">
                                     <div class="form_type-itemText">
                                         <span class="form_type-itemText_inner">Физ. лицо</span>
                                     </div>
@@ -81,7 +81,7 @@
                             <label for="face" class="col-md-4 col-form-label text-md-right">{{ __('Face') }}</label>
 
                             <div class="col-md-6">
-                                <input id="face" type="text" class="form-control" name="face" value="urik">
+                                <input id="face" type="text" class="form-control" name="face" value="fizik">
                             </div>
                         </div>
 

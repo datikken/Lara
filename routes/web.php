@@ -1,6 +1,6 @@
 <?php
 //Auth routes
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 //Main page
 Route::get('/',['uses' => "ProductsController@showIndex", 'as' => 'index']);
