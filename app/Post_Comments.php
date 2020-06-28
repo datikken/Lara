@@ -10,10 +10,10 @@ class Post_Comments extends Model
     protected $fillable = [
         'user_id',
         'post_id',
-        'content',
         'likes',
-        'dislikes'
-    ];
+        'dislikes',
+        'content'
+  ];
 
     public function comments()
     {

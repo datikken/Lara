@@ -13,8 +13,6 @@ class AboutTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('App\About');
-
-
         for($i = 0; $i <= 10; $i++) {
 
             DB::table('abouts')->insert([

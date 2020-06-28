@@ -19,7 +19,7 @@ class PostsComments extends Migration
             $table->string('user_id');
             $table->string('likes');
             $table->string('dislikes');
-            $table->date('content');
+            $table->string('content');
         });
     }
 
