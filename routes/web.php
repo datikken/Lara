@@ -2,6 +2,53 @@
 //Auth routes
 Auth::routes(['verify' => true]);
 
+Route::group(['middleware' => 'restrictToAdmin'], function() {
+//ORDERS
+    Route::get('product/checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
+    Route::get('admin/banners', ['uses' => "AdminBannersController@index", 'as' => 'setBanner']);
+//Tracking
+    Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking']);
+});
+
+//PRODUCTS
+Route::group(['middleware' => 'checkUserRole'], function() {
+    Route::post('admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider']);
+
+    Route::get('admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
+    Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts']);
+    Route::get('admin/users', ['uses' => "AdminUsersController@index", 'as' => 'adminDisplayUsers']);
+//Display Edit Product form
+    Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);
+//Display edit Product form
+    Route::get('admin/editProductImageForm/{id}', ['uses' => "AdminProductsController@editProductImageForm", 'as' => 'adminEditProductImageForm']);
+//update product image
+    Route::post('admin/updateProductImage/{id}', ['uses' => 'AdminProductsController@updateProductImage', 'as' => 'adminUpdateProductImage']);
+//update product fields
+    Route::post('admin/updateProduct/{id}', ['uses' => 'AdminProductsController@updateProduct', 'as' => 'adminUpdateProduct']);
+//Display create Product form
+    Route::get('admin/createProductForm', ['uses' => "AdminProductsController@createProductForm", 'as' => 'adminCreateProductForm']);
+//send data create Product form
+    Route::post('admin/sendCreateProductForm', ['uses' => "AdminProductsController@sendCreateProductForm", 'as' => 'adminSendCreateProductForm']);
+//Delete product
+    Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
+//Load multiple images for product
+    Route::get('admin/dropZone/{id}', ['uses' => 'AdminProductsController@dropZoneForm', 'as' => 'dropZoneForm']);
+    Route::post('admin/addMultipleProductImages/{id}', ['uses' => 'AdminProductsController@addMultipleProductImages', 'as' => 'addMultipleProductImages']);
+//BANNERS
+    Route::get('admin/adminCreateBannerForm', ['uses' => "AdminBannersController@createBannerForm", 'as' => 'adminCreateBannerForm']);
+//INFORMATION
+    Route::get('admin/information', ['uses' => "AdminInformationController@index", 'as' => 'informationList']);
+    Route::get('admin/createInformation', ['uses' => 'AdminInformationController@showCreateInfoForm', 'as' => 'adminCreateInfo']);
+    Route::get('admin/deleteInfo/{id}', ['uses' => 'AdminInformationController@deleteInfo', 'as' => 'adminDeleteInfo']);
+    Route::get('admin/editInformation/{id}', ['uses' => "AdminInformationController@editInformation", 'as' => 'adminEditInformation']);
+    Route::post('admin/createInfo', ['uses' => 'AdminInformationController@createInfo', 'as' => 'adminCreateInfo']);
+    Route::post('admin/editInformationForm/{id}', ['uses' => "AdminInformationController@editInformationForm", 'as' => 'editInformationForm']);
+
+//EMAILS
+    Route::get('admin/sendemail', 'SendEmailController@index');
+    Route::post('admin/sendemail/send', 'SendEmailController@send');
+});
+
 //Main page
 Route::get('/',['uses' => "ProductsController@showIndex", 'as' => 'index']);
 //Catalog page
@@ -15,8 +62,6 @@ Route::get('product/AddToCart/{id}', ['uses' => 'ProductsController@addProductTo
     //Remove items from cart
 Route::get('product/deleteItemFromCart/{id}', ['uses' => 'ProductsController@deleteItemFromCart', 'as' => 'DeleteItemFromCart']);
 Route::get('product/details/{id}',['uses' => 'ProductsController@productDetails', 'as' => 'ShowProductDetails']);
-//Tracking
-Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking'])->middleware('restrictToAdmin');
 
 //PROFILE
 Route::get('/home', 'HomeController@index')->name('home');
@@ -50,8 +95,6 @@ Route::get('product/increaseSingleProduct/{id}', ['uses' => 'ProductsController@
 Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@decreaseSingleProduct', 'as' => 'DecreaseSingleProduct']);
 Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
 
-//ORDERS
-Route::get('product/checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts'])->middleware('restrictToAdmin');
 Route::get('product/setCustomerFio',['uses' => 'ProductsController@setCustomerFio','as'=>'setCustomerFio']);
 Route::get('product/delivery',['uses' => 'ProductsController@setDelivery','as'=>'setDelivery']);
 Route::get('product/deliveryForm',['uses' => 'ProductsController@deliveryForm','as'=>'deliveryForm']);
@@ -81,7 +124,6 @@ Route::post('admin/collectData', ['uses' => 'AdminTrackingController@collectData
 Route::get('admin/slider', ['uses' => 'AdminMainSliderController@display', 'as' => 'AdminMainSlider']);
 Route::get('admin/slider/{id}', ['uses' => 'AdminMainSliderController@delete', 'as' => 'AdminDeleteMainSlider']);
 Route::get('admin/sliderDisplayCreate', ['uses' => 'AdminMainSliderController@showCreateForm', 'as' => 'AdminDisplayCreateMainSlider']);
-Route::post('admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider'])->middleware('checkUserRole');
 
 //Orders
 Route::get('admin/orders', ['uses' => 'AdminOrdersController@index', 'as' => 'AdminDisplayOrders']);
@@ -101,44 +143,6 @@ Route::get('admin/about', ['uses' => "AdminAboutController@index", 'as' => 'admi
 Route::get('admin/createAbout', ['uses' => "AdminAboutController@displayCreateAbout", 'as' => 'adminDisplayCreateAbout']);
 Route::post('admin/sendCreateAbout', ['uses' => "AdminAboutController@sendCreateAbout", 'as' => 'adminSendCreateAbout']);
 Route::get('admin/deleteAbout/{id}', ['uses' => "AdminAboutController@deleteAbout", 'as' => 'AdminDeleteAbout']);
-
-//PRODUCTS
-Route::get('admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage'])->middleware('checkUserRole');
-Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts'])->middleware('checkUserRole');
-Route::get('admin/users', ['uses' => "AdminUsersController@index", 'as' => 'adminDisplayUsers'])->middleware('checkUserRole');
-//Display Edit Product form
-Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm'])->middleware('checkUserRole');
-//Display edit Product form
-Route::get('admin/editProductImageForm/{id}', ['uses' => "AdminProductsController@editProductImageForm", 'as' => 'adminEditProductImageForm'])->middleware('checkUserRole');
-//update product image
-Route::post('admin/updateProductImage/{id}', ['uses' => 'AdminProductsController@updateProductImage', 'as' => 'adminUpdateProductImage'])->middleware('checkUserRole');
-//update product fields
-Route::post('admin/updateProduct/{id}', ['uses' => 'AdminProductsController@updateProduct', 'as' => 'adminUpdateProduct'])->middleware('checkUserRole');
-//Display create Product form
-Route::get('admin/createProductForm', ['uses' => "AdminProductsController@createProductForm", 'as' => 'adminCreateProductForm'])->middleware('checkUserRole');
-//send data create Product form
-Route::post('admin/sendCreateProductForm', ['uses' => "AdminProductsController@sendCreateProductForm", 'as' => 'adminSendCreateProductForm'])->middleware('checkUserRole');
-//Delete product
-Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct'])->middleware('checkUserRole');
-//Load multiple images for product
-Route::get('admin/dropZone/{id}', ['uses' => 'AdminProductsController@dropZoneForm', 'as' => 'dropZoneForm'])->middleware('checkUserRole');
-Route::post('admin/addMultipleProductImages/{id}', ['uses' => 'AdminProductsController@addMultipleProductImages', 'as' => 'addMultipleProductImages'])->middleware('checkUserRole');
-
-//BANNERS
-Route::get('admin/adminCreateBannerForm', ['uses' => "AdminBannersController@createBannerForm", 'as' => 'adminCreateBannerForm'])->middleware('checkUserRole');
-Route::get('admin/banners', ['uses' => "AdminBannersController@index", 'as' => 'setBanner'])->middleware('restrictToAdmin')->middleware('checkUserRole');
-
-//INFORMATION
-Route::get('admin/information', ['uses' => "AdminInformationController@index", 'as' => 'informationList'])->middleware('checkUserRole');
-Route::get('admin/createInformation', ['uses' => 'AdminInformationController@showCreateInfoForm', 'as' => 'adminCreateInfo'])->middleware('checkUserRole');
-Route::get('admin/deleteInfo/{id}', ['uses' => 'AdminInformationController@deleteInfo', 'as' => 'adminDeleteInfo'])->middleware('checkUserRole');
-Route::get('admin/editInformation/{id}', ['uses' => "AdminInformationController@editInformation", 'as' => 'adminEditInformation'])->middleware('checkUserRole');
-Route::post('admin/createInfo', ['uses' => 'AdminInformationController@createInfo', 'as' => 'adminCreateInfo'])->middleware('checkUserRole');
-Route::post('admin/editInformationForm/{id}', ['uses' => "AdminInformationController@editInformationForm", 'as' => 'editInformationForm'])->middleware('checkUserRole');
-
-//EMAILS
-Route::get('admin/sendemail', 'SendEmailController@index')->middleware('checkUserRole');
-Route::post('admin/sendemail/send', 'SendEmailController@send')->middleware('checkUserRole');
 
 //Test file storage
 Route::get('/testStorage', function() {
