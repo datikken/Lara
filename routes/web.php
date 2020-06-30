@@ -41,7 +41,7 @@ Route::group(['middleware' => 'checkUserRole'], function() {
     Route::get('admin/createInformation', ['uses' => 'AdminInformationController@showCreateInfoForm', 'as' => 'adminCreateInfo']);
     Route::get('admin/deleteInfo/{id}', ['uses' => 'AdminInformationController@deleteInfo', 'as' => 'adminDeleteInfo']);
     Route::get('admin/editInformation/{id}', ['uses' => "AdminInformationController@editInformation", 'as' => 'adminEditInformation']);
-    Route::post('admin/createInfo', ['uses' => 'AdminInformationController@createInfo', 'as' => 'adminCreateInfo']);
+    Route::post('admin/createInfo', ['uses' => 'AdminInformationController@createInfo', 'as' => 'adminSaveCreateInfo']);
     Route::post('admin/editInformationForm/{id}', ['uses' => "AdminInformationController@editInformationForm", 'as' => 'editInformationForm']);
 
 //EMAILS

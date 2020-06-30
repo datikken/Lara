@@ -1,6 +1,15 @@
 @extends('layouts.admin')
 
 @section('center')
+    <div class="d-flex flex-row align-items-center m-2 ml-0">
+        <h2 class="mr-3">Информация</h2>
+
+        <a href="{{ route('adminCreateInfo') }}">
+            <button class="btn btn-primary">
+                Создать
+            </button>
+        </a>
+    </div>
 
     <div class="table-responsive">
         <table class="uk-table">

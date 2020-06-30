@@ -11,8 +11,6 @@
             </div>
         @endif
 
-        <h2 class="uk-heading-small">Создать информационный блок</h2>
-
         <form action="/admin/createInfo" method="post" enctype="multipart/form-data">
 
             {{ csrf_field() }}
@@ -29,12 +27,12 @@
                 <input class="uk-input" type="text" name="fizik_title" id="fizik_title" placeholder="Заг физ лица" required>
             </div>
 
-            <div class="uk-margin uk-form-row">
-                <textarea cols="4" rows="4" class="uk-text-area" type="text" name="urik_text" id="urik_text" placeholder="Текст ор лица" required></textarea>
+            <div class="form-group green-border-focus">
+                <textarea class="form-control"  name="urik_text" id="urik_text" rows="5" style="resize: none;" placeholder="Текст для юр лица"></textarea>
             </div>
 
-            <div class="uk-margin uk-form-row">
-                <textarea cols="4" rows="4" class="uk-text-area" type="text" name="fizik_text" id="fizik_text" placeholder="Текст физ лица" required></textarea>
+            <div class="form-group green-border-focus">
+                <textarea class="form-control"  name="fizik_text" id="fizik_text" rows="5" style="resize: none;" placeholder="Текст для физ лица"></textarea>
             </div>
 
             <div class="uk-margin" uk-margin>
@@ -47,12 +45,6 @@
             <button type="submit" name="submit" class="btn btn-primary">Отправить</button>
 
         </form>
-
     </div>
 
 @endsection
-
-{{--$category = $request->input('category');--}}
-{{--$type = $request->input('type');--}}
-{{--$title = $request->input('title');--}}
-{{--$text = $request->input('text');--}}
