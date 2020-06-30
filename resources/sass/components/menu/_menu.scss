@@ -181,6 +181,7 @@
           }
           &:hover {
             background-color: $black;
+
             .menu_wrapper-item-main_menu-item-text {
               border-bottom: 1px solid $black;
             }
@@ -243,6 +244,8 @@
 
                 &:hover {
                   background-color: $black;
+                  border-bottom: 1px solid $dblack;
+
                   a {
                     color: $white;
                   }
