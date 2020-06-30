@@ -29,6 +29,10 @@ class BlogController extends Controller
     public function postDetails($id)
     {
         $post = Post::find($id);
+        if(is_null($post)) {
+            return redirect('404');
+        }
+
         return view('pages.blog.blog_post',['post' => $post]);
     }
 
