@@ -3,7 +3,7 @@
         <div class="footer_wrapper-item">
             <div class="footer_wrapper-item_logo">
                 <a href="/">
-                ЛОГО
+                    <img class="header_wrapper-item_logo-item" src="/images/icons/main_logo.png" alt="Logo"/>
                 </a>
             </div>
             <div class="footer_wrapper-item_info">
@@ -78,9 +78,6 @@
                             <li><span>Личный кабинет</span></li>
                             <li><span>Трекинг заказа</span></li>
                             <li><span>Корзина</span></li>
-                            <li><span>Категории</span></li>
-                            <li><span>Категории</span></li>
-                            <li><span>Категории</span></li>
                         </ul>
                     </div>
                 </div>

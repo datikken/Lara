@@ -1,7 +1,7 @@
 footer {
   display: block;
   width: 100%;
-  background: $black;
+  background: $dblack;
   overflow: hidden;
 
   @include breakpoint($medium) {
