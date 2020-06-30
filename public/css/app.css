@@ -518,10 +518,7 @@ b {
   margin-bottom: 5px;
   display: block;
   text-decoration: none;
-}
-.header_wrapper-item_contacts-tel:hover {
-  text-decoration: none;
-  color: #40404c;
+  cursor: pointer;
 }
 .header_wrapper-item_contacts-email {
   font-style: normal;
@@ -2383,40 +2380,34 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .viewed {
-  height: 156px;
   width: 100%;
   position: relative;
 }
 @media screen and (min-width: 600px) {
   .viewed {
     margin-bottom: 50px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    display: block;
+    overflow: hidden;
     width: 270px;
-    max-height: 401px;
   }
 }
-.viewed::-webkit-scrollbar {
+.viewed_wrapper {
+  display: flex;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 335px;
+}
+.viewed_wrapper::-webkit-scrollbar {
   display: none;
   background-color: #e9e9ea;
   width: 2px;
 }
 @media screen and (min-width: 600px) {
-  .viewed::-webkit-scrollbar {
+  .viewed_wrapper::-webkit-scrollbar {
     display: block;
   }
 }
-.viewed::-webkit-scrollbar-thumb {
+.viewed_wrapper::-webkit-scrollbar-thumb {
   background: #bb3cfd;
-}
-.viewed_wrapper {
-  display: flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
-.viewed_wrapper::-webkit-scrollbar {
-  display: none;
 }
 @media screen and (min-width: 600px) {
   .viewed_wrapper {
@@ -2497,7 +2488,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border-bottom: 1px solid #e9e9ea;
 }
 .viewed_wrapper-item_text-heading {
-  font-family: "Montserrat", sans-serif;
+  font-family: "MontserratSemiBold";
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -2507,6 +2498,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #292930;
   margin-bottom: 10px;
   padding-top: 19px;
+  max-width: 150px;
 }
 @media screen and (min-width: 1030px) {
   .viewed_wrapper-item_text-heading {
@@ -2515,7 +2507,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .viewed_wrapper-item_text-heading-item {
   font-weight: bold !important;
-  font-size: 14px;
+  font-size: 12px;
 }
 .viewed_wrapper-item_text-heading span {
   font-weight: 200;
@@ -2567,7 +2559,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   width: 170px;
   border-bottom: 1px solid #fdd935;
   margin-top: 15px;
-  margin-bottom: 30px;
 }
 
 .sales {
@@ -6546,9 +6537,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     text-align: right;
     letter-spacing: 0.02em;
   }
-}
-.cart_wrap-item_inner-table {
-  border-top: 1px solid #e9e9ea;
 }
 @media screen and (min-width: 1030px) {
   .cart_wrap-item_inner-table {

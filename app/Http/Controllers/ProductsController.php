@@ -26,12 +26,12 @@ class ProductsController extends Controller
             $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');
         }
 
+
         return view('pages.index', ['products' => $products, 'slides' => $slides ]);
     }
     public function index()
     {
         $products = Product::paginate(15);
-
 
         foreach ($products as $product) {
             $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');

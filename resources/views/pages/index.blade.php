@@ -28,7 +28,8 @@
                 @include('components.sales.sales_eco')
             </div>
 
-            {{--@include('components.viewed.viewed')--}}
+            @include('components.viewed.viewed')
+
         </div>
 
         <div class="main_column">

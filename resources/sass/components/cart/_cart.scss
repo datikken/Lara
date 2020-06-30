@@ -174,7 +174,6 @@
           }
         }
         &-table {
-          border-top: 1px solid $light_gray;
           @include breakpoint($medium) {
             margin-bottom: 40px;
             padding-bottom: 20px;

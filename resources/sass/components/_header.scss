@@ -44,6 +44,7 @@
             top: -0.2rem;
           }
         }
+
         &-tel {
           font-style: normal;
           font-weight: 600;
@@ -55,12 +56,9 @@
           margin-bottom: 5px;
           display: block;
           text-decoration: none;
-
-          &:hover {
-            text-decoration: none;
-            color: $black;
-          }
+          cursor: pointer;
         }
+
         &-email {
           font-style: normal;
           font-weight: normal;

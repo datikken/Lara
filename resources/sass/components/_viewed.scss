@@ -1,35 +1,31 @@
 .viewed {
-  height: 156px;
   width: 100%;
   position: relative;
 
   @include breakpoint($phone) {
     margin-bottom: 50px;
-    overflow-x: hidden;
-    overflow-y: scroll; display: block;
+    overflow: hidden;
     width: 270px;
-    max-height: 401px;
-  }
-
-  &::-webkit-scrollbar {
-    display: none;
-    @include breakpoint($phone) {
-      display: block;
-    }
-    background-color: $light_gray;
-    width: 2px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $purple;
   }
 
   &_wrapper {
     display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 335px;
 
     &::-webkit-scrollbar {
       display: none;
+      background-color: $light_gray;
+      width: 2px;
+
+      @include breakpoint($phone) {
+          display: block;
+      }
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $purple;
     }
 
     @include breakpoint($phone) {
@@ -106,7 +102,7 @@
         }
 
         &-heading {
-          font-family: $font;
+          font-family: $semifont;
           font-style: normal;
           font-weight: 500;
           font-size: 12px;
@@ -116,6 +112,7 @@
           color: $dblack;
           margin-bottom: 10px;
           padding-top: 19px;
+          max-width: 150px;
 
           @include breakpoint($medium) {
             padding-top: 0;
@@ -123,7 +120,7 @@
 
           &-item {
             font-weight: bold!important;
-            font-size: 14px;
+            font-size: 12px;
           }
 
            span {
@@ -179,7 +176,6 @@
             width: 170px;
             border-bottom: 1px solid $yellow;
             margin-top: 15px;
-            margin-bottom: 30px;
           }
         }
       }
