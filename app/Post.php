@@ -26,4 +26,9 @@ class Post extends Model
     {
         return $this->hasMany('App\Like');
     }
+
+    public function id()
+    {
+        return $this->id;
+    }
 }

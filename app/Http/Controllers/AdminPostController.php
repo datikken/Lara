@@ -41,7 +41,31 @@ class AdminPostController extends Controller
             'created_at' => \Carbon\Carbon::now()
         );
 
-        DB::table('posts')->insert($arr);
+        $post = new Post($arr);
+        $post->save();
+
+        return redirect()->route('adminDisplayBlog');
+    }
+
+    public function updatePost(Request $request, $id)
+    {
+        $category = $request->input('category');
+        $heading = $request->input('heading');
+        $description = $request->input('description');
+        $author = $request->input('author');
+        $content = $request->input('content');
+
+        $arr = array(
+            'category' => $category,
+            'heading' => $heading,
+            'description' => $description,
+            'author' => $author,
+            'content' => $content,
+            'created_at' => \Carbon\Carbon::now()
+        );
+
+        $post = Post::where('id', $id)->update($arr);
+
         return redirect()->route('adminDisplayBlog');
     }
 
@@ -82,8 +106,8 @@ class AdminPostController extends Controller
     public function editPost($id)
     {
         $post = Post::find($id);
-//        dump($post->content, gettype($post));
-        return view('admin.blog.edit', ['post' => $post]);
+
+        return view('admin.blog.edit', ['post' => $post, 'id' => $post['id']]);
     }
 
 }
