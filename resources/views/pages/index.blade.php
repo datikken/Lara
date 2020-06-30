@@ -22,7 +22,7 @@
                 @include('components.banner.banner')
             </div>
 
-            @include('components.news.news')
+            @include('components.news.news', ['news' => $news])
 
             <div class="desktop-hide">
                 @include('components.sales.sales_eco')

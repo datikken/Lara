@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Post_Comments;
+use Illuminate\Support\Facades\URL;
 
 class Post extends Model
 {
@@ -30,5 +31,11 @@ class Post extends Model
     public function id()
     {
         return $this->id;
+    }
+
+    public function url()
+    {
+        $id = $this->id;
+        URL::to('/blog/' . $id);
     }
 }

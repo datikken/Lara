@@ -16,7 +16,7 @@
 
     @include breakpoint($phone) {
       padding-right: 20px;
-      max-height: 451px;
+      max-height: 378px;
     }
 
     &::-webkit-scrollbar {
@@ -137,12 +137,14 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          background: $white;
+          background-color: $light_gray;
 
           &-inner {
             @include bg(contain, center);
             img {
-              padding-top: 10px;
+                height: 100%!important;
+                width: 100%!important;
+                object-fit: cover;
             }
           }
         }
@@ -161,6 +163,7 @@
             flex-direction: column;
             justify-content: space-between;
             flex-basis: 60%;
+            padding-right: 10px;
 
             &-heading {
               font-family: $font;

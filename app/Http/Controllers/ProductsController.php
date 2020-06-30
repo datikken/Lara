@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\URL;use stdClass;
 use App\MainSliderImage;
 use App\Product;
 use App\Cart;
@@ -12,8 +14,9 @@ use App\Includes\HelperString;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\SendEmailController;
 use Illuminate\Support\Facades\Storage;
-use stdClass;
+use App\Post;
 use Auth;
+
 
 class ProductsController extends Controller
 {
@@ -21,13 +24,17 @@ class ProductsController extends Controller
     {
         $slides = MainSliderImage::all();
         $products = Product::all();
+        $posts = Post::all();
 
         foreach ($products as $product) {
             $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');
         }
 
+        foreach ($posts as $post) {
+            $post['url'] = URL::to('/blog') .'/'. $post->id();
+        }
 
-        return view('pages.index', ['products' => $products, 'slides' => $slides ]);
+        return view('pages.index', ['products' => $products, 'slides' => $slides, 'news' => $posts ]);
     }
     public function index()
     {
