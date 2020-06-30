@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 
 @section('center')
-    <h2 class="uk-heading-small">Редактировать блок информации</h2>
-
     <form action="/admin/editInformationForm/{{$item->id}}" method="post" enctype="multipart/form-data">
 
         {{csrf_field()}}
