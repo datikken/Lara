@@ -1532,7 +1532,7 @@ footer .footer_wrapper {
 @media screen and (min-width: 1030px) {
   footer .footer_wrapper {
     margin: 0 auto;
-    padding-top: 0px;
+    padding-top: 50px;
     height: 100%;
     display: flex !important;
     align-items: flex-start;
@@ -1550,7 +1550,6 @@ footer .footer_wrapper {
 footer .footer_wrapper-item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   margin: 0 0 30px 16px;
 }
 @media screen and (min-width: 600px) {
@@ -1683,6 +1682,11 @@ footer .footer_wrapper-item_tel {
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 20px;
+}
+footer .footer_wrapper-item_tel-phone {
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
 }
 footer .footer_wrapper-item_tel span a {
   text-decoration: none;

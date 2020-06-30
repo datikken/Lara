@@ -22,7 +22,7 @@ footer {
 
     @include breakpoint($medium) {
       margin: 0 auto;
-      padding-top: 0px;
+      padding-top: 50px;
       height: 100%;
       @include flex(flex-start, flex-start, wrap);
       max-width: $layoutw;
@@ -36,7 +36,6 @@ footer {
     &-item {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       margin: 0 0 30px 16px;
 
       @include breakpoint($phone) {
@@ -160,6 +159,12 @@ footer {
         color: $white;
         @include flex(center, flex-start, wrap);
         margin-bottom: 20px;
+
+        &-phone {
+          cursor: pointer;
+          color: #fff;
+          text-decoration: none;
+        }
 
         span {
           a {

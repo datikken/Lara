@@ -13,7 +13,7 @@
                 <div class="footer_wrapper-item_tel-icon">
                     <img src='/images/header/contact.svg' alt="Telephone"/>
                 </div>
-                <span>8 800 555 33 22</span>
+                <a href="tel:8 800 555 33 22" class="footer_wrapper-item_tel-phone">8 800 555 33 22</a>
             </div>
             <div class="footer_wrapper-item_adress">
                 <span>149390 Россия, Москва, ул. Набережные челны, д. 123,<br/> корпус 56, строение 88, подъезд 6, офис 987</span>
