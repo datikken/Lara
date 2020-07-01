@@ -39,13 +39,18 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::paginate(15);
+        $posts = Post::all();
 
         foreach ($products as $product) {
             $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');
             $product['name'] = json_decode($product['name_econom']);
         }
 
-        return view('pages.catalog', compact("products"));
+        foreach ($posts as $post) {
+            $post['url'] = URL::to('/blog') .'/'. $post->id();
+        }
+
+        return view('pages.catalog', ['products' => $products, 'news' => $posts]);
     }
 
     public function productDetails(Request $request, $id)

@@ -10,9 +10,13 @@
     <div class="left_column mobile-hide">
             @include('components.catalog_filters.catalog_filters')
             @include('components.banner.catalog_banner')
+
         <div class="mobile-hide">
-            {{--@include('components.viewed.viewed')--}}
+            @include('components.viewed.viewed')
         </div>
+
+        @include('components.news.news', ['news' => $news])
+
     </div>
 
     <div class="right_column">
