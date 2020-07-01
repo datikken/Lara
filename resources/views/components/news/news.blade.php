@@ -1,9 +1,9 @@
 <div class="news">
-    <div class="news_wrapper">
+    <div class="news_wrapper-heading">
+        <span>Последние новости</span>
+    </div>
 
-        <div class="news_wrapper-heading">
-            <span>Последние новости</span>
-        </div>
+    <div class="news_wrapper">
 
         <div class="news_wrapper-block">
             @foreach($news as $new)
