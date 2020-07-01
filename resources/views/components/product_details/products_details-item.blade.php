@@ -1,4 +1,4 @@
-<?php dump($product['params']); ?>
+<?php //dump($product['params']); ?>
 
 <div class="details">
     <div class="details_wrap">
@@ -71,9 +71,8 @@
             @foreach ($product['params'] as $key => $val)
                 {{--@php dump($key); @endphp--}}
                 <div class="details_wrap-info_item">
-                    <div class="details_wrap-info_item-field">
-                        <span>{{ $key }}</span> : <span>{{ $val }}</span>
-
+                    <div class="details_wrap-info_item-field" style="display: flex;">
+                        <span>@php if($key != 'STMC') echo $key; @endphp</span> : <span>{{ $val }}</span>
                     </div>
                 </div>
             @endforeach
