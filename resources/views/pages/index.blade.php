@@ -1,56 +1,57 @@
 @extends('layouts.index')
 
-@section('center')
-    <div class="desktop-hide">
-        @include('components.main_swiper.main_swiper', ['slides' => $slides])
-    </div>
+{{--@section('center')--}}
+    {{--<div class="desktop-hide">--}}
+        {{--@include('components.main_swiper.main_swiper', ['slides' => $slides])--}}
+    {{--</div>--}}
 
-    <div class="mobile-hide">
-        @include('components.main_swiper.main_swiper', ['slides' => $slides])
-    </div>
+    {{--<div class="mobile-hide">--}}
+        {{--@include('components.main_swiper.main_swiper', ['slides' => $slides])--}}
+    {{--</div>--}}
 
-    @include('components.banner.banner_mob')
+    {{--@include('components.banner.banner_mob')--}}
 
-    <div class="desktop-hide">
-        @include('components.sales.sales_slider')
-        @include('components.best_printers.BestPrintersSlider')
-    </div>
+    {{--<div class="desktop-hide">--}}
+        {{--@include('components.sales.sales_slider')--}}
+        {{--@include('components.best_printers.BestPrintersSlider')--}}
+    {{--</div>--}}
 
-    <div class="columns desktop-layout">
-        <div class="left_column">
-            <div class="mobile-hide">
-                @include('components.banner.banner')
-            </div>
+    {{--<div class="columns desktop-layout">--}}
+        {{--<div class="left_column">--}}
+            {{--<div class="mobile-hide">--}}
+                {{--@include('components.banner.banner')--}}
+            {{--</div>--}}
 
-            @include('components.news.news', ['news' => $news])
+            {{--@include('components.news.news', ['news' => $news])--}}
 
-            <div class="desktop-hide">
-                @include('components.sales.sales_eco')
-            </div>
+            {{--<div class="desktop-hide">--}}
+                {{--@include('components.sales.sales_eco')--}}
+            {{--</div>--}}
 
-            @include('components.viewed.viewed')
+            {{--@include('components.viewed.viewed')--}}
 
-        </div>
+        {{--</div>--}}
 
-        <div class="main_column">
-            @include('components.sales.sales')
+        {{--<div class="main_column">--}}
+            {{--@include('components.sales.sales')--}}
 
-            <div class="mobile-hide">
-                @include('components.sales.sales_slider')
-            </div>
+            {{--<div class="mobile-hide">--}}
+                {{--@include('components.sales.sales_slider')--}}
+            {{--</div>--}}
 
-            @include('components.sales.sales_best')
+            {{--@include('components.sales.sales_best')--}}
 
-            <div class="mobile-hide">
-                @include('components.sales.sales_eco')
-            </div>
+            {{--<div class="mobile-hide">--}}
+                {{--@include('components.sales.sales_eco')--}}
+            {{--</div>--}}
 
-        </div>
-    </div>
+        {{--</div>--}}
+    {{--</div>--}}
 
-    <div class="desktop-hide">
-        @include('components.banner.banner')
-    </div>
+    {{--<div class="desktop-hide">--}}
+        {{--@include('components.banner.banner')--}}
+    {{--</div>--}}
 
-    @include('components.owl.owl', ['products' => $products])
-@endsection
+    {{--@include('components.owl.owl', ['products' => $products])--}}
+{{--@endsection--}}
+@include('emails.verify', ['url' => '#'])

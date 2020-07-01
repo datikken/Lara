@@ -4,6 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
     <style>
+        body {
+            font-family: 'Montserrat';
+        }
+        @font-face {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+        }
         .email_header {
             display: block;
             height: 40px;
@@ -207,7 +216,7 @@
                                     <span class="main_desc">
                                         Если кнопка не работает, то скопируйте ссылку и откройте через адресную строку браузера.
                                         <br/>
-                                            {{ $url }}
+                                        <a href="http://deonis39.ru/email/verify/10?expires=1593612865&amp;signature=b48842ff96e4d8430d2e2e9ad917b37f1bdc6197065459f8f8ebaa074ffc0a72" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://deonis39.ru/email/verify/10?expires%3D1593612865%26signature%3Db48842ff96e4d8430d2e2e9ad917b37f1bdc6197065459f8f8ebaa074ffc0a72&amp;source=gmail&amp;ust=1593695863009000&amp;usg=AFQjCNEQwWBR8Kl209ab8IHgCXeoHjZD5A">http://deonis39.ru/email/<wbr>verify/10?expires=1593612865&amp;<wbr>signature=<wbr>b48842ff96e4d8430d2e2e9ad917b3<wbr>7f1bdc6197065459f8f8ebaa074ffc<wbr>0a72</a>
                                         <br/>
                                         <span style="padding-top: 10px;">Если вы не регистрировались на нашем сайте и получили письмо по ошибке, пожалуста, проигнорируйте его.</span>
                                     </span>
