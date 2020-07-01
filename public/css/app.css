@@ -3424,7 +3424,13 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   left: 16px;
   width: 100%;
   background: #fff;
+}
+.news_wrapper-heading:after {
+  content: "";
+  display: block;
+  width: 150px;
   border-bottom: 1px solid #fdd935;
+  padding-top: 15px;
 }
 @media screen and (min-width: 600px) {
   .news_wrapper-heading {

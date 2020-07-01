@@ -45,7 +45,14 @@
       left: 16px;
       width: 100%;
       background: #fff;
-      border-bottom: 1px solid #fdd935;
+
+      &:after {
+         content: '';
+         display: block;
+         width: 150px;
+         border-bottom: 1px solid #fdd935;
+         padding-top: 15px;
+      }
 
       @include breakpoint($phone) {
         left: 0;
