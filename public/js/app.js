@@ -61606,6 +61606,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  new _functions_validator__WEBPACK_IMPORTED_MODULE_5__["default"]();
   new _controllers_OrdersHistoryController__WEBPACK_IMPORTED_MODULE_25__["default"]();
   new _controllers_DadataController__WEBPACK_IMPORTED_MODULE_24__["default"]();
   new _functions_validator__WEBPACK_IMPORTED_MODULE_5__["default"]();
@@ -63872,14 +63873,34 @@ var RegisterController = /*#__PURE__*/function () {
 
   _createClass(RegisterController, [{
     key: "_setError",
-    value: function _setError(str) {
-      var item = document.querySelector('.card-greet_text');
-      console.warn(str);
+    value: function _setError(str, type) {
+      var item, error;
 
-      if (str === 'The given data was invalid.') {
-        item.innerText = 'Проверьте введенные данные.';
-        item.classList.add('invalid');
+      if (type === 'register') {
+        item = document.querySelector('[data-register]');
+      } else {
+        item = document.querySelector('[data-auth]');
       }
+
+      if (str.indexOf('required') > 0) {
+        item.innerText = 'Проверьте пароль.';
+        item.classList.add('invalid');
+        error = true;
+      }
+
+      if (str.indexOf('email') > 0) {
+        item.innerText = 'Проверьте почту.';
+        item.classList.add('invalid');
+        error = true;
+      }
+
+      if (str.indexOf('taken') > 0) {
+        item.innerText = 'Почтовый ящик уже зарегистрирован.';
+        item.classList.add('invalid');
+        error = true;
+      }
+
+      console.warn('_setError', str, str.indexOf('taken'));
     }
   }, {
     key: "_pickFaceType",
@@ -63905,15 +63926,18 @@ var RegisterController = /*#__PURE__*/function () {
   }, {
     key: "_agreementCheck",
     value: function _agreementCheck() {
+      var item = document.querySelector('[data-register]');
       var agreement = document.querySelector('.agreement');
       var check = agreement.querySelector('.checkbox-wrap_arrow');
       var span = agreement.querySelector('span');
 
       if (check.classList.contains('invisible')) {
         span.classList.add('invalid');
+        item.innerText = 'Вам необходимо принять пользовательское соглашение.';
         return false;
       } else {
         span.classList.remove('invalid');
+        item.innerText = 'Зарегистрируйте свой аккаунт используя любой способ.';
         return true;
       }
     }
@@ -63921,8 +63945,7 @@ var RegisterController = /*#__PURE__*/function () {
     key: "_validator",
     value: function _validator(form) {
       var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-      window.app.validator.formValidate([], jquery__WEBPACK_IMPORTED_MODULE_0___default()(form));
-      var status;
+      var status = false;
 
       if (type != '') {
         status = this._agreementCheck();
@@ -63931,6 +63954,12 @@ var RegisterController = /*#__PURE__*/function () {
       }
 
       status && this._ajaxCall(form);
+
+      try {
+        window.app.validator.formValidate([], jquery__WEBPACK_IMPORTED_MODULE_0___default()(form));
+      } catch (err) {
+        this._setError(err.message, type);
+      }
     }
   }, {
     key: "_ajaxCall",
@@ -63938,6 +63967,7 @@ var RegisterController = /*#__PURE__*/function () {
       var url = form.getAttribute('action');
       var method = form.getAttribute('method');
       var inputs = form.querySelectorAll('input');
+      var that = this;
       var dataObj = {};
       inputs.forEach(function (npt) {
         var name = npt.getAttribute('name');
@@ -63954,7 +63984,13 @@ var RegisterController = /*#__PURE__*/function () {
           window.location.href = protocol + '//' + host + "/home";
         },
         error: function error(_error) {
-          console.log(_error);
+          console.warn('an error occured in ajax');
+
+          if (_error.responseText.indexOf('taken') > 0) {
+            that._setError(_error.responseText, 'register');
+          } else {
+            that._setError(_error.responseText, 'register');
+          }
         }
       });
     }
@@ -64277,13 +64313,10 @@ var Validator = function Validator() {
         return lodash__WEBPACK_IMPORTED_MODULE_0___default.a.isDate(val);
       },
       "float": function float(val) {
-        return validator.isFloat(val);
+        return app.validator.isFloat(val);
       },
       "int": function int(val) {
-        return validator.isInt(val);
-      },
-      number: function number(val) {
-        return validator.isNumeric(val);
+        return app.validator.isInt(val);
       },
       string: function string(val) {
         return lodash__WEBPACK_IMPORTED_MODULE_0___default.a.isString(val);

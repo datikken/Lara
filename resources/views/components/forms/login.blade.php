@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card-header">{{ __('Вход') }}</div>
             <div class="card-greet">
-                <p class="card-greet_text">
+                <p class="card-greet_text" data-auth>
                     С возвращением.
                     Войдите в свой аккаунт
                 </p>

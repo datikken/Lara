@@ -4,7 +4,6 @@ import _ from 'lodash';
 class Validator {
     constructor() {
         window.app = {};
-
         window.app.validator = {
             validateMessage: '',
             config: {
@@ -92,13 +91,10 @@ class Validator {
                     return _.isDate(val);
                 },
                 float: function (val) {
-                    return validator.isFloat(val);
+                    return app.validator.isFloat(val);
                 },
                 int: function (val) {
-                    return validator.isInt(val);
-                },
-                number: function (val) {
-                    return validator.isNumeric(val);
+                    return app.validator.isInt(val);
                 },
                 string: function (val) {
                     return _.isString(val);

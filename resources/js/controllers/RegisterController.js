@@ -12,15 +12,35 @@ class RegisterController {
         });
     }
 
-    _setError(str) {
-        let item = document.querySelector('.card-greet_text');
+    _setError(str, type) {
+        let item, error;
 
-        console.warn(str);
-
-        if(str === 'The given data was invalid.') {
-            item.innerText = 'Проверьте введенные данные.'
-            item.classList.add('invalid');
+        if(type === 'register') {
+            item = document.querySelector('[data-register]');
+        } else {
+            item = document.querySelector('[data-auth]');
         }
+
+        if(str.indexOf('required') > 0) {
+            item.innerText = 'Проверьте пароль.'
+            item.classList.add('invalid');
+            error = true;
+        }
+
+        if(str.indexOf('email') > 0) {
+            item.innerText = 'Проверьте почту.'
+            item.classList.add('invalid');
+            error = true;
+        }
+
+        if(str.indexOf('taken') > 0) {
+            item.innerText = 'Почтовый ящик уже зарегистрирован.'
+            item.classList.add('invalid');
+            error = true;
+        }
+
+        console.warn('_setError', str, str.indexOf('taken'));
+
     }
     _pickFaceType(etc) {
         let inputs = document.querySelectorAll('.form_type-item');
@@ -45,21 +65,23 @@ class RegisterController {
     }
 
     _agreementCheck() {
+        let item = document.querySelector('[data-register]');
         let agreement = document.querySelector('.agreement');
         let check = agreement.querySelector('.checkbox-wrap_arrow');
         let span = agreement.querySelector('span');
 
         if(check.classList.contains('invisible')) {
-            span.classList.add('invalid')
+            span.classList.add('invalid');
+            item.innerText = 'Вам необходимо принять пользовательское соглашение.'
             return false;
         } else {
             span.classList.remove('invalid')
+            item.innerText = 'Зарегистрируйте свой аккаунт используя любой способ.'
             return true;
         }
     }
     _validator(form, type='') {
-        window.app.validator.formValidate([], $(form));
-        let status;
+        let status = false;
 
         if(type != '') {
             status = this._agreementCheck();
@@ -68,12 +90,19 @@ class RegisterController {
         }
 
         status && this._ajaxCall(form);
+
+        try {
+            window.app.validator.formValidate([], $(form));
+        } catch(err) {
+            this._setError(err.message, type)
+        }
     }
 
     _ajaxCall(form) {
         let url = form.getAttribute('action');
         let method = form.getAttribute('method');
-        let inputs = form.querySelectorAll('input')
+        let inputs = form.querySelectorAll('input');
+        let that = this;
         let dataObj = {};
 
         inputs.forEach((npt) => {
@@ -93,7 +122,13 @@ class RegisterController {
                 window.location.href = protocol + '//' + host + `/home`;
             },
             error: function (error) {
-                console.log(error);
+                console.warn('an error occured in ajax');
+
+                if(error.responseText.indexOf('taken') > 0) {
+                    that._setError(error.responseText, 'register');
+                } else {
+                    that._setError(error.responseText, 'register');
+                }
             }
         });
     }

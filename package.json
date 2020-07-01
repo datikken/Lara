@@ -27,6 +27,7 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
+        "cucumber": "^6.0.5",
         "fs": "0.0.1-security",
         "gsap": "^3.3.3",
         "husky": "^4.2.5",

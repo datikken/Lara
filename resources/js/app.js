@@ -32,6 +32,7 @@ import DashController from './controllers/DashController'
 import BlogPostController from './controllers/BlogPostController'
 
 $(document).ready(function() {
+    new Validator();
     new OrdersHistoryController();
     new DadataController();
     new Validator();

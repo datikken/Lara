@@ -228,6 +228,7 @@ a:hover {
 
 .error {
   background-color: #e9e9ea;
+  padding-bottom: 180px;
 }
 
 .error404 {

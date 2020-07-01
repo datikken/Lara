@@ -4,7 +4,7 @@
                 <div class="card-header">{{ __('Регистрация') }}</div>
 
                 <div class="card-greet register_greet">
-                    <p class="card-greet_text">
+                    <p class="card-greet_text" data-register>
                         Зарегистрируйте свой аккаунт используя любой способ
                     </p>
                 </div>
