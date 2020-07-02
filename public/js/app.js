@@ -63776,31 +63776,62 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var ProfileController = /*#__PURE__*/function () {
   _createClass(ProfileController, [{
+    key: "_passwordReset",
+    value: function _passwordReset(el) {
+      var form = el.querySelector('.dchange').querySelector('form');
+      var url = form.getAttribute('action');
+      var btn = el.querySelector('.dchange_btn');
+      btn.addEventListener('click', function () {
+        var inputs = form.querySelectorAll('input');
+        var dataObj = {};
+        inputs.forEach(function (el) {
+          var name = el.getAttribute('name');
+          var val = el.value;
+          dataObj[name] = val;
+        });
+        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajaxSetup({
+          headers: {
+            'X-CSRF-TOKEN': window.token
+          }
+        });
+        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+          method: 'POST',
+          url: "".concat(url),
+          data: dataObj,
+          success: function success(status) {
+            console.log(status);
+          },
+          error: function error(_error) {
+            console.warn(_error);
+          }
+        });
+      });
+    }
+  }, {
     key: "_ajaxInputsSubmit",
     value: function _ajaxInputsSubmit(el) {
-      var formGroups = el.querySelectorAll('form');
+      var formGroups = el.querySelectorAll('.one_input_form');
       formGroups.forEach(function (el, i) {
         var btn = el.querySelector('button');
-        var dataObj = {};
         btn.addEventListener('click', function (e) {
           e.preventDefault();
+          var method = 'get';
           var token = formGroups[i].querySelector('[name="_token"]').value;
           var url = formGroups[i].getAttribute('action');
           var a = formGroups[i].querySelector('.input_wrap').querySelector('input');
           var name = a.getAttribute('name');
           var val = a.value;
+          var dataObj = {};
           dataObj[name] = val;
-          console.warn(url);
           jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
-            method: "get",
+            method: method,
             url: "".concat(url),
             data: dataObj,
-            token: token,
             success: function success(status) {
               console.log(status);
             },
-            error: function error(_error) {
-              console.warn(_error);
+            error: function error(_error2) {
+              console.warn(_error2);
             }
           });
         });
@@ -63831,6 +63862,8 @@ var ProfileController = /*#__PURE__*/function () {
       this._setListeners(el);
 
       this._ajaxInputsSubmit(el);
+
+      this._passwordReset(el);
     }
   }
 

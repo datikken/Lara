@@ -32,7 +32,7 @@
                 </div>
                 <div class="dfill_wrap-form_top-right">
                     <div class="dfill_wrap-form_top-right_inner">
-                        <form class="form-group" enctype="multipart/form-data" action="/home/collectProfileData" method="post">
+                        <form class="form-group one_input_form" enctype="multipart/form-data" action="/home/collectProfileData" method="get">
 
                             {{csrf_field()}}
                             <label for="name">Имя <span>*</span></label>
@@ -48,7 +48,7 @@
                             </div>
                         </form>
 
-                        <form class="form-group" enctype="multipart/form-data" action="/home/collectProfileData" method="post">
+                        <form class="form-group one_input_form" enctype="multipart/form-data" action="/home/collectProfileData" method="get">
 
                             {{csrf_field()}}
                             <label for="name">Фамилия <span>*</span></label>
@@ -62,7 +62,7 @@
                             </div>
                         </form>
 
-                        <form class="form-group" enctype="multipart/form-data" action="/home/collectProfileData" method="post">
+                        <form class="form-group one_input_form" enctype="multipart/form-data" action="/home/collectProfileData" method="get">
 
                             {{csrf_field()}}
                             <label for="name">Телефон <span>*</span></label>
@@ -77,7 +77,7 @@
                             </div>
                         </form>
 
-                        <form class="form-group" enctype="multipart/form-data" action="/home/collectProfileData" method="post">
+                        <form class="form-group one_input_form" enctype="multipart/form-data" action="/home/collectProfileData" method="get">
                             {{csrf_field()}}
 
                             <label for="name">Адрес электронной почты <span>*</span></label>
@@ -99,26 +99,25 @@
        <a class="dfill_change" href="#">изменить пароль</a>
 
         <div class="dchange">
-            <form action="/" method="post">
+            <form action="{{ route('StoreNewPassword') }}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
-                <div class="form-group">
-                    <label for="name">Действуйщий пароль <span>*</span></label>
-                    <input type="text" class="form-control" name="password" placeholder="Имя" required>
+                <div class="form-group input_wrap">
+                    <label for="name">Действуйщий пароль<span>*</span></label>
+                    <input id="password" type="password" class="form-control" name="current_password" autocomplete="current-password">
                 </div>
 
-                <div class="form-group">
-                    <label for="name">Новый пароль <span>*</span></label>
-                    <input type="text" class="form-control" name="newpassword" placeholder="Имя" required>
+                <div class="form-group input_wrap">
+                    <label for="name">Новый пароль<span>*</span></label>
+                    <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
                 </div>
 
-                <div class="form-group">
-                    <label for="name">Подтвердите пароль <span>*</span></label>
-                    <input type="text" class="form-control" name="dpassword" placeholder="Имя" required>
+                <div class="form-group input_wrap">
+                    <label for="name">Подтвердите пароль<span>*</span></label>
+                    <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
                 </div>
 
-                <button>
-                    @include('components.btn.text_btn', [ 'class' => 'dchange_btn', 'text' => 'Сохранить изменения'])
-                </button>
+                @include('components.btn.text_btn', [ 'class' => 'dchange_btn', 'text' => 'Сохранить изменения'])
+
             </form>
 
             <div class="dchange_remind">

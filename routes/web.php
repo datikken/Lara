@@ -150,9 +150,14 @@ Route::get('admin/deleteAbout/{id}', ['uses' => "AdminAboutController@deleteAbou
 Route::get('/testStorage', function() {
     return "<img src=".Storage::url('product_images/product1.png').">";
 });
+
 //Test smtp
 Route::get('/mailtest', function() {
     dd(Config::get('mail'));
 });
+
+Route::get('change-password', 'ChangePasswordController@index');
+Route::post('StoreNewPassword', ['uses' => 'ChangePasswordController@store','as' => 'StoreNewPassword']);
+
 //Test email template
 Route::get('/mailtemplate', ['uses' => "SendEmailController@testEmailTemplate", 'as' => 'mailtemplate']);

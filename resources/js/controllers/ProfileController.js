@@ -1,14 +1,50 @@
 import $ from 'jquery';
 
 class ProfileController {
+    _passwordReset(el) {
+        let form = el.querySelector('.dchange').querySelector('form');
+        let url = form.getAttribute('action');
+        let btn = el.querySelector('.dchange_btn');
+
+        btn.addEventListener('click', function() {
+            let inputs = form.querySelectorAll('input');
+            let dataObj = {};
+
+            inputs.forEach((el) => {
+                let name = el.getAttribute('name');
+                let val = el.value;
+
+                dataObj[name] = val;
+            })
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
+
+            $.ajax({
+                method: 'POST',
+                url: `${url}`,
+                data: dataObj,
+                success: function (status) {
+
+                    console.log(status);
+
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+        });
+    }
     _ajaxInputsSubmit(el) {
-       let formGroups = el.querySelectorAll('form');
+       let formGroups = el.querySelectorAll('.one_input_form');
            formGroups.forEach((el,i) => {
               let btn = el.querySelector('button');
-              let dataObj = {};
-
                   btn.addEventListener('click', function(e) {
                      e.preventDefault();
+                     let method = 'get';
 
                      let token = formGroups[i].querySelector('[name="_token"]').value;
                      let url = formGroups[i].getAttribute('action');
@@ -16,16 +52,13 @@ class ProfileController {
                      let a = formGroups[i].querySelector('.input_wrap').querySelector('input');
                      let name = a.getAttribute('name');
                      let val = a.value;
-
+                     let dataObj = {};
                       dataObj[name] = val;
 
-                      console.warn(url);
-
                       $.ajax({
-                          method: "get",
+                          method,
                           url: `${url}`,
                           data: dataObj,
-                          token,
                           success: function (status) {
 
                               console.log(status);
@@ -56,6 +89,7 @@ class ProfileController {
         if(el) {
             this._setListeners(el);
             this._ajaxInputsSubmit(el);
+            this._passwordReset(el);
         }
     }
 }
