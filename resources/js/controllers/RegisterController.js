@@ -39,6 +39,12 @@ class RegisterController {
             error = true;
         }
 
+        if(str.indexOf('invalid') > 0) {
+            item.innerText = 'Проверьте правильность введенных данных.';
+            item.classList.add('invalid');
+            error = true;
+        }
+
         console.warn('_setError', str, str.indexOf('taken'));
 
     }
@@ -122,12 +128,12 @@ class RegisterController {
                 window.location.href = protocol + '//' + host + `/home`;
             },
             error: function (error) {
-                console.warn('an error occured in ajax');
+                console.warn('an error occured in ajax', error.responseJSON);
 
                 if(error.responseText.indexOf('taken') > 0) {
                     that._setError(error.responseText, 'register');
                 } else {
-                    that._setError(error.responseText, 'register');
+                    that._setError(error.responseText, 'login');
                 }
             }
         });

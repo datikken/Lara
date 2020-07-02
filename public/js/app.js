@@ -63900,6 +63900,12 @@ var RegisterController = /*#__PURE__*/function () {
         error = true;
       }
 
+      if (str.indexOf('invalid') > 0) {
+        item.innerText = 'Проверьте правильность введенных данных.';
+        item.classList.add('invalid');
+        error = true;
+      }
+
       console.warn('_setError', str, str.indexOf('taken'));
     }
   }, {
@@ -63984,12 +63990,12 @@ var RegisterController = /*#__PURE__*/function () {
           window.location.href = protocol + '//' + host + "/home";
         },
         error: function error(_error) {
-          console.warn('an error occured in ajax');
+          console.warn('an error occured in ajax', _error.responseJSON);
 
           if (_error.responseText.indexOf('taken') > 0) {
             that._setError(_error.responseText, 'register');
           } else {
-            that._setError(_error.responseText, 'register');
+            that._setError(_error.responseText, 'login');
           }
         }
       });
