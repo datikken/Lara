@@ -63790,13 +63790,14 @@ var ProfileController = /*#__PURE__*/function () {
           var name = a.getAttribute('name');
           var val = a.value;
           dataObj[name] = val;
+          console.warn(url);
           jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
             method: "get",
             url: "".concat(url),
             data: dataObj,
             token: token,
             success: function success(status) {
-              alert(status);
+              console.log(status);
             },
             error: function error(_error) {
               console.warn(_error);

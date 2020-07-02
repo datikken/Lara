@@ -46,7 +46,7 @@ class HomeController extends Controller
         if($address->count() > 0) {
             return view('pages.dash.adresses_fill', ['address' => $address]);
         } else {
-            return view('pages.dash.adresses_fill');
+            return view('pages.dash.adresses_fill',['address' => $address]);
         }
     }
 
@@ -186,7 +186,15 @@ class HomeController extends Controller
                 'lastname' => 'max:500'
             ])->validate();
 
-            DB::table('users_info')->where('user_id', $userId)->update(['lastname' => $lastname]);
+            $exists = DB::table('users_info')->where('user_id', $userId)->value('user_id');
+
+            dump($exists);
+
+            if(isset($exists)) {
+                DB::table('users_info')->where('user_id', $userId)->update(['lastname' => $lastname]);
+            } else {
+                DB::table('users_info')->insert(['lastname' => $lastname,'user_id' => $userId]);
+            }
         }
 
         if($tel) {

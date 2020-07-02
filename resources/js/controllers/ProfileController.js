@@ -19,13 +19,17 @@ class ProfileController {
 
                       dataObj[name] = val;
 
+                      console.warn(url);
+
                       $.ajax({
                           method: "get",
                           url: `${url}`,
                           data: dataObj,
                           token,
                           success: function (status) {
-                              alert(status);
+
+                              console.log(status);
+
                           },
                           error: function (error) {
                               console.warn(error);
