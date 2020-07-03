@@ -1,24 +1,17 @@
 @extends('layouts.index')
 
 @section('center')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Подтверждение почты.') }}</div>
 
-                <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('Подтверждение почты.') }}
-                        </div>
-                    @endif
+    <div class="verify">
+        <div class="verify_wrap">
+            <div class="verify_wrap_head">{{ __('Подтверждение почты.') }}</div>
 
-                    {{ __('Перед тем как войти, вам необходимо подтвердить почтовый ящик.') }}
-                    <a href="{{ route('verification.resend') }}">{{ __('Не получили письмо?') }}</a>
-                </div>
-            </div>
+            <div class="verify_wrap_text">{{ __('Перед тем как войти, вам необходимо подтвердить почтовый ящик.') }}</div>
+
+            <a class="verify_wrap_link" href="{{ route('verification.resend') }}">
+                @include('components.btn.text_btn', [ 'class' => 'flat_btn', 'text' => 'Не получили письмо?'])
+            </a>
         </div>
     </div>
-</div>
+
 @endsection

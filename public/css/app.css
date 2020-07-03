@@ -12108,3 +12108,62 @@ main {
   max-width: 200px;
   margin-bottom: 25px;
 }
+
+.verify {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+.verify_wrap {
+  width: 430px;
+  height: 225px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+.verify_wrap:before {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
+}
+.verify_wrap_head {
+  padding-top: 30px;
+  margin-bottom: 20px;
+  font-family: "MontserratSemiBold";
+}
+.verify_wrap_text {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #292930;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+.verify_wrap_link .flat_btn {
+  width: 200px !important;
+  height: 50px !important;
+  margin: 0 auto;
+  box-shadow: none !important;
+}
+.verify_wrap_link .flat_btn .action_btn-item {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+}
