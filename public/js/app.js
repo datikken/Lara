@@ -70342,89 +70342,90 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/dist/js/swiper.esm.bundle.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 /* eslint-disable */
 
 
 window.onload = function () {
   if (typeof swiper__WEBPACK_IMPORTED_MODULE_0__["default"] !== 'undefined') {
-    //   new Swiper('.landswiper', {
-    //     slidesPerView: 'auto',
-    //     containerClass: 'landswipe_swiper',
-    //     centeredSlides: true,
-    //     initialSlide: '2',
-    //     spaceBetween: 100,
-    //     loop: true,
-    //     autoplay: {
-    //         delay: 2500,
-    //         disableOnInteraction: false
-    //     },
-    //     pagination: {
-    //         el: '.swiper-pagination',
-    //         clickable: true,
-    //     }
-    // });
-    // let swiperMain = new Swiper('.bestPrinters_swiper', {
-    //     spaceBetween: 50,
-    //     navigation: {
-    //         nextEl: '.swiper-button-nextt',
-    //         prevEl: '.swiper-button-prevv',
-    //     },
-    //     pagination: {
-    //         el: '.swiper-pagination',
-    //     },
-    //     navigation: {
-    //         nextEl: '.swiper-button-next',
-    //         prevEl: '.swiper-button-prev',
-    //     }
-    // });
-    // let swiperV = new Swiper('.swiper-container-v', {
-    //     spaceBetween: 50,
-    //     pagination: {
-    //         el: '.swiper-pagination-v',
-    //     },
-    //     navigation: {
-    //         nextEl: '.swiper-button-nextt',
-    //         prevEl: '.swiper-button-prevv',
-    //     }
-    // });
-    // let slider = new Swiper('.best_printers', {
-    //     pagination: {
-    //         el: '.swiper-pagination-v',
-    //     },
-    //     direction: 'vertical',
-    //     navigation: {
-    //         nextEl: '.swiper-button-next',
-    //         prevEl: '.swiper-button-prev',
-    //     }
-    // });
-    // let feedBackSwiper = new Swiper('.feedback_swiper', {
-    //     // containerClass: 'owl_swiper',
-    //     activeSlideKey: '5',
-    //     centeredSlides: true,
-    //     loop: true,
-    //     autoplay: {
-    //         delay: 2500,
-    //         disableOnInteraction: false
-    //     },
-    //     breakpoints: {
-    //         1024: {
-    //             slidesPerView: 4,
-    //             spaceBetween: 10
-    //         },
-    //         768: {
-    //             slidesPerView: 3,
-    //             spaceBetween: 10
-    //         },
-    //         640: {
-    //             slidesPerView: 3,
-    //             spaceBetween: 10
-    //         },
-    //         320: {
-    //             slidesPerView: 2,
-    //             spaceBetween: 10
-    //         }
-    //     }
-    // });
+    new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.landswiper', {
+      slidesPerView: 'auto',
+      containerClass: 'landswipe_swiper',
+      centeredSlides: true,
+      initialSlide: '2',
+      spaceBetween: 100,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
+    });
+    var swiperMain = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.bestPrinters_swiper', _defineProperty({
+      spaceBetween: 50,
+      navigation: {
+        nextEl: '.swiper-button-nextt',
+        prevEl: '.swiper-button-prevv'
+      },
+      pagination: {
+        el: '.swiper-pagination'
+      }
+    }, "navigation", {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }));
+    var swiperV = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-container-v', {
+      spaceBetween: 50,
+      pagination: {
+        el: '.swiper-pagination-v'
+      },
+      navigation: {
+        nextEl: '.swiper-button-nextt',
+        prevEl: '.swiper-button-prevv'
+      }
+    });
+    var slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.best_printers', {
+      pagination: {
+        el: '.swiper-pagination-v'
+      },
+      direction: 'vertical',
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    });
+    var feedBackSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.feedback_swiper', {
+      // containerClass: 'owl_swiper',
+      activeSlideKey: '5',
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 10
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 10
+        },
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 10
+        },
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        }
+      }
+    });
     var mainSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.main_slider', {
       slidesPerView: 1,
       // pagination: {
@@ -70434,46 +70435,46 @@ window.onload = function () {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
       }
-    }); //
-    // let salesSwiper = new Swiper('.sales_slider', {
-    //     slidesPerView: 1
-    // });
-    // let mySwiper = new Swiper ('.owl_swiper', {
-    //     containerClass: 'owl_swiper',
-    //     activeSlideKey: '1',
-    //     centeredSlides: true,
-    //     loop: true,
-    //     loopFillGroupWithBlank: true,
-    //     autoplay: {
-    //         delay: 2500,
-    //         disableOnInteraction: true
-    //     },
-    //     breakpoints: {
-    //         1024: {
-    //             slidesPerView: 4,
-    //             spaceBetween: 20
-    //         },
-    //         768: {
-    //             slidesPerView: 3,
-    //             spaceBetween: 20
-    //         },
-    //         640: {
-    //             slidesPerView: 3,
-    //             spaceBetween: 20
-    //         },
-    //         320: {
-    //             slidesPerView: 2,
-    //             spaceBetween: 10
-    //         }
-    //     }
-    // });
-    // let swiperH = new Swiper('.swiper-container-h', {
-    //     spaceBetween: 50,
-    //     pagination: {
-    //         el: '.swiper-pagination-h',
-    //         clickable: true,
-    //     }
-    // });
+    });
+    var salesSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.sales_slider', {
+      slidesPerView: 1
+    });
+    var mySwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.owl_swiper', {
+      containerClass: 'owl_swiper',
+      activeSlideKey: '1',
+      centeredSlides: true,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: true
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        },
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20
+        },
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        }
+      }
+    });
+    var swiperH = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-container-h', {
+      spaceBetween: 50,
+      pagination: {
+        el: '.swiper-pagination-h',
+        clickable: true
+      }
+    });
   }
 };
 

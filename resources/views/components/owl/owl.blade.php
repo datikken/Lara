@@ -1,8 +1,4 @@
 <div class="owl-wrapper">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-
     <div class="owl-controls-heading">
         <div class="owl-controls-heading-item">Новинки</div>
     </div>
@@ -21,8 +17,8 @@
             items: 4,
             autoWidth: true,
             margin: 15,
-            // autoplay: true,
-            // autoplayTimeout: 1500,
+            autoplay: true,
+            autoplayTimeout: 2000,
             responsive:{
                 0:{
                     items:1
