@@ -72100,7 +72100,7 @@ var ProductFeedbackController = /*#__PURE__*/function () {
         var input = el.querySelector('input');
 
         if (type === 'disable') {
-          input.setAttribute('disabled', true);
+          input.setAttribute('enabled', true);
         } else {
           input.removeAttribute('disabled');
         }
