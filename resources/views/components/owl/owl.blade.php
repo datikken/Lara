@@ -9,6 +9,7 @@
         @endforeach
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
         $('.owl-carousel').owlCarousel({
             loop:true,
