@@ -34,6 +34,7 @@ Route::group(['middleware' => 'checkUserRole'], function() {
 //Load multiple images for product
     Route::get('admin/dropZone/{id}', ['uses' => 'AdminProductsController@dropZoneForm', 'as' => 'dropZoneForm']);
     Route::post('admin/addMultipleProductImages/{id}', ['uses' => 'AdminProductsController@addMultipleProductImages', 'as' => 'addMultipleProductImages']);
+    Route::get('admin/cleanProductImages/{id}', ['uses' => 'AdminProductsController@cleanProductImages', 'as' => 'cleanProductImages']);
 //BANNERS
     Route::get('admin/adminCreateBannerForm', ['uses' => "AdminBannersController@createBannerForm", 'as' => 'adminCreateBannerForm']);
 //INFORMATION

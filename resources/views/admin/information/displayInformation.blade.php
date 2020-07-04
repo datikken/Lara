@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('center')
-    <div class="d-flex flex-row align-items-center m-2 ml-0">
+    <div class="d-flex flex-row align-items-center mt-2 mb-2">
         <h2 class="mr-3">Информация</h2>
 
         <a href="{{ route('adminCreateInfo') }}">

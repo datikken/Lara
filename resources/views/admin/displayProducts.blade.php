@@ -1,8 +1,7 @@
 @extends('layouts.admin')
 
 @section('center')
-
-    <div class="d-flex flex-row align-items-center m-2 ml-0">
+    <div class="d-flex flex-row align-items-center mt-2 mb-2">
         <h2 class="mr-3">Продукты</h2>
 
         <a href="{{ route('adminCreateProductForm') }}">
@@ -27,11 +26,11 @@
                 <th>#</th>
                 <th>Имя</th>
                 <th>Цена</th>
-                <th>Тип</th>
-                <th>Описание</th>
+                {{--<th>Тип</th>--}}
+                {{--<th>Описание</th>--}}
                 <th>Изображение</th>
                 <th>Создан</th>
-                {{--<th>Фото в каталоге</th>--}}
+                <th>Фото</th>
                 <th>Изменить</th>
                 <th>Удалить</th>
             </tr>
@@ -41,10 +40,10 @@
         @foreach($products as $product)
             <tr>
                 <td>{{$product['id']}}</td>
-                <td>{{$product['name']}}</td>
+                <td>@php echo str_limit($product['name'], $limit = 40, $end = '...'); @endphp</td>
                 <td>{{$product['price']}}</td>
-                <td>{{$product['type']}}</td>
-                <td>{{$product['description']}}</td>
+                {{--<td>{{$product['type']}}</td>--}}
+                {{--<td>{{$product['description']}}</td>--}}
                 <td><img uk-img style="height: 40px; object-fit: contain" src="{{ Storage::url('product_images/' . $product['image']) }}"/></td>
                 <td>{{$product['created_at']}}</td>
                 <td>

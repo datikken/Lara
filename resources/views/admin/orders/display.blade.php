@@ -1,8 +1,9 @@
 @extends('layouts.admin')
 
 @section('center')
-
-    <h2 class="mt-3">Заказы</h2>
+    <div class="d-flex flex-row align-items-center mt-2 mb-2">
+        <h2 class="mr-3">Заказы</h2>
+    </div>
 
     <div class="table-responsive">
         <table class="table table-striped table-sm">

@@ -22,7 +22,7 @@ class AdminProductsController extends Controller
 
     public function index()
     {
-        $products = Product::paginate(3);
+        $products = Product::paginate(10);
 
         foreach ($products as $product) {
             $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');
@@ -89,7 +89,7 @@ class AdminProductsController extends Controller
 
             //delete old image
             if($exists) {
-                Storage::delete('public/product_images' . $name);
+                Storage::disk('local')->delete('public/product_images' . $name);
             }
 
             $ext = $request->file('image')->getClientOriginalExtension();
@@ -182,12 +182,25 @@ class AdminProductsController extends Controller
         $exists = Storage::disk('local')->exists('public/product_image/' . $product_img);
 
         if($exists) {
-            Storage::delete('public/product_images' . $product_img);
+            Storage::disk('local')->delete('public/product_images' . $product_img);
         }
 
         Product::destroy($id);
 
         return redirect()->route('adminDisplayProducts');
+    }
+
+    public function cleanProductImages($id)
+    {
+        $files = DB::table('product_images')->where('product_id', $id)->get();
+
+        foreach ($files as $file) {
+            $status = Storage::disk('local')->delete( '/public/product_images/' . $file->image);
+        }
+
+        $images = DB::table('product_images')->where('product_id', $id)->delete();
+
+        return redirect()->route('dropZoneForm', ['id' => $id]);
     }
 
     public function fetchProducts(Request $request)
@@ -241,7 +254,9 @@ class AdminProductsController extends Controller
             } else {
                 $created = DB::table('products')->where('uuid', $arr['uuid'])->update($arr);
             }
-            //save product image
+
+//  save product image
+
 //            if($product_image != '') {
 //                $pr_id = DB::table('products')->where('uuid', $arr['uuid'])->value('id');
 //
