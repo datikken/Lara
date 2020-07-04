@@ -179,7 +179,7 @@ a:hover {
   color: black !important;
 }
 .activeItem:after {
-  background-image: url("/img/icons/arrow_right_black.svg") !important;
+  background-image: url("/images/icons/arrow_right_black.svg") !important;
 }
 @media screen and (min-width: 600px) {
   .activeItem:before {
@@ -4296,7 +4296,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: url("/img/icons/product_cart.png");
+  background-image: url("/images/icons/product_cart.png");
   width: 30px;
   height: 30px;
 }
@@ -4386,7 +4386,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .filters_wrapper-item_text:after {
   content: "";
   display: block;
-  background-image: url("/img/icons/arrow_right.svg");
+  background-image: url("/images/icons/arrow_right.svg");
   height: 10px;
   width: 4px;
   background-repeat: no-repeat;
@@ -5346,7 +5346,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-size: center;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("/img/icons/black_arrow.svg");
+  background-image: url("/images/icons/black_arrow.svg");
   width: 10px;
   height: 10px;
   position: absolute;
@@ -5461,7 +5461,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url("/img/icons/like.svg");
+  background-image: url("/images/icons/like.svg");
 }
 .comments_wrap-item_like-text {
   font-family: "Montserrat", sans-serif;
@@ -5732,7 +5732,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .form_wrap-item_control-check:before {
   content: "";
   display: block;
-  background-image: url("/img/icons/ok2.svg");
+  background-image: url("/images/icons/ok2.svg");
   height: 20px;
   width: 20px;
   margin-right: 10px;
@@ -6434,11 +6434,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-position: center;
   margin-left: 10px;
   margin-top: 0;
-  background-image: url("/img/icons/arrow_right_white.svg");
+  background-image: url("/images/icons/arrow_right_white.svg");
 }
 @media screen and (min-width: 600px) {
   .cart_wrap-crumb-item:after {
-    background-image: url("/img/icons/arrow_right.svg");
+    background-image: url("/images/icons/arrow_right.svg");
   }
 }
 .cart_wrap-item_inner-total {
@@ -6528,7 +6528,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .cart_wrap-item_inner-total_inner-item:nth-child(2):after {
   top: 12.5px;
-  background-image: url("/img/icons/rubFat.svg") !important;
+  background-image: url("/images/icons/rubFat.svg") !important;
 }
 @media screen and (min-width: 600px) {
   .cart_wrap-item_inner-total_inner-item:nth-child(2):after {
@@ -6670,7 +6670,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cart_wrap-item_inner-table_row-col_delete {
   height: 10px;
   width: 10px;
-  background-image: url("/img/icons/cart_delete.svg");
+  background-image: url("/images/icons/cart_delete.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -10681,7 +10681,7 @@ main {
   content: "";
   height: 9px;
   width: 6px;
-  background-image: url("/img/icons/arrow_right_black.svg");
+  background-image: url("/images/icons/arrow_right_black.svg");
 }
 .main .card-body form .form-group .form-check .form-check-label {
   font-family: "Montserrat", sans-serif;
