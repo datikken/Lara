@@ -4,7 +4,6 @@
             <h2>Часто задаваемые вопросы:</h2>
         </div>
 
-
         <div class="questions_items">
             <div class="questions_item">
                 <div class="questions_num">
@@ -66,7 +65,5 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
