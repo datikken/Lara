@@ -1,9 +1,10 @@
 import $ from 'jquery';
-import Swiper from 'swiper';
 
 class ProductDetailsController {
     constructor() {
         let that = this;
+
+        this._gallery();
 
         let overlays = document.querySelectorAll('.product_wrapper-item_overlay');
             overlays.forEach((el) => {
@@ -18,7 +19,6 @@ class ProductDetailsController {
                     that._setDetailsLink(url,id, price, modal);
                     that._setDetailsImg(img,id);
                     that._setListeners(product, modal, id, product);
-                    this._gallery();
                 })
             });
     }
@@ -52,6 +52,7 @@ class ProductDetailsController {
 
     }
     _gallery() {
+
         var galleryTop = new Swiper('.gallery-top', {
             spaceBetween: 10,
             navigation: {

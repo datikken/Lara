@@ -1,6 +1,4 @@
 /* eslint-disable */
-import Swiper from 'swiper';
-
 window.onload = function () {
    if(typeof Swiper !== 'undefined') {
       new Swiper('.landswiper', {
