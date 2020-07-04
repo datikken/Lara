@@ -23,7 +23,7 @@
             </div>
             <div class="product_wrapper-item product_wrapper-itemContent">
                 <a class="product_wrapper-item_image" href="{{ route('ShowProductDetails',['id' => $id]) }}">
-                    <img src="{{Storage::disk('local')->url('/product_images/' . $image )}}" alt="{{$image}}" />
+                    <img src="{{Storage::disk("local")->url("/product_images/" . $image )}}" alt="{{$image}}" />
                 </a>
                 <a class="product_wrapper-item_overlay" href="#modal-{{ $id }}" uk-toggle data-id="{{ $id }}">
                     <div class="product_wrapper-item_overlay_wrapper">

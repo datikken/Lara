@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Product;
@@ -240,22 +241,24 @@ class AdminProductsController extends Controller
             } else {
                 $created = DB::table('products')->where('uuid', $arr['uuid'])->update($arr);
             }
-
             //save product image
-            if($product_image != '') {
-                $pr_id = DB::table('products')->where('uuid', $arr['uuid'])->value('id');
-
-                $arr = [
-                    'product_id' => $pr_id,
-                    'image' => str_replace(' ', '', $product_image)
-                ];
-
-                if(DB::table('product_images')->where('product_id', $pr_id)->value('id')) {
-                    DB::table('product_images')->where('product_id', $pr_id)->update($arr);
-                } else {
-                    DB::table('product_images')->insert($arr);
-                }
-            }
+//            if($product_image != '') {
+//                $pr_id = DB::table('products')->where('uuid', $arr['uuid'])->value('id');
+//
+//                $arr = [
+//                    'product_id' => $pr_id,
+//                    'image' => str_replace(' ', '', $product_image),
+//                    'created_at' => Carbon::now()
+//                ];
+//
+//                $existName = DB::table('product_images')->where('product_id', $pr_id)->value('image');
+//
+//                if($existName == $arr['image']) {
+//                    DB::table('product_images')->where('product_id', $pr_id)->where('image', $arr['image'])->update($arr);
+//                } else {
+//                    DB::table('product_images')->insert($arr);
+//                }
+//            }
         }
 
         return redirect('/admin/products');

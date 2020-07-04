@@ -44,11 +44,22 @@ class ProductsController extends Controller
         foreach ($products as $product) {
             $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');
             $product['name'] = json_decode($product['name_econom']);
+
+            $images = DB::table('product_images')->where('product_id', $product['id'])->get();
+
+            $arr = array();
+
+            foreach($images as $key=>$val) {
+                $arr[$key] = $val;
+            }
+
+            $product['images'] = $arr;
         }
 
         foreach ($posts as $post) {
             $post['url'] = URL::to('/blog') .'/'. $post->id();
         }
+
 
         return view('pages.catalog', ['products' => $products, 'news' => $posts]);
     }
