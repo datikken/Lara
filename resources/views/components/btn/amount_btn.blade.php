@@ -12,7 +12,7 @@
 
     @if(isset($cartItem))
         <div class="cart_wrap-item_inner-table_row-col_btns-btn-items_quantity">
-            <span>{{$cartItem['quantity']}}</span>
+           {{$cartItem['quantity']}}
         </div>
     @else
         <div class="cart_wrap-item_inner-table_row-col_btns-btn-items_quantity">

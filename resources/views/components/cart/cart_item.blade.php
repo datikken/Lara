@@ -1,6 +1,6 @@
 <?php #dump($cartItem); ?>
 
-<div class="cart_wrap-item_inner-table_row" data-id="{{ $cartItem['data']['id'] }}">
+<div class="cart_wrap-item_inner-table_row cart_item_row" data-id="{{ $cartItem['data']['id'] }}">
     <div class="cart_wrap-item_inner-table_row-col">
         <div class="cart_wrap-item_inner-table_row_heading desktop-hide">
             <span>Картридж</span>

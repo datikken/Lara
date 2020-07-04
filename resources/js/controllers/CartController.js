@@ -17,7 +17,14 @@ class CartController {
     }
 
     _changeConcreteItem(a) {
-        console.warn('_changeConcreteItem', a);
+        let cartRows = document.querySelectorAll('.cart_item_row');
+            cartRows.forEach((row) => {
+                let id = parseInt(row.getAttribute('data-id'));
+                    if(a.data.id === id) {
+                        let quantity = row.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
+                            quantity.innerText = a.quantity;
+                    }
+            });
     }
 
     _findItemInCart(data, el) {
@@ -29,8 +36,6 @@ class CartController {
             if(item.data.id === id) {
                 itemToReturn = item
             }
-
-            id = item.data.id;
         }
 
         return itemToReturn;

@@ -72888,7 +72888,15 @@ var CartController = /*#__PURE__*/function () {
   _createClass(CartController, [{
     key: "_changeConcreteItem",
     value: function _changeConcreteItem(a) {
-      console.warn('_changeConcreteItem', a);
+      var cartRows = document.querySelectorAll('.cart_item_row');
+      cartRows.forEach(function (row) {
+        var id = parseInt(row.getAttribute('data-id'));
+
+        if (a.data.id === id) {
+          var quantity = row.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
+          quantity.innerText = a.quantity;
+        }
+      });
     }
   }, {
     key: "_findItemInCart",
@@ -72903,8 +72911,6 @@ var CartController = /*#__PURE__*/function () {
         if (item.data.id === id) {
           itemToReturn = item;
         }
-
-        id = item.data.id;
       }
 
       return itemToReturn;

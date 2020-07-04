@@ -68,14 +68,14 @@
             </div>
 
 
-            @foreach ($product['params'] as $key => $val)
+            {{--@foreach ($product['params'] as $key => $val)--}}
                 {{--@php dump($key); @endphp--}}
-                <div class="details_wrap-info_item">
-                    <div class="details_wrap-info_item-field" style="display: flex;">
-                        <span>@php if($key != 'STMC') echo $key; @endphp</span> : <span>{{ $val }}</span>
-                    </div>
-                </div>
-            @endforeach
+                {{--<div class="details_wrap-info_item">--}}
+                    {{--<div class="details_wrap-info_item-field" style="display: flex;">--}}
+                        {{--<span>@php if($key != 'STMC') echo $key; @endphp</span> : <span>{{ $val }}</span>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--@endforeach--}}
 
 
             <div class="details_wrap-info_item">
