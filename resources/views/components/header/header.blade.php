@@ -9,33 +9,32 @@
         </div>
         <div class="header_wrapper-item">
             <ul class="header_wrapper-item_menu">
-                <li class="header_wrapper-item_menu-item"><a href="/catalog">Каталог</a></li>
                 <li class="header_wrapper-item_menu-item">
-                    <a href="/information">Информация</a>
+                    <a href="/catalog" class="header_wrapper-item_menu-item_link">Каталог</a></li>
+                <li class="header_wrapper-item_menu-item">
+                    <a href="/information" class="header_wrapper-item_menu-item_link">Информация</a>
                     <ul class="header_wrapper-item_menu-item-secondary">
-
                         @foreach($information as $inf)
                             <a class="header_wrapper-item_menu-item-secondary_item" href="/information#{{$inf['category']}}">
                                 <li>{{ $inf['category'] }}</li>
                             </a>
                         @endforeach
-
                     </ul>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <a href="/hits">Хит-парад принтеров</a>
+                    <a href="/hits" class="header_wrapper-item_menu-item_link">Хит-парад принтеров</a>
                 </li>
                 {{--<li class="header_wrapper-item_menu-item">--}}
                     {{--<a href="/sales">Акции</a>--}}
                 {{--</li>--}}
                 <li class="header_wrapper-item_menu-item">
-                    <a href="/blog">Блог</a>
+                    <a href="/blog" class="header_wrapper-item_menu-item_link">Блог</a>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <a href="/about">О нас</a>
+                    <a href="/about" class="header_wrapper-item_menu-item_link">О нас</a>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <a href="/contacts">Контакты</a>
+                    <a href="/contacts" class="header_wrapper-item_menu-item_link">Контакты</a>
                 </li>
             </ul>
         </div>
