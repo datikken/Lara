@@ -70679,11 +70679,16 @@ var CartController = /*#__PURE__*/function () {
     key: "_fixCartTotalState",
     value: function _fixCartTotalState() {
       var url = window.location.origin + '/checkCartState';
+      var headingAmount = document.querySelector('[data-cartamountval]');
+      var headingPrice = document.querySelectorAll('[data-cartpriceval]');
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
         method: "get",
         url: "".concat(url),
         success: function success(data) {
-          console.log(data);
+          headingAmount.innerText = data.totalQuantity;
+          headingPrice.forEach(function (el) {
+            return el.innerText = data.totalPrice;
+          });
         },
         error: function error(_error) {
           console.warn(_error);
@@ -70740,6 +70745,8 @@ var CartController = /*#__PURE__*/function () {
                 var changeItemData = that._findItemInCart(data, el);
 
                 that._changeConcreteItem(changeItemData);
+
+                that._fixCartTotalState();
               },
               error: function error(_error2) {
                 console.warn(_error2);

@@ -17,12 +17,15 @@ class CartController {
     }
     _fixCartTotalState() {
         let url = window.location.origin + '/checkCartState';
+        let headingAmount = document.querySelector('[data-cartamountval]');
+        let headingPrice = document.querySelectorAll('[data-cartpriceval]');
 
         $.ajax({
             method: "get",
             url: `${url}`,
             success: function (data) {
-                console.log(data);
+                headingAmount.innerText = data.totalQuantity;
+                headingPrice.forEach((el) => el.innerText = data.totalPrice);
             },
             error: function (error) {
                 console.warn(error);
@@ -72,6 +75,7 @@ class CartController {
                             success: function (data) {
                                 let changeItemData = that._findItemInCart(data, el);
                                 that._changeConcreteItem(changeItemData);
+                                that._fixCartTotalState();
                             },
                             error: function (error) {
                                 console.warn(error);
