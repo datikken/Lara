@@ -219,6 +219,7 @@ class AdminProductsController extends Controller
               'price' => isset($value->price) ? $value->price : json_encode(array()),
               'name_buh' => isset($value->name_buh) ? json_encode($value->name_buh) :  json_encode(array()),
               'created_at' => date('Y-m-d H:i:s'),
+              'cape' =>  isset($value->cape) ? json_encode($value->cape) : json_encode(array()),
             ];
 
             if(!empty($value->params)) {

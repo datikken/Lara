@@ -65,10 +65,8 @@ class ProductsController extends Controller
         foreach ($feedItems as  $key=>$value) {
             $usverAvatar = DB::table('users_info')->where('user_id', $value->user_id)->value('image');
             $usverName = DB::table('users')->where('id', $value->user_id)->value('name');
-
             $feedItems[$key]->user_avatar = $usverAvatar;
             $feedItems[$key]->user_name = $usverName;
-
             array_push($usersImages);
         }
 
@@ -86,9 +84,19 @@ class ProductsController extends Controller
             }
         }
 
+        $product['cape'] = json_decode($product['cape']);
+
+        $cape = array();
+
+        foreach ($product['cape'] as $key=>$item) {
+            foreach ($item as $a=>$b) {
+                $cape[$a] = $b;
+            }
+        }
+
+        $product['cape'] = $cape;
         $product['params'] = $pr_params;
         $product['name_econom'] = json_decode($product['name_econom']);
-//        dd($product['params']);
 
         return view('layouts.product_details', ['product' => $product, 'feedbacks' => $feedItems]);
     }
