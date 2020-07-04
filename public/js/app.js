@@ -74052,11 +74052,13 @@ var OrdersHistoryController = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -74080,6 +74082,8 @@ var ProductDetailsController = /*#__PURE__*/function () {
         that._setDetailsImg(img, id);
 
         that._setListeners(product, modal, id, product);
+
+        this._gallery();
       });
     });
   }
@@ -74109,6 +74113,30 @@ var ProductDetailsController = /*#__PURE__*/function () {
         });
       });
       console.warn(el, modal, pid, url);
+    }
+  }, {
+    key: "_gallery",
+    value: function _gallery() {
+      var galleryTop = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.gallery-top', {
+        spaceBetween: 10,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        loop: true,
+        loopedSlides: 4
+      });
+      var galleryThumbs = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.gallery-thumbs', {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        touchRatio: 0.2,
+        slideToClickedSlide: true,
+        loop: true,
+        loopedSlides: 4
+      });
+      galleryTop.controller.control = galleryThumbs;
+      galleryThumbs.controller.control = galleryTop;
     }
   }, {
     key: "_setDetailsLink",

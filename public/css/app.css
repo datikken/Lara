@@ -6134,6 +6134,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-size: inherit !important;
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
 }
 
 .details_slide_thumb {

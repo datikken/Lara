@@ -59,7 +59,7 @@ class AdminProductsController extends Controller
             {
                 $product = Product::find($id);
                 $ext = $request->file('file')->getClientOriginalExtension();
-                $fileName = $request->file('file')->getClientOriginalName();
+                $fileName = str_replace(' ', '', $request->file('file')->getClientOriginalName());
                 $exists = DB::table('product_images')->where('image', $fileName);
 
                 //TODO: existance check
@@ -79,6 +79,7 @@ class AdminProductsController extends Controller
     public function updateProductImage(Request $request, $id)
     {
         Validator::make( $request->all(), ['image' => 'max:5000'])->validate();
+
         if($request->hasFile('image')) {
             $product = Product::find($id);
             $exists =  Storage::disk('local')->exists('public/product_images' . $product->image);

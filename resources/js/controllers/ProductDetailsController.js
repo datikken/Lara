@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Swiper from 'swiper';
 
 class ProductDetailsController {
     constructor() {
@@ -17,6 +18,7 @@ class ProductDetailsController {
                     that._setDetailsLink(url,id, price, modal);
                     that._setDetailsImg(img,id);
                     that._setListeners(product, modal, id, product);
+                    this._gallery();
                 })
             });
     }
@@ -48,6 +50,29 @@ class ProductDetailsController {
 
         console.warn(el, modal, pid, url);
 
+    }
+    _gallery() {
+        var galleryTop = new Swiper('.gallery-top', {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+            loopedSlides: 4
+        });
+        var galleryThumbs = new Swiper('.gallery-thumbs', {
+            spaceBetween: 10,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            touchRatio: 0.2,
+            slideToClickedSlide: true,
+            loop: true,
+            loopedSlides: 4
+        });
+
+        galleryTop.controller.control = galleryThumbs;
+        galleryThumbs.controller.control = galleryTop;
     }
     _setDetailsLink(url,id, price, modal) {
         let priceItem = modal.querySelector('.amount_btn-value-wrap_inner_val')
