@@ -147,6 +147,9 @@ Route::get('admin/createAbout', ['uses' => "AdminAboutController@displayCreateAb
 Route::post('admin/sendCreateAbout', ['uses' => "AdminAboutController@sendCreateAbout", 'as' => 'adminSendCreateAbout']);
 Route::get('admin/deleteAbout/{id}', ['uses' => "AdminAboutController@deleteAbout", 'as' => 'AdminDeleteAbout']);
 
+//TECH ROUTES
+Route::get('/checkCartState', ['uses' => 'CartController@checkCartState', 'as' => 'checkCartState']);
+
 //Test file storage
 Route::get('/testStorage', function() {
     return "<img src=".Storage::url('product_images/product1.png').">";

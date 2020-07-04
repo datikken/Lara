@@ -15,18 +15,32 @@ class CartController {
             })
         });
     }
+    _fixCartTotalState() {
+        let url = window.location.origin + '/checkCartState';
 
+        $.ajax({
+            method: "get",
+            url: `${url}`,
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (error) {
+                console.warn(error);
+            }
+        });
+    }
     _changeConcreteItem(a) {
         let cartRows = document.querySelectorAll('.cart_item_row');
             cartRows.forEach((row) => {
                 let id = parseInt(row.getAttribute('data-id'));
                     if(a.data.id === id) {
+                        let totalCost = row.querySelector('.cart_wrap-item_inner-table_row-col_total');
                         let quantity = row.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
                             quantity.innerText = a.quantity;
+                            totalCost.innerText = a.totalPrice;
                     }
             });
     }
-
     _findItemInCart(data, el) {
         let id = parseInt(el.getAttribute('data-prid'));
         let itemToReturn;
@@ -57,7 +71,6 @@ class CartController {
                             url: `${url}`,
                             success: function (data) {
                                 let changeItemData = that._findItemInCart(data, el);
-
                                 that._changeConcreteItem(changeItemData);
                             },
                             error: function (error) {

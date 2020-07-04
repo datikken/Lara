@@ -45,10 +45,7 @@ class ProfileController {
                   btn.addEventListener('click', function(e) {
                      e.preventDefault();
                      let method = 'get';
-
-                     let token = formGroups[i].querySelector('[name="_token"]').value;
                      let url = formGroups[i].getAttribute('action');
-
                      let a = formGroups[i].querySelector('.input_wrap').querySelector('input');
                      let name = a.getAttribute('name');
                      let val = a.value;

@@ -19,7 +19,7 @@ class RegisterController {
                 let input = field.querySelector('.password_input');
                 let clicked = false;
 
-                icon.addEventListener('click', function (e) {
+                icon.addEventListener('click', function () {
                     if(!clicked) {
                         input.setAttribute('type', 'text');
                         clicked = true;
@@ -31,7 +31,7 @@ class RegisterController {
             })
     }
     _setError(str, type) {
-        let item, error;
+        let item;
 
         if(type === 'register') {
             item = document.querySelector('[data-register]');
@@ -42,25 +42,21 @@ class RegisterController {
         if(str.indexOf('required') > 0) {
             item.innerText = 'Проверьте пароль.'
             item.classList.add('invalid');
-            error = true;
         }
 
         if(str.indexOf('email') > 0) {
             item.innerText = 'Проверьте почту.'
             item.classList.add('invalid');
-            error = true;
         }
 
         if(str.indexOf('taken') > 0) {
             item.innerText = 'Почтовый ящик уже зарегистрирован.'
             item.classList.add('invalid');
-            error = true;
         }
 
         if(str.indexOf('invalid') > 0) {
             item.innerText = 'Проверьте правильность введенных данных.';
             item.classList.add('invalid');
-            error = true;
         }
 
         console.warn('_setError', str, str.indexOf('taken'));
