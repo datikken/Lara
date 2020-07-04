@@ -1,18 +1,15 @@
 @extends('layouts.admin')
 
 @section('center')
-    <h2 class="uk-heading-small">Редактировать продукт</h2>
+        <div class="d-flex flex-row align-items-center mt-2 mb-2">
+            <h2 class="mr-3">Редактировать продукт</h2>
+        </div>
 
         <form action="/admin/updateProduct/{{$product->id}}" method="post" enctype="multipart/form-data">
-
             {{csrf_field()}}
 
             <div class="uk-margin">
-                <input class="uk-input" type="text" name="name" id="name" placeholder="Название продукта" required>
-            </div>
-
-            <div class="uk-margin">
-                <input class="uk-input" type="text" name="type" id="type" placeholder="Тип" required>
+                <input class="uk-input" type="text" name="name" id="name" placeholder="Название продукта" required vale="{{ $product->name }}">
             </div>
 
             <div class="uk-margin">

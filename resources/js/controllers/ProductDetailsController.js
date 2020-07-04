@@ -3,8 +3,9 @@ import $ from 'jquery';
 class ProductDetailsController {
     constructor() {
         let that = this;
+        let slider = document.querySelector('.details_wrap-slider');
 
-        this._gallery();
+        slider && this._gallery();
 
         let overlays = document.querySelectorAll('.product_wrapper-item_overlay');
             overlays.forEach((el) => {
@@ -47,12 +48,8 @@ class ProductDetailsController {
                 }
             });
         });
-
-        console.warn(el, modal, pid, url);
-
     }
     _gallery() {
-
         var galleryTop = new Swiper('.gallery-top', {
             spaceBetween: 10,
             navigation: {
@@ -82,6 +79,8 @@ class ProductDetailsController {
     }
     _setDetailsImg(src,id) {
         let modal = document.querySelector(`#modal-${id}`);
+
+        console.warn(src, id);
 
         let img = modal.querySelector('.prdet_wrap-item_img_inner');
             img.style.backgroundImage = `url(${src})`;

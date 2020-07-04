@@ -116,7 +116,7 @@ class AdminProductsController extends Controller
         $type = $request->input('type');
         $price = preg_replace('/[^0-9.]/', '', $request->input('price'));
 
-        $updateArr = array('name' => $name, 'type' => $type, 'price' => $price);
+        $updateArr = array('name' => $name, 'price' => $price);
 
         DB::table('products')->where('id', $id)->update($updateArr);
 

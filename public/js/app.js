@@ -63451,9 +63451,8 @@ var ProductDetailsController = /*#__PURE__*/function () {
     _classCallCheck(this, ProductDetailsController);
 
     var that = this;
-
-    this._gallery();
-
+    var slider = document.querySelector('.details_wrap-slider');
+    slider && this._gallery();
     var overlays = document.querySelectorAll('.product_wrapper-item_overlay');
     overlays.forEach(function (el) {
       el.addEventListener('click', function (e) {
@@ -63497,7 +63496,6 @@ var ProductDetailsController = /*#__PURE__*/function () {
           }
         });
       });
-      console.warn(el, modal, pid, url);
     }
   }, {
     key: "_gallery",
@@ -63533,6 +63531,7 @@ var ProductDetailsController = /*#__PURE__*/function () {
     key: "_setDetailsImg",
     value: function _setDetailsImg(src, id) {
       var modal = document.querySelector("#modal-".concat(id));
+      console.warn(src, id);
       var img = modal.querySelector('.prdet_wrap-item_img_inner');
       img.style.backgroundImage = "url(".concat(src, ")");
     }

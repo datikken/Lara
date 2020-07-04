@@ -5955,6 +5955,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
 }
 
 .pfeedback {
