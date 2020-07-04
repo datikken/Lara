@@ -179,7 +179,7 @@ a:hover {
   color: black !important;
 }
 .activeItem:after {
-  background-image: url("/images/icons/arrow_right_black.svg") !important;
+  background-image: url("/img/icons/arrow_right_black.svg") !important;
 }
 @media screen and (min-width: 600px) {
   .activeItem:before {
@@ -576,7 +576,8 @@ b {
   height: 2px;
   background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
   left: -22px;
-  top: 30px;
+  top: 35px;
+  z-index: 899999;
   transition: 0.2s;
 }
 .header_wrapper-item_menu-item:nth-child(2) a:hover:before {
@@ -589,8 +590,9 @@ b {
     width: 0;
     height: 2px;
     background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
-    left: -15px;
-    top: 30px;
+    left: -22px;
+    top: 35px;
+    z-index: 899999;
     transition: 0.2s;
   }
   .header_wrapper-item_menu-item:nth-child(2) a:hover:before {
@@ -619,9 +621,9 @@ b {
 }
 .header_wrapper-item_menu-item-secondary {
   position: absolute;
-  top: 35px;
+  top: 37px;
   margin: 0;
-  background: #292930;
+  background: #fff;
   width: 130px;
   height: 120px;
   list-style: none;
@@ -639,6 +641,9 @@ b {
     top: 32px;
   }
 }
+.header_wrapper-item_menu-item-secondary_item {
+  color: #40404c !important;
+}
 .header_wrapper-item_menu-item-secondary_item:hover::before {
   display: none;
 }
@@ -648,7 +653,6 @@ b {
   line-height: 14px;
   font-weight: 300;
   letter-spacing: 0.02em;
-  transition: background-color 0.2s;
 }
 .header_wrapper-item_menu-item-secondary li:hover {
   background: #40404c;
@@ -899,7 +903,7 @@ b {
   color: #292930;
 }
 .menu_wrapper-item-main_menu-item-text_secondary-text a:hover {
-  color: #fff;
+  color: black;
 }
 .menu_wrapper-item-main_menu-item-text_secondary-text:hover {
   background-color: #40404c;
@@ -2212,10 +2216,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   width: 230px;
   height: 219.02px;
   margin-bottom: 40px;
-  background-image: url("/images/banner/banner.png");
+  background-image: url("/img/banner/banner.png");
 }
 .banner-wrapper_image2 {
-  background-image: url("/images/banner/banner2.png");
+  background-image: url("/img/banner/banner2.png");
   height: 230px;
 }
 .banner-wrapper_heading {
@@ -3670,7 +3674,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 600px) {
   .owl-stage-outer {
-    padding-top: 75px;
+    padding-top: 103px;
   }
 }
 .owl-stage-outer .owl-stage {
@@ -3717,7 +3721,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     max-height: initial;
     width: 270px;
     height: 370px;
-    margin: 0 15px;
+    margin: 0 30px;
   }
 }
 .owl-item:first-child {
@@ -3735,8 +3739,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .owl-item:after {
-    right: -5px;
-    top: 43%;
+    right: -23px;
+    top: 50%;
     display: block;
     transform: translate(-50%, -50%);
     max-height: 405px;
@@ -3798,12 +3802,14 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .carousel_card-wrapper_item:nth-child(3) {
   padding: 10px;
   border: 1px solid #e9e9ea;
-  max-width: 264px;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 200px;
   margin-top: 10px;
+}
+.carousel_card-wrapper_item:nth-child(3) img {
+  max-width: 130px;
 }
 @media screen and (min-width: 600px) {
   .carousel_card-wrapper_item:nth-child(3) {
@@ -3812,7 +3818,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 .carousel_card-wrapper_item-image {
-  background-image: url("/images/unnecessary/image.svg");
+  background-image: url("/img/unnecessary/image.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -4150,10 +4156,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-right: 5px;
 }
 .product_wrapper-item_image2 {
-  background-image: url("/images/unnecessary/product2.png") !important;
+  background-image: url("/img/unnecessary/product2.png") !important;
 }
 .product_wrapper-item_image {
-  background-image: url("/images/unnecessary/product1.png");
+  background-image: url("/img/unnecessary/product1.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -4296,7 +4302,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: url("/images/icons/product_cart.png");
+  background-image: url("/img/icons/product_cart.png");
   width: 30px;
   height: 30px;
 }
@@ -4386,7 +4392,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .filters_wrapper-item_text:after {
   content: "";
   display: block;
-  background-image: url("/images/icons/arrow_right.svg");
+  background-image: url("/img/icons/arrow_right.svg");
   height: 10px;
   width: 4px;
   background-repeat: no-repeat;
@@ -5346,7 +5352,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-size: center;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("/images/icons/black_arrow.svg");
+  background-image: url("/img/icons/black_arrow.svg");
   width: 10px;
   height: 10px;
   position: absolute;
@@ -5461,7 +5467,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url("/images/icons/like.svg");
+  background-image: url("/img/icons/like.svg");
 }
 .comments_wrap-item_like-text {
   font-family: "Montserrat", sans-serif;
@@ -5511,7 +5517,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url("/images/unnecessary/ava.png");
+  background-image: url("/img/unnecessary/ava.png");
 }
 
 .lslide img {
@@ -5732,7 +5738,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .form_wrap-item_control-check:before {
   content: "";
   display: block;
-  background-image: url("/images/icons/ok2.svg");
+  background-image: url("/img/icons/ok2.svg");
   height: 20px;
   width: 20px;
   margin-right: 10px;
@@ -6434,11 +6440,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-position: center;
   margin-left: 10px;
   margin-top: 0;
-  background-image: url("/images/icons/arrow_right_white.svg");
+  background-image: url("/img/icons/arrow_right_white.svg");
 }
 @media screen and (min-width: 600px) {
   .cart_wrap-crumb-item:after {
-    background-image: url("/images/icons/arrow_right.svg");
+    background-image: url("/img/icons/arrow_right.svg");
   }
 }
 .cart_wrap-item_inner-total {
@@ -6528,7 +6534,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .cart_wrap-item_inner-total_inner-item:nth-child(2):after {
   top: 12.5px;
-  background-image: url("/images/icons/rubFat.svg") !important;
+  background-image: url("/img/icons/rubFat.svg") !important;
 }
 @media screen and (min-width: 600px) {
   .cart_wrap-item_inner-total_inner-item:nth-child(2):after {
@@ -6670,7 +6676,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cart_wrap-item_inner-table_row-col_delete {
   height: 10px;
   width: 10px;
-  background-image: url("/images/icons/cart_delete.svg");
+  background-image: url("/img/icons/cart_delete.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -6856,7 +6862,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   position: absolute;
   left: -2rem;
   cursor: pointer;
-  background-image: url("/images/unnecessary/cart_close.svg");
+  background-image: url("/img/unnecessary/cart_close.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -7550,7 +7556,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: url("/images/sales_best/sales.png");
+  background-image: url("/img/sales_best/sales.png");
   height: 100%;
   max-height: 200px;
   margin: 0 10px 0 8px;
@@ -8287,7 +8293,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("/images/hits/hits_printer.svg");
+  background-image: url("/img/hits/hits_printer.svg");
 }
 .hits-items_column:nth-child(3) .hits-items_column-item:nth-child(2) .hits-items_column-item-image {
   background-repeat: no-repeat;
@@ -8295,7 +8301,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-position: center;
   height: 100%;
   background-repeat: no-repeat;
-  background-image: url("/images/hits/hits_printer2.svg");
+  background-image: url("/img/hits/hits_printer2.svg");
 }
 .hits-items_column-item {
   padding: 10px 40px;
@@ -8449,7 +8455,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: block;
   width: 20px;
   height: 20px;
-  background-image: url("/images/menu/cart.svg");
+  background-image: url("/img/menu/cart.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -8729,8 +8735,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   width: 0;
   height: 2px;
   background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
-  left: 0;
-  top: 30px;
+  left: -22px;
+  top: 35px;
+  z-index: 899999;
   transition: 0.2s;
 }
 .blog_wrap-menu_item-inner:hover:before {
@@ -8858,7 +8865,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 @media screen and (min-width: 1030px) {
   .owl-wrapper {
     margin-bottom: 100px;
-    padding-top: 70px;
   }
 }
 .owl-wrapper .owl-controls-heading {
@@ -10681,7 +10687,7 @@ main {
   content: "";
   height: 9px;
   width: 6px;
-  background-image: url("/images/icons/arrow_right_black.svg");
+  background-image: url("/img/icons/arrow_right_black.svg");
 }
 .main .card-body form .form-group .form-check .form-check-label {
   font-family: "Montserrat", sans-serif;

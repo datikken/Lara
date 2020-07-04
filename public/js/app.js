@@ -69946,12 +69946,12 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Menu */ "./resources/js/components/Menu.js");
-/* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Swiper */ "./resources/js/components/Swiper.js");
-/* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Search */ "./resources/js/components/Search.js");
-/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
-/* harmony import */ var _functions_validator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./functions/validator */ "./resources/js/functions/validator.js");
-/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Map */ "./resources/js/components/Map.js");
+/* harmony import */ var _functions_validator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/validator */ "./resources/js/functions/validator.js");
+/* harmony import */ var _components_Map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Map */ "./resources/js/components/Map.js");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Menu */ "./resources/js/components/Menu.js");
+/* harmony import */ var _components_Swiper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Swiper */ "./resources/js/components/Swiper.js");
+/* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Search */ "./resources/js/components/Search.js");
+/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Form */ "./resources/js/components/Form.js");
 /* harmony import */ var _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./controllers/ContactsFormController */ "./resources/js/controllers/ContactsFormController.js");
 /* harmony import */ var _controllers_SearchController__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/SearchController */ "./resources/js/controllers/SearchController.js");
 /* harmony import */ var _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./controllers/DeliveryController */ "./resources/js/controllers/DeliveryController.js");
@@ -70005,10 +70005,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  new _functions_validator__WEBPACK_IMPORTED_MODULE_5__["default"]();
+  new _functions_validator__WEBPACK_IMPORTED_MODULE_1__["default"]();
   new _controllers_OrdersHistoryController__WEBPACK_IMPORTED_MODULE_25__["default"]();
   new _controllers_DadataController__WEBPACK_IMPORTED_MODULE_24__["default"]();
-  new _functions_validator__WEBPACK_IMPORTED_MODULE_5__["default"]();
+  new _functions_validator__WEBPACK_IMPORTED_MODULE_1__["default"]();
   new _controllers_ContactsFormController__WEBPACK_IMPORTED_MODULE_7__["default"]();
   new _controllers_LandingController__WEBPACK_IMPORTED_MODULE_22__["default"]();
   new _controllers_SearchController__WEBPACK_IMPORTED_MODULE_8__["default"]();
@@ -70019,7 +70019,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   new _controllers_InformationController__WEBPACK_IMPORTED_MODULE_15__["default"]();
   new _controllers_DeliveryFormController__WEBPACK_IMPORTED_MODULE_10__["default"]();
   new _controllers_ProductDetailsController__WEBPACK_IMPORTED_MODULE_16__["default"]();
-  new _components_Map__WEBPACK_IMPORTED_MODULE_6__["default"]();
+  new _components_Map__WEBPACK_IMPORTED_MODULE_2__["default"]();
   new _controllers_ProductFeedbackController__WEBPACK_IMPORTED_MODULE_17__["default"]();
   new _controllers_AboutController__WEBPACK_IMPORTED_MODULE_18__["default"]();
   new _controllers_CartProgressController__WEBPACK_IMPORTED_MODULE_19__["default"]();
@@ -70342,138 +70342,138 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/dist/js/swiper.esm.bundle.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 /* eslint-disable */
 
 
 window.onload = function () {
   if (typeof swiper__WEBPACK_IMPORTED_MODULE_0__["default"] !== 'undefined') {
-    new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.landswiper', {
-      slidesPerView: 'auto',
-      containerClass: 'landswipe_swiper',
-      centeredSlides: true,
-      initialSlide: '2',
-      spaceBetween: 100,
-      loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      }
-    });
-    var swiperMain = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.bestPrinters_swiper', _defineProperty({
-      spaceBetween: 50,
-      navigation: {
-        nextEl: '.swiper-button-nextt',
-        prevEl: '.swiper-button-prevv'
-      },
-      pagination: {
-        el: '.swiper-pagination'
-      }
-    }, "navigation", {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    }));
-    var swiperV = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-container-v', {
-      spaceBetween: 50,
-      pagination: {
-        el: '.swiper-pagination-v'
-      },
-      navigation: {
-        nextEl: '.swiper-button-nextt',
-        prevEl: '.swiper-button-prevv'
-      }
-    });
-    var slider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.best_printers', {
-      pagination: {
-        el: '.swiper-pagination-v'
-      },
-      direction: 'vertical',
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      }
-    });
-    var feedBackSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.feedback_swiper', {
-      containerClass: 'owl_swiper',
-      activeSlideKey: '5',
-      centeredSlides: true,
-      loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-      },
-      breakpoints: {
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 10
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 10
-        },
-        640: {
-          slidesPerView: 3,
-          spaceBetween: 10
-        },
-        320: {
-          slidesPerView: 2,
-          spaceBetween: 10
-        }
-      }
-    });
+    //   new Swiper('.landswiper', {
+    //     slidesPerView: 'auto',
+    //     containerClass: 'landswipe_swiper',
+    //     centeredSlides: true,
+    //     initialSlide: '2',
+    //     spaceBetween: 100,
+    //     loop: true,
+    //     autoplay: {
+    //         delay: 2500,
+    //         disableOnInteraction: false
+    //     },
+    //     pagination: {
+    //         el: '.swiper-pagination',
+    //         clickable: true,
+    //     }
+    // });
+    // let swiperMain = new Swiper('.bestPrinters_swiper', {
+    //     spaceBetween: 50,
+    //     navigation: {
+    //         nextEl: '.swiper-button-nextt',
+    //         prevEl: '.swiper-button-prevv',
+    //     },
+    //     pagination: {
+    //         el: '.swiper-pagination',
+    //     },
+    //     navigation: {
+    //         nextEl: '.swiper-button-next',
+    //         prevEl: '.swiper-button-prev',
+    //     }
+    // });
+    // let swiperV = new Swiper('.swiper-container-v', {
+    //     spaceBetween: 50,
+    //     pagination: {
+    //         el: '.swiper-pagination-v',
+    //     },
+    //     navigation: {
+    //         nextEl: '.swiper-button-nextt',
+    //         prevEl: '.swiper-button-prevv',
+    //     }
+    // });
+    // let slider = new Swiper('.best_printers', {
+    //     pagination: {
+    //         el: '.swiper-pagination-v',
+    //     },
+    //     direction: 'vertical',
+    //     navigation: {
+    //         nextEl: '.swiper-button-next',
+    //         prevEl: '.swiper-button-prev',
+    //     }
+    // });
+    // let feedBackSwiper = new Swiper('.feedback_swiper', {
+    //     // containerClass: 'owl_swiper',
+    //     activeSlideKey: '5',
+    //     centeredSlides: true,
+    //     loop: true,
+    //     autoplay: {
+    //         delay: 2500,
+    //         disableOnInteraction: false
+    //     },
+    //     breakpoints: {
+    //         1024: {
+    //             slidesPerView: 4,
+    //             spaceBetween: 10
+    //         },
+    //         768: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 10
+    //         },
+    //         640: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 10
+    //         },
+    //         320: {
+    //             slidesPerView: 2,
+    //             spaceBetween: 10
+    //         }
+    //     }
+    // });
     var mainSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.main_slider', {
       slidesPerView: 1,
-      pagination: {
-        el: '.swiper-pagination'
-      },
+      // pagination: {
+      //     el: '.swiper-pagination',
+      // },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
       }
-    });
-    var salesSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.sales_slider', {
-      slidesPerView: 1
-    });
-    var mySwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.owl_swiper', {
-      containerClass: 'owl_swiper',
-      activeSlideKey: '5',
-      centeredSlides: true,
-      loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: true
-      },
-      breakpoints: {
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 20
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 20
-        },
-        640: {
-          slidesPerView: 3,
-          spaceBetween: 20
-        },
-        320: {
-          slidesPerView: 2,
-          spaceBetween: 10
-        }
-      }
-    });
-    var swiperH = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.swiper-container-h', {
-      spaceBetween: 50,
-      pagination: {
-        el: '.swiper-pagination-h',
-        clickable: true
-      }
-    });
+    }); //
+    // let salesSwiper = new Swiper('.sales_slider', {
+    //     slidesPerView: 1
+    // });
+    // let mySwiper = new Swiper ('.owl_swiper', {
+    //     containerClass: 'owl_swiper',
+    //     activeSlideKey: '1',
+    //     centeredSlides: true,
+    //     loop: true,
+    //     loopFillGroupWithBlank: true,
+    //     autoplay: {
+    //         delay: 2500,
+    //         disableOnInteraction: true
+    //     },
+    //     breakpoints: {
+    //         1024: {
+    //             slidesPerView: 4,
+    //             spaceBetween: 20
+    //         },
+    //         768: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 20
+    //         },
+    //         640: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 20
+    //         },
+    //         320: {
+    //             slidesPerView: 2,
+    //             spaceBetween: 10
+    //         }
+    //     }
+    // });
+    // let swiperH = new Swiper('.swiper-container-h', {
+    //     spaceBetween: 50,
+    //     pagination: {
+    //         el: '.swiper-pagination-h',
+    //         clickable: true,
+    //     }
+    // });
   }
 };
 

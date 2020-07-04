@@ -128,9 +128,9 @@
 
           &-secondary {
             position: absolute;
-            top: 35px;
+            top: 37px;
             margin: 0;
-            background: $dblack;
+            background: #fff;
             width: 130px;
             height: 120px;
             list-style: none;
@@ -148,6 +148,8 @@
             }
 
             &_item {
+              color: $black!important;
+
               &:hover::before {
                 display: none;
               }
@@ -159,7 +161,6 @@
               line-height: 14px;
               font-weight: 300;
               letter-spacing: 0.02em;
-              transition: background-color $transition;
 
               &:hover {
                 background: $black;

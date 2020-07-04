@@ -26,7 +26,7 @@
                               'image' => '/images/landing/partner/otzovik.svg'
                             ])
                     </div>
-                    <div class="swiper-slide" key="1">
+                    <div class="swiper-slide" key="3">
                         @include('components.landing.feedback_item', [
                              'desc' => '"Дешевле, чем оригинальные комплектующие Случайно обнаружил в интернете..."',
                              'name' => 'Хоум Кредит',
@@ -34,7 +34,7 @@
                              'image' => '/images/landing/partner/home.svg'
                          ])
                     </div>
-                    <div class="swiper-slide" key="2">
+                    <div class="swiper-slide" key="4">
                         @include('components.landing.feedback_item', [
                               'desc' => '"Дешевле, чем оригинальные комплектующие Случайно обнаружил в интернете..."',
                               'name' => 'otzovik.com',
@@ -42,7 +42,7 @@
                               'image' => '/images/landing/partner/otzovik.svg'
                             ])
                     </div>
-                    <div class="swiper-slide" key="1">
+                    <div class="swiper-slide" key="5">
                         @include('components.landing.feedback_item', [
                              'desc' => '"Дешевле, чем оригинальные комплектующие Случайно обнаружил в интернете..."',
                              'name' => 'Хоум Кредит',
@@ -50,7 +50,7 @@
                              'image' => '/images/landing/partner/home.svg'
                          ])
                     </div>
-                    <div class="swiper-slide" key="2">
+                    <div class="swiper-slide" key="6">
                         @include('components.landing.feedback_item', [
                               'desc' => '"Дешевле, чем оригинальные комплектующие Случайно обнаружил в интернете..."',
                               'name' => 'otzovik.com',
