@@ -74,7 +74,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Пароль') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" data-required placeholder="Введите пароль" type="password" class="form-control password_hide @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
+                                <input id="password" data-required placeholder="Введите пароль" type="password" class="form-control password_input @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
                             </div>
                         </div>
                         <div class="form-group row" style="display: none;">
@@ -90,7 +90,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label password_hide text-md-right">{{ __('Подтверждение пароля') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" data-required placeholder="Подтвердите пароль" type="password" class="form-control password_hide" name="password_confirmation" autocomplete="new-password">
+                                <input id="password-confirm" data-required placeholder="Подтвердите пароль" type="password" class="form-control password_input" name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
 

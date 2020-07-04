@@ -33,7 +33,7 @@
                                 {{--</span>--}}
                             {{--@enderror--}}
 
-                            <input type="password" placeholder="Введите ваш пароль"  class="form-control password_hide @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
+                            <input type="password" placeholder="Введите ваш пароль"  class="form-control password_input @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
                         </div>
                     </div>
 

@@ -6,12 +6,30 @@ class RegisterController {
         let that = this;
 
         auth && this._setListeners();
+        auth && this._showHidePassword();
 
         $('.form_type-item').on('click', function (e) {
             that._pickFaceType(e)
         });
     }
+    _showHidePassword() {
+        let fields = document.querySelectorAll('.password_field');
+            fields.forEach((field) => {
+                let icon = field.querySelector('.password_field-label');
+                let input = field.querySelector('.password_input');
+                let clicked = false;
 
+                icon.addEventListener('click', function (e) {
+                    if(!clicked) {
+                        input.setAttribute('type', 'text');
+                        clicked = true;
+                    } else {
+                        input.setAttribute('type', 'password');
+                        clicked = false;
+                    }
+                })
+            })
+    }
     _setError(str, type) {
         let item, error;
 
