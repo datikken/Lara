@@ -23,7 +23,7 @@
       ['crumbs' =>[['title' => 'Главная','url' => '/'],
       ['title' => 'Профиль', 'url' => '/home'],
       ['title' => 'Заказы','url' => '/tracking']]]
-      )
+)
 
 <div class="dash">
     <div class="dash_left">

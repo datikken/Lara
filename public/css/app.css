@@ -3887,7 +3887,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-image: url("/images/icons/arrow_right.svg");
   width: 4px;
   height: 10px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .breadcrumb_item {
   display: flex;
@@ -11881,7 +11881,7 @@ main {
 }
 
 .prcp {
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 .prcp_wrap {
   width: 971px;

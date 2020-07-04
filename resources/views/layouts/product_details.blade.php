@@ -1,6 +1,11 @@
 @extends('layouts.index')
 
 @section('center')
+    @include('components.breadcrumbs.breadcrumbs',
+      ['crumbs' =>[['title' => 'Главная','url' => '/'],
+      ['title' => 'Профиль', 'url' => '/home'],
+      ['title' => 'Продукт','url' => '#']]])
+
     @include('components.product_details.products_details-item', ['product' => $product ])
 
     @include('components.product_details.product_details_menu')
