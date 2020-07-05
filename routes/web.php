@@ -165,3 +165,7 @@ Route::post('StoreNewPassword', ['uses' => 'ChangePasswordController@store','as'
 
 //Test email template
 Route::get('/mailtemplate', ['uses' => "SendEmailController@testEmailTemplate", 'as' => 'mailtemplate']);
+
+//Filters
+Route::get('/checkFilters', ['uses' => 'FiltersController@restructureParams', 'as' => 'checkFilters']);
+Route::get('/checkFiltersParams', ['uses' => 'FiltersController@index', 'as' => 'checkFiltersParams']);

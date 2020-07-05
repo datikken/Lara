@@ -13,7 +13,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'image', 'price', 'type'
+        'name', 'description', 'image', 'price', 'type','params'
     ];
 
     public function getPriceAttribute($value)

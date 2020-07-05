@@ -659,6 +659,9 @@ b {
   background: #40404c;
   color: #fff;
 }
+.header_wrapper-item_menu-item:last-child {
+  display: none;
+}
 .header_wrapper-item_menu-item:after {
   content: "|";
   margin-left: 20px;

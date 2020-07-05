@@ -171,6 +171,10 @@
           }
         }
 
+        &-item:last-child {
+            display: none;
+        }
+
         &-item:after {
           content: "|";
           margin-left: 20px;
