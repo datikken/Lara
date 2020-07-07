@@ -1,5 +1,5 @@
 
-<div class="item">
+<a class="item" href="{{ route('ShowProductDetails',['id' => $product['id']]) }}">
     <div class="carousel_card">
         <div class="carousel_card-wrapper">
 
@@ -51,4 +51,4 @@
 
         </div>
     </div>
-</div>
+</a>

@@ -203,7 +203,7 @@
                 />
             </form>
 
-            @include('components.search.search_results')
+            {{--@include('components.search.search_results')--}}
 
         </div>
         <div class="menu_wrapper-item_search_button">

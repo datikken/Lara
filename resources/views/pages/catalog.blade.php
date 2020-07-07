@@ -24,7 +24,7 @@
             @include('components.products_grid.products_grid')
         </div>
 
-        @php  $hist = \App\Http\Controllers\OrdersController::ordersHistory(); @endphp
+        @php $hist = \App\Http\Controllers\OrdersController::ordersHistory(); @endphp
 
         @if($hist)
             @include('components.orders.orders_history', [
