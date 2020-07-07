@@ -10,6 +10,11 @@ Route::group(['middleware' => 'restrictToAdmin'], function() {
     Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking']);
 });
 
+Route::group(['middleware' => 'ajax'], function() {
+    //Search page
+    Route::get('search', ['uses'=> "ProductsController@search", 'as' => 'searchProducts']);
+});
+
 //PRODUCTS
 Route::group(['middleware' => 'checkUserRole'], function() {
     Route::post('admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider']);
@@ -54,8 +59,6 @@ Route::group(['middleware' => 'checkUserRole'], function() {
 Route::get('/',['uses' => "ProductsController@showIndex", 'as' => 'index']);
 //Catalog page
 Route::get('catalog', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
-//Search page
-Route::get('search', ['uses'=> "ProductsController@search", 'as' => 'searchProducts']);
 //Cart page
 Route::get('cart', ['uses' => "ProductsController@showCart", 'as' => 'cartItems']);
     //Add items to cart

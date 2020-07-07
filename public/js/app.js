@@ -131,10 +131,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs/Rx */ "./node_modules/rxjs/Rx.js");
-/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(rxjs_Rx__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -143,35 +139,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Input",
+  created: function created() {
+    this.initStore();
+  },
   methods: {
+    initStore: function initStore() {
+      this.$store.commit('getAllProducts');
+    },
     serverCall: function serverCall() {
-      var form = document.querySelector('[data-searchForm]');
-      var url = form.getAttribute('action');
-
-      var _token = form.querySelector('[name="_token"]');
-
-      var input = form.querySelector('[name="searchText"]');
-      var that = this;
-      rxjs_Rx__WEBPACK_IMPORTED_MODULE_0__["Observable"].fromEvent(input, 'keyup').subscribe(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_1___default.a.ajax({
-          method: "get",
-          url: "".concat(url),
-          data: {
-            searchText: input.value,
-            token: _token.value
-          },
-          success: function success(data) {
-            console.log(data);
-          },
-          error: function error(_error) {
-            console.warn(_error);
-          }
-        });
-      });
+      console.log(this.$store.state.products);
     }
   }
 });
@@ -73923,7 +73902,8 @@ var render = function() {
       type: "search",
       name: "searchText",
       placeholder: "Введите модель принтера или артикул картриджа"
-    }
+    },
+    on: { keyup: _vm.serverCall }
   })
 }
 var staticRenderFns = []
@@ -90044,9 +90024,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _vue_Search_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../vue/Search.vue */ "./resources/js/vue/Search.vue");
+/* harmony import */ var _vue_store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../vue/store/store */ "./resources/js/vue/store/store.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /* eslint-disable */
+
 
 
 
@@ -90058,7 +90040,8 @@ var SearchController = function SearchController() {
   new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     render: function render(h) {
       return h(_vue_Search_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
-    }
+    },
+    store: _vue_store_store__WEBPACK_IMPORTED_MODULE_3__["default"]
   }).$mount('#app');
 };
 
@@ -90576,6 +90559,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Input_vue_vue_type_template_id_639fdd50___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/vue/store/store.js":
+/*!*****************************************!*\
+  !*** ./resources/js/vue/store/store.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
+var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
+  state: {
+    products: []
+  },
+  mutations: {
+    getAllProducts: function getAllProducts(state) {
+      var url = '/search';
+      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': window.token
+        }
+      });
+      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajax({
+        method: "get",
+        url: url,
+        data: {},
+        success: function success(data) {
+          state.products = data;
+        },
+        error: function error(_error) {
+          console.warn(_error);
+        }
+      });
+    }
+  }
+});
+/* harmony default export */ __webpack_exports__["default"] = (store);
 
 /***/ }),
 

@@ -112,27 +112,11 @@ class ProductsController extends Controller
         return view('layouts.product_details', ['product' => $product, 'feedbacks' => $feedItems]);
     }
 
-    public function search(Request $request)
+    public function search()
     {
-        $searchText = $request->get('searchText');
-        $products = Product::where('name', 'Like','%'.$searchText."%")->get();
+        $products = Product::all();
 
-        foreach($products as $product) {
-                $params = json_decode($product->params);
-                $arr = array();
-
-                foreach($params as $key=>$param)
-                {
-                    foreach($param as $key=>$val)
-                    {
-                        $arr[$key] = $val;
-                    }
-
-                    $product['params'] = $arr;
-                }
-        }
-
-        return view('components.search.search_results', ['products' => $products]);
+        return response()->json($products);
     }
 
     public function showCart()

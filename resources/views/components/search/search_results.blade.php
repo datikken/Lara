@@ -9,29 +9,17 @@
                     </span>
                 </div>
                 <div class="sres_head_item">
-                    <span>
 
-                    </span>
                 </div>
                 <div class="sres_head_item">
-                    <span>
-                      @php
-                          if(isset($product->params['type'])) {
-                               echo $product->params['type'];
-                           }
-                      @endphp
-                    </span>
+
                 </div>
             </div>
 
             <div class="sres_item">
                 <div class="sres_col">
-                    @php
-                        if(isset($product->params['col'])) {
-                             echo $product->params['col'];
-                         }
-                    @endphp
-                    {{--<span class="sres_col_item sres_color"></span>--}}
+
+                    <span class="sres_col_item sres_color"></span>
                 </div>
                 <div class="sres_col">
                     <span class="sres_col_item">{{ $product->photo }}</span>
