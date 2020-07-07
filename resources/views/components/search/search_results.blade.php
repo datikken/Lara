@@ -1,7 +1,6 @@
-<div class="sres as-none">
+<div class="sres">
     <div class="sres_wrap">
 
-        @foreach($products as $product)
             <div class="sres_head">
                 <div class="sres_head_item">
                     <span>
@@ -29,9 +28,6 @@
                     <span class="sres_col_item">P1102 1102w</span>
                 </div>
             </div>
-
-        @endforeach
-
 
     </div>
 </div>

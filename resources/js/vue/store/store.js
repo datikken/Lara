@@ -9,6 +9,9 @@ const store = new Vuex.Store({
         products: [],
         filteredProducts: []
     },
+    getters: {
+        filteredProducts: state => state.filteredProducts
+    },
     mutations: {
         getFilteredProducts(state, payload) {
             let products = state.products;
@@ -21,8 +24,6 @@ const store = new Vuex.Store({
                     state.filteredProducts.push(prod);
                 }
             });
-
-            console.log(state.filteredProducts)
         },
         getAllProducts (state) {
             let url = '/search';
