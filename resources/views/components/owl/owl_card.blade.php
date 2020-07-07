@@ -3,7 +3,6 @@
     <div class="carousel_card">
         <div class="carousel_card-wrapper">
 
-
             <div class="carousel_card-wrapper_item">
                 <span class="carousel_card-wrapper_item-name">Картридж</span>
             </div>
@@ -47,7 +46,6 @@
                     </div>
                 </div>
             </div>
-
 
         </div>
     </div>

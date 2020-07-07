@@ -190,17 +190,13 @@
         </a>
     </div>
 
-    <div class="menu_wrapper-item">
+    <div class="menu_wrapper-item" >
         <div class="menu_wrapper-item_search">
         <div class="menu_wrapper-item_search_input">
             <form action="{{ route('searchProducts') }}" method="get" style="margin-bottom: 0;" data-searchForm>
                 {{ csrf_field() }}
 
-                <input
-                    type="search"
-                    name="searchText"
-                    placeholder="Введите модель принтера или артикул картриджа"
-                />
+                <div id="app"></div>
             </form>
 
             {{--@include('components.search.search_results')--}}
@@ -209,6 +205,8 @@
         <div class="menu_wrapper-item_search_button">
         <img src="/images/menu/zoomin.svg" alt="icon"/>
     </div>
+
+
 </div>
 </div>
 <div class="menu_wrapper-item">

@@ -1,5 +1,3 @@
-window.Vue = require('vue');
-
 import $ from 'jquery';
 
 import Validator from './functions/validator';

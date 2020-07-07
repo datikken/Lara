@@ -1,11 +1,11 @@
 import 'owl.carousel';
+import $ from 'jquery';
 
 class OwlCarouselController {
     activateCarousel() {
         $(document).ready(function () {
             $('.owl-carousel').owlCarousel({
                 loop: true,
-                margin: 10,
                 nav: true,
                 items: 6,
                 margin: 15,
