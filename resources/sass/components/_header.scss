@@ -108,11 +108,11 @@
 
           &:nth-child(2) {
             a {
-              @include smenu_underline(117%, -22px);
-              //safari
-              @media not all and (min-resolution:.001dpcm) {
-                @include smenu_underline(105%, -15px);
-              }
+                @include smenu_underline(116%, -22px);
+                //safari
+                @media not all and (min-resolution:.001dpcm) {
+                    @include smenu_underline(106.6%, -15px);
+                }
             }
           }
 
@@ -128,7 +128,7 @@
 
           &-secondary {
             position: absolute;
-            top: 37px;
+            top: 32px;
             margin: 0;
             background: #fff;
             width: 130px;
@@ -145,7 +145,6 @@
 
             @media not all and (min-resolution: 0.001dpcm) {
               left: -15px!important;
-              top: 32px;
             }
 
             &_item {

@@ -72573,25 +72573,10 @@ var SearchController = /*#__PURE__*/function () {
   _createClass(SearchController, [{
     key: "_filterSearchResults",
     value: function _filterSearchResults(html) {
+      var sres = document.querySelector('.sres');
+      sres.innerHTML = html;
+      sres.classList.remove('as-none');
       console.warn(html);
-    }
-  }, {
-    key: "_call",
-    value: function _call(url, token) {
-      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajax({
-        method: "get",
-        url: "".concat(url),
-        data: {
-          searchText: 't2',
-          token: token
-        },
-        success: function success(status) {
-          console.log(status);
-        },
-        error: function error(_error) {
-          console.warn(_error);
-        }
-      });
     }
   }, {
     key: "setListener",
@@ -72614,8 +72599,8 @@ var SearchController = /*#__PURE__*/function () {
           success: function success(data) {
             that._filterSearchResults(data);
           },
-          error: function error(_error2) {
-            console.warn(_error2);
+          error: function error(_error) {
+            console.warn(_error);
           }
         });
       });

@@ -5,23 +5,12 @@ import $ from 'jquery';
 
 class SearchController {
     _filterSearchResults(html) {
-        console.warn(html)
-    }
-    _call (url, token) {
-        $.ajax({
-            method: "get",
-            url: `${url}`,
-            data: {
-                searchText: 't2',
-                token
-            },
-            success: function (status) {
-                console.log(status)
-            },
-            error: function (error) {
-                console.warn(error);
-            }
-        });
+        let sres = document.querySelector('.sres');
+            sres.innerHTML = html;
+
+        sres.classList.remove('as-none');
+
+        console.warn(html);
     }
     setListener(search) {
         let form = document.querySelector('[data-searchForm]');
