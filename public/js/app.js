@@ -250,7 +250,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchListItem",
-  props: ['data']
+  props: ['data'],
+  created: function created() {
+    console.log(this.$props.data.params);
+  }
 });
 
 /***/ }),
@@ -90976,6 +90979,17 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         url: url,
         data: {},
         success: function success(data) {
+          data.forEach(function (el) {
+            var params = JSON.parse(el.params);
+            var newParams = {};
+            params.map(function (obj) {
+              Object.keys(obj).forEach(function (key) {
+                var str = obj[key];
+                newParams[key] = str.trim();
+              });
+            });
+            el.params = newParams;
+          });
           state.products = data;
         },
         error: function error(_error) {

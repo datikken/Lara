@@ -18,7 +18,10 @@
 <script>
     export default {
         name: "SearchListItem",
-        props: ['data']
+        props: ['data'],
+        created:function() {
+            console.log(this.$props.data.params)
+        }
     }
 </script>
 

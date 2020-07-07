@@ -37,6 +37,20 @@ const store = new Vuex.Store({
                 url,
                 data: { },
                 success: function (data) {
+                    data.forEach((el) => {
+                        let params = JSON.parse(el.params);
+                        let newParams = {};
+
+                            params.map((obj) => {
+                                Object.keys(obj).forEach(function(key) {
+                                    let str = obj[key];
+                                    newParams[key] = str.trim();
+                                });
+                            })
+
+                            el.params = newParams;
+                    });
+
                     state.products = data;
                 },
                 error: function (error) {
