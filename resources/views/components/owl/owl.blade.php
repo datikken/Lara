@@ -8,30 +8,4 @@
             @include('components.owl.owl_card', $product)
         @endforeach
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-        $('.owl-carousel').owlCarousel({
-            loop:true,
-            margin:10,
-            nav:true,
-            items: 6,
-            margin: 15,
-            autoplay: true,
-            autoplayTimeout: 2000,
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:3
-                },
-                1000:{
-                    items:5
-                }
-            }
-        })
-    </script>
-
-</div>
 </div>

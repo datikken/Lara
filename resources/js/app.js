@@ -1,4 +1,4 @@
-// window.Vue = require('vue');
+window.Vue = require('vue');
 
 import $ from 'jquery';
 
@@ -32,8 +32,10 @@ import OrdersHistoryController from './controllers/OrdersHistoryController'
 import ProductDetailsMenuController from './controllers/ProductDetailsMenuController'
 import DashController from './controllers/DashController'
 import BlogPostController from './controllers/BlogPostController'
+import OwlCarouselController from './controllers/OwlCarouselController'
 
 $(document).ready(function() {
+    new OwlCarouselController();
     new Validator();
     new OrdersHistoryController();
     new DadataController();
