@@ -5,11 +5,15 @@
             <span class="sres_col_item sres_color"></span>
         </div>
         <div class="sres_col">
-            <span class="sres_col_item">{{ data.id }}</span>
+            <span class="sres_col_item">{{ searchName }}</span>
         </div>
-        <div class="sres_col">
-            <span class="sres_col_item">HP LaserJet</span>
-            <span class="sres_col_item">P1102 1102w</span>
+        <div class="sres_col_inner">
+
+            <div class="sres_col_inner_item" v-for="(item, index) in data.cape">
+                <span class="sres_col_item">{{ index }}</span>
+                <span class="sres_col_item">{{ item }}</span>
+            </div>
+
         </div>
     </div>
 
@@ -19,8 +23,17 @@
     export default {
         name: "SearchListItem",
         props: ['data'],
+        data: function (){
+            return {
+                searchName: ''
+            }
+        },
         created:function() {
-            console.log(this.$props.data.params)
+            let arr = this.$props.data.name.split(' ');
+
+            this.searchName = arr[0];
+
+            console.log(this.$props.data);
         }
     }
 </script>

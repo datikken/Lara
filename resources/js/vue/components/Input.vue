@@ -24,6 +24,9 @@
                 this.$store.commit('getAllProducts');
             },
             serverCall: function() {
+                let sres = document.querySelector('.sres');
+                    sres.classList.remove('as-none');
+
                 this.$store.commit('getFilteredProducts', this.txtInput);
             }
         }

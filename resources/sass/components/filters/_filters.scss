@@ -5,7 +5,7 @@
   margin-bottom: 50px;
   display: none;
   position: relative;
-  z-index: 999;
+  z-index: 9;
 
   @include breakpoint($phone) {
     display: block;

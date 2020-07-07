@@ -165,6 +165,8 @@ __webpack_require__.r(__webpack_exports__);
       this.$store.commit('getAllProducts');
     },
     serverCall: function serverCall() {
+      var sres = document.querySelector('.sres');
+      sres.classList.remove('as-none');
       this.$store.commit('getFilteredProducts', this.txtInput);
     }
   }
@@ -182,8 +184,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SearchListItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchListItem */ "./resources/js/vue/components/SearchListItem.vue");
-//
-//
 //
 //
 //
@@ -248,11 +248,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchListItem",
   props: ['data'],
+  data: function data() {
+    return {
+      searchName: ''
+    };
+  },
   created: function created() {
-    console.log(this.$props.data.params);
+    var arr = this.$props.data.name.split(' ');
+    this.searchName = arr[0];
+    console.log(this.$props.data);
   }
 });
 
@@ -74046,7 +74057,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "sres" }, [
+  return _c("div", { staticClass: "sres as-none" }, [
     _c(
       "div",
       { staticClass: "sres_wrap" },
@@ -74073,12 +74084,16 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "sres_head" }, [
       _c("div", { staticClass: "sres_head_item" }, [
-        _c("span", [_vm._v("\n                    Цвет\n                ")])
+        _vm._v("\n                Цвет\n            ")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "sres_head_item" }),
+      _c("div", { staticClass: "sres_head_item" }, [
+        _vm._v("\n                Картридж\n            ")
+      ]),
       _vm._v(" "),
-      _c("div", { staticClass: "sres_head_item" })
+      _c("div", { staticClass: "sres_head_item" }, [
+        _vm._v("\n                струйный принтер\n            ")
+      ])
     ])
   }
 ]
@@ -74108,11 +74123,22 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "sres_col" }, [
       _c("span", { staticClass: "sres_col_item" }, [
-        _vm._v(_vm._s(_vm.data.id))
+        _vm._v(_vm._s(_vm.searchName))
       ])
     ]),
     _vm._v(" "),
-    _vm._m(1)
+    _c(
+      "div",
+      { staticClass: "sres_col_inner" },
+      _vm._l(_vm.data.cape, function(item, index) {
+        return _c("div", { staticClass: "sres_col_inner_item" }, [
+          _c("span", { staticClass: "sres_col_item" }, [_vm._v(_vm._s(index))]),
+          _vm._v(" "),
+          _c("span", { staticClass: "sres_col_item" }, [_vm._v(_vm._s(item))])
+        ])
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = [
@@ -74122,16 +74148,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "sres_col" }, [
       _c("span", { staticClass: "sres_col_item sres_color" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sres_col" }, [
-      _c("span", { staticClass: "sres_col_item" }, [_vm._v("HP LaserJet")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "sres_col_item" }, [_vm._v("P1102 1102w")])
     ])
   }
 ]
@@ -90979,16 +90995,25 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         url: url,
         data: {},
         success: function success(data) {
-          data.forEach(function (el) {
-            var params = JSON.parse(el.params);
-            var newParams = {};
-            params.map(function (obj) {
+          function modifyObj(target) {
+            var result = {};
+            target.map(function (obj) {
               Object.keys(obj).forEach(function (key) {
                 var str = obj[key];
-                newParams[key] = str.trim();
+                result[key] = str.trim();
               });
             });
+            return result;
+          }
+
+          data.forEach(function (el) {
+            var params = JSON.parse(el.params);
+            var newParams = modifyObj(params);
+            var cape = JSON.parse(el.cape);
+            var newCape = modifyObj(cape);
+            el.cape = newCape;
             el.params = newParams;
+            console.log(el.cape);
           });
           state.products = data;
         },

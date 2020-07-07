@@ -1,13 +1,13 @@
 .sres {
     &_color {
-        width: 15px;
-        height: 15px;
+        width: 16px;
+        height: 16px;
         background-color: black;
         border-radius: 50%;
         position: absolute;
-        top: 50%;
+        top: 26px;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
     }
 
     &_wrap {
@@ -17,6 +17,11 @@
         position: absolute;
         top: 40px;
         left: -20px;
+        z-index: 999999;
+
+        max-height: 642px;
+        overflow-y: scroll;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
         z-index: 999999;
 
         &:after {
@@ -32,7 +37,7 @@
     }
     &_head {
         display: grid;
-        grid-template-columns: 70px 130px 1fr;
+        grid-template-columns: 70px 150px 1fr;
         height: 40px;
         background-color: $light_gray;
         align-items: center;
@@ -55,14 +60,19 @@
 
     &_item {
         display: grid;
-        grid-template-columns: 70px 130px 1fr;
+        grid-template-columns: 70px 150px 1fr;
     }
 
     &_col {
-        min-height: 40px;
-        display: grid;
-        grid-template-columns: 200px 1fr;
+        //min-height: 40px;
+        //display: grid;
+        //grid-template-columns: 200px 1fr;
         position: relative;
+
+        &_inner_item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
 
         &_item {
             margin: 15px 0 15px 17px;

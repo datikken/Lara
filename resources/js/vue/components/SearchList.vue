@@ -1,17 +1,15 @@
 <template>
-    <div class="sres">
+    <div class="sres as-none">
         <div class="sres_wrap">
             <div class="sres_head">
                 <div class="sres_head_item">
-                    <span>
-                        Цвет
-                    </span>
+                    Цвет
                 </div>
                 <div class="sres_head_item">
-
+                    Картридж
                 </div>
                 <div class="sres_head_item">
-
+                    струйный принтер
                 </div>
             </div>
 
