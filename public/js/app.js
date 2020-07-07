@@ -140,17 +140,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Input",
   created: function created() {
     this.initStore();
+  },
+  data: function data() {
+    return {
+      txtInput: ''
+    };
   },
   methods: {
     initStore: function initStore() {
       this.$store.commit('getAllProducts');
     },
     serverCall: function serverCall() {
-      console.log(this.$store.state.products);
+      this.$store.commit('getFilteredProducts', this.txtInput);
     }
   }
 });
@@ -73898,12 +73904,29 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("input", {
+    directives: [
+      {
+        name: "model",
+        rawName: "v-model",
+        value: _vm.txtInput,
+        expression: "txtInput"
+      }
+    ],
     attrs: {
       type: "search",
       name: "searchText",
       placeholder: "Введите модель принтера или артикул картриджа"
     },
-    on: { keyup: _vm.serverCall }
+    domProps: { value: _vm.txtInput },
+    on: {
+      keyup: _vm.serverCall,
+      input: function($event) {
+        if ($event.target.composing) {
+          return
+        }
+        _vm.txtInput = $event.target.value
+      }
+    }
   })
 }
 var staticRenderFns = []
@@ -90582,9 +90605,21 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    products: []
+    products: [],
+    filteredProducts: []
   },
   mutations: {
+    getFilteredProducts: function getFilteredProducts(state, payload) {
+      var products = state.products;
+      var that = this;
+      state.filteredProducts = [];
+      products.forEach(function (prod) {
+        if (prod.name.indexOf(payload) > 0) {
+          state.filteredProducts.push(prod);
+        }
+      });
+      console.log(state.filteredProducts);
+    },
     getAllProducts: function getAllProducts(state) {
       var url = '/search';
       jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajaxSetup({

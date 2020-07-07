@@ -1,6 +1,7 @@
 <template>
     <input
         v-on:keyup="serverCall"
+        v-model="txtInput"
         type="search"
         name="searchText"
         placeholder="Введите модель принтера или артикул картриджа"
@@ -13,12 +14,17 @@
         created: function() {
             this.initStore();
         },
+        data: function (){
+            return {
+                txtInput: ''
+            }
+        },
         methods: {
             initStore() {
                 this.$store.commit('getAllProducts');
             },
             serverCall: function() {
-                console.log(this.$store.state.products);
+                this.$store.commit('getFilteredProducts', this.txtInput);
             }
         }
     }

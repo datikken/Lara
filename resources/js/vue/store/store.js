@@ -6,9 +6,24 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        products: []
+        products: [],
+        filteredProducts: []
     },
     mutations: {
+        getFilteredProducts(state, payload) {
+            let products = state.products;
+            let that = this;
+
+            state.filteredProducts = [];
+
+            products.forEach((prod) => {
+                if(prod.name.indexOf(payload) > 0) {
+                    state.filteredProducts.push(prod);
+                }
+            });
+
+            console.log(state.filteredProducts)
+        },
         getAllProducts (state) {
             let url = '/search';
             $.ajaxSetup({
