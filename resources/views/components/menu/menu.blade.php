@@ -13,7 +13,7 @@
             <div class="menu_Wrapper-item_secondary-item">
                 <ul class="menu_Wrapper-item_secondary-item_list">
                     <li class="menu_Wrapper-item_secondary-item_list-item">
-                        <a href="/catalog">
+                        <a href="/catalogСartridge">
                         <span class="menu_Wrapper-item_secondary-item_list-item-text">
                                           Каталог
                                         </span>
@@ -127,7 +127,7 @@
             <div class="menu_wrapper-item_menuText-header">
                 <span class="menu_wrapper-item_menuText-header_item">МЕНЮ</span>
 
-                <ul class="menu_wrapper-item-main_menu-item-text_secondary">
+                <ul class="menu_wrapper-item-main_menu-item-text_secondary secondaryBottom">
                     @foreach($information as $inf)
                         <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
                             <a href="/information#{{$inf['category']}}">
@@ -139,12 +139,12 @@
 
                 <ul class="menu_wrapper-item-main_menu-item-text_secondary secondaryTop">
                     <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
-                        <a href="/information#">
+                        <a href="/catalogСartridge">
                             <span>Картриджи</span>
                         </a>
                     </li>
                     <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
-                        <a href="/information#">
+                        <a href="/catalogPapers">
                             <span>Бумага</span>
                         </a>
                     </li>
@@ -153,7 +153,7 @@
                 <ul class="menu_wrapper-item-main_menu">
                     <li class="menu_wrapper-item-main_menu-item">
                                           <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/catalog">Каталог</a>
+                                            <a href="/catalogСartridge">Каталог</a>
                                               <img src="/images/icons/arrow_right.svg" alt="arrow"/>
                                           </span>
                     </li>

@@ -57,8 +57,12 @@ Route::group(['middleware' => 'checkUserRole'], function() {
 
 //Main page
 Route::get('/',['uses' => "ProductsController@showIndex", 'as' => 'index']);
+//Catalog cartridge
+Route::get('/catalogСartridge', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
 //Catalog page
-Route::get('catalog', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
+Route::get('/catalogPaper', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
+
+
 //Cart page
 Route::get('cart', ['uses' => "ProductsController@showCart", 'as' => 'cartItems']);
     //Add items to cart

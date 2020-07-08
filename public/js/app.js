@@ -87950,23 +87950,23 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(menuItems[0]).hover(function () {
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(menuItems[0]).on("mouseleave", function () {
   document.querySelector('.secondaryTop').classList.remove('as-visible');
 });
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.secondaryTop').on('mouseenter', function () {
-  document.querySelector('.secondaryTop').classList.add('as-visible');
-});
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.secondaryTop').on('mouseleave', function () {
-  document.querySelector('.secondaryTop').classList.remove('as-visible');
-});
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(menuItems[5]).hover(function () {
   document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary').classList.add('as-visible');
 });
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(menuItems[5]).on("mouseleave", function () {
   document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary').classList.remove('as-visible');
 });
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu_wrapper-item-main_menu-item-text_secondary').on('mouseenter', function () {
-  document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary').classList.add('as-visible');
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.secondaryTop').on('mouseenter', function () {
+  document.querySelector('.secondaryTop').classList.add('as-visible');
 });
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu_wrapper-item-main_menu-item-text_secondary').on('mouseleave', function () {
-  document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary').classList.remove('as-visible');
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.secondaryTop').on('mouseleave', function () {
+  document.querySelector('.secondaryTop').classList.remove('as-visible');
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.secondaryBottom').on('mouseenter', function () {
+  document.querySelector('.secondaryBottom').classList.add('as-visible');
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.secondaryBottom').on('mouseleave', function () {
+  document.querySelector('.secondaryBottom').classList.remove('as-visible');
 });
 
 /***/ }),
