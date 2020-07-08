@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Storage;
 use App\Post;
 use Auth;
 
-
 class ProductsController extends Controller
 {
     public function showIndex()
@@ -34,7 +33,16 @@ class ProductsController extends Controller
             $post['url'] = URL::to('/blog') .'/'. $post->id();
         }
 
-        return view('pages.index', ['products' => $products, 'slides' => $slides, 'news' => $posts ]);
+        $firstTen = array();
+
+        foreach ($products->take(10) as $key=>$product)
+        {
+         $firstTen[$key] = $product;
+        }
+
+//        dd($firstTen);
+
+        return view('pages.index', ['products' => $firstTen, 'slides' => $slides, 'news' => $posts ]);
     }
     public function index()
     {
