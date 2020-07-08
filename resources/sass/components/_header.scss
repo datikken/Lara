@@ -170,10 +170,17 @@
           }
         }
 
-        &-item:after {
-          content: "|";
-          margin-left: 20px;
-          color: $light_gray;
+
+        &-item {
+            &:last-child:after {
+                display: none;
+            }
+
+            &:after {
+                content: "|";
+                margin-left: 20px;
+                color: $light_gray;
+            }
         }
       }
     }

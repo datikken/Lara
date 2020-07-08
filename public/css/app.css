@@ -658,6 +658,9 @@ b {
   background: #40404c;
   color: #fff;
 }
+.header_wrapper-item_menu-item:last-child:after {
+  display: none;
+}
 .header_wrapper-item_menu-item:after {
   content: "|";
   margin-left: 20px;
@@ -1184,7 +1187,7 @@ b {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  height: 15px;
+  height: 20px;
   width: 30px;
   cursor: pointer;
   display: flex;
@@ -1195,11 +1198,6 @@ b {
   height: 50px;
   display: flex;
   align-items: center;
-}
-@media screen and (min-width: 1030px) {
-  .menu_wrapper-item_hamburger {
-    width: 15px;
-  }
 }
 .menu_wrapper-item_hamburger-logo {
   margin-left: 1rem;
@@ -1260,6 +1258,19 @@ b {
 .menu_wrapper-item_menuText-link span {
   color: black;
   font-family: "MontserratSemiBold";
+}
+
+.secondaryTop {
+  background: #fff;
+  color: black;
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  z-index: 99;
+  width: 130px;
+  top: 30px;
+  right: -13.4rem;
+  font-weight: 300;
 }
 
 .menu_wrapper-item_secondary {

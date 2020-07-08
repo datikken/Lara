@@ -87944,6 +87944,18 @@ array.forEach(function (el) {
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(secondary).hover(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu_wrapper-item-main_menu-item-text_secondary').add('as-visible');
 });
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(menuItems[0]).hover(function () {
+  document.querySelector('.secondaryTop').classList.add('as-visible');
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(menuItems[0]).on("mouseleave", function () {
+  document.querySelector('.secondaryTop').classList.remove('as-visible');
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.secondaryTop').on('mouseenter', function () {
+  document.querySelector('.secondaryTop').classList.add('as-visible');
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()('.secondaryTop').on('mouseleave', function () {
+  document.querySelector('.secondaryTop').classList.remove('as-visible');
+});
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(menuItems[5]).hover(function () {
   document.querySelector('.menu_wrapper-item-main_menu-item-text_secondary').classList.add('as-visible');
 });

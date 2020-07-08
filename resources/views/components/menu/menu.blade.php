@@ -3,8 +3,7 @@
         <div class="menu_wrapper-item">
 
             <div class="menu_wrapper-item_hamburger">
-                <img src="/images/menu/Mhamburger.svg" alt="hamburger" class="desktop-hide"/>
-                <img src="/images/menu/hamburger.svg" alt="hamburger" class="mobile-hide"/>
+                <img src="/images/menu/Mhamburger.svg" alt="hamburger" class="hamburger"/>
                 <a class="menu_wrapper-item_hamburger-link" href="/">
                     <img src='/images/header/MLOGO.png' alt="logo" class="menu_wrapper-item_hamburger-logo"/>
                 </a>
@@ -127,8 +126,8 @@
 
             <div class="menu_wrapper-item_menuText-header">
                 <span class="menu_wrapper-item_menuText-header_item">МЕНЮ</span>
-                <ul class="menu_wrapper-item-main_menu-item-text_secondary">
 
+                <ul class="menu_wrapper-item-main_menu-item-text_secondary">
                     @foreach($information as $inf)
                         <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
                             <a href="/information#{{$inf['category']}}">
@@ -136,7 +135,19 @@
                             </a>
                         </li>
                     @endforeach
+                </ul>
 
+                <ul class="menu_wrapper-item-main_menu-item-text_secondary secondaryTop">
+                    <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
+                        <a href="/information#">
+                            <span>Картриджи</span>
+                        </a>
+                    </li>
+                    <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
+                        <a href="/information#">
+                            <span>Бумага</span>
+                        </a>
+                    </li>
                 </ul>
 
                 <ul class="menu_wrapper-item-main_menu">
