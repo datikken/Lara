@@ -49,6 +49,21 @@
                         color: #40404C;
                         display: flex;
                         margin-bottom: 5px;
+                        position: relative;
+
+                        &-rubMini {
+                            width: 7px;
+                            position: absolute;
+                            top: 7px;
+                            right: 0;
+                        }
+
+                        &-rub {
+                            width: 10px;
+                            position: absolute;
+                            top: 13px;
+                            right: -14px;
+                        }
 
                         span {
                             margin-left: 5px;

@@ -3,7 +3,7 @@
 @section('center')
     @include('components.breadcrumbs.breadcrumbs',
       ['crumbs' =>[['title' => 'Главная','url' => '/'],
-      ['title' => 'Профиль', 'url' => '/home'],
+      ['title' => 'Каталог', 'url' => '/catalogСartridge'],
       ['title' => 'Продукт','url' => '#']]])
 
     @include('components.product_details.products_details-item', ['product' => $product ])
