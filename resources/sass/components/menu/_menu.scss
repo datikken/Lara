@@ -390,7 +390,6 @@
         }
       }
       &_search {
-        //background:$yellow;
         position: absolute;
         right:  3.2rem;
         top:50%;
@@ -534,14 +533,6 @@
           order: 2;
           margin-left: 30px;
           opacity: 0.5;
-        }
-
-        &:hover {
-          .menu_wrapper-item-main_menu {
-              z-index: 99999999999;
-              display: block;
-              color: black;
-          }
         }
       }
     }

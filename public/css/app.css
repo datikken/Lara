@@ -1241,11 +1241,6 @@ b {
     display: block;
   }
 }
-.menu_wrapper-item_menuText:hover .menu_wrapper-item-main_menu {
-  z-index: 99999999999;
-  display: block;
-  color: black;
-}
 
 .menu_wrapper-item_menuText-link {
   position: relative;
