@@ -1,6 +1,10 @@
 <template>
     <div class="sres as-none">
         <div class="sres_wrap">
+            <simplebar data-simplebar-auto-hide="true" class="sres_content">
+
+            <div v-for="item in items" :key="item.message">
+
             <div class="sres_head">
                 <div class="sres_head_item">
                     Цвет
@@ -13,9 +17,9 @@
                 </div>
             </div>
 
-            <div v-for="item in items" :key="item.message">
                 <SearchListItem :data="item" />
             </div>
+            </simplebar>
 
         </div>
     </div>
@@ -23,9 +27,16 @@
 
 <script>
     import SearchListItem from "./SearchListItem";
+    import simplebar from 'simplebar-vue';
+
     export default {
         name: "SearchList",
-        components: {SearchListItem},
+        components: {
+            SearchListItem,
+            simplebar
+        },
+        created: function() {
+        },
         computed: {
             items() {
                  return this.$store.getters.filteredProducts;

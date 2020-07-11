@@ -37,6 +37,7 @@
         "owl.carousel": "^2.3.4",
         "rxjs": "^6.5.5",
         "rxjs-compat": "^6.5.5",
+        "simplebar-vue": "^1.5.1",
         "swiper": "^4.3.3",
         "vuex": "^3.5.1",
         "ymaps": "^0.2.1"

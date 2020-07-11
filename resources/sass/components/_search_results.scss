@@ -1,4 +1,8 @@
 .sres {
+    &_content {
+        max-height: 642px;
+    }
+
     &_color {
         width: 16px;
         height: 16px;
@@ -18,9 +22,7 @@
         top: 40px;
         left: -20px;
         z-index: 999999;
-
-        max-height: 642px;
-        overflow-y: scroll;
+        //overflow-y: scroll;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
         z-index: 999999;
 
@@ -64,9 +66,6 @@
     }
 
     &_col {
-        //min-height: 40px;
-        //display: grid;
-        //grid-template-columns: 200px 1fr;
         position: relative;
 
         &_inner_item {

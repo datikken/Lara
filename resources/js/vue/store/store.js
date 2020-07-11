@@ -20,7 +20,11 @@ const store = new Vuex.Store({
             state.filteredProducts = [];
 
             products.forEach((prod) => {
-                if(prod.name.indexOf(payload) > 0) {
+                if(prod.params.art.indexOf(payload) >= 0) {
+                    state.filteredProducts.push(prod);
+                }
+
+                if(prod.name.indexOf(payload) >= 0) {
                     state.filteredProducts.push(prod);
                 }
             });
@@ -59,9 +63,6 @@ const store = new Vuex.Store({
 
                             el.cape = newCape;
                             el.params = newParams;
-
-                        console.log(el.cape)
-
                     });
 
 

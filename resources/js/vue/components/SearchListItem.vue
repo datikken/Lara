@@ -5,7 +5,7 @@
             <span class="sres_col_item sres_color"></span>
         </div>
         <div class="sres_col">
-            <span class="sres_col_item">{{ searchName }}</span>
+            <span class="sres_col_item">{{ data.params.art }}</span>
         </div>
         <div class="sres_col_inner">
 
@@ -25,16 +25,10 @@
         props: ['data'],
         data: function (){
             return {
-                searchName: ''
+
             }
         },
-        created:function() {
-            let arr = this.$props.data.name.split(' ');
-
-            this.searchName = arr[0];
-
-            console.log(this.$props.data);
-        }
+        created:function() { }
     }
 </script>
 
