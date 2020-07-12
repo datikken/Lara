@@ -10559,6 +10559,10 @@ body {
   src: url("/fonts/Montserrat-Regular.ttf");
 }
 @font-face {
+  font-family: "MontserratMedium";
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+@font-face {
   font-family: "MontserratSemiBold";
   src: url("/fonts/Montserrat-semibold.ttf");
 }
@@ -12177,7 +12181,7 @@ main {
 }
 .verify_wrap {
   width: 430px;
-  height: 225px;
+  height: 330px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -12192,32 +12196,59 @@ main {
   width: 100%;
   background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
 }
+.verify_wrap_icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/images/icons/verify_icon.svg");
+  margin: 0 auto;
+  width: 40px;
+  height: 50px;
+  margin-top: 30px;
+}
 .verify_wrap_head {
-  padding-top: 30px;
-  margin-bottom: 20px;
   font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  padding-top: 17px;
+  padding-bottom: 37px;
+  position: relative;
+}
+.verify_wrap_head:after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #d4d4d5;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 170px;
+  top: 47px;
 }
 .verify_wrap_text {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
+  line-height: 20px;
   text-align: center;
   letter-spacing: 0.02em;
   color: #292930;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
   max-width: 300px;
   margin: 0 auto;
-  padding-bottom: 30px;
+  padding-bottom: 12px;
 }
 .verify_wrap_link .flat_btn {
-  width: 200px !important;
-  height: 50px !important;
+  width: 230px !important;
+  height: 40px !important;
   margin: 0 auto;
   box-shadow: none !important;
+  margin-bottom: 20px;
 }
 .verify_wrap_link .flat_btn .action_btn-item {
-  font-family: "Montserrat", sans-serif;
+  font-family: "MontserratMedium";
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
