@@ -32,6 +32,7 @@ import DashController from './controllers/DashController'
 import BlogPostController from './controllers/BlogPostController'
 import OwlCarouselController from './controllers/OwlCarouselController'
 import MenuController from './components/Menu'
+import CatalogController from './controllers/CatalogController'
 
 $(document).ready(function() {
     new MenuController();
@@ -61,4 +62,5 @@ $(document).ready(function() {
     new DashController();
     new DeliveryController();
     new BlogPostController();
+    new CatalogController();
 });

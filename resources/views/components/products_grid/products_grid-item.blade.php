@@ -92,7 +92,7 @@
                             <span class="prdet_wrap-icons_ctas-increase-text">Количество (шт)</span>
                             @include('components.btn.amount_btn')
                         </div>
-                        <div class="prdet_wrap-icons_ctas-buy">
+                        <div class="prdet_wrap-icons_ctas-buy" class="ajaxGETproduct" data-url="{{ route('AddToCartAjaxGet', ['id' => $product['id']]) }}">
                             @include('components.btn.buy_btn', [ 'class' => 'empty_cart-btn', 'text' => 'в корзину'])
                         </div>
                         <a class="prdet_wrap-icons_ctas-details" href="{{ route('ShowProductDetails',['id' => $id]) }}">

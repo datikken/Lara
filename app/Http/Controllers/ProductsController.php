@@ -211,7 +211,9 @@ class ProductsController extends Controller
         $cart->addItem($id, $product, $amount ? $amount : 1);
         $request->session()->put('cart', $cart);
 
-        return response()->json((object) array('cart' => $cart->totalQuantity, 'price' => $cart->totalPrice));
+        $merged = Session::get('cart');
+
+        return response()->json($merged);
     }
 
     public function repeatOrder(Request $request, $id)

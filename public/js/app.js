@@ -95320,6 +95320,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_DashController__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./controllers/DashController */ "./resources/js/controllers/DashController.js");
 /* harmony import */ var _controllers_BlogPostController__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./controllers/BlogPostController */ "./resources/js/controllers/BlogPostController.js");
 /* harmony import */ var _controllers_OwlCarouselController__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./controllers/OwlCarouselController */ "./resources/js/controllers/OwlCarouselController.js");
+/* harmony import */ var _controllers_CatalogController__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./controllers/CatalogController */ "./resources/js/controllers/CatalogController.js");
+
 
 
 
@@ -95379,6 +95381,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   new _controllers_DashController__WEBPACK_IMPORTED_MODULE_27__["default"]();
   new _controllers_DeliveryController__WEBPACK_IMPORTED_MODULE_9__["default"]();
   new _controllers_BlogPostController__WEBPACK_IMPORTED_MODULE_28__["default"]();
+  new _controllers_CatalogController__WEBPACK_IMPORTED_MODULE_30__["default"]();
 });
 
 /***/ }),
@@ -96316,6 +96319,57 @@ var CartProgressController = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./resources/js/controllers/CatalogController.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/controllers/CatalogController.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FastViewController_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FastViewController.js */ "./resources/js/controllers/FastViewController.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var CatalogController = /*#__PURE__*/function () {
+  _createClass(CatalogController, [{
+    key: "_initFastViewController",
+    value: function _initFastViewController(el) {
+      var fastViewController = new _FastViewController_js__WEBPACK_IMPORTED_MODULE_0__["default"](el);
+    }
+  }, {
+    key: "_setListeners",
+    value: function _setListeners() {
+      var that = this;
+      var togglers = document.querySelectorAll('[uk-toggle]');
+      togglers.forEach(function (toggle) {
+        toggle.addEventListener('click', function () {
+          that._initFastViewController(toggle);
+        });
+      });
+    }
+  }]);
+
+  function CatalogController() {
+    _classCallCheck(this, CatalogController);
+
+    var catalog = document.querySelector('.products_grid');
+    catalog && this._setListeners();
+  }
+
+  return CatalogController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (CatalogController);
+
+/***/ }),
+
 /***/ "./resources/js/controllers/CatalogFiltersController.js":
 /*!**************************************************************!*\
   !*** ./resources/js/controllers/CatalogFiltersController.js ***!
@@ -96995,6 +97049,106 @@ var DeliveryFormController = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (DeliveryFormController);
+
+/***/ }),
+
+/***/ "./resources/js/controllers/FastViewController.js":
+/*!********************************************************!*\
+  !*** ./resources/js/controllers/FastViewController.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var FastViewController = /*#__PURE__*/function () {
+  _createClass(FastViewController, [{
+    key: "_addToCartProcessor",
+    value: function _addToCartProcessor(el) {
+      var btn = el.querySelector('.prdet_wrap-icons_ctas-buy');
+      btn.addEventListener('click', function () {
+        var amount = el.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity').innerText;
+        var url = btn.dataset.url;
+        var pid = el.querySelector('[data-prid]').dataset.prid;
+        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+          method: "get",
+          url: "".concat(url),
+          data: {
+            id: pid,
+            amount: amount
+          },
+          success: function success(data) {
+            var amount = data.totalQuantity;
+            var price = data.totalPrice;
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu_wrapper-item_cart_icon-amount').text(amount);
+            jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-cartpriceval]').text(price);
+          },
+          error: function error(_error) {
+            console.warn(_error);
+          }
+        });
+      });
+    }
+  }, {
+    key: "_amountProcessor",
+    value: function _amountProcessor(el) {
+      var btns = el.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items');
+      var links = btns.querySelectorAll('a');
+      var amountBlock = el.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
+
+      function fixAmount(url) {
+        var amountValue = parseInt(amountBlock.innerText);
+
+        if (url.indexOf('increase') >= 0) {
+          amountValue = amountValue + 1;
+        } else {
+          if (amountValue > 1) {
+            amountValue = amountValue - 1;
+          } else {
+            return;
+          }
+        }
+
+        amountBlock.innerText = amountValue;
+      }
+
+      links.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          var url = a.getAttribute('href');
+          fixAmount(url);
+        });
+      });
+    }
+  }]);
+
+  function FastViewController(el) {
+    _classCallCheck(this, FastViewController);
+
+    var id = el.getAttribute('href').replace('#', '');
+    var modal = document.querySelector("#".concat(id));
+
+    if (modal) {
+      this._amountProcessor(modal);
+
+      this._addToCartProcessor(modal);
+    }
+  }
+
+  return FastViewController;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (FastViewController);
 
 /***/ }),
 

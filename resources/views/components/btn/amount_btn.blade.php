@@ -16,7 +16,7 @@
         </div>
     @else
         <div class="cart_wrap-item_inner-table_row-col_btns-btn-items_quantity">
-            <span>1</span>
+            1
         </div>
     @endif
 
