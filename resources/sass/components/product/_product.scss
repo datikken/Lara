@@ -17,6 +17,7 @@
     position: absolute;
     left: 50%;
     bottom: -50px;
+    transform: translate(-50%, 0);
 
     @include breakpoint($medium) {
       bottom: -40px;
