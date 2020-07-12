@@ -97356,24 +97356,28 @@ var ProductDetailsController = /*#__PURE__*/function () {
 
     var that = this;
     var slider = document.querySelector('.details_wrap-slider');
-    slider && this._gallery();
-    var overlays = document.querySelectorAll('.product_wrapper-item_overlay');
-    overlays.forEach(function (el) {
-      el.addEventListener('click', function (e) {
-        var id = e.currentTarget.getAttribute('data-id');
-        var product = document.querySelector("#product-".concat(id));
-        var img = product.querySelector('.product_wrapper-item_image').querySelector('img').getAttribute('src');
-        var url = product.querySelector('.product_link').getAttribute('href');
-        var price = product.querySelector('.product_wrapper-item_price-item').innerHTML;
-        var modal = document.querySelector("#modal-".concat(id));
+    var prdet = document.querySelector('.details');
 
-        that._setDetailsLink(url, id, price, modal);
+    if (prdet) {
+      slider && this._gallery();
+      var overlays = document.querySelectorAll('.product_wrapper-item_overlay');
+      overlays.forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          var id = e.currentTarget.getAttribute('data-id');
+          var product = document.querySelector("#product-".concat(id));
+          var img = product.querySelector('.product_wrapper-item_image').querySelector('img').getAttribute('src');
+          var url = product.querySelector('.product_link').getAttribute('href');
+          var price = product.querySelector('.product_wrapper-item_price-item').innerHTML;
+          var modal = document.querySelector("#modal-".concat(id));
 
-        that._setDetailsImg(img, id);
+          that._setDetailsLink(url, id, price, modal);
 
-        that._setListeners(product, modal, id, product);
+          that._setDetailsImg(img, id);
+
+          that._setListeners(product, modal, id, product);
+        });
       });
-    });
+    }
   }
 
   _createClass(ProductDetailsController, [{
@@ -97435,7 +97439,6 @@ var ProductDetailsController = /*#__PURE__*/function () {
     key: "_setDetailsImg",
     value: function _setDetailsImg(src, id) {
       var modal = document.querySelector("#modal-".concat(id));
-      console.warn(src, id);
       var img = modal.querySelector('.prdet_wrap-item_img_inner');
       img.style.backgroundImage = "url(".concat(src, ")");
     }

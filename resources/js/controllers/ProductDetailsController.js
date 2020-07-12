@@ -5,10 +5,12 @@ class ProductDetailsController {
     constructor() {
         let that = this;
         let slider = document.querySelector('.details_wrap-slider');
+        let prdet = document.querySelector('.details');
 
-        slider && this._gallery();
+        if(prdet) {
+            slider && this._gallery();
 
-        let overlays = document.querySelectorAll('.product_wrapper-item_overlay');
+            let overlays = document.querySelectorAll('.product_wrapper-item_overlay');
             overlays.forEach((el) => {
                 el.addEventListener('click', function (e) {
                     let id = e.currentTarget.getAttribute('data-id');
@@ -23,6 +25,7 @@ class ProductDetailsController {
                     that._setListeners(product, modal, id, product);
                 })
             });
+        }
     }
 
     _setListeners(el, modal, pid, product) {
@@ -80,9 +83,6 @@ class ProductDetailsController {
     }
     _setDetailsImg(src,id) {
         let modal = document.querySelector(`#modal-${id}`);
-
-        console.warn(src, id);
-
         let img = modal.querySelector('.prdet_wrap-item_img_inner');
             img.style.backgroundImage = `url(${src})`;
     }
