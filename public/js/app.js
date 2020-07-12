@@ -96066,19 +96066,23 @@ var CartController = /*#__PURE__*/function () {
   function CartController(el) {
     _classCallCheck(this, CartController);
 
-    var that = this;
-    this.el = el;
-    var btns = document.querySelectorAll('.ajaxGETproduct');
+    var cart = document.querySelector('.cart');
 
-    this._setDeleteListeners();
+    if (cart) {
+      var that = this;
+      this.el = el;
+      var btns = document.querySelectorAll('.ajaxGETproduct');
 
-    this._setAmountListeners();
+      this._setDeleteListeners();
 
-    btns.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        that._makeCall(e);
+      this._setAmountListeners();
+
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          that._makeCall(e);
+        });
       });
-    });
+    }
   }
 
   _createClass(CartController, [{

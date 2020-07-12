@@ -2,18 +2,22 @@ import $ from 'jquery';
 
 class CartController {
     constructor(el) {
-        let that = this;
-        this.el = el;
-        let btns = document.querySelectorAll('.ajaxGETproduct');
+        let cart = document.querySelector('.cart');
 
-        this._setDeleteListeners();
-        this._setAmountListeners();
+        if(cart) {
+            let that = this;
+            this.el = el;
+            let btns = document.querySelectorAll('.ajaxGETproduct');
 
-        btns.forEach((btn) => {
-            btn.addEventListener('click', function(e) {
-                that._makeCall(e);
-            })
-        });
+            this._setDeleteListeners();
+            this._setAmountListeners();
+
+            btns.forEach((btn) => {
+                btn.addEventListener('click', function(e) {
+                    that._makeCall(e);
+                })
+            });
+        }
     }
     _fixCartTotalState() {
         let url = window.location.origin + '/checkCartState';
