@@ -123,7 +123,6 @@ class ProductsController extends Controller
     public function search()
     {
         $products = Product::all();
-
         return response()->json($products);
     }
 

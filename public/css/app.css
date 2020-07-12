@@ -11533,9 +11533,18 @@ main {
 .sres_item {
   display: grid;
   grid-template-columns: 70px 150px 1fr;
+  text-decoration: none;
+  color: #40404c;
+}
+.sres_item:hover {
+  color: #40404c;
 }
 .sres_col {
   position: relative;
+  color: #40404c;
+}
+.sres_col:hover {
+  color: #40404c;
 }
 .sres_col_inner_item {
   display: grid;
@@ -11547,6 +11556,26 @@ main {
 
 .sres_color {
   margin: 0;
+}
+
+.tripleCol {
+  background-image: url("/images/icons/tripleCol.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #fff;
+}
+
+.blueCol {
+  background-color: #3559fd;
+}
+
+.purpleCol {
+  background-color: #d935fd;
+}
+
+.yellowCol {
+  background-color: #fdd935;
 }
 
 .company_table_item span:nth-child(2) {

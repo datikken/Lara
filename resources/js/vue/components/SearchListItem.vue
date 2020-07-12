@@ -1,8 +1,8 @@
 <template>
 
-    <div class="sres_item">
+    <a class="sres_item" v-bind:href="link">
         <div class="sres_col">
-            <span class="sres_col_item sres_color"></span>
+            <span class="sres_col_item sres_color" v-bind:class="color"></span>
         </div>
         <div class="sres_col">
             <span class="sres_col_item">{{ data.params.art }}</span>
@@ -15,7 +15,7 @@
             </div>
 
         </div>
-    </div>
+    </a>
 
 </template>
 
@@ -25,10 +25,29 @@
         props: ['data'],
         data: function (){
             return {
-
+                color: '',
+                link: ''
             }
         },
-        created:function() { }
+        created:function(data) {
+            this.link = '/product/details/' + this.$props.data.id
+            let col = this.$props.data.params.col
+
+            switch(col) {
+                case 'Черный': this.color = 'blackCol'
+                    break;
+                case 'Трехцветный': this.color = 'tripleCol'
+                    break;
+                case 'Голубой': this.color = 'blueCol'
+                    break;
+                case 'Пурпурный': this.color = 'purpleCol'
+                    break;
+                case 'Желтый': this.color = 'yellowCol'
+                    break;
+                default: 'black'
+                    break;
+            }
+        }
     }
 </script>
 

@@ -22,7 +22,6 @@
         top: 40px;
         left: -20px;
         z-index: 999999;
-        //overflow-y: scroll;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
         z-index: 999999;
 
@@ -63,10 +62,19 @@
     &_item {
         display: grid;
         grid-template-columns: 70px 150px 1fr;
+        text-decoration: none;
+        color: $black;
+        &:hover {
+            color: $black;
+        }
     }
 
     &_col {
         position: relative;
+        color: $black;
+        &:hover {
+            color: $black;
+        }
 
         &_inner_item {
             display: grid;
@@ -81,4 +89,20 @@
 
 .sres_color {
     margin: 0;
+}
+
+.tripleCol {
+    background-image: url('/images/icons/tripleCol.svg');
+    @include bg(cover,center);
+    background-color: #fff;
+}
+
+.blueCol {
+    background-color: $blue;
+}
+.purpleCol {
+    background-color: $purple2;
+}
+.yellowCol {
+    background-color: $yellow;
 }

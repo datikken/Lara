@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
+        closeListener: false,
         products: [],
         filteredProducts: []
     },
@@ -13,6 +14,11 @@ const store = new Vuex.Store({
         filteredProducts: state => state.filteredProducts
     },
     mutations: {
+        setCloseListener(state, payload) {
+            state.closeListener = payload;
+
+            console.log(state.closeListener)
+        },
         getFilteredProducts(state, payload) {
             let products = state.products;
             let that = this;
@@ -20,14 +26,12 @@ const store = new Vuex.Store({
             state.filteredProducts = [];
 
             products.forEach((prod) => {
-                if(prod.params.art.indexOf(payload) >= 0) {
-                    state.filteredProducts.push(prod);
-                }
-
                 if(prod.name.indexOf(payload) >= 0) {
                     state.filteredProducts.push(prod);
                 }
             });
+
+            state.closeListener = true;
         },
         getAllProducts (state) {
             let url = '/search';
