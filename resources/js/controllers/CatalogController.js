@@ -2,7 +2,7 @@ import FastViewController from './FastViewController.js'
 
 class CatalogController {
     _initFastViewController(el) {
-        let fastViewController = new FastViewController(el);
+       new FastViewController(el);
     }
     _setListeners() {
         let that = this;

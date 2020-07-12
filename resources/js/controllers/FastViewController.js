@@ -1,6 +1,26 @@
 import $ from "jquery";
 
 class FastViewController {
+    _getProductJson(el) {
+        let pid = el.querySelector('[data-prid]').dataset.prid;
+        let url = window.location.host + `/product/${pid}`;
+
+        $.ajax({
+            method: "get",
+            url: `${url}`,
+            data: {
+                id: pid
+            },
+            success: function (data) {
+                console.warn(data);
+            },
+            error: function (error) {
+                console.warn(error);
+            }
+        });
+
+
+    }
     _addToCartProcessor(el) {
         let btn = el.querySelector('.prdet_wrap-icons_ctas-buy');
             btn.addEventListener('click', function() {
@@ -67,6 +87,7 @@ class FastViewController {
         if(modal) {
             this._amountProcessor(modal);
             this._addToCartProcessor(modal);
+            this._getProductJson(modal);
         }
     }
 }

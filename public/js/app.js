@@ -95620,6 +95620,7 @@ var MenuController = /*#__PURE__*/function () {
   }, {
     key: "_initMobileDropDown",
     value: function _initMobileDropDown() {
+      var state = false;
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu_wrapper-item_hamburger').on('click', function () {
         var body = document.querySelector('body');
 
@@ -95647,7 +95648,7 @@ var MenuController = /*#__PURE__*/function () {
     }
   }, {
     key: "_searchWidthController",
-    value: function _searchWidthController() {
+    value: function _searchWidthController(search) {
       var state = false;
       jquery__WEBPACK_IMPORTED_MODULE_0___default()(search).on('click', function () {
         if (!state) {
@@ -95709,7 +95710,7 @@ var MenuController = /*#__PURE__*/function () {
     if (window.screen.width < 1000) {
       this._initMobileDropDown();
 
-      this._searchWidthController();
+      this._searchWidthController(search);
     }
   }
 
@@ -96341,7 +96342,7 @@ var CatalogController = /*#__PURE__*/function () {
   _createClass(CatalogController, [{
     key: "_initFastViewController",
     value: function _initFastViewController(el) {
-      var fastViewController = new _FastViewController_js__WEBPACK_IMPORTED_MODULE_0__["default"](el);
+      new _FastViewController_js__WEBPACK_IMPORTED_MODULE_0__["default"](el);
     }
   }, {
     key: "_setListeners",
@@ -97073,6 +97074,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var FastViewController = /*#__PURE__*/function () {
   _createClass(FastViewController, [{
+    key: "_getProductJson",
+    value: function _getProductJson(el) {
+      var pid = el.querySelector('[data-prid]').dataset.prid;
+      var url = window.location.host + "/product/".concat(pid);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+        method: "get",
+        url: "".concat(url),
+        data: {
+          id: pid
+        },
+        success: function success(data) {
+          console.warn(data);
+        },
+        error: function error(_error) {
+          console.warn(_error);
+        }
+      });
+    }
+  }, {
     key: "_addToCartProcessor",
     value: function _addToCartProcessor(el) {
       var btn = el.querySelector('.prdet_wrap-icons_ctas-buy');
@@ -97093,8 +97113,8 @@ var FastViewController = /*#__PURE__*/function () {
             jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu_wrapper-item_cart_icon-amount').text(amount);
             jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-cartpriceval]').text(price);
           },
-          error: function error(_error) {
-            console.warn(_error);
+          error: function error(_error2) {
+            console.warn(_error2);
           }
         });
       });
@@ -97142,6 +97162,8 @@ var FastViewController = /*#__PURE__*/function () {
       this._amountProcessor(modal);
 
       this._addToCartProcessor(modal);
+
+      this._getProductJson(modal);
     }
   }
 
@@ -98968,7 +98990,6 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     },
     getFilteredProducts: function getFilteredProducts(state, payload) {
       var products = state.products;
-      var that = this;
       state.filteredProducts = [];
       products.forEach(function (prod) {
         if (prod.name.indexOf(payload) >= 0) {

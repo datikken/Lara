@@ -11,7 +11,9 @@ class MenuController {
     }
 
     _initMobileDropDown() {
-            $('.menu_wrapper-item_hamburger').on('click', () => {
+        let state = false;
+
+        $('.menu_wrapper-item_hamburger').on('click', () => {
                 let body = document.querySelector('body');
 
                 if(!state) {
@@ -36,7 +38,7 @@ class MenuController {
         });
     }
 
-    _searchWidthController() {
+    _searchWidthController(search) {
         let state = false;
 
         $(search).on('click', function() {
@@ -96,7 +98,7 @@ class MenuController {
 
         if (window.screen.width < 1000) {
             this._initMobileDropDown();
-            this._searchWidthController();
+            this._searchWidthController(search);
         }
     }
 }

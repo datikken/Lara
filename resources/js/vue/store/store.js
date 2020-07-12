@@ -21,8 +21,6 @@ const store = new Vuex.Store({
         },
         getFilteredProducts(state, payload) {
             let products = state.products;
-            let that = this;
-
             state.filteredProducts = [];
 
             products.forEach((prod) => {

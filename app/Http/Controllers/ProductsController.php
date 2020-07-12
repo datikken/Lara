@@ -79,14 +79,12 @@ class ProductsController extends Controller
         $images = DB::table('product_images')->where('product_id', $product['id'])->get();
         $feedItems = DB::table('product_feedback')->where('product_id', $product['id'])->get();
         $imgArr = array();
-        $usersImages = array();
 
         foreach ($feedItems as  $key=>$value) {
             $usverAvatar = DB::table('users_info')->where('user_id', $value->user_id)->value('image');
             $usverName = DB::table('users')->where('id', $value->user_id)->value('name');
             $feedItems[$key]->user_avatar = $usverAvatar;
             $feedItems[$key]->user_name = $usverName;
-            array_push($usersImages);
         }
 
         foreach ($images as $image ) {
@@ -116,6 +114,10 @@ class ProductsController extends Controller
         $product['cape'] = $cape;
         $product['params'] = $pr_params;
         $product['name_econom'] = json_decode($product['name_econom']);
+
+        if ($request->ajax()) {
+            return response()->json($product);
+        }
 
         return view('layouts.product_details', ['product' => $product, 'feedbacks' => $feedItems]);
     }
