@@ -11,13 +11,12 @@ const store = new Vuex.Store({
         filteredProducts: []
     },
     getters: {
-        filteredProducts: state => state.filteredProducts
+        filteredProducts: state => state.filteredProducts,
+        allProducts: state => state.products
     },
     mutations: {
         setCloseListener(state, payload) {
             state.closeListener = payload;
-
-            console.log(state.closeListener)
         },
         getFilteredProducts(state, payload) {
             let products = state.products;

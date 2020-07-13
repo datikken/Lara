@@ -136,6 +136,7 @@
                                 <span>Canon i-Sensys</span>
                             </div>
                         </div>
+
                         <div class="prdet_table-col">
                             <div class="prdet_table-col_head">
                                 <span>Модель</span>

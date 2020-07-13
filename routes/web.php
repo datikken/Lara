@@ -57,6 +57,10 @@ Route::group(['middleware' => 'checkUserRole'], function() {
 
 //Main page
 Route::get('/',['uses' => "ProductsController@showIndex", 'as' => 'index']);
+
+//CATALOG
+Route::get('/catalog', ['uses' => "ProductsController@catalogHTML", 'as' => 'allProducts']);
+
 //Catalog cartridge
 Route::get('/catalogСartridge', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
 //Catalog page

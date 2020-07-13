@@ -6,9 +6,9 @@
 </template>
 
 <script>
-    import Input from './components/Input';
-    import SearchList from './components/SearchList';
-    import SearchListItem from './components/SearchListItem';
+    import Input from './components/search/Input';
+    import SearchList from './components/search/SearchList';
+    import SearchListItem from './components/search/SearchListItem';
 
     export default {
         name: 'app',

@@ -35,6 +35,7 @@ import MenuController from './components/Menu'
 import CatalogController from './controllers/CatalogController'
 
 $(document).ready(function() {
+    new CatalogController();
     new MenuController();
     new OwlCarouselController();
     new Validator();
@@ -62,5 +63,4 @@ $(document).ready(function() {
     new DashController();
     new DeliveryController();
     new BlogPostController();
-    new CatalogController();
 });

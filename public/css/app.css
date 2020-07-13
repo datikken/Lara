@@ -3912,6 +3912,50 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #d4d4d5;
 }
 
+.products {
+  max-width: 870px;
+  position: relative;
+}
+.products .pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+}
+.products .pagination .active {
+  background: #fdd935;
+  border: 1px solid #fdd935 !important;
+  pointer-events: none;
+}
+.products .pagination .page-item {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e9e9ea;
+  border-radius: 50%;
+  margin: 0 10px 0 0;
+}
+.products .pagination .page-item:last-child, .products .pagination .page-item:first-child {
+  margin: 0;
+}
+.products .pagination .page-item span, .products .pagination .page-item a {
+  display: block;
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+}
+.products .pagination li:first-child, .products .pagination li:last-child {
+  display: none;
+}
+
 .products_grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -3938,44 +3982,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   .products_grid .pagination_links {
     bottom: -40px;
   }
-}
-.products_grid .pagination_links .pagination {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: flex-start;
-}
-.products_grid .pagination_links .pagination .active {
-  background: #fdd935;
-  border: 1px solid #fdd935 !important;
-  pointer-events: none;
-}
-.products_grid .pagination_links .pagination .page-item {
-  height: 30px;
-  width: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #e9e9ea;
-  border-radius: 50%;
-  margin: 0 10px 0 0;
-}
-.products_grid .pagination_links .pagination .page-item:last-child, .products_grid .pagination_links .pagination .page-item:first-child {
-  margin: 0;
-}
-.products_grid .pagination_links .pagination .page-item span, .products_grid .pagination_links .pagination .page-item a {
-  display: block;
-  font-family: "MontserratSemiBold";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #40404c;
-}
-.products_grid .pagination_links .pagination li:first-child, .products_grid .pagination_links .pagination li:last-child {
-  display: none;
 }
 
 .product {

@@ -1,4 +1,7 @@
 import FastViewController from './FastViewController.js'
+import Vue from "vue";
+import store from "../vue/store/store";
+import cat from '../vue/Catalog.vue'
 
 class CatalogController {
     _initFastViewController(el) {
@@ -16,6 +19,11 @@ class CatalogController {
     constructor() {
         let catalog = document.querySelector('.products_grid');
             catalog && this._setListeners();
+
+        new Vue({
+            render: h => h(cat),
+            store: store,
+        }).$mount('#catalog')
     }
 }
 
