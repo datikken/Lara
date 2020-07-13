@@ -97074,18 +97074,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var FastViewController = /*#__PURE__*/function () {
   _createClass(FastViewController, [{
+    key: "_fillFastViewInfo",
+    value: function _fillFastViewInfo(el, data) {
+      var res = el.querySelector('[data-paramres]');
+      res.innerText = data.params.res;
+    }
+  }, {
     key: "_getProductJson",
     value: function _getProductJson(el) {
       var pid = el.querySelector('[data-prid]').dataset.prid;
-      var url = window.location.host + "/product/".concat(pid);
+      var url = "/product/".concat(pid);
+      var that = this;
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
         method: "get",
         url: "".concat(url),
-        data: {
-          id: pid
-        },
+        data: {},
         success: function success(data) {
-          console.warn(data);
+          that._fillFastViewInfo(el, data);
         },
         error: function error(_error) {
           console.warn(_error);

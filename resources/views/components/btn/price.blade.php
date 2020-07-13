@@ -7,7 +7,11 @@
 
         <div class="amount_btn-value-wrap">
             <div class="amount_btn-value-wrap_inner">
-                <span class="amount_btn-value-wrap_inner_val">29900</span>
+                <span class="amount_btn-value-wrap_inner_val">
+                    @if($price)
+                        @php echo floor($price); @endphp
+                    @endif
+                </span>
                 <img src="/images/icons/rub.svg" alt="cur" />
             </div>
         </div>

@@ -59,17 +59,27 @@
             <div class="prdet_wrap">
                 <div class="prdet_wrap-item">
                     <div class="prdet_wrap-item_img">
-                        <div class="prdet_wrap-item_img_inner"></div>
+                        <div class="prdet_wrap-item_img_inner" style="background-image: url({{Storage::disk("local")->url("/product_images/" . $image )}})">
+                        </div>
                     </div>
                 </div>
                 <div class="prdet_wrap-item">
 
                     <div class="prdet_wrap-item-head">
-                        <span class="prdet_wrap-item-head-item">Тонер-картридж TC-H85A </span>
+                        <span class="prdet_wrap-item-head-item">
+                            <?
+                                if(gettype($name) === 'array') {
+                                    echo str_limit(json_decode($name_buh), $limit = 39, $end = '...');
+                                } else {
+                                    echo str_limit($name, $limit = 40, $end = '...');
+                                }
+                            ?>
+                        </span>
                     </div>
-                    <div class="prdet_wrap-item-desc">
-                        <span class="prdet_wrap-item-desc-item">Чёрный тонер-картридж TC-H85A для принтеров и МФУ:</span>
-                    </div>
+
+                    {{--<div class="prdet_wrap-item-desc">--}}
+                        {{--<span class="prdet_wrap-item-desc-item">Чёрный тонер-картридж TC-H85A для принтеров и МФУ:</span>--}}
+                    {{--</div>--}}
 
                     <div class="prdet_wrap-item-icons">
                         <div class="prdet_wrap-item-icons-item" style="background-image: url('/images/product/drip.svg')"></div>
@@ -81,12 +91,12 @@
                     <div class="prdet_wrap-item-stuff">
                         <span>Фотобарабан Mitsubishi Chemical Corporation, тонер Mitsubishi Chemical Corporation </span>
                         <span>ОЕМ-номер: <b>CE285A.</b></span>
-                        <span><b>1 600</b> текстовых страниц <b>А4</b> согласно ASTM F1856/STMC для картриджей «Всё в одном»</span>
+                        <span><b data-paramres>1 600</b> текстовых страниц <b>А4</b> согласно ASTM F1856/STMC для картриджей «Всё в одном»</span>
                     </div>
 
                     <div class="prdet_wrap-icons_ctas">
                         <div class="prdet_wrap-icons_ctas-amount">
-                            @include('components.btn.price')
+                            @include('components.btn.price', ['price' => $price ])
                         </div>
                         <div class="prdet_wrap-icons_ctas-increase">
                             <span class="prdet_wrap-icons_ctas-increase-text">Количество (шт)</span>
@@ -109,6 +119,8 @@
 
                 <div class="prdet_comp-item">
                     <div class="prdet_table">
+
+
                         <div class="prdet_table-col">
                             <div class="prdet_table-col_head">
                                 <span>Марка</span>
@@ -139,6 +151,9 @@
                                 <span>LBP6000 LBP6000B LBP6020 LBP6020B LBP6030 LBP6030B LBP6030W MF3010</span>
                             </div>
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
