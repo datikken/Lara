@@ -30,7 +30,7 @@
             }
         },
         created:function(data) {
-            this.link = '/product/details/' + this.$props.data.id
+            this.link = '/product/' + this.$props.data.id
             let col = this.$props.data.params.col
 
             switch(col) {

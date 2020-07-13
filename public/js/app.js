@@ -275,7 +275,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created(data) {
-    this.link = '/product/details/' + this.$props.data.id;
+    this.link = '/product/' + this.$props.data.id;
     var col = this.$props.data.params.col;
 
     switch (col) {
