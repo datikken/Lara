@@ -46,7 +46,7 @@ class DeliveryAuthController {
                 let host = window.location.host;
                 let protocol = window.location.protocol;
 
-                window.location.href = protocol + '//' + host + `/product/deliveryForm`;
+                window.location.href = protocol + '//' + host + `/deliveryForm`;
             },
             error: function (error) {
                 console.warn(error);

@@ -318,10 +318,7 @@ class ProductsController extends Controller
         return view('pages.delivery');
     }
 
-    public function deliveryForm()
-    {
-        return view('pages.cart.deliveryForm');
-    }
+
 
     public function setIndex(Request $request)
     {

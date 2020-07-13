@@ -96743,7 +96743,7 @@ var DeliveryAuthController = /*#__PURE__*/function () {
         success: function success() {
           var host = window.location.host;
           var protocol = window.location.protocol;
-          window.location.href = protocol + '//' + host + "/product/deliveryForm";
+          window.location.href = protocol + '//' + host + "/deliveryForm";
         },
         error: function error(_error) {
           console.warn(_error);

@@ -4,7 +4,7 @@ Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => 'restrictToAdmin'], function() {
 //ORDERS
-    Route::get('product/checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
+    Route::get('checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
     Route::get('admin/banners', ['uses' => "AdminBannersController@index", 'as' => 'setBanner']);
 //Tracking
     Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking']);
@@ -103,9 +103,9 @@ Route::get('product/increaseSingleProduct/{id}', ['uses' => 'ProductsController@
 Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@decreaseSingleProduct', 'as' => 'DecreaseSingleProduct']);
 Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
 
-Route::get('product/setCustomerFio',['uses' => 'CustomerFioController@setCustomerFio','as'=>'setCustomerFio']);
+Route::get('setCustomerFio',['uses' => 'CustomerDataController@setCustomerFio','as'=>'setCustomerFio']);
 Route::get('product/delivery',['uses' => 'ProductsController@setDelivery','as'=>'setDelivery']);
-Route::get('product/deliveryForm',['uses' => 'ProductsController@deliveryForm','as'=>'deliveryForm']);
+Route::get('deliveryForm',['uses' => 'CustomerDataController@deliveryForm','as'=>'deliveryForm']);
 Route::post('product/setIndex',['uses' => 'ProductsController@setIndex','as'=>'setIndex']);
 Route::get('product/setAddress',['uses' => 'ProductsController@setAddress','as'=>'setAddress']);
 Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'setIssue']);
