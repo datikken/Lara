@@ -313,24 +313,6 @@ class ProductsController extends Controller
         return view('pages.cart.checkoutProducts');
     }
 
-    public function setCustomerFio(Request $request)
-    {
-        $firstname = $request->input('firstname');
-        $lastname = $request->input('lastname');
-        $tel = $request->input('tel');
-        $save = $request->input('save');
-
-        $arr = [
-            'firstname' => $firstname,
-            'lastname' => $lastname,
-            'tel' => $tel,
-            'save' => $save
-        ];
-
-        $request->session()->put('cart-customerFio', $arr);
-        return response()->json((object) array('customer_fio' => $arr));
-    }
-
     public function setDelivery()
     {
         return view('pages.delivery');
