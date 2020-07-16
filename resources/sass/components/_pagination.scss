@@ -1,37 +1,61 @@
-.pagination {
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  .pactive {
-    background: $yellow;
-    border: 0;
-  }
-  &-item_dots {
-    border: none !important;
-  }
-  &-item {
-    border: 2px solid $light_gray;
-    width: 30px;
-    height: 30px;
-    color: $black;
-    border-radius: 50%;
+
+.pagination_links {
+    //position: absolute;
+    //left: 50%;
+    //bottom: -50px;
+    //transform: translate(-50%, 0);
+    //
+    //@include breakpoint($medium) {
+    //    bottom: -40px;
+    //}
+}
+
+.pagination {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-    &:first-child {
-      margin-left: 0;
+    justify-content: flex-start;
+    position: absolute;
+
+    .active {
+        background: $yellow;
+        border: 1px solid $yellow!important;
+        cursor: pointer;
+        pointer-events: none;
     }
-    &_text {
-      font-family: $semifont;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 12px;
-      line-height: 14px;
-      letter-spacing: 0.02em;
-      color: black;
+
+    .page-item {
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $light_gray;
+        border-radius: 50%;
+        margin: 0 10px 0 0;
+        cursor: pointer;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        span, a {
+            display: block;
+            font-family: $semifont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            color: $black;
+        }
     }
-  }
+
+    li {
+        &:first-child, &:last-child {
+            display: none;
+        }
+    }
 }

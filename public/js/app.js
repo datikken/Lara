@@ -1948,6 +1948,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1964,11 +1972,23 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    jumpToPage: function jumpToPage(page) {
+      this.page = page;
+      var pageBtns = this.$el.querySelectorAll('.page-item');
+      pageBtns.forEach(function (el, i) {
+        if (el.classList.contains('active')) {
+          el.classList.remove('active');
+        }
+
+        pageBtns[page - 1].classList.add('active');
+      });
+      console.warn(page, this.$el);
+    },
     paginateNext: function paginateNext() {
       this.page = this.page + 1;
     },
     paginatePrev: function paginatePrev() {
-      if (this.page > 1) {
+      if (this.page > 0) {
         this.page = this.page - 1;
       }
     },
@@ -1976,10 +1996,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/catalogСartridge').then(function (response) {
-        _this.products = response.data;
-        console.warn('axios response', response.data);
-      })["catch"](function (response) {
-        console.log(response);
+        _this.products = response.data; // console.warn('axios response', response.data)
+      })["catch"](function (err) {
+        console.log(err);
       });
     },
     setPages: function setPages() {
@@ -83667,9 +83686,35 @@ var render = function() {
             )
           }),
           _vm._v(" "),
-          _c("button", { on: { click: _vm.paginateNext } }, [_vm._v("Next")]),
-          _vm._v(" "),
-          _c("button", { on: { click: _vm.paginatePrev } }, [_vm._v("Prev")])
+          _c("div", { staticClass: "pagination_links" }, [
+            _c(
+              "div",
+              { staticClass: "pagination" },
+              _vm._l(_vm.pages, function(page, index) {
+                return _c(
+                  "div",
+                  {
+                    staticClass: "page-item",
+                    class: { active: index === 0 },
+                    attrs: { "data-pageId": page },
+                    on: {
+                      click: function($event) {
+                        return _vm.jumpToPage(page)
+                      }
+                    }
+                  },
+                  [
+                    _c(
+                      "span",
+                      { staticClass: "page-link", attrs: { href: "#" } },
+                      [_vm._v(_vm._s(page))]
+                    )
+                  ]
+                )
+              }),
+              0
+            )
+          ])
         ],
         2
       )
@@ -100202,9 +100247,8 @@ var RegisterController = /*#__PURE__*/function () {
       if (str.indexOf('invalid') > 0) {
         item.innerText = 'Проверьте правильность введенных данных.';
         item.classList.add('invalid');
-      }
+      } // console.warn('_setError', str, str.indexOf('taken'));
 
-      console.warn('_setError', str, str.indexOf('taken'));
     }
   }, {
     key: "_pickFaceType",
@@ -100288,8 +100332,7 @@ var RegisterController = /*#__PURE__*/function () {
           window.location.href = protocol + '//' + host + "/home";
         },
         error: function error(_error) {
-          console.warn('an error occured in ajax', _error.responseJSON);
-
+          // console.warn('an error occured in ajax', error.responseJSON);
           if (_error.responseText.indexOf('taken') > 0) {
             that._setError(_error.responseText, 'register');
           } else {

@@ -59,7 +59,7 @@ class RegisterController {
             item.classList.add('invalid');
         }
 
-        console.warn('_setError', str, str.indexOf('taken'));
+        // console.warn('_setError', str, str.indexOf('taken'));
 
     }
     _pickFaceType(etc) {
@@ -142,7 +142,7 @@ class RegisterController {
                 window.location.href = protocol + '//' + host + `/home`;
             },
             error: function (error) {
-                console.warn('an error occured in ajax', error.responseJSON);
+                // console.warn('an error occured in ajax', error.responseJSON);
 
                 if(error.responseText.indexOf('taken') > 0) {
                     that._setError(error.responseText, 'register');

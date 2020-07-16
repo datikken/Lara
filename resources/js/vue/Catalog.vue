@@ -11,13 +11,21 @@
                     <CatalogCard :data="item" />
                 </div>
 
-
-                <button v-on:click="paginateNext">Next</button>
-                <button v-on:click="paginatePrev">Prev</button>
+                <div class="pagination_links">
+                    <div class="pagination">
+                        <div
+                            class="page-item"
+                            v-for="(page, index) in pages"
+                            :class="{ 'active': index === 0 }"
+                            v-on:click="jumpToPage(page)"
+                            :data-pageId="page"
+                        >
+                            <span href="#" class="page-link">{{ page }}</span>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-
-
         </div>
     </div>
 
@@ -41,11 +49,24 @@
             }
         },
         methods: {
+            jumpToPage(page) {
+                this.page = page;
+                let pageBtns = this.$el.querySelectorAll('.page-item');
+                    pageBtns.forEach((el, i) => {
+                        if (el.classList.contains('active')) {
+                            el.classList.remove('active');
+                        }
+
+                        pageBtns[page - 1].classList.add('active');
+                    })
+
+                console.warn(page, this.$el);
+            },
             paginateNext() {
                 this.page = this.page + 1
             },
             paginatePrev() {
-                if(this.page > 1) {
+                if(this.page > 0) {
                     this.page = this.page - 1
                 }
             },
@@ -53,10 +74,10 @@
                 axios.get('/catalogСartridge')
                     .then(response => {
                         this.products = response.data;
-                        console.warn('axios response', response.data)
+                        // console.warn('axios response', response.data)
                     })
-                    .catch(response => {
-                        console.log(response);
+                    .catch(err => {
+                        console.log(err);
                     });
             },
             setPages () {

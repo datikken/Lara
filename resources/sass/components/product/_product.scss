@@ -1,55 +1,6 @@
 .products {
     max-width: 870px;
     position: relative;
-
-    .pagination {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: flex-start;
-
-        position: absolute;
-
-
-        .active {
-            background: $yellow;
-            border: 1px solid $yellow!important;
-            pointer-events: none;
-        }
-
-        .page-item {
-            height: 30px;
-            width: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid $light_gray;
-            border-radius: 50%;
-            margin: 0 10px 0 0;
-
-            &:last-child, &:first-child {
-                margin: 0;
-            }
-
-            span, a {
-                display: block;
-                font-family: $semifont;
-                font-style: normal;
-                font-weight: 600;
-                font-size: 12px;
-                line-height: 14px;
-                letter-spacing: 0.02em;
-                color: $black;
-            }
-        }
-
-        li {
-            &:first-child, &:last-child {
-                display: none;
-            }
-        }
-    }
 }
 
 .products_grid {
@@ -65,17 +16,6 @@
     margin-left: 10px;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 0 100px 20px;
-  }
-
-  .pagination_links {
-    position: absolute;
-    left: 50%;
-    bottom: -50px;
-    transform: translate(-50%, 0);
-
-    @include breakpoint($medium) {
-      bottom: -40px;
-    }
   }
 }
 
