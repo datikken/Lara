@@ -4,19 +4,53 @@
 }
 
 .products_grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  position: relative;
-  margin-bottom: 100px;
-  margin-top: 16px;
+        .vue-ads-flex {
+            &:first-child {
+                display: grid;
+                grid-template-columns: 1fr;
+                position: relative;
+                margin-bottom: 100px;
+                margin-top: 16px;
 
-  @include breakpoint($medium) {
-    margin-bottom: 0;
-    margin-top: 0;
-    margin-left: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 0 100px 20px;
-  }
+            @include breakpoint($medium) {
+                margin-bottom: 0;
+                margin-top: 0;
+                margin-left: 10px;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin: 0 0 100px 20px;
+            }
+        }
+
+        &:last-child {
+            button {
+                height: 30px;
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid $light_gray;
+                border-radius: 50%;
+                margin: 0 10px 0 0;
+                cursor: pointer;
+                //background: $yellow!important;
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                span, a {
+                    display: block;
+                    font-family: $semifont;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    color: $black;
+                }
+            }
+        }
+    }
 }
 
 .product {

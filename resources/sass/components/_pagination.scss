@@ -26,36 +26,24 @@
         pointer-events: none;
     }
 
-    .page-item {
-        height: 30px;
-        width: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid $light_gray;
-        border-radius: 50%;
-        margin: 0 10px 0 0;
-        cursor: pointer;
-
-        &:last-child {
-            margin: 0;
-        }
-
-        span, a {
-            display: block;
-            font-family: $semifont;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 12px;
-            line-height: 14px;
-            letter-spacing: 0.02em;
-            color: $black;
-        }
-    }
-
     li {
         &:first-child, &:last-child {
             display: none;
         }
     }
+}
+
+.vue-ads-flex-grow {
+    position: absolute;
+    right: 0;
+    bottom: -66px;
+}
+.hover\:vue-ads-bg-gray-100:hover {
+    background-color: #fff!important;
+}
+.vue-ads-bg-teal-500 {
+    background-color: $yellow!important;
+}
+[title="previous"],[title="next"] {
+    display: none!important;
 }

@@ -10,7 +10,7 @@
         <div class="header_wrapper-item">
             <ul class="header_wrapper-item_menu">
                 <li class="header_wrapper-item_menu-item">
-                    <a href="/catalogСartridge" class="header_wrapper-item_menu-item_link">Каталог</a>
+                    <a href="/catalog" class="header_wrapper-item_menu-item_link">Каталог</a>
                 </li>
                 <li class="header_wrapper-item_menu-item">
                     <a href="/information" class="header_wrapper-item_menu-item_link">Информация</a>

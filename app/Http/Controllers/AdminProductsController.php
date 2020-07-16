@@ -221,13 +221,12 @@ class AdminProductsController extends Controller
         $json = json_decode($res);
 
         foreach ($json as $key=>$value) {
-            $product_image = '';
-
             $arr = [
               'uuid' => isset($value->uuid) ? $value->uuid : json_encode(array()),
               'name' => isset($value->name_buh) ? $value->name_buh :  json_encode(array()),
               'currency_code' => isset($value->currency_code) ? $value->currency_code :  json_encode(array()),
               'params' => isset($value->params) ? json_encode($value->params) :  json_encode(array()),
+              'photo' => isset($value->photo) ? $value->photo :  json_encode(array()),
               'name_econom' => isset($value->name_ecom) ?  json_encode($value->name_ecom) : json_encode(array()),
               'bro_color' => isset($value->bro_color) ? json_encode($value->bro_color) :  json_encode(array()),
               'bro_counter_brand' => isset($value->bro_counter_brand) ? json_encode($value->bro_counter_brand) :  json_encode(array()),
@@ -237,16 +236,6 @@ class AdminProductsController extends Controller
               'cape' =>  isset($value->cape) ? json_encode($value->cape) : json_encode(array()),
             ];
 
-            if(!empty($value->params)) {
-                $data = json_decode(json_encode($value->params));
-
-                foreach ($data as $key=>$value) {
-                    if(isset($value->photo)) {
-                        $product_image = $value->photo;
-                    }
-                }
-            }
-
             $exist = DB::table('products')->where('uuid', $arr['uuid'] )->value('uuid');
 
             if(is_null($exist)) {
@@ -254,26 +243,6 @@ class AdminProductsController extends Controller
             } else {
                 $created = DB::table('products')->where('uuid', $arr['uuid'])->update($arr);
             }
-
-//  save product image
-
-//            if($product_image != '') {
-//                $pr_id = DB::table('products')->where('uuid', $arr['uuid'])->value('id');
-//
-//                $arr = [
-//                    'product_id' => $pr_id,
-//                    'image' => str_replace(' ', '', $product_image),
-//                    'created_at' => Carbon::now()
-//                ];
-//
-//                $existName = DB::table('product_images')->where('product_id', $pr_id)->value('image');
-//
-//                if($existName == $arr['image']) {
-//                    DB::table('product_images')->where('product_id', $pr_id)->where('image', $arr['image'])->update($arr);
-//                } else {
-//                    DB::table('product_images')->insert($arr);
-//                }
-//            }
         }
 
         return redirect('/admin/products');

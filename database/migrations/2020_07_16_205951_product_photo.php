@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ProductFeedbackNull extends Migration
+class ProductPhoto extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class ProductFeedbackNull extends Migration
      */
     public function up()
     {
-        Schema::table('product_feedback', function (Blueprint $table) {
-            //
-            $table->string('plus')->nullable()->change();
-            $table->string('minus')->nullable()->change();
+        Schema::table('products', function($table)
+        {
+            $table->string('photo', 50)->nullable();
         });
     }
 
@@ -27,5 +26,9 @@ class ProductFeedbackNull extends Migration
      */
     public function down()
     {
+        Schema::table('products', function($table)
+        {
+            $table->dropColumn('photo');
+        });
     }
 }

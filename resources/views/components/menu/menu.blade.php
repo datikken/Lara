@@ -13,7 +13,7 @@
             <div class="menu_Wrapper-item_secondary-item">
                 <ul class="menu_Wrapper-item_secondary-item_list">
                     <li class="menu_Wrapper-item_secondary-item_list-item">
-                        <a href="/catalogСartridge">
+                        <a href="/catalog">
                         <span class="menu_Wrapper-item_secondary-item_list-item-text">
                                           Каталог
                                         </span>
@@ -139,7 +139,7 @@
 
                 <ul class="menu_wrapper-item-main_menu-item-text_secondary secondaryTop">
                     <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
-                        <a href="/catalogСartridge">
+                        <a href="/catalog">
                             <span>Картриджи</span>
                         </a>
                     </li>
@@ -153,7 +153,7 @@
                 <ul class="menu_wrapper-item-main_menu">
                     <li class="menu_wrapper-item-main_menu-item">
                                           <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/catalogСartridge">Каталог</a>
+                                            <a href="/catalog">Каталог</a>
                                               <img src="/images/icons/arrow_right.svg" alt="arrow"/>
                                           </span>
                     </li>
