@@ -455,6 +455,10 @@ b {
   margin-left: 100px;
 }
 
+.pb16 {
+  padding-bottom: 16px;
+}
+
 .header {
   display: none;
   font-family: "MontserratSemiBold";
@@ -4346,7 +4350,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   flex-direction: column;
   position: relative;
   cursor: pointer;
-  padding: 16px 0;
+  padding: 16px 0 0 0;
 }
 .filters_wrapper-item:last-child .filters_wrapper-item_list {
   border-bottom: none;
@@ -4390,8 +4394,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   padding: 0;
   margin: 0;
   list-style: none;
-  border-bottom: 1px solid #e9e9ea;
-  display: none;
 }
 .filters_wrapper-item_list-text {
   border-bottom: 1px solid #e9e9ea;

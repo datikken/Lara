@@ -19,7 +19,7 @@
         flex-direction: column;
         position: relative;
         cursor: pointer;
-        padding: 16px 0;
+        padding: 16px 0 0 0;
 
         &:last-child {
             .filters_wrapper-item_list {
@@ -44,9 +44,6 @@
       &:last-child {
         border: none;
       }
-      //&:hover .filters_wrapper-item_list {
-      //  display: block;
-      //}
       &_text {
         font-family: $font;
         font-size: 12px;
@@ -71,9 +68,6 @@
         padding: 0;
         margin: 0;
         list-style: none;
-        border-bottom: 1px solid $light_gray;
-        display: none;
-
 
         &-text {
           border-bottom: 1px solid $light_gray;

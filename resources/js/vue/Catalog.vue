@@ -2,7 +2,7 @@
 
     <div class="columns catalog_columns">
         <div class="left_column">
-
+            <Filters />
         </div>
         <div class="right_column">
             <div class="products_grid">
@@ -49,6 +49,7 @@
     import '../../../node_modules/vue-ads-pagination/dist/vue-ads-pagination.css';
     import CatalogCard from '../vue/components/catalog/catalogCard'
     import VueAdsPagination, { VueAdsPageButton } from 'vue-ads-pagination';
+    import Filters from './components/filters/Filters'
 
     export default {
         name: "catalog",
@@ -56,6 +57,7 @@
             CatalogCard,
             VueAdsPagination,
             VueAdsPageButton,
+            Filters
         },
         data() {
             return {

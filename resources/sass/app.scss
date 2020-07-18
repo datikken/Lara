@@ -1,6 +1,8 @@
 @import "./variables/variables";
 @import "./utils/utils";
 @import "./utils/classes";
+@import "./modifiers/padding";
+
 @import "./components/header";
 @import "./components/menu/menu";
 @import "./components/menu/menu_secondary";
@@ -82,7 +84,7 @@
 @import "./components/lanfeat";
 @import "./components/landingt/questions";
 @import "./components/postList";
-@import "components/blog/postItem";
+@import "./components/blog/postItem";
 @import "./components/search_results";
 @import "./components/company";
 @import "./components/orders/empty_orders";

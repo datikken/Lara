@@ -15,7 +15,6 @@ import DeliveryFormController from './controllers/DeliveryFormController'
 import CartController from './controllers/CartController'
 import Checkbox from './components/Checkbox'
 import DeliveryAuthController from './controllers/DeliveryAuthController'
-import CatalogFiltersController from './controllers/CatalogFiltersController'
 import InformationController from './controllers/InformationController'
 import ProductDetailsController from './controllers/ProductDetailsController'
 import ProductfeedbackController from './controllers/ProductFeedbackController'
@@ -48,7 +47,6 @@ $(document).ready(function() {
     new Checkbox();
     new CartController();
     new DeliveryAuthController();
-    new CatalogFiltersController();
     new InformationController();
     new DeliveryFormController();
     new ProductDetailsController();
