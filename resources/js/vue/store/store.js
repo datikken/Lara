@@ -14,7 +14,40 @@ const store = new Vuex.Store({
         filteredProducts: state => state.filteredProducts,
         allProducts: state => state.products
     },
+    actions: {
+       fixCartStatus({ dispatch, commit }, { data }) {
+           let amount = data.totalQuantity;
+           let price = data.totalPrice;
+
+           $('[data-cartamountval]').text(amount);
+           $('[data-cartpriceval]').text(price);
+       }
+    },
     mutations: {
+        addProductToCart(state, payload) {
+            let that = this;
+            let url = `/products/addToCartAjaxGet/${payload}`;
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
+            $.ajax({
+                method: "get",
+                url: `${url}`,
+                data: {
+                    id: payload
+                },
+                success: function (data) {
+                    that.dispatch('fixCartStatus', { data })
+                    console.warn(data);
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+        },
         setCloseListener(state, payload) {
             state.closeListener = payload;
         },

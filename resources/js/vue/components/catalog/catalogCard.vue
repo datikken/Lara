@@ -39,9 +39,7 @@
                     <img src="/images/icons/rub.svg" alt="cur" />
                 </div>
 
-                <!--<a href="#" class="ajaxGETproduct" data-url="{{ route('AddToCartAjaxGet', ['id' => $id]) }}">-->
-                    <!--@include('components.btn.buy_btn')-->
-                <!--</a>-->
+                <BuyBtn :id="data.id" />
 
             </div>
         </div>
@@ -49,9 +47,14 @@
 </template>
 
 <script>
+    import BuyBtn from '../btns/BuyBtn';
+
     export default {
         name: "CatalogCard",
         props: ['data'],
+        components: {
+            BuyBtn
+        },
         created: function() {
             let col = this.$props.data;
         }
