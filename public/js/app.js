@@ -2492,6 +2492,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created(data) {
     this.link = '/product/' + this.$props.data.id;
     var col = this.$props.data.params.col;
+    console.log(this.$props.data.cape);
 
     switch (col) {
       case 'Черный':
