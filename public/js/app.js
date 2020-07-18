@@ -2115,15 +2115,13 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _vue_components_catalog_catalogCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../vue/components/catalog/catalogCard */ "./resources/js/vue/components/catalog/catalogCard.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/@fortawesome/fontawesome-free/css/all.css */ "./node_modules/@fortawesome/fontawesome-free/css/all.css");
-/* harmony import */ var _node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _node_modules_vue_ads_pagination_dist_vue_ads_pagination_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-ads-pagination/dist/vue-ads-pagination.css */ "./node_modules/vue-ads-pagination/dist/vue-ads-pagination.css");
-/* harmony import */ var _node_modules_vue_ads_pagination_dist_vue_ads_pagination_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_ads_pagination_dist_vue_ads_pagination_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vue_ads_pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-ads-pagination */ "./node_modules/vue-ads-pagination/dist/vue-ads-pagination.common.js");
-/* harmony import */ var vue_ads_pagination__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_ads_pagination__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/@fortawesome/fontawesome-free/css/all.css */ "./node_modules/@fortawesome/fontawesome-free/css/all.css");
+/* harmony import */ var _node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_vue_ads_pagination_dist_vue_ads_pagination_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-ads-pagination/dist/vue-ads-pagination.css */ "./node_modules/vue-ads-pagination/dist/vue-ads-pagination.css");
+/* harmony import */ var _node_modules_vue_ads_pagination_dist_vue_ads_pagination_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_ads_pagination_dist_vue_ads_pagination_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _vue_components_catalog_catalogCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../vue/components/catalog/catalogCard */ "./resources/js/vue/components/catalog/catalogCard.vue");
+/* harmony import */ var vue_ads_pagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-ads-pagination */ "./node_modules/vue-ads-pagination/dist/vue-ads-pagination.common.js");
+/* harmony import */ var vue_ads_pagination__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_ads_pagination__WEBPACK_IMPORTED_MODULE_3__);
 //
 //
 //
@@ -2170,7 +2168,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 
 
@@ -2178,33 +2175,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "catalog",
   components: {
-    CatalogCard: _vue_components_catalog_catalogCard__WEBPACK_IMPORTED_MODULE_0__["default"],
-    VueAdsPagination: vue_ads_pagination__WEBPACK_IMPORTED_MODULE_4___default.a,
-    VueAdsPageButton: vue_ads_pagination__WEBPACK_IMPORTED_MODULE_4__["VueAdsPageButton"]
+    CatalogCard: _vue_components_catalog_catalogCard__WEBPACK_IMPORTED_MODULE_2__["default"],
+    VueAdsPagination: vue_ads_pagination__WEBPACK_IMPORTED_MODULE_3___default.a,
+    VueAdsPageButton: vue_ads_pagination__WEBPACK_IMPORTED_MODULE_3__["VueAdsPageButton"]
   },
   data: function data() {
     return {
-      products: [],
       page: 0,
       loading: false
     };
   },
   methods: {
     getProducts: function getProducts() {
-      var _this = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/catalogСartridge').then(function (response) {
-        response.data.forEach(function (el) {
-          var params = JSON.parse(el.params);
-          var cape = JSON.parse(el.cape);
-          el.price = Math.ceil(el.price);
-          el.cape = cape;
-          el.params = params;
-        });
-        _this.products = response.data;
-      })["catch"](function (err) {
-        console.log(err);
-      });
+      this.products = this.$store.state.products;
+      console.log(this.products, this.$store.state.products);
     },
     pageChange: function pageChange(page) {
       this.page = page;
@@ -2214,8 +2198,13 @@ __webpack_require__.r(__webpack_exports__);
       console.log(start, end);
     }
   },
+  computed: {
+    products: function products() {
+      return this.$store.state.products;
+    }
+  },
   created: function created() {
-    this.getProducts();
+    this.$store.commit('getAllProducts');
   }
 });
 
@@ -107012,6 +107001,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -107081,29 +107073,22 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       state.closeListener = true;
     },
     getAllProducts: function getAllProducts(state) {
-      var url = '/search';
-      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajaxSetup({
-        headers: {
-          'X-CSRF-TOKEN': window.token
-        }
-      });
-      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajax({
-        method: "get",
-        url: url,
-        data: {},
-        success: function success(data) {
-          data.forEach(function (el) {
+      if (state.products.length === 0) {
+        axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/catalogСartridge').then(function (response) {
+          response.data.forEach(function (el) {
             var params = JSON.parse(el.params);
             var cape = JSON.parse(el.cape);
+            el.price = Math.ceil(el.price);
             el.cape = cape;
             el.params = params;
           });
-          state.products = data;
-        },
-        error: function error(_error2) {
-          console.warn(_error2);
-        }
-      });
+          state.products = response.data;
+        })["catch"](function (err) {
+          console.log(err);
+        });
+      }
+
+      return state.products;
     }
   }
 });

@@ -45,13 +45,10 @@
 </template>
 
 <script>
-    import CatalogCard from '../vue/components/catalog/catalogCard'
-    import axios from 'axios'
-
     import '../../../node_modules/@fortawesome/fontawesome-free/css/all.css';
     import '../../../node_modules/vue-ads-pagination/dist/vue-ads-pagination.css';
+    import CatalogCard from '../vue/components/catalog/catalogCard'
     import VueAdsPagination, { VueAdsPageButton } from 'vue-ads-pagination';
-
 
     export default {
         name: "catalog",
@@ -62,31 +59,15 @@
         },
         data() {
             return {
-                products: [],
                 page: 0,
                 loading: false
             }
         },
         methods: {
             getProducts() {
-                axios.get('/catalogСartridge')
-                    .then(response => {
-                        response.data.forEach((el) => {
-                            let params = JSON.parse(el.params);
-                            let cape = JSON.parse(el.cape);
+                this.products = this.$store.state.products;
 
-                            el.price = Math.ceil(el.price);
-
-                            el.cape = cape;
-                            el.params = params;
-                        });
-
-                        this.products = response.data;
-                    })
-
-                    .catch(err => {
-                        console.log(err);
-                    });
+                console.log(this.products, this.$store.state.products)
             },
             pageChange (page) {
                 this.page = page;
@@ -96,8 +77,13 @@
                 console.log(start, end);
             },
         },
+        computed: {
+            products() {
+                return this.$store.state.products;
+            }
+        },
         created () {
-            this.getProducts();
+            this.$store.commit('getAllProducts');
         },
     }
 </script>
