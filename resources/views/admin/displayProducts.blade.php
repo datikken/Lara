@@ -17,6 +17,13 @@
             </button>
         </form>
 
+        <form action="{{ route('removeProducts') }}" method="get" class="ml-2">
+            @csrf
+            <button class="btn btn-danger fetch_btn" type="submit">
+                Удалить все
+            </button>
+        </form>
+
     </div>
 
     <div class="table-responsive">
@@ -26,8 +33,6 @@
                 <th>#</th>
                 <th>Имя</th>
                 <th>Цена</th>
-                {{--<th>Тип</th>--}}
-                {{--<th>Описание</th>--}}
                 <th>Изображение</th>
                 <th>Создан</th>
                 <th>Фото</th>

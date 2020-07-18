@@ -63,7 +63,7 @@
         data() {
             return {
                 products: [],
-                page: 1,
+                page: 0,
                 loading: false
             }
         },
@@ -71,28 +71,14 @@
             getProducts() {
                 axios.get('/catalogСartridge')
                     .then(response => {
-                        function modifyObj(target) {
-                            let result = {};
-
-                            target.map((obj) => {
-                                Object.keys(obj).forEach(function(key) {
-                                    let str = obj[key];
-                                    result[key] = str.trim();
-                                });
-                            })
-
-                            return result
-                        }
-
                         response.data.forEach((el) => {
                             let params = JSON.parse(el.params);
-                            let newParams = modifyObj(params);
-
                             let cape = JSON.parse(el.cape);
-                            let newCape = modifyObj(cape);
 
-                            el.cape = newCape;
-                            el.params = newParams;
+                            el.price = Math.ceil(el.price);
+
+                            el.cape = cape;
+                            el.params = params;
                         });
 
                         this.products = response.data;

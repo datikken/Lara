@@ -2185,7 +2185,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       products: [],
-      page: 1,
+      page: 0,
       loading: false
     };
   },
@@ -2194,24 +2194,12 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/catalogСartridge').then(function (response) {
-        function modifyObj(target) {
-          var result = {};
-          target.map(function (obj) {
-            Object.keys(obj).forEach(function (key) {
-              var str = obj[key];
-              result[key] = str.trim();
-            });
-          });
-          return result;
-        }
-
         response.data.forEach(function (el) {
           var params = JSON.parse(el.params);
-          var newParams = modifyObj(params);
           var cape = JSON.parse(el.cape);
-          var newCape = modifyObj(cape);
-          el.cape = newCape;
-          el.params = newParams;
+          el.price = Math.ceil(el.price);
+          el.cape = cape;
+          el.params = params;
         });
         _this.products = response.data;
       })["catch"](function (err) {
@@ -2330,7 +2318,6 @@ __webpack_require__.r(__webpack_exports__);
   props: ['data'],
   created: function created() {
     var col = this.$props.data;
-    console.log(this.data);
   }
 });
 
@@ -89330,6 +89317,7 @@ var render = function() {
             [
               _c("img", {
                 attrs: {
+                  onerror: "this.src = '/images/unnecessary/owl-swiper.svg';",
                   src:
                     "../storage/product_images/" +
                     _vm.data.params.brand +
@@ -89357,7 +89345,17 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _vm._m(2)
+      _c("div", { staticClass: "product_wrapper-item" }, [
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "product_wrapper-item_price" }, [
+          _c("span", { staticClass: "product_wrapper-item_price-item" }, [
+            _vm._v(_vm._s(_vm.data.price))
+          ]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/images/icons/rub.svg", alt: "cur" } })
+        ])
+      ])
     ])
   ])
 }
@@ -89392,21 +89390,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product_wrapper-item" }, [
-      _c("div", { staticClass: "product_wrapper-item_head" }, [
-        _c("span", { staticClass: "product_wrapper-item_head-item" }, [
-          _vm._v("Картридж")
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "product_wrapper-item_head-item" }, [
-          _vm._v("IC-HLOR70A")
-        ])
+    return _c("div", { staticClass: "product_wrapper-item_head" }, [
+      _c("span", { staticClass: "product_wrapper-item_head-item" }, [
+        _vm._v("Картридж")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "product_wrapper-item_price" }, [
-        _c("span", { staticClass: "product_wrapper-item_price-item" }),
-        _vm._v(" "),
-        _c("img", { attrs: { src: "/images/icons/rub.svg", alt: "cur" } })
+      _c("span", { staticClass: "product_wrapper-item_head-item" }, [
+        _vm._v("IC-HLOR70A")
       ])
     ])
   }
@@ -106909,24 +106899,11 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         url: url,
         data: {},
         success: function success(data) {
-          function modifyObj(target) {
-            var result = {};
-            target.map(function (obj) {
-              Object.keys(obj).forEach(function (key) {
-                var str = obj[key];
-                result[key] = str.trim();
-              });
-            });
-            return result;
-          }
-
           data.forEach(function (el) {
             var params = JSON.parse(el.params);
-            var newParams = modifyObj(params);
             var cape = JSON.parse(el.cape);
-            var newCape = modifyObj(cape);
-            el.cape = newCape;
-            el.params = newParams;
+            el.cape = cape;
+            el.params = params;
           });
           state.products = data;
         },

@@ -1,6 +1,6 @@
 <div class="viewed_wrapper-item">
     <div class="viewed_wrapper-item_image">
-        <img src="{{Storage::disk('local')->url('/product_images/' . $product['image'] . 'png' )}}" alt="{{ $product['photo'] }}" />
+        <img onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . json_decode($product['params'])->brand . '/Small/' . $product['photo'] . '.png') }}" alt="{{ $product['photo'] }}" />
     </div>
     <div class="viewed_wrapper-item_text">
         <div class="viewed_wrapper-item_text-heading">

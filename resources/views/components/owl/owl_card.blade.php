@@ -20,17 +20,17 @@
             </div>
 
             <div class="carousel_card-wrapper_item">
-                <? if(is_null($image)) { ?>
+                <? if(is_null($product['photo'])) { ?>
                     <img src="/images/unnecessary/owl-swiper.svg" alt="cart" />
                 <? } else { ?>
-                    <div class="carousel_card-wrapper_item-image" style="background-image: url({{ Storage::url('product_images/' . $product['image']) }})"></div>
+<img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . json_decode($product['params'])->brand . '/Small/' . $product['photo'] . '.png') }}"/>
                 <? } ?>
             </div>
 
             <div class="carousel_card-wrapper_item">
                 <div class="carousel_card-wrapper_item-buttons">
                     <div class="carousel_card-wrapper_item-buttons_price">
-                        <span>{{$product->price}}</span>
+                        <span>{{ $product->price }}</span>
                         <img
                             class="carousel_card-wrapper_item-buttons_price-currency"
                             src="/images/menu/rub.svg"

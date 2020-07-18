@@ -19,7 +19,7 @@
             </div>
             <div class="product_wrapper-item product_wrapper-itemContent">
                 <a class="product_wrapper-item_image product_link" :href="`/product/${data.id}`">
-                    <img :src="`../storage/product_images/${data.params.brand}/SMALL/${data.photo}.png`" alt="">
+                    <img onerror="this.src = '/images/unnecessary/owl-swiper.svg';" :src="`../storage/product_images/${data.params.brand}/SMALL/${data.photo}.png`" alt="">
                 </a>
                 <a class="product_wrapper-item_overlay" :href="`#modal-${ data.id }`" uk-toggle :data-id="data.id">
                     <div class="product_wrapper-item_overlay_wrapper">
@@ -35,7 +35,7 @@
                     <span class="product_wrapper-item_head-item">IC-HLOR70A</span>
                 </div>
                 <div class="product_wrapper-item_price">
-                    <span class="product_wrapper-item_price-item"></span>
+                    <span class="product_wrapper-item_price-item">{{ data.price }}</span>
                     <img src="/images/icons/rub.svg" alt="cur" />
                 </div>
 
@@ -54,9 +54,6 @@
         props: ['data'],
         created: function() {
             let col = this.$props.data;
-
-
-            console.log(this.data)
         }
     }
 </script>

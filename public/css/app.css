@@ -8895,7 +8895,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .carousel_card-wrapper_item-image {
-  background-size: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .carousel_card-wrapper_item:nth-child(3) {
   border: 1px solid #e9e9ea;

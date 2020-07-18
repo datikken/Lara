@@ -33,16 +33,16 @@ class ProductsController extends Controller
             $post['url'] = URL::to('/blog') .'/'. $post->id();
         }
 
-        $firstTen = array();
+        $firstThirty = array();
 
-        foreach ($products->take(10) as $key=>$product)
+        foreach ($products->take(30) as $key=>$product)
         {
-         $firstTen[$key] = $product;
+            if(!is_null($product['photo'])) {
+                $firstThirty[$key] = $product;
+            }
         }
 
-//        dd($firstTen);
-
-        return view('pages.index', ['products' => $firstTen, 'slides' => $slides, 'news' => $posts ]);
+        return view('pages.index', ['products' => $firstThirty, 'slides' => $slides, 'news' => $posts ]);
     }
     public function catalogHTML()
     {
@@ -52,7 +52,6 @@ class ProductsController extends Controller
         foreach ($products as $product) {
             $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');
             $product['name'] = json_decode($product['name_econom']);
-
             $images = DB::table('product_images')->where('product_id', $product['id'])->get();
 
             $arr = array();
@@ -119,26 +118,11 @@ class ProductsController extends Controller
 
         $product['images'] = $imgArr;
 
-        $pr_params = array();
-
-        foreach (json_decode($product['params']) as $obj) {
-            foreach ($obj as $key => $val) {
-                $pr_params[$key] = $val;
-            }
-        }
-
         $product['cape'] = json_decode($product['cape']);
 
         $cape = array();
 
-        foreach ($product['cape'] as $key=>$item) {
-            foreach ($item as $a=>$b) {
-                $cape[$a] = $b;
-            }
-        }
-
         $product['cape'] = $cape;
-        $product['params'] = $pr_params;
         $product['name_econom'] = json_decode($product['name_econom']);
 
         if ($request->ajax()) {

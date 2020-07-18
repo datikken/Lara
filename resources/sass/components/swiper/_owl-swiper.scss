@@ -42,7 +42,7 @@
 }
 .carousel_card-wrapper_item {
   &-image {
-    background-size: cover;
+    object-fit: contain;
   }
 
     &:nth-child(3) {
