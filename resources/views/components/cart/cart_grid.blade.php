@@ -1,5 +1,3 @@
-<?php #dump($cartItems); ?>
-
 <div class="cart_wrap-item_inner">
     <div class="cart_wrap-item_inner-table"
          @if(isset($cartItems->totalQuantity))

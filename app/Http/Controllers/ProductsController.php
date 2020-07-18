@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\URL;use stdClass;
+use Illuminate\Support\Facades\URL;
 use App\MainSliderImage;
 use App\Product;
 use App\Cart;
-use App\Product_Image;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
 use App\Includes\HelperString;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\SendEmailController;
-use Illuminate\Support\Facades\Storage;
 use App\Post;
 use Auth;
 
@@ -136,20 +132,6 @@ class ProductsController extends Controller
     {
         $products = Product::all();
         return response()->json($products);
-    }
-
-    public function showCart()
-    {
-        $cart = Session::get('cart');
-        $empty = new stdClass();
-        $empty->items = array();
-        $empty->totalPrice = '';
-
-        if($cart) {
-            return view('pages.cart.cartProducts', ['cartItems' => $cart]);
-        } else {
-            return view('pages.cart.cartProducts', ['cartItems' => $empty]);
-        }
     }
 
     public function deleteItemFromCart(Request $request, $id)

@@ -1,5 +1,3 @@
-<?php #dump($cartItem); ?>
-
 <div class="cart_wrap-item_inner-table_row cart_item_row" data-id="{{ $cartItem['data']['id'] }}">
     <div class="cart_wrap-item_inner-table_row-col">
         <div class="cart_wrap-item_inner-table_row_heading desktop-hide">
@@ -7,8 +5,10 @@
         </div>
         <div class="cart_wrap-item_inner-table_row-col_img">
             <a data-href="{{route('DeleteItemFromCart', ['id' => $cartItem['data']['id']])}}" class="remove_icon" style="background-image: url('/images/unnecessary/cart_close.svg')"></a>
-            <img src="{{Storage::disk('local')->url('product_images/' . DB::table('product_images')->where('product_id', $cartItem['data']['id'])->value('image'))}}" alt="product"/>
+            <img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . json_decode($cartItem['data']['params'])->brand . '/Small/' . $cartItem['data']['photo'] . '.png') }}"/>
         </div>
+
+
         <div class="cart_wrap-item_inner-table_row-col_desc">
 
             <div class="cart_wrap-item_inner-table_row-col_desc-head">
