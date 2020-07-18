@@ -4337,6 +4337,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: none;
   position: relative;
   z-index: 9;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 @media screen and (min-width: 600px) {
   .filters {
@@ -4371,7 +4375,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border: none;
 }
 .filters_wrapper-item_text {
-  font-family: "Montserrat", sans-serif;
+  font-family: "MontserratSemiBold";
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;

@@ -33,9 +33,6 @@
             this.link = '/product/' + this.$props.data.id
             let col = this.$props.data.params.col
 
-
-            console.log(this.$props.data.cape);
-
             switch(col) {
                 case 'Черный': this.color = 'blackCol'
                     break;

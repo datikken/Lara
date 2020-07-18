@@ -9,7 +9,7 @@
 
         <ul class="filters_wrapper-item_list as-none">
             <li class="filters_wrapper-item_list-text" v-for="filter in this.$props.filters">
-                <span>Фильтр</span>
+                <span>{{ filter }}</span>
                 <SimpleCheckbox />
             </li>
         </ul>
@@ -36,7 +36,7 @@
                 let ul = this.$el.querySelector('.filters_wrapper-item_list');
                     ul.classList.toggle('as-none');
             }
-        },
+        }
     }
 </script>
 

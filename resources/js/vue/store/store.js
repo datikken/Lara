@@ -9,13 +9,21 @@ const store = new Vuex.Store({
     state: {
         closeListener: false,
         products: [],
-        filteredProducts: []
+        filteredProducts: [],
+        typeFilters: [],
+        modelFilters: [],
+        brandFilters: []
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
         allProducts: state => state.products
     },
     actions: {
+       COLLECT_FILTERS(context) {
+           context.commit('getProductTypeFilters');
+           context.commit('getProductModelFilters');
+           context.commit('getProductBrandFilters');
+       },
        fixCartStatus({ dispatch, commit }, { data }) {
            let amount = data.totalQuantity;
            let price = data.totalPrice;
@@ -25,6 +33,15 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        getProductModelFilters(state) {
+            state.modelFilters = [...new Set(state.products.map(item => item.params.art))];
+        },
+        getProductBrandFilters(state) {
+            state.brandFilters = [...new Set(state.products.map(item => item.params.brand))];
+        },
+        getProductTypeFilters(state) {
+            state.typeFilters = [...new Set(state.products.map(item => item.params.type))];
+        },
         addProductToCart(state, payload) {
             let that = this;
             let url = `/products/addToCartAjaxGet/${payload}`;
@@ -42,7 +59,6 @@ const store = new Vuex.Store({
                 },
                 success: function (data) {
                     that.dispatch('fixCartStatus', { data })
-                    console.warn(data);
                 },
                 error: function (error) {
                     console.warn(error);
@@ -79,6 +95,7 @@ const store = new Vuex.Store({
                         });
 
                         state.products = response.data;
+                        state.filteredProducts = state.products;
                     })
 
                     .catch(err => {

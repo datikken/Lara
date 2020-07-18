@@ -2168,7 +2168,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -2191,18 +2190,14 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getProducts: function getProducts() {
       this.products = this.$store.state.products;
-      console.log(this.products, this.$store.state.products);
     },
     pageChange: function pageChange(page) {
       this.page = page;
-      console.log(page);
-    },
-    rangeChange: function rangeChange(start, end) {
-      console.log(start, end);
     }
   },
   computed: {
     products: function products() {
+      this.$store.dispatch('COLLECT_FILTERS');
       return this.$store.state.products;
     }
   },
@@ -2403,14 +2398,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Filters",
   data: function data() {
-    return {
-      printers: ['Струный', 'Лазерный', 'Факс'],
-      brand: [],
-      model: []
-    };
+    return {};
   },
   components: {
     FiltersItem: _FiltersItem__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  computed: {
+    types: function types() {
+      return this.$store.state.typeFilters;
+    },
+    brands: function brands() {
+      return this.$store.state.brandFilters;
+    },
+    models: function models() {
+      return this.$store.state.modelFilters;
+    }
   }
 });
 
@@ -2609,7 +2611,6 @@ __webpack_require__.r(__webpack_exports__);
   created: function created(data) {
     this.link = '/product/' + this.$props.data.id;
     var col = this.$props.data.params.col;
-    console.log(this.$props.data.cape);
 
     switch (col) {
       case 'Черный':
@@ -89331,10 +89332,7 @@ var render = function() {
               "items-per-page": 16,
               loading: _vm.loading
             },
-            on: {
-              "page-change": _vm.pageChange,
-              "range-change": _vm.rangeChange
-            },
+            on: { "page-change": _vm.pageChange },
             scopedSlots: _vm._u([
               {
                 key: "default",
@@ -89666,12 +89664,12 @@ var render = function() {
       { staticClass: "filters_wrapper" },
       [
         _c("FiltersItem", {
-          attrs: { name: "Тип принтера", filters: _vm.printers }
+          attrs: { name: "Тип принтера", filters: _vm.types }
         }),
         _vm._v(" "),
-        _c("FiltersItem", { attrs: { name: "Бренд", filters: _vm.brand } }),
+        _c("FiltersItem", { attrs: { name: "Бренд", filters: _vm.brands } }),
         _vm._v(" "),
-        _c("FiltersItem", { attrs: { name: "Модель", filters: _vm.model } })
+        _c("FiltersItem", { attrs: { name: "Модель", filters: _vm.models } })
       ],
       1
     )
@@ -89725,7 +89723,11 @@ var render = function() {
         return _c(
           "li",
           { staticClass: "filters_wrapper-item_list-text" },
-          [_c("span", [_vm._v("Фильтр")]), _vm._v(" "), _c("SimpleCheckbox")],
+          [
+            _c("span", [_vm._v(_vm._s(filter))]),
+            _vm._v(" "),
+            _c("SimpleCheckbox")
+          ],
           1
         )
       }),
@@ -107401,6 +107403,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 
 
 
@@ -107410,7 +107424,10 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
     closeListener: false,
     products: [],
-    filteredProducts: []
+    filteredProducts: [],
+    typeFilters: [],
+    modelFilters: [],
+    brandFilters: []
   },
   getters: {
     filteredProducts: function filteredProducts(state) {
@@ -107421,6 +107438,11 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     }
   },
   actions: {
+    COLLECT_FILTERS: function COLLECT_FILTERS(context) {
+      context.commit('getProductTypeFilters');
+      context.commit('getProductModelFilters');
+      context.commit('getProductBrandFilters');
+    },
     fixCartStatus: function fixCartStatus(_ref, _ref2) {
       var dispatch = _ref.dispatch,
           commit = _ref.commit;
@@ -107432,6 +107454,21 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     }
   },
   mutations: {
+    getProductModelFilters: function getProductModelFilters(state) {
+      state.modelFilters = _toConsumableArray(new Set(state.products.map(function (item) {
+        return item.params.art;
+      })));
+    },
+    getProductBrandFilters: function getProductBrandFilters(state) {
+      state.brandFilters = _toConsumableArray(new Set(state.products.map(function (item) {
+        return item.params.brand;
+      })));
+    },
+    getProductTypeFilters: function getProductTypeFilters(state) {
+      state.typeFilters = _toConsumableArray(new Set(state.products.map(function (item) {
+        return item.params.type;
+      })));
+    },
     addProductToCart: function addProductToCart(state, payload) {
       var that = this;
       var url = "/products/addToCartAjaxGet/".concat(payload);
@@ -107450,7 +107487,6 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           that.dispatch('fixCartStatus', {
             data: data
           });
-          console.warn(data);
         },
         error: function error(_error) {
           console.warn(_error);
@@ -107481,6 +107517,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
             el.params = params;
           });
           state.products = response.data;
+          state.filteredProducts = state.products;
         })["catch"](function (err) {
           console.log(err);
         });

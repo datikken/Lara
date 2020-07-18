@@ -14,7 +14,6 @@
                     :items-per-page="16"
                     :loading="loading"
                     @page-change="pageChange"
-                    @range-change="rangeChange"
                 >
 
                     <template slot-scope="props">
@@ -68,19 +67,15 @@
         methods: {
             getProducts() {
                 this.products = this.$store.state.products;
-
-                console.log(this.products, this.$store.state.products)
             },
             pageChange (page) {
                 this.page = page;
-                console.log(page);
-            },
-            rangeChange (start, end) {
-                console.log(start, end);
-            },
+            }
         },
         computed: {
             products() {
+                this.$store.dispatch('COLLECT_FILTERS');
+
                 return this.$store.state.products;
             }
         },

@@ -2,9 +2,9 @@
 
     <div class="filters">
         <div class="filters_wrapper">
-            <FiltersItem name="Тип принтера" :filters="printers" />
-            <FiltersItem name="Бренд" :filters="brand" />
-            <FiltersItem name="Модель" :filters="model" />
+            <FiltersItem name="Тип принтера" :filters="types" />
+            <FiltersItem name="Бренд" :filters="brands" />
+            <FiltersItem name="Модель" :filters="models" />
         </div>
     </div>
 
@@ -17,13 +17,21 @@
         name: "Filters",
         data: function() {
             return  {
-                printers: ['Струный', 'Лазерный', 'Факс'],
-                brand: [],
-                model: []
             }
         },
         components: {
             FiltersItem
+        },
+        computed: {
+            types() {
+                return this.$store.state.typeFilters
+            },
+            brands() {
+                return this.$store.state.brandFilters
+            },
+            models() {
+                return this.$store.state.modelFilters
+            }
         }
     }
 </script>
