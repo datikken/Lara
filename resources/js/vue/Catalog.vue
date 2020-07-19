@@ -74,13 +74,11 @@
         },
         computed: {
             products() {
-                this.$store.dispatch('COLLECT_FILTERS');
-
-                return this.$store.state.products;
+                return this.$store.state.filteredProducts;
             }
         },
         created () {
-            this.$store.commit('getAllProducts');
+           this.$store.commit('getAllProducts');
         },
     }
 </script>

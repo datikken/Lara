@@ -2197,8 +2197,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     products: function products() {
-      this.$store.dispatch('COLLECT_FILTERS');
-      return this.$store.state.products;
+      return this.$store.state.filteredProducts;
     }
   },
   created: function created() {
@@ -2449,11 +2448,47 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FiltersItem",
-  props: ['name', 'filters'],
+  props: ['name', 'filters', 'type'],
   components: {
     SimpleCheckbox: _checkboxes_SimpleCheckbox__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+  created: function created() {
+    console.warn(this.$props, 'filters item created');
+  },
   methods: {
+    collectAplliedFilters: function collectAplliedFilters() {
+      var filterBlocks = document.querySelectorAll('.filters_wrapper-item');
+      var data = {};
+      filterBlocks.forEach(function (block) {
+        var val;
+        var type = block.getAttribute('data-type');
+        var selected = block.querySelector('.active_filter');
+
+        if (selected) {
+          val = selected.querySelector('.filters_wrapper-item_list-text_val').innerText;
+        }
+
+        if (val) {
+          data[type] = val;
+        }
+      });
+      this.$store.dispatch('FILTER_PRODUCTS', data);
+    },
+    setChecked: function setChecked(e) {
+      var allOptions = this.$el.querySelectorAll('.filters_wrapper-item_list-text');
+      allOptions.forEach(function (el) {
+        el.classList.remove('bold');
+        el.classList.remove('active_filter');
+        var arrow = el.querySelector('.checkbox-wrap_arrow');
+        arrow.classList.add('invisible');
+      });
+      var clicked = e.currentTarget;
+      var arrow = clicked.querySelector('.checkbox-wrap_arrow');
+      arrow.classList.toggle('invisible');
+      clicked.classList.toggle('bold');
+      clicked.classList.toggle('active_filter');
+      this.collectAplliedFilters();
+    },
     openFilter: function openFilter() {
       var label = this.$el.querySelector('.filters_wrapper-item_label');
       label.classList.toggle('pb16');
@@ -89664,12 +89699,16 @@ var render = function() {
       { staticClass: "filters_wrapper" },
       [
         _c("FiltersItem", {
-          attrs: { name: "Тип принтера", filters: _vm.types }
+          attrs: { name: "Тип принтера", filters: _vm.types, type: "type" }
         }),
         _vm._v(" "),
-        _c("FiltersItem", { attrs: { name: "Бренд", filters: _vm.brands } }),
+        _c("FiltersItem", {
+          attrs: { name: "Бренд", filters: _vm.brands, type: "brand" }
+        }),
         _vm._v(" "),
-        _c("FiltersItem", { attrs: { name: "Модель", filters: _vm.models } })
+        _c("FiltersItem", {
+          attrs: { name: "Модель", filters: _vm.models, type: "art" }
+        })
       ],
       1
     )
@@ -89697,43 +89736,54 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "filters_wrapper-item" }, [
-    _c(
-      "div",
-      {
-        staticClass: "filters_wrapper-item_label pb16",
-        attrs: { "data-FiltersToggler": "" },
-        on: { click: _vm.openFilter }
-      },
-      [
-        _c("div", { staticClass: "filters_wrapper-item_text" }, [
-          _c("span", [_vm._v(_vm._s(_vm.name))])
-        ]),
-        _vm._v(" "),
-        _c("img", {
-          attrs: { src: "/images/icons/arrow_right.svg", alt: "icon" }
-        })
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "ul",
-      { staticClass: "filters_wrapper-item_list as-none" },
-      _vm._l(this.$props.filters, function(filter) {
-        return _c(
-          "li",
-          { staticClass: "filters_wrapper-item_list-text" },
-          [
-            _c("span", [_vm._v(_vm._s(filter))]),
-            _vm._v(" "),
-            _c("SimpleCheckbox")
-          ],
-          1
-        )
-      }),
-      0
-    )
-  ])
+  return _c(
+    "div",
+    { staticClass: "filters_wrapper-item", attrs: { "data-type": _vm.type } },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "filters_wrapper-item_label pb16",
+          attrs: { "data-FiltersToggler": "" },
+          on: { click: _vm.openFilter }
+        },
+        [
+          _c("div", { staticClass: "filters_wrapper-item_text" }, [
+            _c("span", [_vm._v(_vm._s(_vm.name))])
+          ]),
+          _vm._v(" "),
+          _c("img", {
+            attrs: { src: "/images/icons/arrow_right.svg", alt: "icon" }
+          })
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "ul",
+        { staticClass: "filters_wrapper-item_list as-none" },
+        _vm._l(this.$props.filters, function(filter) {
+          return _c(
+            "li",
+            {
+              staticClass: "filters_wrapper-item_list-text",
+              on: { click: _vm.setChecked }
+            },
+            [
+              _c(
+                "span",
+                { staticClass: "filters_wrapper-item_list-text_val" },
+                [_vm._v(_vm._s(filter))]
+              ),
+              _vm._v(" "),
+              _c("SimpleCheckbox")
+            ],
+            1
+          )
+        }),
+        0
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -107438,7 +107488,10 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     }
   },
   actions: {
-    COLLECT_FILTERS: function COLLECT_FILTERS(context) {
+    FILTER_PRODUCTS: function FILTER_PRODUCTS(context, data) {
+      context.commit('filterProductByQuery', data);
+    },
+    COLLECT_FILTERS: function COLLECT_FILTERS(context, data) {
       context.commit('getProductTypeFilters');
       context.commit('getProductModelFilters');
       context.commit('getProductBrandFilters');
@@ -107454,6 +107507,19 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     }
   },
   mutations: {
+    filterProductByQuery: function filterProductByQuery(state, data) {
+      var newProducts = state.products.filter(function (item) {
+        var param = item.params;
+
+        for (var key in data) {
+          if (param[key] === undefined || param[key] != data[key]) return false;
+        }
+
+        return true;
+      });
+      console.warn(newProducts);
+      state.filteredProducts = newProducts;
+    },
     getProductModelFilters: function getProductModelFilters(state) {
       state.modelFilters = _toConsumableArray(new Set(state.products.map(function (item) {
         return item.params.art;
@@ -107507,6 +107573,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       state.closeListener = true;
     },
     getAllProducts: function getAllProducts(state) {
+      var that = this;
+
       if (state.products.length === 0) {
         axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/catalogСartridge').then(function (response) {
           response.data.forEach(function (el) {
@@ -107518,6 +107586,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           });
           state.products = response.data;
           state.filteredProducts = state.products;
+        }).then(function () {
+          that.dispatch('COLLECT_FILTERS');
         })["catch"](function (err) {
           console.log(err);
         });

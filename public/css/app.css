@@ -459,6 +459,10 @@ b {
   padding-bottom: 16px;
 }
 
+.bold {
+  font-family: "MontserratSemiBold" !important;
+}
+
 .header {
   display: none;
   font-family: "MontserratSemiBold";

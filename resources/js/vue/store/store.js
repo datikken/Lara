@@ -19,7 +19,10 @@ const store = new Vuex.Store({
         allProducts: state => state.products
     },
     actions: {
-       COLLECT_FILTERS(context) {
+       FILTER_PRODUCTS(context, data) {
+           context.commit('filterProductByQuery', data);
+       },
+       COLLECT_FILTERS(context, data) {
            context.commit('getProductTypeFilters');
            context.commit('getProductModelFilters');
            context.commit('getProductBrandFilters');
@@ -33,6 +36,22 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        filterProductByQuery(state, data) {
+            let newProducts = state.products.filter(item => {
+                let param = item.params
+
+                for (let key in data) {
+                    if (param[key] === undefined || param[key] != data[key])
+                        return false;
+                }
+
+                return true;
+            });
+
+            console.warn(newProducts);
+
+            state.filteredProducts = newProducts;
+        },
         getProductModelFilters(state) {
             state.modelFilters = [...new Set(state.products.map(item => item.params.art))];
         },
@@ -81,6 +100,8 @@ const store = new Vuex.Store({
             state.closeListener = true;
         },
         getAllProducts (state) {
+            let that = this;
+
             if(state.products.length === 0) {
                 axios.get('/catalogСartridge')
                     .then(response => {
@@ -96,6 +117,10 @@ const store = new Vuex.Store({
 
                         state.products = response.data;
                         state.filteredProducts = state.products;
+                    })
+
+                    .then(() => {
+                        that.dispatch('COLLECT_FILTERS');
                     })
 
                     .catch(err => {
