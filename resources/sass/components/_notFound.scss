@@ -1,0 +1,14 @@
+.notFound {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+
+    &_head {
+        font-family: $semifont;
+        margin: 0;
+    }
+
+    &_paragraph {
+        font-family: $font;
+    }
+}

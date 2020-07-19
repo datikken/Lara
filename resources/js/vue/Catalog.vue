@@ -18,6 +18,8 @@
 
                     <template slot-scope="props">
 
+                        <NothingFound v-if="products.slice(props.start, props.end).length === 0" />
+
                         <CatalogCard :data="item" v-for="item in products.slice(props.start, props.end)" :key="item.name" />
 
                     </template>
@@ -49,6 +51,7 @@
     import CatalogCard from '../vue/components/catalog/catalogCard'
     import VueAdsPagination, { VueAdsPageButton } from 'vue-ads-pagination';
     import Filters from './components/filters/Filters'
+    import NothingFound from './components/errors/NothingFound';
 
     export default {
         name: "catalog",
@@ -56,7 +59,8 @@
             CatalogCard,
             VueAdsPagination,
             VueAdsPageButton,
-            Filters
+            Filters,
+            NothingFound
         },
         data() {
             return {

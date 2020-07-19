@@ -12510,3 +12510,16 @@ main {
   z-index: -1;
   top: 10px;
 }
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+}
+.notFound_head {
+  font-family: "MontserratSemiBold";
+  margin: 0;
+}
+.notFound_paragraph {
+  font-family: "Montserrat", sans-serif;
+}

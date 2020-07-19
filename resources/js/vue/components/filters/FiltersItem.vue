@@ -21,6 +21,11 @@
 
     export default {
         name: "FiltersItem",
+        data: function() {
+            return {
+                activated: false
+            }
+        },
         props: [
             'name',
             'filters',
@@ -29,8 +34,13 @@
         components: {
             SimpleCheckbox
         },
+        watch: {
+            filters: function (newVal, oldVal) {
+                // console.log('Prop changed: ', newVal, ' | was: ', oldVal)
+                this.activated = true;
+            }
+        },
         created() {
-            console.warn(this.$props,'filters item created')
         },
         methods: {
             collectAplliedFilters() {
@@ -79,8 +89,14 @@
                 this.collectAplliedFilters();
             },
             openFilter() {
+                if(!this.activated) {
+                    return
+                }
+
+                let img = this.$el.querySelector('img');
                 let label = this.$el.querySelector('.filters_wrapper-item_label');
                     label.classList.toggle('pb16');
+                    img.classList.toggle('rotate');
 
                 let ul = this.$el.querySelector('.filters_wrapper-item_list');
                     ul.classList.toggle('as-none');
