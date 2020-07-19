@@ -48,8 +48,6 @@ const store = new Vuex.Store({
                 return true;
             });
 
-            console.warn(newProducts);
-
             state.filteredProducts = newProducts;
         },
         getProductModelFilters(state) {

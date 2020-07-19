@@ -53,22 +53,28 @@
 
                 this.$store.dispatch('FILTER_PRODUCTS', data);
             },
-            setChecked(e) {
+            clearFilters() {
                 let allOptions = this.$el.querySelectorAll('.filters_wrapper-item_list-text');
-                    allOptions.forEach((el) => {
-                        el.classList.remove('bold');
-                        el.classList.remove('active_filter');
-                        let arrow = el.querySelector('.checkbox-wrap_arrow');
-                            arrow.classList.add('invisible');
-                    })
-
+                allOptions.forEach((el) => {
+                    el.classList.remove('bold');
+                    el.classList.remove('active_filter');
+                    let arrow = el.querySelector('.checkbox-wrap_arrow');
+                    arrow.classList.add('invisible');
+                })
+            },
+            setChecked(e) {
                 let clicked = e.currentTarget;
-
                 let arrow = clicked.querySelector('.checkbox-wrap_arrow');
-                    arrow.classList.toggle('invisible');
 
-                    clicked.classList.toggle('bold');
-                    clicked.classList.toggle('active_filter');
+                if(!clicked.classList.contains('active_filter')) {
+                    this.clearFilters();
+
+                    arrow.classList.remove('invisible');
+                    clicked.classList.add('bold');
+                    clicked.classList.add('active_filter');
+                } else {
+                    this.clearFilters();
+                }
 
                 this.collectAplliedFilters();
             },

@@ -2474,7 +2474,7 @@ __webpack_require__.r(__webpack_exports__);
       });
       this.$store.dispatch('FILTER_PRODUCTS', data);
     },
-    setChecked: function setChecked(e) {
+    clearFilters: function clearFilters() {
       var allOptions = this.$el.querySelectorAll('.filters_wrapper-item_list-text');
       allOptions.forEach(function (el) {
         el.classList.remove('bold');
@@ -2482,11 +2482,20 @@ __webpack_require__.r(__webpack_exports__);
         var arrow = el.querySelector('.checkbox-wrap_arrow');
         arrow.classList.add('invisible');
       });
+    },
+    setChecked: function setChecked(e) {
       var clicked = e.currentTarget;
       var arrow = clicked.querySelector('.checkbox-wrap_arrow');
-      arrow.classList.toggle('invisible');
-      clicked.classList.toggle('bold');
-      clicked.classList.toggle('active_filter');
+
+      if (!clicked.classList.contains('active_filter')) {
+        this.clearFilters();
+        arrow.classList.remove('invisible');
+        clicked.classList.add('bold');
+        clicked.classList.add('active_filter');
+      } else {
+        this.clearFilters();
+      }
+
       this.collectAplliedFilters();
     },
     openFilter: function openFilter() {
@@ -107517,7 +107526,6 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 
         return true;
       });
-      console.warn(newProducts);
       state.filteredProducts = newProducts;
     },
     getProductModelFilters: function getProductModelFilters(state) {
