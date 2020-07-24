@@ -2734,19 +2734,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Modal",
   computed: {
     singleProduct: function singleProduct() {
-      // console.log('singleProduct', this.$store.state.singleProduct)
+      console.log('singleProduct', this.$store.state.singleProduct);
       return this.$store.state.singleProduct;
     }
   }
@@ -90382,15 +90374,79 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
+                _vm.singleProduct.params
+                  ? _c("div", { staticClass: "prdet_wrap-item-icons" }, [
+                      _c("div", {
+                        staticClass: "prdet_wrap-item-icons-item",
+                        staticStyle: {
+                          "background-image": "url('/images/product/drip.svg')"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.singleProduct.params.chip
+                        ? _c("div", {
+                            staticClass: "prdet_wrap-item-icons-item",
+                            staticStyle: {
+                              "background-image":
+                                "url('/images/product/chip.svg')"
+                            }
+                          })
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.singleProduct.params.new
+                        ? _c("div", {
+                            staticClass: "prdet_wrap-item-icons-item",
+                            staticStyle: {
+                              "background-image":
+                                "url('/images/product/new.svg')"
+                            }
+                          })
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.singleProduct.params.STMC
+                        ? _c("div", {
+                            staticClass: "prdet_wrap-item-icons-item",
+                            staticStyle: {
+                              "background-image":
+                                "url('/images/product/stmc.svg')"
+                            }
+                          })
+                        : _vm._e()
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
                 _vm._m(0),
                 _vm._v(" "),
-                _vm._m(1),
-                _vm._v(" "),
-                _vm._m(2)
+                _vm._m(1)
               ])
             ]),
             _vm._v(" "),
-            _vm._m(3)
+            _c("div", { staticClass: "prdet_comp" }, [
+              _vm._m(2),
+              _vm._v(" "),
+              _c("div", { staticClass: "prdet_comp-item" }, [
+                _c(
+                  "div",
+                  { staticClass: "prdet_table" },
+                  [
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _vm._l(_vm.singleProduct.cape, function(index, item) {
+                      return _c("div", { staticClass: "prdet_table_item" }, [
+                        _c("div", { staticClass: "prdet_table_item_inner" }, [
+                          _c("span", [_vm._v(_vm._s(item))])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "prdet_table_item_inner" }, [
+                          _c("span", [_vm._v(_vm._s(index))])
+                        ])
+                      ])
+                    })
+                  ],
+                  2
+                )
+              ])
+            ])
           ])
         ]
       )
@@ -90398,32 +90454,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "prdet_wrap-item-icons" }, [
-      _c("div", {
-        staticClass: "prdet_wrap-item-icons-item",
-        staticStyle: { "background-image": "url('/images/product/drip.svg')" }
-      }),
-      _vm._v(" "),
-      _c("div", {
-        staticClass: "prdet_wrap-item-icons-item",
-        staticStyle: { "background-image": "url('/images/product/chip.svg')" }
-      }),
-      _vm._v(" "),
-      _c("div", {
-        staticClass: "prdet_wrap-item-icons-item",
-        staticStyle: { "background-image": "url('/images/product/new.svg')" }
-      }),
-      _vm._v(" "),
-      _c("div", {
-        staticClass: "prdet_wrap-item-icons-item",
-        staticStyle: { "background-image": "url('/images/product/stmc.svg')" }
-      })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -90467,55 +90497,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "prdet_comp" }, [
-      _c("div", { staticClass: "prdet_comp-item" }, [
-        _c("span", { staticClass: "prdet_comp-item-head" }, [
-          _vm._v("Совместим с принтерами")
-        ])
+    return _c("div", { staticClass: "prdet_comp-item" }, [
+      _c("span", { staticClass: "prdet_comp-item-head" }, [_vm._v("Подходит")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "prdet_table_head" }, [
+      _c("div", { staticClass: "prdet_table_head_item" }, [
+        _c("span", [_vm._v("Марка")])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "prdet_comp-item" }, [
-        _c("div", { staticClass: "prdet_table" }, [
-          _c("div", { staticClass: "prdet_table-col" }, [
-            _c("div", { staticClass: "prdet_table-col_head" }, [
-              _c("span", [_vm._v("Марка")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "prdet_table-col_item" }, [
-              _c("span", [_vm._v("HP LaserJet")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "prdet_table-col_item" }, [
-              _c("span", [_vm._v("HP LaserJet Pro")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "prdet_table-col_item" }, [
-              _c("span", [_vm._v("Canon i-Sensys")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "prdet_table-col" }, [
-            _c("div", { staticClass: "prdet_table-col_head" }, [
-              _c("span", [_vm._v("Модель")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "prdet_table-col_item" }, [
-              _c("span", [_vm._v("P1102 1102w")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "prdet_table-col_item" }, [
-              _c("span", [_vm._v("M1132 M1212nf M1214nfh M1217nfw")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "prdet_table-col_item" }, [
-              _c("span", [
-                _vm._v(
-                  "LBP6000 LBP6000B LBP6020 LBP6020B LBP6030 LBP6030B LBP6030W MF3010"
-                )
-              ])
-            ])
-          ])
-        ])
+      _c("div", { staticClass: "prdet_table_head_item" }, [
+        _c("span", [_vm._v("Модель")])
       ])
     ])
   }
@@ -108734,8 +108730,15 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           response.data.forEach(function (el) {
             var params = JSON.parse(el.params);
             var cape = JSON.parse(el.cape);
+            var newCape = {};
+            cape.map(function (obj) {
+              Object.keys(obj).forEach(function (key) {
+                var str = obj[key];
+                newCape[key] = str.trim();
+              });
+            });
             el.price = Math.ceil(el.price);
-            el.cape = cape;
+            el.cape = newCape;
             el.params = params;
           });
           state.products = response.data;

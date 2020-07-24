@@ -121,11 +121,19 @@ const store = new Vuex.Store({
                         response.data.forEach((el) => {
                             let params = JSON.parse(el.params);
                             let cape = JSON.parse(el.cape);
+                            let newCape = {};
+
+                            cape.map((obj) => {
+                                Object.keys(obj).forEach(function(key) {
+                                    let str = obj[key];
+                                    newCape[key] = str.trim();
+                                });
+                            })
 
                             el.price = Math.ceil(el.price);
-
-                            el.cape = cape;
+                            el.cape = newCape;
                             el.params = params;
+
                         });
 
                         state.products = response.data;

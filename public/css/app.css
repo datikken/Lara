@@ -3,7 +3,7 @@
 }
 
 .on_delivery, .delivery_progress {
-  background-color: #3559FD;
+  background-color: #3559fd;
 }
 .on_delivery .actorders_table_item_inner, .delivery_progress .actorders_table_item_inner {
   color: #fff;
@@ -5831,39 +5831,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 10px;
 }
 
-.prdet_table {
-  display: grid;
-  grid-template-columns: 270px 700px;
-}
-.prdet_table-col {
-  height: 40px;
-}
-.prdet_table-col:first-child {
-  border-right: 1px solid #fff;
-}
-.prdet_table-col_item {
-  padding-left: 20px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
-.prdet_table-col_head {
-  background: #e9e9ea;
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
-.prdet_table-col_head span {
-  padding-left: 20px;
-  font-family: "MontserratSemiBold";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #292930;
-}
 .prdet_btn {
   width: 170px;
   height: 38px;
@@ -5878,13 +5845,15 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin: 10px 0 0 0;
 }
 .prdet_comp-item-head {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-family: "MontserratSemiBold";
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  color: #292930;
   margin: 20px 0 10px 0;
+  font-weight: 600;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #3559fd;
 }
 .prdet_wrap {
   display: flex;

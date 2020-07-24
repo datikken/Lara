@@ -21,14 +21,17 @@
                             </span>
                         </div>
 
-                        <div class="prdet_wrap-item-icons">
+                        <div class="prdet_wrap-item-icons" v-if="singleProduct.params">
                             <div class="prdet_wrap-item-icons-item"
                                  style="background-image: url('/images/product/drip.svg')"></div>
-                            <div class="prdet_wrap-item-icons-item"
+                            <div v-if="singleProduct.params.chip"
+                                 class="prdet_wrap-item-icons-item"
                                  style="background-image: url('/images/product/chip.svg')"></div>
-                            <div class="prdet_wrap-item-icons-item"
+                            <div v-if="singleProduct.params.new"
+                                 class="prdet_wrap-item-icons-item"
                                  style="background-image: url('/images/product/new.svg')"></div>
-                            <div class="prdet_wrap-item-icons-item"
+                            <div v-if="singleProduct.params.STMC"
+                                 class="prdet_wrap-item-icons-item"
                                  style="background-image: url('/images/product/stmc.svg')"></div>
                         </div>
 
@@ -59,43 +62,32 @@
 
                 <div class="prdet_comp">
                     <div class="prdet_comp-item">
-                        <span class="prdet_comp-item-head">Совместим с принтерами</span>
+                        <span class="prdet_comp-item-head">Подходит</span>
                     </div>
 
                     <div class="prdet_comp-item">
                         <div class="prdet_table">
 
-                            <div class="prdet_table-col">
-                                <div class="prdet_table-col_head">
+                            <div class="prdet_table_head">
+                                <div class="prdet_table_head_item">
                                     <span>Марка</span>
                                 </div>
-
-                                <div class="prdet_table-col_item">
-                                    <span>HP LaserJet</span>
-                                </div>
-                                <div class="prdet_table-col_item">
-                                    <span>HP LaserJet Pro</span>
-                                </div>
-                                <div class="prdet_table-col_item">
-                                    <span>Canon i-Sensys</span>
-                                </div>
-                            </div>
-
-                            <div class="prdet_table-col">
-                                <div class="prdet_table-col_head">
+                                <div class="prdet_table_head_item">
                                     <span>Модель</span>
                                 </div>
+                            </div>
 
-                                <div class="prdet_table-col_item">
-                                    <span>P1102 1102w</span>
+
+                            <div class="prdet_table_item" v-for="(index, item) in singleProduct.cape">
+                                <div class="prdet_table_item_inner">
+                                    <span>{{ item }}</span>
                                 </div>
-                                <div class="prdet_table-col_item">
-                                    <span>M1132 M1212nf M1214nfh M1217nfw</span>
-                                </div>
-                                <div class="prdet_table-col_item">
-                                    <span>LBP6000 LBP6000B LBP6020 LBP6020B LBP6030 LBP6030B LBP6030W MF3010</span>
+                                <div class="prdet_table_item_inner">
+                                    <span>{{ index }}</span>
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -110,7 +102,7 @@
         name: "Modal",
         computed: {
             singleProduct() {
-                // console.log('singleProduct', this.$store.state.singleProduct)
+                console.log('singleProduct', this.$store.state.singleProduct)
                 return this.$store.state.singleProduct;
             }
         }
