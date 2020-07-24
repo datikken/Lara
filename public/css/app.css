@@ -5970,9 +5970,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .prdet_wrap-item_img_inner {
   height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .pfeedback {

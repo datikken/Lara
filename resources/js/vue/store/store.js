@@ -13,13 +13,17 @@ const store = new Vuex.Store({
         filteredProducts: [],
         typeFilters: [],
         modelFilters: [],
-        brandFilters: []
+        brandFilters: [],
+        singleProduct: {}
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
         allProducts: state => state.products
     },
     actions: {
+       GET_PRODUCT_BY_ID(context, id) {
+           context.commit('getProductById', id);
+       },
        SWITCH_PRODUCTS_LOADER(context) {
            context.commit('setProductsLoaded');
        },
@@ -40,6 +44,10 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        getProductById(state, id) {
+            let product = state.products.filter((el) => el.id === id)
+                          state.singleProduct = product[0];
+        },
         setProductsLoaded(state, data) {
             state.productsLoaded = true;
         },

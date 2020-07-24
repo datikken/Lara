@@ -66,20 +66,8 @@
                 <div class="prdet_wrap-item">
 
                     <div class="prdet_wrap-item-head">
-                        <span class="prdet_wrap-item-head-item">
-                            <?
-                                if(gettype($name) === 'array') {
-                                    echo str_limit(json_decode($name_buh), $limit = 39, $end = '...');
-                                } else {
-                                    echo str_limit($name, $limit = 40, $end = '...');
-                                }
-                            ?>
-                        </span>
+                        <span class="prdet_wrap-item-head-item"></span>
                     </div>
-
-                    {{--<div class="prdet_wrap-item-desc">--}}
-                        {{--<span class="prdet_wrap-item-desc-item">Чёрный тонер-картридж TC-H85A для принтеров и МФУ:</span>--}}
-                    {{--</div>--}}
 
                     <div class="prdet_wrap-item-icons">
                         <div class="prdet_wrap-item-icons-item" style="background-image: url('/images/product/drip.svg')"></div>

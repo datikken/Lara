@@ -17,9 +17,11 @@
             </div>
             <div class="product_wrapper-item product_wrapper-itemContent">
                 <a class="product_wrapper-item_image product_link" :href="`/product/${data.id}`">
-                    <img onerror="this.src = '/images/unnecessary/owl-swiper.svg';" :src="`../storage/product_images/${data.params.brand}/SMALL/${data.photo}.png`" alt="">
+                    <img onerror="this.src = '/images/unnecessary/owl-swiper.svg';"
+                         :src="`../storage/product_images/${data.params.brand}/SMALL/${data.photo}.png`" alt="">
                 </a>
-                <a class="product_wrapper-item_overlay" :href="`#modal-${ data.id }`" uk-toggle :data-id="data.id">
+                <a class="product_wrapper-item_overlay" href="#modal-1" uk-toggle :data-id="data.id" @click="loadProductModal(data.id)">
+                    <!--<a class="product_wrapper-item_overlay" :href="`#modal-${ data.id }`" uk-toggle :data-id="data.id">-->
                     <div class="product_wrapper-item_overlay_wrapper">
                         <div class="product_wrapper-item_overlay_wrapper-item">
                             <span class="product_wrapper-item_overlay_wrapper-item_text">быстрый просмотр</span>
@@ -34,10 +36,10 @@
                 </div>
                 <div class="product_wrapper-item_price">
                     <span class="product_wrapper-item_price-item">{{ data.price }}</span>
-                    <img src="/images/icons/rub.svg" alt="cur" />
+                    <img src="/images/icons/rub.svg" alt="cur"/>
                 </div>
 
-                <BuyBtn :id="data.id" />
+                <BuyBtn :id="data.id"/>
 
             </div>
         </div>
@@ -53,7 +55,12 @@
         components: {
             BuyBtn
         },
-        created: function() {
+        methods: {
+            loadProductModal(id) {
+                this.$store.dispatch('GET_PRODUCT_BY_ID', id);
+            }
+        },
+        created: function () {
             let col = this.$props.data;
         }
     }

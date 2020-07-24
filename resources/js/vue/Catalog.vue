@@ -2,12 +2,12 @@
 
     <div class="columns catalog_columns">
         <div class="left_column">
-            <Filters />
-            <Viewed />
+            <Filters/>
+            <Viewed/>
         </div>
         <div class="right_column">
 
-            <Loader v-if="!this.$store.state.productsLoaded" />
+            <Loader v-if="!this.$store.state.productsLoaded"/>
 
             <div class="products_grid">
                 <vue-ads-pagination
@@ -20,8 +20,9 @@
                 >
 
                     <template slot-scope="props">
-                        <NothingFound v-if="products.slice(props.start, props.end).length === 0" />
-                        <CatalogCard :data="item" v-for="item in products.slice(props.start, props.end)" :key="item.name" />
+                        <NothingFound v-if="products.slice(props.start, props.end).length === 0"/>
+                        <CatalogCard :data="item" v-for="item in products.slice(props.start, props.end)"
+                                     :key="item.name"/>
                     </template>
 
                     <template
@@ -37,22 +38,26 @@
                         />
                     </template>
                 </vue-ads-pagination>
-            </div>
 
+
+                <Modal />
+
+
+            </div>
         </div>
     </div>
-
 </template>
 
 <script>
     import '../../../node_modules/@fortawesome/fontawesome-free/css/all.css';
     import '../../../node_modules/vue-ads-pagination/dist/vue-ads-pagination.css';
     import CatalogCard from '../vue/components/catalog/catalogCard'
-    import VueAdsPagination, { VueAdsPageButton } from 'vue-ads-pagination';
+    import VueAdsPagination, {VueAdsPageButton} from 'vue-ads-pagination';
     import Filters from './components/filters/Filters'
     import NothingFound from './components/errors/NothingFound';
     import Viewed from './components/viewed/Viewed'
     import Loader from './components/loader/Loader'
+    import Modal from './components/modal/Modal'
 
     export default {
         name: "catalog",
@@ -63,7 +68,8 @@
             Filters,
             NothingFound,
             Viewed,
-            Loader
+            Loader,
+            Modal
         },
         data() {
             return {
@@ -75,7 +81,7 @@
             getProducts() {
                 this.products = this.$store.state.products;
             },
-            pageChange (page) {
+            pageChange(page) {
                 this.page = page;
             }
         },
@@ -84,8 +90,8 @@
                 return this.$store.state.filteredProducts;
             }
         },
-        created () {
-           this.$store.commit('getAllProducts');
+        created() {
+            this.$store.commit('getAllProducts');
         },
     }
 </script>
