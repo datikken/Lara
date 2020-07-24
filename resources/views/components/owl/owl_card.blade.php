@@ -1,5 +1,5 @@
 
-<a class="item" href="{{ route('ShowProductDetails',['id' => $product['id']]) }}">
+<div class="item">
     <div class="carousel_card">
         <div class="carousel_card-wrapper">
 
@@ -19,18 +19,18 @@
                 </span>
             </div>
 
-            <div class="carousel_card-wrapper_item">
+            <a class="carousel_card-wrapper_item" href="{{ route('ShowProductDetails',['id' => $product['id']]) }}">
                 <? if(is_null($product['photo'])) { ?>
                     <img src="/images/unnecessary/owl-swiper.svg" alt="cart" />
                 <? } else { ?>
 <img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . json_decode($product['params'])->brand . '/Small/' . $product['photo'] . '.png') }}"/>
                 <? } ?>
-            </div>
+            </a>
 
             <div class="carousel_card-wrapper_item">
                 <div class="carousel_card-wrapper_item-buttons">
                     <div class="carousel_card-wrapper_item-buttons_price">
-                        <span>{{ $product->price }}</span>
+                        <span>@php echo floor( $product->price ); @endphp</span>
                         <img
                             class="carousel_card-wrapper_item-buttons_price-currency"
                             src="/images/menu/rub.svg"
@@ -49,4 +49,4 @@
 
         </div>
     </div>
-</a>
+</div>

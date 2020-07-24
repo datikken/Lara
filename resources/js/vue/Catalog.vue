@@ -3,10 +3,13 @@
     <div class="columns catalog_columns">
         <div class="left_column">
             <Filters />
+            <Viewed />
         </div>
         <div class="right_column">
-            <div class="products_grid">
 
+            <Loader v-if="!this.$store.state.productsLoaded" />
+
+            <div class="products_grid">
                 <vue-ads-pagination
                     :total-items="products.length"
                     :max-visible-pages="5"
@@ -17,11 +20,8 @@
                 >
 
                     <template slot-scope="props">
-
                         <NothingFound v-if="products.slice(props.start, props.end).length === 0" />
-
                         <CatalogCard :data="item" v-for="item in products.slice(props.start, props.end)" :key="item.name" />
-
                     </template>
 
                     <template
@@ -37,9 +37,8 @@
                         />
                     </template>
                 </vue-ads-pagination>
-
-
             </div>
+
         </div>
     </div>
 
@@ -52,6 +51,8 @@
     import VueAdsPagination, { VueAdsPageButton } from 'vue-ads-pagination';
     import Filters from './components/filters/Filters'
     import NothingFound from './components/errors/NothingFound';
+    import Viewed from './components/viewed/Viewed'
+    import Loader from './components/loader/Loader'
 
     export default {
         name: "catalog",
@@ -60,7 +61,9 @@
             VueAdsPagination,
             VueAdsPageButton,
             Filters,
-            NothingFound
+            NothingFound,
+            Viewed,
+            Loader
         },
         data() {
             return {

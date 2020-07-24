@@ -2,22 +2,18 @@ import $ from 'jquery';
 
 class CartController {
     constructor(el) {
-        let cart = document.querySelector('.cart');
+        let that = this;
+        this.el = el;
+        let btns = document.querySelectorAll('.ajaxGETproduct');
 
-        if(cart) {
-            let that = this;
-            this.el = el;
-            let btns = document.querySelectorAll('.ajaxGETproduct');
+        this._setDeleteListeners();
+        this._setAmountListeners();
 
-            this._setDeleteListeners();
-            this._setAmountListeners();
-
-            btns.forEach((btn) => {
-                btn.addEventListener('click', function(e) {
-                    that._makeCall(e);
-                })
-            });
-        }
+        btns.forEach((btn) => {
+            btn.addEventListener('click', function(e) {
+                that.addToCart(e);
+            })
+        });
     }
     _fixCartTotalState() {
         let url = window.location.origin + '/checkCartState';
@@ -133,8 +129,8 @@ class CartController {
         });
     }
     _fixDeletion(cart, price, type = 0) {
-        $('[data-cartAmountVal]').html(cart);
-        $('[data-cartPriceVal]').html(price);
+        $('[data-cartamountval]').html(cart);
+        $('[data-cartpriceval]').html(price);
 
         if(type != 0) {
             $('.menu_wrapper-item_cart_currency').addClass('invisible');
@@ -142,13 +138,10 @@ class CartController {
             $('.menu_wrapper-item_cart_currency').removeClass('invisible');
         }
     }
-    _makeCall(e, amount = 1) {
+    addToCart(e, amount = 1) {
         e.preventDefault();
-
         let that = this;
         let url = e.currentTarget.getAttribute('data-url');
-        let _token = $('input[name="_token"]').val();
-
         let executed = false;
 
         if(!executed) {
@@ -158,11 +151,11 @@ class CartController {
                 method: "GET",
                 url: url,
                 data: {
-                    token: _token,
+                    token: window.token,
                     amount
                 },
                 success: function (data) {
-                    that._fixDeletion(data.cart, data.price);
+                    that._fixDeletion(data.totalQuantity, data.totalPrice);
                 },
                 error: function (error) {
                     console.warn(error);

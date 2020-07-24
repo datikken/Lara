@@ -16,7 +16,7 @@ import CartController from './controllers/CartController'
 import Checkbox from './components/Checkbox'
 import DeliveryAuthController from './controllers/DeliveryAuthController'
 import InformationController from './controllers/InformationController'
-import ProductDetailsController from './controllers/ProductDetailsController'
+import ProductDetailsSliderController from './controllers/ProductDetailsSliderController'
 import ProductfeedbackController from './controllers/ProductFeedbackController'
 import AboutController from './controllers/AboutController'
 import CartProgressController from './controllers/CartProgressController'
@@ -34,6 +34,7 @@ import MenuController from './components/Menu'
 import CatalogController from './controllers/CatalogController'
 
 $(document).ready(function() {
+    new ProductDetailsSliderController();
     new CatalogController();
     new MenuController();
     new OwlCarouselController();
@@ -49,7 +50,6 @@ $(document).ready(function() {
     new DeliveryAuthController();
     new InformationController();
     new DeliveryFormController();
-    new ProductDetailsController();
     new SimpleMap();
     new ProductfeedbackController();
     new AboutController();

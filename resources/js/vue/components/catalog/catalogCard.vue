@@ -1,10 +1,8 @@
 <template>
     <div class="product">
-        <!--<div class="product" data-category="{{ $category }}" id="product-{{ $id }}">-->
         <div class="product_wrapper">
             <div class="product_wrapper-item">
                 <div class="product_wrapper-item_name">
-                    <!--<span class="product_wrapper-item_name-item">{{ data.name }}</span>-->
                 </div>
                 <div class="product_wrapper-item_heading">
                     <span class="product_wrapper-item_heading-item">

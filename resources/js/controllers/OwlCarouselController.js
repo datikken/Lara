@@ -27,7 +27,9 @@ class OwlCarouselController {
     }
     constructor() {
         let block = document.querySelector('.owl-wrapper');
-            block && this.activateCarousel(block);
+            if(block) {
+                this.activateCarousel(block);
+        }
     }
 }
 

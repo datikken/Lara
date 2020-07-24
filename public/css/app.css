@@ -2120,6 +2120,14 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .catalog_columns {
   overflow: hidden;
 }
+.catalog_columns .right_column {
+  width: 100%;
+}
+@media screen and (min-width: 1030px) {
+  .catalog_columns .right_column {
+    min-width: 900px;
+  }
+}
 
 @media screen and (min-width: 600px) {
   .mobile-layout {
@@ -2418,7 +2426,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 335px;
+  max-height: 335px;
 }
 .viewed_wrapper::-webkit-scrollbar {
   display: none;
@@ -2532,12 +2540,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .viewed_wrapper-item_text-heading-item {
   font-weight: bold !important;
   font-size: 12px;
-}
-.viewed_wrapper-item_text-heading span {
-  font-weight: 200;
-}
-.viewed_wrapper-item_text-heading span:first-child {
-  font-size: 9px;
 }
 .viewed_wrapper-item_text-price {
   font-family: "Montserrat", sans-serif;

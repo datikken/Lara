@@ -8,6 +8,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {
         closeListener: false,
+        productsLoaded: false,
         products: [],
         filteredProducts: [],
         typeFilters: [],
@@ -19,6 +20,9 @@ const store = new Vuex.Store({
         allProducts: state => state.products
     },
     actions: {
+       SWITCH_PRODUCTS_LOADER(context) {
+           context.commit('setProductsLoaded');
+       },
        FILTER_PRODUCTS(context, data) {
            context.commit('filterProductByQuery', data);
        },
@@ -36,6 +40,9 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        setProductsLoaded(state, data) {
+            state.productsLoaded = true;
+        },
         filterProductByQuery(state, data) {
             let newProducts = state.products.filter(item => {
                 let param = item.params
@@ -119,6 +126,7 @@ const store = new Vuex.Store({
 
                     .then(() => {
                         that.dispatch('COLLECT_FILTERS');
+                        that.dispatch('SWITCH_PRODUCTS_LOADER');
                     })
 
                     .catch(err => {

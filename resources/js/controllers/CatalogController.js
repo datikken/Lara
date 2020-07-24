@@ -17,13 +17,15 @@ class CatalogController {
             })
     }
     constructor() {
-        let catalog = document.querySelector('.products_grid');
+        let catalog = document.querySelector('#catalog');
             catalog && this._setListeners();
 
-        new Vue({
-            render: h => h(cat),
-            store: store,
-        }).$mount('#catalog')
+            if(catalog) {
+                new Vue({
+                    render: h => h(cat),
+                    store: store,
+                }).$mount('#catalog')
+            }
     }
 }
 

@@ -4,8 +4,6 @@
     </div>
     <div class="viewed_wrapper-item_text">
         <div class="viewed_wrapper-item_text-heading">
-            <span>{{ $product['category'] }}</span>
-            <br />
             <span class="viewed_wrapper-item_text-heading-item">
                 @php echo json_decode($product['name_econom']) @endphp
             </span>

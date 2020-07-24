@@ -32,6 +32,12 @@
 }
 .catalog_columns {
   overflow: hidden;
+    .right_column {
+        width: 100%;
+        @include breakpoint($medium) {
+            min-width: 900px;
+        }
+    }
 }
 
 .mobile-layout {
