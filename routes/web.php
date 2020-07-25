@@ -66,6 +66,7 @@ Route::get('/catalogСartridge', ['uses' => "ProductsController@index", 'as' => 
 ////Catalog page
 //Route::get('/catalogPaper', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
 
+Route::get('/getUserInfo', ['uses' => 'UsersController@get_user_info','as'=> 'getUsersInfo']);
 //Cart page
 Route::get('cart', ['uses' => "CartController@showCart", 'as' => 'cartItems']);
     //Add items to cart

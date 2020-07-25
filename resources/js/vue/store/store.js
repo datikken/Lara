@@ -14,13 +14,18 @@ const store = new Vuex.Store({
         typeFilters: [],
         modelFilters: [],
         brandFilters: [],
-        singleProduct: {}
+        singleProduct: {},
+        user: {}
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
-        allProducts: state => state.products
+        allProducts: state => state.products,
+        user: state => state.user
     },
     actions: {
+       GET_USERS_INFO(context) {
+           context.commit('getUserInfo');
+       },
        ADD_PRODUCT_TO_CART(context, {id, amount}) {
            context.commit('addProductToCart', {id, amount})
        },
@@ -47,6 +52,14 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        getUserInfo(state) {
+            axios.get('/getUserInfo')
+                .then(response => {
+                    state.user = response.data;
+                })
+
+            return state.user
+        },
         getProductById(state, id) {
             let product = state.products.filter((el) => el.id === id)
                           state.singleProduct = product[0];

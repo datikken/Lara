@@ -42,6 +42,7 @@
         "simplebar-vue": "^1.5.1",
         "swiper": "^4.3.3",
         "vue-ads-pagination": "^2.1.7",
+        "vue-router": "^3.3.4",
         "vuex": "^3.5.1",
         "ymaps": "^0.2.1"
     }
