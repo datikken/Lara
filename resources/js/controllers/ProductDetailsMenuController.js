@@ -5,18 +5,18 @@ class ProductDetailsMenuController {
     constructor() {
         this.store = store;
         let container = document.querySelector('.details');
-        let block = document.querySelector('.pdetails_menu');
-        this.quantity = container.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
-
-        block && this._setListeners(block, container);
 
             if(container) {
+                let block = document.querySelector('.pdetails_menu');
                 this.prcp = container.querySelector('.prcp');
                 this.prdch = container.querySelector('.prdch');
                 this.prdesc = container.querySelector('.prdesc');
                 this.pfeedback = container.querySelector('.pfeedback');
+                this.quantity = container.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
+
                 this._amountListeners();
                 this.addToCart();
+                this._setListeners(block, container);
             }
     }
     addToCart() {

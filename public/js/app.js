@@ -2298,6 +2298,8 @@ __webpack_require__.r(__webpack_exports__);
       this.changeQuant(1, 'decr');
     },
     changeQuant: function changeQuant(value, type) {
+      var qnt = this.$el.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
+
       if (type === 'inc') {
         this.quant = parseInt(this.quant) + parseInt(value);
       } else {
@@ -2305,9 +2307,8 @@ __webpack_require__.r(__webpack_exports__);
           this.quant = this.quant - value;
         }
       }
-    },
-    created: function created() {
-      this.quant = parseInt(this.props.quantity);
+
+      qnt.innerText = this.quant;
     }
   }
 });
@@ -2879,7 +2880,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     singleProduct: function singleProduct() {
-      // console.log('singleProduct', this.$store.state.singleProduct)
       return this.$store.state.singleProduct;
     }
   }
@@ -90077,7 +90077,7 @@ var render = function() {
           attrs: { "data-modal-val": _vm.quant },
           on: { click: _vm.changeQuant }
         },
-        [_vm._v("\n        " + _vm._s(_vm.quant) + "\n    ")]
+        [_vm._v("\n        " + _vm._s(this.quant) + "\n    ")]
       ),
       _vm._v(" "),
       _c("a", { attrs: { href: "#" }, on: { click: _vm.increase } }, [
@@ -90801,7 +90801,7 @@ var render = function() {
                       _c("BuyBtn", {
                         attrs: {
                           text: "в корзину",
-                          className: "text_buy-btn animated_btn",
+                          className: "text_buy-btn animated_btn uk-modal-close",
                           id: _vm.singleProduct.id
                         }
                       })
@@ -106819,19 +106819,20 @@ var ProductDetailsMenuController = /*#__PURE__*/function () {
 
     this.store = _vue_store_store__WEBPACK_IMPORTED_MODULE_0__["default"];
     var container = document.querySelector('.details');
-    var block = document.querySelector('.pdetails_menu');
-    this.quantity = container.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
-    block && this._setListeners(block, container);
 
     if (container) {
+      var block = document.querySelector('.pdetails_menu');
       this.prcp = container.querySelector('.prcp');
       this.prdch = container.querySelector('.prdch');
       this.prdesc = container.querySelector('.prdesc');
       this.pfeedback = container.querySelector('.pfeedback');
+      this.quantity = container.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
 
       this._amountListeners();
 
       this.addToCart();
+
+      this._setListeners(block, container);
     }
   }
 
@@ -109323,7 +109324,11 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       var product = state.products.filter(function (el) {
         return el.id === id;
       });
-      state.singleProduct = product[0];
+      state.singleProduct = product[0]; //XXX
+
+      var amount = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
+      amount.innerText = 1;
+      amount.setAttribute('data-modal-val', 1);
     },
     setProductsLoaded: function setProductsLoaded(state, data) {
       state.productsLoaded = true;
@@ -109360,7 +109365,6 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           amount = _ref4.amount;
       var that = this;
       var url = "/products/addToCartAjaxGet/".concat(id);
-      console.warn('store add to cart, ${id}, ${amount', id, amount);
       jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajaxSetup({
         headers: {
           'X-CSRF-TOKEN': window.token

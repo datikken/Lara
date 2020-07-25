@@ -50,7 +50,7 @@
                                 <AmountBtn :id="singleProduct.id" quantity="1" />
                             </div>
                             <div class="prdet_wrap-icons_ctas-buy">
-                                <BuyBtn text="в корзину" className="text_buy-btn animated_btn" :id="singleProduct.id"/>
+                                <BuyBtn text="в корзину" className="text_buy-btn animated_btn uk-modal-close" :id="singleProduct.id"/>
                             </div>
                             <a class="prdet_wrap-icons_ctas-details" :href="`/product/${singleProduct.id}`">
                                 <TextBtn className="prdet_btn" text="подробнее" />
@@ -112,7 +112,6 @@
         },
         computed: {
             singleProduct() {
-                // console.log('singleProduct', this.$store.state.singleProduct)
                 return this.$store.state.singleProduct;
             }
         }

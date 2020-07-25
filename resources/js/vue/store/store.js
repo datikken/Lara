@@ -50,6 +50,12 @@ const store = new Vuex.Store({
         getProductById(state, id) {
             let product = state.products.filter((el) => el.id === id)
                           state.singleProduct = product[0];
+
+            //XXX
+            let amount = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
+                amount.innerText = 1;
+                amount.setAttribute('data-modal-val', 1);
+
         },
         setProductsLoaded(state, data) {
             state.productsLoaded = true;
@@ -80,8 +86,6 @@ const store = new Vuex.Store({
         addProductToCart(state, {id, amount}) {
             let that = this;
             let url = `/products/addToCartAjaxGet/${id}`;
-
-            console.warn('store add to cart, ${id}, ${amount', id, amount)
 
             $.ajaxSetup({
                 headers: {

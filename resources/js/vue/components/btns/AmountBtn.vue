@@ -4,7 +4,7 @@
             <div class="cart_wrap-item_inner-table_row-col_btns-btn-items_minus">-</div>
         </a>
         <div class="cart_wrap-item_inner-table_row-col_btns-btn-items_quantity" @click="changeQuant" :data-modal-val="quant">
-            {{ quant }}
+            {{ this.quant }}
         </div>
         <a href="#" @click="increase">
             <div class="cart_wrap-item_inner-table_row-col_btns-btn-items_plus">+</div>
@@ -31,6 +31,8 @@
                 this.changeQuant(1, 'decr')
             },
             changeQuant(value, type) {
+                let qnt = this.$el.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
+
                 if (type === 'inc') {
                     this.quant = parseInt(this.quant) + parseInt(value);
                 } else {
@@ -38,9 +40,8 @@
                         this.quant = this.quant - value;
                     }
                 }
-            },
-            created() {
-                this.quant = parseInt(this.props.quantity);
+
+                qnt.innerText = this.quant
             }
         }
     }
