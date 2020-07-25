@@ -48,17 +48,6 @@
                 </div>
             </div>
 
-
-            {{--@foreach ($product['params'] as $key => $val)--}}
-                {{--@php dump($key); @endphp--}}
-                {{--<div class="details_wrap-info_item">--}}
-                    {{--<div class="details_wrap-info_item-field" style="display: flex;">--}}
-                        {{--<span>@php if($key != 'STMC') echo $key; @endphp</span> : <span>{{ $val }}</span>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--@endforeach--}}
-
-
             <div class="details_wrap-info_item">
                 <div class="details_wrap-info_item-field">
                     <span>Фотобарабан Mitsubishi Chemical Corporation, тонер Mitsubishi Chemical Corporation</span>
@@ -101,7 +90,7 @@
                 </div>
             </div>
 
-            <div class="details_wrap-info_item">
+            <div class="details_wrap-info_item" data-pid="{{ $product['id'] }}">
                 <div class="details_wrap-info_item-left">
                     <div class="cart_wrap-item_inner-table_row-col col_amount">
                         <span>Количество (шт)</span>

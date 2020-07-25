@@ -106820,6 +106820,7 @@ var ProductDetailsMenuController = /*#__PURE__*/function () {
     this.store = _vue_store_store__WEBPACK_IMPORTED_MODULE_0__["default"];
     var container = document.querySelector('.details');
     var block = document.querySelector('.pdetails_menu');
+    this.quantity = container.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
     block && this._setListeners(block, container);
 
     if (container) {
@@ -106829,19 +106830,46 @@ var ProductDetailsMenuController = /*#__PURE__*/function () {
       this.pfeedback = container.querySelector('.pfeedback');
 
       this._amountListeners();
+
+      this.addToCart();
     }
   }
 
   _createClass(ProductDetailsMenuController, [{
+    key: "addToCart",
+    value: function addToCart() {
+      var id = document.querySelector('[data-pid]').getAttribute('data-pid');
+      var btn = document.querySelector('.details_wrap-info_item-right');
+      var that = this;
+      btn.addEventListener('click', function () {
+        var amount = parseInt(document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity').innerText);
+        that.store.dispatch('ADD_PRODUCT_TO_CART', {
+          id: id,
+          amount: amount
+        });
+      });
+    }
+  }, {
     key: "_amountListeners",
     value: function _amountListeners() {
       var block = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items');
+      var quantVal = parseInt(this.quantity.innerText);
       var links = block.querySelectorAll('a');
       var that = this;
       links.forEach(function (el) {
         el.addEventListener('click', function (e) {
           e.preventDefault();
-          console.warn(el, that.store);
+          var target = e.target.classList.value;
+
+          if (target.indexOf('plus') > 0) {
+            quantVal = quantVal + 1;
+          } else {
+            if (quantVal > 1) {
+              quantVal = quantVal - 1;
+            }
+          }
+
+          that.quantity.innerText = quantVal;
         });
       });
     }

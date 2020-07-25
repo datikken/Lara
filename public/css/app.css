@@ -6887,6 +6887,14 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .cart_wrap-item_inner-table_row-col_btns-btn-items_quantity {
   border-right: 1px solid #e9e9ea;
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  border-radius: 30px;
 }
 .cart_wrap-item_inner-table_row-col_btns-btn-items_plus {
   color: #40404c;

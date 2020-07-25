@@ -5,7 +5,7 @@
         </div>
         <div class="cart_wrap-item_inner-table_row-col_img">
             <a data-href="{{route('DeleteItemFromCart', ['id' => $cartItem['data']['id']])}}" class="remove_icon" style="background-image: url('/images/unnecessary/cart_close.svg')"></a>
-            <img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . json_decode($cartItem['data']['params'])->brand . '/Small/' . $cartItem['data']['photo'] . '.png') }}"/>
+            <img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . $cartItem['data']['params']['brand'] . '/Small/' . $cartItem['data']['photo'] . '.png') }}"/>
         </div>
 
 
@@ -15,7 +15,7 @@
                 <span>Чёрный тонер-картридж</span>
             </div>
             <div class="cart_wrap-item_inner-table_row-col_desc-info">
-                <span>TC-H85A</span>
+                <span>@php echo $cartItem['data']['params']['art']; @endphp</span>
             </div>
             <div class="cart_wrap-item_inner-table_row-col_desc-about">
                 <span>для принтеров и МФУ:</span>
@@ -60,10 +60,4 @@
             </div>
         </div>
     </div>
-
-    {{--<div class="cart_wrap-item_inner-table_row-col">--}}
-        {{--<a class="" href=>Удалить товар</a>--}}
-        {{--<div class="cart_wrap-item_inner-table_row-col_delete"></div>--}}
-    {{--</div>--}}
-
 </div>

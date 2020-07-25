@@ -6,7 +6,9 @@ class ProductDetailsMenuController {
         this.store = store;
         let container = document.querySelector('.details');
         let block = document.querySelector('.pdetails_menu');
-            block && this._setListeners(block, container);
+        this.quantity = container.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
+
+        block && this._setListeners(block, container);
 
             if(container) {
                 this.prcp = container.querySelector('.prcp');
@@ -14,17 +16,40 @@ class ProductDetailsMenuController {
                 this.prdesc = container.querySelector('.prdesc');
                 this.pfeedback = container.querySelector('.pfeedback');
                 this._amountListeners();
+                this.addToCart();
             }
+    }
+    addToCart() {
+        let id = document.querySelector('[data-pid]').getAttribute('data-pid');
+        let btn = document.querySelector('.details_wrap-info_item-right');
+        let that = this;
+
+        btn.addEventListener('click', function() {
+            let amount = parseInt(document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity').innerText);
+            that.store.dispatch('ADD_PRODUCT_TO_CART', {id, amount})
+        })
     }
     _amountListeners() {
         let block = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items');
+        let quantVal = parseInt(this.quantity.innerText);
         let links = block.querySelectorAll('a');
         let that = this;
 
         links.forEach((el) => {
             el.addEventListener('click',function(e) {
                 e.preventDefault();
+                let target = e.target.classList.value;
 
+                if(target.indexOf('plus') > 0)
+                {
+                    quantVal = quantVal + 1
+                } else {
+                    if(quantVal > 1) {
+                        quantVal = quantVal - 1
+                    }
+                }
+
+                that.quantity.innerText = quantVal;
             })
         });
     }

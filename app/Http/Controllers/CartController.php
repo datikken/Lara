@@ -15,6 +15,21 @@ class CartController extends Controller
         $empty->items = array();
         $empty->totalPrice = '';
 
+        foreach($cart->items as $cartItem) {
+            $type = gettype($cartItem['data']['params']);
+
+            if($type != 'array') {
+                $param = json_decode($cartItem['data']['params']);
+                $newParam = array();
+
+                foreach($param as $key=>$val) {
+                    $newParam[$key] = $val;
+                }
+
+                $cartItem['data']['params'] = $newParam;
+            }
+        }
+
         if($cart) {
             return view('pages.cart.cartProducts', ['cartItems' => $cart]);
         } else {

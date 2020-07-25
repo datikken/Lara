@@ -390,7 +390,15 @@
                       border-right: 1px solid $light_gray;
                     }
                     &_quantity {
-                      border-right: 1px solid $light_gray;
+                        border-right: 1px solid $light_gray;
+                        font-family: $semifont;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 12px;
+                        line-height: 14px;
+                        letter-spacing: 0.02em;
+                        color: #292930;
+                        border-radius: 30px;
                     }
 
                     &_plus {
