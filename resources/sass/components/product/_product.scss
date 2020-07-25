@@ -118,12 +118,15 @@
       align-items: center;
       flex-wrap: wrap;
       justify-content: space-between;
-      overflow: hidden;
       cursor: pointer;
       top: 5px;
       flex: 1;
       margin-bottom: 16px;
       padding-top: 1px;
+
+        &:nth-child(2) {
+            overflow: hidden;
+        }
 
       @include breakpoint($medium) {
         margin-bottom: 12px;

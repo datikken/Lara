@@ -5,9 +5,12 @@ class CartController {
         let that = this;
         this.el = el;
         let btns = document.querySelectorAll('.ajaxGETproduct');
+        let cart = document.querySelector('.cart');
 
-        this._setDeleteListeners();
-        this._setAmountListeners();
+        if(cart) {
+            this._setDeleteListeners();
+            this._setAmountListeners();
+        }
 
         btns.forEach((btn) => {
             btn.addEventListener('click', function(e) {

@@ -40,7 +40,7 @@
 
                                 <input type="text" class="form-control" name="name" placeholder="Имя" required>
 
-                                <button class="form-group-btn" type="submit">
+                                <button class="form-group-btn animated_btn" type="submit">
                                     <span>
                                         изменить
                                     </span>
@@ -54,7 +54,7 @@
                             <label for="name">Фамилия <span>*</span></label>
                             <div class="input_wrap">
                                 <input type="text" class="form-control" name="lastname" placeholder="Фамилия" required>
-                                <button class="form-group-btn" type="submit">
+                                <button class="form-group-btn animated_btn" type="submit">
                                      <span>
                                         изменить
                                     </span>
@@ -69,7 +69,7 @@
 
                             <div class="input_wrap">
                                 <input type="text" class="form-control" name="tel" placeholder="Телефон" required>
-                                <button class="form-group-btn" type="submit">
+                                <button class="form-group-btn animated_btn" type="submit">
                                     <span>
                                         изменить
                                     </span>
@@ -83,7 +83,7 @@
                             <label for="name">Адрес электронной почты <span>*</span></label>
                             <div class="input_wrap" data-required>
                                 <input type="text" class="form-control" name="email" placeholder="Адрес электронной почты">
-                                <button class="form-group-btn" type="submit">
+                                <button class="form-group-btn animated_btn" type="submit">
                                     <span>
                                         изменить
                                     </span>
@@ -116,7 +116,7 @@
                     <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
                 </div>
 
-                @include('components.btn.text_btn', [ 'class' => 'dchange_btn', 'text' => 'Сохранить изменения'])
+                @include('components.btn.text_btn', [ 'class' => 'dchange_btn animated_btn', 'text' => 'Сохранить изменения'])
 
             </form>
 

@@ -22,7 +22,7 @@
         </div>
 
         <div class="cart_success_wrap_item">
-            <div class="cart_success_wrap_item-btn">
+            <div class="cart_success_wrap_item-btn animated_btn">
                 @include('components.btn.text_btn', [ 'class' => 'cart_success_wrap_item-btn_item', 'text' => 'Закрыть'])
             </div>
         </div>

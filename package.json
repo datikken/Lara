@@ -31,7 +31,7 @@
         "cucumber": "^6.0.5",
         "es6-promise": "^4.2.8",
         "fs": "0.0.1-security",
-        "gsap": "^3.3.3",
+        "gsap": "^3.4.2",
         "husky": "^4.2.5",
         "imask": "^6.0.5",
         "inputmask": "^5.0.3",

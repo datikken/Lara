@@ -1,43 +1,50 @@
 .prdet {
-    //&_table {
-    //    display: grid;
-    //    grid-template-columns: 270px 700px;
-    //
-    //    &-col {
-    //        height: 40px;
-    //
-    //        &:first-child {
-    //            border-right: 1px solid #fff;
-    //        }
-    //
-    //        &_item {
-    //            padding-left: 20px;
-    //            height: 40px;
-    //            display: flex;
-    //            align-items: center;
-    //        }
-    //
-    //        &_head {
-    //            background: $light_gray;
-    //            height: 40px;
-    //            display: flex;
-    //            align-items: center;
-    //
-    //            span {
-    //                padding-left: 20px;
-    //
-    //                font-family: $semifont;
-    //                font-style: normal;
-    //                font-weight: 500;
-    //                font-size: 12px;
-    //                line-height: 14px;
-    //                letter-spacing: 0.02em;
-    //                text-transform: uppercase;
-    //                color: $dblack;
-    //            }
-    //        }
-    //    }
-    //}
+    &_table {
+        &_head,&_item {
+            display: grid;
+            grid-template-columns: 270px 700px;
+            &_inner, &_item {
+                &:first-child {
+                    border-right: 1px solid #fff;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                }
+                span {
+                    padding-left: 20px;
+                    font-family: $font;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    text-transform: uppercase;
+                    color: $dblack;
+                }
+            }
+            &_item {
+                span {
+                    font-family: $semifont;
+                }
+            }
+        }
+        &_item {
+            height: 40px;
+            align-items: center;
+            border: 1px solid $light_gray;
+            border-top: none;
+            &_inner {
+                &:first-child {
+                    border-right: 1px solid $light_gray;
+                }
+            }
+        }
+        &_head {
+            background: $light_gray;
+            height: 40px;
+            align-items: center;
+        }
+    }
     &_btn {
       width: 170px;
       height: 38px;

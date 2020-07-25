@@ -21,7 +21,6 @@
                          :src="`../storage/product_images/${data.params.brand}/SMALL/${data.photo}.png`" alt="">
                 </a>
                 <a class="product_wrapper-item_overlay" href="#modal-1" uk-toggle :data-id="data.id" @click="loadProductModal(data.id)">
-                    <!--<a class="product_wrapper-item_overlay" :href="`#modal-${ data.id }`" uk-toggle :data-id="data.id">-->
                     <div class="product_wrapper-item_overlay_wrapper">
                         <div class="product_wrapper-item_overlay_wrapper-item">
                             <span class="product_wrapper-item_overlay_wrapper-item_text">быстрый просмотр</span>
@@ -39,7 +38,7 @@
                     <img src="/images/icons/rub.svg" alt="cur"/>
                 </div>
 
-                <BuyBtn :id="data.id"/>
+                <BuyBtn :id="data.id" className="animated_btn" />
 
             </div>
         </div>

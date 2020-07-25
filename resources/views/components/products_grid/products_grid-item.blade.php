@@ -43,7 +43,7 @@
                     <img src="/images/icons/rub.svg" alt="cur" />
                 </div>
 
-<a href="#" class="ajaxGETproduct" data-url="{{ route('AddToCartAjaxGet', ['id' => $id]) }}">
+<a href="#" class="ajaxGETproduct animated_btn" data-url="{{ route('AddToCartAjaxGet', ['id' => $id]) }}">
                 @include('components.btn.buy_btn')
 </a>
 

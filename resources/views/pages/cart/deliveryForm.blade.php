@@ -43,7 +43,7 @@
                          </div>
                       </div>
                     <button type="submit" class="setAddressSubmit" data-url="{{ route('setAddress') }}">
-                        @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn', 'text' => 'применить'])
+                        @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn animated_btn', 'text' => 'применить'])
                     </button>
                 </div>
            <div class="step_wrap invisible">
@@ -57,8 +57,8 @@
                         <label for="index" class="form_group-label">Индекс</label>
                         <div class="form_group-wrap">
                             <input type="text" name="index"/>
-                            <button class="btn" type="submit">
-                                @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn', 'text' => 'применить'])
+                            <button class="btn animated_btn" type="submit">
+                                @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn animated_btn', 'text' => 'применить'])
                             </button>
                         </div>
                     </div>
@@ -74,11 +74,11 @@
                     <input type="text" name="lastaddress" placeholder="Россия, Москва, ул. Академика Королева, д. 8, корпус 38, строение 98, подъезд 8, офис 787" />
 
                   <div class="btns_wrap">
-                      <button class="form_group-btn active">
+                      <button class="form_group-btn active animated_btn">
                           <span class="form_group-btn_item">Продолжить с этим адресом</span>
                       </button>
                       <button class="form_group-btn">
-                          <span class="form_group-btn_item">Изменить адрес выдачи</span>
+                          <span class="form_group-btn_item animated_btn">Изменить адрес выдачи</span>
                       </button>
                   </div>
                </div>

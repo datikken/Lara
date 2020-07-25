@@ -21,6 +21,9 @@ const store = new Vuex.Store({
         allProducts: state => state.products
     },
     actions: {
+       ADD_PRODUCT_TO_CART(context, {id, amount}) {
+           context.commit('addProductToCart', {id, amount})
+       },
        GET_PRODUCT_BY_ID(context, id) {
            context.commit('getProductById', id);
        },
@@ -74,20 +77,24 @@ const store = new Vuex.Store({
         getProductTypeFilters(state) {
             state.typeFilters = [...new Set(state.products.map(item => item.params.type))];
         },
-        addProductToCart(state, payload) {
+        addProductToCart(state, {id, amount}) {
             let that = this;
-            let url = `/products/addToCartAjaxGet/${payload}`;
+            let url = `/products/addToCartAjaxGet/${id}`;
+
+            console.warn('store add to cart, ${id}, ${amount', id, amount)
 
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': window.token
                 }
             });
+
             $.ajax({
                 method: "get",
                 url: `${url}`,
                 data: {
-                    id: payload
+                    id,
+                    amount
                 },
                 success: function (data) {
                     that.dispatch('fixCartStatus', { data })

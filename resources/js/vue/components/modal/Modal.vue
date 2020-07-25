@@ -9,7 +9,7 @@
                             <img class="prdet_wrap-item_img_inner"
                                  onerror="this.src = '/images/unnecessary/owl-swiper.svg';"
                                  v-if="singleProduct.params"
-                                 :src="`../storage/product_images/${singleProduct.params.brand}/BIG/${singleProduct.photo}.png`"
+                                 :src="`../storage/product_images/${singleProduct.params.brand}/SMALL/${singleProduct.photo}.png`"
                                  alt="">
                         </div>
                     </div>
@@ -43,18 +43,17 @@
 
                         <div class="prdet_wrap-icons_ctas">
                             <div class="prdet_wrap-icons_ctas-amount">
-                                <!--@include('components.btn.price', ['price' => $price ])-->
+                                <PriceBtn :price="singleProduct.price"/>
                             </div>
                             <div class="prdet_wrap-icons_ctas-increase">
                                 <span class="prdet_wrap-icons_ctas-increase-text">Количество (шт)</span>
-                                <!--@include('components.btn.amount_btn')-->
+                                <AmountBtn :id="singleProduct.id" quantity="1" />
                             </div>
                             <div class="prdet_wrap-icons_ctas-buy">
-                                <!--@include('components.btn.buy_btn', [ 'class' => 'empty_cart-btn', 'text' => 'в корзину'])-->
+                                <BuyBtn text="в корзину" className="text_buy-btn animated_btn" :id="singleProduct.id"/>
                             </div>
-                            <a class="prdet_wrap-icons_ctas-details">
-                                <!--<a class="prdet_wrap-icons_ctas-details" href="{{ route('ShowProductDetails',['id' => $id]) }}">-->
-                                <!--@include('components.btn.text_btn', [ 'class' => 'prdet_btn', 'text' => 'подробнее'])-->
+                            <a class="prdet_wrap-icons_ctas-details" :href="`/product/${singleProduct.id}`">
+                                <TextBtn className="prdet_btn" text="подробнее" />
                             </a>
                         </div>
                     </div>
@@ -98,11 +97,22 @@
 </template>
 
 <script>
+    import PriceBtn from '../btns/PriceBtn'
+    import BuyBtn from '../btns/BuyBtn'
+    import AmountBtn from '../btns/AmountBtn'
+    import TextBtn from '../btns/TextBtn'
+
     export default {
         name: "Modal",
+        components: {
+            BuyBtn,
+            PriceBtn,
+            AmountBtn,
+            TextBtn
+        },
         computed: {
             singleProduct() {
-                console.log('singleProduct', this.$store.state.singleProduct)
+                // console.log('singleProduct', this.$store.state.singleProduct)
                 return this.$store.state.singleProduct;
             }
         }
