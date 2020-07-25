@@ -106803,6 +106803,7 @@ var OwlCarouselController = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../vue/store/store */ "./resources/js/vue/store/store.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -106810,11 +106811,14 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /* eslint-disable */
+
+
 var ProductDetailsMenuController = /*#__PURE__*/function () {
   function ProductDetailsMenuController() {
     _classCallCheck(this, ProductDetailsMenuController);
 
-    var container = document.querySelector('.page_content');
+    this.store = _vue_store_store__WEBPACK_IMPORTED_MODULE_0__["default"];
+    var container = document.querySelector('.details');
     var block = document.querySelector('.pdetails_menu');
     block && this._setListeners(block, container);
 
@@ -106823,10 +106827,25 @@ var ProductDetailsMenuController = /*#__PURE__*/function () {
       this.prdch = container.querySelector('.prdch');
       this.prdesc = container.querySelector('.prdesc');
       this.pfeedback = container.querySelector('.pfeedback');
+
+      this._amountListeners();
     }
   }
 
   _createClass(ProductDetailsMenuController, [{
+    key: "_amountListeners",
+    value: function _amountListeners() {
+      var block = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items');
+      var links = block.querySelectorAll('a');
+      var that = this;
+      links.forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+          console.warn(el, that.store);
+        });
+      });
+    }
+  }, {
     key: "_setListeners",
     value: function _setListeners(el, block) {
       var that = this;

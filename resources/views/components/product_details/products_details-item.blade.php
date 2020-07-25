@@ -109,7 +109,7 @@
                     @include('components.btn.amount_btn', ['id' => $product['id']])
                 </div>
                 <div class="details_wrap-info_item-right">
-                    <a href="#" class="ajaxGETproduct" data-url="{{ route('AddToCartAjaxGet', ['id' => $product['id']]) }}">
+                    <a href="#" class="" data-url="{{ route('AddToCartAjaxGet', ['id' => $product['id']]) }}">
                         @include('components.btn.buy_btn', [ 'class' => 'empty_cart-btn', 'text' => 'в корзину'])
                     </a>
                 </div>

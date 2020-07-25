@@ -1,8 +1,10 @@
 /* eslint-disable */
+import store from '../vue/store/store'
 
 class ProductDetailsMenuController {
     constructor() {
-        let container = document.querySelector('.page_content');
+        this.store = store;
+        let container = document.querySelector('.details');
         let block = document.querySelector('.pdetails_menu');
             block && this._setListeners(block, container);
 
@@ -11,7 +13,20 @@ class ProductDetailsMenuController {
                 this.prdch = container.querySelector('.prdch');
                 this.prdesc = container.querySelector('.prdesc');
                 this.pfeedback = container.querySelector('.pfeedback');
+                this._amountListeners();
             }
+    }
+    _amountListeners() {
+        let block = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items');
+        let links = block.querySelectorAll('a');
+        let that = this;
+
+        links.forEach((el) => {
+            el.addEventListener('click',function(e) {
+                e.preventDefault();
+
+            })
+        });
     }
     _setListeners(el, block) {
         let that = this;

@@ -62,9 +62,9 @@ Route::get('/',['uses' => "ProductsController@showIndex", 'as' => 'index']);
 Route::get('/catalog', ['uses' => "ProductsController@catalogHTML", 'as' => 'allProducts']);
 
 //Catalog cartridge
-Route::get('/catalogСartridge', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
-//Catalog page
-Route::get('/catalogPaper', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
+Route::get('/catalogСartridge', ['uses' => "ProductsController@index", 'as' => 'allCartridges']);
+////Catalog page
+//Route::get('/catalogPaper', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
 
 //Cart page
 Route::get('cart', ['uses' => "CartController@showCart", 'as' => 'cartItems']);
