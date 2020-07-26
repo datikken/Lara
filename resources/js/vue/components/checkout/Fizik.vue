@@ -40,10 +40,11 @@
 </template>
 
 <script>
-    import SimpleCheckbox from '../checkboxes/SimpleCheckbox';
+    import SimpleCheckbox from '../checkboxes/SimpleCheckbox'
     import TextBtn from '../btns/TextBtn'
     import { mapActions } from 'vuex'
     import MaskedInput from '../inputs/MaskedInput'
+    import router from '../../router/router'
 
     export default {
         name: "Fizik",
@@ -55,11 +56,12 @@
         data: function() {
             return {
                 userMask: 'aa-aa-AAAA',
+                phone: ''
             }
         },
         methods: {
             ...mapActions([
-                'SET_CUSTOMER_FIO'
+                'SET_CUSTOMER_FIO',
             ]),
             setCustomerFio() {
                 let inputs = this.$el.querySelectorAll('input');
@@ -73,6 +75,7 @@
                     })
 
                 this.SET_CUSTOMER_FIO(obj);
+                router.push('/deliveryForm');
             }
         }
     }

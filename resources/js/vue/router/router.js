@@ -1,11 +1,12 @@
 import VueRouter from 'vue-router'
 import CheckoutPage from '../pages/CheckoutPage'
+import DeliveryForm from '../pages/DeliveryForm'
 
 const Bar = { template: '<div>bar</div>' }
 
 const routes = [
     { path: '/', component: CheckoutPage },
-    { path: '/bar', component: Bar }
+    { path: '/deliveryForm', component: DeliveryForm }
 ]
 
 const router = new VueRouter({

@@ -108,8 +108,8 @@ Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@
 Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
 
 Route::get('/setCustomerFio',['uses' => 'CustomerDataController@setCustomerFio','as'=>'setCustomerFio']);
-Route::get('product/delivery',['uses' => 'ProductsController@setDelivery','as'=>'setDelivery']);
-Route::get('deliveryForm',['uses' => 'CustomerDataController@deliveryForm','as'=>'deliveryForm']);
+Route::get('/deliveryForm',['uses' => 'CustomerDataController@deliveryForm','as'=>'deliveryForm']);
+
 Route::post('product/setIndex',['uses' => 'ProductsController@setIndex','as'=>'setIndex']);
 Route::get('product/setAddress',['uses' => 'ProductsController@setAddress','as'=>'setAddress']);
 Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'setIssue']);

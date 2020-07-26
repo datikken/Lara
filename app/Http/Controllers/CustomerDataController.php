@@ -23,9 +23,4 @@ class CustomerDataController extends Controller
         $request->session()->put('cart-customerFio', $arr);
         return response()->json((object) array('customer_fio' => $arr));
     }
-
-    public function deliveryForm()
-    {
-        return view('pages.cart.deliveryForm');
-    }
 }

@@ -9,7 +9,7 @@ class CartProgressController {
     constructor() {
         let checkout = document.querySelector('#checkout');
         let el = document.querySelector('.cart');
-            el && this._fixProgress(el);
+            // el && this._fixProgress(el);
 
             if(checkout) {
                 this.renderCheckoutVue(checkout);

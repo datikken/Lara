@@ -16,7 +16,8 @@ const store = new Vuex.Store({
         brandFilters: [],
         singleProduct: {},
         user: {},
-        usersFIO: ''
+        usersFIO: '',
+        cartStep: 0
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
@@ -24,6 +25,11 @@ const store = new Vuex.Store({
         user: state => state.user
     },
     actions: {
+       CHANGE_PROGRESS_STEP(context) {
+           context.commit('changeProgressStep');
+
+           console.warn('CHANGE_PROGRESS_STEP')
+       },
        SET_CUSTOMER_FIO(context, obj) {
            context.commit('setCustomerFio', obj);
        },
@@ -56,18 +62,20 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        changeProgressStep(state) {
+            let line = document.querySelector('.cart_wrap-crumb').querySelector('.active-item');
+
+            if(state.cartStep === 0) {
+                line.style.width = '37%';
+            }
+
+            if(state.cartStep === 1) {
+                line.style.width = '65%';
+            }
+
+            state.cartStep++;
+        },
         setCustomerFio(state, {firstname, lastname, tel, save}) {
-
-            // console.warn('before send', firstname, lastname, tel, save)
-            //
-            //     axios.get('/setCustomerFio', {
-            //         firstname, lastname, tel, save
-            //     })
-            //     .then(response => {
-            //         state.usersFIO = response.data;
-            //         console.warn('response', response.data)
-            //     })
-
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': window.token
@@ -81,7 +89,7 @@ const store = new Vuex.Store({
                     firstname, lastname, tel, save
                 },
                 success: function (data) {
-                    console.warn('response', data)
+                    state.usersInfo = data
                 },
                 error: function (error) {
                     console.warn(error);

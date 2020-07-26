@@ -23,7 +23,8 @@
         },
         methods: {
             ...mapActions([
-                'GET_USERS_INFO'
+                'GET_USERS_INFO',
+                'CHANGE_PROGRESS_STEP'
             ]),
         },
         computed: {
@@ -38,6 +39,7 @@
         },
         created() {
             this.GET_USERS_INFO();
+            this.CHANGE_PROGRESS_STEP();
         }
     }
 </script>

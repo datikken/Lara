@@ -305,13 +305,6 @@ class ProductsController extends Controller
         return view('pages.cart.checkoutProducts');
     }
 
-    public function setDelivery()
-    {
-        return view('pages.delivery');
-    }
-
-
-
     public function setIndex(Request $request)
     {
         $index = $request->input('index');
