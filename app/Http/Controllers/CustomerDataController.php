@@ -8,10 +8,10 @@ class CustomerDataController extends Controller
 {
     public function setCustomerFio(Request $request)
     {
-        $firstname = $request->input('firstname');
-        $lastname = $request->input('lastname');
-        $tel = $request->input('tel');
-        $save = $request->input('save');
+        $firstname = $request->firstname;
+        $lastname = $request->lastname;
+        $tel = $request->tel;
+        $save = $request->save;
 
         $arr = [
             'firstname' => $firstname,

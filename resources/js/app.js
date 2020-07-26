@@ -14,7 +14,6 @@ import DeliveryController from './controllers/DeliveryController'
 import DeliveryFormController from './controllers/DeliveryFormController'
 import CartController from './controllers/CartController'
 import Checkbox from './components/Checkbox'
-import DeliveryAuthController from './controllers/DeliveryAuthController'
 import InformationController from './controllers/InformationController'
 import ProductDetailsSliderController from './controllers/ProductDetailsSliderController'
 import ProductfeedbackController from './controllers/ProductFeedbackController'
@@ -47,7 +46,6 @@ $(document).ready(function() {
     new SearchController();
     new Checkbox();
     new CartController();
-    new DeliveryAuthController();
     new InformationController();
     new DeliveryFormController();
     new SimpleMap();

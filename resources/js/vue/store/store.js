@@ -15,7 +15,8 @@ const store = new Vuex.Store({
         modelFilters: [],
         brandFilters: [],
         singleProduct: {},
-        user: {}
+        user: {},
+        usersFIO: ''
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
@@ -23,6 +24,9 @@ const store = new Vuex.Store({
         user: state => state.user
     },
     actions: {
+       SET_CUSTOMER_FIO(context, obj) {
+           context.commit('setCustomerFio', obj);
+       },
        GET_USERS_INFO(context) {
            context.commit('getUserInfo');
        },
@@ -52,6 +56,38 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        setCustomerFio(state, {firstname, lastname, tel, save}) {
+
+            // console.warn('before send', firstname, lastname, tel, save)
+            //
+            //     axios.get('/setCustomerFio', {
+            //         firstname, lastname, tel, save
+            //     })
+            //     .then(response => {
+            //         state.usersFIO = response.data;
+            //         console.warn('response', response.data)
+            //     })
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
+
+            $.ajax({
+                method: "get",
+                url: '/setCustomerFio',
+                data: {
+                    firstname, lastname, tel, save
+                },
+                success: function (data) {
+                    console.warn('response', data)
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+        },
         getUserInfo(state) {
             axios.get('/getUserInfo')
                 .then(response => {

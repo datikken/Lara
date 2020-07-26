@@ -22,10 +22,11 @@
                 <div class="cart_check-wrap_item-group">
                     <label for="required" class="invisible errorLabel" data-err>Поле телефон обязательно к заполнению</label>
                     <label for="tel">Телефон <span>*</span></label>
-                    <input type="text" name="tel" placeholder="+7 (___) ___ - __ - __" class="masked" data-required />
+                    <masked-input v-model="phone" mask="\+\7 (111) 111-11-11" placeholder="+7 (___) ___ - __ - __" />
                 </div>
 
-                <TextBtn className="cart_check-wrap_item-group_btn" text="продолжить" />
+                <TextBtn className="cart_check-wrap_item-group_btn" text="продолжить" @click.native="setCustomerFio" />
+
             </div>
 
             <div class="cart_check-wrap_item">
@@ -41,12 +42,38 @@
 <script>
     import SimpleCheckbox from '../checkboxes/SimpleCheckbox';
     import TextBtn from '../btns/TextBtn'
+    import { mapActions } from 'vuex'
+    import MaskedInput from '../inputs/MaskedInput'
 
     export default {
         name: "Fizik",
         components: {
             SimpleCheckbox,
-            TextBtn
+            TextBtn,
+            MaskedInput
+        },
+        data: function() {
+            return {
+                userMask: 'aa-aa-AAAA',
+            }
+        },
+        methods: {
+            ...mapActions([
+                'SET_CUSTOMER_FIO'
+            ]),
+            setCustomerFio() {
+                let inputs = this.$el.querySelectorAll('input');
+                let obj = {};
+
+                    inputs.forEach((el) => {
+                        let name = el.getAttribute('name');
+                        let val = el.value;
+
+                            obj[name] = val;
+                    })
+
+                this.SET_CUSTOMER_FIO(obj);
+            }
         }
     }
 </script>
