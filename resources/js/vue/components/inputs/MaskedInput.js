@@ -60,7 +60,7 @@ export default {
             }
         },
         value(newValue) {
-            if (this.maskCore) this.maskCore.setValue(newValue); // For multiple inputs support
+            if (this.maskCore) this.maskCore.setValue(newValue);
         },
     },
 

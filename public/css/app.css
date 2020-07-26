@@ -7168,7 +7168,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .order_list-wrap {
   border: 1px solid #e9e9ea;
-  padding: 40px 30px;
+  padding: 40px 30px 20px 30px;
 }
 .order_list-wrap .proceedPayment-btn {
   margin-top: 50px;

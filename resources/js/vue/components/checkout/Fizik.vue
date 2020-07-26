@@ -31,7 +31,7 @@
 
             <div class="cart_check-wrap_item">
                 <div class="cart_check-wrap_item-group checkbox">
-                    <SimpleCheckbox />
+                    <SimpleCheckbox name="save" />
                     <label for="save">Сохранить данные</label>
                 </div>
             </div>

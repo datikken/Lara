@@ -4,9 +4,9 @@
             <input
                 class="checkbox-wrap_input invisible"
                 type="checkbox"
-                name="<?php echo $name ?>"
+                :name="name"
             />
-            <img src="/images/icons/arrow_right.svg" alt="icon" class="checkbox-wrap_arrow" v-bind:class="{ invisible: checked }"/>
+            <img src="/images/icons/arrow_right.svg" alt="icon" class="checkbox-wrap_arrow" v-bind:class="{ invisible: !checked }"/>
         </div>
     </div>
 </template>
@@ -14,6 +14,7 @@
 <script>
     export default {
         name: "SimpleCheckbox",
+        props: ['name'],
         data: function() {
             return {
                 checked: false

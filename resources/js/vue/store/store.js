@@ -17,7 +17,8 @@ const store = new Vuex.Store({
         singleProduct: {},
         user: {},
         usersFIO: '',
-        cartStep: 0
+        cartStep: 0,
+        cart: {}
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
@@ -25,10 +26,11 @@ const store = new Vuex.Store({
         user: state => state.user
     },
     actions: {
+       CHECK_CART_STATE(context) {
+           context.commit('checkCartState');
+       },
        CHANGE_PROGRESS_STEP(context) {
            context.commit('changeProgressStep');
-
-           console.warn('CHANGE_PROGRESS_STEP')
        },
        SET_CUSTOMER_FIO(context, obj) {
            context.commit('setCustomerFio', obj);
@@ -62,6 +64,16 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        checkCartState(state) {
+            axios.get('/checkCartState')
+                .then(response => {
+                    state.cart = response.data;
+                    console.warn('checkCartState', state.cart)
+                })
+
+
+            return state.cart
+        },
         changeProgressStep(state) {
             let line = document.querySelector('.cart_wrap-crumb').querySelector('.active-item');
 

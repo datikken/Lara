@@ -10,7 +10,7 @@
         <ul class="filters_wrapper-item_list as-none">
             <li class="filters_wrapper-item_list-text" v-for="filter in this.$props.filters" @click="setChecked">
                 <span class="filters_wrapper-item_list-text_val">{{ filter }}</span>
-                <SimpleCheckbox />
+                <SimpleCheckbox name="filter" />
             </li>
         </ul>
     </div>
