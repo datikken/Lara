@@ -18,7 +18,6 @@
                     </div>
                 </div>
 
-
                 <div class="order_list-wrap_inner-row" v-for="order in orders.items">
                     <div class="order_list-wrap_inner-row_item">
                         <span class="order_list-wrap_inner-row_item-text">
@@ -34,9 +33,7 @@
                 </div>
             </div>
 
-
-
-            <div class="order_list-wrap_inner-row">
+            <div class="order_list-wrap_inner-row" v-if="this.deliveryType === 'deliveryMkad' ">
                 <div class="order_list-wrap_inner-row_item">
                     <span class="order_list-wrap_inner-row_item-text">Доставка</span>
                 </div>
@@ -46,8 +43,6 @@
                     </span>
                 </div>
             </div>
-
-
 
             <div class="order_list-wrap_footer">
                 <div class="order_list-wrap_footer-row">
@@ -72,7 +67,7 @@
 </template>
 
 <script>
-    import {mapActions} from 'vuex'
+    import {mapActions,mapGetters} from 'vuex'
 
     export default {
         name: "OrdersList",
@@ -85,6 +80,9 @@
             this.CHECK_CART_STATE();
         },
         computed: {
+            ...mapGetters([
+                'deliveryType'
+            ]),
             orders() {
                 return this.$store.state.cart
             }

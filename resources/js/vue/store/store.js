@@ -18,14 +18,19 @@ const store = new Vuex.Store({
         user: {},
         usersFIO: '',
         cartStep: 0,
-        cart: {}
+        cart: {},
+        deliveryType: ''
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
         allProducts: state => state.products,
-        user: state => state.user
+        user: state => state.user,
+        deliveryType: state => state.deliveryType
     },
     actions: {
+       SET_DELIVERY_TYPE(context,name) {
+           context.commit('setDeliveryType',name);
+       },
        CHECK_CART_STATE(context) {
            context.commit('checkCartState');
        },
@@ -64,13 +69,16 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        setDeliveryType(state, name) {
+            state.deliveryType = name;
+
+            return state.deliveryType;
+        },
         checkCartState(state) {
             axios.get('/checkCartState')
                 .then(response => {
                     state.cart = response.data;
-                    console.warn('checkCartState', state.cart)
                 })
-
 
             return state.cart
         },

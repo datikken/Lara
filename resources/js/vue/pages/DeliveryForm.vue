@@ -13,7 +13,6 @@
 
         <OrdersList />
 
-        <!--@include('components.cart.order_list')-->
         <!--<script async="false" src="//api-maps.yandex.ru/2.1/?lang=ru_RU" id="scriptonload-__api_maps_yandex_ru_2_1__lang_ru_RU"></script>-->
 
     </div>
