@@ -2537,7 +2537,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "SimpleCheckbox"
+  name: "SimpleCheckbox",
+  data: function data() {
+    return {
+      checked: false
+    };
+  },
+  methods: {
+    setChecked: function setChecked() {
+      this.checked = !this.checked;
+    }
+  }
 });
 
 /***/ }),
@@ -91279,28 +91289,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "checkbox" }, [
-      _c("div", { staticClass: "checkbox-wrap" }, [
-        _c("input", {
-          staticClass: "checkbox-wrap_input invisible",
-          attrs: { type: "checkbox", name: "<?php echo $name ?>" }
-        }),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "checkbox-wrap_arrow invisible",
-          attrs: { src: "/images/icons/arrow_right.svg", alt: "icon" }
-        })
-      ])
+  return _c("div", { staticClass: "checkbox", on: { click: _vm.setChecked } }, [
+    _c("div", { staticClass: "checkbox-wrap" }, [
+      _c("input", {
+        staticClass: "checkbox-wrap_input invisible",
+        attrs: { type: "checkbox", name: "<?php echo $name ?>" }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "checkbox-wrap_arrow",
+        class: { invisible: _vm.checked },
+        attrs: { src: "/images/icons/arrow_right.svg", alt: "icon" }
+      })
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
