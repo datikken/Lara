@@ -32,6 +32,8 @@
                         slot-scope="props"
                         :class="testPagi"
                     >
+                        <BuyBtn text="загрузить еще" className="load_more-btn text_buy-btn animated_btn" />
+
                         <vue-ads-page-button
                             v-for="(button, key) in props.buttons"
                             :key="key"
@@ -41,9 +43,7 @@
                     </template>
                 </vue-ads-pagination>
 
-
                 <Modal />
-
 
             </div>
         </div>
@@ -53,6 +53,7 @@
 <script>
     import '../../../node_modules/@fortawesome/fontawesome-free/css/all.css';
     import '../../../node_modules/vue-ads-pagination/dist/vue-ads-pagination.css';
+    import BuyBtn from '../vue/components/btns/BuyBtn';
     import CatalogSwitch from '../vue/components/catalog/catalogSwitch';
     import CatalogCard from '../vue/components/catalog/catalogCard'
     import VueAdsPagination, {VueAdsPageButton} from 'vue-ads-pagination';
@@ -73,7 +74,8 @@
             NothingFound,
             Viewed,
             Loader,
-            Modal
+            Modal,
+            BuyBtn
         },
         data() {
             return {

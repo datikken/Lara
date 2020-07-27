@@ -1,3 +1,12 @@
+.load_more-btn {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+
+    img {
+        display: none;
+    }
+}
 .as-visible {
   visibility: visible !important;
   display: block;
