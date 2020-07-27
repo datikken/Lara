@@ -177,3 +177,7 @@ Route::post('StoreNewPassword', ['uses' => 'ChangePasswordController@store','as'
 
 //Test email template
 Route::get('/mailtemplate', ['uses' => "SendEmailController@testEmailTemplate", 'as' => 'mailtemplate']);
+
+if (env('APP_ENV') === 'production') {
+    URL::forceSchema('https');
+}
