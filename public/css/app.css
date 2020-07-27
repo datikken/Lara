@@ -2200,11 +2200,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 
-.catalog_columns {
-  overflow: hidden;
-}
 .catalog_columns .right_column {
   width: 100%;
+  position: relative;
 }
 @media screen and (min-width: 1030px) {
   .catalog_columns .right_column {
@@ -12624,4 +12622,45 @@ main {
 }
 .notFound_paragraph {
   font-family: "Montserrat", sans-serif;
+}
+
+.catalogSwitch {
+  position: absolute;
+  top: -2.75rem;
+  right: 4px;
+}
+.catalogSwitch_text {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #40404c;
+}
+.catalogSwitch_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.catalogSwitch_item {
+  margin: 0 10px;
+  cursor: pointer;
+}
+.catalogSwitch_item-filter, .catalogSwitch_item-list, .catalogSwitch_item-grid {
+  width: 18px;
+  height: 18px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.catalogSwitch_item-filter {
+  background-image: url("/images/icons/priceFilter.svg");
+}
+.catalogSwitch_item-list {
+  background-image: url("/images/icons/stroke.svg");
+}
+.catalogSwitch_item-grid {
+  background-image: url("/images/icons/grid.svg");
 }

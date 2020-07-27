@@ -7,6 +7,8 @@
         </div>
         <div class="right_column">
 
+            <CatalogSwitch />
+
             <Loader v-if="!this.$store.state.productsLoaded"/>
 
             <div class="products_grid">
@@ -51,6 +53,7 @@
 <script>
     import '../../../node_modules/@fortawesome/fontawesome-free/css/all.css';
     import '../../../node_modules/vue-ads-pagination/dist/vue-ads-pagination.css';
+    import CatalogSwitch from '../vue/components/catalog/catalogSwitch';
     import CatalogCard from '../vue/components/catalog/catalogCard'
     import VueAdsPagination, {VueAdsPageButton} from 'vue-ads-pagination';
     import Filters from './components/filters/Filters'
@@ -65,6 +68,7 @@
             CatalogCard,
             VueAdsPagination,
             VueAdsPageButton,
+            CatalogSwitch,
             Filters,
             NothingFound,
             Viewed,

@@ -1,0 +1,42 @@
+.catalogSwitch {
+    position: absolute;
+    top: -2.75rem;
+    right: 4px;
+
+    &_text {
+        font-family: $semifont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $black;
+    }
+    &_wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &_item {
+        margin: 0 10px;
+        cursor: pointer;
+
+        &-filter, &-list, &-grid {
+            width: 18px;
+            height: 18px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        &-filter {
+            background-image: url('/images/icons/priceFilter.svg');
+        }
+        &-list {
+            background-image: url('/images/icons/stroke.svg');
+        }
+        &-grid {
+            background-image: url('/images/icons/grid.svg');
+        }
+    }
+}

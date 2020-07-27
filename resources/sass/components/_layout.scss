@@ -31,9 +31,11 @@
   }
 }
 .catalog_columns {
-  overflow: hidden;
+  //overflow: hidden;
     .right_column {
         width: 100%;
+        position: relative;
+
         @include breakpoint($medium) {
             min-width: 900px;
         }
