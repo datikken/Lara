@@ -1,45 +1,71 @@
 <template>
-   <div>
-       <div class="form_group">
-           <span class="form_group-heading">Введите город, улицу и номер дома.</span>
-       </div>
+    <div>
+        <form class="metro_form" method="POST">
+            <!--<form class="metro_form" method="POST" action="{{ route('setIssue') }}">-->
+            <div class="metro_group">
+                <div class="form_group metro_group_wrap">
+                    <label for="metro" class="form_group-label">Выбрать ближайшее метро</label>
+                    <input type="text" name="metro" value="" class="invisible" />
 
-       <div class="index_group getSetAddress">
-           <div class="form_group">
-               <label for="city" class="form_group-label">Город</label>
-               <input type="text" name="city"/>
-           </div>
+                    <div class="metro_group_wrap_list-wrap">
+                        <span class="metro_group_wrap_list-wrap-heading">Введите ближайшее метро</span>
+                        <div class="metro_group_wrap_list-wrap-icon" style="background-image: url('/images/icons/arrow_right.svg')"></div>
+                        <ul>
+                            <!--@foreach (Config::get('constants.STATIONS') as $station)-->
+                            <!--<li>{{ $station }}</li>-->
+                            <!--@endforeach-->
+                        </ul>
+                    </div>
+                </div>
 
-           <div class="form_group">
-               <label for="street" class="form_group-label">Улица</label>
-               <input type="text" name="street"/>
-           </div>
+                <div class="form_group">
+                    <label for="station" class="form_group-label">Выбрать пункт выдачи</label>
+                    <input type="text" name="station" style="display: none;">
 
-           <div class="form_group inline_group">
-               <div class="label_wrap">
-                   <label for="house" class="form_group-label">Дом</label>
-                   <input type="text" name="house"/>
-               </div>
+                    <div class="postamat_list-wrap">
+                        <span class="postamat_list-wrap-heading">Введите ближайшее метро</span>
+                        <div class="postamat_list-wrap-icon" style="background-image: url('/images/icons/arrow_right.svg')"></div>
+                        <ul>
+                            <!--@foreach (Config::get('constants.POSTAMATS') as $station)-->
+                            <!--<li>{{ $station }}</li>-->
+                            <!--@endforeach-->
+                        </ul>
+                    </div>
 
-               <div class="label_wrap">
-                   <label for="body" class="form_group-label">Корпус</label>
-                   <input type="text" name="body"/>
-               </div>
+                </div>
+            </div>
 
-               <div class="label_wrap">
-                   <label for="building" class="form_group-label">Строение</label>
-                   <input type="text" name="building"/>
-               </div>
-           </div>
+            <TextBtn className="form_group-btn flat_btn" text="Забрать из этого пункта" />
 
-           <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" />
+        </form>
 
-           <!--<button type="submit" class="setAddressSubmit">-->
-               <!--&lt;!&ndash;<button type="submit" class="setAddressSubmit" data-url="{{ route('setAddress') }}">&ndash;&gt;-->
-               <!--&lt;!&ndash;@include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn animated_btn', 'text' => 'применить'])&ndash;&gt;-->
-           <!--</button>-->
-       </div>
-   </div>
+        <div class="form_group map_group">
+            <div class="map_group-heading">
+                <span class="map_group-heading_item">Выбрать на карте</span>
+            </div>
+
+            <div id="map" class="ymaps map_group-delivery"></div>
+            <TextBtn className="form_group-btn flat_btn" text="Забрать из этого пункта" />
+        </div>
+
+        <div class="form_group address_group">
+            <label
+                for="lastaddress"
+                class="form_group-label">
+                Ранее используемый пункт выдачи
+            </label>
+            <input type="text" name="lastaddress" placeholder="Россия, Москва, ул. Академика Королева, д. 8, корпус 38, строение 98, подъезд 8, офис 787" />
+
+            <div class="btns_wrap">
+                <button class="form_group-btn active animated_btn">
+                    <span class="form_group-btn_item">Продолжить с этим адресом</span>
+                </button>
+                <button class="form_group-btn">
+                    <span class="form_group-btn_item animated_btn">Изменить адрес выдачи</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>

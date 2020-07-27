@@ -31,6 +31,8 @@
                         </span>
                     </div>
                 </div>
+
+                <hr />
             </div>
 
             <div class="order_list-wrap_inner-row" v-if="this.deliveryType === 'deliveryMkad' ">

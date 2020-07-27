@@ -19,7 +19,7 @@
             ...mapActions([
                 'SET_DELIVERY_TYPE'
             ]),
-            setDeliveryType() {
+            setDeliveryType(e) {
                 let type = document.querySelector('.delivery_type');
 
                 if(type) {
@@ -28,9 +28,10 @@
                             let img = box.querySelector('img');
                                 img && img.classList.add('invisible');
                         })
-                }
 
-                // this.$refs.child.setChecked();
+                    let img = e.currentTarget.querySelector('img')
+                        img.classList.remove('invisible');
+                }
 
                 this.SET_DELIVERY_TYPE(this.$props.name);
             }
