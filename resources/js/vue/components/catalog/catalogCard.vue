@@ -61,6 +61,8 @@
         },
         created: function () {
             let col = this.$props.data;
+
+            console.warn(this.$props.data);
         }
     }
 </script>
