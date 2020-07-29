@@ -2,8 +2,8 @@
 
     <div class="columns catalog_columns">
         <div class="left_column">
-            <Filters/>
-            <Viewed/>
+           <Filters />
+           <Viewed />
         </div>
         <div class="right_column">
 
