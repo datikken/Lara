@@ -153,9 +153,7 @@ const store = new Vuex.Store({
                 return true;
             });
 
-            this.dispatch('GET_MODEL_FILTERS', data);
-
-            // console.log(newProducts, 'newProducts');
+            if(!data.art) this.dispatch('GET_MODEL_FILTERS', data);
 
             state.filteredProducts = newProducts;
         },

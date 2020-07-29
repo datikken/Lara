@@ -36,8 +36,7 @@
         },
         watch: {
             filters: function (newVal, oldVal) {
-                // console.log('Prop changed: ', newVal, ' | was: ', oldVal)
-                this.activated = true;
+               this.activated = true;
             }
         },
         created() {
@@ -60,8 +59,6 @@
                             data[type] = val;
                         }
                     });
-
-                console.warn(data, 'FILTER_PRODUCTS');
 
                 this.$store.dispatch('FILTER_PRODUCTS', data);
             },
@@ -93,6 +90,11 @@
             openFilter() {
                 if(!this.activated) {
                     return
+                }
+
+                if(this.$props.filters.length === 0) {
+                    label.classList.add('pb16');
+                    return;
                 }
 
                 let img = this.$el.querySelector('img');
