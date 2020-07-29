@@ -61,6 +61,8 @@
                         }
                     });
 
+                console.warn(data, 'FILTER_PRODUCTS');
+
                 this.$store.dispatch('FILTER_PRODUCTS', data);
             },
             clearFilters() {

@@ -61,8 +61,7 @@
         },
         created: function () {
             let col = this.$props.data;
-
-            console.warn(this.$props.data);
+            // console.warn('catalog cart',this.$props.data);
         }
     }
 </script>

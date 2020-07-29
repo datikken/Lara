@@ -12,36 +12,47 @@
             <Loader v-if="!this.$store.state.productsLoaded"/>
 
             <div class="products_grid">
-                <vue-ads-pagination
-                    :total-items="products.length"
-                    :max-visible-pages="5"
-                    :page="page"
-                    :items-per-page="16"
-                    :loading="loading"
-                    @page-change="pageChange"
-                >
 
-                    <template slot-scope="props">
-                        <NothingFound v-if="products.slice(props.start, props.end).length === 0"/>
-                        <CatalogCard :data="item" v-for="item in products.slice(props.start, props.end)"
-                                     :key="item.name"/>
-                    </template>
-
-                    <template
-                        slot="buttons"
-                        slot-scope="props"
-                        :class="testPagi"
+                <div v-if="products.length > 1">
+                    <vue-ads-pagination
+                        :total-items="products.length"
+                        :max-visible-pages="5"
+                        :page="page"
+                        :items-per-page="16"
+                        :loading="loading"
+                        @page-change="pageChange"
                     >
-                        <BuyBtn text="загрузить еще" className="load_more-btn text_buy-btn animated_btn" />
 
-                        <vue-ads-page-button
-                            v-for="(button, key) in props.buttons"
-                            :key="key"
-                            v-bind="button"
-                            @page-change="page = button.page"
-                        />
-                    </template>
-                </vue-ads-pagination>
+                        <template slot-scope="props">
+                            <CatalogCard :data="item" v-for="item in products.slice(props.start, props.end)"
+                                         :key="item.name"/>
+                        </template>
+
+                        <template
+                            slot="buttons"
+                            slot-scope="props"
+                            :class="testPagi"
+                        >
+                            <BuyBtn text="загрузить еще" className="load_more-btn text_buy-btn animated_btn" />
+
+                            <vue-ads-page-button
+                                v-for="(button, key) in props.buttons"
+                                :key="key"
+                                v-bind="button"
+                                @page-change="page = button.page"
+                            />
+                        </template>
+                    </vue-ads-pagination>
+                </div>
+
+                <div v-else>
+                    <CatalogCard :data="item" v-for="item in products"
+                                 :key="item.name"/>
+                </div>
+
+                <!--<div v-if="products.length === 0">-->
+                    <!--<NothingFound v-if="products.slice(props.start, props.end).length === 0"/>-->
+                <!--</div>-->
 
                 <Modal />
 
@@ -84,9 +95,6 @@
             }
         },
         methods: {
-            getProducts() {
-                this.products = this.$store.state.products;
-            },
             pageChange(page) {
                 this.page = page;
             }

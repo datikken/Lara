@@ -55,10 +55,13 @@ const store = new Vuex.Store({
        FILTER_PRODUCTS(context, data) {
            context.commit('filterProductByQuery', data);
        },
-       COLLECT_FILTERS(context, data) {
+       COLLECT_FILTERS(context) {
            context.commit('getProductTypeFilters');
-           context.commit('getProductModelFilters');
            context.commit('getProductBrandFilters');
+           context.commit('getProductModelFilters');
+       },
+       GET_MODEL_FILTERS(context, data) {
+           context.commit('getProductModelFilters', data);
        },
        fixCartStatus({ dispatch, commit }, { data }) {
            let amount = data.totalQuantity;
@@ -132,15 +135,33 @@ const store = new Vuex.Store({
             let amount = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
                 amount.innerText = 1;
                 amount.setAttribute('data-modal-val', 1);
-
         },
         setProductsLoaded(state, data) {
             state.productsLoaded = true;
         },
         filterProductByQuery(state, data) {
+            // console.warn('filterProductByQuery', data)
             let newProducts = state.products.filter(item => {
                 let param = item.params
 
+                for (let key in data) {
+                    // console.log(param[key], data[key], 'for in loop');
+                    if (param[key] === undefined || param[key] != data[key])
+                        return false;
+                }
+
+                return true;
+            });
+
+            this.dispatch('GET_MODEL_FILTERS', data);
+
+            // console.log(newProducts, 'newProducts');
+
+            state.filteredProducts = newProducts;
+        },
+        getProductModelFilters(state, data = {}) {
+            let newProducts = state.products.filter(item => {
+                let param = item.params
                 for (let key in data) {
                     if (param[key] === undefined || param[key] != data[key])
                         return false;
@@ -149,10 +170,7 @@ const store = new Vuex.Store({
                 return true;
             });
 
-            state.filteredProducts = newProducts;
-        },
-        getProductModelFilters(state) {
-            state.modelFilters = [...new Set(state.products.map(item => item.params.art))];
+            state.modelFilters = [...new Set(newProducts.map(item => item.params.art))];
         },
         getProductBrandFilters(state) {
             state.brandFilters = [...new Set(state.products.map(item => item.params.brand))];
