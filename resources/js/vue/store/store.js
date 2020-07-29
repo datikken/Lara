@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import $ from "jquery";
 import axios from 'axios';
+const _ = require('lodash');
 
 Vue.use(Vuex)
 
@@ -28,6 +29,9 @@ const store = new Vuex.Store({
         deliveryType: state => state.deliveryType
     },
     actions: {
+       PRICE_FILTER(context, name) {
+            context.commit('applyPriceFilter', name);
+       },
        SET_DELIVERY_TYPE(context,name) {
            context.commit('setDeliveryType',name);
        },
@@ -72,6 +76,11 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        applyPriceFilter(state, name) {
+            console.log('applyPriceFilter filters clicked', name);
+
+            state.filteredProducts = _.orderBy(state.filteredProducts, ['price'], [name]);
+        },
         setDeliveryType(state, name) {
             state.deliveryType = name;
 

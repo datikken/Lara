@@ -89,6 +89,7 @@
         data() {
             return {
                 page: 0,
+                loading: false
             }
         },
         methods: {
