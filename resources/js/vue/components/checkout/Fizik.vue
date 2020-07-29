@@ -2,7 +2,9 @@
     <div class="cart_check">
         <div class="cart_check-wrap" data-href="">
             <div class="cart_check-wrap_head">
-                <h1>Получатель заказа</h1>
+                <h1 data-heading>Получатель заказа</h1>
+
+                <span class="error-message as-none" data-error>Заполните обязательные поля</span>
             </div>
 
             <div class="cart_check-wrap_item">
@@ -45,6 +47,7 @@
     import { mapActions } from 'vuex'
     import MaskedInput from '../inputs/MaskedInput'
     import router from '../../router/router'
+    import validator from '../../../functions/validator'
 
     export default {
         name: "Fizik",
@@ -75,6 +78,20 @@
                     })
 
                 this.SET_CUSTOMER_FIO(obj);
+
+                try {
+                    window.app.validator.formValidate([], $(this.$el));
+                } catch(err) {
+                    let error = this.$el.querySelector('[data-error]');
+                    let heading = this.$el.querySelector('[data-heading]');
+
+                    error.classList.add('mb10');
+                    error.classList.remove('as-none');
+                    heading.classList.add('mb5');
+
+                    return;
+                }
+
                 router.push('/deliveryForm');
             }
         }

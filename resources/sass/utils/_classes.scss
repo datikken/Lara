@@ -140,6 +140,10 @@ a:hover {
     height: 100%;
   }
 }
+.error-message {
+    font-size: 12px;
+    color: $red;
+}
 .rotate {
     transform: rotate(90deg);
 }

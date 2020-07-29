@@ -295,6 +295,11 @@ a:hover {
   }
 }
 
+.error-message {
+  font-size: 12px;
+  color: #FF0000;
+}
+
 .rotate {
   transform: rotate(90deg);
 }
@@ -557,6 +562,14 @@ b {
 
 .bold {
   font-family: "MontserratSemiBold" !important;
+}
+
+.mb10 {
+  margin-bottom: 10px !important;
+}
+
+.mb5 {
+  margin-bottom: 5px !important;
 }
 
 .header {
