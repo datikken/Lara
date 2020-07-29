@@ -7,7 +7,9 @@
         </div>
         <div class="right_column">
 
-            <CatalogSwitch />
+            <CatalogSwitch/>
+
+            <NothingFound v-if="this.$store.state.productsLoaded && products.length === 0"/>
 
             <Loader v-if="!this.$store.state.productsLoaded"/>
 
@@ -33,7 +35,7 @@
                             slot-scope="props"
                             :class="testPagi"
                         >
-                            <BuyBtn text="загрузить еще" className="load_more-btn text_buy-btn animated_btn" />
+                            <BuyBtn text="загрузить еще" className="load_more-btn text_buy-btn animated_btn"/>
 
                             <vue-ads-page-button
                                 v-for="(button, key) in props.buttons"
@@ -50,11 +52,7 @@
                                  :key="item.name"/>
                 </div>
 
-                <!--<div v-if="products.length === 0">-->
-                    <!--<NothingFound v-if="products.slice(props.start, props.end).length === 0"/>-->
-                <!--</div>-->
-
-                <Modal />
+                <Modal/>
 
             </div>
         </div>
@@ -91,7 +89,6 @@
         data() {
             return {
                 page: 0,
-                loading: false
             }
         },
         methods: {
