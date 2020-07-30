@@ -46,6 +46,7 @@
         "vue-imask": "^6.0.5",
         "vue-masked-input": "^0.5.2",
         "vue-router": "^3.3.4",
+        "vue-yandex-maps": "^0.10.9",
         "vuex": "^3.5.1",
         "ymaps": "^0.2.1"
     }

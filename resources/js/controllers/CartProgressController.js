@@ -4,6 +4,7 @@ import app from '../vue/Checkout'
 import store from '../vue/store/store'
 import router from '../vue/router/router'
 import VueRouter from 'vue-router'
+import YmapPlugin from 'vue-yandex-maps'
 
 class CartProgressController {
     constructor() {

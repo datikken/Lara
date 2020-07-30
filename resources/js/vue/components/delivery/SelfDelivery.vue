@@ -36,45 +36,27 @@
             </div>
 
             <TextBtn className="form_group-btn flat_btn" text="Забрать из этого пункта" />
-
         </form>
 
-        <div class="form_group map_group">
-            <div class="map_group-heading">
-                <span class="map_group-heading_item">Выбрать на карте</span>
-            </div>
 
-            <div id="map" class="ymaps map_group-delivery"></div>
-            <TextBtn className="form_group-btn flat_btn" text="Забрать из этого пункта" />
-        </div>
+        <DeliveryMap />
+        <DeliverySelf />
 
-        <div class="form_group address_group">
-            <label
-                for="lastaddress"
-                class="form_group-label">
-                Ранее используемый пункт выдачи
-            </label>
-            <input type="text" name="lastaddress" placeholder="Россия, Москва, ул. Академика Королева, д. 8, корпус 38, строение 98, подъезд 8, офис 787" />
 
-            <div class="btns_wrap">
-                <button class="form_group-btn active animated_btn">
-                    <span class="form_group-btn_item">Продолжить с этим адресом</span>
-                </button>
-                <button class="form_group-btn">
-                    <span class="form_group-btn_item animated_btn">Изменить адрес выдачи</span>
-                </button>
-            </div>
-        </div>
     </div>
 </template>
 
 <script>
     import TextBtn from '../btns/TextBtn'
+    import DeliveryMap from '../delivery/DeliveryMap'
+    import DeliverySelf from '../delivery/DeliverySelf'
 
     export default {
         name: "SelfDelivery",
         components: {
-            TextBtn
+            TextBtn,
+            DeliveryMap,
+            DeliverySelf
         }
     }
 </script>
