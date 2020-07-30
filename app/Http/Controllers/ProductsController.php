@@ -305,39 +305,6 @@ class ProductsController extends Controller
         return view('pages.cart.checkoutProducts');
     }
 
-    public function setIndex(Request $request)
-    {
-        $index = $request->input('index');
-
-        $arr = [
-            'index' => $index,
-        ];
-
-        $request->session()->put('cart-index', $arr);
-    }
-
-    public function setAddress(Request $request)
-    {
-        $city = $request->input('city');
-        $street = $request->input('street');
-        $house = $request->input('house');
-        $body = $request->input('body');
-        $building = $request->input('building');
-        $delType = $request->input('deliveryType');
-
-        $arr = [
-            'city' => $city,
-            'street' => $street,
-            'house' => $house,
-            'body' => $body,
-            'building' => $building,
-            'deliveryType' => $delType
-        ];
-
-        $request->session()->put('cart-address', $arr);
-        return response()->json((object) array('delivery-address' => $arr));
-    }
-
     public function setIssue(Request $request)
     {
         $metro = $request->input('metro');

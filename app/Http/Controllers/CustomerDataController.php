@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class CustomerDataController extends Controller
@@ -22,5 +21,38 @@ class CustomerDataController extends Controller
 
         $request->session()->put('cart-customerFio', $arr);
         return response()->json((object) array('customer_fio' => $arr));
+    }
+
+    public function setIndex(Request $request)
+    {
+        $index = $request->input('index');
+
+        $arr = [
+            'index' => $index,
+        ];
+
+        $request->session()->put('cart-index', $arr);
+    }
+
+    public function setAdress(Request $request)
+    {
+        $city = $request->city;
+        $street = $request->street;
+        $house = $request->house;
+        $body = $request->body;
+        $building = $request->building;
+        $delType = $request->deliveryType;
+
+        $arr = [
+            'city' => $city,
+            'street' => $street,
+            'house' => $house,
+            'body' => $body,
+            'building' => $building,
+            'deliveryType' => $delType
+        ];
+
+        $request->session()->put('cart-address', $arr);
+        return response()->json((object) array('delivery-address' => $arr));
     }
 }

@@ -27,7 +27,7 @@
                     <masked-input v-model="phone" mask="\+\7 (111) 111-11-11" placeholder="+7 (___) ___ - __ - __" />
                 </div>
 
-                <TextBtn className="cart_check-wrap_item-group_btn" text="продолжить" @click.native="setCustomerFio" />
+                <TextBtn className="cart_check-wrap_item-group_btn animated_btn" text="продолжить" @click.native="setCustomerFio" />
 
             </div>
 
@@ -65,6 +65,7 @@
         methods: {
             ...mapActions([
                 'SET_CUSTOMER_FIO',
+                'CHANGE_PROGRESS_STEP'
             ]),
             setCustomerFio() {
                 let inputs = this.$el.querySelectorAll('input');
@@ -92,6 +93,7 @@
                     return;
                 }
 
+                this.CHANGE_PROGRESS_STEP();
                 router.push('/deliveryForm');
             }
         }

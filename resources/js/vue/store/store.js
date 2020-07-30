@@ -16,6 +16,7 @@ const store = new Vuex.Store({
         modelFilters: [],
         brandFilters: [],
         singleProduct: {},
+        customerAdress: {},
         user: {},
         usersFIO: '',
         cartStep: 0,
@@ -29,6 +30,12 @@ const store = new Vuex.Store({
         deliveryType: state => state.deliveryType
     },
     actions: {
+       DELIVERY_TYPE_ERROR(context) {
+           context.commit('deliveryTypeError');
+       },
+       APPLY_DELIVERY_ADRESS(context, data) {
+           context.commit('applyDeliveryAdress', data);
+       },
        PRICE_FILTER(context, name) {
             context.commit('applyPriceFilter', name);
        },
@@ -76,9 +83,31 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
-        applyPriceFilter(state, name) {
-            console.log('applyPriceFilter filters clicked', name);
+        deliveryTypeError(state) {
+            state.deliveryType = 'error';
+        },
+        applyDeliveryAdress(state, data) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
 
+            $.ajax({
+                method: "POST",
+                url: '/setAdress',
+                data,
+                success: function (data) {
+                    state.customerAdress = data;
+                    console.log(data,'delivery adress')
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+        },
+        applyPriceFilter(state, name) {
+            // console.log('applyPriceFilter filters clicked', name);
             state.filteredProducts = _.orderBy(state.filteredProducts, ['price'], [name]);
         },
         setDeliveryType(state, name) {

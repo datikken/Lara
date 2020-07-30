@@ -12,13 +12,25 @@
 </template>
 
 <script>
+    import {mapGetters} from 'vuex'
     import DeliveryHelperItem from './DeliveryHelperItem'
 
     export default {
         name: "DeliveryHelper",
         components: {
             DeliveryHelperItem
-        }
+        },
+        data: function() {
+            return {
+                deliveryTypeError: false
+            }
+        },
+        computed: {
+            ...mapGetters([
+                'deliveryType'
+            ])
+        },
+        methods: { }
     }
 </script>
 

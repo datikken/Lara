@@ -35,31 +35,13 @@
                         </div>
                     </div>
 
-                    <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" />
+                    <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" @click.native="applyDeliveryAdress"/>
 
-                    <!--<button type="submit" class="setAddressSubmit">-->
-                    <!--&lt;!&ndash;<button type="submit" class="setAddressSubmit" data-url="{{ route('setAddress') }}">&ndash;&gt;-->
-                    <!--&lt;!&ndash;@include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn animated_btn', 'text' => 'применить'])&ndash;&gt;-->
-                    <!--</button>-->
                 </div>
 
-                <form class="index_group" method="POST">
-                    <!--<form action="{{ route('setIndex') }}" class="index_group" method="POST">-->
-                    <div class="index_heading">
-                        <span class="index_heading-item">Или почтовый индекс</span>
-                    </div>
 
-                    <div class="form_group">
-                        <label for="index" class="form_group-label">Индекс</label>
-                        <div class="form_group-wrap">
-                            <input type="text" name="index"/>
+                <DeliveryIndex />
 
-                            <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" />
-                        </div>
-                    </div>
-                </form>
-
-                <SelfDelivery v-if="this.deliveryType === 'self' "/>
 
             </div>
         </div>
@@ -67,20 +49,45 @@
 </template>
 
 <script>
-    import SelfDelivery from './SelfDelivery'
     import TextBtn from '../btns/TextBtn'
-    import { mapGetters } from 'vuex'
+    import { mapGetters, mapActions } from 'vuex'
+    import DeliveryIndex from "./DeliveryIndex";
 
     export default {
         name: "DeliveryForms",
         components: {
-            SelfDelivery,
+            DeliveryIndex,
             TextBtn
         },
         computed: {
             ...mapGetters([
                 'deliveryType'
+            ]),
+            ...mapGetters([
+                'deliveryType'
             ])
+        },
+        methods: {
+            ...mapActions([
+                'APPLY_DELIVERY_ADRESS',
+                'DELIVERY_TYPE_ERROR'
+            ]),
+            applyDeliveryAdress() {
+                let data =  {};
+                let inputs = this.$el.querySelectorAll('input');
+                inputs.forEach((npt) => {
+                    let name = npt.getAttribute('name');
+                    let val = npt.value;
+
+                    if(val) data[name] = val;
+                })
+
+                if(this.deliveryType != '') {
+                    this.APPLY_DELIVERY_ADRESS(data);
+                } else {
+                    this.DELIVERY_TYPE_ERROR();
+                }
+            }
         }
     }
 </script>

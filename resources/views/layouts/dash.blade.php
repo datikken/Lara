@@ -10,11 +10,6 @@
 </head>
 <body>
 
-<script>
-    window.token = '{{ csrf_token() }}';
-    window.getOrderInfo = "{{ route('GetOrderInfo', ['id' => 1]) }}";
-</script>
-
 @include('components.header.header')
 
 @include('components.menu.menu')

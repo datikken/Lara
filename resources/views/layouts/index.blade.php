@@ -9,11 +9,6 @@
 
     <link rel="stylesheet" href="/css/app.css">
 
-    <script>
-        window.token = '{{ csrf_token() }}';
-        window.getOrderInfo = "{{ route('GetOrderInfo', ['id' => 1]) }}";
-    </script>
-
     <title>Printers</title>
 </head>
 <body>
