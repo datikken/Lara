@@ -12,7 +12,7 @@
                 <span class="form_group-btn_item">Продолжить с этим адресом</span>
             </button>
             <button class="form_group-btn">
-                <span class="form_group-btn_item animated_btn">Изменить адрес выдачи</span>
+                <span class="form_group-btn_item">Изменить адрес выдачи</span>
             </button>
         </div>
     </div>

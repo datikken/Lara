@@ -31,6 +31,12 @@ const store = new Vuex.Store({
         deliveryType: state => state.deliveryType
     },
     actions: {
+       VALIDATE_RS(context, rs, bik) {
+           context.commit('RSValidation', rs, bik);
+       },
+       GET_DADATA(context, obj) {
+           context.commit('getDadata', obj);
+       },
        SET_DELIVERY_INDEX(context, obj) {
            context.commit('setDeliveryIndex', obj);
        },
@@ -90,6 +96,64 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        getDadata() {
+            let url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party';
+
+            fetch(url, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                headers: {
+                    'Authorization':'Token a799fcceda51c067cdb475e748d7e27e9b4f6fb9',
+                    'Content-Type':'application/json'
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify(data)
+            });
+        },
+        RSValidation(rs, bik) {
+
+            console.warn(rs, bik, 'RSValidation');
+
+                let result = false;
+                let error = {};
+
+                if (typeof rs === 'number') {
+                    rs = rs.toString();
+                } else if (typeof rs !== 'string') {
+                    rs = '';
+                }
+
+                if (!rs.length) {
+                    error.code = 1;
+                    error.message = 'Р/С пуст';
+                } else if (/[^0-9]/.test(rs)) {
+                    error.code = 2;
+                    error.message = 'Р/С может состоять только из цифр';
+                } else if (rs.length !== 20) {
+                    error.code = 3;
+                    error.message = 'Р/С может состоять только из 20 цифр';
+                } else {
+                    var coefficients = [7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1];
+                    var bikRs = bik.toString().slice(-3) + rs;
+                    var checksum = 0;
+
+                    for (var i in coefficients) {
+                        checksum += coefficients[i] * (bikRs[i] % 10);
+                    }
+
+                    if (checksum % 10 === 0) {
+                        result = true;
+                    } else {
+                        error.code = 4;
+                        error.message = 'Неправильное контрольное число';
+                    }
+                }
+
+                return result;
+        },
         setDeliveryIndex(state, data) {
             $.ajaxSetup({
                 headers: {

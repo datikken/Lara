@@ -124,11 +124,26 @@
           .form_group-btn {
             margin-bottom: 50px!important;
             cursor: pointer;
+              outline: none;
           }
 
           .metro_group {
               display: flex;
               margin-bottom: 30px;
+
+              &_wrap {
+                  &:nth-child(1) {
+                      .metro_group_wrap_list-wrap {
+                          border-right: none!important;
+                      }
+                  }
+                  &:nth-child(2) {
+                      .metro_group_wrap_list-wrap {
+                          width: 400px!important;
+                          border-left: none;
+                      }
+                  }
+              }
 
               .form_group {
                 .postamat_list-wrap {
@@ -170,7 +185,6 @@
                 .metro_group_wrap_list-wrap {
                   height: 38px;
                   width: 231px;
-                  //overflow: hidden;
                   border: 1px solid $light_gray;
                   position: relative;
                   cursor: pointer;
@@ -182,7 +196,7 @@
                     color: $gray;
                     position: absolute;
                     display: block;
-                    width: 80%;
+                    width: 100%;
                     left: 1rem;
                     top: 50%;
                     transform: translate(0, -50%);
@@ -262,6 +276,7 @@
                 justify-content: center;
                 border-radius: 30px;
                 cursor: pointer;
+                outline: none;
 
               &_item {
                 font-family: $font;

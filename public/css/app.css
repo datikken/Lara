@@ -305,7 +305,11 @@ a:hover {
 }
 
 .rotate180 {
-  transform: rotate(180deg);
+  transform: rotate(180deg) !important;
+}
+
+.arrow_rotate {
+  transform: translate(0, -50%) rotate(270deg) !important;
 }
 
 .mobile_menu {
@@ -364,8 +368,8 @@ input::placeholder, textarea::placeholder {
   max-width: 400px;
   margin-left: -1px;
   background: #fff;
-  top: 38px;
-  width: 100%;
+  top: 36px;
+  width: 101%;
   padding: 0;
   margin-top: 0;
   padding-left: 0;
@@ -413,6 +417,7 @@ button {
   -moz-appearance: none;
   -webkit-appearance: none;
   background: #fff;
+  outline: none;
 }
 
 .text_buy-btn {
@@ -6888,6 +6893,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border-radius: 30px;
   align-items: center;
 }
+.cart_wrap-item_inner-table_row-col_btns-btn-items a {
+  height: 100%;
+}
 @media screen and (min-width: 1030px) {
   .cart_wrap-item_inner-table_row-col_btns-btn-items {
     margin-bottom: 29px;
@@ -6921,7 +6929,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   line-height: 14px;
   letter-spacing: 0.02em;
   color: #292930;
-  border-radius: 30px;
 }
 .cart_wrap-item_inner-table_row-col_btns-btn-items_plus {
   color: #40404c;
@@ -7461,10 +7468,18 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dform_wrap-col_item .metro_form .form_group-btn {
   margin-bottom: 50px !important;
   cursor: pointer;
+  outline: none;
 }
 .dform_wrap-col_item .metro_form .metro_group {
   display: flex;
   margin-bottom: 30px;
+}
+.dform_wrap-col_item .metro_form .metro_group_wrap:nth-child(1) .metro_group_wrap_list-wrap {
+  border-right: none !important;
+}
+.dform_wrap-col_item .metro_form .metro_group_wrap:nth-child(2) .metro_group_wrap_list-wrap {
+  width: 400px !important;
+  border-left: none;
 }
 .dform_wrap-col_item .metro_form .metro_group .form_group .postamat_list-wrap {
   border: 1px solid #e9e9ea;
@@ -7514,7 +7529,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #d4d4d5;
   position: absolute;
   display: block;
-  width: 80%;
+  width: 100%;
   left: 1rem;
   top: 50%;
   transform: translate(0, -50%);
@@ -7580,6 +7595,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   justify-content: center;
   border-radius: 30px;
   cursor: pointer;
+  outline: none;
 }
 .dform_wrap-col_item .form_group .btns_wrap .form_group-btn_item {
   font-family: "Montserrat", sans-serif;
@@ -12192,6 +12208,7 @@ main {
   height: 40px;
   width: 270px;
   box-shadow: none;
+  outline: none;
 }
 .dadresses_wrap {
   margin-left: 30px;

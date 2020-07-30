@@ -148,7 +148,10 @@ a:hover {
     transform: rotate(90deg);
 }
 .rotate180 {
-    transform: rotate(180deg);
+    transform: rotate(180deg)!important;
+}
+.arrow_rotate {
+    transform: translate(0, -50%) rotate(270deg)!important;
 }
 .mobile_menu {
   height: 98vh!important;
@@ -180,8 +183,8 @@ input, textarea {
   max-width: 400px;
   margin-left: -1px;
   background: #fff;
-  top: 38px;
-  width: 100%;
+  top: 36px;
+  width: 101%;
   padding: 0;
   margin-top: 0;
   padding-left: 0;
@@ -229,6 +232,7 @@ button {
     -moz-appearance: none;
     -webkit-appearance: none;
     background: #fff;
+    outline:none;
 }
 
 .text_buy-btn {

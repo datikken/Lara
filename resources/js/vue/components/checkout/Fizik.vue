@@ -47,7 +47,6 @@
     import { mapActions } from 'vuex'
     import MaskedInput from '../inputs/MaskedInput'
     import router from '../../router/router'
-    import validator from '../../../functions/validator'
 
     export default {
         name: "Fizik",

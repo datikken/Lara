@@ -5,18 +5,20 @@
                 <h1 class="company_head_item">данные компании</h1>
             </div>
             <div class="company_inputs">
+
                 <div class="company_inputs_items">
                     <label class="company_inputs_items_label" for="inn">ИНН <span>*</span></label>
-                    <input class="company_input" type="text" name="inn" placeholder="12345678910">
+                    <masked-input name="inn" class="company_input"  v-model="inn" mask="1111111111" placeholder="0123456789" />
                 </div>
                 <div class="company_inputs_items">
                     <label class="company_inputs_items_label" for="bik">Бик <span>*</span></label>
-                    <input class="company_input" type="text" name="bik" placeholder="123456789">
+                    <masked-input  class="company_input" name="bik" v-model="bik" mask="111111111" placeholder="123456789" />
                 </div>
                 <div class="company_inputs_items">
                     <label class="company_inputs_items_label" for="schet">Расчетный счет <span>*</span></label>
-                    <input class="company_input" type="text" name="schet" placeholder="12345678901234567890">
+                    <masked-input  class="company_input" name="schet" v-model="schet" mask="11111111111111111111" placeholder="12345678901234567890" />
                 </div>
+
             </div>
 
             <div class="company_data">
@@ -77,14 +79,6 @@
                             <span class="company_bank_name">Банк</span>
                             <span class="company_bank_value"></span>
                         </div>
-                        <div class="company_table_item company_bik">
-                            <span class="company_bik_name">Бик</span>
-                            <span class="company_bik_value"></span>
-                        </div>
-                        <div class="company_table_item company_kss">
-                            <span class="company_kss_name">Бик</span>
-                            <span class="company_kss_value"></span>
-                        </div>
                     </div>
 
                     <div class="company_table_inner">
@@ -104,8 +98,99 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
+    import MaskedInput from '../inputs/MaskedInput'
+    import {Observable} from "rxjs/Rx";
+
     export default {
-        name: "Urik"
+        name: "Urik",
+        components: {
+            MaskedInput
+        },
+        data: () => {
+            return {
+                userMask: 'aa-aa-AAAA',
+                inn: '',
+                bik: '',
+                schet: ''
+            }
+        },
+        methods: {
+            ...mapActions([
+                'VALIDATE_RS'
+            ]),
+            fillFields(obj, block) {
+                let name = block.querySelector('.company_head_value');
+                let shortName = block.querySelector('.company_shhead_value');
+                let adress = block.querySelector('.company_adress_value');
+                let dir = block.querySelector('.company_dir_value');
+                let okvd = block.querySelector('.company_okvd_value');
+                let inn = block.querySelector('.company_inn_value');
+                let inn2 = block.querySelector('[name="inn"]');
+                let ogrn = block.querySelector('.company_ogrn_value');
+                let postal = block.querySelector('.company_postal_value');
+
+                if(obj[0]) {
+                    let DATA = obj[0].data
+
+                    name.innerText = DATA.name.full_with_opf ? DATA.name.full_with_opf : '';
+                    shortName.innerText = DATA.name.short ? DATA.name.short : '';
+                    adress.innerText = DATA.address.unrestricted_value ? DATA.address.unrestricted_value : '';
+                    dir.innerText = DATA.management ? DATA.management.name : '';
+                    okvd.innerText = DATA.okved ? DATA.okved : '';
+                    inn.innerText = DATA.inn ? DATA.inn : '';
+                    inn2.value = DATA.inn ? DATA.inn : '';
+                    ogrn.innerText = DATA.ogrn ? DATA.ogrn : '';
+                    postal.innerText = DATA.address.data.postal_code ? DATA.address.data.postal_code : '';
+                }
+            },
+            RSValidation() {
+                let bik = this.$el.querySelector('[name="bik"]').value;
+                let schet = this.$el.querySelector('[name="schet"]').value;
+                // console.log('rsvalidation', schet);
+                that.VALIDATE_RS(bik, schet);
+            }
+        },
+        mounted() {
+            let block = document.querySelector('.company');
+            let url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/bank';
+            let bik = this.$el.querySelector('[name="bik"]');
+            let schet = this.$el.querySelector('[name="schet"]');
+            let that = this;
+
+            async function postData(url = '', data = {}) {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'same-origin',
+                    headers: {
+                        'Authorization':'Token a799fcceda51c067cdb475e748d7e27e9b4f6fb9',
+                        'Content-Type':'application/json'
+                    },
+                    redirect: 'follow',
+                    referrerPolicy: 'no-referrer',
+                    body: JSON.stringify(data)
+                });
+
+                return await response.json();
+            }
+
+            Observable
+                .fromEvent(bik, 'keyup')
+                .subscribe(() => {
+                    postData(url, {"query":`${bik.value}`})
+                        .then((data) => {
+                            that.fillFields(data.suggestions, block);
+                        });
+                })
+
+            Observable
+                .fromEvent(schet, 'keyup')
+                .subscribe(() => {
+                    that.RSValidation();
+                })
+        }
     }
 </script>
 
