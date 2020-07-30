@@ -17,7 +17,8 @@ const store = new Vuex.Store({
         brandFilters: [],
         singleProduct: {},
         customerAdress: {},
-        user: {},
+        customerIndex: false,
+        user: false,
         usersFIO: '',
         cartStep: 0,
         cart: {},
@@ -30,6 +31,12 @@ const store = new Vuex.Store({
         deliveryType: state => state.deliveryType
     },
     actions: {
+       SET_DELIVERY_INDEX(context, obj) {
+           context.commit('setDeliveryIndex', obj);
+       },
+       REMOVE_DELIVERY_TYPE_ERROR(context) {
+           context.commit('removeDeliveryTypeError');
+       },
        DELIVERY_TYPE_ERROR(context) {
            context.commit('deliveryTypeError');
        },
@@ -83,7 +90,32 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        setDeliveryIndex(state, data) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
+            $.ajax({
+                method: "POST",
+                url: '/setIndex',
+                data,
+                success: function (data) {
+                    state.customerIndex = data;
+                    console.warn( state.customerIndex )
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+        },
+        removeDeliveryTypeError() {
+            let block = document.querySelector('#delivery_type');
+                block.classList.remove('deliveryTypeError');
+        },
         deliveryTypeError(state) {
+            let block = document.querySelector('#delivery_type');
+                block.classList.add('deliveryTypeError');
             state.deliveryType = 'error';
         },
         applyDeliveryAdress(state, data) {
@@ -99,7 +131,6 @@ const store = new Vuex.Store({
                 data,
                 success: function (data) {
                     state.customerAdress = data;
-                    console.log(data,'delivery adress')
                 },
                 error: function (error) {
                     console.warn(error);
@@ -107,11 +138,12 @@ const store = new Vuex.Store({
             });
         },
         applyPriceFilter(state, name) {
-            // console.log('applyPriceFilter filters clicked', name);
             state.filteredProducts = _.orderBy(state.filteredProducts, ['price'], [name]);
         },
         setDeliveryType(state, name) {
             state.deliveryType = name;
+
+            this.dispatch('REMOVE_DELIVERY_TYPE_ERROR');
 
             return state.deliveryType;
         },

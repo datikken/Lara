@@ -14,7 +14,6 @@
             <Loader v-if="!this.$store.state.productsLoaded"/>
 
             <div class="products_grid">
-
                 <div v-if="products.length > 1">
                     <vue-ads-pagination
                         :total-items="products.length"

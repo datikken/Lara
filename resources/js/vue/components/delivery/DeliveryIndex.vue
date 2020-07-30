@@ -7,10 +7,10 @@
 
             <div class="form_group">
                 <label for="index" class="form_group-label">Индекс</label>
-                <div class="form_group-wrap">
-                    <input type="text" name="index"/>
+                <div class="form_group-wrap index_field">
+                    <input type="text" name="index" data-index_field/>
 
-                    <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" />
+                    <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" @click.native="setDelivery" />
                 </div>
             </div>
         </form>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-    import {mapGetters} from 'vuex'
+    import {mapGetters, mapActions} from 'vuex'
     import SelfDelivery from './SelfDelivery'
     import TextBtn from '../btns/TextBtn';
 
@@ -31,6 +31,17 @@
         components: {
             SelfDelivery,
             TextBtn
+        },
+        methods: {
+            ...mapActions(['SET_DELIVERY_INDEX']),
+            setDelivery() {
+                let npt = this.$el.querySelector('[data-index_field]')
+                let obj = {
+                    index: npt.value
+                }
+
+                this.SET_DELIVERY_INDEX(obj);
+            }
         },
         computed: {
             ...mapGetters([

@@ -111,6 +111,7 @@ Route::get('/setCustomerFio',['uses' => 'CustomerDataController@setCustomerFio',
 Route::get('/deliveryForm',['uses' => 'CustomerDataController@deliveryForm','as'=>'deliveryForm']);
 
 Route::post('/setAdress',['uses' => 'CustomerDataController@setAdress','as'=>'setAdress']);
+Route::post('/setIndex',['uses' => 'CustomerDataController@setIndex','as'=>'setIndex']);
 Route::get('product/setAddress',['uses' => 'ProductsController@setAddress','as'=>'setAddress']);
 Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'setIssue']);
 Route::get('checkOrderStatus', ['uses' => 'AdminTrackingController@checkOrderStatus', 'as' => 'checkOrderStatus']);
