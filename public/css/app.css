@@ -12661,6 +12661,7 @@ main {
   display: flex;
   flex-direction: column;
   min-width: 500px;
+  margin-left: 30px;
 }
 .notFound_head {
   font-family: "MontserratSemiBold";
