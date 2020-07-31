@@ -26,7 +26,7 @@ class SendEmailController extends Controller
             'id' => $id
         );
 
-        Mail::to('tikken23@gmail.com')->send(new OrderCreatedEmail($data));
+        Mail::to($customer)->send(new OrderCreatedEmail($data));
     }
     public function send(Request $request)
     {
