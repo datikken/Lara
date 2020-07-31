@@ -52,4 +52,9 @@ class CustomerDataController extends Controller
         $request->session()->put('cart-address', $arr);
         return response()->json((object) array('delivery-address' => $arr));
     }
+
+    public function setUrikInfo(Request $request)
+    {
+
+    }
 }

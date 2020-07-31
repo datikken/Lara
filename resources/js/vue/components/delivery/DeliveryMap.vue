@@ -6,7 +6,7 @@
         </div>
         <div id="map" style="width: 600px; height: 400px"></div>
 
-        <TextBtn className="form_group-btn flat_btn" text="Забрать из этого пункта"/>
+        <TextBtn className="form_group-btn flat_btn animated_btn" text="Забрать из этого пункта"/>
     </div>
 
 </template>

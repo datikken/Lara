@@ -11,7 +11,7 @@
             <button class="form_group-btn active animated_btn">
                 <span class="form_group-btn_item">Продолжить с этим адресом</span>
             </button>
-            <button class="form_group-btn">
+            <button class="form_group-btn animated_btn">
                 <span class="form_group-btn_item">Изменить адрес выдачи</span>
             </button>
         </div>

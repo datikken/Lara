@@ -23,7 +23,8 @@ const store = new Vuex.Store({
         cartStep: 0,
         cart: {},
         deliveryType: '',
-        urikValidation: {}
+        urikValidation: {},
+        uriksData: {}
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
@@ -33,6 +34,9 @@ const store = new Vuex.Store({
         urikValidation: state => state.urikValidation
     },
     actions: {
+       SAVE_URIKS_DATA(context, obj) {
+           context.commit('saveUriksData', obj)
+       },
        VALIDATE_RS(context, obj) {
            context.commit('RSValidation', obj);
        },
@@ -115,6 +119,9 @@ const store = new Vuex.Store({
                 body: JSON.stringify(data)
             });
         },
+        saveUriksData(state, obj) {
+            state.uriksData = obj;
+        },
         RSValidation(state, obj) {
                 let rs = obj.rs
                 let bik = obj.bik
@@ -156,6 +163,8 @@ const store = new Vuex.Store({
                 let returnObj = {result, error};
 
                 state.urikValidation = returnObj;
+
+                this.dispatch('SAVE_URIKS_DATA', obj)
 
                 return returnObj;
         },
@@ -225,6 +234,7 @@ const store = new Vuex.Store({
         },
         changeProgressStep(state) {
             let line = document.querySelector('.cart_wrap-crumb').querySelector('.active-item');
+            state.cartStep++;
 
             if(state.cartStep === 0) {
                 line.style.width = '37%';
@@ -234,7 +244,9 @@ const store = new Vuex.Store({
                 line.style.width = '65%';
             }
 
-            state.cartStep++;
+            if(state.cartStep === 2) {
+                line.style.width = '100%';
+            }
         },
         setCustomerFio(state, {firstname, lastname, tel, save}) {
             $.ajaxSetup({

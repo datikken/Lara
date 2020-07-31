@@ -139,6 +139,7 @@
         },
         methods: {
             ...mapActions([
+                'CHANGE_PROGRESS_STEP',
                 'VALIDATE_RS'
             ]),
             rerenderComponent() {
@@ -184,13 +185,15 @@
             RSValidation() {
                 let bik = this.$el.querySelector('[name="bik"]').value;
                 let rs = this.$el.querySelector('[name="schet"]').value;
+                let inn = this.$el.querySelector('[name="inn"]').value;
 
-                this.VALIDATE_RS({rs, bik});
+                this.VALIDATE_RS({rs, bik, inn});
 
                 if (this.urikValidation.result === false) {
                     this.setValidation(this.urikValidation);
                 } else {
                     router.push('/deliveryForm');
+                    this.CHANGE_PROGRESS_STEP();
                 }
             }
         },

@@ -8,7 +8,7 @@
 
             </div>
 
-            <TextBtn className="form_group-btn flat_btn" text="Забрать из этого пункта" />
+            <TextBtn className="form_group-btn flat_btn animated_btn" text="Забрать из этого пункта" />
         </form>
 
         <DeliveryMap/>

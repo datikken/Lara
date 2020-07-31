@@ -42,6 +42,7 @@
 
                 <DeliveryIndex />
 
+                <TextBtn className="form_group-btn yellow_btn animated_btn" text="Продолжить" @click.native="proceedToPaymentPage"/>
 
             </div>
         </div>
@@ -51,7 +52,8 @@
 <script>
     import TextBtn from '../btns/TextBtn'
     import { mapGetters, mapActions } from 'vuex'
-    import DeliveryIndex from "./DeliveryIndex";
+    import DeliveryIndex from "./DeliveryIndex"
+    import router from '../../router/router'
 
     export default {
         name: "DeliveryForms",
@@ -72,6 +74,9 @@
                 'APPLY_DELIVERY_ADRESS',
                 'DELIVERY_TYPE_ERROR'
             ]),
+            proceedToPaymentPage() {
+                router.push('/payments')
+            },
             applyDeliveryAdress() {
                 let data =  {};
                 let inputs = this.$el.querySelectorAll('input');
