@@ -63,12 +63,7 @@
 
                 </div>
 
-
                 <TextBtn text="подтвердить" className="text_buy-btn animated_btn"/>
-
-                <!--<button type="submit" class="proceedPayment" data-url="{{ route('proceedPayment') }}">-->
-                <!--@include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn', 'text' => 'подтвердить'])-->
-                <!--</button>-->
 
             </div>
         </div>

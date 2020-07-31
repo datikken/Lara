@@ -257,8 +257,8 @@ class ProductsController extends Controller
             $date = date('Y-m-d H:i:s');
 
             $newOrderArray = array(
-                'status'=> 'on_hold',
-                'date'=>$date,
+                'status' => 'on_hold',
+                'date' => $date,
                 'del date' => '',
                 'price' => $cart->totalPrice,
                 'user_id' => $user_id,
@@ -268,7 +268,7 @@ class ProductsController extends Controller
             $created_order = DB::table('orders')->insert($newOrderArray);
             $order_id = DB::getPdo()->lastInsertId();
 
-            foreach($cart->items as $cart_item){
+            foreach ($cart->items as $cart_item) {
                 $item_id = $cart_item['data']['id'];
                 $item_name = $cart_item['data']['name'];
                 $item_price = $cart_item['data']['price'];
@@ -276,10 +276,10 @@ class ProductsController extends Controller
 
                 $newItemsInCurrentOrder = array(
                     'item_id' => $item_id,
-                    'order_id'=>$order_id,
+                    'order_id' => $order_id,
                     'item_name' => $item_name,
-                    'item_price'=>$item_price,
-                    'quantity'=> $item_quantity
+                    'item_price' => $item_price,
+                    'quantity' => $item_quantity
                 );
 
                 $created_order_items = DB::table('order_items')->insert($newItemsInCurrentOrder);
@@ -293,11 +293,9 @@ class ProductsController extends Controller
 
             $mailer = new SendEmailController();
             $mailer::sendOrderWasCreated($order_id);
-
-            return redirect()->route('proceedPayment')->withsuccess('thanks for choosing us');
-        } else {
-            return redirect()->route('allProducts');
         }
+
+        return response()->json($newOrderArray);
     }
 
     public function checkoutProducts()

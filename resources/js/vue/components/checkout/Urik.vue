@@ -141,6 +141,7 @@
             ...mapActions([
                 'CHANGE_PROGRESS_STEP',
                 'SET_URIKS_INFO',
+                'CREATE_ORDER',
                 'VALIDATE_RS'
             ]),
             rerenderComponent() {
@@ -180,8 +181,6 @@
                 errorBlock.classList.remove('as-none')
                 heading.classList.add('mb5')
                 headingBlock.classList.add('mb30')
-
-                console.warn(error.error.message, 'computed setValidation')
             },
             RSValidation() {
                 let bik = this.$el.querySelector('[name="bik"]').value;
@@ -194,8 +193,9 @@
                     this.setValidation(this.urikValidation);
                 } else {
                     this.SET_URIKS_INFO({rs, bik, inn});
-                    router.push('/deliveryForm');
                     this.CHANGE_PROGRESS_STEP();
+                    this.CREATE_ORDER();
+                    router.push('/deliveryForm');
                 }
             }
         },

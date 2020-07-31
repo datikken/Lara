@@ -119,7 +119,7 @@ Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'s
 Route::get('checkOrderStatus', ['uses' => 'AdminTrackingController@checkOrderStatus', 'as' => 'checkOrderStatus']);
 Route::post('fetchProducts',['uses' => 'AdminProductsController@fetchProducts', 'as' => 'fetchProducts']);
 Route::get('removeProducts',['uses' => 'AdminProductsController@removeProducts', 'as' => 'removeProducts']);
-Route::get('product/createOrder/', ['uses' => 'ProductsController@createOrder', 'as'=> 'createOrder']);
+Route::get('/createOrder', ['uses' => 'ProductsController@createOrder', 'as'=> 'createOrder']);
 Route::get('product/repeatOrder/{id}', ['uses' => 'ProductsController@repeatOrder', 'as'=> 'repeatOrder']);
 Route::get('product/proceedPayment',['uses' => 'PaymentsController@proceedPayment','as'=>'proceedPayment']);
 

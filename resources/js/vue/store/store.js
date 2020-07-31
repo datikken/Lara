@@ -24,7 +24,8 @@ const store = new Vuex.Store({
         cart: {},
         deliveryType: '',
         urikValidation: {},
-        uriksData: {}
+        uriksData: {},
+        order: {}
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
@@ -34,6 +35,9 @@ const store = new Vuex.Store({
         urikValidation: state => state.urikValidation
     },
     actions: {
+       CREATE_ORDER(context) {
+           context.commit('createOrder');
+       },
        SET_URIKS_INFO(context, obj) {
           context.commit('setUriksInfo', obj);
        },
@@ -105,6 +109,24 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        createOrder(state) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
+            $.ajax({
+                method: "GET",
+                url: '/createOrder',
+                success: function (data) {
+                    state.order = data;
+                    console.warn(data,'create order success')
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+        },
         getDadata() {
             let url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party';
 
