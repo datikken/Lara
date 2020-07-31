@@ -10,7 +10,8 @@
     &_wrap {
       &-form {
         &_inner {
-          margin-left: 20px;
+            margin: 30px;
+
           .payment_wrap-form_group, .payment_wrap-form_group-inner {
               display: flex;
               flex-direction: column;
@@ -99,8 +100,6 @@
             }
           }
           .payment_wrap-form_group-inner {
-              margin-top: 25px;
-
               input {
                 @include breakpoint($medium) {
                   width: 430px;

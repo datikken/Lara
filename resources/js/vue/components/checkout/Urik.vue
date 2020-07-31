@@ -140,6 +140,7 @@
         methods: {
             ...mapActions([
                 'CHANGE_PROGRESS_STEP',
+                'SET_URIKS_INFO',
                 'VALIDATE_RS'
             ]),
             rerenderComponent() {
@@ -192,6 +193,7 @@
                 if (this.urikValidation.result === false) {
                     this.setValidation(this.urikValidation);
                 } else {
+                    this.SET_URIKS_INFO({rs, bik, inn});
                     router.push('/deliveryForm');
                     this.CHANGE_PROGRESS_STEP();
                 }

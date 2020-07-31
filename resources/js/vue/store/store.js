@@ -34,6 +34,9 @@ const store = new Vuex.Store({
         urikValidation: state => state.urikValidation
     },
     actions: {
+       SET_URIKS_INFO(context, obj) {
+          context.commit('setUriksInfo', obj);
+       },
        SAVE_URIKS_DATA(context, obj) {
            context.commit('saveUriksData', obj)
        },
@@ -247,6 +250,26 @@ const store = new Vuex.Store({
             if(state.cartStep === 2) {
                 line.style.width = '100%';
             }
+        },
+        setUriksInfo(state, obj) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
+
+            $.ajax({
+                method: "get",
+                url: '/setUrikInfo',
+                data: obj,
+                success: function (data) {
+                    state.usersInfo = data
+                    // console.log(state.usersInfo)
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
         },
         setCustomerFio(state, {firstname, lastname, tel, save}) {
             $.ajaxSetup({

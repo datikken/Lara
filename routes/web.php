@@ -108,6 +108,8 @@ Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@
 Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
 
 Route::get('/setCustomerFio',['uses' => 'CustomerDataController@setCustomerFio','as'=>'setCustomerFio']);
+Route::get('/setUrikInfo', ['uses' => 'CustomerDataController@setUrikInfo', 'as' => 'setUrikInfo']);
+
 Route::get('/deliveryForm',['uses' => 'CustomerDataController@deliveryForm','as'=>'deliveryForm']);
 
 Route::post('/setAdress',['uses' => 'CustomerDataController@setAdress','as'=>'setAdress']);

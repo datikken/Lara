@@ -5,6 +5,22 @@ use Illuminate\Http\Request;
 
 class CustomerDataController extends Controller
 {
+
+    public function setUrikInfo(Request $request)
+    {
+        $inn = $request->inn;
+        $bik = $request->bik;
+        $rs = $request->rs;
+
+        $arr = [
+            'inn' => $inn,
+            'bik' => $bik,
+            'rs' => $rs
+        ];
+
+        $request->session()->put('cart-cutomerInfo', $arr);
+        return response()->json((object) array('cutomer_info' => $arr));
+    }
     public function setCustomerFio(Request $request)
     {
         $firstname = $request->firstname;
@@ -51,10 +67,5 @@ class CustomerDataController extends Controller
 
         $request->session()->put('cart-address', $arr);
         return response()->json((object) array('delivery-address' => $arr));
-    }
-
-    public function setUrikInfo(Request $request)
-    {
-
     }
 }

@@ -1982,7 +1982,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .payment_wrap-form_inner {
-  margin-left: 20px;
+  margin: 30px;
 }
 .payment_wrap-form_inner .payment_wrap-form_group, .payment_wrap-form_inner .payment_wrap-form_group-inner {
   display: flex;
@@ -2055,9 +2055,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     justify-content: center;
     margin-right: 25px;
   }
-}
-.payment_wrap-form_inner .payment_wrap-form_group-inner {
-  margin-top: 25px;
 }
 @media screen and (min-width: 1030px) {
   .payment_wrap-form_inner .payment_wrap-form_group-inner input {

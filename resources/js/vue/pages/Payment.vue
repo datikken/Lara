@@ -1,10 +1,22 @@
 <template>
-    <h1>Payment page</h1>
+
+    <div class="payments_wrapper">
+        <Payments />
+        <OrdersList/>
+    </div>
+
 </template>
 
 <script>
+    import OrdersList from "../components/orders/OrdersList"
+    import Payments from "../components/payment/Payments"
+
     export default {
-        name: "Payment"
+        name: "Payment",
+        components: {
+            OrdersList,
+            Payments
+        }
     }
 </script>
 
