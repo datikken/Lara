@@ -15,7 +15,7 @@ class CartController extends Controller
         $empty->items = array();
         $empty->totalPrice = '';
 
-        if($cart->items) {
+        if(is_object($cart)) {
             foreach($cart->items as $cartItem) {
                 $type = gettype($cartItem['data']['params']);
 
