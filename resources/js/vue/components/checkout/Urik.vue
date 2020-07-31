@@ -2,21 +2,25 @@
     <div class="company">
         <div class="company_wrap">
             <div class="company_head">
-                <h1 class="company_head_item">данные компании</h1>
+                <h1 class="company_head_item" data-heading>данные компании</h1>
+                <span class="error-message as-none" data-error></span>
             </div>
             <div class="company_inputs">
 
                 <div class="company_inputs_items">
                     <label class="company_inputs_items_label" for="inn">ИНН <span>*</span></label>
-                    <masked-input name="inn" class="company_input"  v-model="inn" mask="1111111111" placeholder="0123456789" />
+                    <masked-input name="inn" class="company_input" v-model="inn" mask="1111111111"
+                                  placeholder="0123456789"/>
                 </div>
                 <div class="company_inputs_items">
                     <label class="company_inputs_items_label" for="bik">Бик <span>*</span></label>
-                    <masked-input  class="company_input" name="bik" v-model="bik" mask="111111111" placeholder="123456789" />
+                    <masked-input class="company_input" name="bik" v-model="bik" mask="111111111"
+                                  placeholder="123456789"/>
                 </div>
                 <div class="company_inputs_items">
                     <label class="company_inputs_items_label" for="schet">Расчетный счет <span>*</span></label>
-                    <masked-input  class="company_input" name="schet" v-model="schet" mask="11111111111111111111" placeholder="12345678901234567890" />
+                    <masked-input class="company_input" name="schet" v-model="schet" mask="11111111111111111111"
+                                  placeholder="12345678901234567890"/>
                 </div>
 
             </div>
@@ -94,31 +98,53 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="urik_btns_wrap">
+            <TextBtn text="Продолжить с данными реквизитами" className="proceed_btn animated_btn"
+                     @click.native="RSValidation"/>
+            <TextBtn text="Добавить другое юридическое лицо" className="proceed_flat_btn"
+                     @click.native="rerenderComponent"/>
+        </div>
+
+
     </div>
 </template>
 
 <script>
-    import {mapActions} from 'vuex'
+    import {mapActions, mapGetters} from 'vuex'
     import MaskedInput from '../inputs/MaskedInput'
-    import {Observable} from "rxjs/Rx";
+    import {Observable} from "rxjs/Rx"
+    import TextBtn from '../btns/TextBtn'
+    import router from '../../router/router'
 
     export default {
         name: "Urik",
         components: {
-            MaskedInput
+            MaskedInput,
+            TextBtn
         },
         data: () => {
             return {
                 userMask: 'aa-aa-AAAA',
                 inn: '',
                 bik: '',
-                schet: ''
+                schet: '',
             }
+        },
+        computed: {
+            ...mapGetters([
+                'urikValidation'
+            ])
         },
         methods: {
             ...mapActions([
                 'VALIDATE_RS'
             ]),
+            rerenderComponent() {
+                //XXX redo
+                location.reload();
+            },
             fillFields(obj, block) {
                 let name = block.querySelector('.company_head_value');
                 let shortName = block.querySelector('.company_shhead_value');
@@ -130,7 +156,7 @@
                 let ogrn = block.querySelector('.company_ogrn_value');
                 let postal = block.querySelector('.company_postal_value');
 
-                if(obj[0]) {
+                if (obj[0]) {
                     let DATA = obj[0].data
 
                     name.innerText = DATA.name.full_with_opf ? DATA.name.full_with_opf : '';
@@ -144,11 +170,28 @@
                     postal.innerText = DATA.address.data.postal_code ? DATA.address.data.postal_code : '';
                 }
             },
+            setValidation(error) {
+                let headingBlock = this.$el.querySelector('.company_head');
+                let heading = this.$el.querySelector('[data-heading]');
+                let errorBlock = this.$el.querySelector('[data-error]')
+                errorBlock.innerText = error.error.message
+                errorBlock.classList.remove('as-none')
+                heading.classList.add('mb5')
+                headingBlock.classList.add('mb30')
+
+                console.warn(error.error.message, 'computed setValidation')
+            },
             RSValidation() {
                 let bik = this.$el.querySelector('[name="bik"]').value;
-                let schet = this.$el.querySelector('[name="schet"]').value;
-                // console.log('rsvalidation', schet);
-                that.VALIDATE_RS(bik, schet);
+                let rs = this.$el.querySelector('[name="schet"]').value;
+
+                this.VALIDATE_RS({rs, bik});
+
+                if (this.urikValidation.result === false) {
+                    this.setValidation(this.urikValidation);
+                } else {
+                    router.push('/deliveryForm');
+                }
             }
         },
         mounted() {
@@ -165,8 +208,8 @@
                     cache: 'no-cache',
                     credentials: 'same-origin',
                     headers: {
-                        'Authorization':'Token a799fcceda51c067cdb475e748d7e27e9b4f6fb9',
-                        'Content-Type':'application/json'
+                        'Authorization': 'Token a799fcceda51c067cdb475e748d7e27e9b4f6fb9',
+                        'Content-Type': 'application/json'
                     },
                     redirect: 'follow',
                     referrerPolicy: 'no-referrer',
@@ -179,21 +222,23 @@
             Observable
                 .fromEvent(bik, 'keyup')
                 .subscribe(() => {
-                    postData(url, {"query":`${bik.value}`})
+                    postData(url, {"query": `${bik.value}`})
                         .then((data) => {
                             that.fillFields(data.suggestions, block);
                         });
-                })
-
-            Observable
-                .fromEvent(schet, 'keyup')
-                .subscribe(() => {
-                    that.RSValidation();
                 })
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    .urik_btns_wrap {
+        display: flex;
+        width: 100%;
+        margin-top: 60px;
 
+        .proceed_flat_btn {
+            margin-left: 40px;
+        }
+    }
 </style>

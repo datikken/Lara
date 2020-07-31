@@ -22,17 +22,19 @@ const store = new Vuex.Store({
         usersFIO: '',
         cartStep: 0,
         cart: {},
-        deliveryType: ''
+        deliveryType: '',
+        urikValidation: {}
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
         allProducts: state => state.products,
         user: state => state.user,
-        deliveryType: state => state.deliveryType
+        deliveryType: state => state.deliveryType,
+        urikValidation: state => state.urikValidation
     },
     actions: {
-       VALIDATE_RS(context, rs, bik) {
-           context.commit('RSValidation', rs, bik);
+       VALIDATE_RS(context, obj) {
+           context.commit('RSValidation', obj);
        },
        GET_DADATA(context, obj) {
            context.commit('getDadata', obj);
@@ -113,10 +115,9 @@ const store = new Vuex.Store({
                 body: JSON.stringify(data)
             });
         },
-        RSValidation(rs, bik) {
-
-            console.warn(rs, bik, 'RSValidation');
-
+        RSValidation(state, obj) {
+                let rs = obj.rs
+                let bik = obj.bik
                 let result = false;
                 let error = {};
 
@@ -152,7 +153,11 @@ const store = new Vuex.Store({
                     }
                 }
 
-                return result;
+                let returnObj = {result, error};
+
+                state.urikValidation = returnObj;
+
+                return returnObj;
         },
         setDeliveryIndex(state, data) {
             $.ajaxSetup({
@@ -166,7 +171,6 @@ const store = new Vuex.Store({
                 data,
                 success: function (data) {
                     state.customerIndex = data;
-                    console.warn( state.customerIndex )
                 },
                 error: function (error) {
                     console.warn(error);

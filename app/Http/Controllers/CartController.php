@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
 use stdClass;
 
-
 class CartController extends Controller
 {
     public function showCart()

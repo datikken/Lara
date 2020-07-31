@@ -569,12 +569,40 @@ b {
   font-family: "MontserratSemiBold" !important;
 }
 
+.mb30 {
+  margin-bottom: 30px !important;
+}
+
 .mb10 {
   margin-bottom: 10px !important;
 }
 
 .mb5 {
   margin-bottom: 5px !important;
+}
+
+.mb0 {
+  margin-bottom: 0 !important;
+}
+
+.proceed_btn div, .proceed_flat_btn div {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404C;
+}
+
+.proceed_btn {
+  width: 330px !important;
+  height: 40px !important;
+}
+
+.proceed_flat_btn {
+  width: 330px !important;
+  height: 40px !important;
+  border: 2px solid #fdd935;
+  background: #fff !important;
 }
 
 .header {
@@ -8951,7 +8979,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 @media screen and (min-width: 1030px) {
   .action_btn {
     height: 40px;
-    width: 170px;
+    min-width: 170px;
   }
 }
 .action_btn-item {
