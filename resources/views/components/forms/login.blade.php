@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="form-group row mb-0 login-btn">
-                        <button type="submit" class="btn btn-primary" data-loginForm="true">
+                        <button type="submit" class="btn btn-primary animated_btn" data-loginForm="true">
                             {{ __('Войти') }}
                         </button>
                     </div>
