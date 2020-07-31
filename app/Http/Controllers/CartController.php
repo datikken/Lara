@@ -15,18 +15,20 @@ class CartController extends Controller
         $empty->items = array();
         $empty->totalPrice = '';
 
-        foreach($cart->items as $cartItem) {
-            $type = gettype($cartItem['data']['params']);
+        if($cart->items) {
+            foreach($cart->items as $cartItem) {
+                $type = gettype($cartItem['data']['params']);
 
-            if($type != 'array') {
-                $param = json_decode($cartItem['data']['params']);
-                $newParam = array();
+                if($type != 'array') {
+                    $param = json_decode($cartItem['data']['params']);
+                    $newParam = array();
 
-                foreach($param as $key=>$val) {
-                    $newParam[$key] = $val;
+                    foreach($param as $key=>$val) {
+                        $newParam[$key] = $val;
+                    }
+
+                    $cartItem['data']['params'] = $newParam;
                 }
-
-                $cartItem['data']['params'] = $newParam;
             }
         }
 
