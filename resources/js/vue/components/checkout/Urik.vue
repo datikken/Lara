@@ -141,7 +141,6 @@
             ...mapActions([
                 'CHANGE_PROGRESS_STEP',
                 'SET_URIKS_INFO',
-                'CREATE_ORDER',
                 'VALIDATE_RS'
             ]),
             rerenderComponent() {
@@ -194,7 +193,6 @@
                 } else {
                     this.SET_URIKS_INFO({rs, bik, inn});
                     this.CHANGE_PROGRESS_STEP();
-                    this.CREATE_ORDER();
                     router.push('/deliveryForm');
                 }
             }

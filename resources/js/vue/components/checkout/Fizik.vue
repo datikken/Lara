@@ -96,8 +96,6 @@
                 }
 
                 this.CHANGE_PROGRESS_STEP();
-
-                // router.push('/deliveryForm');
             }
         }
     }

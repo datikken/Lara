@@ -49,7 +49,7 @@
                     </vue-ads-pagination>
                 </div>
 
-                <div v-else>
+                <div v-else class="products_wrapper">
                     <CatalogCard :data="item" v-for="item in products"
                                  :key="item.name"/>
                 </div>
@@ -115,5 +115,7 @@
 </script>
 
 <style scoped>
-
+    .products_wrapper {
+        margin-left: 20px;
+    }
 </style>

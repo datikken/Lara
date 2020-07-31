@@ -2,7 +2,7 @@
     <div class="dform_outer">
         <div class="dform">
             <div class="dform_head">
-                <span class="dform_head-item">Воспользуйтесь помощником для выбора доступных вариантов доставки</span>
+                <span class="dform_head-item">Воспользуйтесь помошником для выбора доступных вариантов доставки</span>
             </div>
 
             <div class="dform_wrap">
@@ -12,8 +12,6 @@
         </div>
 
         <OrdersList />
-
-        <!--<script async="false" src="//api-maps.yandex.ru/2.1/?lang=ru_RU" id="scriptonload-__api_maps_yandex_ru_2_1__lang_ru_RU"></script>-->
 
     </div>
 </template>

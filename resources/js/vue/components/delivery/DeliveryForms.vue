@@ -72,9 +72,14 @@
         methods: {
             ...mapActions([
                 'APPLY_DELIVERY_ADRESS',
-                'DELIVERY_TYPE_ERROR'
+                'DELIVERY_TYPE_ERROR',
+                'CHANGE_PROGRESS_STEP',
+                'CREATE_ORDER'
             ]),
             proceedToPaymentPage() {
+                this.CHANGE_PROGRESS_STEP();
+                this.CREATE_ORDER();
+
                 router.push('/payments')
             },
             applyDeliveryAdress() {

@@ -21,7 +21,7 @@ const store = new Vuex.Store({
         user: false,
         usersFIO: '',
         cartStep: 0,
-        cart: {},
+        cart: false,
         deliveryType: '',
         urikValidation: {},
         uriksData: {},
@@ -250,16 +250,25 @@ const store = new Vuex.Store({
             return state.deliveryType;
         },
         checkCartState(state) {
+            // if(localStorage.getItem('cart')) {
+            //     state.cart = localStorage.getItem('cart')
+            // }
+
+            // if(!state.cart) {
             axios.get('/checkCartState')
                 .then(response => {
                     state.cart = response.data;
+
+                    console.log(response.data);
+
+                    localStorage.setItem('cart', response.data);
                 })
+            // }
 
             return state.cart
         },
         changeProgressStep(state) {
             let line = document.querySelector('.cart_wrap-crumb').querySelector('.active-item');
-            state.cartStep++;
 
             if(state.cartStep === 0) {
                 line.style.width = '37%';
@@ -272,6 +281,8 @@ const store = new Vuex.Store({
             if(state.cartStep === 2) {
                 line.style.width = '100%';
             }
+
+            state.cartStep++;
         },
         setUriksInfo(state, obj) {
             $.ajaxSetup({
