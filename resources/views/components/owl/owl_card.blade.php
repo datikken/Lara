@@ -23,7 +23,7 @@
                 <? if(is_null($product['photo'])) { ?>
                     <img src="/images/unnecessary/owl-swiper.svg" alt="cart" />
                 <? } else { ?>
-<img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . json_decode($product['params'])->brand . '/Small/' . $product['photo'] . '.png') }}"/>
+<img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . json_decode($product['params'])->brand . '/SMALL/' . $product['photo'] . '.png') }}"/>
                 <? } ?>
             </a>
 

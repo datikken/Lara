@@ -6,9 +6,7 @@
 
         <div class="cart_wrap-item_inner-table_row-col_img">
             <a data-href="{{route('DeleteItemFromCart', ['id' => $cartItem['data']['id']])}}" class="remove_icon" style="background-image: url('/images/unnecessary/cart_close.svg')"></a>
-            {{--<img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . $cartItem['data']['params']['brand'] . '/SMALL/' . $cartItem['data']['photo'] . '.png') }}"/>--}}
-            <img class="carousel_card-wrapper_item-image" src="{{ Storage::url('product_images/' . $cartItem['data']['params']['brand'] . '/SMALL/' . $cartItem['data']['photo'] . '.png') }}"/>
-            {{--<img class="carousel_card-wrapper_item-image" src="{{ Storage::url('product_images/' . $cartItem['data']['params']['brand'] . '/SMALL/' . $cartItem['data']['photo'] . '.png') }}"/>--}}
+            <img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . $cartItem['data']['params']['brand'] . '/SMALL/' . $cartItem['data']['photo'] . '.png') }}"/>
         </div>
 
 
