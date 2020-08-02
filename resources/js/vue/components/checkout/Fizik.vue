@@ -84,6 +84,9 @@
 
                 try {
                     window.app.validator.formValidate([], $(this.$el));
+                    this.CHANGE_PROGRESS_STEP();
+                    router.push('/deliveryForm');
+
                 } catch (err) {
                     let error = this.$el.querySelector('[data-error]');
                     let heading = this.$el.querySelector('[data-heading]');
@@ -94,8 +97,6 @@
 
                     return;
                 }
-
-                this.CHANGE_PROGRESS_STEP();
             }
         }
     }
