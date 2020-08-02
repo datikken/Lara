@@ -80,6 +80,7 @@
         methods: {
             ...mapActions([
                 'CHECK_CART_STATE',
+                'SCROLL_TO_TOP'
             ]),
             fixFooter() {
                 let footer = this.$el.querySelector('.order_list-wrap_footer');
@@ -87,6 +88,7 @@
             },
             pushToThanks() {
                 router.push('/success')
+                this.SCROLL_TO_TOP();
             }
         },
         created() {

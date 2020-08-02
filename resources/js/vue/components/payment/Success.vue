@@ -24,7 +24,7 @@
 
             <div class="cart_success_wrap_item">
                 <div class="cart_success_wrap_item-btn">
-                    <TextBtn text="Закрыть" className="cart_success_wrap_item-btn_item text_buy-btn animated_btn"/>
+                    <TextBtn text="Закрыть" className="cart_success_wrap_item-btn_item text_buy-btn animated_btn" @click.native="pushToHome" />
                 </div>
             </div>
 
@@ -39,6 +39,11 @@
         name: "Success",
         components: {
             TextBtn
+        },
+        methods: {
+            pushToHome() {
+                window.location = '/'
+            }
         }
     }
 </script>

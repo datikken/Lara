@@ -74,13 +74,15 @@
                 'APPLY_DELIVERY_ADRESS',
                 'DELIVERY_TYPE_ERROR',
                 'CHANGE_PROGRESS_STEP',
-                'CREATE_ORDER'
+                'CREATE_ORDER',
+                'SCROLL_TO_TOP'
             ]),
             proceedToPaymentPage() {
                 this.CHANGE_PROGRESS_STEP();
                 this.CREATE_ORDER();
 
                 router.push('/payments')
+                this.SCROLL_TO_TOP();
             },
             applyDeliveryAdress() {
                 let data =  {};

@@ -67,7 +67,8 @@
         methods: {
             ...mapActions([
                 'SET_CUSTOMER_FIO',
-                'CHANGE_PROGRESS_STEP'
+                'CHANGE_PROGRESS_STEP',
+                'SCROLL_TO_TOP'
             ]),
             setCustomerFio() {
                 let inputs = this.$el.querySelectorAll('input');
@@ -86,6 +87,7 @@
                     window.app.validator.formValidate([], $(this.$el));
                     this.CHANGE_PROGRESS_STEP();
                     router.push('/deliveryForm');
+                    this.SCROLL_TO_TOP();
 
                 } catch (err) {
                     let error = this.$el.querySelector('[data-error]');

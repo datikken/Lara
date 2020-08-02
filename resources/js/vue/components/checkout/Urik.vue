@@ -141,7 +141,8 @@
             ...mapActions([
                 'CHANGE_PROGRESS_STEP',
                 'SET_URIKS_INFO',
-                'VALIDATE_RS'
+                'VALIDATE_RS',
+                'SCROLL_TO_TOP'
             ]),
             rerenderComponent() {
                 //XXX redo
@@ -194,6 +195,7 @@
                     this.SET_URIKS_INFO({rs, bik, inn});
                     this.CHANGE_PROGRESS_STEP();
                     router.push('/deliveryForm');
+                    this.SCROLL_TO_TOP();
                 }
             }
         },

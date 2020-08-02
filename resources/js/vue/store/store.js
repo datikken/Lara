@@ -38,6 +38,9 @@ const store = new Vuex.Store({
         urikValidation: state => state.urikValidation
     },
     actions: {
+        SCROLL_TO_TOP(context) {
+            context.commit('scrollToTop')
+        },
         PAY_WITH_CARD(context, obj) {
             context.commit('payWithCard', obj);
         },
@@ -118,6 +121,9 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
+        scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        },
         payWithCard(state, obj) {
             let valid = {
                 status: false,
