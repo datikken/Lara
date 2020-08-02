@@ -26,8 +26,6 @@
 
 <CardPayment v-if="paymentsProvider === true" />
 
-                <TextBtn text="подтвердить" className="text_buy-btn animated_btn"/>
-
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 .order_list {
   &-wrap {
     border: 1px solid $light_gray;
-    padding: 40px 30px 20px 30px;
+    padding: 40px 30px 30px 30px;
 
     .proceedPayment-btn {
       margin-top: 50px;
@@ -13,6 +13,12 @@
     }
 
     &_footer {
+      &_final {
+          border-bottom: 1px solid $light_gray;
+          padding-bottom: 17px;
+          margin-bottom: 40px;
+      }
+
       &-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -37,9 +43,11 @@
         grid-template-columns: 1fr 1fr;
         grid-gap: 24px;
         align-items: center;
+        border-bottom: 1px solid $gray;
+        margin-bottom: 10px;
 
         &_item {
-          margin-bottom: 17px;
+          margin-bottom: 15px;
 
           &-text {
             font-family: $font;

@@ -31,8 +31,6 @@
                         </span>
                     </div>
                 </div>
-
-                <hr />
             </div>
 
             <div class="order_list-wrap_inner-row" v-if="this.deliveryType === 'deliveryMkad' ">
@@ -59,9 +57,7 @@
                 </div>
             </div>
 
-            <!--<button type="submit" class="proceedPayment-btn">-->
-
-            <!--</button>-->
+            <TextBtn text="Завершить покупку" className="text_buy-btn animated_btn final_btn" v-if="finalStep"/>
 
         </div>
     </div>
@@ -70,13 +66,24 @@
 
 <script>
     import {mapActions,mapGetters} from 'vuex'
+    import TextBtn from '../btns/TextBtn'
 
     export default {
         name: "OrdersList",
+        components: {
+            TextBtn
+        },
+        data: () => ({
+            active: false
+        }),
         methods: {
             ...mapActions([
                 'CHECK_CART_STATE',
             ]),
+            fixFooter() {
+                let footer = this.$el.querySelector('.order_list-wrap_footer');
+                    footer.classList.add('order_list-wrap_footer_final');
+            }
         },
         created() {
             this.CHECK_CART_STATE();
@@ -87,11 +94,21 @@
             ]),
             orders() {
                 return this.$store.state.cart
+            },
+            finalStep() {
+                if(this.$store.state.paymentProvider) {
+                    this.fixFooter();
+                }
+
+                return this.$store.state.paymentProvider
             }
         }
     }
 </script>
 
 <style scoped>
-
+    .final_btn {
+        margin-bottom: 10px!important;
+        margin: 0 auto !important;
+    }
 </style>

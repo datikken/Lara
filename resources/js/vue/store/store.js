@@ -37,6 +37,12 @@ const store = new Vuex.Store({
         urikValidation: state => state.urikValidation
     },
     actions: {
+       PAY_WITH_CARD(context) {
+           context.commit('payWithCard');
+       },
+       FINALIZE(context) {
+           context.commit('finilaze');
+       },
        SET_PAYMENT_PROVIDER(context, provider) {
            context.commit('setPaymentProvider', provider)
        },
@@ -114,6 +120,12 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        payWithCard(state) {
+            console.warn('payed with cart')
+        },
+        finilaze(state) {
+
+        },
         setPaymentProvider(state, provider) {
             state.paymentProvider = provider;
             let paymentBlock = document.querySelector('.payment_wrap');

@@ -10,7 +10,9 @@
     &_wrap {
       &-form {
         &_inner {
-            margin: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            margin: 30px 30px 30px 0;
 
           .payment_wrap-form_group, .payment_wrap-form_group-inner {
               display: flex;
