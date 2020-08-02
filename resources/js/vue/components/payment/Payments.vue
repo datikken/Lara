@@ -6,16 +6,16 @@
             </div>
 
             <div class="payment_wrap-form">
-                <div class="payment_wrap-form_group">
+                <div class="payment_wrap-form_group" @click="setPayment" data-checkNal>
                     <label for="payment_type">При получении</label>
 
-                    <div class="payment_wrap-form_group-inner">
+                    <div class="payment_wrap-form_group-inner" >
                         <SimpleCheckbox />
                         <span>Наличными или банковской картой</span>
                     </div>
                 </div>
 
-                <div class="payment_wrap-form_group">
+                <div class="payment_wrap-form_group" @click="setPayment"  data-checkCard>
                     <label for="payment_type">Онлайн</label>
 
                     <div class="payment_wrap-form_group-inner">
@@ -24,44 +24,7 @@
                     </div>
                 </div>
 
-                <div class="payment_wrap-form_inner">
-                    <div class="payment_wrap-form_group">
-                        <div class="payment_wrap-form_group-inner">
-                            <label for="card_num" class="cart_num">Номер карты</label>
-                            <input type="text" name="card_num" placeholder="Введите номер карты">
-                        </div>
-                    </div>
-
-                    <div class="payment_wrap-form_group">
-                        <div class="payment_wrap-form_group-last row_alignment" style="flex-direction: column;">
-
-                            <div style="display: flex;">
-                                <div style="display: flex; flex-direction: column;">
-                                    <label for="srok">Срок действия</label>
-                                    <div class="row_alignment-inner">
-                                        <CardDropdown name="Год" />
-                                        <CardDropdown name="Месяц" />
-                                    </div>
-                                </div>
-
-                                <div style="display: flex; flex-direction: column;">
-                                    <label for="cvv">CVV</label>
-                                    <input class="payment_wrap-form_group-cvv row_alignment-inner" type="text" placeholder="Введите номер" name="cvv"/>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="payment_wrap-form_group">
-                        <div class="payment_wrap-form_group-inner">
-                            <label for="card_name" class="cart_num">Имя и фамилия владельца карты</label>
-                            <input type="text" name="card_name" placeholder="введите  имя и фамилию владельца карты">
-                        </div>
-                    </div>
-
-                </div>
+<CardPayment v-if="paymentsProvider === true" />
 
                 <TextBtn text="подтвердить" className="text_buy-btn animated_btn"/>
 
@@ -71,20 +34,39 @@
 </template>
 
 <script>
-    import CardDropdown from "./CardDropdown";
+    import {mapActions} from 'vuex'
     import TextBtn from '../btns/TextBtn'
     import SimpleCheckbox from '../checkboxes/SimpleCheckbox'
+    import CardPayment from './CardPayment'
 
     export default {
         name: "Payments",
+        data: () => ({
+            paymentsProvider: false
+        }),
         components: {
             SimpleCheckbox,
-            CardDropdown,
+            CardPayment,
             TextBtn
         },
         methods: {
-
-        }
+            ...mapActions(['SET_PAYMENT_PROVIDER']),
+            setPayment(e) {
+                 let provider = e.currentTarget.innerText;
+                 this.SET_PAYMENT_PROVIDER(provider);
+            }
+        },
+        computed: {
+            card() {
+                return this.$store.state.cardPayment
+            }
+        },
+        watch: {
+            card(newVal, oldVal) {
+                console.log(newVal)
+                this.paymentsProvider = newVal;
+            }
+        },
     }
 </script>
 

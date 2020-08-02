@@ -94,9 +94,15 @@
 
                 if(this.deliveryType != '') {
                     this.APPLY_DELIVERY_ADRESS(data);
+
+                    inputs.forEach((npt) => {
+                        npt.value = ''
+                        npt.setAttribute('disabled', '')
+                    })
                 } else {
                     this.DELIVERY_TYPE_ERROR();
                 }
+
             }
         }
     }

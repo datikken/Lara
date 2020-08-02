@@ -25,7 +25,9 @@ const store = new Vuex.Store({
         deliveryType: '',
         urikValidation: {},
         uriksData: {},
-        order: {}
+        order: {},
+        paymentProvider: false,
+        cardPayment: false
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
@@ -35,6 +37,9 @@ const store = new Vuex.Store({
         urikValidation: state => state.urikValidation
     },
     actions: {
+       SET_PAYMENT_PROVIDER(context, provider) {
+           context.commit('setPaymentProvider', provider)
+       },
        CREATE_ORDER(context) {
            context.commit('createOrder');
        },
@@ -109,6 +114,39 @@ const store = new Vuex.Store({
        }
     },
     mutations: {
+        setPaymentProvider(state, provider) {
+            state.paymentProvider = provider;
+            let paymentBlock = document.querySelector('.payment_wrap');
+            let checkboxes = paymentBlock.querySelectorAll('.checkbox');
+
+            let nal = paymentBlock.querySelector('[ data-checkNal]');
+            let card = paymentBlock.querySelector('[data-checkCard]');
+
+            checkboxes.forEach((box) => {
+                let img = box.querySelector('img')
+                    img.classList.add('invisible');
+
+                box.setAttribute('checked', false);
+            })
+
+            function process(item) {
+                let box = item.querySelector('.checkbox')
+                let img = item.querySelector('img')
+
+                box.setAttribute('checked', true)
+                img.classList.remove('invisible')
+            }
+
+            if(provider.indexOf('Mastercard') > 0) {
+                state.cardPayment = true
+                process(card)
+            } else {
+                state.cardPayment = false
+                process(nal)
+            }
+
+            return state.paymentProvider;
+        },
         createOrder(state) {
             $.ajaxSetup({
                 headers: {
@@ -120,7 +158,8 @@ const store = new Vuex.Store({
                 url: '/createOrder',
                 success: function (data) {
                     state.order = data;
-                    console.warn(data,'create order success')
+                    // localStorage.setItem('order', JSON.stringify(data));
+                    console.warn(data,'create order success', state.order)
                 },
                 error: function (error) {
                     console.warn(error);
@@ -250,20 +289,17 @@ const store = new Vuex.Store({
             return state.deliveryType;
         },
         checkCartState(state) {
-            // if(localStorage.getItem('cart')) {
-            //     state.cart = localStorage.getItem('cart')
-            // }
+            if(localStorage.getItem('cart')) {
+                state.cart = JSON.parse(localStorage.getItem('cart'));
+            }
 
-            // if(!state.cart) {
+            if(!state.cart) {
             axios.get('/checkCartState')
                 .then(response => {
                     state.cart = response.data;
-
-                    console.log(response.data);
-
-                    localStorage.setItem('cart', response.data);
+                    localStorage.setItem('cart', JSON.stringify(response.data));
                 })
-            // }
+            }
 
             return state.cart
         },
