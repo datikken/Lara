@@ -63,7 +63,8 @@
         },
         computed: {
             ...mapGetters([
-                'deliveryType'
+                'deliveryType',
+                'user'
             ]),
             ...mapGetters([
                 'deliveryType'
@@ -81,7 +82,12 @@
                 this.CHANGE_PROGRESS_STEP();
                 this.CREATE_ORDER();
 
-                router.push('/payments')
+                if(this.user.face === 'urik') {
+                    router.push('/contract')
+                } else {
+                    router.push('/payments')
+                }
+
                 this.SCROLL_TO_TOP();
             },
             applyDeliveryAdress() {

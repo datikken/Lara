@@ -203,6 +203,13 @@ a:hover {
   }
 }
 
+a {
+  color: #3559fd !important;
+}
+a:hover {
+  color: #3559fd;
+}
+
 .blue {
   color: #3559fd;
 }
@@ -727,6 +734,9 @@ b {
   cursor: pointer;
   position: relative;
   margin-bottom: 0;
+}
+.header_wrapper-item_menu-item a {
+  color: #fff !important;
 }
 .header_wrapper-item_menu-item:nth-child(2):hover .header_wrapper-item_menu-item-secondary {
   visibility: visible;
@@ -7408,6 +7418,86 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 30px;
 }
 
+.dform_btn {
+  width: 200px;
+  height: 40px;
+  color: #40404c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.dform_btn_active {
+  background: #40404c;
+}
+.dform_btn_active .dform_btn_text {
+  color: #fff;
+}
+.dform_btn_active path {
+  fill: #fff !important;
+}
+.dform_btn:first-child {
+  border-radius: 30px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid #40404c;
+}
+.dform_btn:last-child {
+  border-radius: 30px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border: 1px solid #40404c;
+  border-left: none;
+}
+.dform_btn_text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  margin-left: 10px;
+}
+.dform_btn_icon {
+  height: 15px;
+  width: 15px;
+}
+.dform_download {
+  margin-top: 50px;
+}
+.dform_download_head {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+}
+.dform_download_btns {
+  display: flex;
+}
+.dform_desc {
+  max-width: 628px;
+}
+.dform_desc_text {
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+}
+.dform_boxes_inner {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.dform_boxes_text {
+  margin-left: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #3559fd;
+}
 .dform_outer {
   display: flex;
 }
@@ -7417,7 +7507,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 .dform_head {
-  font-family: "MontserratSemiBold";
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
@@ -7425,6 +7515,14 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   text-transform: uppercase;
   color: #292930;
   margin-bottom: 25px;
+}
+.dform_head_span {
+  font-family: "MontserratSemiBold";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
 }
 .dform_wrap {
   display: flex;

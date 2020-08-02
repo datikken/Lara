@@ -1,4 +1,96 @@
 .dform {
+    &_btn {
+        width: 200px;
+        height: 40px;
+        color: $black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &_active {
+            background: $black;
+
+            .dform_btn_text {
+                color: #fff;
+            }
+            path {
+                fill: #fff!important;
+            }
+        }
+
+        &:first-child {
+            border-radius: 30px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border: 1px solid $black;
+        }
+
+        &:last-child {
+            border-radius: 30px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border: 1px solid $black;
+            border-left: none;
+        }
+
+        &_text {
+            font-family: $font;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            color: $black;
+            margin-left: 10px;
+        }
+
+        &_icon {
+            height: 15px;
+            width: 15px;
+        }
+    }
+    &_download {
+        margin-top: 50px;
+
+        &_head {
+            font-family: $font;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            color: $black;
+        }
+
+        &_btns {
+            display: flex;
+        }
+    }
+    &_desc {
+        max-width: 628px;
+
+        &_text {
+            font-family: Montserrat;
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0.02em;
+            color: $black;
+        }
+    }
+    &_boxes {
+        &_inner {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        &_text {
+            margin-left: 30px;
+            font-family: $font;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            color: $blue;
+        }
+    }
+
   &_outer {
     display: flex;
     @include breakpoint($medium) {
@@ -6,7 +98,7 @@
     }
   }
   &_head {
-    font-family: $semifont;
+    font-family: $font;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
@@ -14,6 +106,15 @@
     text-transform: uppercase;
     color: $dblack;
     margin-bottom: 25px;
+
+      &_span {
+          font-family: $semifont;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          color: $black;
+      }
   }
 
   &_wrap {

@@ -56,6 +56,12 @@ a:hover {
     }
   }
 }
+a {
+    color: $blue!important;
+    &:hover {
+        color: $blue;
+    }
+}
 .blue {
   color: $blue;
 }
