@@ -2020,6 +2020,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 .payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .payment_wrap-form_group-date:first-child, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .payment_wrap-form_group-date:first-child {
   border-right: 1px solid #e9e9ea;
@@ -2033,6 +2034,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   align-items: center;
   width: 100%;
   cursor: pointer;
+  position: absolute;
+  top: 12px;
 }
 .payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .year .year_label-input, .payment_wrap-form_inner .payment_wrap-form_group .row_alignment-inner .month .year_label-input, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .year .year_label-input, .payment_wrap-form_inner .payment_wrap-form_group-inner .row_alignment-inner .month .year_label-input {
   border: none !important;
@@ -2061,8 +2064,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     border: 1px solid #e9e9ea;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-content: center;
     margin-right: 25px;
   }
 }
@@ -12754,4 +12755,49 @@ main {
 }
 .catalogSwitch_item-grid {
   background-image: url("/images/icons/grid.svg");
+}
+
+.payment_dropdown_open, .payment_dropdown_open-right {
+  padding: 0;
+  padding-bottom: 0.5rem;
+  max-height: 200px;
+  list-style: none;
+  margin: 0;
+  background: #fff;
+  border: 1px solid #e9e9ea;
+  display: block !important;
+  width: 100%;
+  position: absolute;
+  top: -12px;
+  border-right: 0;
+  border-top: 0;
+  overflow: scroll;
+  border-radius: 20px;
+  border-top-right-radius: 0;
+}
+.payment_dropdown_open::-webkit-scrollbar, .payment_dropdown_open-right::-webkit-scrollbar {
+  display: none;
+}
+.payment_dropdown_open li, .payment_dropdown_open-right li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  padding: 17px 0;
+  text-align: center;
+  width: 100%;
+}
+.payment_dropdown_open li:first-child, .payment_dropdown_open-right li:first-child {
+  padding-top: 0.5rem;
+}
+.payment_dropdown_open li:hover, .payment_dropdown_open-right li:hover {
+  background: #d4d4d5;
+}
+.payment_dropdown_open-right {
+  width: 101%;
+  border-top-right-radius: 20px;
+  border-right: 1px solid #e9e9ea;
+  border-left: 0;
+  border-top: 0;
+  border-top-left-radius: 0;
 }

@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-<CardPayment v-if="paymentsProvider === true" />
+                <CardPayment v-if="paymentsProvider === true" />
 
             </div>
         </div>

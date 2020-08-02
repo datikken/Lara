@@ -1,12 +1,12 @@
 <template>
 
-    <div class="payment_wrap-form_group-date">
+    <div class="payment_wrap-form_group-date" @click="toggleDropdown">
         <div class="year">
-            <span class="year_label">{{ name }}</span>
+            <span class="year_label" :data-name="name">{{ name }}</span>
             <span class="arrow" style="background-image: url('/images/icons/arrow_right.svg')"></span>
 
-            <ul class="invisible">
-                <li v-for="year in this.years">{{ year }}</li>
+            <ul class="invisible payment_dropdown">
+                <li v-for="type in data">{{ type }}</li>
             </ul>
 
         </div>
@@ -17,10 +17,36 @@
 <script>
     export default {
         name: "CardDropdown",
-        props: ['name'],
+        props: ['data','name'],
         data: () => ({
-            years: ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020']
-        })
+            opened: false,
+            greenLight: false
+        }),
+        watch: {
+            opened(newVal, oldVal) {
+               this.greenLight = newVal;
+            }
+        },
+        methods: {
+            toggleDropdown(e) {
+                let $class;
+                let ul = this.$el.querySelector('ul');
+
+                if(e.currentTarget.querySelector('[data-name]').getAttribute('data-name') === 'Год') {
+                    $class = 'payment_dropdown_open';
+                } else {
+                    $class = 'payment_dropdown_open-right'
+                }
+
+                ul.classList.toggle($class);
+
+                if(this.greenLight) {
+                    this.$el.querySelector('[data-name]').innerText = e.target.innerText;
+                }
+
+                this.opened = !this.opened;
+            }
+        }
     }
 </script>
 

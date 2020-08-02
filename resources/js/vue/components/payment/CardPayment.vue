@@ -3,7 +3,15 @@
         <div class="payment_wrap-form_group">
             <div class="payment_wrap-form_group-inner">
                 <label for="num" class="cart_num">Номер карты</label>
-                <input type="text" name="num" placeholder="Введите номер карты"  autocomplete="off" />
+
+                <masked-input
+                    autocomplete="off"
+                    class="company_input"
+                    name="num"
+                    v-model="num"
+                    mask="1111 1111 1111 1111"
+                    placeholder="Введите номер карты"/>
+
             </div>
         </div>
 
@@ -14,14 +22,21 @@
                     <div style="display: flex; flex-direction: column;">
                         <label>Срок действия</label>
                         <div class="row_alignment-inner">
-                            <CardDropdown name="Год" />
-                            <CardDropdown name="Месяц" />
+                            <CardDropdown name="Год" :data="years" />
+                            <CardDropdown name="Месяц" :data="months" />
                         </div>
                     </div>
 
                     <div style="display: flex; flex-direction: column;">
                         <label for="cvv">CVV</label>
-                        <input class="payment_wrap-form_group-cvv row_alignment-inner" type="text" placeholder="Введите номер" name="cvv"  autocomplete="off"/>
+                        <masked-input
+                            type="password"
+                            class="payment_wrap-form_group-cvv row_alignment-inner"
+                            autocomplete="off"
+                            name="cvv"
+                            v-model="cvv"
+                            mask="111"
+                            placeholder="CVV"/>
                     </div>
                 </div>
 
@@ -32,11 +47,16 @@
         <div class="payment_wrap-form_group">
             <div class="payment_wrap-form_group-inner">
                 <label for="card_name" class="cart_num">Имя и фамилия владельца карты</label>
-                <input type="text" name="card_name" placeholder="введите  имя и фамилию владельца карты" autocomplete="off">
+                <input
+                    type="text"
+                    name="card_name"
+                    placeholder="введите  имя и фамилию владельца карты"
+                    onkeyup="this.value = this.value.toUpperCase();"
+                    autocomplete="off">
             </div>
         </div>
 
-        <TextBtn text="подтвердить" className="text_buy-btn animated_btn mauto" @click.native="processCardPayment" />
+        <TextBtn text="подтвердить" className="text_buy-btn animated_btn mauto" @click.native="processCardPayment"/>
 
     </form>
 </template>
@@ -45,12 +65,23 @@
     import {mapActions} from 'vuex'
     import CardDropdown from './CardDropdown'
     import TextBtn from '../btns/TextBtn'
+    import MaskedInput from '../inputs/MaskedInput'
 
     export default {
         name: "CardPayment",
         components: {
             CardDropdown,
-            TextBtn
+            TextBtn,
+            MaskedInput
+        },
+        data: () => {
+            return {
+                num: '',
+                cvv: '',
+                name: '',
+                years: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034', '2035', '2036', '2037', '2038', '2039', '2040'],
+                months: ['01','02','03','04','05','06','07','08','09','10','11','12']
+            }
         },
         method: {
             ...mapActions([
