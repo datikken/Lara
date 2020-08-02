@@ -203,13 +203,6 @@ a:hover {
   }
 }
 
-a {
-  color: #3559fd !important;
-}
-a:hover {
-  color: #3559fd;
-}
-
 .blue {
   color: #3559fd;
 }
@@ -6684,7 +6677,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   text-transform: uppercase;
   font-weight: 500;
   text-decoration: none;
-  color: #40404c;
+  color: #40404c !important;
 }
 .cart_wrap-item_inner-total_button-item:hover {
   color: #40404c;
