@@ -1,8 +1,9 @@
 @extends('layouts.admin')
 
 @section('center')
-    <script src=" {{ asset('js/vendors/dropzone.js') }}" defer></script>
+    {{--<script src=" {{ asset('js/vendors/dropzone.js') }}" defer></script>--}}
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dropzone@5.7.0/dist/dropzone.css">
 
     <h2 class="uk-heading-small">Добавить изображения</h2>
