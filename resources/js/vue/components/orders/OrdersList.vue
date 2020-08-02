@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <TextBtn text="Завершить покупку" className="text_buy-btn animated_btn final_btn" v-if="finalStep"/>
+            <TextBtn text="Завершить покупку" className="text_buy-btn animated_btn final_btn" v-if="finalStep" @click.native="pushToThanks" />
 
         </div>
     </div>
@@ -66,6 +66,7 @@
 
 <script>
     import {mapActions,mapGetters} from 'vuex'
+    import router from '../../router/router'
     import TextBtn from '../btns/TextBtn'
 
     export default {
@@ -83,6 +84,9 @@
             fixFooter() {
                 let footer = this.$el.querySelector('.order_list-wrap_footer');
                     footer.classList.add('order_list-wrap_footer_final');
+            },
+            pushToThanks() {
+                router.push('/success')
             }
         },
         created() {

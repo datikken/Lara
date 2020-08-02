@@ -1,10 +1,22 @@
 <template>
-    <h1>THank you done!</h1>
+    <Success />
 </template>
 
 <script>
+    import Success from '../components/payment/Success'
+    import {mapActions} from 'vuex'
+
     export default {
-        name: "OrderSuccess"
+        name: "OrderSuccess",
+        components: {
+            Success
+        },
+        methods: {
+            ...mapActions(['CHANGE_PROGRESS_STEP'])
+        },
+        mounted() {
+            this.CHANGE_PROGRESS_STEP('success');
+        }
     }
 </script>
 

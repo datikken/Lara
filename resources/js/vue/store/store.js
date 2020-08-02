@@ -80,8 +80,8 @@ const store = new Vuex.Store({
         CHECK_CART_STATE(context) {
             context.commit('checkCartState');
         },
-        CHANGE_PROGRESS_STEP(context) {
-            context.commit('changeProgressStep');
+        CHANGE_PROGRESS_STEP(context, text) {
+            context.commit('changeProgressStep', text);
         },
         SET_CUSTOMER_FIO(context, obj) {
             context.commit('setCustomerFio', obj);
@@ -333,18 +333,19 @@ const store = new Vuex.Store({
 
             return state.cart
         },
-        changeProgressStep(state) {
+        changeProgressStep(state, text) {
             let line = document.querySelector('.cart_wrap-crumb').querySelector('.active-item');
 
             if (state.cartStep === 0) {
                 line.style.width = '37%';
             }
-
             if (state.cartStep === 1) {
                 line.style.width = '65%';
             }
-
             if (state.cartStep === 2) {
+                line.style.width = '100%';
+            }
+            if(text) {
                 line.style.width = '100%';
             }
 
