@@ -16,6 +16,7 @@
         },
         mounted() {
             this.CHANGE_PROGRESS_STEP('success');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
 </script>
