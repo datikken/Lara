@@ -2,12 +2,12 @@
     <form class="payment_wrap-form_inner" autocomplete="off">
         <div class="payment_wrap-form_group">
             <div class="payment_wrap-form_group-inner">
-                <label for="num" class="cart_num">Номер карты</label>
+                <label for="card_num" class="cart_num">Номер карты</label>
 
                 <masked-input
                     autocomplete="off"
                     class="company_input"
-                    name="num"
+                    name="card_num"
                     v-model="num"
                     mask="1111 1111 1111 1111"
                     placeholder="Введите номер карты"/>
@@ -22,8 +22,8 @@
                     <div style="display: flex; flex-direction: column;">
                         <label>Срок действия</label>
                         <div class="row_alignment-inner">
-                            <CardDropdown name="Год" :data="years" />
-                            <CardDropdown name="Месяц" :data="months" />
+                            <CardDropdown name="Год"  dataName="year" :data="years"/>
+                            <CardDropdown name="Месяц" dataName="month" :data="months"/>
                         </div>
                     </div>
 
@@ -52,6 +52,7 @@
                     name="card_name"
                     placeholder="введите  имя и фамилию владельца карты"
                     onkeyup="this.value = this.value.toUpperCase();"
+                    onkeypress="return /[a-z]/i.test(event.key)"
                     autocomplete="off">
             </div>
         </div>
@@ -80,15 +81,33 @@
                 cvv: '',
                 name: '',
                 years: ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034', '2035', '2036', '2037', '2038', '2039', '2040'],
-                months: ['01','02','03','04','05','06','07','08','09','10','11','12']
+                months: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
             }
         },
-        method: {
+        methods: {
             ...mapActions([
                 'PAY_WITH_CARD'
             ]),
             processCardPayment() {
-                this.PAY_WITH_CARD();
+                let inputs = this.$el.querySelectorAll('input');
+                let yearsMonths = this.$el.querySelectorAll('[data-name]');
+                let obj = {};
+
+                inputs.forEach((npt) => {
+                    let name = npt.getAttribute('name');
+                    let val = npt.value;
+
+                    obj[name] = val;
+                });
+
+                yearsMonths.forEach((date) => {
+                    let name = date.getAttribute('data-name');
+                    let val = date.innerText;
+
+                    obj[name] = val;
+                });
+
+                this.PAY_WITH_CARD(obj);
             }
         }
     }

@@ -9,17 +9,17 @@
                 <div class="payment_wrap-form_group" @click="setPayment" data-checkNal>
                     <label for="payment_type">При получении</label>
 
-                    <div class="payment_wrap-form_group-inner" >
-                        <SimpleCheckbox />
+                    <div class="payment_wrap-form_group-inner">
+                        <SimpleCheckbox/>
                         <span>Наличными или банковской картой</span>
                     </div>
                 </div>
 
-                <div class="payment_wrap-form_group" @click="setPayment"  data-checkCard>
+                <div class="payment_wrap-form_group" @click="setPayment" data-checkCard>
                     <label for="payment_type">Онлайн</label>
 
                     <div class="payment_wrap-form_group-inner">
-                        <SimpleCheckbox />
+                        <SimpleCheckbox/>
                         <span>Картами Visa, Mastercard, Maestro</span>
                     </div>
                 </div>
@@ -48,10 +48,12 @@
             TextBtn
         },
         methods: {
-            ...mapActions(['SET_PAYMENT_PROVIDER']),
+            ...mapActions([
+                'SET_PAYMENT_PROVIDER',
+            ]),
             setPayment(e) {
-                 let provider = e.currentTarget.innerText;
-                 this.SET_PAYMENT_PROVIDER(provider);
+                let provider = e.currentTarget.innerText;
+                this.SET_PAYMENT_PROVIDER(provider);
             }
         },
         computed: {
@@ -61,7 +63,6 @@
         },
         watch: {
             card(newVal, oldVal) {
-                console.log(newVal)
                 this.paymentsProvider = newVal;
             }
         },
