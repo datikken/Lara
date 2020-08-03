@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import $ from "jquery";
 import axios from 'axios';
+import router from '../router/router';
 
 const _ = require('lodash');
 
@@ -23,13 +24,16 @@ const store = new Vuex.Store({
         usersFIO: '',
         cartStep: 0,
         cart: false,
-        deliveryType: '',
+        deliveryType: false,
+        deliveryAdress: {},
         urikValidation: {},
         uriksData: {},
         order: {},
         paymentProvider: false,
         cardPayment: false,
-        orders: false
+        orders: false,
+        pickUpPoint: false,
+        orderPaid: false
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
@@ -37,9 +41,20 @@ const store = new Vuex.Store({
         user: state => state.user,
         deliveryType: state => state.deliveryType,
         urikValidation: state => state.urikValidation,
-        orders: state => state.orders
+        orders: state => state.orders,
+        pickUpPoint: state => state.pickUpPoint,
+        orderPaid: state => state.orderPaid
     },
     actions: {
+        FINISH_ORDER_PROCESS(context) {
+            context.commit('finishOrderProcess');
+        },
+        SET_PICKUP_POINT(context, obj) {
+            context.commit('setPickUpPoint', obj);
+        },
+        VALIDATE_DELIVERY_ADRESS(context, form) {
+            context.commit('validateDeliveryAdress', form);
+        },
         GET_ALL_PRODUCTS(context) {
             context.commit('getAllProducts');
         },
@@ -129,6 +144,31 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
+        removePaymentError() {
+
+        },
+        checkPaymentError(state) {
+            let error = document.querySelector('[data-payment-error]');
+            let heading = document.querySelector('[data-payment-head]');
+            let head = document.querySelector('.payment_wrap-head');
+
+            heading.classList.add('mb10');
+            head.classList.add('mb30');
+            error.classList.remove('as-none');
+        },
+        finishOrderProcess() {
+            router.push('/success');
+            this.SCROLL_TO_TOP();
+        },
+        setPickUpPoint(state, obj) {
+            state.pickUpPoint = obj;
+        },
+        validateDeliveryAdress(state, form) {
+            let valid = window.app.validator.formValidate([], $(form));
+            state.deliveryAdress = valid;
+
+            return state.deliveryAdress;
+        },
         getOrdersInfo(state) {
             $.ajaxSetup({
                 headers: {
@@ -140,7 +180,6 @@ const store = new Vuex.Store({
                 url: '/getOrdersInfo',
                 success: function (data) {
                     state.orders = data;
-                    console.log('orders info', data)
                 },
                 error: function (error) {
                     console.warn(error);
@@ -152,6 +191,7 @@ const store = new Vuex.Store({
             window.scrollTo({ top: 0, behavior: 'smooth' });
         },
         payWithCard(state, obj) {
+            let that = this;
             let valid = {
                 status: false,
                 errors: []
@@ -179,7 +219,6 @@ const store = new Vuex.Store({
             let checkout = new cp.Checkout(
                 // public id из личного кабинета
                 "test_api_00000000000000000000001",
-                // тег, содержащий поля данных карты
                 document.getElementById("paymentFormSample")
             );
 
@@ -187,13 +226,9 @@ const store = new Vuex.Store({
                 var result = checkout.createCryptogramPacket();
 
                 if (result.success) {
-                    // сформирована криптограмма
-                    console.log(result);
+                    state.orderPaid = true;
                 }
                 else {
-                    // найдены ошибки в введённых данных, объект `result.messages` формата:
-                    // { name: "В имени держателя карты слишком много символов", cardNumber: "Неправильный номер карты" }
-                    // где `name`, `cardNumber` соответствуют значениям атрибутов `<input ... data-cp="cardNumber">`
                     for (var msgName in result.messages) {
                         alert(result.messages[msgName]);
                     }

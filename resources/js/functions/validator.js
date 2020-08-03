@@ -7,7 +7,7 @@ class Validator {
         window.app.validator = {
             validateMessage: '',
             config: {
-                selectorFieldItem: '.form-block, .form-item, .form-item-big',
+                selectorFieldItem: '.form_group, .form-block, .form-item, .form-item-big',
                 classInvalid: 'invalid',
                 classValid: 'valid',
             },

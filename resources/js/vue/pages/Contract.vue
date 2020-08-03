@@ -60,8 +60,7 @@
     import OrderList from '../components/orders/OrdersList'
     import SimpleCheckbox from '../components/checkboxes/SimpleCheckbox'
     import TextBtn from '../components/btns/TextBtn'
-    import {mapActions} from 'vuex'
-    import router from '../router/router'
+    import {mapActions, mapGetters} from 'vuex'
 
     export default {
         name: "Contract",
@@ -71,7 +70,11 @@
             TextBtn
         },
         methods: {
-            ...mapActions(['SCROLL_TO_TOP']),
+            ...mapActions([
+                'SET_PAYMENT_ERROR',
+                'FINISH_ORDER_PROCESS'
+            ]),
+            ...mapGetters(['orderPaid']),
             setClass(e) {
                 let btns = this.$el.querySelectorAll('.dform_btn')
                 btns.forEach((btn) => {
@@ -81,8 +84,12 @@
                 e.currentTarget.classList.toggle('dform_btn_active')
             },
             pushToThanks() {
-                router.push('/success')
-                this.SCROLL_TO_TOP();
+                if(!this.orderPaid) {
+                    this.SET_PAYMENT_ERROR();
+                    return
+                } else {
+                    this.FINISH_ORDER_PROCESS();
+                }
             }
         }
     }

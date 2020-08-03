@@ -2,7 +2,8 @@
     <div class="payment">
         <div class="payment_wrap">
             <div class="payment_wrap-head">
-                <h1>СПОСОБ ОПЛАТЫ</h1>
+                <h1 data-payment-head>СПОСОБ ОПЛАТЫ</h1>
+                <span class="error-message as-none" data-payment-error>Произведите оплату картой или измените способ оплаты.</span>
             </div>
 
             <div class="payment_wrap-form">

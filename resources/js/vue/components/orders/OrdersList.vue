@@ -80,15 +80,18 @@
         methods: {
             ...mapActions([
                 'CHECK_CART_STATE',
-                'SCROLL_TO_TOP'
+                'FINISH_ORDER_PROCESS'
             ]),
             fixFooter() {
                 let footer = this.$el.querySelector('.order_list-wrap_footer');
                     footer.classList.add('order_list-wrap_footer_final');
             },
             pushToThanks() {
-                router.push('/success')
-                this.SCROLL_TO_TOP();
+                if(!this.orderPaid) {
+                    return
+                } else {
+                    this.FINISH_ORDER_PROCESS();
+                }
             }
         },
         created() {
@@ -96,7 +99,8 @@
         },
         computed: {
             ...mapGetters([
-                'deliveryType'
+                'deliveryType',
+                'orderPaid'
             ]),
             orders() {
                 return this.$store.state.cart
