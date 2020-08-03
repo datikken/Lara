@@ -74,7 +74,6 @@
                 'SET_PAYMENT_ERROR',
                 'FINISH_ORDER_PROCESS'
             ]),
-            ...mapGetters(['orderPaid']),
             setClass(e) {
                 let btns = this.$el.querySelectorAll('.dform_btn')
                 btns.forEach((btn) => {
@@ -84,13 +83,19 @@
                 e.currentTarget.classList.toggle('dform_btn_active')
             },
             pushToThanks() {
-                if(!this.orderPaid) {
-                    this.SET_PAYMENT_ERROR();
-                    return
+                if(this.paymentProvider.indexOf('Mastercard') >= 0) {
+                    if(!this.orderPaid) {
+                        return
+                    } else {
+                        this.FINISH_ORDER_PROCESS();
+                    }
                 } else {
                     this.FINISH_ORDER_PROCESS();
                 }
             }
+        },
+        computed: {
+            ...mapGetters(['orderPaid','paymentProvider'])
         }
     }
 </script>

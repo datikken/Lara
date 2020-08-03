@@ -87,8 +87,12 @@
                     footer.classList.add('order_list-wrap_footer_final');
             },
             pushToThanks() {
-                if(!this.orderPaid) {
-                    return
+                if(this.paymentProvider.indexOf('Mastercard') >= 0) {
+                    if(!this.orderPaid) {
+                        return
+                    } else {
+                        this.FINISH_ORDER_PROCESS();
+                    }
                 } else {
                     this.FINISH_ORDER_PROCESS();
                 }
@@ -100,7 +104,8 @@
         computed: {
             ...mapGetters([
                 'deliveryType',
-                'orderPaid'
+                'orderPaid',
+                'paymentProvider'
             ]),
             orders() {
                 return this.$store.state.cart

@@ -43,7 +43,8 @@ const store = new Vuex.Store({
         urikValidation: state => state.urikValidation,
         orders: state => state.orders,
         pickUpPoint: state => state.pickUpPoint,
-        orderPaid: state => state.orderPaid
+        orderPaid: state => state.orderPaid,
+        paymentProvider: state => state.paymentProvider
     },
     actions: {
         FINISH_ORDER_PROCESS(context) {
