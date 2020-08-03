@@ -4753,8 +4753,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .history {
-    margin-bottom: 365px;
-    margin-left: 30px;
+    margin: 0 auto;
+    margin-bottom: 200px;
   }
 }
 .history_wrapper-item .history_selected {

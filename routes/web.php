@@ -1,11 +1,13 @@
 <?php
 //Auth routes
 Auth::routes(['verify' => true]);
-
 Route::group(['middleware' => 'restrictToAdmin'], function() {
 //ORDERS
-    Route::get('checkoutProducts/', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
-    Route::get('admin/banners', ['uses' => "AdminBannersController@index", 'as' => 'setBanner']);
+    Route::get('/admin/changeOrderStatus/{id}',['uses' => 'AdminOrdersController@changeOrderStatus', 'as' => 'changeOrderStatus']);
+    Route::get('/getOrdersInfo', ['uses' => 'OrdersController@ordersHistory', 'as' => 'GetOrdersInfo']);
+    Route::get('/checkoutProducts', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
+    Route::post('/home/getSingleOrderInfo/{id}',['uses' => 'OrdersController@getOrderInfo', 'as' => 'getSingleOrderInfo']);
+
 //Tracking
     Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking']);
 });
@@ -16,7 +18,7 @@ Route::group(['middleware' => 'ajax'], function() {
 });
 
 //PRODUCTS
-Route::group(['middleware' => 'checkUserRole'], function() {
+    Route::group(['middleware' => 'checkUserRole'], function() {
     Route::post('admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider']);
 
     Route::get('admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
@@ -40,8 +42,11 @@ Route::group(['middleware' => 'checkUserRole'], function() {
     Route::get('admin/dropZone/{id}', ['uses' => 'AdminProductsController@dropZoneForm', 'as' => 'dropZoneForm']);
     Route::post('admin/addMultipleProductImages/{id}', ['uses' => 'AdminProductsController@addMultipleProductImages', 'as' => 'addMultipleProductImages']);
     Route::get('admin/cleanProductImages/{id}', ['uses' => 'AdminProductsController@cleanProductImages', 'as' => 'cleanProductImages']);
+
 //BANNERS
     Route::get('admin/adminCreateBannerForm', ['uses' => "AdminBannersController@createBannerForm", 'as' => 'adminCreateBannerForm']);
+    Route::get('/admin/banners', ['uses' => "AdminBannersController@index", 'as' => 'setBanner']);
+
 //INFORMATION
     Route::get('admin/information', ['uses' => "AdminInformationController@index", 'as' => 'informationList']);
     Route::get('admin/createInformation', ['uses' => 'AdminInformationController@showCreateInfoForm', 'as' => 'adminCreateInfo']);
@@ -122,8 +127,6 @@ Route::get('removeProducts',['uses' => 'AdminProductsController@removeProducts',
 Route::get('/createOrder', ['uses' => 'ProductsController@createOrder', 'as'=> 'createOrder']);
 Route::get('product/repeatOrder/{id}', ['uses' => 'ProductsController@repeatOrder', 'as'=> 'repeatOrder']);
 Route::get('product/proceedPayment',['uses' => 'PaymentsController@proceedPayment','as'=>'proceedPayment']);
-
-Route::post('/home/getOrderInfo/{id}',['uses' => 'HomeController@getOrderInfo', 'as' => 'GetOrderInfo']);
 
 //Email Subscriptions
 Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'subscribe']);

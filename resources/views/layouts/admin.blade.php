@@ -12,6 +12,7 @@
 
     @include('components.styles.style')
     @include('components.scripts.scripts')
+    <script src="{{ asset('js/admin.js') }}" defer></script>
 
     <style>
         .admin_container {

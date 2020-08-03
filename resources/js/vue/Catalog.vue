@@ -1,5 +1,5 @@
 <template>
-
+<div class="catalog">
     <div class="columns catalog_columns">
         <div class="left_column">
            <Filters />
@@ -59,11 +59,18 @@
             </div>
         </div>
     </div>
+
+    <OrdersHistory v-if="orders" data="" />
+
+</div>
+
+
 </template>
 
 <script>
     import '../../../node_modules/@fortawesome/fontawesome-free/css/all.css';
     import '../../../node_modules/vue-ads-pagination/dist/vue-ads-pagination.css';
+    import OrdersHistory from './components/orders/OrdersHistory'
     import TextBtn from '../vue/components/btns/BuyBtn';
     import CatalogSwitch from '../vue/components/catalog/catalogSwitch';
     import CatalogCard from '../vue/components/catalog/catalogCard'
@@ -73,11 +80,13 @@
     import Viewed from './components/viewed/Viewed'
     import Loader from './components/loader/Loader'
     import Modal from './components/modal/Modal'
+    import {mapActions} from 'vuex'
 
     export default {
         name: "catalog",
         components: {
             CatalogCard,
+            OrdersHistory,
             VueAdsPagination,
             VueAdsPageButton,
             CatalogSwitch,
@@ -96,6 +105,10 @@
             }
         },
         methods: {
+            ...mapActions([
+                'GET_ALL_PRODUCTS',
+                'GET_ORDERS_INFO'
+            ]),
             pageChange(page) {
                 this.page = page;
             },
@@ -106,10 +119,14 @@
         computed: {
             products() {
                 return this.$store.state.filteredProducts;
+            },
+            orders() {
+                return this.$store.state.orders
             }
         },
         created() {
-            this.$store.commit('getAllProducts');
+            this.GET_ALL_PRODUCTS();
+            this.GET_ORDERS_INFO();
         },
     }
 </script>

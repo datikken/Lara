@@ -28,16 +28,24 @@ const store = new Vuex.Store({
         uriksData: {},
         order: {},
         paymentProvider: false,
-        cardPayment: false
+        cardPayment: false,
+        orders: false
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
         allProducts: state => state.products,
         user: state => state.user,
         deliveryType: state => state.deliveryType,
-        urikValidation: state => state.urikValidation
+        urikValidation: state => state.urikValidation,
+        orders: state => state.orders
     },
     actions: {
+        GET_ALL_PRODUCTS(context) {
+            context.commit('getAllProducts');
+        },
+        GET_ORDERS_INFO(context) {
+            context.commit('getOrdersInfo');
+        },
         SCROLL_TO_TOP(context) {
             context.commit('scrollToTop')
         },
@@ -121,6 +129,25 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
+        getOrdersInfo(state) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
+            $.ajax({
+                method: "GET",
+                url: '/getOrdersInfo',
+                success: function (data) {
+                    state.orders = data;
+                    console.log('orders info', data)
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+
+        },
         scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         },

@@ -5,7 +5,6 @@
         <h2 class="mr-3">Заказы</h2>
     </div>
 
-    <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>
             <tr>
@@ -15,6 +14,8 @@
                 <th>Удален</th>
                 <th>Цена</th>
                 <th>Пользователь</th>
+                <th>Оплата</th>
+                <th>Изменить</th>
             </tr>
             </thead>
             <tbody>
@@ -27,11 +28,26 @@
                     <td>{{$order['del date']}}</td>
                     <td>{{$order['price']}}</td>
                     <td>{{$order['user_id']}}</td>
+                    <td>{{$order['payment_status']}}</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle mb-3" type="button" data-id="{{ $order['id'] }}" data-url="{{ route('changeOrderStatus', $order['id']) }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Статус заказа
+                            </button>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <button class="dropdown-item" type="button" data-status="on_hold">Создан</button>
+                                <button class="dropdown-item" type="button" data-status="on_delivery">Передан в доставку</button>
+                                <button class="dropdown-item" type="button" data-status="delivery_progress">Доставка</button>
+                                <button class="dropdown-item" type="button" data-status="arrived">Доставлен</button>
+                                <button class="dropdown-item" type="button" data-status="lost">Отменен</button>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             @endforeach
 
             </tbody>
         </table>
-    </div>
 
 @endsection

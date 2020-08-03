@@ -6,11 +6,15 @@ import store from '../vue/store/store'
 
 class SearchController {
     constructor() {
+        let offCatalog = document.querySelector('.menu_wrapper-item_search_input');
         let el = document.querySelector('[type="search"]');
-        new Vue({
-            render: h => h(app),
-            store: store,
-        }).$mount('#app')
+
+        if(offCatalog) {
+            new Vue({
+                render: h => h(app),
+                store: store,
+            }).$mount('#app')
+        }
     }
 }
 

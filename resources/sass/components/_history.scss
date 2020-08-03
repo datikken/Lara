@@ -5,8 +5,8 @@
   overflow: hidden;
 
   @include breakpoint($medium) {
-    margin-bottom: 365px;
-    margin-left: 30px;
+      margin: 0 auto;
+      margin-bottom: 200px;
   }
 
   &_wrapper {
