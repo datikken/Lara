@@ -1,5 +1,5 @@
 <template>
-    <form class="payment_wrap-form_inner" autocomplete="off">
+    <form class="payment_wrap-form_inner" autocomplete="off" id="paymentFormSample">
         <div class="payment_wrap-form_group">
             <div class="payment_wrap-form_group-inner">
                 <label for="card_num" class="cart_num">Номер карты</label>
@@ -7,7 +7,7 @@
                 <masked-input
                     autocomplete="off"
                     class="company_input"
-                    name="card_num"
+                    data-cp="cardNumber"
                     v-model="num"
                     mask="1111 1111 1111 1111"
                     placeholder="Введите номер карты"/>
@@ -22,8 +22,8 @@
                     <div style="display: flex; flex-direction: column;">
                         <label>Срок действия</label>
                         <div class="row_alignment-inner">
-                            <CardDropdown name="Год"  dataName="year" :data="years"/>
-                            <CardDropdown name="Месяц" dataName="month" :data="months"/>
+                            <CardDropdown text="Год"  dataName="expDateYear" :data="years"/>
+                            <CardDropdown text="Месяц" dataName="expDateMonth" :data="months"/>
                         </div>
                     </div>
 
@@ -33,7 +33,7 @@
                             type="password"
                             class="payment_wrap-form_group-cvv row_alignment-inner"
                             autocomplete="off"
-                            name="cvv"
+                            data-cp="cvv"
                             v-model="cvv"
                             mask="111"
                             placeholder="CVV"/>
@@ -49,10 +49,10 @@
                 <label for="card_name" class="cart_num">Имя и фамилия владельца карты</label>
                 <input
                     type="text"
-                    name="card_name"
+                    data-cp="name"
                     placeholder="введите  имя и фамилию владельца карты"
                     onkeyup="this.value = this.value.toUpperCase();"
-                    onkeypress="return /[a-z]/i.test(event.key)"
+                    onkeypress="return /[a-z ]/i.test(event.key)"
                     autocomplete="off">
             </div>
         </div>

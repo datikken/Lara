@@ -2,6 +2,8 @@
     window.token = '{{ csrf_token() }}';
 </script>
 
+<script src="https://widget.cloudpayments.ru/bundles/checkout"></script>
+
 <script src="https://api-maps.yandex.ru/2.1/?apikey=6a0c633c-193e-4f23-9ff1-01e421de70a5&lang=ru_RU" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

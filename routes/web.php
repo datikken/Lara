@@ -168,6 +168,9 @@ Route::get('admin/deleteAbout/{id}', ['uses' => "AdminAboutController@deleteAbou
 //TECH ROUTES
 Route::get('/checkCartState', ['uses' => 'CartController@checkCartState', 'as' => 'checkCartState']);
 
+//Session
+Route::get('/getSessionInfo', ['uses' => 'CustomerDataController@getSession', 'as' => 'getSessionInfo']);
+
 //Test file storage
 Route::get('/testStorage', function() {
     return "<img src=".Storage::url('product_images/product1.png').">";

@@ -42,7 +42,7 @@
 
                 <DeliveryIndex />
 
-                <TextBtn className="form_group-btn yellow_btn animated_btn" text="Продолжить" @click.native="proceedToPaymentPage"/>
+                <TextBtn className="form_group-btn yellow_btn animated_btn" text="Продолжить" @click.native="proceedToPaymentPage" id="proceedToPayments"/>
 
             </div>
         </div>
@@ -107,6 +107,9 @@
                         npt.value = ''
                         npt.setAttribute('disabled', '')
                     })
+
+                   window.location = window.location.href + '#proceedToPayments';
+
                 } else {
                     this.DELIVERY_TYPE_ERROR();
                 }

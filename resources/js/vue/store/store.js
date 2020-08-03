@@ -176,6 +176,34 @@ const store = new Vuex.Store({
                 valid.status = true;
             }
 
+            let checkout = new cp.Checkout(
+                // public id из личного кабинета
+                "test_api_00000000000000000000001",
+                // тег, содержащий поля данных карты
+                document.getElementById("paymentFormSample")
+            );
+
+            function createCryptogram() {
+                var result = checkout.createCryptogramPacket();
+
+                if (result.success) {
+                    // сформирована криптограмма
+                    console.log(result);
+                }
+                else {
+                    // найдены ошибки в введённых данных, объект `result.messages` формата:
+                    // { name: "В имени держателя карты слишком много символов", cardNumber: "Неправильный номер карты" }
+                    // где `name`, `cardNumber` соответствуют значениям атрибутов `<input ... data-cp="cardNumber">`
+                    for (var msgName in result.messages) {
+                        alert(result.messages[msgName]);
+                    }
+                }
+            };
+
+            if(valid) {
+                createCryptogram();
+            }
+
             console.log(obj,'payWithCard', valid)
 
         },

@@ -68,4 +68,25 @@ class CustomerDataController extends Controller
         $request->session()->put('cart-address', $arr);
         return response()->json((object) array('delivery-address' => $arr));
     }
+
+    public function getSessionInfo()
+    {
+        $merged = Session::get('cart');
+        $issue = Session::get('cart-issue');
+        $payment_info = Session::get('payment_info');
+        $fio = Session::get('cart-cutomerInfo');
+        $index = Session::get('cart-index');
+        $adresss = Session::get('cart-address');
+
+        $arr = array(
+            'cart' => $merged,
+            'issue' => $issue,
+            'payment_info' => $payment_info,
+            'fio' => $fio,
+            'index' => $index,
+            'adress' => $adresss
+        );
+
+        return response()->json($arr);
+    }
 }

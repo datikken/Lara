@@ -2,7 +2,7 @@
 
     <div class="payment_wrap-form_group-date" @click="toggleDropdown">
         <div class="year">
-            <span class="year_label" :data-name="dataName">{{ name }}</span>
+            <span class="year_label" :data-name="dataName">{{ text }}</span>
             <span class="arrow" style="background-image: url('/images/icons/arrow_right.svg')"></span>
 
             <ul class="invisible payment_dropdown">
@@ -17,7 +17,7 @@
 <script>
     export default {
         name: "CardDropdown",
-        props: ['data','name','data-name'],
+        props: ['data','text','data-name'],
         data: () => ({
             opened: false,
             greenLight: false
@@ -32,7 +32,7 @@
                 let $class;
                 let ul = this.$el.querySelector('ul');
 
-                if(e.currentTarget.querySelector('[data-name]').getAttribute('data-name') === 'year') {
+                if(e.currentTarget.querySelector('[data-name]').getAttribute('data-name') === 'expDateYear') {
                     $class = 'payment_dropdown_open';
                 } else {
                     $class = 'payment_dropdown_open-right'
