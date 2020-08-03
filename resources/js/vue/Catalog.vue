@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <OrdersHistory v-if="orders" data="" />
+    <!--<OrdersHistory v-if="orders" data="" />-->
 
 </div>
 
