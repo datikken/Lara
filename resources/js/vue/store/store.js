@@ -47,6 +47,9 @@ const store = new Vuex.Store({
         paymentProvider: state => state.paymentProvider
     },
     actions: {
+        FINISH_CONTRACT(context) {
+            context.commit('finishContract');
+        },
         FINISH_ORDER_PROCESS(context) {
             context.commit('finishOrderProcess');
         },
@@ -145,8 +148,11 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
-        removePaymentError() {
-
+        finishContract() {
+            console.log('send contract via email')
+            //
+            // router.push('/success');
+            // this.SCROLL_TO_TOP();
         },
         checkPaymentError(state) {
             let error = document.querySelector('[data-payment-error]');

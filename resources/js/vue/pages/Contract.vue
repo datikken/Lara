@@ -71,8 +71,7 @@
         },
         methods: {
             ...mapActions([
-                'SET_PAYMENT_ERROR',
-                'FINISH_ORDER_PROCESS'
+                'FINISH_CONTRACT'
             ]),
             setClass(e) {
                 let btns = this.$el.querySelectorAll('.dform_btn')
@@ -83,15 +82,8 @@
                 e.currentTarget.classList.toggle('dform_btn_active')
             },
             pushToThanks() {
-                if(this.paymentProvider.indexOf('Mastercard') >= 0) {
-                    if(!this.orderPaid) {
-                        return
-                    } else {
-                        this.FINISH_ORDER_PROCESS();
-                    }
-                } else {
-                    this.FINISH_ORDER_PROCESS();
-                }
+                this.FINISH_CONTRACT();
+
             }
         },
         computed: {
