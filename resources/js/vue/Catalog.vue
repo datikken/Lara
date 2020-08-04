@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <!--<OrdersHistory v-if="orders" data="" />-->
+    <OrdersHistory />
 
 </div>
 
@@ -106,8 +106,7 @@
         },
         methods: {
             ...mapActions([
-                'GET_ALL_PRODUCTS',
-                'GET_ORDERS_INFO'
+                'GET_ALL_PRODUCTS'
             ]),
             pageChange(page) {
                 this.page = page;
@@ -120,13 +119,9 @@
             products() {
                 return this.$store.state.filteredProducts;
             },
-            orders() {
-                return this.$store.state.orders
-            }
         },
         created() {
             this.GET_ALL_PRODUCTS();
-            this.GET_ORDERS_INFO();
         },
     }
 </script>

@@ -195,6 +195,8 @@ const store = new Vuex.Store({
                 url: '/getOrdersInfo',
                 success: function (data) {
                     state.orders = data;
+
+                    console.warn('getOrdersInfo', data);
                 },
                 error: function (error) {
                     console.warn(error);
@@ -506,6 +508,9 @@ const store = new Vuex.Store({
             axios.get('/getUserInfo')
                 .then(response => {
                     state.user = response.data;
+
+                    console.warn('store user', response.data);
+
                 })
 
             return state.user

@@ -42,7 +42,7 @@ class OrdersHistoryController {
             token: window.token
         }
 
-        let url = window.getOrderInfo.split('getOrderInfo')[0] + 'getOrderInfo';
+        let url = '/getSingleOrderInfo'
 
         $.ajax({
             method: "post",

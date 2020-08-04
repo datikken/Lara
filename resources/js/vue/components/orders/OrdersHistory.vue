@@ -17,39 +17,38 @@
                         <span class="history_wrapper-item_row-item_text">Номер заказа</span>
                     </div>
                     <div class="history_wrapper-item_row-item history_wrapper-item_row-item-title">
-                    <span class="history_wrapper-item_row-item_text">
-                        физик
-                    </span>
+                        <span class="history_wrapper-item_row-item_text" v-if="user.face === 'fizik'">Физическое лицо</span>
+                        <span class="history_wrapper-item_row-item_text" v-if="user.face === 'urik'">Юридическое лицо</span>
                     </div>
                     <div class="history_wrapper-item_row-item history_wrapper-item_row-item-title">
                         <span class="history_wrapper-item_row-item_text">Сумма</span>
                     </div>
                 </div>
 
-                <!--@foreach($orders_history as $order)-->
-                <div class="history_wrapper-item_row  order_values">
+
+                <div class="history_wrapper-item_row  order_values" v-for="order in orders.orders_history">
                     <div class="history_wrapper-item_row-item">
                         <span class="history_wrapper-item_row-item_val">
-                            <!--{{ $order->date }}-->
+                            {{ order.date }}
                         </span>
                     </div>
                     <div class="history_wrapper-item_row-item">
                         <span class="history_wrapper-item_row-item_val order_id">
-                            <!--{{ $order->id }}-->
+                            {{ order.id }}
                         </span>
                     </div>
                     <div class="history_wrapper-item_row-item">
                         <span class="history_wrapper-item_row-item_val">
-                            email
+                            {{ user.email }}
                         </span>
                     </div>
                     <div class="history_wrapper-item_row-item">
                         <span class="history_wrapper-item_row-item_val">
-                            <!--{{ $order->price }}-->
+                            {{ order.price }}
                         </span>
                     </div>
                 </div>
-                <!--@endforeach-->
+
 
                 <div class="history_wrapper-item_row">
                     <div class="history_wrapper-item_row-info history_wrapper-item_row-item-header">
@@ -67,51 +66,27 @@
                     </div>
                 </div>
 
-                <div class="order_items_container">
-                    <!--@foreach($last_order as $item)-->
-                    <div class="history_wrapper-item_row order_items">
-                        <div class="history_wrapper-item_row-info">
-                            <span class="history_wrapper-item_row-item_val">
-                                <!--{{ $last_order->id }}-->
-                            </span>
-                        </div>
-                        <div class="history_wrapper-item_row-info">
-                            <span class="history_wrapper-item_row-item_val">
-                                <!--{{ $item->item_name }}-->
-                            </span>
-                        </div>
 
-                        <div class="history_wrapper-item_row-info">
-                            <span class="history_wrapper-item_row-item_val">
-                                <!--{{ $item->quantity }}-->
-                            </span>
-                        </div>
-                        <div class="history_wrapper-item_row-info">
-                            <span class="history_wrapper-item_row-item_val">
-                                <!--@php echo $item->quantity * $item->item_price; @endphp-->
-                            </span>
-                        </div>
-                    </div>
-                    <!--@endforeach-->
-                </div>
+                <LastOrder :order="orders.last_order" v-if="orders.last_order" />
+
 
                 <div class="history_wrapper-item_row">
-                    <!--<a href="{{ route('repeatOrder', ['id' => $last_order->id ]) }}" class="history_wrapper-item_row-total-cta">-->
-                        <!--<span class="history_wrapper-item_row-total-cta_content">Положить в корзину</span>-->
-                    <!--</a>-->
+
+                    <TextBtn text="Положить в корзину" className="history_wrapper-item_row-total-cta text_buy-btn animated_btn" @click.native="repeatOrder" />
+
                     <div class="history_wrapper-item_row-total">
                         <div class="history_wrapper-item_row-total_content">
                             <span class="history_wrapper-item_row-total_content-title">Итого:</span>
-                            <span class="history_wrapper-item_row-total_content-value">
-                                <!--{{ $item->quantity }} ед.-->
+                            <span class="history_wrapper-item_row-total_content-value" v-for="order in orders.last_order_total">
+                                {{ order.quantity }} ед.
                             </span>
                         </div>
                     </div>
                     <div class="history_wrapper-item_row-total">
                         <div class="history_wrapper-item_row-total_content">
                             <span class="history_wrapper-item_row-total_content-title">Итого:</span>
-                            <span class="history_wrapper-item_row-total_content-value order_totalPrice">
-                                <!--{{ $last_order_total[0]->price }} р.-->
+                            <span class="history_wrapper-item_row-total_content-value order_totalPrice" v-for="order in orders.last_order_total">
+                                {{ order.price }} р.
                             </span>
                         </div>
 
@@ -129,11 +104,34 @@
 </template>
 
 <script>
+    import LastOrder from './LastOrder'
+    import TextBtn from '../btns/TextBtn'
+    import {mapActions, mapGetters} from 'vuex'
+
     export default {
         name: "OrdersHistory",
-        props: ['data'],
+        components: {
+            LastOrder,
+            TextBtn
+        },
         methods: {
-
+            ...mapActions([
+                'GET_ORDERS_INFO',
+                'GET_USERS_INFO'
+            ]),
+            repeatOrder(id) {
+                console.warn('order repeat', id);
+            }
+        },
+        computed: {
+            ...mapGetters(['user']),
+            orders() {
+                return this.$store.state.orders
+            }
+        },
+        mounted() {
+            this.GET_ORDERS_INFO();
+            this.GET_USERS_INFO();
         }
     }
 </script>
