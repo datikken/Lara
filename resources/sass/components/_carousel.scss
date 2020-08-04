@@ -3,11 +3,6 @@
   height: 367px;
   max-width: 1170px;
   margin: 0 auto;
-
-  @include breakpoint($phone) {
-    height: 474px !important;
-  }
-
   @include breakpoint($medium) {
     margin-bottom: 50px;
   }
@@ -24,6 +19,7 @@
   @include breakpoint($phone) {
     border-top: 1px solid $light_gray;
     position: relative;
+    height: 485px !important;
     margin-bottom: 50px;
     z-index: 0;
     display: block;

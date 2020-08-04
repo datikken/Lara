@@ -3764,12 +3764,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   max-width: 1170px;
   margin: 0 auto;
 }
-@media screen and (min-width: 600px) {
-  .owl-carousel,
-.owl-wrapper {
-    height: 474px !important;
-  }
-}
 @media screen and (min-width: 1030px) {
   .owl-carousel,
 .owl-wrapper {
@@ -3791,6 +3785,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   .owl-wrapper {
     border-top: 1px solid #e9e9ea;
     position: relative;
+    height: 485px !important;
     margin-bottom: 50px;
     z-index: 0;
     display: block;

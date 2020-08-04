@@ -37,7 +37,7 @@
                             alt="rub"
                         />
                     </div>
-                    <div class="carousel_card-wrapper_item-buttons_cart ajaxGETproduct" data-url="{{ route('AddToCartAjaxGet', ['id' => $product->id]) }}">
+                    <div class="carousel_card-wrapper_item-buttons_cart ajaxGETproduct animated_btn" data-url="{{ route('AddToCartAjaxGet', ['id' => $product->id]) }}">
                         <img
                             class="carousel_card-wrapper_item-buttons_cart-item"
                             src="/images/icons/cart.svg"
