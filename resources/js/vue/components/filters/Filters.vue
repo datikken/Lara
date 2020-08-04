@@ -2,7 +2,7 @@
 
     <div class="filters">
         <div class="filters_wrapper">
-            <FiltersItem name="Тип принтера" :filters="types" type="type" />
+            <FiltersItem name="Тип принтера" :filters="types" type="printertype" />
             <FiltersItem name="Бренд" :filters="brands" type="brand" />
             <FiltersItem name="Модель" :filters="models" type="art" />
         </div>

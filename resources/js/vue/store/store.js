@@ -516,12 +516,14 @@ const store = new Vuex.Store({
             state.productsLoaded = true;
         },
         filterProductByQuery(state, data) {
-            // console.warn('filterProductByQuery', data)
+            console.warn('filterProductByQuery', data)
+
             let newProducts = state.products.filter(item => {
                 let param = item.params
 
                 for (let key in data) {
-                    // console.log(param[key], data[key], 'for in loop');
+                    console.log(param[key], data[key], 'for in loop');
+
                     if (param[key] === undefined || param[key] != data[key])
                         return false;
                 }
@@ -550,7 +552,7 @@ const store = new Vuex.Store({
             state.brandFilters = [...new Set(state.products.map(item => item.params.brand))];
         },
         getProductTypeFilters(state) {
-            state.typeFilters = [...new Set(state.products.map(item => item.params.type))];
+            state.typeFilters = [...new Set(state.products.map(item => item.params.printertype))];
         },
         addProductToCart(state, {id, amount}) {
             let that = this;
@@ -614,6 +616,7 @@ const store = new Vuex.Store({
                             el.cape = newCape;
                             el.params = params;
 
+                            console.log(el.cape);
                         });
 
                         state.products = response.data;
