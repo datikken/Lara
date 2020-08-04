@@ -190,6 +190,9 @@ const store = new Vuex.Store({
                     state.orders.last_order = data.order;
                     state.orders.last_order.id = id;
                     state.orders.last_order.total = data.total;
+
+                    //XXX
+                    document.querySelector('.order_totalPrice').innerText = data.total;
                 },
                 error: function (error) {
                     console.warn(error);
