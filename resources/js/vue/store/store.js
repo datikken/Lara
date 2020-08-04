@@ -575,6 +575,10 @@ const store = new Vuex.Store({
                 this.dispatch('FILTER_PRODUCTS_BY_MODEL', query)
             }
 
+            if(Object.keys(query).length === 0) {
+                state.filteredProducts = state.products
+            }
+
             this.dispatch('GET_MODEL_BRAND_FILTERS')
         },
         getProductTypeFilters(state) {
@@ -670,10 +674,6 @@ const store = new Vuex.Store({
                             el.price = Math.ceil(el.price);
                             el.params = params;
                             el.cape = newCape;
-
-                            // el.cape.models =  Object.values(newCape);
-                            // el.cape.brands =  Object.keys(newCape);
-                            // console.log(el.cape);
                         });
 
                         state.products = response.data;
