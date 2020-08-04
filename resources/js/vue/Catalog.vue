@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <OrdersHistory />
+    <OrdersHistory v-if="this.orders" />
 
 </div>
 
@@ -80,7 +80,7 @@
     import Viewed from './components/viewed/Viewed'
     import Loader from './components/loader/Loader'
     import Modal from './components/modal/Modal'
-    import {mapActions} from 'vuex'
+    import {mapActions, mapGetters} from 'vuex'
 
     export default {
         name: "catalog",
@@ -105,6 +105,9 @@
             }
         },
         methods: {
+            ...mapGetters([
+                'orders'
+            ]),
             ...mapActions([
                 'GET_ALL_PRODUCTS'
             ]),
