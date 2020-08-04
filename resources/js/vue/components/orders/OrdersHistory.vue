@@ -26,7 +26,7 @@
                 </div>
 
 
-                <div class="history_wrapper-item_row  order_values" v-for="order in orders.orders_history">
+                <div class="history_wrapper-item_row  order_values" v-for="order in orders.orders_history" @click="viewDetails(order.id)" :data-OrderId="order.id">
                     <div class="history_wrapper-item_row-item">
                         <span class="history_wrapper-item_row-item_val">
                             {{ order.date }}
@@ -106,7 +106,7 @@
 <script>
     import LastOrder from './LastOrder'
     import TextBtn from '../btns/TextBtn'
-    import {mapActions, mapGetters} from 'vuex'
+    import {mapActions, mapGetters, mapState} from 'vuex'
 
     export default {
         name: "OrdersHistory",
@@ -114,17 +114,35 @@
             LastOrder,
             TextBtn
         },
+        data: () => ({
+            lastOrderInfo: ''
+        }),
         methods: {
             ...mapActions([
                 'GET_ORDERS_INFO',
-                'GET_USERS_INFO'
+                'GET_USERS_INFO',
+                'GET_SINGLE_ORDER_INFO'
             ]),
             repeatOrder(id) {
                 console.warn('order repeat', id);
+
+
+            },
+            viewDetails(id) {
+                this.GET_SINGLE_ORDER_INFO(id);
+
+                let rows = this.$el.querySelectorAll('[data-OrderId]')
+                    rows.forEach((row) => {
+                        let RowId = parseInt(row.getAttribute('data-OrderId'));
+                        row.classList.remove('last_order')
+                        if(RowId === id) {
+                            row.classList.add('last_order');
+                        }
+                    })
             }
         },
         computed: {
-            ...mapGetters(['user']),
+            ...mapGetters(['user','orders']),
             orders() {
                 return this.$store.state.orders
             }

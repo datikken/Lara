@@ -188,7 +188,6 @@
         }
         &:first-child {
           min-width: 55px !important;
-          margin-top: 10px;
         }
         &-info {
           padding: 20px;
@@ -274,6 +273,9 @@
 
       &_heading {
         padding: 20px 20px 0 0;
+        border-bottom: 1px solid $yellow;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
 
         &-text {
           font-family: $font;

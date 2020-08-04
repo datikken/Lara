@@ -3,7 +3,7 @@
         <div class="history_wrapper-item_row order_items" v-for="item in order">
             <div class="history_wrapper-item_row-info">
                 <span class="history_wrapper-item_row-item_val">
-                    {{ item.id }}
+                    {{ order.id }}
                 </span>
             </div>
             <div class="history_wrapper-item_row-info">
@@ -29,7 +29,11 @@
 <script>
     export default {
         name: "LastOrder",
-        props: ['order']
+        props: ['order'],
+        mounted() {
+            console.log(this.$props.order, 'last order mounted')
+        }
+
     }
 </script>
 

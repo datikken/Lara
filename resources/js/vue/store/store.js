@@ -47,6 +47,9 @@ const store = new Vuex.Store({
         paymentProvider: state => state.paymentProvider
     },
     actions: {
+        GET_SINGLE_ORDER_INFO(context, id) {
+            context.commit('getSingleOrderInfo', id)
+        },
         FINISH_CONTRACT(context) {
             context.commit('finishContract');
         },
@@ -156,6 +159,45 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
+        getOrdersInfo(state) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
+            $.ajax({
+                method: "GET",
+                url: '/getOrdersInfo',
+                success: function (data) {
+                    state.orders = data;
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+        },
+        getSingleOrderInfo(state, id) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
+
+            $.ajax({
+                method: "GET",
+                url: `/getSingleOrderInfo/${id}`,
+                success: function (data) {
+                    state.orders.last_order = data.order;
+                    state.orders.last_order.id = id;
+                    state.orders.last_order.total = data.total;
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+
+            return state.orders.last_order
+        },
         finishContract() {
             console.log('send contract via email')
             //
@@ -183,26 +225,6 @@ const store = new Vuex.Store({
             state.deliveryAdress = valid;
 
             return state.deliveryAdress;
-        },
-        getOrdersInfo(state) {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': window.token
-                }
-            });
-            $.ajax({
-                method: "GET",
-                url: '/getOrdersInfo',
-                success: function (data) {
-                    state.orders = data;
-
-                    console.warn('getOrdersInfo', data);
-                },
-                error: function (error) {
-                    console.warn(error);
-                }
-            });
-
         },
         scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -508,9 +530,6 @@ const store = new Vuex.Store({
             axios.get('/getUserInfo')
                 .then(response => {
                     state.user = response.data;
-
-                    console.warn('store user', response.data);
-
                 })
 
             return state.user
@@ -521,8 +540,8 @@ const store = new Vuex.Store({
 
             //XXX
             let amount = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
-            amount.innerText = 1;
-            amount.setAttribute('data-modal-val', 1);
+                amount.innerText = 1;
+                amount.setAttribute('data-modal-val', 1);
         },
         setProductsLoaded(state, data) {
             state.productsLoaded = true;

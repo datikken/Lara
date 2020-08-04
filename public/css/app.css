@@ -4930,7 +4930,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .history_wrapper-item_row:first-child {
   min-width: 55px !important;
-  margin-top: 10px;
 }
 .history_wrapper-item_row-info {
   padding: 20px;
@@ -5016,6 +5015,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .history_wrapper-item_heading {
   padding: 20px 20px 0 0;
+  border-bottom: 1px solid #fdd935;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
 }
 .history_wrapper-item_heading-text {
   font-family: "Montserrat", sans-serif;

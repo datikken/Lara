@@ -6,7 +6,7 @@ Route::group(['middleware' => 'restrictToAdmin'], function() {
     Route::get('/admin/changeOrderStatus/{id}',['uses' => 'AdminOrdersController@changeOrderStatus', 'as' => 'changeOrderStatus']);
     Route::get('/getOrdersInfo', ['uses' => 'OrdersController@ordersHistory', 'as' => 'GetOrdersInfo']);
     Route::get('/checkoutProducts', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
-    Route::post('/getSingleOrderInfo/{id}',['uses' => 'OrdersController@getOrderInfo', 'as' => 'getSingleOrderInfo']);
+    Route::get('/getSingleOrderInfo/{id}',['uses' => 'OrdersController@getOrderInfo', 'as' => 'getSingleOrderInfo']);
 
 //Tracking
     Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking']);

@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 class OrdersHistoryController {
-    _fillItems(obj,id) {
+    _fillItems(obj,id, total) {
         let dest = document.querySelector('.order_items_container');
         let btnLink = document.querySelector('.history_wrapper-item_row-total-cta');
         let orderLength = document.querySelector('.history_wrapper-item_row-total_content-value');
@@ -9,11 +9,11 @@ class OrdersHistoryController {
         let row = document.querySelectorAll('.order_items');
             row.forEach((el) => el.remove());
 
-            obj.order_items.forEach((el) => {
+            obj.forEach((el) => {
                let block = `
                     <div class="history_wrapper-item_row order_items">
                         <div class="history_wrapper-item_row-info">
-                            <span class="history_wrapper-item_row-item_val">${obj.order[0].id}</span>
+                            <span class="history_wrapper-item_row-item_val">${id}</span>
                         </div>
                         <div class="history_wrapper-item_row-info">
                             <span class="history_wrapper-item_row-item_val">${el.item_name}</span>
@@ -30,10 +30,11 @@ class OrdersHistoryController {
                     dest.insertAdjacentHTML('beforeend', block);
             })
 
-        orderLength.innerText = `${obj.order_items.length} ед.`;
-        totalPrice.innerText = `${obj.order[0].price} р.`;
+        orderLength.innerText = `${obj.length} ед.`;
+        totalPrice.innerText = `${total} р.`;
+
         let val = btnLink.getAttribute('href').split('/repeatOrder');
-                  btnLink.setAttribute('href', val[0] + `/repeatOrder/${id}`);
+                  btnLink.setAttribute('href', val + `/repeatOrder/${id}`);
     }
     _makeCall(id) {
         let that = this;
@@ -45,12 +46,13 @@ class OrdersHistoryController {
         let url = '/getSingleOrderInfo'
 
         $.ajax({
-            method: "post",
+            method: "get",
             url: url + `/${id}`,
             data: dataObj,
             headers: {'X-CSRF-TOKEN':  window.token},
             success: function (data) {
-                that._fillItems(data,id);
+                // console.warn(data, 'orders controller')
+                that._fillItems(data.order, id, data.total);
             },
             error: function (error) {
                 console.warn(error);

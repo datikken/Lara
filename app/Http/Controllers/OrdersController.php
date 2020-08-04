@@ -9,12 +9,12 @@ class OrdersController extends Controller
 {
     public function getOrderInfo($id)
     {
-        $order = DB::table('orders')->where('id', $id)->get();
         $order_items = DB::table('order_items')->where('order_id', $id)->get();
+        $total = DB::table('orders')->where('id', $id)->value('price');
 
         $arr = array(
-            'order' => $order,
-            'order_items' => $order_items
+            'order' => $order_items,
+            'total' => $total
         );
 
         return response()->json($arr);
