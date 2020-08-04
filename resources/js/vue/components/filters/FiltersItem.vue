@@ -18,6 +18,7 @@
 
 <script>
     import SimpleCheckbox from '../checkboxes/SimpleCheckbox';
+    import {mapActions} from 'vuex'
 
     export default {
         name: "FiltersItem",
@@ -42,6 +43,9 @@
         created() {
         },
         methods: {
+            ...mapActions([
+                'FILTER_PRODUCTS',
+            ]),
             collectAplliedFilters() {
                 let filterBlocks = document.querySelectorAll('.filters_wrapper-item');
                 let data = {};
@@ -60,7 +64,8 @@
                         }
                     });
 
-                this.$store.dispatch('FILTER_PRODUCTS', data);
+                    this.FILTER_PRODUCTS(data);
+
             },
             clearFilters() {
                 let allOptions = this.$el.querySelectorAll('.filters_wrapper-item_list-text');

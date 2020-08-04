@@ -131,13 +131,21 @@ const store = new Vuex.Store({
         FILTER_PRODUCTS(context, data) {
             context.commit('filterProductByQuery', data);
         },
+        FILTER_PRODUCTS_BY_BRAND(context, query) {
+            context.commit('filterProductsByBrand', query);
+        },
+        FILTER_PRODUCTS_BY_MODEL(context, query) {
+            context.commit('filterProductsByModel', query);
+        },
+        FILTER_PRODUCTS_BY_PRINTERTYPE(context, query) {
+            context.commit('filterProductsByPrinterType', query);
+        },
         COLLECT_FILTERS(context) {
             context.commit('getProductTypeFilters');
-            context.commit('getProductBrandFilters');
-            context.commit('getProductModelFilters');
+            context.commit('getProductModelBrandFilters');
         },
-        GET_MODEL_FILTERS(context, data) {
-            context.commit('getProductModelFilters', data);
+        GET_MODEL_BRAND_FILTERS(context) {
+            context.commit('getProductModelBrandFilters');
         },
         fixCartStatus({dispatch, commit}, {data}) {
             let amount = data.totalQuantity;
@@ -361,7 +369,7 @@ const store = new Vuex.Store({
 
             state.urikValidation = returnObj;
 
-            this.dispatch('SAVE_URIKS_DATA', obj)
+            this.dispatch('SAVE_URIKS_DATA', obj);
 
             return returnObj;
         },
@@ -467,7 +475,6 @@ const store = new Vuex.Store({
                 data: obj,
                 success: function (data) {
                     state.usersInfo = data
-                    // console.log(state.usersInfo)
                 },
                 error: function (error) {
                     console.warn(error);
@@ -515,25 +522,79 @@ const store = new Vuex.Store({
         setProductsLoaded(state, data) {
             state.productsLoaded = true;
         },
-        filterProductByQuery(state, data) {
-            console.warn('filterProductByQuery', data)
+        filterProductsByBrand(state, query) {
+            let newProducts = [];
 
-            let newProducts = state.products.filter(item => {
-                let param = item.params
+            state.products.forEach((prdt) => {
+                let cape = JSON.stringify(Object.keys(prdt.cape));
 
-                for (let key in data) {
-                    console.log(param[key], data[key], 'for in loop');
-
-                    if (param[key] === undefined || param[key] != data[key])
-                        return false;
+                if(cape.indexOf(query.brand) >= 0) {
+                    newProducts.push(prdt)
                 }
-
-                return true;
             });
 
-            if (!data.art) this.dispatch('GET_MODEL_FILTERS', data);
+            if(newProducts.length > 0) {
+                state.filteredProducts = newProducts;
+            }
+        },
+        filterProductsByPrinterType(state, query) {
+            let newProducts = [];
+
+            state.products.forEach((prdt) => {
+                let param = prdt.params;
+                if(param.printertype === query.printertype) {
+                    newProducts.push(prdt)
+                }
+            });
 
             state.filteredProducts = newProducts;
+        },
+        filterProductsByModel(state, query) {
+            let newProducts = [];
+
+            state.products.forEach((prdt) => {
+                let cape = JSON.stringify(Object.values(prdt.cape));
+
+                if(cape.indexOf(query.model) >= 0) {
+                    newProducts.push(prdt)
+                }
+            });
+
+            if(newProducts.length > 0) {
+                state.filteredProducts = newProducts;
+            }
+        },
+        filterProductByQuery(state, query) {
+            if(query.printertype) {
+                this.dispatch('FILTER_PRODUCTS_BY_PRINTERTYPE', query);
+            }
+            if(query.brand) {
+                this.dispatch('FILTER_PRODUCTS_BY_BRAND', query)
+            }
+            if(query.model) {
+                this.dispatch('FILTER_PRODUCTS_BY_MODEL', query)
+            }
+
+            this.dispatch('GET_MODEL_BRAND_FILTERS')
+        },
+        getProductTypeFilters(state) {
+            state.typeFilters = [...new Set(state.products.map(item => item.params.printertype))];
+        },
+        getProductModelBrandFilters(state) {
+            let allProductBrands = [];
+            let allProductModels = [];
+
+            state.filteredProducts.map((prdct, index) => {
+                let cape = prdct.cape;
+                let brands = Object.keys(cape);
+                let models = Object.values(cape);
+
+                brands.forEach(brand => allProductBrands.push(brand));
+                models.forEach(model => allProductModels.push(model));
+            })
+
+            state.brandFilters = [...new Set(allProductBrands)];
+            state.modelFilters = [...new Set(allProductModels)];
         },
         getProductModelFilters(state, data = {}) {
             let newProducts = state.products.filter(item => {
@@ -547,12 +608,6 @@ const store = new Vuex.Store({
             });
 
             state.modelFilters = [...new Set(newProducts.map(item => item.params.art))];
-        },
-        getProductBrandFilters(state) {
-            state.brandFilters = [...new Set(state.products.map(item => item.params.brand))];
-        },
-        getProductTypeFilters(state) {
-            state.typeFilters = [...new Set(state.products.map(item => item.params.printertype))];
         },
         addProductToCart(state, {id, amount}) {
             let that = this;
@@ -613,10 +668,12 @@ const store = new Vuex.Store({
                             })
 
                             el.price = Math.ceil(el.price);
-                            el.cape = newCape;
                             el.params = params;
+                            el.cape = newCape;
 
-                            console.log(el.cape);
+                            // el.cape.models =  Object.values(newCape);
+                            // el.cape.brands =  Object.keys(newCape);
+                            // console.log(el.cape);
                         });
 
                         state.products = response.data;
