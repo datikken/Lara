@@ -207,7 +207,9 @@
             <form action="{{ route('searchProducts') }}" method="get" style="margin-bottom: 0;" data-searchForm>
                 {{ csrf_field() }}
 
-                <div id="app"></div>
+                <div id="app">
+                    <input type="text" />
+                </div>
             </form>
 
             {{--@include('components.search.search_results')--}}
