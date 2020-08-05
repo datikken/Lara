@@ -19,45 +19,45 @@ Route::group(['middleware' => 'ajax'], function() {
 
 //PRODUCTS
     Route::group(['middleware' => 'checkUserRole'], function() {
-    Route::post('admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider']);
+    Route::post('/admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider']);
 
-    Route::get('admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
-    Route::get('admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts']);
-    Route::get('admin/users', ['uses' => "AdminUsersController@index", 'as' => 'adminDisplayUsers']);
+    Route::get('/admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
+    Route::get('/admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts']);
+    Route::get('/admin/users', ['uses' => "AdminUsersController@index", 'as' => 'adminDisplayUsers']);
 //Display Edit Product form
-    Route::get('admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);
+    Route::get('/admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);
 //Display edit Product form
-//    Route::get('admin/editProductImageForm/{id}', ['uses' => "AdminProductsController@editProductImageForm", 'as' => 'adminEditProductImageForm']);
+//    Route::get('/admin/editProductImageForm/{id}', ['uses' => "AdminProductsController@editProductImageForm", 'as' => 'adminEditProductImageForm']);
 //update product image
-//    Route::post('admin/updateProductImage/{id}', ['uses' => 'AdminProductsController@updateProductImage', 'as' => 'adminUpdateProductImage']);
+//    Route::post('/admin/updateProductImage/{id}', ['uses' => 'AdminProductsController@updateProductImage', 'as' => 'adminUpdateProductImage']);
 //update product fields
-    Route::post('admin/updateProduct/{id}', ['uses' => 'AdminProductsController@updateProduct', 'as' => 'adminUpdateProduct']);
+    Route::post('/admin/updateProduct/{id}', ['uses' => 'AdminProductsController@updateProduct', 'as' => 'adminUpdateProduct']);
 //Display create Product form
-    Route::get('admin/createProductForm', ['uses' => "AdminProductsController@createProductForm", 'as' => 'adminCreateProductForm']);
+    Route::get('/admin/createProductForm', ['uses' => "AdminProductsController@createProductForm", 'as' => 'adminCreateProductForm']);
 //send data create Product form
-    Route::post('admin/sendCreateProductForm', ['uses' => "AdminProductsController@sendCreateProductForm", 'as' => 'adminSendCreateProductForm']);
+    Route::post('/admin/sendCreateProductForm', ['uses' => "AdminProductsController@sendCreateProductForm", 'as' => 'adminSendCreateProductForm']);
 //Delete product
-    Route::get('admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
+    Route::get('/admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
 //Load multiple images for product
-    Route::get('admin/dropZone/{id}', ['uses' => 'AdminProductsController@dropZoneForm', 'as' => 'dropZoneForm']);
-    Route::post('admin/addMultipleProductImages/{id}', ['uses' => 'AdminProductsController@addMultipleProductImages', 'as' => 'addMultipleProductImages']);
-    Route::get('admin/cleanProductImages/{id}', ['uses' => 'AdminProductsController@cleanProductImages', 'as' => 'cleanProductImages']);
+    Route::get('/admin/dropZone/{id}', ['uses' => 'AdminProductsController@dropZoneForm', 'as' => 'dropZoneForm']);
+    Route::post('/admin/addMultipleProductImages/{id}', ['uses' => 'AdminProductsController@addMultipleProductImages', 'as' => 'addMultipleProductImages']);
+    Route::get('/admin/cleanProductImages/{id}', ['uses' => 'AdminProductsController@cleanProductImages', 'as' => 'cleanProductImages']);
 
 //BANNERS
-    Route::get('admin/adminCreateBannerForm', ['uses' => "AdminBannersController@createBannerForm", 'as' => 'adminCreateBannerForm']);
+    Route::get('/admin/adminCreateBannerForm', ['uses' => "AdminBannersController@createBannerForm", 'as' => 'adminCreateBannerForm']);
     Route::get('/admin/banners', ['uses' => "AdminBannersController@index", 'as' => 'setBanner']);
 
 //INFORMATION
-    Route::get('admin/information', ['uses' => "AdminInformationController@index", 'as' => 'informationList']);
-    Route::get('admin/createInformation', ['uses' => 'AdminInformationController@showCreateInfoForm', 'as' => 'adminCreateInfo']);
-    Route::get('admin/deleteInfo/{id}', ['uses' => 'AdminInformationController@deleteInfo', 'as' => 'adminDeleteInfo']);
-    Route::get('admin/editInformation/{id}', ['uses' => "AdminInformationController@editInformation", 'as' => 'adminEditInformation']);
-    Route::post('admin/createInfo', ['uses' => 'AdminInformationController@createInfo', 'as' => 'adminSaveCreateInfo']);
-    Route::post('admin/editInformationForm/{id}', ['uses' => "AdminInformationController@editInformationForm", 'as' => 'editInformationForm']);
+    Route::get('/admin/information', ['uses' => "AdminInformationController@index", 'as' => 'informationList']);
+    Route::get('/admin/createInformation', ['uses' => 'AdminInformationController@showCreateInfoForm', 'as' => 'adminCreateInfo']);
+    Route::get('/admin/deleteInfo/{id}', ['uses' => 'AdminInformationController@deleteInfo', 'as' => 'adminDeleteInfo']);
+    Route::get('/admin/editInformation/{id}', ['uses' => "AdminInformationController@editInformation", 'as' => 'adminEditInformation']);
+    Route::post('/admin/createInfo', ['uses' => 'AdminInformationController@createInfo', 'as' => 'adminSaveCreateInfo']);
+    Route::post('/admin/editInformationForm/{id}', ['uses' => "AdminInformationController@editInformationForm", 'as' => 'editInformationForm']);
 
 //EMAILS
-    Route::get('admin/sendemail', 'SendEmailController@index');
-    Route::post('admin/sendemail/send', 'SendEmailController@send');
+    Route::get('/admin/sendemail', 'SendEmailController@index');
+    Route::post('/admin/sendemail/send', 'SendEmailController@send');
 });
 
 //Main page
@@ -133,37 +133,44 @@ Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'su
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //ADMIN - functionality
+
+//Documents
+Route::get('/admin/displayDocumentUpload', ['uses' => 'AdminDocumentsController@create', 'as' => 'AdminDisplayDocumentUpload']);
+Route::post('/admin/createDocument', ['uses' => 'AdminDocumentsController@store', 'as' => 'AdminCreateDocument']);
+Route::get('/admin/displayDocuments', ['uses' => 'AdminDocumentsController@index', 'as' => 'AdminDisplayDocuments']);
+Route::get('/admin/deleteDocument/{id}',['uses' => 'AdminDocumentsController@destroy', 'as' => 'AdminDeleteDocument']);
+
 //Subscriptions
-Route::get('admin/subscriptions',['uses' => 'AdminSubscriptionsController@index', 'as' => 'AdminSubscriptions']);
+Route::get('/admin/subscriptions',['uses' => 'AdminSubscriptionsController@index', 'as' => 'AdminSubscriptions']);
 //Tracking
-Route::get('admin/tracking', ['uses' => 'AdminTrackingController@index', 'as' => 'AdminDisplayTracking']);
-Route::post('admin/collectData', ['uses' => 'AdminTrackingController@collectData', 'as' => 'AdminCollectTracking']);
+Route::get('/admin/tracking', ['uses' => 'AdminTrackingController@index', 'as' => 'AdminDisplayTracking']);
+Route::post('/admin/collectData', ['uses' => 'AdminTrackingController@collectData', 'as' => 'AdminCollectTracking']);
 
 //Main slider
-Route::get('admin/slider', ['uses' => 'AdminMainSliderController@display', 'as' => 'AdminMainSlider']);
-Route::get('admin/slider/{id}', ['uses' => 'AdminMainSliderController@delete', 'as' => 'AdminDeleteMainSlider']);
-Route::get('admin/sliderDisplayCreate', ['uses' => 'AdminMainSliderController@showCreateForm', 'as' => 'AdminDisplayCreateMainSlider']);
+Route::get('/admin/slider', ['uses' => 'AdminMainSliderController@display', 'as' => 'AdminMainSlider']);
+Route::get('/admin/slider/{id}', ['uses' => 'AdminMainSliderController@delete', 'as' => 'AdminDeleteMainSlider']);
+Route::get('/admin/sliderDisplayCreate', ['uses' => 'AdminMainSliderController@showCreateForm', 'as' => 'AdminDisplayCreateMainSlider']);
 
 //Orders
-Route::get('admin/orders', ['uses' => 'AdminOrdersController@index', 'as' => 'AdminDisplayOrders']);
+Route::get('/admin/orders', ['uses' => 'AdminOrdersController@index', 'as' => 'AdminDisplayOrders']);
 //Users
-Route::get('admin/users', ['uses' => 'AdminUsersController@index', 'as' => 'adminDisplayUsers']);
+Route::get('/admin/users', ['uses' => 'AdminUsersController@index', 'as' => 'adminDisplayUsers']);
 
 //BLOG
-Route::get('admin/blog',['uses' => 'AdminPostController@index', 'as' => 'adminDisplayBlog']);
-Route::get('admin/createPost',['uses' => 'AdminPostController@showCreateForm', 'as' => 'adminDisplayCreateForm']);
-Route::post('admin/sendCreatePost',['uses' => 'AdminPostController@sendCreatePost', 'as' => 'sendCreatePost']);
+Route::get('/admin/blog',['uses' => 'AdminPostController@index', 'as' => 'adminDisplayBlog']);
+Route::get('/admin/createPost',['uses' => 'AdminPostController@showCreateForm', 'as' => 'adminDisplayCreateForm']);
+Route::post('/admin/sendCreatePost',['uses' => 'AdminPostController@sendCreatePost', 'as' => 'sendCreatePost']);
 
-Route::post('admin/sendCreatePhoto',['uses' => 'AdminPostController@savePostImage', 'as' => 'adminSavePhoto']);
-Route::get('admin/deletePost/{id}', ['uses' => "AdminPostController@deletePost", 'as' => 'AdminDeletePost']);
-Route::get('admin/editPost/{id}', ['uses' => "AdminPostController@editPost", 'as' => 'AdminEditPost']);
-Route::post('admin/updatePost/{id}',['uses' => 'AdminPostController@updatePost', 'as' => 'updateCreatedPost']);
+Route::post('/admin/sendCreatePhoto',['uses' => 'AdminPostController@savePostImage', 'as' => 'adminSavePhoto']);
+Route::get('/admin/deletePost/{id}', ['uses' => "AdminPostController@deletePost", 'as' => 'AdminDeletePost']);
+Route::get('/admin/editPost/{id}', ['uses' => "AdminPostController@editPost", 'as' => 'AdminEditPost']);
+Route::post('/admin/updatePost/{id}',['uses' => 'AdminPostController@updatePost', 'as' => 'updateCreatedPost']);
 
 //ABOUT
-Route::get('admin/about', ['uses' => "AdminAboutController@index", 'as' => 'adminDisplayAbout']);
-Route::get('admin/createAbout', ['uses' => "AdminAboutController@displayCreateAbout", 'as' => 'adminDisplayCreateAbout']);
-Route::post('admin/sendCreateAbout', ['uses' => "AdminAboutController@sendCreateAbout", 'as' => 'adminSendCreateAbout']);
-Route::get('admin/deleteAbout/{id}', ['uses' => "AdminAboutController@deleteAbout", 'as' => 'AdminDeleteAbout']);
+Route::get('/admin/about', ['uses' => "AdminAboutController@index", 'as' => 'adminDisplayAbout']);
+Route::get('/admin/createAbout', ['uses' => "AdminAboutController@displayCreateAbout", 'as' => 'adminDisplayCreateAbout']);
+Route::post('/admin/sendCreateAbout', ['uses' => "AdminAboutController@sendCreateAbout", 'as' => 'adminSendCreateAbout']);
+Route::get('/admin/deleteAbout/{id}', ['uses' => "AdminAboutController@deleteAbout", 'as' => 'AdminDeleteAbout']);
 
 //TECH ROUTES
 Route::get('/checkCartState', ['uses' => 'CartController@checkCartState', 'as' => 'checkCartState']);

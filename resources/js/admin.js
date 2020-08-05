@@ -8,5 +8,3 @@ if(admin) {
 
    let dropdown = new DroDown(drop);
 }
-
-
