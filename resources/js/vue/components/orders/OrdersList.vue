@@ -66,7 +66,6 @@
 
 <script>
     import {mapActions,mapGetters} from 'vuex'
-    import router from '../../router/router'
     import TextBtn from '../btns/TextBtn'
 
     export default {

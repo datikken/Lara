@@ -253,6 +253,9 @@ class ProductsController extends Controller
         $cart = Session::get('cart');
         $user_id = Auth::id();
 
+        $cust_data = new CustomerDataController();
+        $customer_data = $cust_data->getSessionInfo();
+
         if($cart) {
             $date = date('Y-m-d H:i:s');
 
@@ -295,7 +298,7 @@ class ProductsController extends Controller
             $mailer::sendOrderWasCreated($order_id);
         }
 
-        return response()->json($payment_info);
+        return response()->json($payment_info, $customer_data);
     }
 
     public function checkoutProducts()
@@ -313,6 +316,6 @@ class ProductsController extends Controller
             'metro' => $metro
         ];
 
-        $request->session()->put('cart-issue', $arr);
+        $request->session()->put('cart-pickup', $arr);
     }
 }

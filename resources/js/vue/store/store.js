@@ -218,7 +218,6 @@ const store = new Vuex.Store({
         },
         finishOrderProcess() {
             router.push('/success');
-            this.SCROLL_TO_TOP();
         },
         setPickUpPoint(state, obj) {
             state.pickUpPoint = obj;
@@ -328,6 +327,8 @@ const store = new Vuex.Store({
                 url: '/createOrder',
                 success: function (data) {
                     state.order = data;
+
+                    console.warn('create order', data);
                 },
                 error: function (error) {
                     console.warn(error);
