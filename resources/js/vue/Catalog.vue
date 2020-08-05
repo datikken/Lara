@@ -105,9 +105,6 @@
             }
         },
         methods: {
-            ...mapGetters([
-                'orders'
-            ]),
             ...mapActions([
                 'GET_ALL_PRODUCTS'
             ]),
@@ -119,12 +116,18 @@
             }
         },
         computed: {
+            ...mapGetters([
+                'orders'
+            ]),
             products() {
                 return this.$store.state.filteredProducts;
             },
         },
         created() {
             this.GET_ALL_PRODUCTS();
+
+
+            console.log(this.orders,'orders in catalog')
         },
     }
 </script>
