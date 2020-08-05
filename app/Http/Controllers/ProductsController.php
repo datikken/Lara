@@ -298,7 +298,7 @@ class ProductsController extends Controller
             $mailer::sendOrderWasCreated($order_id);
         }
 
-        $arr = array('payment_info' => $payment_info, 'customer_data' => $customer_data->original);
+        $arr = array('customer_data' => $customer_data->original);
 
         return response()->json($arr);
     }
