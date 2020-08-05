@@ -298,7 +298,9 @@ class ProductsController extends Controller
             $mailer::sendOrderWasCreated($order_id);
         }
 
-        return response()->json($payment_info, $customer_data);
+        $arr = array('payment_info' => $payment_info, 'customer_data' => $customer_data);
+
+        return response()->json($arr);
     }
 
     public function checkoutProducts()
