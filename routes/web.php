@@ -139,6 +139,7 @@ Route::get('/admin/displayDocumentUpload', ['uses' => 'AdminDocumentsController@
 Route::post('/admin/createDocument', ['uses' => 'AdminDocumentsController@store', 'as' => 'AdminCreateDocument']);
 Route::get('/admin/displayDocuments', ['uses' => 'AdminDocumentsController@index', 'as' => 'AdminDisplayDocuments']);
 Route::get('/admin/deleteDocument/{id}',['uses' => 'AdminDocumentsController@destroy', 'as' => 'AdminDeleteDocument']);
+Route::get('/admin/downloadDocument/{name}', ['uses' => 'AdminDocumentsController@download', 'as' => 'AdminDocumentsDownload']);
 
 //Subscriptions
 Route::get('/admin/subscriptions',['uses' => 'AdminSubscriptionsController@index', 'as' => 'AdminSubscriptions']);

@@ -76,11 +76,17 @@ class AdminDocumentsController extends Controller
      * @param  \App\Document  $documents
      * @return \Illuminate\Http\Response
      */
-    public function edit(Document $documents)
+    public function download(Request $request)
     {
-        //
-    }
+        $name = $request->name;
+        $path = storage_path().'/app/public/documents/' . $name;
 
+        $headers = [
+            'Content-Type' => 'application/pdf',
+        ];
+
+        return response()->download($path);
+    }
     /**
      * Update the specified resource in storage.
      *
