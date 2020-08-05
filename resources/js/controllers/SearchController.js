@@ -9,7 +9,7 @@ class SearchController {
         let offCatalog = document.querySelector('.menu_wrapper-item_search_input');
         let el = document.querySelector('[type="search"]');
 
-        if(offCatalog) {
+        if (offCatalog) {
             new Vue({
                 render: h => h(app),
                 store: store,

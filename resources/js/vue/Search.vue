@@ -1,7 +1,7 @@
 <template>
     <div>
-        <Input />
-        <SearchList />
+        <Input/>
+        <SearchList/>
     </div>
 </template>
 

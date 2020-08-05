@@ -1,24 +1,24 @@
 <?php
 //Auth routes
 Auth::routes(['verify' => true]);
-Route::group(['middleware' => 'restrictToAdmin'], function() {
+Route::group(['middleware' => 'restrictToAdmin'], function () {
 //ORDERS
-    Route::get('/admin/changeOrderStatus/{id}',['uses' => 'AdminOrdersController@changeOrderStatus', 'as' => 'changeOrderStatus']);
+    Route::get('/admin/changeOrderStatus/{id}', ['uses' => 'AdminOrdersController@changeOrderStatus', 'as' => 'changeOrderStatus']);
     Route::get('/getOrdersInfo', ['uses' => 'OrdersController@ordersHistory', 'as' => 'GetOrdersInfo']);
-    Route::get('/checkoutProducts', ['uses' => 'ProductsController@checkoutProducts', 'as'=> 'checkoutProducts']);
-    Route::get('/getSingleOrderInfo/{id}',['uses' => 'OrdersController@getOrderInfo', 'as' => 'getSingleOrderInfo']);
+    Route::get('/checkoutProducts', ['uses' => 'ProductsController@checkoutProducts', 'as' => 'checkoutProducts']);
+    Route::get('/getSingleOrderInfo/{id}', ['uses' => 'OrdersController@getOrderInfo', 'as' => 'getSingleOrderInfo']);
 
 //Tracking
     Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking']);
 });
 
-Route::group(['middleware' => 'ajax'], function() {
+Route::group(['middleware' => 'ajax'], function () {
     //Search page
-    Route::get('search', ['uses'=> "ProductsController@search", 'as' => 'searchProducts']);
+    Route::get('search', ['uses' => "ProductsController@search", 'as' => 'searchProducts']);
 });
 
 //PRODUCTS
-    Route::group(['middleware' => 'checkUserRole'], function() {
+Route::group(['middleware' => 'checkUserRole'], function () {
     Route::post('/admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider']);
 
     Route::get('/admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
@@ -37,7 +37,7 @@ Route::group(['middleware' => 'ajax'], function() {
 //send data create Product form
     Route::post('/admin/sendCreateProductForm', ['uses' => "AdminProductsController@sendCreateProductForm", 'as' => 'adminSendCreateProductForm']);
 //Delete product
-    Route::get('/admin/deleteProduct/{id}',['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
+    Route::get('/admin/deleteProduct/{id}', ['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
 //Load multiple images for product
     Route::get('/admin/dropZone/{id}', ['uses' => 'AdminProductsController@dropZoneForm', 'as' => 'dropZoneForm']);
     Route::post('/admin/addMultipleProductImages/{id}', ['uses' => 'AdminProductsController@addMultipleProductImages', 'as' => 'addMultipleProductImages']);
@@ -61,7 +61,7 @@ Route::group(['middleware' => 'ajax'], function() {
 });
 
 //Main page
-Route::get('/',['uses' => "ProductsController@showIndex", 'as' => 'index']);
+Route::get('/', ['uses' => "ProductsController@showIndex", 'as' => 'index']);
 
 //CATALOG
 Route::get('/catalog', ['uses' => "ProductsController@catalogHTML", 'as' => 'allProducts']);
@@ -71,14 +71,14 @@ Route::get('/catalogСartridge', ['uses' => "ProductsController@index", 'as' => 
 ////Catalog page
 //Route::get('/catalogPaper', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
 
-Route::get('/getUserInfo', ['uses' => 'UsersController@get_user_info','as'=> 'getUsersInfo']);
+Route::get('/getUserInfo', ['uses' => 'UsersController@get_user_info', 'as' => 'getUsersInfo']);
 //Cart page
 Route::get('cart', ['uses' => "CartController@showCart", 'as' => 'cartItems']);
-    //Add items to cart
+//Add items to cart
 Route::get('product/AddToCart/{id}', ['uses' => 'ProductsController@addProductToCart', 'as' => 'AddToCartProduct']);
-    //Remove items from cart
+//Remove items from cart
 Route::get('product/deleteItemFromCart/{id}', ['uses' => 'ProductsController@deleteItemFromCart', 'as' => 'DeleteItemFromCart']);
-Route::get('product/{id}',['uses' => 'ProductsController@productDetails', 'as' => 'ShowProductDetails']);
+Route::get('product/{id}', ['uses' => 'ProductsController@productDetails', 'as' => 'ShowProductDetails']);
 
 //PROFILE
 Route::get('/home', 'HomeController@index')->name('home');
@@ -87,7 +87,7 @@ Route::get('/home/fillAdressesForm', ['uses' => 'HomeController@showFillAdresses
 Route::get('/home/fillAdresses', ['uses' => 'HomeController@FillAdresses', 'as' => 'FillAdressesDB']);
 Route::post('/home/userAvatar', ['uses' => 'HomeController@setUsersAvatar', 'as' => 'FillUserAvatar']);
 Route::get('/home/collectProfileData', ['uses' => 'HomeController@collectProfileData', 'as' => 'collectProfileData']);
-Route::get('/home/orders',['uses'=> 'HomeController@displayOrders', 'as'=>'displayUserOrders']);
+Route::get('/home/orders', ['uses' => 'HomeController@displayOrders', 'as' => 'displayUserOrders']);
 
 //Blog
 Route::get('blog', ['uses' => 'BlogController@index', 'as' => 'blog']);
@@ -99,8 +99,8 @@ Route::get('/information', 'InformationController@index');
 Route::get('/hits', 'HitsController@index');
 Route::get('/about', 'AboutController@index');
 Route::get('/about/years/{$id}', 'AboutController@getTwoYears');
-Route::get('/landing', 'LandingController@index',['as' => 'landing']);
-Route::get('/landingt2', 'LandingController@second',['as' => 'landingt2']);
+Route::get('/landing', 'LandingController@index', ['as' => 'landing']);
+Route::get('/landingt2', 'LandingController@second', ['as' => 'landingt2']);
 Route::get('/contacts', 'ContactsController@index');
 
 //Contacts feedback
@@ -112,24 +112,24 @@ Route::get('product/increaseSingleProduct/{id}', ['uses' => 'ProductsController@
 Route::get('product/decreaseSingleProduct/{id}', ['uses' => 'ProductsController@decreaseSingleProduct', 'as' => 'DecreaseSingleProduct']);
 Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addToCartAjaxGet', 'as' => 'AddToCartAjaxGet']);
 
-Route::get('/setCustomerFio',['uses' => 'CustomerDataController@setCustomerFio','as'=>'setCustomerFio']);
+Route::get('/setCustomerFio', ['uses' => 'CustomerDataController@setCustomerFio', 'as' => 'setCustomerFio']);
 Route::get('/setUrikInfo', ['uses' => 'CustomerDataController@setUrikInfo', 'as' => 'setUrikInfo']);
 
-Route::get('/deliveryForm',['uses' => 'CustomerDataController@deliveryForm','as'=>'deliveryForm']);
+Route::get('/deliveryForm', ['uses' => 'CustomerDataController@deliveryForm', 'as' => 'deliveryForm']);
 
-Route::post('/setAdress',['uses' => 'CustomerDataController@setAdress','as'=>'setAdress']);
-Route::post('/setIndex',['uses' => 'CustomerDataController@setIndex','as'=>'setIndex']);
-Route::get('product/setAddress',['uses' => 'ProductsController@setAddress','as'=>'setAddress']);
-Route::post('product/setIssue',['uses' => 'ProductsController@setIssue','as'=>'setIssue']);
+Route::post('/setAdress', ['uses' => 'CustomerDataController@setAdress', 'as' => 'setAdress']);
+Route::post('/setIndex', ['uses' => 'CustomerDataController@setIndex', 'as' => 'setIndex']);
+Route::get('product/setAddress', ['uses' => 'ProductsController@setAddress', 'as' => 'setAddress']);
+Route::post('product/setIssue', ['uses' => 'ProductsController@setIssue', 'as' => 'setIssue']);
 Route::get('checkOrderStatus', ['uses' => 'AdminTrackingController@checkOrderStatus', 'as' => 'checkOrderStatus']);
-Route::post('fetchProducts',['uses' => 'AdminProductsController@fetchProducts', 'as' => 'fetchProducts']);
-Route::get('removeProducts',['uses' => 'AdminProductsController@removeProducts', 'as' => 'removeProducts']);
-Route::get('/createOrder', ['uses' => 'ProductsController@createOrder', 'as'=> 'createOrder']);
-Route::get('product/repeatOrder/{id}', ['uses' => 'ProductsController@repeatOrder', 'as'=> 'repeatOrder']);
-Route::get('product/proceedPayment',['uses' => 'PaymentsController@proceedPayment','as'=>'proceedPayment']);
+Route::post('fetchProducts', ['uses' => 'AdminProductsController@fetchProducts', 'as' => 'fetchProducts']);
+Route::get('removeProducts', ['uses' => 'AdminProductsController@removeProducts', 'as' => 'removeProducts']);
+Route::get('/createOrder', ['uses' => 'ProductsController@createOrder', 'as' => 'createOrder']);
+Route::get('product/repeatOrder/{id}', ['uses' => 'ProductsController@repeatOrder', 'as' => 'repeatOrder']);
+Route::get('product/proceedPayment', ['uses' => 'PaymentsController@proceedPayment', 'as' => 'proceedPayment']);
 
 //Email Subscriptions
-Route::post('subscribe',['uses' => 'SubscriptionsController@subscribe','as'=>'subscribe']);
+Route::post('subscribe', ['uses' => 'SubscriptionsController@subscribe', 'as' => 'subscribe']);
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //ADMIN - functionality
@@ -138,11 +138,11 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/admin/displayDocumentUpload', ['uses' => 'AdminDocumentsController@create', 'as' => 'AdminDisplayDocumentUpload']);
 Route::post('/admin/createDocument', ['uses' => 'AdminDocumentsController@store', 'as' => 'AdminCreateDocument']);
 Route::get('/admin/displayDocuments', ['uses' => 'AdminDocumentsController@index', 'as' => 'AdminDisplayDocuments']);
-Route::get('/admin/deleteDocument/{id}',['uses' => 'AdminDocumentsController@destroy', 'as' => 'AdminDeleteDocument']);
+Route::get('/admin/deleteDocument/{id}', ['uses' => 'AdminDocumentsController@destroy', 'as' => 'AdminDeleteDocument']);
 Route::get('/admin/downloadDocument/{name}', ['uses' => 'AdminDocumentsController@download', 'as' => 'AdminDocumentsDownload']);
 
 //Subscriptions
-Route::get('/admin/subscriptions',['uses' => 'AdminSubscriptionsController@index', 'as' => 'AdminSubscriptions']);
+Route::get('/admin/subscriptions', ['uses' => 'AdminSubscriptionsController@index', 'as' => 'AdminSubscriptions']);
 //Tracking
 Route::get('/admin/tracking', ['uses' => 'AdminTrackingController@index', 'as' => 'AdminDisplayTracking']);
 Route::post('/admin/collectData', ['uses' => 'AdminTrackingController@collectData', 'as' => 'AdminCollectTracking']);
@@ -158,14 +158,14 @@ Route::get('/admin/orders', ['uses' => 'AdminOrdersController@index', 'as' => 'A
 Route::get('/admin/users', ['uses' => 'AdminUsersController@index', 'as' => 'adminDisplayUsers']);
 
 //BLOG
-Route::get('/admin/blog',['uses' => 'AdminPostController@index', 'as' => 'adminDisplayBlog']);
-Route::get('/admin/createPost',['uses' => 'AdminPostController@showCreateForm', 'as' => 'adminDisplayCreateForm']);
-Route::post('/admin/sendCreatePost',['uses' => 'AdminPostController@sendCreatePost', 'as' => 'sendCreatePost']);
+Route::get('/admin/blog', ['uses' => 'AdminPostController@index', 'as' => 'adminDisplayBlog']);
+Route::get('/admin/createPost', ['uses' => 'AdminPostController@showCreateForm', 'as' => 'adminDisplayCreateForm']);
+Route::post('/admin/sendCreatePost', ['uses' => 'AdminPostController@sendCreatePost', 'as' => 'sendCreatePost']);
 
-Route::post('/admin/sendCreatePhoto',['uses' => 'AdminPostController@savePostImage', 'as' => 'adminSavePhoto']);
+Route::post('/admin/sendCreatePhoto', ['uses' => 'AdminPostController@savePostImage', 'as' => 'adminSavePhoto']);
 Route::get('/admin/deletePost/{id}', ['uses' => "AdminPostController@deletePost", 'as' => 'AdminDeletePost']);
 Route::get('/admin/editPost/{id}', ['uses' => "AdminPostController@editPost", 'as' => 'AdminEditPost']);
-Route::post('/admin/updatePost/{id}',['uses' => 'AdminPostController@updatePost', 'as' => 'updateCreatedPost']);
+Route::post('/admin/updatePost/{id}', ['uses' => 'AdminPostController@updatePost', 'as' => 'updateCreatedPost']);
 
 //ABOUT
 Route::get('/admin/about', ['uses' => "AdminAboutController@index", 'as' => 'adminDisplayAbout']);
@@ -180,17 +180,17 @@ Route::get('/checkCartState', ['uses' => 'CartController@checkCartState', 'as' =
 Route::get('/getSessionInfo', ['uses' => 'CustomerDataController@getSession', 'as' => 'getSessionInfo']);
 
 //Test file storage
-Route::get('/testStorage', function() {
-    return "<img src=".Storage::url('product_images/product1.png').">";
+Route::get('/testStorage', function () {
+    return "<img src=" . Storage::url('product_images/product1.png') . ">";
 });
 
 //Test smtp
-Route::get('/mailtest', function() {
+Route::get('/mailtest', function () {
     dd(Config::get('mail'));
 });
 
 Route::get('change-password', 'ChangePasswordController@index');
-Route::post('StoreNewPassword', ['uses' => 'ChangePasswordController@store','as' => 'StoreNewPassword']);
+Route::post('StoreNewPassword', ['uses' => 'ChangePasswordController@store', 'as' => 'StoreNewPassword']);
 
 //Test email template
 Route::get('/mailtemplate', ['uses' => "SendEmailController@testEmailTemplate", 'as' => 'mailtemplate']);
