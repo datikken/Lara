@@ -74,7 +74,7 @@ class CustomerDataController extends Controller
     {
         $cart_pickup = Session::get('cart-pickup');
         $payment_info = Session::get('payment_info');
-        $fio = Session::get('cart-cutomerInfo');
+        $fio = Session::get('cart-customerFio');
         $index = Session::get('cart-index');
         $adresss = Session::get('cart-address');
 
@@ -85,8 +85,6 @@ class CustomerDataController extends Controller
             'index' => $index,
             'adress' => $adresss
         );
-
-
 
         return response()->json($arr);
     }
