@@ -15,9 +15,15 @@ class AboutController extends Controller
 {
     public function index()
     {
-        $years = About::all()->sortBy('year')->groupBy('year');
+        $yearsContents = About::all();
+        $years = DB::table('abouts_years')->orderBy('year')->get();
 
-        return view('pages.about', ['years' => $years]);
+        $arr = array(
+            'years' => $years,
+            'years_contents' => $yearsContents
+        );
+
+        return view('pages.about', ['data' => $arr]);
     }
 
     public static function getLastYear()
@@ -34,6 +40,7 @@ class AboutController extends Controller
             } else if ($iter == $len - 1) {
                 $lastTwo[$key] = $year;
             }
+
             $iter++;
         }
 

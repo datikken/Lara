@@ -18,7 +18,19 @@
             {{ csrf_field() }}
 
             <div class="uk-margin">
-                <input class="uk-input" type="text" name="year" id="year" placeholder="Год" required>
+
+                <select class="selectpicker" name="year">
+                    @foreach($years as $year)
+                        <option>{{ $year->year }}</option>
+                    @endforeach
+                </select>
+
+                <script>
+                    $(document).ready(function () {
+                        $('select').selectpicker();
+                    });
+                </script>
+
             </div>
 
             <div class="uk-margin">
@@ -30,7 +42,8 @@
             </div>
 
             <div class="form-group green-border-focus">
-                <textarea class="form-control" name="text" id="exampleFormControlTextarea5" rows="5" style="resize: none;"></textarea>
+                <textarea class="form-control" name="text" id="exampleFormControlTextarea5" rows="5"
+                          style="resize: none;"></textarea>
             </div>
 
             <button type="submit" name="submit" class="btn btn-primary">Отправить</button>

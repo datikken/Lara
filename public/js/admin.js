@@ -42056,7 +42056,6 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   },
   mutations: {
     createYearToDescribe: function createYearToDescribe(state, year) {
-      console.log('createYearToDescribe year', year);
       jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajaxSetup({
         headers: {
           'X-CSRF-TOKEN': window.token

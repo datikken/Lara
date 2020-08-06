@@ -1,4 +1,20 @@
+import Vue from 'vue';
+import About from '../vue/About'
+
+import store from '../vue/store/store'
+import router from '../vue/router/router'
+import VueRouter from 'vue-router'
+
 class AboutController {
+    renderAboutVue(el) {
+        Vue.use(VueRouter);
+
+        new Vue({
+            render: h => h(About),
+            store: store,
+            router
+        }).$mount('#about_vue')
+    }
     _setListeners(nav) {
         let els = nav.querySelectorAll('.navigator_wrap-line_items-item');
         let line = nav.querySelector('.descline_item');
@@ -32,6 +48,8 @@ class AboutController {
         if(nav) {
             this._setListeners(nav);
         }
+
+        this.renderAboutVue();
     }
 }
 

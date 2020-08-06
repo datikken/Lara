@@ -17,8 +17,15 @@ class AdminAboutController extends Controller
 {
     public function index()
     {
-        $years = About::paginate(4);
-        return view('admin.about.display', ['years' => $years]);
+        $yearsContent = About::paginate(4);
+        $years = DB::table('abouts_years')->get();
+
+        foreach($yearsContent as $ind=>$yearCont) {
+            $newYear = DB::table('abouts_years')->where('id', $yearCont['year'])->first();
+            $yearCont['year'] = $newYear->year;
+        }
+
+        return view('admin.about.display', ['years' => $yearsContent]);
     }
 
     public function deleteAbout($id)
@@ -31,18 +38,22 @@ class AdminAboutController extends Controller
 
     public function displayCreateAbout()
     {
-        return view('admin.about.create');
+        $yearsCreated = DB::table('abouts_years')->get();
+
+        return view('admin.about.create',['years' => $yearsCreated]);
     }
 
     public function sendCreateAbout(Request $request)
     {
-        $year =  $request->input('year');
+        $year =  $request->get('year');
+
         $heading = $request->input('heading');
         $description = $request->input('description');
         $text = $request->input('text');
+        $year_id = DB::table('abouts_years')->where('year', $year)->value('id');
 
         $arr = array(
-            'year' => $year,
+            'year' => $year_id,
             'heading' => $heading,
             'description' => $description,
             'text' => $text,
@@ -50,11 +61,11 @@ class AdminAboutController extends Controller
             'updated_at' => '',
         );
 
-//        $exists = DB::table('abouts')->where('year', $year)->value('year');
-//
-//        if(is_null($exists)) {
+        $exists = DB::table('abouts')->where('year', $year)->value('year');
+
+        if(!$exists) {
             $created = DB::table('abouts')->insert($arr);
-//        }
+        }
 
         return redirect()->route('adminDisplayAbout');
     }

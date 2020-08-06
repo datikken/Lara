@@ -31,9 +31,6 @@ const store = new Vuex.Store({
     },
     mutations: {
         createYearToDescribe(state, year) {
-
-            console.log('createYearToDescribe year', year)
-
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': window.token

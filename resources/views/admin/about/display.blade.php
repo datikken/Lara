@@ -4,10 +4,10 @@
 
     <div class="d-flex flex-row align-items-center mt-2 mb-2">
         <h2 class="mr-3">О нас</h2>
+
         <a href="{{ route('adminDisplayCreateAbout') }}" class="btn btn-primary">
            Создать
         </a>
-
 
         <div class="dropdown ml-3">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,8 +30,6 @@
 
             </div>
         </div>
-
-
 
     </div>
 
