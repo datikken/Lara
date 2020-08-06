@@ -39,6 +39,11 @@ class AdminAboutController extends Controller
         foreach($years as $key=>$year) {
             if($year->year === $incomeYear) {
                 // dump($year, $years[$key + 1]);
+
+
+                //TODO DATA ARRAY
+
+
                 array_push($lastTwoYears, $year, $years[$key+1]);
             }
         }
