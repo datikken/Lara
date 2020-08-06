@@ -44,12 +44,12 @@ class AboutController {
 
     constructor() {
         const nav = document.querySelector('.navigator');
+        let aboutComp = document.querySelector('#about_vue')
+            aboutComp && this.renderAboutVue();
 
         if(nav) {
             this._setListeners(nav);
         }
-
-        this.renderAboutVue();
     }
 }
 
