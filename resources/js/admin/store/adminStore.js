@@ -8,7 +8,8 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        order: ''
+        order: '',
+        yearsToDescribe: ''
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
@@ -22,8 +23,38 @@ const store = new Vuex.Store({
         CHANGE_ORDER_STATUS(context, obj) {
             context.commit('changeOrderStatus', obj);
         },
+        CREATE_YEAR_TO_DESCRIBE(context, year) {
+            console.log('createYearToDescribe action')
+
+            context.commit('createYearToDescribe', year);
+        }
     },
     mutations: {
+        createYearToDescribe(state, year) {
+
+            console.log('createYearToDescribe year', year)
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
+
+            $.ajax({
+                method: "GET",
+                url: '/createYearToDescribe',
+                data: {
+                    year
+                },
+                success: function (data) {
+                    state.yearsToDescribe = data;
+                    console.log('createYearToDescribe', data)
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+        },
         changeOrderStatus(state, obj) {
             let status;
 

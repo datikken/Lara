@@ -7,6 +7,32 @@
         <a href="{{ route('adminDisplayCreateAbout') }}" class="btn btn-primary">
            Создать
         </a>
+
+
+        <div class="dropdown ml-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Добавить год для описания
+            </button>
+            <div class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
+                <input
+                    type="text"
+                    class="form-control mb-2"
+                    placeholder="Описать год"
+                    name="year"
+                    aria-label="year"
+                    aria-describedby="years"
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                    data-saveYearInput>
+
+                <a href="#" class="btn btn-primary" data-saveYearTrigger>
+                    Сохранить
+                </a>
+
+            </div>
+        </div>
+
+
+
     </div>
 
     <div class="table-responsive">

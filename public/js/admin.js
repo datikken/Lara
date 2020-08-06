@@ -41958,7 +41958,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var DropDown = /*#__PURE__*/function () {
   _createClass(DropDown, [{
     key: "setListeners",
-    value: function setListeners(items, url, id) {
+    value: function setListeners(items, url, id, saveYearTrigger, saveYearInput) {
+      saveYearTrigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        _store_adminStore__WEBPACK_IMPORTED_MODULE_0__["default"].dispatch('CREATE_YEAR_TO_DESCRIBE', saveYearInput.value);
+      });
       items.forEach(function (btn) {
         btn.addEventListener('click', function (e) {
           var status = e.target.innerText;
@@ -41976,13 +41980,16 @@ var DropDown = /*#__PURE__*/function () {
   function DropDown(drop) {
     _classCallCheck(this, DropDown);
 
+    this.store = _store_adminStore__WEBPACK_IMPORTED_MODULE_0__["default"];
     var btn = drop.querySelector('[data-toggle="dropdown"]');
     var menu = drop.querySelector('.dropdown-menu');
     var url = btn.getAttribute('data-url');
     var id = btn.getAttribute('data-id');
-    this.store = _store_adminStore__WEBPACK_IMPORTED_MODULE_0__["default"];
+    var saveYearTrigger = drop.querySelector('[data-saveYearTrigger]');
+    var saveYearInput = drop.querySelector('[data-saveYearInput]');
+    console.log('years', btn);
     var btns = menu.querySelectorAll('button');
-    this.setListeners(btns, url, id);
+    this.setListeners(btns, url, id, saveYearTrigger, saveYearInput);
   }
 
   return DropDown;
@@ -42015,7 +42022,8 @@ var _ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    order: ''
+    order: '',
+    yearsToDescribe: ''
   },
   getters: {
     filteredProducts: function filteredProducts(state) {
@@ -42040,9 +42048,35 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   actions: {
     CHANGE_ORDER_STATUS: function CHANGE_ORDER_STATUS(context, obj) {
       context.commit('changeOrderStatus', obj);
+    },
+    CREATE_YEAR_TO_DESCRIBE: function CREATE_YEAR_TO_DESCRIBE(context, year) {
+      console.log('createYearToDescribe action');
+      context.commit('createYearToDescribe', year);
     }
   },
   mutations: {
+    createYearToDescribe: function createYearToDescribe(state, year) {
+      console.log('createYearToDescribe year', year);
+      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': window.token
+        }
+      });
+      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajax({
+        method: "GET",
+        url: '/createYearToDescribe',
+        data: {
+          year: year
+        },
+        success: function success(data) {
+          state.yearsToDescribe = data;
+          console.log('createYearToDescribe', data);
+        },
+        error: function error(_error) {
+          console.warn(_error);
+        }
+      });
+    },
     changeOrderStatus: function changeOrderStatus(state, obj) {
       var status;
 
@@ -42084,8 +42118,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           state.orders = data;
           console.log('changeOrderStatus', data);
         },
-        error: function error(_error) {
-          console.warn(_error);
+        error: function error(_error2) {
+          console.warn(_error2);
         }
       });
     }

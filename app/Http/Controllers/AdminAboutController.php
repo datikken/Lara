@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\About;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -56,5 +57,26 @@ class AdminAboutController extends Controller
 //        }
 
         return redirect()->route('adminDisplayAbout');
+    }
+
+    public function createYearToDescribe(Request $request)
+    {
+        Validator::make( $request->all(), [
+            'year' => 'numeric',
+        ])->validate();
+
+        $arr = array(
+            'year' => $request->year,
+            'created_at' => \Carbon\Carbon::now()
+        );
+
+        $exists = DB::table('abouts_years')->where('year', $request->year)->value('year');
+
+        if(!$exists) {
+            DB::table('abouts_years')->insert($arr);
+            return response()->json($arr);
+        } else {
+            return response()->json(array('status' => false, 'message' => 'Year is already created'));
+        }
     }
 }

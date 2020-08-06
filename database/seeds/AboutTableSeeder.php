@@ -13,7 +13,16 @@ class AboutTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('App\About');
-        for($i = 0; $i <= 10; $i++) {
+        for($i = 1; $i <= 11; $i++) {
+
+
+           DB::table('abouts_years')->inser([
+                'id' => $i,
+                'year' => $faker->year,
+                'content_id' => $i,
+                'created_at' => Carbon\Carbon::now(),
+                'updated_at' => Carbon\Carbon::now()
+            ]);
 
             DB::table('abouts')->insert([
                 'year' => $faker->year,
@@ -23,6 +32,9 @@ class AboutTableSeeder extends Seeder
                 'created_at' => Carbon\Carbon::now(),
                 'updated_at' => Carbon\Carbon::now()
             ]);
+
+
+
         }
     }
 }
