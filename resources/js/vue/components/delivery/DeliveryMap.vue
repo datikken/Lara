@@ -32,17 +32,18 @@
 
                 ymaps.ready(init);
                 function init(){
-                    var myMap = new ymaps.Map("map", {
-                        center: [55.67967429999999, 37.6238394],
-                        zoom: 17
-                    });
-                    myMap.balloon.open([55.67967429999999, 37.6238394], "Мы здесь!", {
-                        closeButton: false
-                    });
-                    myMap.balloon.events.add('click', function () {
-                        that.SET_PICKUP_POINT('mainOffice');
-                        $(document.body).scrollTop($('#proceedToPayments').offset().top);
-                    });
+                    var myMap = new ymaps.Map('map', {
+                            center: [55.67967429999999, 37.6238394],
+                            zoom: 17
+                        }, {
+                            searchControlProvider: 'yandex#search'
+                        }),
+                        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                            hintContent: 'Собственный значок метки',
+                            balloonContent: 'Мы здесь!'
+                        });
+                    myMap.geoObjects
+                        .add(myPlacemark);
                 }
             }
         },
