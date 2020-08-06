@@ -125,9 +125,6 @@
         },
         created() {
             this.GET_ALL_PRODUCTS();
-
-
-            console.log(this.orders,'orders in catalog')
         },
     }
 </script>

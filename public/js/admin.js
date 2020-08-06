@@ -41987,7 +41987,6 @@ var DropDown = /*#__PURE__*/function () {
     var id = btn.getAttribute('data-id');
     var saveYearTrigger = drop.querySelector('[data-saveYearTrigger]');
     var saveYearInput = drop.querySelector('[data-saveYearInput]');
-    console.log('years', btn);
     var btns = menu.querySelectorAll('button');
     this.setListeners(btns, url, id, saveYearTrigger, saveYearInput);
   }

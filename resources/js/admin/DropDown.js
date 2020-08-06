@@ -34,8 +34,6 @@ class DropDown {
         let saveYearTrigger = drop.querySelector('[data-saveYearTrigger]');
         let saveYearInput = drop.querySelector('[data-saveYearInput]');
 
-        console.log('years', btn);
-
         let btns = menu.querySelectorAll('button');
 
         this.setListeners(btns, url, id, saveYearTrigger, saveYearInput);

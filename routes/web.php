@@ -173,8 +173,8 @@ Route::get('/admin/createAbout', ['uses' => "AdminAboutController@displayCreateA
 Route::post('/admin/sendCreateAbout', ['uses' => "AdminAboutController@sendCreateAbout", 'as' => 'adminSendCreateAbout']);
 Route::get('/admin/deleteAbout/{id}', ['uses' => "AdminAboutController@deleteAbout", 'as' => 'AdminDeleteAbout']);
 Route::get('/createYearToDescribe', ['uses' => 'AdminAboutController@createYearToDescribe', 'as' => 'CreateYearToDescribe']);
-
-
+Route::get('/getAboutYears', ['uses' => 'AdminAboutController@getAboutYears', 'as' => 'GetAboutYears']);
+Route::post('/getTwoYearsInfoBySelect', ['uses' => 'AdminAboutController@getTwoYearsInfoBySelect', 'as' => 'getTwoYearsInfoBySelect']);
 //TECH ROUTES
 Route::get('/checkCartState', ['uses' => 'CartController@checkCartState', 'as' => 'checkCartState']);
 

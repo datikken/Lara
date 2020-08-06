@@ -28,6 +28,36 @@ class AdminAboutController extends Controller
         return view('admin.about.display', ['years' => $yearsContent]);
     }
 
+    public function getTwoYearsInfoBySelect(Request $request)
+    {
+        $incomeYear = $request->year;
+        $allContent = DB::table('abouts')->get();
+        $years = DB::table('abouts_years')->get();
+
+        $lastTwoYears = array();
+
+        foreach($years as $key=>$year) {
+            if($year->year === $incomeYear) {
+                // dump($year, $years[$key + 1]);
+                array_push($lastTwoYears, $year, $years[$key+1]);
+            }
+        }
+
+        return response()->json($lastTwoYears);
+    }
+
+    public function getAboutYears()
+    {
+        $years = DB::table('abouts_years')->get();
+        $yearsArr = array();
+
+        foreach($years as $key=>$year) {
+            $yearsArr[$key] = $year->year;
+        }
+
+        return response()->json(array_reverse($yearsArr));
+    }
+
     public function deleteAbout($id)
     {
         $about = About::find($id);

@@ -33,7 +33,9 @@ const store = new Vuex.Store({
         cardPayment: false,
         orders: false,
         pickUpPoint: false,
-        orderPaid: false
+        orderPaid: false,
+        aboutData: false,
+        lastTwoYearsInfo: false
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
@@ -44,9 +46,17 @@ const store = new Vuex.Store({
         orders: state => state.orders,
         pickUpPoint: state => state.pickUpPoint,
         orderPaid: state => state.orderPaid,
-        paymentProvider: state => state.paymentProvider
+        paymentProvider: state => state.paymentProvider,
+        aboutData: state => state.aboutData,
+        lastTwoYearsInfo: state => state.lastTwoYearsInfo
     },
     actions: {
+        GET_TWO_YEARS_INFO_BY_SELECT(context, year) {
+            context.commit('getTwoYearsInfoBySelect', year);
+        },
+        GET_ABOUTS_YEARS(context) {
+            context.commit('getAboutYears');
+        },
         GET_SINGLE_ORDER_INFO(context, id) {
             context.commit('getSingleOrderInfo', id)
         },
@@ -88,9 +98,6 @@ const store = new Vuex.Store({
         },
         VALIDATE_RS(context, obj) {
             context.commit('RSValidation', obj);
-        },
-        GET_DADATA(context, obj) {
-            context.commit('getDadata', obj);
         },
         SET_DELIVERY_INDEX(context, obj) {
             context.commit('setDeliveryIndex', obj);
@@ -159,6 +166,39 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
+        getTwoYearsInfoBySelect(state, year) {
+            fetch('/getTwoYearsInfoBySelect', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': window.token
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify({
+                    year
+                })
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.lastTwoYearsInfo = data;
+
+                console.log('getTwoYearsInfoBySelect', data, typeof data)
+            });
+        },
+        getAboutYears(state) {
+            fetch('/getAboutYears', {
+                method: "GET"
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.aboutData = data;
+            });
+        },
         getOrdersInfo(state) {
             $.ajaxSetup({
                 headers: {
@@ -281,7 +321,6 @@ const store = new Vuex.Store({
             }
 
             console.log(obj,'payWithCard', valid)
-
         },
         setPaymentProvider(state, provider) {
             state.paymentProvider = provider;
@@ -333,23 +372,6 @@ const store = new Vuex.Store({
                 error: function (error) {
                     console.warn(error);
                 }
-            });
-        },
-        getDadata() {
-            let url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/party';
-
-            fetch(url, {
-                method: 'POST',
-                mode: 'cors',
-                cache: 'no-cache',
-                credentials: 'same-origin',
-                headers: {
-                    'Authorization': 'Token a799fcceda51c067cdb475e748d7e27e9b4f6fb9',
-                    'Content-Type': 'application/json'
-                },
-                redirect: 'follow',
-                referrerPolicy: 'no-referrer',
-                body: JSON.stringify(data)
             });
         },
         saveUriksData(state, obj) {

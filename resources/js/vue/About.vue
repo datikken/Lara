@@ -74,14 +74,10 @@
                         <span class="descline_item"></span>
 
                         <div class="navigator_wrap-line_items">
-                            <!--@foreach ($data['years'] as $item)-->
-                            <!--<span class='navigator_wrap-line_items-item'>{{ $item->year }}</span>-->
-                            <!--@endforeach-->
+                            <span class='navigator_wrap-line_items-item' v-for="about in abouts">{{ about }}</span>
                         </div>
 
                         <AboutContent />
-
-                        <!--@include('components.about.about_content', ['years' => $data['years_contents']])-->
 
                     </div>
                 </div>
@@ -92,11 +88,25 @@
 
 <script>
     import AboutContent from './components/abouts/AboutContent'
+    import {mapActions} from 'vuex'
 
     export default {
         name: "About",
         components: {
             AboutContent
+        },
+        methods: {
+            ...mapActions([
+                'GET_ABOUTS_YEARS'
+            ])
+        },
+        computed: {
+            abouts() {
+                return this.$store.state.aboutData;
+            },
+        },
+        created() {
+           this.GET_ABOUTS_YEARS();
         }
     }
 </script>
