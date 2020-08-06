@@ -3785,7 +3785,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   .owl-wrapper {
     border-top: 1px solid #e9e9ea;
     position: relative;
-    height: 485px !important;
+    height: 510px !important;
     margin-bottom: 50px;
     z-index: 0;
     display: block;
@@ -5302,7 +5302,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   max-width: 1170px;
   margin: 0 auto;
   display: flex;
-  max-height: 485px;
+  height: 485px !important;
   overflow: hidden;
 }
 .details_wrap-slider {
