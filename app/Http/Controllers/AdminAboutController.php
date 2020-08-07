@@ -22,7 +22,9 @@ class AdminAboutController extends Controller
 
         foreach($yearsContent as $ind=>$yearCont) {
             $newYear = DB::table('abouts_years')->where('id', $yearCont['year'])->first();
-            $yearCont['year'] = $newYear->year;
+            if(is_array($yearCont)) {
+                $yearCont['year'] = $newYear->year;
+            }
         }
 
         return view('admin.about.display', ['years' => $yearsContent]);
