@@ -2,6 +2,12 @@
     padding: 0 30px;
     max-height: 400px;
 
+    &_prgf {
+        &:hover {
+            color: $black!important;
+        }
+    }
+
     @include breakpoint($medium) {
         padding: 0;
         max-height: initial;

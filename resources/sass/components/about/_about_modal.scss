@@ -1,0 +1,58 @@
+.aboutm {
+    height: 100%;
+
+    &_wrap {
+        position: relative;
+        padding: 30px;
+        height: 100%;
+    }
+
+    &_line {
+        border-top: 5px solid $yellow;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    &_close {
+        text-align: right;
+        cursor: pointer;
+        right: 5px;
+    }
+
+    &_heading {
+        font-family: $semifont;
+        letter-spacing: 0.02em;
+        margin-bottom: 50px;
+        line-height: 18px;
+        font-weight: 600;
+        font-size: 18px;
+        color: $black;
+    }
+
+    &_desc {
+        margin-bottom: 30px;
+    }
+
+    &_desc, &_content, &_footer {
+        letter-spacing: 0.02em;
+        font-family: $font;
+        line-height: 20px;
+        font-size: 12px;
+        color: $black;
+    }
+
+    &_wrap {}
+
+    &_content {}
+
+    &_footer {
+        position: absolute;
+        bottom: 0;
+
+        &_item {
+
+        }
+    }
+}

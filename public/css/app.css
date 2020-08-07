@@ -10702,6 +10702,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   padding: 0 30px;
   max-height: 400px;
 }
+.aboutc_prgf:hover {
+  color: #40404c !important;
+}
 @media screen and (min-width: 1030px) {
   .aboutc {
     padding: 0;
@@ -12888,4 +12891,48 @@ main {
   border-left: 0;
   border-top: 0;
   border-top-left-radius: 0;
+}
+
+.aboutm {
+  height: 100%;
+}
+.aboutm_wrap {
+  position: relative;
+  padding: 30px;
+  height: 100%;
+}
+.aboutm_line {
+  border-top: 5px solid #fdd935;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.aboutm_close {
+  text-align: right;
+  cursor: pointer;
+  right: 5px;
+}
+.aboutm_heading {
+  font-family: "MontserratSemiBold";
+  letter-spacing: 0.02em;
+  margin-bottom: 50px;
+  line-height: 18px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #40404c;
+}
+.aboutm_desc {
+  margin-bottom: 30px;
+}
+.aboutm_desc, .aboutm_content, .aboutm_footer {
+  letter-spacing: 0.02em;
+  font-family: "Montserrat", sans-serif;
+  line-height: 20px;
+  font-size: 12px;
+  color: #40404c;
+}
+.aboutm_footer {
+  position: absolute;
+  bottom: 0;
 }
