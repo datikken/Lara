@@ -6,6 +6,7 @@
             </div>
             <div class="aboutc_line"></div>
         </div>
+
         <div class="aboutc_cols">
 
             <div class="aboutc_row" v-for="(cont, ind) in data.year_contents" :class="{'right_row': (ind % 2 != 0)}">

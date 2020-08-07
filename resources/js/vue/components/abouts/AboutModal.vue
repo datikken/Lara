@@ -1,8 +1,6 @@
 <template>
-    <!-- This is the modal with the default close button -->
     <div id="modal-close-default" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
-
 
 
             <div class="aboutm">
@@ -37,8 +35,6 @@
 
                 </div>
             </div>
-
-
 
 
         </div>
