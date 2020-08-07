@@ -40,11 +40,23 @@ class AdminAboutController extends Controller
             if($year->year === $incomeYear) {
                 // dump($year, $years[$key + 1]);
 
+                $requestedYearId = $year->id;
+                $prevRequestedYearId = $years[$key+1]->id;
 
-                //TODO DATA ARRAY
+                $requestedContent = DB::table('abouts')->where('year', $requestedYearId)->get();
+                $preRequestedContent = DB::table('abouts')->where('year', $prevRequestedYearId)->get();
 
+                $reqYear = array(
+                    'year' => $year,
+                    'year_contents' => $requestedContent
+                );
 
-                array_push($lastTwoYears, $year, $years[$key+1]);
+                $prevReqYear = array(
+                    'year' => $years[$key+1],
+                    'year_contents' => $preRequestedContent
+                );
+
+                array_push($lastTwoYears, $reqYear, $prevReqYear);
             }
         }
 
