@@ -1,7 +1,9 @@
-<?php //dump($product['params']); ?>
+<?php //dump($product['images']); ?>
 
 <div class="details">
     <div class="details_wrap">
+
+
         <div class="details_wrap-slider">
             <div class="swiper-container gallery-top">
                 <div class="swiper-wrapper">

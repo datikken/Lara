@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\DB;
+use App\Includes\HelperString;
+use Illuminate\Http\Request;
 use App\MainSliderImage;
 use App\Product;
 use App\Cart;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
-use App\Includes\HelperString;
-use Illuminate\Support\Facades\DB;
 use App\Post;
 use Auth;
 
@@ -124,7 +125,24 @@ class ProductsController extends Controller
         }
 
         $params = json_decode($product['params']);
-        array_push($imgArr,(object) array('image' => strval($params->brand . '/BIG/' . $product['photo'] . '.png')) );
+
+        $bigImage = strval($params->brand . '/BIG/' . $product['photo'] . '.png');
+        $smallImage = strval($params->brand . '/SMALL/' . $product['photo'] . '.png');
+
+        $bigExists = Storage::disk('local')->exists('/public/product_images/' . $bigImage);
+        $smallExists = Storage::disk('local')->exists('/public/product_images/' . $smallImage);
+
+//        dd($smallExists, $bigImage, $bigExists, $smallImage);
+
+        if($bigExists) {
+            array_push($imgArr,(object) array('image' => $bigImage) );
+        } else {
+            if($smallExists) {
+                array_push($imgArr,(object) array('image' => $smallImage) );
+            }
+        }
+
+//        dump($product['photo'], $product['image']);
 
         $product['images'] = $imgArr;
 
