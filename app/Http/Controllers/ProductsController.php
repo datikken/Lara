@@ -96,11 +96,14 @@ class ProductsController extends Controller
 
     public function productDetails(Request $request, $id)
     {
+        $cape = array();
+        $imgArr = array();
+
         $product = Product::find($id);
 
         $images = DB::table('product_images')->where('product_id', $product['id'])->get();
         $feedItems = DB::table('product_feedback')->where('product_id', $product['id'])->get();
-        $imgArr = array();
+        $product['cape'] = json_decode($product['cape']);
 
         foreach ($feedItems as  $key=>$value) {
             $usverAvatar = DB::table('users_info')->where('user_id', $value->user_id)->value('image');
@@ -113,9 +116,11 @@ class ProductsController extends Controller
             array_push($imgArr, $image);
         }
 
-        $product['cape'] = json_decode($product['cape']);
-
-        $cape = array();
+        foreach ($product['cape'] as $key=>$item) {
+            foreach ($item as $obj=>$val) {
+                $cape[$obj] = $val;
+            }
+        }
 
         $product['cape'] = $cape;
         $product['name_econom'] = json_decode($product['name_econom']);
@@ -132,8 +137,6 @@ class ProductsController extends Controller
         $bigExists = Storage::disk('local')->exists('/public/product_images/' . $bigImage);
         $smallExists = Storage::disk('local')->exists('/public/product_images/' . $smallImage);
 
-//        dd($smallExists, $bigImage, $bigExists, $smallImage);
-
         if($bigExists) {
             array_push($imgArr,(object) array('image' => $bigImage) );
         } else {
@@ -142,9 +145,8 @@ class ProductsController extends Controller
             }
         }
 
-//        dump($product['photo'], $product['image']);
-
         $product['images'] = $imgArr;
+//        dd($product['cape']);
 
         return view('layouts.product_details', ['product' => $product, 'feedbacks' => $feedItems]);
     }
