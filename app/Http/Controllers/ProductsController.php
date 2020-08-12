@@ -112,8 +112,6 @@ class ProductsController extends Controller
             array_push($imgArr, $image);
         }
 
-        $product['images'] = $imgArr;
-
         $product['cape'] = json_decode($product['cape']);
 
         $cape = array();
@@ -124,6 +122,11 @@ class ProductsController extends Controller
         if ($request->ajax()) {
             return response()->json($product);
         }
+
+        $params = json_decode($product['params']);
+        array_push($imgArr,(object) array('image' => strval($params->brand . '/BIG/' . $product['photo'] . '.png')) );
+
+        $product['images'] = $imgArr;
 
         return view('layouts.product_details', ['product' => $product, 'feedbacks' => $feedItems]);
     }

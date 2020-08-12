@@ -19,11 +19,6 @@
                     @endforeach
                 </div>
             </div>
-
-            <script>
-
-            </script>
-
         </div>
 
 
