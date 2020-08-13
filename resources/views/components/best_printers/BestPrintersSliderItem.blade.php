@@ -13,7 +13,7 @@
             </p>
         </div>
         <div class="bestPrinters_item-btn">
-            @include('components.btn.text_btn', [ 'class' => '', 'text' => 'подробнее'])
+            @include('components.btn.text_btn', [ 'class' => 'action_btn', 'text' => 'подробнее'])
         </div>
     </div>
     <div class="bestPrinters_image">

@@ -53,7 +53,7 @@
             </div>
 
             <button type="submit">
-                @include('components.btn.text_btn', [ 'class' => 'fadress_wrap-form-btn', 'text' => 'Сохранить адрес'])
+                @include('components.btn.text_btn', [ 'class' => 'fadress_wrap-form-btn action_btn', 'text' => 'Сохранить адрес'])
             </button>
 
         </form>

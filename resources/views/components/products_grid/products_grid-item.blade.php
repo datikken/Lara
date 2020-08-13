@@ -94,7 +94,7 @@
                             @include('components.btn.buy_btn', [ 'class' => 'empty_cart-btn', 'text' => 'в корзину'])
                         </div>
                         <a class="prdet_wrap-icons_ctas-details" href="{{ route('ShowProductDetails',['id' => $id]) }}">
-                            @include('components.btn.text_btn', [ 'class' => 'prdet_btn', 'text' => 'подробнее'])
+                            @include('components.btn.text_btn', [ 'class' => 'prdet_btn action_btn', 'text' => 'подробнее'])
                         </a>
                     </div>
                 </div>

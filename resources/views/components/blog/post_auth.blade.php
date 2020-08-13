@@ -16,7 +16,7 @@
             </div>
 
             <div class="form_group btn_group">
-                @include('components.btn.text_btn', [ 'class' => 'animated_btn', 'text' => 'Войти'])
+                @include('components.btn.text_btn', [ 'class' => 'animated_btn action_btn', 'text' => 'Войти'])
             </div>
         </form>
     </div>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="form_group btn_group">
-                @include('components.btn.text_btn', [ 'class' => '', 'text' => 'Регистрация'])
+                @include('components.btn.text_btn', [ 'class' => 'action_btn animated_btn', 'text' => 'Регистрация'])
             </div>
         </form>
     </div>

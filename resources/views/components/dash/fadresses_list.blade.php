@@ -59,7 +59,7 @@
         </div>
 
         <button type="submit" class="setAddressSubmit" data-url="{{ route('setAddress') }}">
-            @include('components.btn.text_btn', [ 'class' => 'form_group-btn', 'text' => 'Изменить адрес доставки'])
+            @include('components.btn.text_btn', [ 'class' => 'form_group-btn action_btn', 'text' => 'Изменить адрес доставки'])
         </button>
 
     </div>

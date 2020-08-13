@@ -22,7 +22,7 @@
             </div>
 
             <div class="mobile-hide">
-                @include('components.btn.text_btn', [ 'class' => 'sales_slider_btn', 'text' => 'Успеть Купить'])
+                @include('components.btn.text_btn', [ 'class' => 'sales_slider_btn action_btn', 'text' => 'Успеть Купить'])
             </div>
 
         </div>

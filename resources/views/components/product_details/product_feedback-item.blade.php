@@ -28,7 +28,7 @@
                     </div>
 
                     <? if($ind === 0) { ?>
-                        @include('components.btn.text_btn', [ 'class' => 'show_all_btn', 'text' => 'Все отзывы'])
+                        @include('components.btn.text_btn', [ 'class' => 'show_all_btn action_btn', 'text' => 'Все отзывы'])
                     <? } ?>
 
                 </div>

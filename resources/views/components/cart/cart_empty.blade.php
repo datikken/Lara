@@ -5,6 +5,6 @@
     <p class="empty_cart-paragraph">Для удобства наполнения корзины, Вы можете воспользоваться поиском
         или каталогом товаров</p>
     <a href="{{route('allProducts')}}">
-        @include('components.btn.text_btn', [ 'class' => 'empty_cart-btn', 'text' => 'перейти в каталог'])
+        @include('components.btn.text_btn', [ 'class' => 'empty_cart-btn action_btn', 'text' => 'перейти в каталог'])
     </a>
 </div>

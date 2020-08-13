@@ -116,7 +116,7 @@
                     <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
                 </div>
 
-                @include('components.btn.text_btn', [ 'class' => 'dchange_btn animated_btn', 'text' => 'Сохранить изменения'])
+                @include('components.btn.text_btn', [ 'class' => 'dchange_btn animated_btn action_btn', 'text' => 'Сохранить изменения'])
 
             </form>
 

@@ -3,7 +3,7 @@
 
         <div class="pfitem_wrap-item">
             <div class="pfitem_btn_all">
-                @include('components.btn.text_btn', [ 'class' => 'prdet_btn', 'text' => 'Все отзывы'])
+                @include('components.btn.text_btn', [ 'class' => 'prdet_btn action_btn', 'text' => 'Все отзывы'])
             </div>
             <div class="pfitem_wrap-item_ava"></div>
         </div>

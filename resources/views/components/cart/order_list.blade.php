@@ -59,7 +59,7 @@
         @if(Session::get('cart-address'))
             {{--<button type="submit" class="setAddressSubmit" data-url="{{ route('') }}" class="proceedPayment-btn">--}}
             <button type="submit" class="proceedPayment-btn">
-                @include('components.btn.text_btn', [ 'class' => 'form_group-btn', 'text' => 'Завершить покупку'])
+                @include('components.btn.text_btn', [ 'class' => 'form_group-btn action_btn', 'text' => 'Завершить покупку'])
             </button>
         @endif
 

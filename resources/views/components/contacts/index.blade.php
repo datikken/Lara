@@ -141,7 +141,7 @@
                                     </div>
 
                                     <button type="submit" class="cfeedback_wrap-row">
-                                        @include('components.btn.text_btn', [ 'class' => 'cfeedback_wrap-row_btn', 'text' => 'Отправить'])
+                                        @include('components.btn.text_btn', [ 'class' => 'cfeedback_wrap-row_btn action_btn', 'text' => 'Отправить'])
                                     </button>
 
 

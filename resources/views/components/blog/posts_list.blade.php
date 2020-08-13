@@ -18,7 +18,7 @@
                 <div class="postList_btns">
                     <div class="postList_btns_inner">
                         <a href="{{ route('postDetails',['id' => $post['id']]) }}">
-                            @include('components.btn.text_btn', [ 'class' => '', 'text' => 'Читать далее'])
+                            @include('components.btn.text_btn', [ 'class' => 'action_btn', 'text' => 'Читать далее'])
                         </a>
 
                         <div class="postList_btns_actions">

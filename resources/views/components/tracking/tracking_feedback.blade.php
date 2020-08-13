@@ -26,7 +26,7 @@
             <textarea name="" id="" class="trackfeed_textarea" cols="30" rows="10"></textarea>
         </form>
 
-        @include('components.btn.text_btn', [ 'class' => 'tracking_submit', 'text' => 'Отправить'])
+        @include('components.btn.text_btn', [ 'class' => 'tracking_submit action_btn', 'text' => 'Отправить'])
 
     </div>
 </div>

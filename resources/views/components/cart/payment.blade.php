@@ -83,7 +83,7 @@
 
 
             <button type="submit" class="proceedPayment" data-url="{{ route('proceedPayment') }}">
-                @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn', 'text' => 'подтвердить'])
+                @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn action_btn', 'text' => 'подтвердить'])
             </button>
 
         </div>

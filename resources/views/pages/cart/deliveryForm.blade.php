@@ -43,7 +43,7 @@
                          </div>
                       </div>
                     <button type="submit" class="setAddressSubmit" data-url="{{ route('setAddress') }}">
-                        @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn animated_btn', 'text' => 'применить'])
+                        @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn animated_btn action_btn', 'text' => 'применить'])
                     </button>
                 </div>
            <div class="step_wrap invisible">
@@ -58,7 +58,7 @@
                         <div class="form_group-wrap">
                             <input type="text" name="index"/>
                             <button class="btn animated_btn" type="submit">
-                                @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn animated_btn', 'text' => 'применить'])
+                                @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn animated_btn action_btn', 'text' => 'применить'])
                             </button>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
 
 
                     </div>
-                    @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn', 'text' => 'Забрать из этого пункта'])
+                    @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn action_btn', 'text' => 'Забрать из этого пункта'])
                 </form>
 
                 <div class="form_group map_group">
@@ -129,7 +129,7 @@
                     </div>
 
                     <div id="map" class="ymaps map_group-delivery"></div>
-                    @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn', 'text' => 'Забрать с этого постамата'])
+                    @include('components.btn.text_btn', [ 'class' => 'form_group-btn flat_btn action_btn', 'text' => 'Забрать с этого постамата'])
 
                 </div>
             </div>

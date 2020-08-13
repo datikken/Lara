@@ -18,7 +18,7 @@
             </div>
 
             <button type="submit">
-                @include('components.btn.text_btn', [ 'class' => 'treq_form_btn', 'text' => 'продолжить'])
+                @include('components.btn.text_btn', [ 'class' => 'treq_form_btn action_btn', 'text' => 'продолжить'])
             </button>
 
         </form>
