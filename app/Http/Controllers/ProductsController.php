@@ -150,7 +150,7 @@ class ProductsController extends Controller
 
         $product['images'] = $imgArr;
 
-        return view('layouts.product_details', ['product' => $product, 'feedbacks' => $feedItems]);
+        return view('pages.product_details', ['product' => $product, 'feedbacks' => $feedItems]);
     }
 
     public function search()

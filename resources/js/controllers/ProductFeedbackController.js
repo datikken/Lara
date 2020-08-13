@@ -7,7 +7,18 @@ class ProductFeedbackController {
         if(el) {
             this.setListeners(el);
             this._checkBoxHandler(el);
+            this.showAllHandler(el);
         }
+    }
+    showAllHandler(el) {
+        let btn = el.querySelector('.show_all_btn');
+        let items = el.querySelectorAll('.pfitem');
+
+            btn.addEventListener('click', function() {
+                items.forEach((item) => {
+                    item.classList.remove('as-none');
+                })
+            })
     }
     _disableEnableBlocks(type, el) {
         let fblock = el.querySelector('.pfeedback_features');
@@ -94,6 +105,7 @@ class ProductFeedbackController {
         let btn = el.querySelector('.action_btn');
         let inputs = el.querySelectorAll('input');
         let txtarea = el.querySelector('textarea');
+        let url = el.querySelector('form').getAttribute('action');
 
         btn && btn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -112,17 +124,20 @@ class ProductFeedbackController {
                }
             })
 
+            // console.log('dataObj click', btn, dataObj, url)
 
-            let url = el.querySelector('form').getAttribute('action');
-            let _token = document.querySelector('[name="_token"]').value;
-
-            console.log(dataObj, url, _token);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
 
             $.ajax({
                 method: "get",
                 url: `${url}`,
                 data: dataObj,
-                success: function () {
+                success: function (data) {
+                    // console.warn('feedback data', data);
                     that._cleanFields();
                 },
                 error: function (error) {

@@ -56,6 +56,23 @@ a:hover {
     }
   }
 }
+.show_all_btn {
+    width: 200px!important;
+    border: 1px solid #fdd935;
+    background: #fff!important;
+
+    .action_btn-item {
+        font-size: 12px;
+        font-family: $font;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $black;
+    }
+}
+
 .blue {
   color: $blue;
 }

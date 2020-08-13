@@ -16,7 +16,7 @@ import CartController from './controllers/CartController'
 import Checkbox from './components/Checkbox'
 import InformationController from './controllers/InformationController'
 import ProductDetailsSliderController from './controllers/ProductDetailsSliderController'
-import ProductfeedbackController from './controllers/ProductFeedbackController'
+import ProductFeedbackController from './controllers/ProductFeedbackController'
 import AboutController from './controllers/AboutController'
 import CartProgressController from './controllers/CartProgressController'
 import ProfileController from './controllers/ProfileController'
@@ -49,7 +49,7 @@ $(document).ready(function() {
     new InformationController();
     new DeliveryFormController();
     new SimpleMap();
-    new ProductfeedbackController();
+    new ProductFeedbackController();
     new AboutController();
     new CartProgressController();
     new ProfileController();

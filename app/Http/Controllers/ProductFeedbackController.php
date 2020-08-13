@@ -39,5 +39,7 @@ class ProductFeedbackController extends Controller
 
         DB::table('product_feedback')->insert($arr);
 
+        return response()->json($arr);
+
     }
 }

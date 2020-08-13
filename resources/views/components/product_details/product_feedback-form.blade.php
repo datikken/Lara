@@ -1,8 +1,8 @@
 <div class="pfeedback <? if(isset($class)) { echo $class; } ?>">
-    @include('components.product_details.product_feedback-item', ['feedbacks' => [],'class' => '' ])
+    @include('components.product_details.product_feedback-item', ['feedbacks' => $product['feedback']])
 
     <div class="pfeedback_wrap">
-        <form action="/product/feedback/" method="get">
+        <form action="/productFeedback" method="get">
             <div class="pfeedback_wrap-item">
                 <div class="pfeedback_wrap-item_head">
                     <h2>Написать отзыв</h2>

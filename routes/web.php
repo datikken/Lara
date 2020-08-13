@@ -105,7 +105,7 @@ Route::get('/contacts', 'ContactsController@index');
 
 //Contacts feedback
 Route::post('/contacts/feedback', 'ContactsController@collectFeedback');
-Route::get('/product/feedback', 'ProductFeedbackController@index');
+Route::get('/productFeedback', 'ProductFeedbackController@index');
 
 //CART
 Route::get('product/increaseSingleProduct/{id}', ['uses' => 'ProductsController@increaseSingleProduct', 'as' => 'IncreaseSingleProduct']);

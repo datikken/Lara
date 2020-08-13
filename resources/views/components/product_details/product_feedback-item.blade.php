@@ -1,5 +1,5 @@
-@foreach($feedbacks as $feed)
-    <div class="pfitem <? if($class) { echo $class; } ?>">
+@foreach($feedbacks as $ind=>$feed)
+    <div class="pfitem <? if($ind != 0) { echo $class; } ?>">
         <div class="pfitem_wrap">
             <div class="pfitem_wrap-item">
                 <div class="pfitem_wrap-item_ava">
@@ -14,10 +14,25 @@
             </div>
 
             <div class="pfitem_wrap-item">
+
+                <? if($ind === 0) { ?>
+                    <div class="pfitem_wrap-item_head-best"><span>Лучший отзыв</span></div>
+                <? } ?>
+
                 <div class="pfitem_wrap-item_head">
-                    <div class="pfitem_wrap-item_head-text"><span>{{ $feed->name }}</span></div>
-                    <div class="pfitem_wrap-item_head-date">{{ $feed->created_at }}</div>
+
+                    <div class="pfitem_wrap-item_head_inner">
+                        <div class="pfitem_wrap-item_head-text"><span>{{ $feed->name }}</span></div>
+                        <div class="pfitem_wrap-item_head-date">{{ $feed->created_at }}</div>
+                    </div>
+
+                    <? if($ind === 0) { ?>
+                        @include('components.btn.text_btn', [ 'class' => 'show_all_btn', 'text' => 'Все отзывы'])
+                    <? } ?>
+
                 </div>
+
+
 
                 <div class="pfitem_wrap-item_summary">
                     <div class="pfitem_wrap-item_summary-icon"></div>
