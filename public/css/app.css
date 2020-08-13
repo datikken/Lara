@@ -8283,7 +8283,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cfeedback_wrap-row_btn {
   width: 187px !important;
   height: 40px !important;
-  box-shadow: none !important;
 }
 .cfeedback_wrap-row:last-child {
   display: flex;

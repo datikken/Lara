@@ -124,6 +124,9 @@ class ProductsController extends Controller
 
         $product['cape'] = $cape;
         $product['name_econom'] = json_decode($product['name_econom']);
+        $product['feedback'] = $feedItems;
+
+        dd($feedItems);
 
         if ($request->ajax()) {
             return response()->json($product);
@@ -146,7 +149,6 @@ class ProductsController extends Controller
         }
 
         $product['images'] = $imgArr;
-//        dd($product['cape']);
 
         return view('layouts.product_details', ['product' => $product, 'feedbacks' => $feedItems]);
     }
