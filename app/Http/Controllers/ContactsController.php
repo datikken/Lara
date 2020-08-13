@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ContactsController
@@ -19,6 +21,30 @@ class ContactsController
 
     public function collectFeedback(Request $request)
     {
-        dump($request);
+        $name = $request->input('name');
+        $lastname = $request->input('lastname');
+        $theme = $request->input('theme');
+        $message = $request->input('message');
+
+        $arr = array(
+            'name' => $name,
+            'lastname' => $lastname,
+            'theme' => $theme,
+            'message' => $message,
+            'date' => \Carbon\Carbon::now()
+        );
+
+        // dd($arr);
+
+        Validator::make( $request->all(), [
+            'name' => 'required',
+            'lastname' => 'required',
+            'theme' => 'required',
+            'message' => 'required',
+        ])->validate();
+
+        DB::table('contacts_feedback')->insert($arr);
+
+        return redirect('contacts');
     }
 }

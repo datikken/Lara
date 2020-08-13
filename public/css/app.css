@@ -8335,17 +8335,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   outline: none;
   border: 1px solid #e9e9ea;
   width: 100%;
-}
-.cfeedback_wrap-row_item_input input::-moz-placeholder {
-  padding-left: 20px;
-}
-.cfeedback_wrap-row_item_input input:-ms-input-placeholder {
-  padding-left: 20px;
-}
-.cfeedback_wrap-row_item_input input::-ms-input-placeholder {
-  padding-left: 20px;
-}
-.cfeedback_wrap-row_item_input input::placeholder {
   padding-left: 20px;
 }
 .cfeedback_wrap-row_item_textarea textarea {

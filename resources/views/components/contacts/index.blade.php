@@ -114,7 +114,7 @@
                                     {{--Тема--}}
                                     <div class="cfeedback_wrap-row">
 
-                                        <input type="text" name="theme" class="invisible" />
+                                        <input type="text" name="theme" class="invisible" value="пожелания" data-theme />
 
                                         <div class="cfeedback_wrap-row_item_label">
                                             <span>Тема обращения</span>
