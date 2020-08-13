@@ -14,7 +14,7 @@ class ProductFeedbackController {
         let btn = el.querySelector('.show_all_btn');
         let items = el.querySelectorAll('.pfitem');
 
-            btn.addEventListener('click', function() {
+           btn && btn.addEventListener('click', function() {
                 items.forEach((item) => {
                     item.classList.remove('as-none');
                 })
