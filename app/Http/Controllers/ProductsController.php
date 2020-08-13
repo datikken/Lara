@@ -126,7 +126,7 @@ class ProductsController extends Controller
         $product['name_econom'] = json_decode($product['name_econom']);
         $product['feedback'] = $feedItems;
 
-        dd($feedItems);
+        // dd($feedItems);
 
         if ($request->ajax()) {
             return response()->json($product);
