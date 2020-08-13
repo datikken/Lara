@@ -19,6 +19,7 @@
                     <div class="pfitem_wrap-item_head-best"><span>Лучший отзыв</span></div>
                 <? } ?>
 
+
                 <div class="pfitem_wrap-item_head">
 
                     <div class="pfitem_wrap-item_head_inner">
@@ -31,7 +32,6 @@
                     <? } ?>
 
                 </div>
-
 
 
                 <div class="pfitem_wrap-item_summary">

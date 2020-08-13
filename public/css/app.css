@@ -204,9 +204,17 @@ a:hover {
 }
 
 .show_all_btn {
-  width: 200px !important;
-  border: 1px solid #fdd935;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   background: #fff !important;
+  border: 1px solid #fdd935;
+  justify-content: center;
+  width: 200px !important;
+  background: #fdd935;
+  border-radius: 30px;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
 }
 .show_all_btn .action_btn-item {
   font-size: 12px;
@@ -6265,6 +6273,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border-radius: 30px;
   outline: none;
   padding-left: 20px;
+  padding-bottom: 4px;
 }
 .pfeedback_wrap form .pfeedback_wrap-item_head h2 {
   font-family: "MontserratSemiBold";

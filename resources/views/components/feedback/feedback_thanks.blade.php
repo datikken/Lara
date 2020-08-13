@@ -6,6 +6,6 @@
         <div class="thanks_wrap_desc">
             <span>Мы обязательно его прочитаем <br/> и примем к сведению Ваше мнение</span>
         </div>
-        @include('components.btn.text_btn', [ 'class' => 'thanks_wrap_btn', 'text' => 'Закрыть'])
+        @include('components.btn.text_btn', [ 'class' => 'thanks_wrap_btn action_btn', 'text' => 'Закрыть'])
     </div>
 </div>

@@ -67,7 +67,7 @@
 
             <input type="text" name="product_id" class="invisible" value="{{ $product['id'] }}">
 
-            @include('components.btn.text_btn', [ 'class' => 'cfeedback_wrap-row_btn animated_btn', 'text' => 'Отправить'])
+            @include('components.btn.text_btn', [ 'class' => 'cfeedback_wrap-row_btn animated_btn action_btn', 'text' => 'Отправить'])
 
         </form>
 

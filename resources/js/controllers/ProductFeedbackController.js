@@ -107,7 +107,7 @@ class ProductFeedbackController {
         let txtarea = el.querySelector('textarea');
         let url = el.querySelector('form').getAttribute('action');
 
-        btn && btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function(e) {
             e.preventDefault();
 
             let dataObj = {};
@@ -124,8 +124,6 @@ class ProductFeedbackController {
                }
             })
 
-            // console.log('dataObj click', btn, dataObj, url)
-
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': window.token
@@ -137,7 +135,7 @@ class ProductFeedbackController {
                 url: `${url}`,
                 data: dataObj,
                 success: function (data) {
-                    // console.warn('feedback data', data);
+                    console.warn('feedback data', data);
                     that._cleanFields();
                 },
                 error: function (error) {
