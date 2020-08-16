@@ -8,8 +8,12 @@ mix
         jquery: ['$', 'window.jQuery', 'jQuery'],
     });
 
-mix.sass('resources/sass/app.scss', 'public/css')
+mix
+    .sass('resources/sass/app.scss', 'public/css')
     .copyDirectory('resources/assets/images', 'public/images')
     .options({
         processCssUrls: false
     });
+
+mix
+    .sass('resources/sass/admin.scss', 'public/css/admin.css')

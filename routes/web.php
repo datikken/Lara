@@ -134,6 +134,10 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //ADMIN - functionality
 
+//Utils
+Route::get('/admin/show_pickups', ['uses' => 'AdminUtilsController@show', 'as' => 'ShowPickups' ]);
+Route::post('/create_pickup', ['uses' => 'AdminUtilsController@create', 'as' => 'CreatePickup' ]);
+
 //Documents
 Route::get('/admin/displayDocumentUpload', ['uses' => 'AdminDocumentsController@create', 'as' => 'AdminDisplayDocumentUpload']);
 Route::post('/admin/createDocument', ['uses' => 'AdminDocumentsController@store', 'as' => 'AdminCreateDocument']);
@@ -175,6 +179,7 @@ Route::get('/admin/deleteAbout/{id}', ['uses' => "AdminAboutController@deleteAbo
 Route::get('/createYearToDescribe', ['uses' => 'AdminAboutController@createYearToDescribe', 'as' => 'CreateYearToDescribe']);
 Route::get('/getAboutYears', ['uses' => 'AdminAboutController@getAboutYears', 'as' => 'GetAboutYears']);
 Route::post('/getTwoYearsInfoBySelect', ['uses' => 'AdminAboutController@getTwoYearsInfoBySelect', 'as' => 'getTwoYearsInfoBySelect']);
+
 //TECH ROUTES
 Route::get('/checkCartState', ['uses' => 'CartController@checkCartState', 'as' => 'checkCartState']);
 

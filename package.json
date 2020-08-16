@@ -12,6 +12,7 @@
         "precommit": "npx eslint ./resources/js --fix"
     },
     "devDependencies": {
+        "@vue/test-utils": "^1.0.3",
         "axios": "^0.19.2",
         "bootstrap": "^4.1.0",
         "cross-env": "^5.1",
