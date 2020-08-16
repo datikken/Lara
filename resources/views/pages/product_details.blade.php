@@ -12,7 +12,7 @@
 
     @include('components.product_details.product_capacity',['class' => '', 'product' => $product ])
 
-    @include('components.product_details.product_chrst',['class' => 'as-none' ])
+    @include('components.product_details.product_chrst',['class' => 'as-none','chrst' => json_decode( $product['params'] ) ])
     @include('components.product_details.product_desc',['class' => 'as-none' ])
     @include('components.feedback.feedback_thanks',['class' => 'as-none' ])
 

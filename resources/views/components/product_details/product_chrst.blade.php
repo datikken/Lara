@@ -1,22 +1,28 @@
+@php #dump($chrst); @endphp
+
 <div class="prdch  <? if($class) { echo $class; } ?>">
     <div class="prdch_wrap">
-        <div class="prdch_item">
-            <div class="prdch_name">
-                <span>Цветность печати</span>
+        <? if(isset($chrst->col)) { ?>
+            <div class="prdch_item">
+                <div class="prdch_name">
+                    <span>Цветность печати</span>
+                </div>
+                <div class="prdch_val">
+                    <span>{{ $chrst->col }}</span>
+                </div>
             </div>
-            <div class="prdch_val">
-                <span>цветная</span>
-            </div>
-        </div>
+        <? } ?>
 
-        <div class="prdch_item">
-            <div class="prdch_name">
-                <span>Технология печати</span>
+        <? if(isset($chrst->printertype )) { ?>
+            <div class="prdch_item">
+                <div class="prdch_name">
+                    <span>Технология печати</span>
+                </div>
+                <div class="prdch_val">
+                    <span>{{ $chrst->printertype }}</span>
+                </div>
             </div>
-            <div class="prdch_val">
-                <span>пьезоэлектрическая струйная</span>
-            </div>
-        </div>
+        <? } ?>
 
         <div class="prdch_item">
             <div class="prdch_name">
@@ -63,15 +69,6 @@
             </div>
         </div>
 
-
-        <div class="prdch_item">
-            <div class="prdch_name">
-                <span>Количество цветов</span>
-            </div>
-            <div class="prdch_val">
-                <span>4</span>
-            </div>
-        </div>
 
         <div class="prdch_item">
             <div class="prdch_name">
