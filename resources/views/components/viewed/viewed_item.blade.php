@@ -1,4 +1,4 @@
-<div class="viewed_wrapper-item">
+<a class="viewed_wrapper-item" href="{{ route('ShowProductDetails',['id' => $product['id']]) }}">
     <div class="viewed_wrapper-item_image">
         <img onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . json_decode($product['params'])->brand . '/SMALL/' . $product['photo'] . '.png') }}" alt="{{ $product['photo'] }}" />
     </div>
@@ -13,4 +13,4 @@
             <img src="/images/icons/rub.svg" alt="rub" />
         </div>
     </div>
-</div>
+</a>
