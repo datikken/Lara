@@ -1,4 +1,4 @@
-@php dump($chrst); @endphp
+@php #dump($chrst); @endphp
 
 <div class="prdch  <? if($class) { echo $class; } ?>">
     <div class="prdch_wrap">
