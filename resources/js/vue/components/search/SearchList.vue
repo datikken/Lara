@@ -4,7 +4,7 @@
             <simplebar data-simplebar-auto-hide="true" class="sres_content">
 
                 <div v-for="item in items" :key="item.message">
-                    <SearchListItemHead :type="item.params.type"/>
+                    <SearchListItemHead :type="item.params.type" />
                     <SearchListItem :data="item" />
                 </div>
 
