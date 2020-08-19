@@ -18,6 +18,7 @@ class ProductsController extends Controller
 {
     public function showIndex()
     {
+
         $slides = MainSliderImage::all();
         $products = Product::all();
         $posts = Post::all();
