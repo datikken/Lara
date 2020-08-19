@@ -1,5 +1,3 @@
-<?php //dump($product['images']); ?>
-
 <div class="details">
     <div class="details_wrap">
 

@@ -39,7 +39,13 @@ class ProductsController extends Controller
             }
         }
 
-        return view('pages.index', ['products' => $firstThirty, 'slides' => $slides, 'news' => $posts ]);
+        $vwd = session()->get('viewed');
+
+        if(is_null($vwd)) {
+            $vwd = $firstThirty;
+        }
+
+        return view('pages.index', ['products' => $firstThirty, 'slides' => $slides, 'news' => $posts, 'vwd' => $vwd ]);
     }
     public function catalogHTML()
     {
@@ -91,7 +97,6 @@ class ProductsController extends Controller
         }
 
         return response()->json($products);
-
     }
 
     public function productDetails(Request $request, $id)

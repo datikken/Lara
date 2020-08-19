@@ -1,7 +1,8 @@
 import FastViewController from './FastViewController.js'
-import Vue from "vue";
+import VueTruncate from 'vue-truncate-filter';
 import store from "../vue/store/store";
-import cat from '../vue/Catalog.vue'
+import cat from '../vue/Catalog.vue';
+import Vue from "vue";
 
 class CatalogController {
     _initFastViewController(el) {
@@ -21,6 +22,7 @@ class CatalogController {
             catalog && this._setListeners();
 
             if(catalog) {
+                Vue.use(VueTruncate)
                 new Vue({
                     render: h => h(cat),
                     store: store,

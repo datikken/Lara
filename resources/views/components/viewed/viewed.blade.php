@@ -4,6 +4,7 @@
     </div>
 
     <div class="viewed_wrapper">
+
         @foreach($products as $product)
             @include('components.viewed.viewed_item',['product' => $product])
         @endforeach

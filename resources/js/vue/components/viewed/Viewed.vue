@@ -13,16 +13,24 @@
 
 <script>
     import ViewedItem from './ViewedItem';
+    import {mapActions} from 'vuex';
 
     export default {
         name: "Viewed",
         components: {
             ViewedItem
         },
+        created() {
+            this.GET_VIEWED_PRODUCTS();
+        },
+        methods: {
+            ...mapActions([
+                'GET_VIEWED_PRODUCTS'
+            ]),
+        },
         computed: {
             products() {
-                let products = this.$store.state.products;
-                return products;
+                return this.$store.state.viewedProducts;
             }
         }
     }

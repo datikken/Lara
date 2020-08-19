@@ -9,32 +9,33 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        closeListener: false,
-        productsLoaded: false,
-        products: [],
-        filteredProducts: [],
-        typeFilters: [],
-        modelFilters: [],
-        brandFilters: [],
-        singleProduct: {},
-        customerAdress: {},
-        customerIndex: false,
-        user: false,
-        usersFIO: '',
-        cartStep: 0,
-        cart: false,
-        deliveryType: false,
-        deliveryAdress: {},
-        urikValidation: {},
-        uriksData: {},
-        order: {},
+        lastTwoYearsInfo: false,
         paymentProvider: false,
+        productsLoaded: false,
+        closeListener: false,
+        customerIndex: false,
+        deliveryType: false,
         cardPayment: false,
-        orders: false,
         pickUpPoint: false,
         orderPaid: false,
         aboutData: false,
-        lastTwoYearsInfo: false
+        orders: false,
+        user: false,
+        cart: false,
+        filteredProducts: [],
+        viewedProducts: [],
+        modelFilters: [],
+        brandFilters: [],
+        typeFilters: [],
+        products: [],
+        customerAdress: {},
+        deliveryAdress: {},
+        urikValidation: {},
+        singleProduct: {},
+        uriksData: {},
+        order: {},
+        usersFIO: '',
+        cartStep: 0
     },
     getters: {
         filteredProducts: state => state.filteredProducts,
@@ -50,6 +51,12 @@ const store = new Vuex.Store({
         lastTwoYearsInfo: state => state.lastTwoYearsInfo
     },
     actions: {
+        GET_VIEWED_PRODUCTS(context) {
+            context.commit('getViewedProducts');
+        },
+        SET_PRODUCT_VIEWED(context, id) {
+            context.commit('setProductViewed', id);
+        },
         GET_TWO_YEARS_INFO_BY_SELECT(context, year) {
             context.commit('getTwoYearsInfoBySelect', year);
         },
@@ -165,6 +172,43 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
+        getViewedProducts(state) {
+                fetch(`/getViewed`, {
+                    method: "GET",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': window.token
+                    },
+                    redirect: 'follow',
+                    referrerPolicy: 'no-referrer'
+                })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    state.viewedProducts = data;
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        },
+        setProductViewed(state, {pid}) {
+            fetch(`/setViewed/${pid}`, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': window.token
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify({
+                    id: pid
+                })
+            })
+                .then((response) => {
+                    return response.json();
+                })
+        },
         getTwoYearsInfoBySelect(state, year) {
             fetch('/getTwoYearsInfoBySelect', {
                 method: "POST",
@@ -178,25 +222,25 @@ const store = new Vuex.Store({
                     year
                 })
             })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                state.lastTwoYearsInfo = data;
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    state.lastTwoYearsInfo = data;
 
-                console.log('getTwoYearsInfoBySelect', data, typeof data)
-            });
+                    console.log('getTwoYearsInfoBySelect', data, typeof data)
+                });
         },
         getAboutYears(state) {
             fetch('/getAboutYears', {
                 method: "GET"
             })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                state.aboutData = data;
-            });
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    state.aboutData = data;
+                });
         },
         getOrdersInfo(state) {
             $.ajaxSetup({
@@ -268,7 +312,7 @@ const store = new Vuex.Store({
             return state.deliveryAdress;
         },
         scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({top: 0, behavior: 'smooth'});
         },
         payWithCard(state, obj) {
             let valid = {
@@ -276,22 +320,22 @@ const store = new Vuex.Store({
                 errors: []
             };
 
-            if(parseInt(obj.month) === 'NaN') {
+            if (parseInt(obj.month) === 'NaN') {
                 valid.errors.push('Месяц не выбран')
             }
-            if(parseInt(obj.year) === 'NaN') {
+            if (parseInt(obj.year) === 'NaN') {
                 valid.errors.push('Год не выбран')
             }
-            if(obj.card_num === '') {
+            if (obj.card_num === '') {
                 valid.errors.push('Неправильный номер карты')
             }
-            if(obj.cvv === '') {
+            if (obj.cvv === '') {
                 valid.errors.push('Незаполнен cvv')
             }
-            if(obj.card_name === '') {
+            if (obj.card_name === '') {
                 valid.errors.push('Незаполнено имя карты')
             }
-            if(valid.errors.length === 0) {
+            if (valid.errors.length === 0) {
                 valid.status = true;
             }
 
@@ -314,11 +358,11 @@ const store = new Vuex.Store({
                 }
             }
 
-            if(valid) {
+            if (valid) {
                 createCryptogram();
             }
 
-            console.log(obj,'payWithCard', valid)
+            console.log(obj, 'payWithCard', valid)
         },
         setPaymentProvider(state, provider) {
             state.paymentProvider = provider;
@@ -504,7 +548,7 @@ const store = new Vuex.Store({
             if (state.cartStep === 2) {
                 line.style.width = '100%';
             }
-            if(text) {
+            if (text) {
                 line.style.width = '100%';
             }
 
@@ -564,8 +608,8 @@ const store = new Vuex.Store({
 
             //XXX
             let amount = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
-                amount.innerText = 1;
-                amount.setAttribute('data-modal-val', 1);
+            amount.innerText = 1;
+            amount.setAttribute('data-modal-val', 1);
         },
         setProductsLoaded(state) {
             state.productsLoaded = true;
@@ -576,12 +620,12 @@ const store = new Vuex.Store({
             state.products.forEach((prdt) => {
                 let cape = JSON.stringify(Object.keys(prdt.cape));
 
-                if(cape.indexOf(query.brand) >= 0) {
+                if (cape.indexOf(query.brand) >= 0) {
                     newProducts.push(prdt)
                 }
             });
 
-            if(newProducts.length > 0) {
+            if (newProducts.length > 0) {
                 state.filteredProducts = newProducts;
             }
         },
@@ -590,7 +634,7 @@ const store = new Vuex.Store({
 
             state.products.forEach((prdt) => {
                 let param = prdt.params;
-                if(param.printertype === query.printertype) {
+                if (param.printertype === query.printertype) {
                     newProducts.push(prdt)
                 }
             });
@@ -603,27 +647,27 @@ const store = new Vuex.Store({
             state.products.forEach((prdt) => {
                 let cape = JSON.stringify(Object.values(prdt.cape));
 
-                if(cape.indexOf(query.model) >= 0) {
+                if (cape.indexOf(query.model) >= 0) {
                     newProducts.push(prdt)
                 }
             });
 
-            if(newProducts.length > 0) {
+            if (newProducts.length > 0) {
                 state.filteredProducts = newProducts;
             }
         },
         filterProductByQuery(state, query) {
-            if(query.printertype) {
+            if (query.printertype) {
                 this.dispatch('FILTER_PRODUCTS_BY_PRINTERTYPE', query);
             }
-            if(query.brand) {
+            if (query.brand) {
                 this.dispatch('FILTER_PRODUCTS_BY_BRAND', query)
             }
-            if(query.model) {
+            if (query.model) {
                 this.dispatch('FILTER_PRODUCTS_BY_MODEL', query)
             }
 
-            if(Object.keys(query).length === 0) {
+            if (Object.keys(query).length === 0) {
                 state.filteredProducts = state.products
             }
 

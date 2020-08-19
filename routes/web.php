@@ -63,6 +63,11 @@ Route::group(['middleware' => 'checkUserRole'], function () {
 //Main page
 Route::get('/', ['uses' => "ProductsController@showIndex", 'as' => 'index']);
 
+//Viewed
+Route::get('/getViewed', ['uses' => 'ViewedController@index', 'as' => 'getViewed']);
+Route::post('/setViewed/{id}', ['uses' => 'ViewedController@create', 'as' => 'createViewed']);
+Route::get('/resetViewed', ['uses' => 'ViewedController@reset', 'as' => 'forgetViewed']);
+
 //CATALOG
 Route::get('/catalog', ['uses' => "ProductsController@catalogHTML", 'as' => 'allProducts']);
 

@@ -1,5 +1,5 @@
 /* eslint-disable */
-import store from '../vue/store/store'
+import store from '../vue/store/store';
 
 class ProductDetailsMenuController {
     constructor() {
@@ -14,7 +14,14 @@ class ProductDetailsMenuController {
             this._amountListeners();
             this.addToCart();
             this._setListeners(block, container);
+            this._setProductViewed(container);
         }
+    }
+
+    _setProductViewed(el) {
+        console.log('_setProductViewed inited');
+        let pid = el.querySelector('[data-pid]').dataset.pid;
+        this.store.dispatch('SET_PRODUCT_VIEWED', {pid});
     }
 
     _initialize(container) {
