@@ -41,6 +41,10 @@ class ProductsController extends Controller
 
         $vwd = session()->get('viewed');
 
+        foreach ($vwd as $key=>$item) {
+            $vwd[$key] = json_decode($item['params']);
+        }
+
         if(is_null($vwd)) {
             $vwd = $firstThirty;
         }
