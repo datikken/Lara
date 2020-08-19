@@ -32,4 +32,4 @@ export default function() {
             d.removeEventListener('focusout', removePolyfill, true);
         });
     }
-};
+}

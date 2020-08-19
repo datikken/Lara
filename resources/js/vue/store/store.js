@@ -3,8 +3,7 @@ import Vuex from 'vuex'
 import $ from "jquery";
 import axios from 'axios';
 import router from '../router/router';
-
-const _ = require('lodash');
+import _ from 'lodash';
 
 Vue.use(Vuex)
 
@@ -157,7 +156,7 @@ const store = new Vuex.Store({
         GET_MODEL_BRAND_FILTERS(context) {
             context.commit('getProductModelBrandFilters');
         },
-        fixCartStatus({dispatch, commit}, {data}) {
+        fixCartStatus({data}) {
             let amount = data.totalQuantity;
             let price = data.totalPrice;
 
@@ -247,7 +246,7 @@ const store = new Vuex.Store({
             // router.push('/success');
             // this.SCROLL_TO_TOP();
         },
-        checkPaymentError(state) {
+        checkPaymentError() {
             let error = document.querySelector('[data-payment-error]');
             let heading = document.querySelector('[data-payment-head]');
             let head = document.querySelector('.payment_wrap-head');
@@ -272,7 +271,6 @@ const store = new Vuex.Store({
             window.scrollTo({ top: 0, behavior: 'smooth' });
         },
         payWithCard(state, obj) {
-            let that = this;
             let valid = {
                 status: false,
                 errors: []
@@ -314,7 +312,7 @@ const store = new Vuex.Store({
                         alert(result.messages[msgName]);
                     }
                 }
-            };
+            }
 
             if(valid) {
                 createCryptogram();
@@ -569,7 +567,7 @@ const store = new Vuex.Store({
                 amount.innerText = 1;
                 amount.setAttribute('data-modal-val', 1);
         },
-        setProductsLoaded(state, data) {
+        setProductsLoaded(state) {
             state.productsLoaded = true;
         },
         filterProductsByBrand(state, query) {
@@ -638,7 +636,7 @@ const store = new Vuex.Store({
             let allProductBrands = [];
             let allProductModels = [];
 
-            state.filteredProducts.map((prdct, index) => {
+            state.filteredProducts.map((prdct) => {
                 let cape = prdct.cape;
                 let brands = Object.keys(cape);
                 let models = Object.values(cape);

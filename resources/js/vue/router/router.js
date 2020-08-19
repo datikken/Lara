@@ -5,8 +5,6 @@ import Payment from '../pages/Payment'
 import OrderSuccess from '../pages/OrderSuccess'
 import Contract from '../pages/Contract'
 
-const Bar = { template: '<div>bar</div>' }
-
 const routes = [
     { path: '/', component: CheckoutPage },
     { path: '/deliveryForm', component: DeliveryForm },

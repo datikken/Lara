@@ -6,7 +6,7 @@ import router from '../vue/router/router'
 import VueRouter from 'vue-router'
 
 class AboutController {
-    renderAboutVue(el) {
+    renderAboutVue() {
         Vue.use(VueRouter);
 
         new Vue({

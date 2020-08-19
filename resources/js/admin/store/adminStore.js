@@ -2,8 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import $ from "jquery";
 
-const _ = require('lodash');
-
 Vue.use(Vuex)
 
 const store = new Vuex.Store({

@@ -250,6 +250,7 @@ export default {
                 try {
                     document.execCommand('copy');
                 } catch (err) {
+                    console.error(err)
                 } // eslint-disable-line no-empty
                 this.maskCore.backspace();
                 this.updateToCoreState();
