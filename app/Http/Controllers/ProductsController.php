@@ -40,10 +40,10 @@ class ProductsController extends Controller
         }
 
         $vwd = session()->get('viewed');
-
-        foreach ($vwd as $key=>$item) {
-            $vwd[$key] = $item->params;
-        }
+//
+//        foreach ($vwd as $key=>$item) {
+//            $vwd[$key] = $item->params;
+//        }
 
         if(is_null($vwd)) {
             $vwd = $firstThirty;
