@@ -40,13 +40,23 @@ class ProductsController extends Controller
         }
 
         $vwd = session()->get('viewed');
-//
-//        foreach ($vwd as $key=>$item) {
-//            $vwd[$key] = $item->params;
-//        }
 
         if(is_null($vwd)) {
             $vwd = $firstThirty;
+        }
+
+        if($vwd) {
+            foreach ($vwd as $key=>$item) {
+                if(!is_object($item->params)) {
+                    $vwd[$key]->params = json_decode($item->params);
+                }
+            }
+        }
+
+        foreach ($firstThirty as $key=>$val) {
+            if(!is_object($val['params'])) {
+                $firstThirty[$key]['params'] = json_decode($val['params']);
+            }
         }
 
         return view('pages.index', ['products' => $firstThirty, 'slides' => $slides, 'news' => $posts, 'vwd' => $vwd ]);
