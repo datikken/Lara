@@ -19,10 +19,13 @@ class CheckUserRole
     {
         $userRole = DB::table('users')->where('id', Auth::id())->value('role');
 
-        if($userRole === 10) {
-            return $next($request);
-        } else {
-            return redirect("/login");
-        }
+        return $next($request);
+//
+//
+//        if($userRole === 10) {
+//            return $next($request);
+//        } else {
+//            return redirect("/login");
+//        }
     }
 }
