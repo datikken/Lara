@@ -17,4 +17,12 @@ class AdminUsersController
         $users = User::paginate(10);
         return view('admin.users.display', ['users'=> $users]);
     }
+
+    public function makeAdmin()
+    {
+
+
+
+
+    }
 }

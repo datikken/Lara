@@ -18,6 +18,9 @@ const store = new Vuex.Store({
         orders: state => state.orders
     },
     actions: {
+        CHANGE_USER_STATUS(context, status) {
+            context.commit('changeUserStatus', status);
+        },
         CHANGE_ORDER_STATUS(context, obj) {
             context.commit('changeOrderStatus', obj);
         },
@@ -28,6 +31,28 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
+        changeUserStatus(state, status) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': window.token
+                }
+            });
+
+            $.ajax({
+                method: "GET",
+                url: '/adminRights/',
+                data: {
+                    id
+                },
+                success: function (data) {
+                    state.yearsToDescribe = data;
+                    console.log('createYearToDescribe', data)
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+        },
         createYearToDescribe(state, year) {
             $.ajaxSetup({
                 headers: {

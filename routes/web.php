@@ -18,7 +18,7 @@ Route::group(['middleware' => 'ajax'], function () {
 });
 
 //PRODUCTS
-Route::group(['middleware' => 'checkUserRole'], function () {
+//Route::group(['middleware' => 'checkUserRole'], function () {
     Route::post('/admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider']);
 
     Route::get('/admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
@@ -58,7 +58,7 @@ Route::group(['middleware' => 'checkUserRole'], function () {
 //EMAILS
     Route::get('/admin/sendemail', 'SendEmailController@index');
     Route::post('/admin/sendemail/send', 'SendEmailController@send');
-});
+//});
 
 //Main page
 Route::get('/', ['uses' => "ProductsController@showIndex", 'as' => 'index']);
@@ -138,6 +138,7 @@ Route::post('subscribe', ['uses' => 'SubscriptionsController@subscribe', 'as' =>
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //ADMIN - functionality
+Route::get('/adminRights/{id}',['uses' => 'AdminUsersController@makeAdmin', 'as' => 'MakeUserAdmin']);
 
 //Utils
 Route::get('/admin/show_pickups', ['uses' => 'AdminUtilsController@show', 'as' => 'ShowPickups' ]);

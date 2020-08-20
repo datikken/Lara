@@ -24756,9 +24756,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var DropDown = /*#__PURE__*/function () {
   _createClass(DropDown, [{
+    key: "changeAdminStatus",
+    value: function changeAdminStatus(drop) {
+      var btns = drop.querySelectorAll('.dropdown-item');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          var status = e.currentTarget.dataset.status;
+          _store_adminStore__WEBPACK_IMPORTED_MODULE_0__["default"].dispatch('CHANGE_USER_STATUS', status);
+        });
+      });
+    }
+  }, {
     key: "setListeners",
     value: function setListeners(items, url, id, saveYearTrigger, saveYearInput) {
-      saveYearTrigger.addEventListener('click', function (e) {
+      saveYearTrigger && saveYearTrigger.addEventListener('click', function (e) {
         e.preventDefault();
         _store_adminStore__WEBPACK_IMPORTED_MODULE_0__["default"].dispatch('CREATE_YEAR_TO_DESCRIBE', saveYearInput.value);
       });
@@ -24784,10 +24795,16 @@ var DropDown = /*#__PURE__*/function () {
     var menu = drop.querySelector('.dropdown-menu');
     var url = btn.getAttribute('data-url');
     var id = btn.getAttribute('data-id');
+    var setAdmin = drop.dataset;
     var saveYearTrigger = drop.querySelector('[data-saveYearTrigger]');
     var saveYearInput = drop.querySelector('[data-saveYearInput]');
     var btns = menu.querySelectorAll('button');
-    this.setListeners(btns, url, id, saveYearTrigger, saveYearInput);
+
+    if (setAdmin) {
+      this.changeAdminStatus(drop);
+    } else {
+      this.setListeners(btns, url, id, saveYearTrigger, saveYearInput);
+    }
   }
 
   return DropDown;
@@ -24841,6 +24858,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     }
   },
   actions: {
+    CHANGE_USER_STATUS: function CHANGE_USER_STATUS(context, status) {
+      context.commit('changeUserStatus', status);
+    },
     CHANGE_ORDER_STATUS: function CHANGE_ORDER_STATUS(context, obj) {
       context.commit('changeOrderStatus', obj);
     },
@@ -24850,6 +24870,27 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     }
   },
   mutations: {
+    changeUserStatus: function changeUserStatus(state, status) {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': window.token
+        }
+      });
+      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajax({
+        method: "GET",
+        url: '/adminRights/',
+        data: {
+          id: id
+        },
+        success: function success(data) {
+          state.yearsToDescribe = data;
+          console.log('createYearToDescribe', data);
+        },
+        error: function error(_error) {
+          console.warn(_error);
+        }
+      });
+    },
     createYearToDescribe: function createYearToDescribe(state, year) {
       jquery__WEBPACK_IMPORTED_MODULE_2___default.a.ajaxSetup({
         headers: {
@@ -24866,8 +24907,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           state.yearsToDescribe = data;
           console.log('createYearToDescribe', data);
         },
-        error: function error(_error) {
-          console.warn(_error);
+        error: function error(_error2) {
+          console.warn(_error2);
         }
       });
     },
@@ -24912,8 +24953,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           state.orders = data;
           console.log('changeOrderStatus', data);
         },
-        error: function error(_error2) {
-          console.warn(_error2);
+        error: function error(_error3) {
+          console.warn(_error3);
         }
       });
     }
