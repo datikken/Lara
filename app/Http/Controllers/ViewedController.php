@@ -21,7 +21,10 @@ class ViewedController extends Controller
         }  else {
             foreach($viewed as $key=>$item) {
                 $viewed[$key]->name_econom = json_decode($item->name_econom);
-                $viewed[$key]->params = json_decode($item->params);
+
+                if(!is_object($item->params)) {
+                    $viewed[$key]->params = json_decode($item->params);
+                }
             }
 
             $resp = $viewed;
