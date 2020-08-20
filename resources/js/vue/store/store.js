@@ -512,6 +512,8 @@ const store = new Vuex.Store({
             });
         },
         applyPriceFilter(state, name) {
+            //search by printer not cartridge
+
             state.filteredProducts = _.orderBy(state.filteredProducts, ['price'], [name]);
         },
         setDeliveryType(state, name) {

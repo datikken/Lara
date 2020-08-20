@@ -20,10 +20,7 @@
 <script>
     export default {
         name: "ViewedItem",
-        props: ['data'],
-        created() {
-            console.warn('fixes', this.$props.data);
-        }
+        props: ['data']
     }
 </script>
 
