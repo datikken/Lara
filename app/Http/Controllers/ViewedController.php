@@ -36,7 +36,18 @@ class ViewedController extends Controller
     public function create($id)
     {
         $item = DB::table('products')->where('id', $id)->get();
-        $sessionItem = session()->push('viewed', $item[0]);
+        $viewedItems = session()->get('viewed');
+
+        foreach ($viewedItems as $viewed) {
+            if($viewed->id === $id) {
+                $exists = true;
+            }
+        }
+
+        //XXXX
+//        if(!$exists) {
+            $sessionItem = session()->push('viewed', $item[0]);
+//        }
 
         return response()->json($item);
     }
