@@ -129,8 +129,8 @@ Route::post('product/setIssue', ['uses' => 'ProductsController@setIssue', 'as' =
 Route::get('checkOrderStatus', ['uses' => 'AdminTrackingController@checkOrderStatus', 'as' => 'checkOrderStatus']);
 Route::post('fetchProducts', ['uses' => 'AdminProductsController@fetchProducts', 'as' => 'fetchProducts']);
 Route::get('removeProducts', ['uses' => 'AdminProductsController@removeProducts', 'as' => 'removeProducts']);
-Route::get('/createOrder', ['uses' => 'ProductsController@createOrder', 'as' => 'createOrder']);
-Route::get('product/repeatOrder/{id}', ['uses' => 'ProductsController@repeatOrder', 'as' => 'repeatOrder']);
+Route::get('/createOrder', ['uses' => 'AdminOrdersController@createOrder', 'as' => 'createOrder']);
+Route::get('product/repeatOrder/{id}', ['uses' => 'AdminOrdersController@repeatOrder', 'as' => 'repeatOrder']);
 Route::get('product/proceedPayment', ['uses' => 'PaymentsController@proceedPayment', 'as' => 'proceedPayment']);
 
 //Email Subscriptions
@@ -190,7 +190,7 @@ Route::post('/getTwoYearsInfoBySelect', ['uses' => 'AdminAboutController@getTwoY
 Route::get('/checkCartState', ['uses' => 'CartController@checkCartState', 'as' => 'checkCartState']);
 
 //Session
-Route::get('/getSessionInfo', ['uses' => 'CustomerDataController@getSession', 'as' => 'getSessionInfo']);
+Route::get('/getSessionInfo', ['uses' => 'CustomerDataController@getSessionInfo', 'as' => 'getSessionInfo']);
 
 //Test file storage
 Route::get('/testStorage', function () {
