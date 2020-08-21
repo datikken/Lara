@@ -24,6 +24,7 @@
                 <span>для принтеров и МФУ:</span>
             </div>
         </div>
+
     </div>
     <div class="cart_wrap-item_inner-table_row-col">
         <div class="cart_wrap-item_inner-table_row-col_price">

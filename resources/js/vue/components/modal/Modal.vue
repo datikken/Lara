@@ -9,7 +9,7 @@
                             <img class="prdet_wrap-item_img_inner"
                                  onerror="this.src = '/images/unnecessary/owl-swiper.svg';"
                                  v-if="singleProduct.params"
-                                 :src="`../storage/product_images/${singleProduct.params.brand}/SMALL/${singleProduct.photo}.png`"
+                                 :src="`../storage/product_images/${singleProduct.params.Бренд}/SMALL/${singleProduct.photo}.png`"
                                  alt="">
                         </div>
                     </div>

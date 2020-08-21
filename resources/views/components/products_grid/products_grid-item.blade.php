@@ -59,8 +59,8 @@
             <div class="prdet_wrap">
                 <div class="prdet_wrap-item">
                     <div class="prdet_wrap-item_img">
-                        <div class="prdet_wrap-item_img_inner" style="background-image: url({{Storage::disk("local")->url("/product_images/" . $image )}})">
-                        </div>
+                        {{--<div class="prdet_wrap-item_img_inner" style="background-image: url({{Storage::disk("local")->url("/product_images/" . $image )}})">--}}
+                        {{--</div>--}}
                     </div>
                 </div>
                 <div class="prdet_wrap-item">
