@@ -163,7 +163,7 @@ const store = new Vuex.Store({
         GET_MODEL_BRAND_FILTERS(context) {
             context.commit('getProductModelBrandFilters');
         },
-        fixCartStatus({data}) {
+        fixCartStatus(state, {data}) {
             let amount = data.totalQuantity;
             let price = data.totalPrice;
 
