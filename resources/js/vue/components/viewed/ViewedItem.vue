@@ -10,7 +10,7 @@
                 </span>
             </div>
             <div class="viewed_wrapper-item_text-price">
-                <span>{{ data.price }}</span>
+                <span>{{ data.price | floor }}</span>
                 <img src="/images/icons/rub.svg" alt="rub" />
             </div>
         </div>
@@ -20,7 +20,12 @@
 <script>
     export default {
         name: "ViewedItem",
-        props: ['data']
+        props: ['data'],
+        filters: {
+            floor: function (value) {
+                return Math.ceil(value);
+            }
+        }
     }
 </script>
 
