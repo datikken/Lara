@@ -242,11 +242,16 @@ class ProductsController extends Controller
 
     public function addToCartAjaxGet(Request $request, $id)
     {
+
         $amount = $request->input('amount');
         $prevCart = $request->session()->get('cart');
+
         $cart = new Cart($prevCart);
+
         $product = Product::find($id);
+
         $cart->addItem($id, $product, $amount ? $amount : 1);
+
         $request->session()->put('cart', $cart);
 
         $merged = Session::get('cart');

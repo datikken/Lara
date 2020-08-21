@@ -724,6 +724,9 @@ const store = new Vuex.Store({
                     amount
                 },
                 success: function (data) {
+
+                    console.warn('addToCartAjaxGet', data)
+
                     that.dispatch('fixCartStatus', {data})
                 },
                 error: function (error) {

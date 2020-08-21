@@ -245,6 +245,10 @@ class AdminProductsController extends Controller
 
             foreach ($params as $par) {
                 foreach ($par as $a => $b) {
+                    if($a === 'Тип принтера') {
+                        $a = 'printertype';
+                    }
+
                     $newParams[$a] = trim($b);
                 }
             }
