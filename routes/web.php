@@ -18,7 +18,7 @@ Route::group(['middleware' => 'ajax'], function () {
 });
 
 //PRODUCTS
-//Route::group(['middleware' => 'checkUserRole'], function () {
+Route::group(['middleware' => 'checkUserRole'], function () {
     Route::post('/admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider']);
 
     Route::get('/admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
@@ -58,7 +58,7 @@ Route::group(['middleware' => 'ajax'], function () {
 //EMAILS
     Route::get('/admin/sendemail', 'SendEmailController@index');
     Route::post('/admin/sendemail/send', 'SendEmailController@send');
-//});
+});
 
 //Main page
 Route::get('/', ['uses' => "ProductsController@showIndex", 'as' => 'index']);

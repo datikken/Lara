@@ -1,7 +1,7 @@
 <template>
     <div class="viewed_wrapper-item">
         <div class="viewed_wrapper-item_image">
-            <img :src="`../storage/product_images/${data.params.brand}/SMALL/${data.photo}.png`" alt="" />
+            <img :src="`../storage/product_images/${data.params.Бренд}/SMALL/${data.photo}.png`" alt="" />
         </div>
         <div class="viewed_wrapper-item_text">
             <div class="viewed_wrapper-item_text-heading">

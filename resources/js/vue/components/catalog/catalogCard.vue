@@ -18,7 +18,7 @@
             <div class="product_wrapper-item product_wrapper-itemContent">
                 <a class="product_wrapper-item_image product_link" :href="`/product/${data.id}`">
                     <img onerror="this.src = '/images/unnecessary/owl-swiper.svg';"
-                         :src="`../storage/product_images/${data.params.brand}/SMALL/${data.photo}.png`" alt="">
+                         :src="`../storage/product_images/${data.params.Бренд}/SMALL/${data.photo}.png`" alt="">
                 </a>
                 <a class="product_wrapper-item_overlay" href="#modal-1" uk-toggle :data-id="data.id" @click="loadProductModal(data.id)">
                     <div class="product_wrapper-item_overlay_wrapper">

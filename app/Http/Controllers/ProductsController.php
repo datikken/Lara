@@ -153,8 +153,8 @@ class ProductsController extends Controller
 
         $params = json_decode($product['params']);
 
-        $bigImage = strval($params->brand . '/BIG/' . $product['photo'] . '.png');
-        $smallImage = strval($params->brand . '/SMALL/' . $product['photo'] . '.png');
+        $bigImage = strval($params->Бренд . '/BIG/' . $product['photo'] . '.png');
+        $smallImage = strval($params->Бренд . '/SMALL/' . $product['photo'] . '.png');
 
         $bigExists = Storage::disk('local')->exists('/public/product_images/' . $bigImage);
         $smallExists = Storage::disk('local')->exists('/public/product_images/' . $smallImage);

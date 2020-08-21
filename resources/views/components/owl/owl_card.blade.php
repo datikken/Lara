@@ -20,13 +20,10 @@
             </div>
 
             <a class="carousel_card-wrapper_item" href="{{ route('ShowProductDetails',['id' => $product['id']]) }}">
-
-                {{--@php dump($product['params']); @endphp--}}
-
                 <? if(is_null($product['photo'])) { ?>
                     <img src="/images/unnecessary/owl-swiper.svg" alt="cart" />
                 <? } else { ?>
-                    <img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . $product['params']->brand . '/SMALL/' . $product['photo'] . '.png') }}"/>
+                    <img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . $product['params']->Бренд . '/SMALL/' . $product['photo'] . '.png') }}"/>
                 <? } ?>
             </a>
 
