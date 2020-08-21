@@ -1,3 +1,5 @@
+<? #dump($cartItem); ?>
+
 <div class="cart_wrap-item_inner-table_row cart_item_row" data-id="{{ $cartItem['data']['id'] }}">
     <div class="cart_wrap-item_inner-table_row-col">
         <div class="cart_wrap-item_inner-table_row_heading desktop-hide">
@@ -6,7 +8,7 @@
 
         <div class="cart_wrap-item_inner-table_row-col_img">
             <a data-href="{{route('DeleteItemFromCart', ['id' => $cartItem['data']['id']])}}" class="remove_icon" style="background-image: url('/images/unnecessary/cart_close.svg')"></a>
-            <img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . $cartItem['data']['params']['brand'] . '/SMALL/' . $cartItem['data']['photo'] . '.png') }}"/>
+            <img class="carousel_card-wrapper_item-image" onerror="this.src = '/images/unnecessary/owl-swiper.svg';" src="{{ Storage::url('product_images/' . $cartItem['data']['params']['Бренд'] . '/SMALL/' . $cartItem['data']['photo'] . '.png') }}"/>
         </div>
 
 
@@ -16,7 +18,7 @@
                 <span>Чёрный тонер-картридж</span>
             </div>
             <div class="cart_wrap-item_inner-table_row-col_desc-info">
-                <span>@php echo $cartItem['data']['params']['art']; @endphp</span>
+                <span>@php echo $cartItem['data']['photo']; @endphp</span>
             </div>
             <div class="cart_wrap-item_inner-table_row-col_desc-about">
                 <span>для принтеров и МФУ:</span>
