@@ -26,7 +26,7 @@
                     <label for="required" class="invisible errorLabel" data-err>Поле телефон обязательно к
                         заполнению</label>
                     <label for="tel">Телефон <span>*</span></label>
-                    <masked-input v-model="phone" mask="\+\7 (111) 111-11-11" placeholder="+7 (___) ___ - __ - __"/>
+                    <masked-input v-model="phone" mask="\+\7 (111) 111-11-11" name="tel" placeholder="+7 (___) ___ - __ - __"/>
                 </div>
 
                 <TextBtn className="cart_check-wrap_item-group_btn animated_btn" text="продолжить"
