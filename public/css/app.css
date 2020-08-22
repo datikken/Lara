@@ -1615,7 +1615,14 @@ b {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #fff;
-  padding: 2px 0 0 5px;
+  padding: 2px 25px 0 15px;
+  margin-left: 0.5rem;
+}
+@media screen and (min-width: 1030px) {
+  .subscription_wrapper-item_button span {
+    margin-left: 0.2rem;
+    padding: 2px 0 0 5px;
+  }
 }
 .subscription_wrapper-item input {
   height: 30px;

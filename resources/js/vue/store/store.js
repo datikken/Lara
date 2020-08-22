@@ -253,6 +253,8 @@ const store = new Vuex.Store({
                 url: '/getOrdersInfo',
                 success: function (data) {
                     state.orders = data;
+
+                    console.warn('getOrdersInfo', data);
                 },
                 error: function (error) {
                     console.warn(error);
@@ -340,7 +342,6 @@ const store = new Vuex.Store({
             }
 
             let checkout = new cp.Checkout(
-                // public id из личного кабинета
                 "test_api_00000000000000000000001",
                 document.getElementById("paymentFormSample")
             );
@@ -393,8 +394,6 @@ const store = new Vuex.Store({
                 process(nal)
             }
 
-            console.warn('before setpayment', state.order)
-
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': window.token
@@ -414,7 +413,6 @@ const store = new Vuex.Store({
                     console.warn(error);
                 }
             });
-
 
             return state.paymentProvider;
         },
@@ -531,7 +529,6 @@ const store = new Vuex.Store({
             });
         },
         applyPriceFilter(state, name) {
-            //search by printer not cartridge
             state.filteredProducts = _.orderBy(state.filteredProducts, ['price'], [name]);
         },
         setDeliveryType(state, name) {
@@ -623,11 +620,11 @@ const store = new Vuex.Store({
             return state.user
         },
         getProductById(state, id) {
+            let amount = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
             let product = state.products.filter((el) => el.id === id)
+
             state.singleProduct = product[0];
 
-            //XXX
-            let amount = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
             amount.innerText = 1;
             amount.setAttribute('data-modal-val', 1);
         },

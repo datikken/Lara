@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <OrdersHistory v-if="this.orders" />
+    <OrdersHistory  />
 
 </div>
 

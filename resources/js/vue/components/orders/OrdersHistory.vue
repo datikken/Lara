@@ -26,7 +26,12 @@
                 </div>
 
 
-                <div class="history_wrapper-item_row  order_values" v-for="order in orders.orders_history" @click="viewDetails(order.id)" :data-OrderId="order.id">
+                <div class="history_wrapper-item_row  order_values"
+                     :class="{'last_order': (index === 1)}"
+                     v-for="(order,index) in orders.orders_history"
+                     @click="viewDetails(order.id)"
+                     :data-OrderId="order.id"
+                >
                     <div class="history_wrapper-item_row-item">
                         <span class="history_wrapper-item_row-item_val">
                             {{ order.date }}
@@ -125,8 +130,6 @@
             ]),
             repeatOrder(id) {
                 console.warn('order repeat', id);
-
-
             },
             viewDetails(id) {
                 this.GET_SINGLE_ORDER_INFO(id);
