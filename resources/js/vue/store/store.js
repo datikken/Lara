@@ -405,8 +405,7 @@ const store = new Vuex.Store({
                 method: "GET",
                 url: '/setPaymentProvider',
                 data: {
-                    provider,
-                    orderId: state.order.order_id
+                    provider
                 },
                 success: function (data) {
                     console.warn(data);

@@ -33,8 +33,8 @@ class PaymentsController extends Controller
     public function setPaymentProvider(Request $request)
     {
         $provider = $request->provider;
-        $orderId = $request->orderId;
+        $request->session()->put('payment_info', $provider);
 
-        $order = DB::table('orders')->where('id', $orderId)->get();
+        return response()->json(array('success'));
     }
 }

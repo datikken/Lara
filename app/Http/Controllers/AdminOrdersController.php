@@ -77,8 +77,7 @@ class AdminOrdersController extends Controller
 
         if($cart) {
             $date = date('Y-m-d H:i:s');
-            $orderInfo = new CustomerDataController;
-            $orderInfoData = $orderInfo->getSessionInfo();
+//            $orderInfo = new CustomerDataController;
 
             $newOrderArray = array(
                 'status' => 'on_hold',
@@ -87,10 +86,10 @@ class AdminOrdersController extends Controller
                 'price' => $cart->totalPrice,
                 'user_id' => $user_id,
                 'payment_status' => 'not_paid',
-                'order_info' => json_encode($orderInfoData)
             );
 
-            $created_order = DB::table('orders')->insert($newOrderArray);
+            DB::table('orders')->insert($newOrderArray);
+
             $order_id = DB::getPdo()->lastInsertId();
 
             foreach ($cart->items as $cart_item) {
@@ -107,17 +106,17 @@ class AdminOrdersController extends Controller
                     'quantity' => $item_quantity
                 );
 
-                $created_order_items = DB::table('order_items')->insert($newItemsInCurrentOrder);
+                DB::table('order_items')->insert($newItemsInCurrentOrder);
             }
 
-            Session::forget('cart');
-            Session::flush();
+//            Session::forget('cart');
+//            Session::flush();
 
             $payment_info = $newOrderArray;
-            $request->session()->put('payment_info', $payment_info);
+//            $request->session()->put('payment_info', $payment_info);
 
-            $mailer = new SendEmailController();
-            $mailer::sendOrderWasCreated($order_id);
+//            $mailer = new SendEmailController();
+//            $mailer::sendOrderWasCreated($order_id);
         }
 
         $arr = array('customer_data' => $customer_data->original);
