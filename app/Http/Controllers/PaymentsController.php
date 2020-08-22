@@ -38,6 +38,6 @@ class PaymentsController extends Controller
 //        DB::table('orders')->where('id', $orderId);
 
 
-        return response()->json(array($provider, $orderId));
+        return response()->json($orderId);
     }
 }
