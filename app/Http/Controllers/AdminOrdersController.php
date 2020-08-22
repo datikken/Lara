@@ -116,8 +116,8 @@ class AdminOrdersController extends Controller
             $payment_info = $newOrderArray;
             $request->session()->put('payment_info', $payment_info);
 
-            $mailer = new SendEmailController();
-            $mailer::sendOrderWasCreated($order_id);
+//            $mailer = new SendEmailController();
+//            $mailer::sendOrderWasCreated($order_id);
         }
 
         $arr = array('customer_data' => $customer_data->original);

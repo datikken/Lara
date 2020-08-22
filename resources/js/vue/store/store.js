@@ -403,11 +403,11 @@ const store = new Vuex.Store({
 
             $.ajax({
                 method: "POST",
-                url: '/stringify',
-                data: JSON.stringify({
-                        provider,
-                        orderId: state.order.order_id
-                }),
+                url: '/setPaymentProvider',
+                data: {
+                    provider,
+                    orderId: state.order.order_id
+                },
                 success: function (data) {
                     console.warn(data);
                 },
