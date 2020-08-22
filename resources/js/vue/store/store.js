@@ -402,7 +402,7 @@ const store = new Vuex.Store({
             });
 
             $.ajax({
-                method: "POST",
+                method: "GET",
                 url: '/setPaymentProvider',
                 data: {
                     provider,
