@@ -57,7 +57,8 @@
                 </div>
             </div>
 
-            <TextBtn text="Завершить покупку" className="text_buy-btn animated_btn final_btn" v-if="finalStep" @click.native="pushToThanks" />
+            <TextBtn text="Завершить покупку" className="text_buy-btn animated_btn final_btn" v-if="finalStep"
+                     @click.native="pushToThanks"/>
 
         </div>
     </div>
@@ -65,7 +66,7 @@
 </template>
 
 <script>
-    import {mapActions,mapGetters} from 'vuex'
+    import {mapActions, mapGetters} from 'vuex'
     import TextBtn from '../btns/TextBtn'
 
     export default {
@@ -79,22 +80,32 @@
         methods: {
             ...mapActions([
                 'CHECK_CART_STATE',
-                'FINISH_ORDER_PROCESS'
+                'FINISH_ORDER_PROCESS',
+                'CREATE_ORDER'
             ]),
             fixFooter() {
                 let footer = this.$el.querySelector('.order_list-wrap_footer');
-                    footer.classList.add('order_list-wrap_footer_final');
+                footer.classList.add('order_list-wrap_footer_final');
             },
             pushToThanks() {
-                if(this.paymentProvider.indexOf('Mastercard') >= 0) {
-                    if(!this.orderPaid) {
-                        return
-                    } else {
-                        this.FINISH_ORDER_PROCESS();
+                let order = new Promise((res, rej) => {
+                    this.CREATE_ORDER();
+
+                    res();
+                });
+
+                order.then(() => {
+                        if (this.paymentProvider.indexOf('Mastercard') >= 0) {
+                            if (!this.orderPaid) {
+                                return
+                            } else {
+                                this.FINISH_ORDER_PROCESS();
+                            }
+                        } else {
+                            this.FINISH_ORDER_PROCESS();
+                        }
                     }
-                } else {
-                    this.FINISH_ORDER_PROCESS();
-                }
+                )
             }
         },
         created() {
@@ -110,7 +121,7 @@
                 return this.$store.state.cart
             },
             finalStep() {
-                if(this.$store.state.paymentProvider) {
+                if (this.$store.state.paymentProvider) {
                     this.fixFooter();
                 }
 
@@ -122,7 +133,7 @@
 
 <style scoped>
     .final_btn {
-        margin-bottom: 10px!important;
+        margin-bottom: 10px !important;
         margin: 0 auto !important;
     }
 </style>

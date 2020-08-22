@@ -430,7 +430,7 @@ const store = new Vuex.Store({
                 success: function (data) {
                     state.order = data;
 
-                    console.warn('create order', data);
+                    console.warn('order response', data);
                 },
                 error: function (error) {
                     console.warn(error);

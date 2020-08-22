@@ -77,7 +77,6 @@
                 'APPLY_DELIVERY_ADRESS',
                 'DELIVERY_TYPE_ERROR',
                 'CHANGE_PROGRESS_STEP',
-                'CREATE_ORDER',
                 'SCROLL_TO_TOP',
                 'VALIDATE_DELIVERY_ADRESS'
             ]),
@@ -124,7 +123,6 @@
                 }
                 if(ready) {
                     this.CHANGE_PROGRESS_STEP();
-                    this.CREATE_ORDER();
 
                     if(this.user.face === 'urik') {
                         router.push('/contract')

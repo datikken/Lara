@@ -43,8 +43,8 @@ class CustomerDataController extends Controller
     public function setIndex(Request $request)
     {
         $index = $request->index;
-
         $item = $request->session()->put('cart-index', $index);
+
         return response()->json((object) array('delivery-index' => $index));
     }
 
