@@ -205,9 +205,9 @@ const store = new Vuex.Store({
                     id: pid
                 })
             })
-                .then((response) => {
-                    return response.json();
-                })
+            .then((response) => {
+                return response.json();
+            })
         },
         getTwoYearsInfoBySelect(state, year) {
             fetch('/getTwoYearsInfoBySelect', {
@@ -394,6 +394,29 @@ const store = new Vuex.Store({
                 state.cardPayment = false
                 process(nal)
             }
+
+            console.warn('setPaymentProvider', state.order);
+
+            fetch(`/setPaymentProvider`, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': window.token
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify({
+                    provider,
+                    orderId: state.order.id
+                })
+            })
+            .then((response) => {
+                return response.json();
+            })
+                .then((data) => {
+                    console.warn('setPaymentProvider result', data)
+                });
+
 
             return state.paymentProvider;
         },

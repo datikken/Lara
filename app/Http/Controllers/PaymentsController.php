@@ -29,4 +29,14 @@ class PaymentsController extends Controller
             return redirect()->route('allProducts');
         }
     }
+
+    public function setPaymentProvider(Request $request)
+    {
+        $provider = $request->provider;
+        $orderId = $request->orderId;
+
+//        DB::table('orders')->select();
+
+        return response()->json(array($provider, $orderId));
+    }
 }

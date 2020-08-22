@@ -186,6 +186,8 @@ Route::get('/createYearToDescribe', ['uses' => 'AdminAboutController@createYearT
 Route::get('/getAboutYears', ['uses' => 'AdminAboutController@getAboutYears', 'as' => 'GetAboutYears']);
 Route::post('/getTwoYearsInfoBySelect', ['uses' => 'AdminAboutController@getTwoYearsInfoBySelect', 'as' => 'getTwoYearsInfoBySelect']);
 
+Route::post('/setPaymentProvider', ['uses' => 'PaymentsController@setPaymentProvider', 'as' => 'setPaymentProvider']);
+
 //TECH ROUTES
 Route::get('/checkCartState', ['uses' => 'CartController@checkCartState', 'as' => 'checkCartState']);
 
