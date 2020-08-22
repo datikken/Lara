@@ -361,8 +361,6 @@ const store = new Vuex.Store({
             if (valid) {
                 createCryptogram();
             }
-
-            console.log(obj, 'payWithCard', valid)
         },
         setPaymentProvider(state, provider) {
             state.paymentProvider = provider;
@@ -395,6 +393,7 @@ const store = new Vuex.Store({
                 process(nal)
             }
 
+            console.warn('before setpayment', state.order)
 
             fetch(`/setPaymentProvider`, {
                 method: "POST",
