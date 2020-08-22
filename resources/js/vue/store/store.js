@@ -413,9 +413,9 @@ const store = new Vuex.Store({
             .then((response) => {
                 return response.json();
             })
-                .then((data) => {
-                    console.warn('setPaymentProvider result', data)
-                });
+            .then((data) => {
+                console.warn('setPaymentProvider result', data)
+            });
 
 
             return state.paymentProvider;
