@@ -406,7 +406,7 @@ const store = new Vuex.Store({
                 referrerPolicy: 'no-referrer',
                 body: JSON.stringify({
                     provider,
-                    orderId: state.order.id
+                    orderId: state.order.order_id
                 })
             })
             .then((response) => {
