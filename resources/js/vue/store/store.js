@@ -395,32 +395,26 @@ const store = new Vuex.Store({
 
             console.warn('before setpayment', state.order)
 
-            fetch(`/setPaymentProvider`, {
-                method: "POST",
+            $.ajaxSetup({
                 headers: {
-                    'Content-Type': 'application/json',
                     'X-CSRF-TOKEN': window.token
-                },
-                redirect: 'follow',
-                referrerPolicy: 'no-referrer',
+                }
+            });
+
+            $.ajax({
+                method: "POST",
+                url: '/setPaymentProvider',
                 body: JSON.stringify({
                     provider,
                     orderId: state.order.order_id
-                })
-            })
-            .then((response) => {
-
-                console.warn('payment provider response', response);
-
-                // return response.json();
-            })
-            .then((data) => {
-                console.warn('setPaymentProvider result', data)
-            })
-            .catch((err) => {
-                console.warn(err)
-            })
-
+                }),
+                success: function (data) {
+                    console.warn('payment provider response', data);
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
 
             return state.paymentProvider;
         },
