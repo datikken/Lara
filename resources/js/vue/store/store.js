@@ -415,9 +415,9 @@ const store = new Vuex.Store({
             .then((data) => {
                 console.warn('setPaymentProvider result', data)
             })
-                .catch((err) => {
-                    console.warn(err)
-                })
+            .catch((err) => {
+                console.warn(err)
+            })
 
 
             return state.paymentProvider;
