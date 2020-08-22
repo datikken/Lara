@@ -122,6 +122,6 @@ class AdminOrdersController extends Controller
 
         $arr = array('customer_data' => $customer_data->original);
 
-        return response()->json($arr);
+        return response()->json($created_order);
     }
 }

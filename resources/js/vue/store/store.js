@@ -395,7 +395,6 @@ const store = new Vuex.Store({
                 process(nal)
             }
 
-            console.warn('setPaymentProvider', state.order);
 
             fetch(`/setPaymentProvider`, {
                 method: "POST",
@@ -415,7 +414,10 @@ const store = new Vuex.Store({
             })
             .then((data) => {
                 console.warn('setPaymentProvider result', data)
-            });
+            })
+                .catch((err) => {
+                    console.warn(err)
+                })
 
 
             return state.paymentProvider;

@@ -20,7 +20,6 @@ Route::group(['middleware' => 'ajax'], function () {
 //PRODUCTS
 Route::group(['middleware' => 'checkUserRole'], function () {
     Route::post('/admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider']);
-
     Route::get('/admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
     Route::get('/admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts']);
     Route::get('/admin/users', ['uses' => "AdminUsersController@index", 'as' => 'adminDisplayUsers']);

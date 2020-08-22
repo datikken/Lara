@@ -21,7 +21,7 @@
                 <div class="order_list-wrap_inner-row" v-for="order in orders.items">
                     <div class="order_list-wrap_inner-row_item">
                         <span class="order_list-wrap_inner-row_item-text">
-                            {{ order.data.params.art }}
+                            {{ order.data.photo }}
                         </span>
                     </div>
 

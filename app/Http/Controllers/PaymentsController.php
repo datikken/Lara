@@ -35,6 +35,8 @@ class PaymentsController extends Controller
         $provider = $request->provider;
         $orderId = $request->orderId;
 
+        DB::table('orders');
+
 //        DB::table('orders')->select();
 
         return response()->json(array($provider, $orderId));
