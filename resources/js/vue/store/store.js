@@ -173,15 +173,15 @@ const store = new Vuex.Store({
     },
     mutations: {
         getViewedProducts(state) {
-                fetch(`/getViewed`, {
-                    method: "GET",
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': window.token
-                    },
-                    redirect: 'follow',
-                    referrerPolicy: 'no-referrer'
-                })
+            fetch(`/getViewed`, {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': window.token
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer'
+            })
                 .then((response) => {
                     return response.json();
                 })
@@ -205,9 +205,9 @@ const store = new Vuex.Store({
                     id: pid
                 })
             })
-            .then((response) => {
-                return response.json();
-            })
+                .then((response) => {
+                    return response.json();
+                })
         },
         getTwoYearsInfoBySelect(state, year) {
             fetch('/getTwoYearsInfoBySelect', {
@@ -429,8 +429,6 @@ const store = new Vuex.Store({
                 url: '/createOrder',
                 success: function (data) {
                     state.order = data;
-
-                    console.warn('order response', data);
                 },
                 error: function (error) {
                     console.warn(error);
