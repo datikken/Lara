@@ -5,7 +5,7 @@
             <span class="sres_col_item sres_color" v-bind:class="color"></span>
         </div>
         <div class="sres_col">
-            <span class="sres_col_item">{{ data.photo }}</span>
+            <span class="sres_col_item">{{ data.photo }}, id - {{ data.id }}</span>
         </div>
         <div class="sres_col_inner">
 

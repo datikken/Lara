@@ -3,21 +3,21 @@
         <div class="sres_wrap">
             <simplebar data-simplebar-auto-hide="true" class="sres_content">
 
-                <SearchListItemHead type="Принтер струйный" />
+                <SearchListItemHead  v-if="items[0] && items[0].length > 0" type="Принтер струйный" />
 
                 <div v-for="item in items[0]" :key="item.message">
                     <SearchListItem :data="item" />
                 </div>
 
-                <SearchListItemHead type="Принтер лазерный" />
+                <SearchListItemHead  v-if="items[1] && items[1].length > 0" type="Принтер лазерный" />
 
                 <div v-for="item in items[1]" :key="item.message">
                     <SearchListItem :data="item" />
                 </div>
 
-                <SearchListItemHead v-if="items[2].length > 0" type="Принтер матричный" />
+                <SearchListItemHead v-if="items[2] && items[2].length > 0" type="Принтер матричный" />
 
-                <div v-if="items[2].length > 0" v-for="item in items[2]" :key="item.message">
+                <div v-if="items[2] && items[2].length > 0" v-for="item in items[2]" :key="item.message">
                     <SearchListItem :data="item" />
                 </div>
 

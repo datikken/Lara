@@ -755,24 +755,39 @@ const store = new Vuex.Store({
             let products = state.products;
             let arrOfArrays = [[], [], []];
 
+            function separate(prod) {
+                if (prod.params.printertype === "Принтер струйный") {
+                    arrOfArrays[0].push(prod)
+                }
+                if (prod.params.printertype === "Принтер лазерный") {
+                    arrOfArrays[1].push(prod)
+                }
+                if (prod.params.printertype === "Принтер матричный") {
+                    arrOfArrays[2].push(prod)
+                }
+            }
+
             products.forEach((prod) => {
                 if (prod.name.indexOf(payload) >= 0) {
-                    if (prod.params.printertype === "Принтер струйный") {
-                        arrOfArrays[0].push(prod);
-                    }
-
-                    if (prod.params.printertype === "Принтер лазерный") {
-                        arrOfArrays[1].push(prod);
-                    }
-
-                    if (prod.params.printertype === "Принтер матричный") {
-                        arrOfArrays[2].push(prod);
-                    }
+                    separate(prod)
                 }
+
+                Object.keys(prod.cape).forEach((cape) => {
+                    if ((cape).indexOf(payload) >= 0) {
+                        separate(prod)
+                    }
+                })
             });
 
-            console.warn('arrOfArrays', arrOfArrays);
-            console.warn('products', products);
+            function removeDuplicates(myArr, prop) {
+                return myArr.filter((obj, pos, arr) => {
+                    return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos;
+                });
+            }
+
+            arrOfArrays.forEach((arr, ind) => {
+                arrOfArrays[ind] = removeDuplicates(arr, 'id');
+            })
 
             state.searchProducts = arrOfArrays;
             state.closeListener = true;
