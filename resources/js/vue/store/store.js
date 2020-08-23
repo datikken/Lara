@@ -771,7 +771,8 @@ const store = new Vuex.Store({
                 }
             });
 
-            console.warn(arrOfArrays);
+            console.warn('arrOfArrays', arrOfArrays);
+            console.warn('products', products);
 
             state.searchProducts = arrOfArrays;
             state.closeListener = true;
