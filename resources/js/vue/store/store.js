@@ -771,6 +771,10 @@ const store = new Vuex.Store({
                 }
             });
 
+
+            console.warn(arrOfArray);
+
+
             state.searchProducts = arrOfArrays;
             state.closeListener = true;
         },
