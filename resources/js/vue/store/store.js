@@ -741,9 +741,6 @@ const store = new Vuex.Store({
                     amount
                 },
                 success: function (data) {
-
-                    console.warn('addToCartAjaxGet', data)
-
                     that.dispatch('fixCartStatus', {data})
                 },
                 error: function (error) {
@@ -760,15 +757,15 @@ const store = new Vuex.Store({
 
             products.forEach((prod) => {
                 if (prod.name.indexOf(payload) >= 0) {
-                    if(prod.params.printertype === "Принтер струйный") {
+                    if (prod.params.printertype === "Принтер струйный") {
                         arrOfArrays[0].push(prod);
                     }
 
-                    if(prod.params.printertype === "Принтер лазерный") {
+                    if (prod.params.printertype === "Принтер лазерный") {
                         arrOfArrays[1].push(prod);
                     }
 
-                    if(prod.params.printertype === "Принтер матричный") {
+                    if (prod.params.printertype === "Принтер матричный") {
                         arrOfArrays[2].push(prod);
                     }
                 }
