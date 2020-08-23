@@ -207,6 +207,7 @@ class AdminProductsController extends Controller
 
     public function fetchProducts(Request $request)
     {
+
         $client = new Client([
             'headers' => ['Content-Type' => 'application/json']
         ]);
@@ -245,6 +246,7 @@ class AdminProductsController extends Controller
 
             foreach ($params as $par) {
                 foreach ($par as $a => $b) {
+
                     if($a === 'Тип принтера') {
                         $a = 'printertype';
                     }
