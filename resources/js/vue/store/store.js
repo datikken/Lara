@@ -772,7 +772,7 @@ const store = new Vuex.Store({
             });
 
 
-            console.warn(arrOfArray);
+            console.warn(arrOfArrays);
 
 
             state.searchProducts = arrOfArrays;
