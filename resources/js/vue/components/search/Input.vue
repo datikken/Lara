@@ -4,6 +4,7 @@
         v-model="txtInput"
         type="search"
         name="searchText"
+        autocomplete="off"
         placeholder="Введите модель принтера или артикул картриджа"
     />
 </template>
@@ -25,7 +26,7 @@
             },
             serverCall: function() {
                 let sres = document.querySelector('.sres');
-                    sres.classList.remove('as-none');
+                    sres && sres.classList.remove('as-none');
 
                 this.$store.commit('getFilteredProducts', this.txtInput);
             }

@@ -3,8 +3,21 @@
         <div class="sres_wrap">
             <simplebar data-simplebar-auto-hide="true" class="sres_content">
 
-                <div v-for="item in items" :key="item.message">
-                    <SearchListItemHead :type="item.params.type" />
+                <SearchListItemHead type="Принтер струйный" />
+
+                <div v-for="item in items[0]" :key="item.message">
+                    <SearchListItem :data="item" />
+                </div>
+
+                <SearchListItemHead type="Принтер лазерный" />
+
+                <div v-for="item in items[1]" :key="item.message">
+                    <SearchListItem :data="item" />
+                </div>
+
+                <SearchListItemHead v-if="items[2].length > 0" type="Принтер матричный" />
+
+                <div v-if="items[2].length > 0" v-for="item in items[2]" :key="item.message">
                     <SearchListItem :data="item" />
                 </div>
 
@@ -43,7 +56,7 @@
         },
         computed: {
             items() {
-                 return this.$store.getters.filteredProducts;
+                 return this.$store.getters.searchProducts;
             }
         }
     }

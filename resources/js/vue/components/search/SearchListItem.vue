@@ -5,7 +5,7 @@
             <span class="sres_col_item sres_color" v-bind:class="color"></span>
         </div>
         <div class="sres_col">
-            <span class="sres_col_item">{{ data.params.art }}</span>
+            <span class="sres_col_item">{{ data.photo }}</span>
         </div>
         <div class="sres_col_inner">
 
@@ -31,7 +31,7 @@
         },
         created:function(data) {
             this.link = '/product/' + this.$props.data.id
-            let col = this.$props.data.params.col
+            let col = this.$props.data.params.color
 
             switch(col) {
                 case 'Черный': this.color = 'blackCol'

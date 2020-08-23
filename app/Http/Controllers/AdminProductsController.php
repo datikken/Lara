@@ -249,6 +249,10 @@ class AdminProductsController extends Controller
                         $a = 'printertype';
                     }
 
+                    if($a === 'Цвет') {
+                        $a = 'color';
+                    }
+
                     $newParams[$a] = trim($b);
                 }
             }

@@ -23,6 +23,7 @@ const store = new Vuex.Store({
         user: false,
         cart: false,
         filteredProducts: [],
+        searchProducts: [],
         viewedProducts: [],
         modelFilters: [],
         brandFilters: [],
@@ -38,6 +39,7 @@ const store = new Vuex.Store({
         cartStep: 0
     },
     getters: {
+        searchProducts: state => state.searchProducts,
         filteredProducts: state => state.filteredProducts,
         allProducts: state => state.products,
         user: state => state.user,
@@ -288,7 +290,6 @@ const store = new Vuex.Store({
         },
         finishContract() {
             console.log('send contract via email')
-            //
             // router.push('/success');
             // this.SCROLL_TO_TOP();
         },
@@ -458,11 +459,11 @@ const store = new Vuex.Store({
                 error.code = 3;
                 error.message = 'Р/С может состоять только из 20 цифр';
             } else {
-                var coefficients = [7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1];
-                var bikRs = bik.toString().slice(-3) + rs;
-                var checksum = 0;
+                let coefficients = [7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1, 3, 7, 1];
+                let bikRs = bik.toString().slice(-3) + rs;
+                let checksum = 0;
 
-                for (var i in coefficients) {
+                for (let i in coefficients) {
                     checksum += coefficients[i] * (bikRs[i] % 10);
                 }
 
@@ -755,14 +756,25 @@ const store = new Vuex.Store({
         },
         getFilteredProducts(state, payload) {
             let products = state.products;
-            state.filteredProducts = [];
+            let arrOfArrays = [[], [], []];
 
             products.forEach((prod) => {
                 if (prod.name.indexOf(payload) >= 0) {
-                    state.filteredProducts.push(prod);
+                    if(prod.params.printertype === "Принтер струйный") {
+                        arrOfArrays[0].push(prod);
+                    }
+
+                    if(prod.params.printertype === "Принтер лазерный") {
+                        arrOfArrays[1].push(prod);
+                    }
+
+                    if(prod.params.printertype === "Принтер матричный") {
+                        arrOfArrays[2].push(prod);
+                    }
                 }
             });
 
+            state.searchProducts = arrOfArrays;
             state.closeListener = true;
         },
         getAllProducts(state) {
