@@ -1,5 +1,5 @@
 <template>
-    <div class="history">
+    <div class="history" v-if="this.$store.state.orders">
         <div class="history_wrapper">
 
             <div class="history_wrapper-item">
@@ -130,6 +130,10 @@
             ]),
             repeatOrder(id) {
                 console.warn('order repeat', id);
+
+
+
+
             },
             viewDetails(id) {
                 this.GET_SINGLE_ORDER_INFO(id);

@@ -254,9 +254,14 @@ const store = new Vuex.Store({
                 method: "GET",
                 url: '/getOrdersInfo',
                 success: function (data) {
-                    state.orders = data;
+                    if(typeof data === 'object') {
+                        state.orders = data;
+                    } else {
+                        state.orders = false;
+                    }
 
-                    console.warn('getOrdersInfo', data);
+
+                    console.warn(data, typeof data, 'orders')
                 },
                 error: function (error) {
                     console.warn(error);
