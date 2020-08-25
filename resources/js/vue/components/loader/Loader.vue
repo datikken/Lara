@@ -15,12 +15,16 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .vue_loader {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%,100%);
+
+        @media screen and (min-width: 1000px) {
+            transform: translate(-50%,-50%);
+        }
     }
     .lds-ring {
         display: inline-block;

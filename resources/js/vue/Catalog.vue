@@ -9,9 +9,9 @@
 
             <CatalogSwitch/>
 
-            <NothingFound v-if="this.$store.state.productsLoaded && products.length === 0"/>
+            <NothingFound v-if="this.$store.state.productsLoaded && products.length === 0" />
 
-            <Loader v-if="!this.$store.state.productsLoaded"/>
+            <Loader />
 
             <div class="products_grid">
                 <div v-if="products.length > 1">
