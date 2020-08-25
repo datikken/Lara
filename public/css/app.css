@@ -1303,6 +1303,20 @@ b {
   font-size: 12px;
   width: 0;
 }
+@media not all and (min-resolution: 0.001dpcm) {
+  .menu_wrapper-item_search_input input::-moz-placeholder {
+    padding-top: 2px;
+  }
+  .menu_wrapper-item_search_input input:-ms-input-placeholder {
+    padding-top: 2px;
+  }
+  .menu_wrapper-item_search_input input::-ms-input-placeholder {
+    padding-top: 2px;
+  }
+  .menu_wrapper-item_search_input input::placeholder {
+    padding-top: 2px;
+  }
+}
 @media screen and (min-width: 600px) {
   .menu_wrapper-item_search_input input {
     width: 100%;
@@ -1590,9 +1604,8 @@ b {
 }
 .subscription_wrapper-item_button {
   position: absolute;
-  right: -3.2rem;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(0, -50%);
   background: #40404c;
   height: 100%;
   color: #fff;
@@ -1602,6 +1615,7 @@ b {
   border-bottom-right-radius: 50px;
   cursor: pointer;
   outline: none;
+  right: 0;
 }
 @media screen and (min-width: 1030px) {
   .subscription_wrapper-item_button {
@@ -4530,6 +4544,21 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
       -ms-user-select: none;
           user-select: none;
   position: relative;
+  max-height: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.filters::-moz-placeholder {
+  display: none;
+}
+.filters:-ms-input-placeholder {
+  display: none;
+}
+.filters::-ms-input-placeholder {
+  display: none;
+}
+.filters::placeholder {
+  display: none;
 }
 .filters_tip {
   background-image: url("/images/icons/tip.svg");
