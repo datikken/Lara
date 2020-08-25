@@ -1603,16 +1603,16 @@ b {
   }
 }
 .subscription_wrapper-item_button {
-  position: absolute;
-  top: 50%;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
   transform: translate(0, -50%);
   background: #40404c;
+  align-items: center;
+  position: absolute;
+  top: 50%;
   height: 100%;
   color: #fff;
   display: flex;
-  align-items: center;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
   cursor: pointer;
   outline: none;
   right: 0;
@@ -4374,6 +4374,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   -o-object-fit: cover;
      object-fit: cover;
   max-height: 122px;
+  padding-top: 20px;
 }
 .product_wrapper-item_overlay {
   width: 100%;
