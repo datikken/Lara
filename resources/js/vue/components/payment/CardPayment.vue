@@ -84,6 +84,26 @@
                 months: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
             }
         },
+        mounted() {
+                var payment = new UnitPay();
+                payment.createWidget({
+                    publicKey: "315491-97428",
+                    sum: 1,
+                    account: "demo",
+                    domainName: "unitpay.ru",
+                    signature: "5d83ce1de6acd062ebbad793306f77d42c62e2f75760e264f544e7659bcf4722",
+                    desc: "Описание платежа",
+                    locale: "ru",
+                });
+                payment.success(function (params) {
+                    console.log('Успешный платеж');
+                });
+                payment.error(function (message, params) {
+                    console.log(message);
+                });
+
+                return false;
+        },
         methods: {
             ...mapActions([
                 'PAY_WITH_CARD'
