@@ -1,63 +1,63 @@
 <template>
     <form class="payment_wrap-form_inner" autocomplete="off" id="paymentFormSample">
-        <div class="payment_wrap-form_group">
-            <div class="payment_wrap-form_group-inner">
-                <label for="card_num" class="cart_num">Номер карты</label>
+        <!--<div class="payment_wrap-form_group">-->
+            <!--<div class="payment_wrap-form_group-inner">-->
+                <!--<label for="card_num" class="cart_num">Номер карты</label>-->
 
-                <masked-input
-                    autocomplete="off"
-                    class="company_input"
-                    data-cp="cardNumber"
-                    v-model="num"
-                    mask="1111 1111 1111 1111"
-                    placeholder="Введите номер карты"/>
+                <!--<masked-input-->
+                    <!--autocomplete="off"-->
+                    <!--class="company_input"-->
+                    <!--data-cp="cardNumber"-->
+                    <!--v-model="num"-->
+                    <!--mask="1111 1111 1111 1111"-->
+                    <!--placeholder="Введите номер карты"/>-->
 
-            </div>
-        </div>
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="payment_wrap-form_group">
-            <div class="payment_wrap-form_group-last row_alignment" style="flex-direction: column;">
+        <!--<div class="payment_wrap-form_group">-->
+            <!--<div class="payment_wrap-form_group-last row_alignment" style="flex-direction: column;">-->
 
-                <div style="display: flex;">
-                    <div style="display: flex; flex-direction: column;">
-                        <label>Срок действия</label>
-                        <div class="row_alignment-inner">
-                            <CardDropdown text="Год"  dataName="expDateYear" :data="years"/>
-                            <CardDropdown text="Месяц" dataName="expDateMonth" :data="months"/>
-                        </div>
-                    </div>
+                <!--<div style="display: flex;">-->
+                    <!--<div style="display: flex; flex-direction: column;">-->
+                        <!--<label>Срок действия</label>-->
+                        <!--<div class="row_alignment-inner">-->
+                            <!--<CardDropdown text="Год"  dataName="expDateYear" :data="years"/>-->
+                            <!--<CardDropdown text="Месяц" dataName="expDateMonth" :data="months"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
-                    <div style="display: flex; flex-direction: column;">
-                        <label for="cvv">CVV</label>
-                        <masked-input
-                            type="password"
-                            class="payment_wrap-form_group-cvv row_alignment-inner"
-                            autocomplete="off"
-                            data-cp="cvv"
-                            v-model="cvv"
-                            mask="111"
-                            placeholder="CVV"/>
-                    </div>
-                </div>
+                    <!--<div style="display: flex; flex-direction: column;">-->
+                        <!--<label for="cvv">CVV</label>-->
+                        <!--<masked-input-->
+                            <!--type="password"-->
+                            <!--class="payment_wrap-form_group-cvv row_alignment-inner"-->
+                            <!--autocomplete="off"-->
+                            <!--data-cp="cvv"-->
+                            <!--v-model="cvv"-->
+                            <!--mask="111"-->
+                            <!--placeholder="CVV"/>-->
+                    <!--</div>-->
+                <!--</div>-->
 
-            </div>
-        </div>
+            <!--</div>-->
+        <!--</div>-->
 
 
-        <div class="payment_wrap-form_group">
-            <div class="payment_wrap-form_group-inner">
-                <label for="card_name" class="cart_num">Имя и фамилия владельца карты</label>
-                <input
-                    type="text"
-                    data-cp="name"
-                    placeholder="введите  имя и фамилию владельца карты"
-                    onkeyup="this.value = this.value.toUpperCase();"
-                    onkeypress="return /[a-z ]/i.test(event.key)"
-                    autocomplete="off">
-            </div>
-        </div>
+        <!--<div class="payment_wrap-form_group">-->
+            <!--<div class="payment_wrap-form_group-inner">-->
+                <!--<label for="card_name" class="cart_num">Имя и фамилия владельца карты</label>-->
+                <!--<input-->
+                    <!--type="text"-->
+                    <!--data-cp="name"-->
+                    <!--placeholder="введите  имя и фамилию владельца карты"-->
+                    <!--onkeyup="this.value = this.value.toUpperCase();"-->
+                    <!--onkeypress="return /[a-z ]/i.test(event.key)"-->
+                    <!--autocomplete="off">-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <TextBtn text="подтвердить" className="text_buy-btn animated_btn mauto" @click.native="processCardPayment"/>
+        <!--<TextBtn text="подтвердить" className="text_buy-btn animated_btn mauto" @click.native="processCardPayment"/>-->
 
     </form>
 </template>
@@ -84,29 +84,25 @@
                 months: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
             }
         },
+        computed: {
+            user() {
+                return this.$store.state.user;
+            }
+        },
+        watch: {
+            user(newVal, oldVal) {
+                if(newVal) {
+                  this.CREATE_SIGNATURE_HASH();
+                }
+            }
+        },
         mounted() {
-                var payment = new UnitPay();
-                payment.createWidget({
-                    publicKey: "315491-97428",
-                    sum: 1,
-                    account: "demo",
-                    domainName: "unitpay.ru",
-                    signature: "5d83ce1de6acd062ebbad793306f77d42c62e2f75760e264f544e7659bcf4722",
-                    desc: "Описание платежа",
-                    locale: "ru",
-                });
-                payment.success(function (params) {
-                    console.log('Успешный платеж');
-                });
-                payment.error(function (message, params) {
-                    console.log(message);
-                });
-
-                return false;
+            this.GET_USERS_INFO();
         },
         methods: {
             ...mapActions([
-                'PAY_WITH_CARD'
+                'CREATE_SIGNATURE_HASH',
+                'GET_USERS_INFO'
             ]),
             processCardPayment() {
                 let inputs = this.$el.querySelectorAll('input');

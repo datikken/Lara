@@ -132,6 +132,8 @@ Route::get('/createOrder', ['uses' => 'AdminOrdersController@createOrder', 'as' 
 Route::get('product/repeatOrder/{id}', ['uses' => 'AdminOrdersController@repeatOrder', 'as' => 'repeatOrder']);
 Route::get('product/proceedPayment', ['uses' => 'PaymentsController@proceedPayment', 'as' => 'proceedPayment']);
 
+Route::post('/createSignatureHash', ['uses' => 'PaymentsController@createSignatureHash', 'as' => 'createSignatureHash']);
+
 //Email Subscriptions
 Route::post('subscribe', ['uses' => 'SubscriptionsController@subscribe', 'as' => 'subscribe']);
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

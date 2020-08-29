@@ -36,13 +36,14 @@ const store = new Vuex.Store({
         uriksData: {},
         order: {},
         usersFIO: '',
-        cartStep: 0
+        cartStep: 0,
+        signatureHash: false
     },
     getters: {
+        user: state => state.user,
         searchProducts: state => state.searchProducts,
         filteredProducts: state => state.filteredProducts,
         allProducts: state => state.products,
-        user: state => state.user,
         deliveryType: state => state.deliveryType,
         urikValidation: state => state.urikValidation,
         orders: state => state.orders,
@@ -53,6 +54,12 @@ const store = new Vuex.Store({
         lastTwoYearsInfo: state => state.lastTwoYearsInfo
     },
     actions: {
+        UNIT_PAY(context) {
+            context.commit('unitPay');
+        },
+        CREATE_SIGNATURE_HASH(context, obj) {
+            context.commit('createSignatureHash', obj);
+        },
         GET_VIEWED_PRODUCTS(context) {
             context.commit('getViewedProducts');
         },
@@ -174,6 +181,60 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
+        unitPay(state) {
+            let obj = {
+                sum: state.cart.totalPrice,
+                desc: "purchase",
+                account: state.user.id,
+                domainName: "unitpay.ru",
+                signature: state.signatureHash,
+                publicKey: "315491-97428",
+                locale: "ru",
+            };
+
+            console.warn('unit pay tobe executed', obj);
+
+            // $account, $currency, $desc, $sum
+            let payment = new UnitPay();
+            payment.createWidget(obj);
+            payment.success(function (params) {
+                console.log('Успешный платеж');
+            });
+            payment.error(function (message, params) {
+                console.log(message);
+            });
+
+            return false;
+        },
+        createSignatureHash(state) {
+            let that = this;
+
+            fetch('/createSignatureHash', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': window.token
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify({
+                    account: state.user.id,
+                    currency: 'RUB',
+                    desc: "purchase",
+                    sum: state.cart.totalPrice
+                })
+            })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.signatureHash = data.hash;
+                that.dispatch('UNIT_PAY');
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        },
         getViewedProducts(state) {
             fetch(`/getViewed`, {
                 method: "GET",
@@ -184,15 +245,15 @@ const store = new Vuex.Store({
                 redirect: 'follow',
                 referrerPolicy: 'no-referrer'
             })
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) => {
-                    state.viewedProducts = data;
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.viewedProducts = data;
+            })
+            .catch((err) => {
+                console.log(err);
+            })
         },
         setProductViewed(state, {pid}) {
             fetch(`/setViewed/${pid}`, {
@@ -207,9 +268,9 @@ const store = new Vuex.Store({
                     id: pid
                 })
             })
-                .then((response) => {
-                    return response.json();
-                })
+            .then((response) => {
+                return response.json();
+            })
         },
         getTwoYearsInfoBySelect(state, year) {
             fetch('/getTwoYearsInfoBySelect', {
@@ -224,25 +285,23 @@ const store = new Vuex.Store({
                     year
                 })
             })
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) => {
-                    state.lastTwoYearsInfo = data;
-
-                    console.log('getTwoYearsInfoBySelect', data, typeof data)
-                });
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.lastTwoYearsInfo = data;
+            });
         },
         getAboutYears(state) {
             fetch('/getAboutYears', {
                 method: "GET"
             })
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) => {
-                    state.aboutData = data;
-                });
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.aboutData = data;
+            });
         },
         getOrdersInfo(state) {
             $.ajaxSetup({
@@ -259,7 +318,6 @@ const store = new Vuex.Store({
                     } else {
                         state.orders = false;
                     }
-
 
                     console.warn(data, typeof data, 'orders')
                 },
@@ -621,7 +679,9 @@ const store = new Vuex.Store({
             axios.get('/getUserInfo')
                 .then(response => {
                     state.user = response.data;
-                })
+
+                    console.warn('get users info', state.user);
+                });
 
             return state.user
         },

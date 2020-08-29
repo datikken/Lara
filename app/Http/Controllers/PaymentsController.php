@@ -37,4 +37,20 @@ class PaymentsController extends Controller
 
         return response()->json(array('success'));
     }
+
+    function createSignatureHash(Request $request) {
+        // $account, $currency, $desc, $sum, $secretKey
+        $account = $request->account;
+        $currency = $request->currency;
+        $desc = $request->desc;
+        $sum = $request->sum;
+        $secretKey = 'cbfd4200ff1067f831042f1860a0d5fb';
+
+        $hashStr = $account.'{up}'.$currency.'{up}'.$desc.'{up}'.$sum.'{up}'.$secretKey;
+
+        $arr = array($account, $currency, $desc, $sum, $secretKey, $hashStr);
+        $concHash = hash('sha256', $hashStr);
+
+        return response()->json(array('hash' => $concHash, 'validate' => $arr));
+    }
 }
