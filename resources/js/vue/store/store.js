@@ -183,16 +183,14 @@ const store = new Vuex.Store({
     mutations: {
         unitPay(state) {
             let obj = {
-                sum: state.cart.totalPrice,
-                desc: "purchase",
                 account: state.user.id,
+                currency: 'RUB',
+                desc: "Описание платежа",
+                sum: state.cart.totalPrice,
                 domainName: "unitpay.ru",
                 signature: state.signatureHash,
-                publicKey: "315491-97428",
-                locale: "ru",
+                publicKey: "315491-97428"
             };
-
-            console.warn('unit pay tobe executed', obj);
 
             // $account, $currency, $desc, $sum
             let payment = new UnitPay();
@@ -220,7 +218,7 @@ const store = new Vuex.Store({
                 body: JSON.stringify({
                     account: state.user.id,
                     currency: 'RUB',
-                    desc: "purchase",
+                    desc: "Описание платежа",
                     sum: state.cart.totalPrice
                 })
             })
