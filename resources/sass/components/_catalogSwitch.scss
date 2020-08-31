@@ -1,6 +1,5 @@
 .catalogSwitch {
     position: absolute;
-    display: none;
     top: -2.75rem;
     right: 4px;
 
@@ -33,11 +32,12 @@
         &-filter {
             background-image: url('/images/icons/priceFilter.svg');
         }
-        &-list {
-            background-image: url('/images/icons/stroke.svg');
-        }
-        &-grid {
-            background-image: url('/images/icons/grid.svg');
-        }
+
+        //&-list {
+        //    background-image: url('/images/icons/stroke.svg');
+        //}
+        //&-grid {
+        //    background-image: url('/images/icons/grid.svg');
+        //}
     }
 }

@@ -7,7 +7,7 @@
         </div>
         <div class="right_column">
 
-            <CatalogSwitch/>
+            <CatalogSwitch />
 
             <NothingFound v-if="this.$store.state.productsLoaded && products.length === 0" />
 

@@ -320,3 +320,7 @@ b {
 .ml100 {
     margin-left: 100px;
 }
+
+.resetGrid {
+    grid-template-columns: unset;
+}

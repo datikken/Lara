@@ -502,6 +502,10 @@ b {
   margin-left: 100px;
 }
 
+.resetGrid {
+  grid-template-columns: unset;
+}
+
 .animated_btn {
   transition: box-shadow 0.2s;
 }
@@ -12928,7 +12932,6 @@ main {
 
 .catalogSwitch {
   position: absolute;
-  display: none;
   top: -2.75rem;
   right: 4px;
 }
@@ -12960,12 +12963,6 @@ main {
 }
 .catalogSwitch_item-filter {
   background-image: url("/images/icons/priceFilter.svg");
-}
-.catalogSwitch_item-list {
-  background-image: url("/images/icons/stroke.svg");
-}
-.catalogSwitch_item-grid {
-  background-image: url("/images/icons/grid.svg");
 }
 
 .payment_dropdown_open, .payment_dropdown_open-right {

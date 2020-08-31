@@ -192,7 +192,6 @@ const store = new Vuex.Store({
                 publicKey: "315491-97428"
             };
 
-            // $account, $currency, $desc, $sum
             let payment = new UnitPay();
             payment.createWidget(obj);
             payment.success(function (params) {
