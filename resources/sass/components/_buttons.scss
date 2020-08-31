@@ -14,8 +14,8 @@
     min-width: 170px;
   }
 
-  &-item {
-    font-family: $semifont;
+  &-item, span {
+    font-family: $font;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
@@ -25,5 +25,25 @@
     border-radius: 30px;
     display: flex;
     align-items: center;
+    margin-left: 10px;
   }
+}
+
+.further_btn {
+    width: 170px;
+    height: 40px;
+    background: #fff;
+    border: 1px solid $yellow;
+
+   div {
+        font-family: $font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $black;
+        border-radius: 30px;
+    }
 }

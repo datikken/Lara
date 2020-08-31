@@ -44,26 +44,33 @@
         <!--</div>-->
     <!--</div>-->
 
-
     <div class="prdLt">
         <div class="prdLt_wrap">
             <div class="prdLt_image">
                 <img onerror="this.src = '/images/unnecessary/owl-swiper.svg';"
-                     :src="`../storage/product_images/${data.params.Бренд}/SMALL/${data.photo}.png`" alt="">
+                     :src="`../storage/product_images/${data.params.Бренд}/BIG/${data.photo}.png`" alt="">
             </div>
             <div class="prdLt_cont">
                 <div class="prdLt_top">
                     {{ data.name }}
                 </div>
-                <div class="prdLt_mid"></div>
+                <div class="prdLt_mid">
+                    <div class="prdLt_descItem" v-for="(item, index) in data.params">
+                        <div class="prdLt_descItem-left">{{ index }}</div>
+                        <div class="prdLt_descItem-right">{{ item }}</div>
+                    </div>
+                </div>
                 <div class="prdLt_bot">
                     <div class="prdLt_price">
-                        {{ data.price }}
+                        <span class="prdLt_price_text">
+                            {{ data.price }}
+                            <img src="/images/icons/rub.svg" alt="cur"/>
+                        </span>
                     </div>
                     <div class="prdLt_btns">
 
-                        <BuyBtn :id="data.id" className="animated_btn" />
-                        <TextBtn text="Подробнее" className="history_wrapper-item_row-total-cta text_buy-btn animated_btn" />
+                        <TextBtn text="Подробнее" className="further_btn animated_btn" />
+                        <BuyBtn :id="data.id" className="action_btn animated_btn" text="В корзину" />
 
                     </div>
                 </div>
@@ -92,8 +99,22 @@
         },
         created: function () {
             let col = this.$props.data;
+            let obj = this.$props.data.params;
+
+            // const sliced = Object.fromEntries(
+            //     Object.entries(obj).slice(0, 6)
+            // );
+            //
+            // this.$props.data.params = sliced;
         }
     }
 </script>
 
-<style scoped></style>
+<style scoped>
+    .animated_btn {
+        margin-right: 30px;
+    }
+    .prdLt_price_text {
+        display: inline-block!important;
+    }
+</style>
