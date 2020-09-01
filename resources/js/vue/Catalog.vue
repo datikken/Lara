@@ -121,7 +121,8 @@
         methods: {
             ...mapActions([
                 'GET_ALL_PRODUCTS',
-                'CATALOG_LOAD_MORE'
+                'CATALOG_LOAD_MORE',
+                'SEND_GOOGLE_ANALYTICS'
             ]),
             pageChange(page) {
                 this.page = page;
@@ -144,6 +145,15 @@
         },
         created() {
             this.GET_ALL_PRODUCTS();
+
+            let gObj = {
+                category: 'catalog',
+                eventAction: 'pageVisited',
+                eventLabel: 'catalog',
+                eventValue: null
+            };
+
+            this.SEND_GOOGLE_ANALYTICS(gObj);
         },
     }
 </script>
