@@ -189,10 +189,8 @@ const store = new Vuex.Store({
     },
     mutations: {
         switchCatalogLayout(state) {
-            let inited = false;
-
             state.gridCatalog = !state.gridCatalog;
-            state.catalogPerPage = 6;
+            state.catalogPerPage = state.gridCatalog ? 6 : 16;
 
             state.filteredProducts.forEach(prd => {
                 const sliced = Object.fromEntries(
