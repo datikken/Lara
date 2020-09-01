@@ -37,7 +37,9 @@ const store = new Vuex.Store({
         order: {},
         usersFIO: '',
         cartStep: 0,
-        signatureHash: false
+        signatureHash: false,
+        gridCatalog: false,
+        catalogPerPage: 16
     },
     getters: {
         user: state => state.user,
@@ -51,9 +53,14 @@ const store = new Vuex.Store({
         orderPaid: state => state.orderPaid,
         paymentProvider: state => state.paymentProvider,
         aboutData: state => state.aboutData,
-        lastTwoYearsInfo: state => state.lastTwoYearsInfo
+        lastTwoYearsInfo: state => state.lastTwoYearsInfo,
+        gridCatalog: state => state.gridCatalog,
+        catalogPerPage: state => state.catalogPerPage
     },
     actions: {
+        SWITCH_CATALOG_LAYOUT(context) {
+            context.commit('switchCatalogLayout');
+        },
         UNIT_PAY(context) {
             context.commit('unitPay');
         },
@@ -181,6 +188,20 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
+        switchCatalogLayout(state) {
+            let inited = false;
+
+            state.gridCatalog = !state.gridCatalog;
+            state.catalogPerPage = 6;
+
+            state.filteredProducts.forEach(prd => {
+                const sliced = Object.fromEntries(
+                    Object.entries(prd.params).slice(0, 6)
+                );
+
+                prd.params = sliced;
+            });
+        },
         unitPay(state) {
             let obj = {
                 account: state.user.id,
@@ -221,16 +242,16 @@ const store = new Vuex.Store({
                     sum: state.cart.totalPrice
                 })
             })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                state.signatureHash = data.hash;
-                that.dispatch('UNIT_PAY');
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    state.signatureHash = data.hash;
+                    that.dispatch('UNIT_PAY');
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
         },
         getViewedProducts(state) {
             fetch(`/getViewed`, {
@@ -242,15 +263,15 @@ const store = new Vuex.Store({
                 redirect: 'follow',
                 referrerPolicy: 'no-referrer'
             })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                state.viewedProducts = data;
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    state.viewedProducts = data;
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
         },
         setProductViewed(state, {pid}) {
             fetch(`/setViewed/${pid}`, {
@@ -265,9 +286,9 @@ const store = new Vuex.Store({
                     id: pid
                 })
             })
-            .then((response) => {
-                return response.json();
-            })
+                .then((response) => {
+                    return response.json();
+                })
         },
         getTwoYearsInfoBySelect(state, year) {
             fetch('/getTwoYearsInfoBySelect', {
@@ -282,23 +303,23 @@ const store = new Vuex.Store({
                     year
                 })
             })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                state.lastTwoYearsInfo = data;
-            });
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    state.lastTwoYearsInfo = data;
+                });
         },
         getAboutYears(state) {
             fetch('/getAboutYears', {
                 method: "GET"
             })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                state.aboutData = data;
-            });
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    state.aboutData = data;
+                });
         },
         getOrdersInfo(state) {
             $.ajaxSetup({
@@ -310,13 +331,11 @@ const store = new Vuex.Store({
                 method: "GET",
                 url: '/getOrdersInfo',
                 success: function (data) {
-                    if(typeof data === 'object') {
+                    if (typeof data === 'object') {
                         state.orders = data;
                     } else {
                         state.orders = false;
                     }
-
-                    console.warn(data, typeof data, 'orders')
                 },
                 error: function (error) {
                     console.warn(error);
@@ -468,7 +487,7 @@ const store = new Vuex.Store({
                     provider
                 },
                 success: function (data) {
-                    console.warn(data);
+                    // console.warn(data);
                 },
                 error: function (error) {
                     console.warn(error);
@@ -576,7 +595,6 @@ const store = new Vuex.Store({
                     'X-CSRF-TOKEN': window.token
                 }
             });
-
             $.ajax({
                 method: "POST",
                 url: '/setAdress',
@@ -638,7 +656,6 @@ const store = new Vuex.Store({
                     'X-CSRF-TOKEN': window.token
                 }
             });
-
             $.ajax({
                 method: "get",
                 url: '/setUrikInfo',
@@ -676,8 +693,6 @@ const store = new Vuex.Store({
             axios.get('/getUserInfo')
                 .then(response => {
                     state.user = response.data;
-
-                    console.warn('get users info', state.user);
                 });
 
             return state.user
@@ -794,7 +809,6 @@ const store = new Vuex.Store({
                     'X-CSRF-TOKEN': window.token
                 }
             });
-
             $.ajax({
                 method: "get",
                 url: `${url}`,

@@ -11,7 +11,7 @@
 
             <NothingFound v-if="this.$store.state.productsLoaded && products.length === 0" />
 
-            <Loader />
+            <Loader v-if="products.length === 0" />
 
             <div class="products_grid">
                 <div v-if="products.length > 1">
@@ -19,14 +19,25 @@
                         :total-items="products.length"
                         :max-visible-pages="5"
                         :page="page"
-                        :items-per-page="perPage"
+                        :items-per-page="this.catalogPerPage"
                         :loading="loading"
                         @page-change="pageChange"
                     >
 
                         <template slot-scope="props">
-                            <CatalogCard :data="item" v-for="item in products.slice(props.start, props.end)"
+
+                            <CatalogCard
+                                        v-if="!gridCatalog"
+                                        :data="item"
+                                         v-for="item in products.slice(props.start, props.end)"
                                          :key="item.name"/>
+
+                            <CatalogCardList
+                                        v-if="gridCatalog"
+                                        :data="item"
+                                         v-for="item in products.slice(props.start, props.end)"
+                                         :key="item.name"/>
+
                         </template>
 
                         <template
@@ -68,24 +79,29 @@
 </template>
 
 <script>
+    import {mapActions, mapGetters} from 'vuex';
+
     import '../../../node_modules/@fortawesome/fontawesome-free/css/all.css';
     import '../../../node_modules/vue-ads-pagination/dist/vue-ads-pagination.css';
-    import OrdersHistory from './components/orders/OrdersHistory'
+    import VueAdsPagination, {VueAdsPageButton} from 'vue-ads-pagination';
+
+    import OrdersHistory from './components/orders/OrdersHistory';
     import TextBtn from '../vue/components/btns/BuyBtn';
     import CatalogSwitch from '../vue/components/catalog/catalogSwitch';
-    import CatalogCard from '../vue/components/catalog/catalogCard'
-    import VueAdsPagination, {VueAdsPageButton} from 'vue-ads-pagination';
-    import Filters from './components/filters/Filters'
+    import CatalogCard from '../vue/components/catalog/catalogCard';
+    import Filters from './components/filters/Filters';
     import NothingFound from './components/errors/NothingFound';
-    import Viewed from './components/viewed/Viewed'
-    import Loader from './components/loader/Loader'
-    import Modal from './components/modal/Modal'
-    import {mapActions, mapGetters} from 'vuex'
+    import Viewed from './components/viewed/Viewed';
+    import Loader from './components/loader/Loader';
+    import Modal from './components/modal/Modal';
+    import CatalogCardList from '../vue/components/catalog/catalogCardList'
+
 
     export default {
         name: "catalog",
         components: {
             CatalogCard,
+            CatalogCardList,
             OrdersHistory,
             VueAdsPagination,
             VueAdsPageButton,
@@ -99,9 +115,7 @@
         },
         data() {
             return {
-                page: 0,
-                loading: false,
-                perPage: 16
+                page: 0
             }
         },
         methods: {
@@ -112,14 +126,21 @@
                 this.page = page;
             },
             loadMore(e) {
-                this.perPage = this.perPage + 15;
+                //Todo load more
+
+
+
             }
         },
         computed: {
             ...mapGetters([
-                'orders'
+                'orders',
+                'gridCatalog',
+                'catalogPerPage'
             ]),
             products() {
+                this.loading = false;
+
                 return this.$store.state.filteredProducts;
             },
         },

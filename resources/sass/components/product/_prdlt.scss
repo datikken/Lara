@@ -13,7 +13,7 @@
     }
     &_wrap {
         align-items: center;
-        height: 300px;
+        height: 270px;
         display: flex;
     }
     &_image {
@@ -22,11 +22,15 @@
         margin-right: 30px;
         img {
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
     }
     &_cont {
         width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
     }
     &_top {
         font-family: $semifont;
@@ -43,6 +47,8 @@
         display: grid;
         grid-template-columns: 200px 1fr;
         align-items: center;
+        position: absolute;
+        bottom: 0;
     }
     &_price {
         font-family: $font;

@@ -26,6 +26,8 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex';
+
     export default {
         name: "catalogSwitch",
         data: function() {
@@ -34,6 +36,9 @@
             }
         },
         methods: {
+            ...mapActions([
+                'SWITCH_CATALOG_LAYOUT'
+            ]),
             filterProductsByPrice() {
                 if(this.descending === true) {
                     this.$store.dispatch('PRICE_FILTER', 'desc');
@@ -49,15 +54,6 @@
                 let icon = this.$el.querySelector('[data-orderIcon]');
                     icon.classList.toggle('rotate180');
             },
-            switchToList() {
-                let resetClass = 'resetGrid';
-                let grid = this.$el.querySelector('.vue-ads-flex');
-                    grid.classList.add(resetClass);
-
-            },
-            switchToGrid() {
-
-            },
             switchCatalogGrid(e) {
                 let type = e.currentTarget.dataset.grid;
                 let svgs = this.$el.querySelectorAll('svg');
@@ -69,12 +65,16 @@
 
                 e.currentTarget.classList.add($class);
 
-                switch(type) {
-                    case 'grid': this.switchGrid()
-                        break;
-                    case 'list': this.switchToList()
-                        break;
+                let resetClass = 'resetGrid';
+                let grid = document.querySelector('.vue-ads-flex');
+
+                if(grid.classList.contains(resetClass)) {
+                    grid.classList.remove(resetClass);
+                } else {
+                    grid.classList.add(resetClass);
                 }
+
+                this.SWITCH_CATALOG_LAYOUT();
             }
         }
     }

@@ -7,11 +7,6 @@
 <script>
     export default {
         name: "Loader",
-        methods: {
-            created() {
-
-            }
-        }
     }
 </script>
 
