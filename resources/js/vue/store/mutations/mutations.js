@@ -95,9 +95,9 @@ let mutations = {
                 id: pid
             })
         })
-            .then((response) => {
-                return response.json();
-            })
+        .then((response) => {
+            return response.json();
+        })
     },
     getTwoYearsInfoBySelect(state, year) {
         fetch('/getTwoYearsInfoBySelect', {
@@ -112,23 +112,23 @@ let mutations = {
                 year
             })
         })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                state.lastTwoYearsInfo = data;
-            });
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            state.lastTwoYearsInfo = data;
+        });
     },
     getAboutYears(state) {
         fetch('/getAboutYears', {
             method: "GET"
         })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                state.aboutData = data;
-            });
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            state.aboutData = data;
+        });
     },
     getOrdersInfo(state) {
         $.ajaxSetup({
@@ -157,7 +157,6 @@ let mutations = {
                 'X-CSRF-TOKEN': window.token
             }
         });
-
         $.ajax({
             method: "GET",
             url: `/getSingleOrderInfo/${id}`,

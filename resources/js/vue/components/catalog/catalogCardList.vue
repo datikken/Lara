@@ -11,9 +11,33 @@
                     {{ data.name }}
                 </div>
                 <div class="prdLt_mid">
-                    <div class="prdLt_descItem" v-for="(item, index) in data.params">
-                        <div class="prdLt_descItem-left">{{ index }}</div>
-                        <div class="prdLt_descItem-right">{{ item }}</div>
+                    <div class="prdLt_descItem">
+                        <div class="prdLt_descItem-left">Бренд</div>
+                        <div class="prdLt_descItem-right">{{ newParameters['Бренд'] }}</div>
+                    </div>
+
+                    <div class="prdLt_descItem" v-if="newParameters['Артикул']">
+                        <div class="prdLt_descItem-left">Артикул</div>
+                        <div class="prdLt_descItem-right">{{ newParameters['Артикул'] }}</div>
+                    </div>
+
+                    <div class="prdLt_descItem" v-if="newParameters['Модель']">
+                        <div class="prdLt_descItem-left">Модель</div>
+                        <div class="prdLt_descItem-right">{{ newParameters['Модель'] }}</div>
+                    </div>
+
+                    <div class="prdLt_descItem">
+                        <div class="prdLt_descItem-left">Цвет печати картриджа</div>
+                        <div class="prdLt_descItem-right">{{ newParameters['color'] }}</div>
+                    </div>
+                    <div class="prdLt_descItem">
+                        <div class="prdLt_descItem-left">Ресурс страниц.</div>
+                        <div class="prdLt_descItem-right">{{ newParameters['Ресурс'] }} текстовых страниц А4</div>
+                    </div>
+
+                    <div class="prdLt_descItem">
+                        <div class="prdLt_descItem-left">Гарантия</div>
+                        <div class="prdLt_descItem-right">12 мес.</div>
                     </div>
                 </div>
                 <div class="prdLt_bot">
@@ -41,6 +65,7 @@
 <script>
     import BuyBtn from '../btns/BuyBtn';
     import TextBtn from '../btns/TextBtn';
+    import _ from 'lodash';
 
     export default {
         name: "CatalogCardList",
@@ -50,10 +75,11 @@
             TextBtn
         },
         computed: {
-            parameters() {
-                let params = data.params;
+            newParameters() {
+                let params = this.$props.data.params;
+                let newParams = _.pick(params, ['Бренд', 'Артикул', 'Модель', 'color', 'Ресурс', 'Гарантия']);
 
-                console.warn('parameters', params);
+                return newParams;
             }
         },
         methods: {
@@ -65,6 +91,9 @@
 </script>
 
 <style scoped>
+    .prdLt_descItem {
+        margin-bottom: 5px;
+    }
     .animated_btn {
         margin-right: 30px;
     }
