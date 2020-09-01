@@ -1,6 +1,9 @@
 import  $ from 'jquery';
 
 let actions = {
+    SEND_GOOGLE_ANALYTICS(context, obj) {
+        context.commit('sendGoogleAnalytics', obj);
+    },
     CATALOG_LOAD_MORE(context) {
         context.commit('catalogLoadMore');
     },

@@ -14,6 +14,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
+    mode: 'history',
+    hash: false,
     routes: routes
 })
 

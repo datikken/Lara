@@ -4,6 +4,10 @@ import _ from "lodash";
 import axios from "axios/index";
 
 let mutations = {
+    sendGoogleAnalytics(state, {category, eventAction, eventLabel, eventValue}) {
+        window.ga('send', 'event', category, eventAction, eventLabel, eventValue);
+        console.warn('ga event', category, eventAction, eventLabel, eventValue);
+    },
     catalogLoadMore(state) {
         state.catalogPerPage = state.catalogPerPage + state.catalogPerPage;
     },

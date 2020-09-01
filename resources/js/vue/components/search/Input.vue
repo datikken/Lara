@@ -10,6 +10,8 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex';
+
     export default {
         name: "Input",
         created: function() {
@@ -21,6 +23,9 @@
             }
         },
         methods: {
+            ...mapActions([
+                'SEND_GOOGLE_ANALYTICS'
+            ]),
             initStore() {
                 this.$store.commit('getAllProducts');
             },
@@ -29,6 +34,15 @@
                     sres && sres.classList.remove('as-none');
 
                 this.$store.commit('getFilteredProducts', this.txtInput);
+
+                let gObj = {
+                    category: 'search',
+                    eventAction: 'click',
+                    eventLabel: 'search',
+                    eventValue: this.txtInput
+                };
+
+                this.SEND_GOOGLE_ANALYTICS(gObj);
             }
         }
     }
