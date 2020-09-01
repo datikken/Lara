@@ -63,6 +63,17 @@
                         }
                     });
 
+                    let gObj = {
+                        category: 'filters',
+                        eventAction: 'filterApplied',
+                        eventLabel: 'filter',
+                        eventValue: Object.values(data)[0]
+                    };
+
+                    this.SEND_GOOGLE_ANALYTICS(gObj);
+
+                    console.warn(gObj);
+
                     this.FILTER_PRODUCTS(data);
 
             },
@@ -110,7 +121,7 @@
                     ul.classList.toggle('as-none');
 
 
-                let name = this.$el.querySelector('.filters_wrapper-item_text_name');
+                let name = this.$el.querySelector('.filters_wrapper-item_text_name').innerText;
 
                 let gObj = {
                     category: 'filters',
