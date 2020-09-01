@@ -37,7 +37,8 @@
         },
         methods: {
             ...mapActions([
-                'SWITCH_CATALOG_LAYOUT'
+                'SWITCH_CATALOG_LAYOUT',
+                'SEND_GOOGLE_ANALYTICS'
             ]),
             filterProductsByPrice() {
                 if(this.descending === true) {
@@ -49,6 +50,16 @@
                 }
 
                 this.rotateIcon();
+
+                let gObj = {
+                    category: 'filters',
+                    eventAction: 'click',
+                    eventLabel: 'price asc desc',
+                    eventValue: this.descending
+                };
+
+                this.SEND_GOOGLE_ANALYTICS(gObj);
+
             },
             rotateIcon() {
                 let icon = this.$el.querySelector('[data-orderIcon]');
@@ -75,6 +86,15 @@
                 }
 
                 this.SWITCH_CATALOG_LAYOUT();
+
+                let gObj = {
+                    category: 'catalog grid',
+                    eventAction: 'click',
+                    eventLabel: 'catalog grid switched',
+                    eventValue: type
+                };
+
+                this.SEND_GOOGLE_ANALYTICS(gObj);
             }
         }
     }

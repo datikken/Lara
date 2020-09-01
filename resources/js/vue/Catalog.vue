@@ -148,8 +148,8 @@
 
             let gObj = {
                 category: 'catalog',
-                eventAction: 'pageVisited',
-                eventLabel: 'catalog',
+                eventAction: 'click',
+                eventLabel: 'catalog visited',
                 eventValue: null
             };
 

@@ -65,14 +65,12 @@
 
                     let gObj = {
                         category: 'filters',
-                        eventAction: 'filterApplied',
+                        eventAction: 'click',
                         eventLabel: 'filter',
                         eventValue: Object.values(data)[0]
                     };
 
                     this.SEND_GOOGLE_ANALYTICS(gObj);
-
-                    console.warn(gObj);
 
                     this.FILTER_PRODUCTS(data);
 
@@ -125,7 +123,7 @@
 
                 let gObj = {
                     category: 'filters',
-                    eventAction: 'filterOpened',
+                    eventAction: 'click',
                     eventLabel: 'filter',
                     eventValue: name
                 };
