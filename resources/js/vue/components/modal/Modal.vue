@@ -101,6 +101,7 @@
     import BuyBtn from '../btns/BuyBtn'
     import AmountBtn from '../btns/AmountBtn'
     import TextBtn from '../btns/TextBtn'
+    import {mapActions} from 'vuex'
 
     export default {
         name: "Modal",
@@ -114,6 +115,21 @@
             singleProduct() {
                 return this.$store.state.singleProduct;
             }
+        },
+        methods: {
+            ...mapActions([
+                'SEND_GOOGLE_ANALYTICS'
+            ])
+        },
+        created() {
+            let gObj = {
+                category: 'catalog modal',
+                eventAction: 'click',
+                eventLabel: 'catalog modal opened',
+                eventValue: singleProduct.id
+            };
+
+            this.SEND_GOOGLE_ANALYTICS(gObj);
         }
     }
 </script>
