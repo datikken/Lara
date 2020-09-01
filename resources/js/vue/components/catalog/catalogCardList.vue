@@ -25,7 +25,9 @@
                     </div>
                     <div class="prdLt_btns">
 
-                        <TextBtn text="Подробнее" className="further_btn animated_btn" />
+                        <a :href="`/product/${data.id}`">
+                            <TextBtn text="Подробнее" className="further_btn animated_btn" />
+                        </a>
                         <BuyBtn :id="data.id" className="action_btn animated_btn" text="В корзину" />
 
                     </div>

@@ -58,6 +58,9 @@ const store = new Vuex.Store({
         catalogPerPage: state => state.catalogPerPage
     },
     actions: {
+        CATALOG_LOAD_MORE(context) {
+            context.commit('catalogLoadMore');
+        },
         SWITCH_CATALOG_LAYOUT(context) {
             context.commit('switchCatalogLayout');
         },
@@ -188,6 +191,9 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
+        catalogLoadMore(state) {
+            state.catalogPerPage = state.catalogPerPage + state.catalogPerPage;
+        },
         switchCatalogLayout(state) {
             state.gridCatalog = !state.gridCatalog;
             state.catalogPerPage = state.gridCatalog ? 6 : 16;

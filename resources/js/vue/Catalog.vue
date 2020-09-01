@@ -120,16 +120,14 @@
         },
         methods: {
             ...mapActions([
-                'GET_ALL_PRODUCTS'
+                'GET_ALL_PRODUCTS',
+                'CATALOG_LOAD_MORE'
             ]),
             pageChange(page) {
                 this.page = page;
             },
             loadMore(e) {
-                //Todo load more
-
-
-
+                this.CATALOG_LOAD_MORE();
             }
         },
         computed: {
