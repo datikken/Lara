@@ -50,6 +50,7 @@
 <script>
     import BuyBtn from '../btns/BuyBtn';
     import TextBtn from '../btns/TextBtn';
+    import {mapActions} from 'vuex'
 
     export default {
         name: "CatalogCard",
@@ -59,8 +60,17 @@
             TextBtn
         },
         methods: {
+            ...mapActions(['SEND_GOOGLE_ANALYTICS']),
             loadProductModal(id) {
                 this.$store.dispatch('GET_PRODUCT_BY_ID', id);
+                let gObj = {
+                    category: 'catalog modal',
+                    eventAction: 'click',
+                    eventLabel: 'catalog modal opened',
+                    eventValue: id
+                };
+
+                this.SEND_GOOGLE_ANALYTICS(gObj);
             }
         }
     }
