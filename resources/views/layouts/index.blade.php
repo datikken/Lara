@@ -9,7 +9,17 @@
 
     <link rel="stylesheet" href="/css/app.css">
 
-    <title>Printers</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177029583-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-177029583-1');
+    </script>
+
+    <title>RECART.me</title>
 </head>
 <body>
         @include('components.header.header')

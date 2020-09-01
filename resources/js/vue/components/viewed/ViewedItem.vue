@@ -1,5 +1,5 @@
 <template>
-    <div class="viewed_wrapper-item">
+    <a class="viewed_wrapper-item" :href="`/product/${data.id}`">
         <div class="viewed_wrapper-item_image">
             <img :src="`../storage/product_images/${data.params.Бренд}/SMALL/${data.photo}.png`" alt="" />
         </div>
@@ -14,7 +14,7 @@
                 <img src="/images/icons/rub.svg" alt="rub" />
             </div>
         </div>
-    </div>
+    </a>
 </template>
 
 <script>

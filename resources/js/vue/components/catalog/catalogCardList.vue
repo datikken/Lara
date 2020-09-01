@@ -49,6 +49,13 @@
             BuyBtn,
             TextBtn
         },
+        computed: {
+            parameters() {
+                let params = data.params;
+
+                console.warn('parameters', params);
+            }
+        },
         methods: {
             loadProductModal(id) {
                 this.$store.dispatch('GET_PRODUCT_BY_ID', id);
