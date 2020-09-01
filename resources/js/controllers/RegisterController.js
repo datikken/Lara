@@ -117,7 +117,9 @@ class RegisterController {
             this._setError(err.message, type)
         }
     }
-
+    _sendGAevent(type) {
+        window.ga("send", "event", "auth", type);
+    }
     _ajaxCall(form) {
         let url = form.getAttribute('action');
         let method = form.getAttribute('method');
@@ -169,10 +171,12 @@ class RegisterController {
 
                 if(e.target.dataset.loginform) {
                     that._validator(loginForm)
+                    that._sendGAevent('login')
                 }
 
                 if(e.target.dataset.registerform) {
                     that._validator(registerForm,'register')
+                    that._sendGAevent('register')
                 }
             })
         })
