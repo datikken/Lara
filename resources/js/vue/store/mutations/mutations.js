@@ -102,6 +102,15 @@ let mutations = {
         .then((response) => {
             return response.json();
         })
+
+        let gObj = {
+            category: 'catalog modal',
+            eventAction: 'click',
+            eventLabel: 'catalog modal opened',
+            eventValue: id
+        };
+
+        this.dispatch('SEND_GOOGLE_ANALYTICS', gObj);
     },
     getTwoYearsInfoBySelect(state, year) {
         fetch('/getTwoYearsInfoBySelect', {
@@ -634,6 +643,15 @@ let mutations = {
                 console.warn(error);
             }
         });
+
+        let gObj = {
+            category: 'catalog',
+            eventAction: 'click',
+            eventLabel: 'add product to cart',
+            eventValue: `${id} - ${amount}`
+        };
+
+        this.dispatch('SEND_GOOGLE_ANALYTICS', gObj);
     },
     setCloseListener(state, payload) {
         state.closeListener = payload;
