@@ -2,7 +2,7 @@
     <div class="filters_wrapper-item" :data-type="type">
         <div class="filters_wrapper-item_label pb16" data-FiltersToggler @click="openFilter">
             <div class="filters_wrapper-item_text">
-                <span>{{ name }}</span>
+                <span class="filters_wrapper-item_text_name">{{ name }}</span>
             </div>
             <img src="/images/icons/arrow_right.svg" alt="icon" />
         </div>
@@ -40,11 +40,10 @@
                this.activated = true;
             }
         },
-        created() {
-        },
         methods: {
             ...mapActions([
                 'FILTER_PRODUCTS',
+                'SEND_GOOGLE_ANALYTICS'
             ]),
             collectAplliedFilters() {
                 let filterBlocks = document.querySelectorAll('.filters_wrapper-item');
@@ -109,6 +108,19 @@
 
                 let ul = this.$el.querySelector('.filters_wrapper-item_list');
                     ul.classList.toggle('as-none');
+
+
+                let name = this.$el.querySelector('.filters_wrapper-item_text_name');
+
+                let gObj = {
+                    category: 'filters',
+                    eventAction: 'filterOpened',
+                    eventLabel: 'filter',
+                    eventValue: name
+                };
+
+                this.SEND_GOOGLE_ANALYTICS(gObj);
+
             }
         }
     }
