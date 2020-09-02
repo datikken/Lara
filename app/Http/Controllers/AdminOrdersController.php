@@ -13,9 +13,17 @@ class AdminOrdersController extends Controller
 {
     public function index()
     {
-        $orders = Orders::paginate(10);
+        $orders = Orders::paginate(8);
 
         return view('admin.orders.display', ['orders' => $orders]);
+    }
+
+    public function viewOrderDetails($id)
+    {
+        $order = Orders::find($id);
+        $order['order_info'] = json_decode($order['order_info']);
+
+        return view('admin.orders.details', ['order' => $order]);
     }
 
     public function repeatOrder(Request $request, $id)

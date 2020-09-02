@@ -128,9 +128,11 @@ Route::post('product/setIssue', ['uses' => 'ProductsController@setIssue', 'as' =
 Route::get('checkOrderStatus', ['uses' => 'AdminTrackingController@checkOrderStatus', 'as' => 'checkOrderStatus']);
 Route::post('fetchProducts', ['uses' => 'AdminProductsController@fetchProducts', 'as' => 'fetchProducts']);
 Route::get('removeProducts', ['uses' => 'AdminProductsController@removeProducts', 'as' => 'removeProducts']);
+Route::get('product/proceedPayment', ['uses' => 'PaymentsController@proceedPayment', 'as' => 'proceedPayment']);
+
 Route::get('/createOrder', ['uses' => 'AdminOrdersController@createOrder', 'as' => 'createOrder']);
 Route::get('product/repeatOrder/{id}', ['uses' => 'AdminOrdersController@repeatOrder', 'as' => 'repeatOrder']);
-Route::get('product/proceedPayment', ['uses' => 'PaymentsController@proceedPayment', 'as' => 'proceedPayment']);
+Route::get('/viewOrderDetails/{id}', ['uses' => 'AdminOrdersController@viewOrderDetails', 'as' => 'viewOrderDetails']);
 
 Route::post('/createSignatureHash', ['uses' => 'PaymentsController@createSignatureHash', 'as' => 'createSignatureHash']);
 
