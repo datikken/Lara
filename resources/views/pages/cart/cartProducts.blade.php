@@ -34,7 +34,8 @@
                     <span class="cart_wrap-item_inner-total_inner-item" data-cartpriceval>{{ $cartItems->totalPrice }}</span>
                 </div>
                 <div class="cart_wrap-item_inner-total_button animated_btn">
-                    <a class="cart_wrap-item_inner-total_button-item" href="{{ route('checkoutProducts') }}">
+                    {{--<span class="cart_wrap-item_inner-total_button-item" data-router="checkoutProducts">--}}
+                    <a class="cart_wrap-item_inner-total_button-item" href="{{route('checkoutProducts')}}">
                         оформить заказ
                     </a>
                 </div>

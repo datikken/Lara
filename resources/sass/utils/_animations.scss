@@ -1,6 +1,10 @@
 .animated_btn {
     transition: box-shadow .2s;
 
+    div {
+        user-select: none;
+    }
+
     &:hover {
         box-shadow: 0 0 12px rgba(0,0,0,0.6);
     }

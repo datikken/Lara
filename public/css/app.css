@@ -509,6 +509,12 @@ b {
 .animated_btn {
   transition: box-shadow 0.2s;
 }
+.animated_btn div {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
 .animated_btn:hover {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
 }

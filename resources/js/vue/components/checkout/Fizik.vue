@@ -26,7 +26,7 @@
                     <label for="required" class="invisible errorLabel" data-err>Поле телефон обязательно к
                         заполнению</label>
                     <label for="tel">Телефон <span>*</span></label>
-                    <masked-input v-model="phone" mask="\+\7 (111) 111-11-11" name="tel" placeholder="+7 (___) ___ - __ - __"/>
+                    <masked-input v-model="phone" mask="\+\7 (111) 111-11-11" name="tel" placeholder="+7 (___) ___ - __ - __" data-required data-phone />
                 </div>
 
                 <TextBtn className="cart_check-wrap_item-group_btn animated_btn" text="продолжить"
@@ -70,6 +70,15 @@
                 'CHANGE_PROGRESS_STEP',
                 'SCROLL_TO_TOP'
             ]),
+            validateNumberLength(num) {
+                let val = num.replace(/[- + _ )(]/g,'');
+
+                if(val.length === 10) {
+                    return true
+                } else {
+                    return false
+                }
+            },
             setCustomerFio() {
                 let inputs = this.$el.querySelectorAll('input');
                 let obj = {};
@@ -84,7 +93,9 @@
                 this.SET_CUSTOMER_FIO(obj);
 
                 try {
+
                     window.app.validator.formValidate([], $(this.$el));
+                    this.validateNumberLength(obj.tel);
                     this.CHANGE_PROGRESS_STEP();
                     router.push('/deliveryForm');
                     this.SCROLL_TO_TOP();

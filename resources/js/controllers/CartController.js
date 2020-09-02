@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import router from '../vue/router/router';
 
 class CartController {
     constructor(el) {
@@ -17,6 +18,10 @@ class CartController {
                 that.addToCart(e);
             })
         });
+    }
+
+    _pushToOrderProcess() {
+        router.push('/checkoutProducts');
     }
     _fixCartTotalState() {
         let url = window.location.origin + '/checkCartState';
