@@ -1,10 +1,9 @@
 <template>
 <div class="catalog">
     <div class="columns catalog_columns">
-        <div class="left_column">
-           <Filters />
-           <Viewed />
-        </div>
+
+        <LeftColumn />
+
         <div class="right_column">
 
             <CatalogSwitch />
@@ -89,29 +88,26 @@
     import TextBtn from '../vue/components/btns/BuyBtn';
     import CatalogSwitch from '../vue/components/catalog/catalogSwitch';
     import CatalogCard from '../vue/components/catalog/catalogCard';
-    import Filters from './components/filters/Filters';
     import NothingFound from './components/errors/NothingFound';
-    import Viewed from './components/viewed/Viewed';
     import Loader from './components/loader/Loader';
     import Modal from './components/modal/Modal';
     import CatalogCardList from '../vue/components/catalog/catalogCardList'
-
+    import LeftColumn from '../vue/components/layout/LeftColumn'
 
     export default {
         name: "catalog",
         components: {
-            CatalogCard,
-            CatalogCardList,
-            OrdersHistory,
             VueAdsPagination,
             VueAdsPageButton,
+            CatalogCardList,
             CatalogSwitch,
-            Filters,
+            OrdersHistory,
             NothingFound,
-            Viewed,
+            CatalogCard,
+            LeftColumn,
+            TextBtn,
             Loader,
-            Modal,
-            TextBtn
+            Modal
         },
         data() {
             return {
