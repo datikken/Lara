@@ -248,6 +248,7 @@
 
                                     a {
                                         color: $white;
+                                        font-family: $semifont;
                                     }
                                 }
                             }
@@ -278,7 +279,7 @@
 
                     @include breakpoint($medium) {
                         margin-left: 20px;
-                        \margin-right: 0;
+                        margin-right: 0;
                     }
 
                     &-amount {

@@ -1,8 +1,9 @@
 .owl-carousel,
 .owl-wrapper {
-  height: 367px;
+  height: 396px;
   max-width: 1170px;
   margin: 0 auto;
+
   @include breakpoint($medium) {
     margin-bottom: 50px;
   }
@@ -13,7 +14,7 @@
 }
 .owl-wrapper {
   position: relative;
-  max-height: 367px;
+  //max-height: 367px;
   padding-bottom: 30px;
 
   @include breakpoint($phone) {
@@ -43,11 +44,12 @@
 }
 .owl-nav {
   position: absolute;
-  left: 6rem;
   display: block !important;
-  top: 3px;
+  top: -5px;
+  left: 7.5rem;
 
   @include breakpoint($phone) {
+    left: 6.6rem;
     top: 20px;
   }
 
@@ -81,7 +83,7 @@
   left: 16px;
   top: 0;
   position: absolute;
-  font-family: $font;
+  font-family: $semifont;
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
@@ -120,14 +122,13 @@
   }
 
   &:after {
+    right: -18px;
+    top: 60px;
     content: "";
     width: 1px;
     height: 100%;
     border-left: 1px solid $light_gray;
     position: absolute;
-    right: -22px;
-    top: 50px;
-    display: none;
 
     @include breakpoint($medium) {
         right: -23px;
@@ -145,6 +146,8 @@
 
   &-wrapper {
     &_item {
+      max-height: 200px;
+
       @include breakpoint($phone) {
         margin-bottom: -2px;
       }
@@ -203,6 +206,7 @@
 
         img {
           max-width: 130px;
+          max-height: 200px;
         }
 
         @include breakpoint($phone) {
@@ -239,10 +243,9 @@
         font-size: 12px;
         line-height: 14px;
         letter-spacing: 0.02em;
-        padding-bottom: 20px;
+        font-family: $semifont;
 
         @include breakpoint($phone) {
-          font-family: $semifont;
           font-weight: 600;
           font-size: 12px;
           line-height: 18px;

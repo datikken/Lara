@@ -83,6 +83,19 @@
 
 .main_slider {
     margin-bottom: 10px!important;
+
+    &-nav {
+        display: none;
+    }
+
+    &_pagination {
+        display: none;
+
+        @include breakpoint($medium) {
+            display: block;
+        }
+    }
+
     .swiper-button-prev, .swiper-button-next {
         &:after {
             display: none;

@@ -2,6 +2,11 @@
     position: absolute;
     top: -2.75rem;
     right: 4px;
+    display: none;
+
+    @include breakpoint($medium) {
+        display: block;
+    }
 
     &_text {
         font-family: $semifont;

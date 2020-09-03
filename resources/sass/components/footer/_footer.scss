@@ -96,6 +96,7 @@ footer {
 
       &:nth-child(3) {
         margin-left: 50px;
+        margin-right: 16px;
 
         @include  breakpoint(400px) {
             margin-left: 16px;
