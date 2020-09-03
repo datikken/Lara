@@ -2,6 +2,11 @@
     position: absolute;
     cursor: pointer;
     left: 0;
+    display: none;
+
+    @include breakpoint($medium) {
+        display: block;
+    }
 
     img {
         display: none;

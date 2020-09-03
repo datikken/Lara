@@ -2,9 +2,15 @@
 <div class="catalog">
     <div class="columns catalog_columns">
 
-        <LeftColumn />
+        <div class="mobile-hide">
+            <LeftColumn />
+        </div>
 
         <div class="right_column">
+
+            <div class="desktop-hide">
+                <MobileFilters />
+            </div>
 
             <CatalogSwitch />
 
@@ -93,6 +99,7 @@
     import Modal from './components/modal/Modal';
     import CatalogCardList from '../vue/components/catalog/catalogCardList'
     import LeftColumn from '../vue/components/layout/LeftColumn'
+    import MobileFilters from '../vue/components/filters/MobileFilters'
 
     export default {
         name: "catalog",
@@ -100,6 +107,7 @@
             VueAdsPagination,
             VueAdsPageButton,
             CatalogCardList,
+            MobileFilters,
             CatalogSwitch,
             OrdersHistory,
             NothingFound,

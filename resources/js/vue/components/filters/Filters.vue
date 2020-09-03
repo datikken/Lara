@@ -10,6 +10,7 @@
             <FiltersItem name="Тип принтера" :filters="types" type="printertype" />
             <FiltersItem name="Бренд" :filters="brands" type="brand" />
             <FiltersItem name="Модель" :filters="models" type="model" />
+
         </div>
     </div>
 
@@ -21,10 +22,6 @@
 
     export default {
         name: "Filters",
-        data: function() {
-            return  {
-            }
-        },
         components: {
             FiltersItem,
             Dropdown
