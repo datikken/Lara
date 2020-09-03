@@ -2635,21 +2635,23 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .viewed {
-  width: 100%;
+  width: calc(100% - 16px);
   position: relative;
+  margin: 0 16px;
 }
 @media screen and (min-width: 600px) {
   .viewed {
     margin-bottom: 50px;
     overflow: hidden;
     width: 270px;
+    margin: 0;
   }
 }
 .viewed_wrapper {
   display: flex;
-  overflow-y: scroll;
-  overflow-x: hidden;
   max-height: 335px;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 .viewed_wrapper::-webkit-scrollbar {
   display: none;
@@ -2666,6 +2668,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 600px) {
   .viewed_wrapper {
+    overflow-x: hidden;
+    overflow-y: scroll;
     display: block;
   }
 }
@@ -2688,7 +2692,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .viewed_wrapper-item {
   display: flex;
   position: relative;
-  padding-top: 55px;
+  padding-top: 20px;
 }
 @media screen and (min-width: 600px) {
   .viewed_wrapper-item {
@@ -2743,17 +2747,17 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border-bottom: 1px solid #e9e9ea;
 }
 .viewed_wrapper-item_text-heading {
-  font-family: "MontserratSemiBold";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #292930;
+  letter-spacing: 0.02em;
+  font-family: "MontserratSemiBold";
   margin-bottom: 10px;
-  padding-top: 19px;
+  font-style: normal;
+  line-height: 14px;
+  font-weight: 500;
+  padding-top: 9px;
   max-width: 150px;
+  font-size: 12px;
+  color: #292930;
 }
 @media screen and (min-width: 1030px) {
   .viewed_wrapper-item_text-heading {

@@ -39,6 +39,10 @@
                 @include('components.sales.sales_slider')
             </div>
 
+            <div class="desktop-hide">
+                @include('components.viewed.viewed', ['products' => $vwd])
+            </div>
+
             @include('components.sales.sales_best')
 
             <div class="mobile-hide">
