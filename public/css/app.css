@@ -4749,6 +4749,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   grid-gap: 10px;
   margin: 20px 16px 20px 16px;
 }
+.mobFilters_results_item_text {
+  margin-left: 35px;
+}
 .mobFilters_item {
   display: flex;
   justify-content: center;
