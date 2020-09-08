@@ -279,14 +279,16 @@
         },
         methods: {
             searchWidthController() {
-                let search = document.querySelector('[data-searchTrigger]');
+                if(window.screen.width < 1000) {
+                    let search = document.querySelector('[data-searchTrigger]');
 
-                if(!this.openedSearch) {
-                    search.classList.add('search_width');
-                    this.openedSearch = true;
-                } else {
-                    search.classList.remove('search_width');
-                    this.openedSearch = false;
+                    if(!this.openedSearch) {
+                        search.classList.add('search_width');
+                        this.openedSearch = true;
+                    } else {
+                        search.classList.remove('search_width');
+                        this.openedSearch = false;
+                    }
                 }
             }
         }
