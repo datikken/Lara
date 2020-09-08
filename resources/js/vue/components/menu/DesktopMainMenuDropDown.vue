@@ -81,7 +81,7 @@
                         class="menu_wrapper-item-main_menu-item"
                     >
                         <span class="menu_wrapper-item-main_menu-item-text">
-                            <span>Информация</span>
+                            <span class="menu_wrapper-item-main_menu-item-text_inner">Информация</span>
                             <img src="/images/icons/arrow_right.svg" alt="arrow"/>
                         </span>
                     </li>

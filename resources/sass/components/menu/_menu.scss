@@ -214,6 +214,10 @@
                         display: flex !important;
                         width: 100%;
 
+                        &_inner {
+                            font-family: $font!important;
+                        }
+
                         &_secondary {
                             background: $white;
                             color: black;

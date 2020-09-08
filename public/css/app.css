@@ -1085,6 +1085,9 @@ b {
   display: flex !important;
   width: 100%;
 }
+.menu_wrapper-item-main_menu-item-text_inner {
+  font-family: "Montserrat", sans-serif !important;
+}
 .menu_wrapper-item-main_menu-item-text_secondary {
   background: #fff;
   color: black;
