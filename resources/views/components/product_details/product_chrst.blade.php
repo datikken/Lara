@@ -4,10 +4,6 @@
     echo $class;
 } ?>">
     <div class="prdch_wrap">
-
-        {{--{{  dd($chrst) }}--}}
-
-
             <div class="prdch_item">
                 <div class="prdch_name">
                     <span>

@@ -1,3 +1,7 @@
+<?
+    $params = json_decode($product['params']);
+?>
+
 <div class="details">
     <div class="details_wrap">
 
@@ -45,19 +49,13 @@
 
             <div class="details_wrap-info_item">
                 <div class="details_wrap-info_item-field">
-                    <span>Фотобарабан Mitsubishi Chemical Corporation, тонер Mitsubishi Chemical Corporation</span>
-                </div>
-            </div>
-
-            <div class="details_wrap-info_item">
-                <div class="details_wrap-info_item-field">
                     <span>ОЕМ-номер: CE285A.</span>
                 </div>
             </div>
 
             <div class="details_wrap-info_item">
                 <div class="details_wrap-info_item-field">
-                    <span>1 600 текстовых страниц А4 <br/> согласно ASTM F1856/STMC для картриджей «Всё в одном».</span>
+                    <span>{{ $params->Ресурс }} текстовых страниц А4 <br/> согласно ASTM F1856/STMC для картриджей «Всё в одном».</span>
                 </div>
             </div>
 
