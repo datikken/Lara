@@ -38,19 +38,6 @@ class MenuController {
         });
     }
 
-    _searchWidthController(search) {
-        let state = false;
-
-        $(search).on('click', function() {
-            if(!state) {
-                search.classList.add('search_width');
-                state = true;
-            } else {
-                search.classList.remove('search_width');
-                state = false;
-            }
-        })
-    }
 
     _secondaryMenu(secondary, menuItems) {
         $(secondary).hover(() => {
@@ -90,7 +77,6 @@ class MenuController {
         let menuItems = document.querySelectorAll('.menu_wrapper-item-main_menu-item');
         let menu = document.querySelector('.menu_wrapper-item-main_menu');
         let drop = document.querySelector('.menu_wrapper-item');
-        let search = document.querySelector('.menu_wrapper-item_search');
         let array = [secondary, drop];
 
         this._initMainDropDown(array, menu);
@@ -98,7 +84,6 @@ class MenuController {
 
         if (window.screen.width < 1000) {
             this._initMobileDropDown();
-            this._searchWidthController(search);
         }
     }
 }

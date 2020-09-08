@@ -9,21 +9,28 @@
         background-color: black;
         border-radius: 50%;
         position: absolute;
-        top: 26px;
         left: 50%;
         transform: translate(-50%, -50%);
+        top: 17px;
+
+        @include breakpoint($medium) {
+            top: 26px;
+        }
     }
 
     &_wrap {
-        width: 100vw;
-        max-width: 970px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
         background-color: white;
         position: absolute;
-        top: 40px;
-        left: -20px;
+        max-width: 970px;
+        top: 50px;
         z-index: 999999;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
         z-index: 999999;
+        width: 100%;
+
+        @include breakpoint($medium) {
+            width: 100vw;
+        }
 
         &:after {
             content: "";
@@ -38,13 +45,17 @@
     }
     &_head {
         display: grid;
-        grid-template-columns: 70px 150px 1fr;
         height: 40px;
         background-color: $light_gray;
         align-items: center;
+        grid-template-columns: 60px 100px 1fr;
+
+        @include  breakpoint($medium) {
+            grid-template-columns: 70px 150px 1fr;
+        }
 
         &_item {
-            margin-left: 17px;
+            margin-left: 14px;
             height: 100%;
             border-right: 1px solid #fff;
             font-family: $semifont;
@@ -56,14 +67,23 @@
             color: $dblack;
             display: flex;
             align-items: center;
+
+            @include breakpoint($medium) {
+                margin-left: 17px;
+            }
         }
     }
 
     &_item {
         display: grid;
-        grid-template-columns: 70px 150px 1fr;
         text-decoration: none;
         color: $black;
+        grid-template-columns: 60px 100px 1fr;
+
+        @include  breakpoint($medium) {
+            grid-template-columns: 70px 150px 1fr;
+        }
+
         &:hover {
             color: $black;
         }
@@ -78,11 +98,25 @@
 
         &_inner_item {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin-bottom: 15px;
+
+            @include breakpoint($medium) {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         &_item {
-            margin: 15px 0 15px 17px;
+            margin: 5px 0 0 15px;
+
+            &:first-child {
+                font-family: $semifont;
+                margin-bottom: 5px;
+            }
+
+            @include breakpoint($medium) {
+                margin: 15px 0 15px 17px;
+            }
         }
     }
 }

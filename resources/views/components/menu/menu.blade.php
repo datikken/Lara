@@ -1,5 +1,6 @@
 <div class="menu">
-    <div class="menu_wrapper">
+    <div class="menu_wrapper" id="app">
+
         <div class="menu_wrapper-item">
 
             <div class="menu_wrapper-item_hamburger">
@@ -195,12 +196,11 @@
         <div class="menu_wrapper-item">
             <div class="menu_wrapper-item_search">
                 <div class="menu_wrapper-item_search_input">
-                    <form action="{{ route('searchProducts') }}" method="get" style="margin-bottom: 0;" data-searchForm>
+                    <form action="{{ route('searchProducts') }}" method="get" style="margin-bottom: 0;">
                         {{ csrf_field() }}
-
-                        <div id="app">
-                            <input type="text"/>
-                        </div>
+                        {{--<div id="app">--}}
+                            {{--<input type="text"/>--}}
+                        {{--</div>--}}
                     </form>
                 </div>
                 <div class="menu_wrapper-item_search_button">
@@ -244,11 +244,11 @@
             </span>
                     </div>
                     <div class="menu_wrapper-item_cart_value">
-            <span data-cartPriceVal>
-                @php
-                    if(Session::get('cart')) { echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalPrice); }
-                @endphp
-            </span>
+                        <span data-cartPriceVal>
+                            @php
+                                if(Session::get('cart')) { echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalPrice); }
+                            @endphp
+                        </span>
                     </div>
 
                     <div
