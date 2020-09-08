@@ -162,11 +162,10 @@
                 z-index: 9999;
                 list-style: none;
                 padding: 0;
-                left: -1px;
+                left: -29px;
                 top: 30px;
                 width: 200px;
                 overflow: hidden;
-                display: none;
                 transition: visibility $transition;
                 box-shadow: $menu_shadow;
 
@@ -202,7 +201,7 @@
                         height: 100%;
                         position: relative;
                         z-index: 9999;
-                        font-family: $font;
+                        font-family: $font!important;
                         font-weight: 300;
                         font-size: 12px;
                         line-height: 14px;
@@ -226,7 +225,6 @@
                             top: 11.9rem;
                             right: -13.4rem;
                             font-weight: 300;
-                            display: none;
 
                             &-text {
                                 padding: 12.5px;

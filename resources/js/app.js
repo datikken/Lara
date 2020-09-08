@@ -3,6 +3,7 @@ import $ from 'jquery';
 import Validator from './functions/validator';
 import SimpleMap from './components/Map';
 
+import './components/Menu';
 import './components/Swiper';
 import './components/Search';
 import './components/Form';

@@ -1037,11 +1037,10 @@ b {
   z-index: 9999;
   list-style: none;
   padding: 0;
-  left: -1px;
+  left: -29px;
   top: 30px;
   width: 200px;
   overflow: hidden;
-  display: none;
   transition: visibility 0.2s;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
 }
@@ -1073,7 +1072,7 @@ b {
   height: 100%;
   position: relative;
   z-index: 9999;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
   font-weight: 300;
   font-size: 12px;
   line-height: 14px;
@@ -1097,7 +1096,6 @@ b {
   top: 11.9rem;
   right: -13.4rem;
   font-weight: 300;
-  display: none;
 }
 .menu_wrapper-item-main_menu-item-text_secondary-text {
   padding: 12.5px;

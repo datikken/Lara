@@ -142,52 +142,56 @@
                             </li>
                         </ul>
 
-                        <ul class="menu_wrapper-item-main_menu">
-                            <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/catalog">Каталог</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                            </li>
-                            <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/about">О нас</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                            </li>
-                            <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/hits">Хит парад принтеров</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                            </li>
-                            <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/hits">Акции</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                            </li>
-                            <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/blog">Блог</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                            </li>
-                            <li
-                                class="menu_wrapper-item-main_menu-item"
-                            >
-                    <span class="menu_wrapper-item-main_menu-item-text">
-                                            <span>Информация</span>
-                                            <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                            </li>
-                            <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/contacts">Контакты</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                            </li>
-                        </ul>
+
+                        {{--<ul class="menu_wrapper-item-main_menu as-none" data-desktopDropdown>--}}
+                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
+                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
+                                            {{--<a href="/catalog">Каталог</a>--}}
+                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
+                                          {{--</span>--}}
+                            {{--</li>--}}
+                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
+                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
+                                            {{--<a href="/about">О нас</a>--}}
+                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
+                                          {{--</span>--}}
+                            {{--</li>--}}
+                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
+                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
+                                            {{--<a href="/hits">Хит парад принтеров</a>--}}
+                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
+                                          {{--</span>--}}
+                            {{--</li>--}}
+                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
+                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
+                                            {{--<a href="/hits">Акции</a>--}}
+                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
+                                          {{--</span>--}}
+                            {{--</li>--}}
+                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
+                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
+                                            {{--<a href="/blog">Блог</a>--}}
+                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
+                                          {{--</span>--}}
+                            {{--</li>--}}
+                            {{--<li--}}
+                                {{--class="menu_wrapper-item-main_menu-item"--}}
+                            {{-->--}}
+                    {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
+                                            {{--<span>Информация</span>--}}
+                                            {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
+                                          {{--</span>--}}
+                            {{--</li>--}}
+                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
+                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
+                                            {{--<a href="/contacts">Контакты</a>--}}
+                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
+                                          {{--</span>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+
+
+
                     </div>
                 </div>
             </a>
