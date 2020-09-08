@@ -3,7 +3,8 @@
         <div class="menu_wrapper" id="app">
 
             <div class="menu_wrapper-item">
-                <div class="menu_wrapper-item_hamburger">
+
+                <div class="menu_wrapper-item_hamburger" @click="MobileDropdownTrigger">
                     <img src="/images/menu/Mhamburger.svg" alt="hamburger" class="hamburger"/>
                     <a class="menu_wrapper-item_hamburger-link" href="/">
                         <img src='/images/header/MLOGO.png' alt="logo" class="menu_wrapper-item_hamburger-logo"/>
@@ -108,89 +109,8 @@
                     </div>
                 </div>
 
-                <a href="/" class="menu_wrapper-item_menuText-link">
-                    <div class="menu_wrapper-item_menuText">
-                        <img
-                            src="/images/icons/menu_decor.svg"
-                            class="menu_wrapper-item_menuText-decor"
-                            alt="decor"
-                        />
+                <MobileMainMenuDropDown />
 
-                        <div class="menu_wrapper-item_menuText-header">
-                            <span class="menu_wrapper-item_menuText-header_item">МЕНЮ</span>
-
-                            <ul class="menu_wrapper-item-main_menu-item-text_secondary secondaryBottom">
-                                <!--@foreach($information as $inf)-->
-                                <!--<li class="menu_wrapper-item-main_menu-item-text_secondary-text">-->
-                                    <!--<a href="/information#{{$inf['category']}}">-->
-                                        <!--<span>{{$inf['category']}}</span>-->
-                                    <!--</a>-->
-                                <!--</li>-->
-                                <!--@endforeach-->
-                            </ul>
-
-                            <ul class="menu_wrapper-item-main_menu-item-text_secondary secondaryTop">
-                                <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
-                                    <a href="/catalog">
-                                        <span>Картриджи</span>
-                                    </a>
-                                </li>
-                                <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
-                                    <a href="/catalogPapers">
-                                        <span>Бумага</span>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <ul class="menu_wrapper-item-main_menu">
-                                <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/catalog">Каталог</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                                </li>
-                                <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/about">О нас</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                                </li>
-                                <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/hits">Хит парад принтеров</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                                </li>
-                                <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/hits">Акции</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                                </li>
-                                <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/blog">Блог</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                                </li>
-                                <li
-                                    class="menu_wrapper-item-main_menu-item"
-                                >
-                    <span class="menu_wrapper-item-main_menu-item-text">
-                                            <span>Информация</span>
-                                            <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                                </li>
-                                <li class="menu_wrapper-item-main_menu-item">
-                                          <span class="menu_wrapper-item-main_menu-item-text">
-                                            <a href="/contacts">Контакты</a>
-                                              <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                                          </span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </a>
             </div>
 
             <div class="menu_wrapper-item">
@@ -230,23 +150,13 @@
                     <a href="/cart">
                         <div class="menu_wrapper-item_cart_icon">
                             <img src="/images/menu/cart.svg" alt=""/>
-                            <span class="menu_wrapper-item_cart_icon-amount" data-cartAmountVal>
-                <!--@php-->
-                    <!--if(Session::get('cart')) echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalQuantity)-->
-                <!--@endphp-->
-                            </span>
+                            <span class="menu_wrapper-item_cart_icon-amount" data-cartAmountVal></span>
                         </div>
                         <div class="menu_wrapper-item_cart_value">
-                        <span data-cartPriceVal>
-                            0
-                            <!--@php-->
-                                <!--if(Session::get('cart')) { echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalPrice); }-->
-                            <!--@endphp-->
-                        </span>
+                            <span data-cartPriceVal>0</span>
                         </div>
 
-                        <div
-                            class="menu_wrapper-item_cart_currency @php if(!Session::get('cart')) { echo 'invisible'; } @endphp">
+                        <div class="menu_wrapper-item_cart_currency">
                             <img src="/images/menu/rub.svg" alt="rub"/>
                         </div>
 
@@ -264,20 +174,40 @@
     import Input from './components/search/Input';
     import SearchList from './components/search/SearchList';
     import SearchListItem from './components/search/SearchListItem';
+    import MobileMainMenuDropDown from './components/menu/MobileMainMenuDropDown';
 
     export default {
         name: 'app',
         data: function() {
             return {
-                openedSearch: false
+                openedSearch: false,
+                openedMenu: false
             }
         },
         components: {
             Input,
             SearchList,
-            SearchListItem
+            SearchListItem,
+            MobileMainMenuDropDown
         },
         methods: {
+            MobileDropdownTrigger() {
+                let body = document.querySelector('body');
+
+                if(!this.openedMenu) {
+                    this.openedMenu = true;
+                    body.classList.add('overflow')
+                    document.querySelector('.menu_wrapper-item_secondary').classList.add('as-visible');
+                    document.querySelector('.menu_wrapper-item_secondary').classList.add('mobile_menu');
+                } else {
+                    this.openedMenu = false;
+                    body.classList.remove('overflow')
+                    document.querySelector('.menu_wrapper-item_secondary').classList.remove('as-visible');
+                    document.querySelector('.menu_wrapper-item_secondary').classList.remove('mobile_menu');
+                }
+
+                console.warn('MobileDropdownTrigger', state);
+            },
             searchWidthController() {
                 if(window.screen.width < 1000) {
                     let search = document.querySelector('[data-searchTrigger]');

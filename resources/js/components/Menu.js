@@ -10,27 +10,7 @@ class MenuController {
         });
     }
 
-    _initMobileDropDown() {
-        let state = false;
 
-        $('.menu_wrapper-item_hamburger').on('click', () => {
-                let body = document.querySelector('body');
-
-                if(!state) {
-                    state = true;
-
-                    body.classList.add('overflow')
-                    document.querySelector('.menu_wrapper-item_secondary').classList.add('as-visible');
-                    document.querySelector('.menu_wrapper-item_secondary').classList.add('mobile_menu');
-                } else {
-                    state = false;
-
-                    body.classList.remove('overflow')
-                    document.querySelector('.menu_wrapper-item_secondary').classList.remove('as-visible');
-                    document.querySelector('.menu_wrapper-item_secondary').classList.remove('mobile_menu');
-                }
-            })
-    }
 
     _initMainDropDown(array, menu) {
         array.forEach((el) => {
@@ -83,7 +63,7 @@ class MenuController {
         this._secondaryMenu(secondary, menuItems);
 
         if (window.screen.width < 1000) {
-            this._initMobileDropDown();
+            // this._initMobileDropDown();
         }
     }
 }
