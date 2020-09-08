@@ -25,11 +25,12 @@
         max-width: 970px;
         top: 50px;
         z-index: 999999;
-        z-index: 999999;
         width: 100%;
 
         @include breakpoint($medium) {
-            width: 100vw;
+            left: 50%;
+            transform: translate(-50%, 0);
+            top: 110px;
         }
 
         &:after {
@@ -103,6 +104,8 @@
 
             @include breakpoint($medium) {
                 grid-template-columns: 1fr 1fr;
+                grid-template-rows: unset;
+                margin-bottom: 0;
             }
         }
 
@@ -112,6 +115,11 @@
             &:first-child {
                 font-family: $semifont;
                 margin-bottom: 5px;
+
+                @include breakpoint($medium) {
+                    font-family: $font;
+                    margin-bottom:0;
+                }
             }
 
             @include breakpoint($medium) {

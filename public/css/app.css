@@ -11858,12 +11858,13 @@ main {
   max-width: 970px;
   top: 50px;
   z-index: 999999;
-  z-index: 999999;
   width: 100%;
 }
 @media screen and (min-width: 1030px) {
   .sres_wrap {
-    width: 100vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 110px;
   }
 }
 .sres_wrap:after {
@@ -11936,6 +11937,8 @@ main {
 @media screen and (min-width: 1030px) {
   .sres_col_inner_item {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: unset;
+    margin-bottom: 0;
   }
 }
 .sres_col_item {
@@ -11944,6 +11947,12 @@ main {
 .sres_col_item:first-child {
   font-family: "MontserratSemiBold";
   margin-bottom: 5px;
+}
+@media screen and (min-width: 1030px) {
+  .sres_col_item:first-child {
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 0;
+  }
 }
 @media screen and (min-width: 1030px) {
   .sres_col_item {
