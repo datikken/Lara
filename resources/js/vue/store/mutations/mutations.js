@@ -678,7 +678,13 @@ let mutations = {
             }
 
             Object.keys(prod.cape).forEach((cape) => {
-                if ((cape).indexOf(payload) >= 0) {
+                if ((cape.toLowerCase()).indexOf(payload) >= 0) {
+                    separate(prod)
+                }
+            })
+
+            Object.values(prod.cape).forEach((cape) => {
+                if ((cape.toLowerCase()).indexOf(payload) >= 0) {
                     separate(prod)
                 }
             })

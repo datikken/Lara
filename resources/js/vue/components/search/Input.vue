@@ -17,7 +17,7 @@
         created: function() {
             this.initStore();
         },
-        data: function (){
+        data: function() {
             return {
                 txtInput: ''
             }
@@ -33,7 +33,7 @@
                 let sres = document.querySelector('.sres');
                     sres && sres.classList.remove('as-none');
 
-                this.$store.commit('getFilteredProducts', this.txtInput);
+                this.$store.commit('getFilteredProducts', this.txtInput.toLowerCase());
 
                 let gObj = {
                     category: 'search',
