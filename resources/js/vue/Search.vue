@@ -46,7 +46,7 @@
                     <div class="menu_wrapper-item_personal_text">
                         <span>Личный кабинет</span>
                         <img
-                            src="/images/icons/main_logo.png"
+                            src="/images/icons/menu_decor.svg"
                             class="menu_wrapper-item_menuText-decor"
                         />
                     </div>

@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="mobFilters">
-            <MobileFiltersItem name="Тип принтера" :filters="1" type="printertype" @click="showHide" />
-            <MobileFiltersItem name="Бренд" :filters="2" type="brand" @click="showHide" />
-            <MobileFiltersItem name="Модель" :filters="3" type="model" @click="showHide" />
+            <MobileFiltersItem name="Тип принтера" :filters="1" type="printertype" @click.native="showHide" />
+            <MobileFiltersItem name="Бренд" :filters="2" type="brand" @click.native="showHide" />
+            <MobileFiltersItem name="Модель" :filters="3" type="model" @click.native="showHide" />
         </div>
 
         <div class="mobFilters_results as-none" data-mobFilter-list>
@@ -33,6 +33,8 @@
             showHide(e) {
                 let list = this.$el.querySelector('[data-mobFilter-list]');
                     list.classList.toggle('as-none');
+
+                    console.warn('show hide executed');
             },
         },
         computed: {

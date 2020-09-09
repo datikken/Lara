@@ -111,7 +111,7 @@
             <a href="/" class="menu_wrapper-item_menuText-link">
                 <div class="menu_wrapper-item_menuText">
                     <img
-                        src="/images/icons/main_logo.svg"
+                        src="/images/icons/menu_decor.svg"
                         class="menu_wrapper-item_menuText-decor"
                         alt="decor"
                     />
