@@ -77,8 +77,10 @@
                         <img src="/images/icons/tip.svg" alt="amount">
                     </div>
                     <div class="details_wrap-info_item-price_item">
-                        <span class="details_wrap-info_item-price_item-price"><? echo floor($product['price']); ?></span>
-                        <img class="details_wrap-info_item-price_item-rubMini" src="/images/menu/rub.svg" alt="rub"/>
+                        <span class="details_wrap-info_item-price_item-price">
+                            <? echo floor($product['price']); ?>
+                            <img class="details_wrap-info_item-price_item-rubMini" src="/images/menu/rub.svg" alt="rub"/>
+                        </span>
                     </div>
                 </div>
             </div>

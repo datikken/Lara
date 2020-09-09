@@ -26,6 +26,7 @@
                         span {
                             margin-right: 5px;
                         }
+
                         &-price {
                             font-family: Montserrat;
                             font-style: normal;
@@ -52,10 +53,10 @@
                         position: relative;
 
                         &-rubMini {
-                            width: 7px;
                             position: absolute;
+                            right: -12px;
+                            width: 7px;
                             top: 7px;
-                            right: 0;
                         }
 
                         &-rub {
@@ -70,12 +71,13 @@
                         }
 
                         &-price {
+                            text-transform: uppercase;
+                            position: relative;
                             font-family: $font;
                             font-style: normal;
                             font-weight: 600;
                             font-size: 24px;
                             line-height: 26px;
-                            text-transform: uppercase;
                             color: $blue;
                         }
                     }

@@ -5446,10 +5446,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   position: relative;
 }
 .details_wrap-info .price_wrap .details_wrap-info_item-price_item-rubMini {
-  width: 7px;
   position: absolute;
+  right: -12px;
+  width: 7px;
   top: 7px;
-  right: 0;
 }
 .details_wrap-info .price_wrap .details_wrap-info_item-price_item-rub {
   width: 10px;
@@ -5461,12 +5461,13 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-left: 5px;
 }
 .details_wrap-info .price_wrap .details_wrap-info_item-price_item-price {
+  text-transform: uppercase;
+  position: relative;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 26px;
-  text-transform: uppercase;
   color: #3559fd;
 }
 .details_wrap-info_item-icons {
