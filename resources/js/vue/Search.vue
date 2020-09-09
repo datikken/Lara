@@ -46,7 +46,7 @@
                     <div class="menu_wrapper-item_personal_text">
                         <span>Личный кабинет</span>
                         <img
-                            src="/images/icons/menu_decor.svg"
+                            src="/images/icons/main_logo.png"
                             class="menu_wrapper-item_menuText-decor"
                         />
                     </div>
@@ -60,7 +60,7 @@
                             <span class="menu_wrapper-item_cart_icon-amount" data-cartAmountVal></span>
                         </div>
                         <div class="menu_wrapper-item_cart_value">
-                            <span data-cartPriceVal>0</span>
+                            <span data-cartPriceVal></span>
                         </div>
 
                         <div class="menu_wrapper-item_cart_currency">
@@ -99,9 +99,7 @@
             MobileMainMenuDropDown,
             DesktopMainMenuDropDown
         },
-        mounted() {
-            this.listeners();
-        },
+        mounted() { },
         methods: {
             DesktopDropdownHide() {
                 console.warn('damn');

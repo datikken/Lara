@@ -3,7 +3,6 @@ import $ from 'jquery';
 import Validator from './functions/validator';
 import SimpleMap from './components/Map';
 
-import './components/Menu';
 import './components/Swiper';
 import './components/Search';
 import './components/Form';
@@ -29,13 +28,11 @@ import ProductDetailsMenuController from './controllers/ProductDetailsMenuContro
 import DashController from './controllers/DashController'
 import BlogPostController from './controllers/BlogPostController'
 import OwlCarouselController from './controllers/OwlCarouselController'
-import MenuController from './components/Menu'
 import CatalogController from './controllers/CatalogController'
 
 $(document).ready(function() {
     new ProductDetailsSliderController();
     new CatalogController();
-    new MenuController();
     new OwlCarouselController();
     new Validator();
     new OrdersHistoryController();

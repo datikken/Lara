@@ -1,12 +1,13 @@
 <template>
-    <div class="mobFilters">
-        <MobileFiltersItem name="Тип принтера" :filters="types" type="printertype" />
-        <MobileFiltersItem name="Бренд" :filters="types" type="brand" />
-        <MobileFiltersItem name="Модель" :filters="types" type="model" />
+    <div>
+        <div class="mobFilters">
+            <MobileFiltersItem name="Тип принтера" :filters="1" type="printertype" @click="showHide" />
+            <MobileFiltersItem name="Бренд" :filters="2" type="brand" @click="showHide" />
+            <MobileFiltersItem name="Модель" :filters="3" type="model" @click="showHide" />
+        </div>
 
-
-        <div class="mobFilters_results">
-            <div class="mobFilters_results_item">
+        <div class="mobFilters_results as-none" data-mobFilter-list>
+            <div class="mobFilters_results_item mobFilters_active">
                 <SimpleCheckbox />
                 <span class="mobFilters_results_item_text">Лазерные</span>
             </div>
@@ -16,7 +17,6 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -30,20 +30,13 @@
             SimpleCheckbox
         },
         methods: {
-            showHide() {
-                this.$children[0].showHideHandler();
-            }
+            showHide(e) {
+                let list = this.$el.querySelector('[data-mobFilter-list]');
+                    list.classList.toggle('as-none');
+            },
         },
         computed: {
-            types() {
-                return this.$store.state.typeFilters
-            },
-            brands() {
-                return this.$store.state.brandFilters
-            },
-            models() {
-                return this.$store.state.modelFilters
-            }
+
         }
     }
 </script>
