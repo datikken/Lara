@@ -512,8 +512,8 @@ b {
   grid-template-columns: unset !important;
 }
 
-.top0 {
-  top: 0 !important;
+.top3 {
+  top: 3px !important;
 }
 
 .animated_btn {
@@ -7628,9 +7628,23 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   padding: 0 16px;
   flex-basis: 30%;
 }
+.dform_wrap-col:nth-child(1) {
+  position: relative;
+  max-width: 436px;
+}
+.dform_wrap-col:nth-child(1):after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 1px;
+  background: #e9e9ea;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 .dform_wrap-col:nth-child(2) {
   position: absolute;
-  right: 0;
+  right: 30px;
   top: -500;
   background-color: #fff;
   height: 170px;
@@ -7677,7 +7691,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   line-height: 14px;
   letter-spacing: 0.02em;
   color: #292930;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 .dform_wrap-col:first-child {
   flex-basis: 70%;
@@ -7881,10 +7895,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   line-height: 14px;
   letter-spacing: 0.02em;
   color: #292930;
-  margin-bottom: 25px;
   display: block;
 }
 
+.currentPickups {
+  margin-bottom: 26px;
+}
 .currentPickups_icon {
   height: 20px;
   width: 20px;
@@ -7911,6 +7927,21 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+}
+
+.getSetAddress {
+  border: 1px solid #e9e9ea;
+  padding: 16px;
+  max-width: 404px;
+  max-height: 320px;
+  margin-bottom: 16px;
+}
+
+.getSetIndex {
+  border: 1px solid #e9e9ea;
+  padding: 15px;
+  max-width: 400px;
+  max-height: 115px;
 }
 
 .treq {

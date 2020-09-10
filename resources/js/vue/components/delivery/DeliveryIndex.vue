@@ -5,7 +5,7 @@
                 <span class="index_heading-item">Или почтовый индекс</span>
             </div>
 
-            <div class="form_group">
+            <div class="form_group getSetIndex">
                 <label for="index" class="form_group-label">Индекс</label>
                 <div class="form_group-wrap index_field">
                     <input type="text" name="index" data-index_field/>

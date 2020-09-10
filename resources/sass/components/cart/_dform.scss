@@ -125,9 +125,25 @@
     &-col {
       padding: 0 16px;
 
-      &:nth-child(2) {
+      &:nth-child(1) {
+          position: relative;
+          max-width: 436px;
+
+        &:after {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 1px;
+            background: $light_gray;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+      }
+
+        &:nth-child(2) {
         position: absolute;
-        right: 0;
+        right: 30px;
         top: -500;
         background-color: #fff;
         height: 170px;
@@ -182,7 +198,7 @@
           line-height: 14px;
           letter-spacing: 0.02em;
           color: $dblack;
-          margin-bottom: 25px;
+          margin-bottom: 10px;
         }
       }
 
@@ -429,7 +445,6 @@
             line-height: 14px;
             letter-spacing: 0.02em;
             color: $dblack;
-            margin-bottom: 25px;
             display: block;
           }
         }
@@ -439,6 +454,8 @@
 }
 
 .currentPickups {
+    margin-bottom: 26px;
+
     &_icon {
         height: 20px;
         width: 20px;
@@ -467,4 +484,19 @@
         align-items: center;
         margin-bottom: 10px;
     }
+}
+
+.getSetAddress {
+    border: 1px solid $light_gray;
+    padding: 16px;
+    max-width: 404px;
+    max-height: 320px;
+    margin-bottom: 16px;
+}
+
+.getSetIndex {
+    border: 1px solid $light_gray;
+    padding: 15px;
+    max-width: 400px;
+    max-height: 115px;
 }

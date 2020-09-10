@@ -3,11 +3,12 @@
         <div class="dform_wrap-col_item">
             <div class="step_wrap">
 
+                <div class="form_group">
+                    <span class="form_group-heading">Введите город, улицу и номер дома.</span>
+                    <span class="error-message as-none">Заполните адрес доставки</span>
+                </div>
+
                 <div class="index_group getSetAddress">
-                    <div class="form_group">
-                        <span class="form_group-heading mb10">Введите город, улицу и номер дома.</span>
-                        <span class="error-message as-none">Заполните адрес доставки</span>
-                    </div>
 
                     <div class="form_group">
                         <label for="city" class="form_group-label">Город</label>
@@ -35,15 +36,11 @@
                             <input type="text" name="building" data-required/>
                         </div>
                     </div>
-
                     <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" @click.native="applyDeliveryAdress"/>
-
                 </div>
 
 
                 <DeliveryIndex />
-
-                <TextBtn className="form_group-btn yellow_btn animated_btn" text="Продолжить" @click.native="proceedToPaymentPage" id="proceedToPayments"/>
 
             </div>
         </div>
@@ -65,6 +62,7 @@
             </div>
         </div>
 
+        <TextBtn className="form_group-btn yellow_btn animated_btn" text="Продолжить" @click.native="proceedToPaymentPage" id="proceedToPayments"/>
 
     </div>
 </template>

@@ -112,28 +112,26 @@
                     obj[name] = val;
                 })
 
-                console.warn(obj);
+                this.SET_CUSTOMER_FIO(obj);
 
-                // this.SET_CUSTOMER_FIO(obj);
-                //
-                // try {
-                //
-                //     window.app.validator.formValidate([], $(this.$el));
-                //     this.validateNumberLength(obj.tel);
-                //     this.CHANGE_PROGRESS_STEP();
-                //     router.push('/deliveryForm');
-                //     this.SCROLL_TO_TOP();
-                //
-                // } catch (err) {
-                //     let error = this.$el.querySelector('[data-error]');
-                //     let heading = this.$el.querySelector('[data-heading]');
-                //
-                //     error.classList.add('mb10');
-                //     error.classList.remove('as-none');
-                //     heading.classList.add('mb5');
-                //
-                //     return;
-                // }
+                try {
+
+                    window.app.validator.formValidate([], $(this.$el));
+                    this.validateNumberLength(obj.tel);
+                    this.CHANGE_PROGRESS_STEP();
+                    router.push('/deliveryForm');
+                    this.SCROLL_TO_TOP();
+
+                } catch (err) {
+                    let error = this.$el.querySelector('[data-error]');
+                    let heading = this.$el.querySelector('[data-heading]');
+
+                    error.classList.add('mb10');
+                    error.classList.remove('as-none');
+                    heading.classList.add('mb5');
+
+                    return;
+                }
             }
         }
     }
