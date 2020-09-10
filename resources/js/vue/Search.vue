@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="menu_wrapper-item_cart_currency">
-                            <img src="/images/menu/rub.svg" alt="rub"/>
+                            <img src="/images/menu/rub.svg" alt="rub" v-if="productsInCart.length" />
                         </div>
 
                     </a>
@@ -83,6 +83,7 @@
     import SearchListItem from './components/search/SearchListItem';
     import MobileMainMenuDropDown from './components/menu/MobileMainMenuDropDown';
     import DesktopMainMenuDropDown from './components/menu/DesktopMainMenuDropDown';
+    import {mapGetters} from 'vuex';
 
     export default {
         name: 'app',
@@ -100,6 +101,11 @@
             DesktopMainMenuDropDown
         },
         mounted() { },
+        computed: {
+            ...mapGetters([
+                'productsInCart'
+            ]),
+        },
         methods: {
             DesktopDropdownHide() {
                 console.warn('damn');

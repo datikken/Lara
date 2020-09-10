@@ -643,6 +643,7 @@ let mutations = {
                 amount
             },
             success: function (data) {
+                state.productsInCart.push(data);
                 that.dispatch('fixCartStatus', {data})
             },
             error: function (error) {
