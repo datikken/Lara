@@ -7,31 +7,44 @@
 
         {{--{{ dd($chrst) }}--}}
 
+        <div class="prdch_item">
+            <div class="prdch_name">
+                    <span>
+                       Цвет
+                    </span>
+            </div>
+            <div class="prdch_val">
+                @if(isset($chrst->color))
+                    {{ $chrst->color }}
+                @else
+                    Черный
+                @endif
+                {{--<span>{{ $chrst->color }}</span>--}}
+            </div>
+        </div>
 
-        {{--@if($chrst->printertype === 'Принтер струйный')--}}
-        {{--@endif--}}
-
-
-        {{--Струйные:--}}
-        {{--цвет--}}
-        {{--емкость (мл)--}}
-        {{--основа--}}
-        {{--гарантия--}}
-        {{--размер в упаковке (ш г в)мм--}}
-        {{--вес в упаковке (кг)--}}
-        {{--страна производитель--}}
-
-
-        {{--Лазерные--}}
-        {{--цвет--}}
-        {{--ресурс страниц--}}
-        {{--гарантия--}}
-        {{--размер в упаковке(ш г в)мм--}}
-        {{--вес в упаковке--}}
-        {{--страна производитель--}}
-
-
-
+        @if($chrst->printertype === 'Принтер струйный')
+            <div class="prdch_item">
+                <div class="prdch_name">
+                    <span>
+                       Емкость (мл)
+                    </span>
+                </div>
+                <div class="prdch_val">
+                        5 мл
+                </div>
+            </div>
+            <div class="prdch_item">
+                <div class="prdch_name">
+                    <span>
+                       Основа
+                    </span>
+                </div>
+                <div class="prdch_val">
+                    Пигментные
+                </div>
+            </div>
+        @elseif($chrst->printertype === 'Принтер лазерный')
             <div class="prdch_item">
                 <div class="prdch_name">
                     <span>
@@ -39,7 +52,11 @@
                     </span>
                 </div>
                 <div class="prdch_val">
-                    <span>{{ $chrst->color }}</span>
+                    @if(isset($chrst->color))
+                        {{ $chrst->color }}
+                    @else
+                        Черный
+                    @endif
                 </div>
             </div>
             <div class="prdch_item">
@@ -52,11 +69,14 @@
                     <span>{{ $chrst->Ресурс }} текстовых страницы А4</span>
                 </div>
             </div>
+
+        @endif
+
             <div class="prdch_item">
                 <div class="prdch_name">
-                    <span>
-                       Гарантия
-                    </span>
+                        <span>
+                           Гарантия
+                        </span>
                 </div>
                 <div class="prdch_val">
                     <span>12 мес</span>
@@ -92,6 +112,28 @@
                     <span>Китай</span>
                 </div>
             </div>
+
+
+        {{--Струйные:--}}
+        {{--цвет--}}
+        {{--емкость (мл)--}}
+        {{--основа--}}
+        {{--гарантия--}}
+        {{--размер в упаковке (ш г в)мм--}}
+        {{--вес в упаковке (кг)--}}
+        {{--страна производитель--}}
+
+
+        {{--Лазерные--}}
+        {{--цвет--}}
+        {{--ресурс страниц--}}
+        {{--гарантия--}}
+        {{--размер в упаковке(ш г в)мм--}}
+        {{--вес в упаковке--}}
+        {{--страна производитель--}}
+
+
+
 
 
 
