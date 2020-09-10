@@ -677,6 +677,10 @@ let mutations = {
                 separate(prod)
             }
 
+            if (prod.photo.toLowerCase().indexOf(payload) >= 0) {
+                separate(prod)
+            }
+
             Object.keys(prod.cape).forEach((cape) => {
                 if ((cape.toLowerCase()).indexOf(payload) >= 0) {
                     separate(prod)
