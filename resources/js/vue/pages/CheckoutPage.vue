@@ -1,8 +1,8 @@
 <template>
     <div class="cart_check-wrapper">
         <Loader v-if="!this.$store.state.user"/>
-        <Fizik v-if="userInfo.face === 'fizik' "/>
-        <Urik v-if="userInfo.face === 'urik' "/>
+        <Fizik v-if="userInfo.user.face === 'fizik' "/>
+        <Urik v-if="userInfo.user.face === 'urik' "/>
     </div>
 </template>
 

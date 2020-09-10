@@ -512,6 +512,10 @@ b {
   grid-template-columns: unset !important;
 }
 
+.top0 {
+  top: 0 !important;
+}
+
 .animated_btn {
   transition: box-shadow 0.2s;
 }
@@ -7627,6 +7631,13 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dform_wrap-col:nth-child(2) {
   position: absolute;
   right: 0;
+  top: -500;
+  background-color: #fff;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  z-index: 99999999;
+  transition: top 0.2s;
 }
 .dform_wrap-col .delivery_type-item {
   display: flex;
@@ -7872,6 +7883,34 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #292930;
   margin-bottom: 25px;
   display: block;
+}
+
+.currentPickups_icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+.currentPickups_metro {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  margin-right: 10px;
+}
+.currentPickups_adr {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+.currentPickups_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .treq {
@@ -9166,7 +9205,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   height: 30px;
   width: 160px;
 }

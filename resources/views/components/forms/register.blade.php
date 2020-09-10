@@ -26,7 +26,7 @@
                                     id="name"
                                     type="text"
                                     class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="registration" autocomplete="name" autofocus>
+                                    name="name" value="Пользователь" autocomplete="name" autofocus>
                             </div>
                         </div>
 

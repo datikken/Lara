@@ -4,6 +4,10 @@ import _ from "lodash";
 import axios from "axios/index";
 
 let mutations = {
+    showDeliveryTypeHelper() {
+        let helper = document.querySelector('[data-deliveryType_helper]');
+            helper.classList.add('top0');
+    },
     sendGoogleAnalytics(state, {category, eventAction, eventLabel, eventValue}) {
         window.ga('send', 'event', category, eventAction, eventLabel, eventValue);
         console.warn('ga event', category, eventAction, eventLabel, eventValue);
@@ -434,6 +438,8 @@ let mutations = {
     setDeliveryType(state, name) {
         state.deliveryType = name;
 
+        console.warn('set delivery type', name)
+
         this.dispatch('REMOVE_DELIVERY_TYPE_ERROR');
 
         return state.deliveryType;
@@ -513,6 +519,8 @@ let mutations = {
         axios.get('/getUserInfo')
             .then(response => {
                 state.user = response.data;
+
+                console.warn('GET_USERS_INFO', response.data);
             });
 
         return state.user

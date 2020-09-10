@@ -1,6 +1,9 @@
 import  $ from 'jquery';
 
 let actions = {
+    SHOW_DELIVERY_TYPE_HELPER(context) {
+        context.commit('showDeliveryTypeHelper');
+    },
     SEND_GOOGLE_ANALYTICS(context, obj) {
         context.commit('sendGoogleAnalytics', obj);
     },

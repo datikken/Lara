@@ -3,12 +3,12 @@
         <div class="dform_wrap-col_item">
             <div class="step_wrap">
 
-                <div class="form_group">
-                    <span class="form_group-heading mb10">Введите город, улицу и номер дома.</span>
-                    <span class="error-message as-none">Заполните адрес доставки</span>
-                </div>
-
                 <div class="index_group getSetAddress">
+                    <div class="form_group">
+                        <span class="form_group-heading mb10">Введите город, улицу и номер дома.</span>
+                        <span class="error-message as-none">Заполните адрес доставки</span>
+                    </div>
+
                     <div class="form_group">
                         <label for="city" class="form_group-label">Город</label>
                         <input type="text" name="city" data-required/>
@@ -47,6 +47,25 @@
 
             </div>
         </div>
+
+        <div class="currentPickups">
+            <div class="currentPickups_item">
+                <div class="currentPickups_icon">
+                    <img src="/images/icons/metro_active.svg" alt="amount"/>
+                </div>
+                <div class="currentPickups_metro">Люблино</div>
+                <div class="currentPickups_adr">Совхозная, д. 56, корп 99, стр. 6</div>
+            </div>
+            <div class="currentPickups_item">
+                <div class="currentPickups_icon">
+                    <img src="/images/icons/metro.svg" alt="amount"/>
+                </div>
+                <div class="currentPickups_metro">Нагатинская</div>
+                <div class="currentPickups_adr">Варшавское шоссе, 36, стр. 8</div>
+            </div>
+        </div>
+
+
     </div>
 </template>
 
@@ -69,16 +88,14 @@
                 'user'
             ]),
         },
-        created() {
-            console.warn('this delivery type', this.deliveryType);
-        },
         methods: {
             ...mapActions([
                 'APPLY_DELIVERY_ADRESS',
                 'DELIVERY_TYPE_ERROR',
                 'CHANGE_PROGRESS_STEP',
                 'SCROLL_TO_TOP',
-                'VALIDATE_DELIVERY_ADRESS'
+                'VALIDATE_DELIVERY_ADRESS',
+                'SHOW_DELIVERY_TYPE_HELPER'
             ]),
             validatePickUpPoint() {
                 let valid = false;
@@ -108,6 +125,9 @@
             proceedToPaymentPage() {
                 let ready = false;
 
+                if(this.deliveryType === 'stock') {
+                    ready = true;
+                }
                 if(this.deliveryType === 'post') {
                    ready = this.validateAdressForm();
                 }
@@ -154,11 +174,14 @@
                     })
 
                     this.$el.querySelector('.error-message').classList.add('as-none');
-                    $(document.body).scrollTop($('#proceedToPayments').offset().top);
+                    // $(document.body).scrollTop($('#proceedToPayments').offset().top);
 
                 } else {
                     this.validateAdressForm();
                 }
+
+
+                this.SHOW_DELIVERY_TYPE_HELPER();
             }
         }
     }
