@@ -32,8 +32,8 @@
             <div class="cart_wrap-item_inner-table_row-col_price-val">
                 <span class="cart_wrap-item_inner-table_row-col_price-val-item">
                     {{$cartItem['price']}}
+                    <img src="/images/icons/rub_fat.svg" alt="rub" class="cart_wrap-item-total_icon" />
                 </span>
-                <img src="/images/icons/rub.svg" alt="currency" />
             </div>
         </div>
     </div>
