@@ -22,19 +22,6 @@
 
                 </ul>
 
-                <!--<ul class="menu_wrapper-item-main_menu-item-text_secondary secondaryTop">-->
-                    <!--<li class="menu_wrapper-item-main_menu-item-text_secondary-text">-->
-                        <!--<a href="/catalog">-->
-                            <!--<span>Картриджи</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
-                    <!--<li class="menu_wrapper-item-main_menu-item-text_secondary-text">-->
-                        <!--<a href="/catalogPapers">-->
-                            <!--<span>Бумага</span>-->
-                        <!--</a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-
                 <ul class="menu_wrapper-item-main_menu as-none" data-desktopMenuBlock @mouseleave="hideDropDown">
                     <li class="menu_wrapper-item-main_menu-item">
                         <span class="menu_wrapper-item-main_menu-item-text">
