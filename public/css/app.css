@@ -7343,6 +7343,13 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   text-align: center;
   margin: 0;
 }
+.order_list_deliveryAdress {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
 .order_list-wrap {
   border: 1px solid #e9e9ea;
   padding: 40px 30px 30px 30px;
