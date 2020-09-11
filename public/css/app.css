@@ -331,7 +331,7 @@ a:hover {
 }
 
 .rotate {
-  transform: rotate(90deg);
+  transform: rotate(270deg);
 }
 
 .rotate180 {
@@ -4730,7 +4730,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   align-items: center;
   padding: 12.5px 0;
-  margin-left: 10px;
+  margin-left: 35px;
 }
 .filters_wrapper-item_list-text .checkbox .checkbox-wrap {
   width: 10px;

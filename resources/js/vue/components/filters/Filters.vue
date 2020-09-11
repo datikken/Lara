@@ -33,7 +33,14 @@
         },
         computed: {
             types() {
-                return this.$store.state.typeFilters
+                let newFil = [];
+                let types = this.$store.state.typeFilters;
+                let newFilters = types.map(el => {
+                    let arr = el.split(' ');
+                        newFil.push(arr[1]);
+                });
+
+                return newFil;
             },
             brands() {
                 return this.$store.state.brandFilters
