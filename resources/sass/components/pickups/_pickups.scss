@@ -1,0 +1,90 @@
+.currentPickups {
+    margin-bottom: 26px;
+
+    &_btn {
+        width: 70px;
+        height: 40px;
+        background: $black;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        display: none;
+
+        &_icon {
+            width: 16px;
+            height: 12px;
+            background-image: url("/images/icons/ok.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
+    &_item {
+        height: 40px;
+        padding: 0 10px;
+        position: relative;
+        cursor: pointer;
+
+        &-active {
+            .currentPickups_icon {
+                img {
+                    content:url("/images/icons/metro_active.svg");
+                }
+            }
+        }
+
+        &:hover {
+            background: $light_gray;
+
+            .currentPickups_btn {
+                display: flex;
+            }
+        }
+    }
+
+    &_icon {
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+    }
+    &_metro {
+        font-family: $semifont;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        margin-right: 10px;
+    }
+
+    &_adr {
+        font-family: $font;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color: $dblack;
+    }
+    &_item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
+
+.getSetAddress {
+    border: 1px solid $light_gray;
+    padding: 16px;
+    max-width: 404px;
+    max-height: 320px;
+    margin-bottom: 16px;
+}
+
+.getSetIndex {
+    border: 1px solid $light_gray;
+    padding: 15px;
+    max-width: 400px;
+    max-height: 115px;
+}

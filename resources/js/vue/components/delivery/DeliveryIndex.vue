@@ -1,5 +1,5 @@
 <template>
-    <div data-deliveryIndexBlock>
+    <div data-deliveryIndexBlock class="delivery_index_block">
         <form class="index_group" method="POST">
             <div class="index_heading">
                 <span class="index_heading-item">Или почтовый индекс</span>
@@ -60,5 +60,7 @@
 </script>
 
 <style scoped>
-
+    .delivery_index_block {
+        margin-bottom: 60px;
+    }
 </style>

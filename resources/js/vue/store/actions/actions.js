@@ -1,6 +1,9 @@
 import  $ from 'jquery';
 
 let actions = {
+    CHECK_DELIVERY_PICKUPS(context, pickup) {
+        context.commit('checkDeliveryPickups', pickup);
+    },
     GET_ALL_INFORMATION_POSTS(context) {
         context.commit('getAllInformationPosts');
     },

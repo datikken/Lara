@@ -7,6 +7,19 @@ use Illuminate\Support\Facades\Session;
 class CustomerDataController extends Controller
 {
 
+    public function setStockPickUpPoint(Request $request)
+    {
+        $name = $request->name;
+        $adr = $request->adr;
+
+        $toSave = array(
+            'name' => $name,
+            'adr' => $adr
+        );
+
+        return response()->json($toSave);
+    }
+
     public function setUrikInfo(Request $request)
     {
         $inn = $request->inn;

@@ -36,7 +36,9 @@
                             <input type="text" name="building" data-required/>
                         </div>
                     </div>
-                    <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" @click.native="applyDeliveryAdress"/>
+
+                    <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" @click.native="applyDeliveryAdress" />
+
                 </div>
 
                 <DeliveryIndex />
@@ -44,33 +46,15 @@
             </div>
         </div>
 
-        <div class="currentPickups">
-            <div class="currentPickups_item">
-                <div class="currentPickups_icon">
-                    <img src="/images/icons/metro_active.svg" alt="amount"/>
-                </div>
-                <div class="currentPickups_metro">Люблино</div>
-                <div class="currentPickups_adr">Совхозная, д. 56, корп 99, стр. 6</div>
-            </div>
-            <div class="currentPickups_item">
-                <div class="currentPickups_icon">
-                    <img src="/images/icons/metro.svg" alt="amount"/>
-                </div>
-                <div class="currentPickups_metro">Нагатинская</div>
-                <div class="currentPickups_adr">Варшавское шоссе, 36, стр. 8</div>
-            </div>
-        </div>
 
-        <TextBtn className="form_group-btn yellow_btn animated_btn" text="Продолжить" @click.native="proceedToPaymentPage" id="proceedToPayments"/>
 
     </div>
 </template>
 
 <script>
     import TextBtn from '../btns/TextBtn'
-    import { mapGetters, mapActions } from 'vuex'
     import DeliveryIndex from "./DeliveryIndex"
-    import router from '../../router/router'
+    import { mapGetters, mapActions } from 'vuex'
 
     export default {
         name: "DeliveryForms",
@@ -82,9 +66,7 @@
             ...mapGetters([
                 'deliveryType',
                 'pickUpPoint',
-                'user',
-                'customerAdress',
-                'customerIndex'
+                'user'
             ]),
         },
         methods: {
@@ -127,45 +109,6 @@
                 }
 
                 return valid;
-            },
-            proceedToPaymentPage() {
-                let ready = false;
-
-                this.validateAdressForm();
-
-                if(this.deliveryType === 'stock') {
-                    ready = true;
-                }
-
-                if(this.deliveryType === 'self') {
-                   ready = this.validatePickUpPoint();
-                    $(document.body).scrollTop($('#self').offset().top);
-                }
-
-                if(this.deliveryType === 'deliveryMkad' || this.deliveryType === 'delivery' || this.deliveryType === 'post') {
-                    if( typeof this.customerAdress.deliveryAddress === 'object') {
-                        ready = true;
-                    }
-                    if(this.customerIndex.deliveryIndex) {
-                        ready = true;
-                    }
-                }
-
-                if(!this.deliveryType) {
-                    this.DELIVERY_TYPE_ERROR();
-                }
-
-                if(ready) {
-                    this.CHANGE_PROGRESS_STEP();
-
-                    if(this.user.face === 'urik') {
-                        router.push('/contract')
-                    } else {
-                        router.push('/payments')
-                    }
-
-                    this.SCROLL_TO_TOP();
-                }
             },
             applyDeliveryAdress() {
                 let data =  {};

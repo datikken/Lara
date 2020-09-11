@@ -30,7 +30,8 @@ let state = {
     signatureHash: false,
     gridCatalog: false,
     catalogPerPage: 16,
-    informationPosts: false
+    informationPosts: false,
+    stockDeliveryPickup: false
 }
 
 export default state;

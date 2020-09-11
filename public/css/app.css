@@ -7945,52 +7945,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: block;
 }
 
-.currentPickups {
-  margin-bottom: 26px;
-}
-.currentPickups_icon {
-  height: 20px;
-  width: 20px;
-  margin-right: 10px;
-}
-.currentPickups_metro {
-  font-family: "MontserratSemiBold";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #292930;
-  margin-right: 10px;
-}
-.currentPickups_adr {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #292930;
-}
-.currentPickups_item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.getSetAddress {
-  border: 1px solid #e9e9ea;
-  padding: 16px;
-  max-width: 404px;
-  max-height: 320px;
-  margin-bottom: 16px;
-}
-
-.getSetIndex {
-  border: 1px solid #e9e9ea;
-  padding: 15px;
-  max-width: 400px;
-  max-height: 115px;
-}
-
 .treq {
   margin-bottom: 500px;
 }
@@ -13292,4 +13246,82 @@ main {
 .aboutm_footer {
   position: absolute;
   bottom: 0;
+}
+.currentPickups {
+  margin-bottom: 26px;
+}
+.currentPickups_btn {
+  width: 70px;
+  height: 40px;
+  background: #40404c;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  display: none;
+}
+.currentPickups_btn_icon {
+  width: 16px;
+  height: 12px;
+  background-image: url("/images/icons/ok.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.currentPickups_item {
+  height: 40px;
+  padding: 0 10px;
+  position: relative;
+  cursor: pointer;
+}
+.currentPickups_item-active .currentPickups_icon img {
+  content: url("/images/icons/metro_active.svg");
+}
+.currentPickups_item:hover {
+  background: #e9e9ea;
+}
+.currentPickups_item:hover .currentPickups_btn {
+  display: flex;
+}
+.currentPickups_icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+.currentPickups_metro {
+  font-family: "MontserratSemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  margin-right: 10px;
+}
+.currentPickups_adr {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+.currentPickups_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.getSetAddress {
+  border: 1px solid #e9e9ea;
+  padding: 16px;
+  max-width: 404px;
+  max-height: 320px;
+  margin-bottom: 16px;
+}
+
+.getSetIndex {
+  border: 1px solid #e9e9ea;
+  padding: 15px;
+  max-width: 400px;
+  max-height: 115px;
 }

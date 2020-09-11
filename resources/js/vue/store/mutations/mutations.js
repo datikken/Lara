@@ -4,6 +4,17 @@ import _ from "lodash";
 import axios from "axios/index";
 
 let mutations = {
+    checkDeliveryPickups(state, pickup) {
+
+        console.warn('checkDeliveryPickups', pickup);
+
+        if(state.deliveryType === 'stock') {
+            state.stockDeliveryPickup = pickup;
+        }
+
+        // ajax /setStockPickUpPoint
+
+    },
     getAllInformationPosts(state) {
         fetch('/getAllInformationPosts', {
             method: "GET"
