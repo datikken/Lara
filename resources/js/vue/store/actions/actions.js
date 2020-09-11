@@ -1,6 +1,9 @@
 import  $ from 'jquery';
 
 let actions = {
+    GET_ALL_INFORMATION_POSTS(context) {
+        context.commit('getAllInformationPosts');
+    },
     SHOW_DELIVERY_TYPE_HELPER(context) {
         context.commit('showDeliveryTypeHelper');
     },

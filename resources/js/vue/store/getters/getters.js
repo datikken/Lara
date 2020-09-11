@@ -13,7 +13,8 @@ let getters = {
         lastTwoYearsInfo: state => state.lastTwoYearsInfo,
         gridCatalog: state => state.gridCatalog,
         catalogPerPage: state => state.catalogPerPage,
-        cart: state => state.cart
+        cart: state => state.cart,
+        informationPosts: state => state.informationPosts
 }
 
 export default getters;

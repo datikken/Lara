@@ -100,6 +100,7 @@ Route::post('blog/like/{id}', ['uses' => 'BlogController@like', 'as' => 'blogLik
 
 //PAGES
 Route::get('/information', 'InformationController@index');
+Route::get('/getAllInformationPosts', ['uses' => 'InformationController@getAllInformationPosts', 'as' => 'getAllInformationPosts']);
 Route::get('/hits', 'HitsController@index');
 Route::get('/about', 'AboutController@index');
 Route::get('/about/years/{$id}', 'AboutController@getTwoYears');

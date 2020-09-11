@@ -100,7 +100,7 @@
 
 <script>
     export default {
-        name: "DesktopMainMenuDropDown"
+        name: "MobileMainMenuDropDown"
     }
 </script>
 

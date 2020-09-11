@@ -13,21 +13,13 @@
                 <ul @mouseenter="showAllDropDowns"
                     @mouseleave="hideAllDropDowns"
                     class="menu_wrapper-item-main_menu-item-text_secondary secondaryBottom as-none" data-informationTriggerMenu>
-                    <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
+
+                    <li class="menu_wrapper-item-main_menu-item-text_secondary-text" v-for="post in informationPosts" :key="post.id">
                         <a href="/information">
-                            <span>test</span>
+                            <span>{{ post.category }}</span>
                         </a>
                     </li>
-                    <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
-                        <a href="/information">
-                            <span>test</span>
-                        </a>
-                    </li>
-                    <li class="menu_wrapper-item-main_menu-item-text_secondary-text">
-                        <a href="/information">
-                            <span>test</span>
-                        </a>
-                    </li>
+
                 </ul>
 
                 <!--<ul class="menu_wrapper-item-main_menu-item-text_secondary secondaryTop">-->
@@ -95,9 +87,22 @@
 </template>
 
 <script>
+    import {mapActions, mapGetters} from 'vuex';
+
     export default {
-        name: "MobileMainMenuDropDown",
+        name: "DesktopMainMenuDropDown",
+        mounted() {
+            this.GET_ALL_INFORMATION_POSTS();
+        },
+        computed: {
+            ...mapGetters([
+                'informationPosts'
+            ])
+        },
         methods: {
+            ...mapActions([
+                'GET_ALL_INFORMATION_POSTS'
+            ]),
             hideAllDropDowns() {
                 let informationMenu = this.$el.querySelector('[data-informationTriggerMenu]');
                 let desMenu = this.$el.querySelector('[data-desktopMenuBlock]');

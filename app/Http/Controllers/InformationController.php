@@ -18,4 +18,11 @@ class InformationController extends Controller
 
         return view('pages.information',['info' => $infos]);
     }
+
+    public function getAllInformationPosts()
+    {
+        $infos = Information::all();
+
+        return response()->json($infos);
+    }
 }

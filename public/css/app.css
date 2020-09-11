@@ -834,7 +834,6 @@ b {
   margin: 0;
   background: #fff;
   width: 130px;
-  height: 120px;
   list-style: none;
   padding: 0;
   left: -22px;
@@ -862,6 +861,7 @@ b {
   line-height: 14px;
   font-weight: 300;
   letter-spacing: 0.02em;
+  color: black;
 }
 .header_wrapper-item_menu-item-secondary li:hover {
   background: #40404c;
@@ -1450,6 +1450,9 @@ b {
 .menu_wrapper-item_menuText-header {
   display: none;
 }
+.menu_wrapper-item_menuText-header_item {
+  font-family: "MontserratSemiBold";
+}
 @media screen and (min-width: 1030px) {
   .menu_wrapper-item_menuText-header {
     display: block;
@@ -1474,10 +1477,6 @@ b {
 }
 .menu_wrapper-item_menuText-link:hover {
   color: #fff !important;
-}
-.menu_wrapper-item_menuText-link span {
-  color: black;
-  font-family: "MontserratSemiBold";
 }
 
 .secondaryTop {

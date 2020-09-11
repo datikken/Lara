@@ -136,7 +136,6 @@
             margin: 0;
             background: #fff;
             width: 130px;
-            height: 120px;
             list-style: none;
             padding: 0;
             left: -22px;
@@ -165,6 +164,7 @@
               line-height: 14px;
               font-weight: 300;
               letter-spacing: 0.02em;
+              color: black;
 
               &:hover {
                 background: $black;

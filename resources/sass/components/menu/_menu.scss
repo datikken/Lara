@@ -530,6 +530,10 @@
 
                 &-header {
                     display: none;
+                    &_item {
+                        font-family: $semifont;
+                    }
+
                     @include breakpoint($medium) {
                         display: block;
                     }
@@ -556,10 +560,5 @@
 
     &:hover {
         color: #fff !important;
-    }
-
-    span {
-        color: black;
-        font-family: $semifont;
     }
 }

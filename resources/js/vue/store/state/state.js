@@ -29,7 +29,8 @@ let state = {
     cartStep: 0,
     signatureHash: false,
     gridCatalog: false,
-    catalogPerPage: 16
+    catalogPerPage: 16,
+    informationPosts: false
 }
 
 export default state;

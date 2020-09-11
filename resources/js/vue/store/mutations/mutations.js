@@ -4,6 +4,20 @@ import _ from "lodash";
 import axios from "axios/index";
 
 let mutations = {
+    getAllInformationPosts(state) {
+        fetch('/getAllInformationPosts', {
+            method: "GET"
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            state.informationPosts = data;
+
+
+            console.warn('informationPosts', data);
+        });
+    },
     showDeliveryTypeHelper() {
         let helper = document.querySelector('[data-deliveryType_helper]');
             helper.classList.add('top3');
@@ -438,7 +452,7 @@ let mutations = {
     setDeliveryType(state, name) {
         state.deliveryType = name;
 
-        console.warn('set delivery type', name)
+        // console.warn('set delivery type', name)
 
         this.dispatch('REMOVE_DELIVERY_TYPE_ERROR');
 
