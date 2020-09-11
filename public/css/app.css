@@ -8020,6 +8020,13 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border-radius: 30px;
   outline: none;
   padding-left: 20px;
+  padding-bottom: 3px;
+}
+@media not all and (min-resolution: 0.001dpcm) {
+  .treq_form_gr input {
+    padding-bottom: 0;
+    padding-top: 10px;
+  }
 }
 .treq_form_gr label {
   font-family: "MontserratSemiBold";

@@ -28,6 +28,13 @@
                 border-radius: 30px;
                 outline: none;
                 padding-left: 20px;
+                padding-bottom: 3px;
+
+                //safari
+                @media not all and (min-resolution: .001dpcm) {
+                    padding-bottom: 0;
+                    padding-top: 10px;
+                }
             }
 
             label {
