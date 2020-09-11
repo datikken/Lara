@@ -104,7 +104,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary animated_btn" data-registerForm="true">
-                                    {{ __('Зарегистрироваться') }}
+                                    {{ __('РЕГИСТРАЦИЯ') }}
                                 </button>
                             </div>
                         </div>
