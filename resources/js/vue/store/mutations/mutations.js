@@ -305,7 +305,7 @@ let mutations = {
             img.classList.remove('invisible')
         }
 
-        if (provider.indexOf('Mastercard') > 0) {
+        if (provider.indexOf('Mastercard') >= 0) {
             state.cardPayment = true
             process(card)
         } else {
@@ -566,7 +566,7 @@ let mutations = {
 
         state.products.forEach((prdt) => {
             let param = prdt.params;
-            if (param.printertype === query.printertype) {
+            if (param.printertype.indexOf(query.printertype) >= 0) {
                 newProducts.push(prdt)
             }
         });

@@ -1089,10 +1089,14 @@ b {
   display: flex !important;
   width: 100%;
 }
+.menu_wrapper-item-main_menu-item-text img {
+  margin-right: 5px;
+  height: 12px;
+}
 .menu_wrapper-item-main_menu-item-text_inner {
   font-family: "Montserrat", sans-serif !important;
 }
-.menu_wrapper-item-main_menu-item-text_secondary {
+s .menu_wrapper-item-main_menu-item-text_secondary {
   background: #fff;
   color: black;
   position: absolute;
@@ -1104,25 +1108,25 @@ b {
   right: -13.4rem;
   font-weight: 300;
 }
-.menu_wrapper-item-main_menu-item-text_secondary-text {
+s .menu_wrapper-item-main_menu-item-text_secondary-text {
   padding: 12.5px;
   color: black;
   position: relative;
   border-bottom: 1px solid #e9e9ea;
   margin-bottom: 0;
 }
-.menu_wrapper-item-main_menu-item-text_secondary-text a {
+s .menu_wrapper-item-main_menu-item-text_secondary-text a {
   text-decoration: none;
   color: #292930;
 }
-.menu_wrapper-item-main_menu-item-text_secondary-text a:hover {
+s .menu_wrapper-item-main_menu-item-text_secondary-text a:hover {
   color: black;
 }
-.menu_wrapper-item-main_menu-item-text_secondary-text:hover {
+s .menu_wrapper-item-main_menu-item-text_secondary-text:hover {
   background-color: #40404c;
   border-bottom: 1px solid #292930;
 }
-.menu_wrapper-item-main_menu-item-text_secondary-text:hover a {
+s .menu_wrapper-item-main_menu-item-text_secondary-text:hover a {
   color: #fff;
   font-family: "MontserratSemiBold";
 }
@@ -1629,6 +1633,7 @@ b {
   transform: translate(0, -50%);
   background: #40404c;
   align-items: center;
+  justify-content: center;
   position: absolute;
   top: 50%;
   height: 100%;
@@ -1640,7 +1645,7 @@ b {
 }
 @media screen and (min-width: 1030px) {
   .subscription_wrapper-item_button {
-    width: 100px;
+    width: 130px;
   }
 }
 .subscription_wrapper-item_button span {
@@ -1650,14 +1655,6 @@ b {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #fff;
-  padding: 2px 25px 0 15px;
-  margin-left: 0.5rem;
-}
-@media screen and (min-width: 1030px) {
-  .subscription_wrapper-item_button span {
-    margin-left: 0.2rem;
-    padding: 2px 0 0 5px;
-  }
 }
 .subscription_wrapper-item input {
   height: 30px;
@@ -1725,20 +1722,16 @@ b {
 .subscription_wrapper-item_heading {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: normal;
   font-size: 11px;
   line-height: 17px;
   letter-spacing: 0.02em;
-  color: #292930;
   font-weight: 500;
-  letter-spacing: 0.02em;
   color: #292930;
   padding: 5px;
   display: block;
 }
 @media screen and (min-width: 600px) {
   .subscription_wrapper-item_heading {
-    margin-left: 0px;
     font-size: 12px;
     line-height: 14px;
     margin-left: 25px;

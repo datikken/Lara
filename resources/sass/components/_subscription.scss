@@ -45,6 +45,7 @@
           transform: translate(0, -50%);
           background: #40404c;
           align-items: center;
+          justify-content: center;
           position: absolute;
           top: 50%;
           height: 100%;
@@ -55,7 +56,7 @@
           right: 0;
 
         @include  breakpoint($medium) {
-          width: 100px;
+          width: 130px;
         }
 
         span {
@@ -65,13 +66,6 @@
             letter-spacing: 0.02em;
             text-transform: uppercase;
             color: #fff;
-            padding: 2px 25px 0 15px;
-            margin-left: 0.5rem;
-
-            @include breakpoint($medium) {
-                margin-left: 0.2rem;
-                padding: 2px 0 0 5px
-            }
         }
       }
       input {
@@ -109,19 +103,15 @@
       &_heading {
         font-family: $font;
         font-style: normal;
-        font-weight: normal;
         font-size: 11px;
         line-height: 17px;
         letter-spacing: 0.02em;
-        color: $dblack;
         font-weight: 500;
-        letter-spacing: 0.02em;
         color: $dblack;
         padding: 5px;
         display: block;
 
         @include breakpoint($phone) {
-          margin-left: 0px;
           font-size: 12px;
           line-height: 14px;
           margin-left: 25px;

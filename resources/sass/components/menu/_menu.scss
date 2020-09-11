@@ -214,9 +214,14 @@
                         display: flex !important;
                         width: 100%;
 
+                        img {
+                            margin-right: 5px;
+                            height: 12px;
+                        }
+
                         &_inner {
                             font-family: $font!important;
-                        }
+                        }s
 
                         &_secondary {
                             background: $white;
