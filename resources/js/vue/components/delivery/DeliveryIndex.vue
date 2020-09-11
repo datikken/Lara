@@ -48,7 +48,7 @@
                 this.SHOW_DELIVERY_TYPE_HELPER();
 
                 npt.value = '';
-                npt.setAttribute('disabled', '');
+                npt.setAttribute('disabled', 'true');
             }
         },
         computed: {

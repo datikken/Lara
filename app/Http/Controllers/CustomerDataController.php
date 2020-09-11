@@ -43,9 +43,9 @@ class CustomerDataController extends Controller
     public function setIndex(Request $request)
     {
         $index = $request->index;
-        $item = $request->session()->put('cart-index', $index);
+        $item = $request->session()->put('cartIndex', $index);
 
-        return response()->json((object) array('delivery-index' => $index));
+        return response()->json((object) array('deliveryIndex' => $index));
     }
 
     public function setAdress(Request $request)
@@ -66,8 +66,8 @@ class CustomerDataController extends Controller
             'deliveryType' => $delType
         ];
 
-        $request->session()->put('cart-address', $arr);
-        return response()->json((object) array('delivery-address' => $arr));
+        $request->session()->put('cartAddress', $arr);
+        return response()->json((object) array('deliveryAddress' => $arr));
     }
 
     public function getSessionInfo()

@@ -7640,6 +7640,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   position: absolute;
   top: 0;
   right: 0;
+  max-height: 500px;
 }
 .dform_wrap-col:nth-child(2) {
   position: absolute;

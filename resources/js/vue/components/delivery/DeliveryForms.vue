@@ -82,7 +82,9 @@
             ...mapGetters([
                 'deliveryType',
                 'pickUpPoint',
-                'user'
+                'user',
+                'customerAdress',
+                'customerIndex'
             ]),
         },
         methods: {
@@ -105,16 +107,23 @@
             },
             validateAdressForm() {
                 let input = this.$el.querySelector('[data-required]');
+                let indexField = this.$el.querySelector('[data-index_field]');
+
+
+                console.warn('validateAdressForm', indexField.getAttribute('disabled'))
+
                 let valid = false;
 
-                // if(input.hasAttribute('disabled')) {
-                //     return true
-                // }
-
                 try {
-                    valid = this.VALIDATE_DELIVERY_ADRESS(form);
+                    if(!indexField.getAttribute('disabled')) {
+                        valid = this.VALIDATE_DELIVERY_ADRESS(form);
+                    }
                 } catch(e) {
                     this.$el.querySelector('.error-message').classList.remove('as-none');
+                }
+
+                if(indexField.getAttribute('disabled')) {
+                    valid = true;
                 }
 
                 return valid;
@@ -122,24 +131,31 @@
             proceedToPaymentPage() {
                 let ready = false;
 
-                // if(this.deliveryType === 'stock') {
-                //     ready = true;
-                // }
-                // if(this.deliveryType === 'post') {
-                //    ready = this.validateAdressForm();
-                // }
-                // if(this.deliveryType === 'self') {
-                //    ready = this.validatePickUpPoint();
-                //     $(document.body).scrollTop($('#self').offset().top);
-                // }
-                // if(this.deliveryType === 'deliveryMkad' || this.deliveryType === 'delivery') {
-                //     ready = this.validateAdressForm();
-                // }
-                // if(!this.deliveryType) {
-                //     this.DELIVERY_TYPE_ERROR();
-                // }
-                //
-                // if(ready) {
+                this.validateAdressForm();
+
+                if(this.deliveryType === 'stock') {
+                    ready = true;
+                }
+
+                if(this.deliveryType === 'self') {
+                   ready = this.validatePickUpPoint();
+                    $(document.body).scrollTop($('#self').offset().top);
+                }
+
+                if(this.deliveryType === 'deliveryMkad' || this.deliveryType === 'delivery' || this.deliveryType === 'post') {
+                    if( typeof this.customerAdress.deliveryAddress === 'object') {
+                        ready = true;
+                    }
+                    if(this.customerIndex.deliveryIndex) {
+                        ready = true;
+                    }
+                }
+
+                if(!this.deliveryType) {
+                    this.DELIVERY_TYPE_ERROR();
+                }
+
+                if(ready) {
                     this.CHANGE_PROGRESS_STEP();
 
                     if(this.user.face === 'urik') {
@@ -149,7 +165,7 @@
                     }
 
                     this.SCROLL_TO_TOP();
-                // }
+                }
             },
             applyDeliveryAdress() {
                 let data =  {};

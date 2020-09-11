@@ -1,5 +1,5 @@
 let getters = {
-    user: state => state.user,
+        user: state => state.user,
         searchProducts: state => state.searchProducts,
         filteredProducts: state => state.filteredProducts,
         allProducts: state => state.products,
@@ -14,7 +14,9 @@ let getters = {
         gridCatalog: state => state.gridCatalog,
         catalogPerPage: state => state.catalogPerPage,
         cart: state => state.cart,
-        informationPosts: state => state.informationPosts
+        informationPosts: state => state.informationPosts,
+        customerIndex: state => state.customerIndex,
+        customerAdress: state => state.customerAdress
 }
 
 export default getters;
