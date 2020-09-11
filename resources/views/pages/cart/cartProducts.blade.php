@@ -31,7 +31,10 @@
             <div class="cart_wrap-item_inner-total">
                 <div class="cart_wrap-item_inner-total_inner">
                     <span class="cart_wrap-item_inner-total_inner-item">Общая сумма</span>
-                    <span class="cart_wrap-item_inner-total_inner-item" data-cartpriceval>{{ $cartItems->totalPrice }}</span>
+                    <span class="cart_wrap-item_inner-total_inner-item" data-cartpriceval>
+                        {{ $cartItems->totalPrice }}
+                        <img src="/images/icons/rub_fat.svg" alt="rub" class="cart_wrap-item-total_icon" />
+                    </span>
                 </div>
                 <div class="cart_wrap-item_inner-total_button animated_btn">
                     {{--<span class="cart_wrap-item_inner-total_button-item" data-router="checkoutProducts">--}}

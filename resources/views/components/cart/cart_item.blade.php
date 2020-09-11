@@ -53,6 +53,7 @@
         <span class="desktop-hide">Общая сумма товаров (шт)</span>
         <div class="cart_wrap-item_inner-table_row-col_total">
             {{$cartItem['totalPrice']}}
+            <img src="/images/icons/rub_fat.svg" alt="rub" />
         </div>
     </div>
 

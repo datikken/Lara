@@ -71,6 +71,12 @@
       }
     }
     &-item {
+
+        &-total_icon {
+            position: absolute;
+            height: 12px;
+        }
+
       &_inner {
         &-total {
           padding: 20px;
@@ -152,6 +158,13 @@
                 color: $black;
                 font-weight: 600;
                 position: relative;
+
+                  img {
+                      position: absolute;
+                      right: -12px;
+                      top: 5px;
+                      height: 11px;
+                  }
 
                 &:after {
                   top: 12.5px;
@@ -323,6 +336,13 @@
                 letter-spacing: 0.02em;
                 text-transform: uppercase;
                 color: $dblack;
+                position: relative;
+
+                img {
+                  position: absolute;
+                  top: 7px;
+                  right: -15px;
+                }
 
                 a {
                   height: 15px;
