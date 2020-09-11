@@ -445,17 +445,14 @@ let mutations = {
         return state.deliveryType;
     },
     checkCartState(state) {
-        if (localStorage.getItem('cart')) {
-            state.cart = JSON.parse(localStorage.getItem('cart'));
-        }
+        axios.get('/checkCartState')
+            .then(response => {
+                state.cart = response.data;
 
-        if (!state.cart) {
-            axios.get('/checkCartState')
-                .then(response => {
-                    state.cart = response.data;
-                    localStorage.setItem('cart', JSON.stringify(response.data));
-                })
-        }
+                // localStorage.setItem('cart', JSON.stringify(response.data));
+
+                console.warn('js cart state', response.data)
+            })
 
         return state.cart
     },
@@ -643,7 +640,6 @@ let mutations = {
                 amount
             },
             success: function (data) {
-                state.productsInCart.push(data);
                 that.dispatch('fixCartStatus', {data})
             },
             error: function (error) {

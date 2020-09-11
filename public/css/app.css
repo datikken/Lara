@@ -7625,12 +7625,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   position: relative;
 }
 .dform_wrap-col {
-  padding: 0 16px;
+  padding: 0 16px 0 0;
   flex-basis: 30%;
 }
 .dform_wrap-col:nth-child(1) {
   position: relative;
-  max-width: 436px;
+  max-width: 419px;
 }
 .dform_wrap-col:nth-child(1):after {
   content: "";
@@ -7644,7 +7644,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .dform_wrap-col:nth-child(2) {
   position: absolute;
-  right: 30px;
+  right: 48px;
   top: -500;
   background-color: #fff;
   height: 170px;

@@ -57,14 +57,14 @@
                     <a href="/cart">
                         <div class="menu_wrapper-item_cart_icon">
                             <img src="/images/menu/cart.svg" alt=""/>
-                            <span class="menu_wrapper-item_cart_icon-amount" data-cartAmountVal></span>
+                            <span class="menu_wrapper-item_cart_icon-amount" data-cartAmountVal>{{ this.cart.totalQuantity }}</span>
                         </div>
                         <div class="menu_wrapper-item_cart_value">
-                            <span data-cartPriceVal></span>
+                            <span data-cartPriceVal>{{ this.cart.totalPrice }}</span>
                         </div>
 
                         <div class="menu_wrapper-item_cart_currency">
-                            <img src="/images/menu/rub.svg" alt="rub" v-if="productsInCart.length" />
+                            <img src="/images/menu/rub.svg" alt="rub" v-if="this.cart.totalPrice"/>
                         </div>
 
                     </a>
@@ -83,7 +83,7 @@
     import SearchListItem from './components/search/SearchListItem';
     import MobileMainMenuDropDown from './components/menu/MobileMainMenuDropDown';
     import DesktopMainMenuDropDown from './components/menu/DesktopMainMenuDropDown';
-    import {mapGetters} from 'vuex';
+    import {mapActions} from 'vuex';
 
     export default {
         name: 'app',
@@ -100,13 +100,18 @@
             MobileMainMenuDropDown,
             DesktopMainMenuDropDown
         },
-        mounted() { },
         computed: {
-            ...mapGetters([
-                'productsInCart'
-            ]),
+            cart() {
+                return this.$store.state.cart
+            }
+        },
+        mounted() {
+            this.CHECK_CART_STATE();
         },
         methods: {
+            ...mapActions([
+                'CHECK_CART_STATE'
+            ]),
             DesktopDropdownHide() {
                 console.warn('damn');
             },

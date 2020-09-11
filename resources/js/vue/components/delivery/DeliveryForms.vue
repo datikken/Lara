@@ -39,7 +39,6 @@
                     <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" @click.native="applyDeliveryAdress"/>
                 </div>
 
-
                 <DeliveryIndex />
 
             </div>
@@ -108,9 +107,9 @@
                 let input = this.$el.querySelector('[data-required]');
                 let valid = false;
 
-                if(input.hasAttribute('disabled')) {
-                    return true
-                }
+                // if(input.hasAttribute('disabled')) {
+                //     return true
+                // }
 
                 try {
                     valid = this.VALIDATE_DELIVERY_ADRESS(form);
@@ -123,23 +122,24 @@
             proceedToPaymentPage() {
                 let ready = false;
 
-                if(this.deliveryType === 'stock') {
-                    ready = true;
-                }
-                if(this.deliveryType === 'post') {
-                   ready = this.validateAdressForm();
-                }
-                if(this.deliveryType === 'self') {
-                   ready = this.validatePickUpPoint();
-                    $(document.body).scrollTop($('#self').offset().top);
-                }
-                if(this.deliveryType === 'deliveryMkad' || this.deliveryType === 'delivery') {
-                    ready = this.validateAdressForm();
-                }
-                if(!this.deliveryType) {
-                    this.DELIVERY_TYPE_ERROR();
-                }
-                if(ready) {
+                // if(this.deliveryType === 'stock') {
+                //     ready = true;
+                // }
+                // if(this.deliveryType === 'post') {
+                //    ready = this.validateAdressForm();
+                // }
+                // if(this.deliveryType === 'self') {
+                //    ready = this.validatePickUpPoint();
+                //     $(document.body).scrollTop($('#self').offset().top);
+                // }
+                // if(this.deliveryType === 'deliveryMkad' || this.deliveryType === 'delivery') {
+                //     ready = this.validateAdressForm();
+                // }
+                // if(!this.deliveryType) {
+                //     this.DELIVERY_TYPE_ERROR();
+                // }
+                //
+                // if(ready) {
                     this.CHANGE_PROGRESS_STEP();
 
                     if(this.user.face === 'urik') {
@@ -149,7 +149,7 @@
                     }
 
                     this.SCROLL_TO_TOP();
-                }
+                // }
             },
             applyDeliveryAdress() {
                 let data =  {};

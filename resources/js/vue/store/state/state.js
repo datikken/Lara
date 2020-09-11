@@ -12,7 +12,6 @@ let state = {
     orders: false,
     user: false,
     cart: false,
-    productsInCart: [],
     filteredProducts: [],
     searchProducts: [],
     viewedProducts: [],
