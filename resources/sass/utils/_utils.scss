@@ -207,11 +207,12 @@ p {
     justify-content: center;
 
     &_arrow {
-      display: block;
-      height: 80%;
-      width: 80%;
-      transform: rotate(90deg);
-      margin-top: 2px;
+        display: block;
+        height: 80%;
+        width: 80%;
+        transform: rotate(90deg);
+        margin-top: 3px;
+        margin-left: 2.3px;
     }
   }
 }

@@ -101,7 +101,8 @@ p {
   height: 80%;
   width: 80%;
   transform: rotate(90deg);
-  margin-top: 2px;
+  margin-top: 3px;
+  margin-left: 2.3px;
 }
 
 .rcheckbox {
@@ -516,6 +517,11 @@ b {
   top: 3px !important;
 }
 
+@media not all and (min-resolution: 0.001dpcm) {
+  input::-webkit-input-placeholder {
+    padding-top: 5px;
+  }
+}
 .animated_btn {
   transition: box-shadow 0.2s;
 }

@@ -333,3 +333,9 @@ b {
 .top3 {
     top: 3px!important;
 }
+//safari
+@media not all and (min-resolution: .001dpcm) {
+    input::-webkit-input-placeholder {
+        padding-top: 5px;
+    }
+}
