@@ -338,4 +338,8 @@ b {
     input::-webkit-input-placeholder {
         padding-top: 5px;
     }
+
+    [data-phone] {
+        padding-top: 2px;
+    }
 }

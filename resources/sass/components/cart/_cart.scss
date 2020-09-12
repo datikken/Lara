@@ -3,7 +3,6 @@
     margin-bottom: 300px;
   }
 
-
     &_table-headings {
         position: relative;
 
@@ -127,7 +126,6 @@
             cursor: pointer;
             background: $yellow;
             border-radius: 30px;
-            @include btnShadow();
             display: flex;
             justify-content: center;
             align-items: center;
