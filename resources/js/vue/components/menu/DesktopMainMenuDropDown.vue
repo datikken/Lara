@@ -19,7 +19,6 @@
                             <span>{{ post.category }}</span>
                         </a>
                     </li>
-
                 </ul>
 
                 <ul class="menu_wrapper-item-main_menu as-none" data-desktopMenuBlock @mouseleave="hideDropDown">

@@ -4711,6 +4711,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   padding: 0;
   margin: 0;
   list-style: none;
+  border-top: 1px solid #e9e9ea;
+  margin-top: 12px;
 }
 .filters_wrapper-item_list-text {
   border-bottom: 1px solid #e9e9ea;
