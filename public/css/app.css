@@ -1096,7 +1096,7 @@ b {
 .menu_wrapper-item-main_menu-item-text_inner {
   font-family: "Montserrat", sans-serif !important;
 }
-s .menu_wrapper-item-main_menu-item-text_secondary {
+.menu_wrapper-item-main_menu-item-text_secondary {
   background: #fff;
   color: black;
   position: absolute;
@@ -1108,25 +1108,25 @@ s .menu_wrapper-item-main_menu-item-text_secondary {
   right: -13.4rem;
   font-weight: 300;
 }
-s .menu_wrapper-item-main_menu-item-text_secondary-text {
+.menu_wrapper-item-main_menu-item-text_secondary-text {
   padding: 12.5px;
   color: black;
   position: relative;
   border-bottom: 1px solid #e9e9ea;
   margin-bottom: 0;
 }
-s .menu_wrapper-item-main_menu-item-text_secondary-text a {
+.menu_wrapper-item-main_menu-item-text_secondary-text a {
   text-decoration: none;
   color: #292930;
 }
-s .menu_wrapper-item-main_menu-item-text_secondary-text a:hover {
+.menu_wrapper-item-main_menu-item-text_secondary-text a:hover {
   color: black;
 }
-s .menu_wrapper-item-main_menu-item-text_secondary-text:hover {
+.menu_wrapper-item-main_menu-item-text_secondary-text:hover {
   background-color: #40404c;
   border-bottom: 1px solid #292930;
 }
-s .menu_wrapper-item-main_menu-item-text_secondary-text:hover a {
+.menu_wrapper-item-main_menu-item-text_secondary-text:hover a {
   color: #fff;
   font-family: "MontserratSemiBold";
 }
