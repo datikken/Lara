@@ -7,7 +7,7 @@
     @if(!$order['order_info']->cart_pickup)
         <h3>Доставка</h3>
 
-        <div class="bd-highlight">
+        <div class="d-flex bd-highlight">
             <div class="mr-3">
                 <span>Город:</span>
                 <p>
@@ -65,33 +65,49 @@
     <hr>
 
     @if($order_user[0]->face === 'urik')
-        <span>Инн:</span>
-        <p>
-            {{ $order->order_info->urik->inn }}
-        </p>
-        <span>Бик:</span>
-        <p>
-            {{ $order->order_info->urik->bik }}
-        </p>
-        <span>Р/С:</span>
-        <p>
-            {{ $order->order_info->urik->rs }}
-        </p>
+        <div class="d-flex bd-highlight">
+            <div class="mr-3">
+                <span>Инн:</span>
+                <p>
+                    {{ $order->order_info->urik->inn }}
+                </p>
+            </div>
+            <div class="mr-3">
+                <span>Бик:</span>
+                <p>
+                    {{ $order->order_info->urik->bik }}
+                </p>
+            </div>
+            <div class="mr-3">
+                <span>Р/С:</span>
+                <p>
+                    {{ $order->order_info->urik->rs }}
+                </p>
+            </div>
+        </div>
     @else
-        <span>Телефон:</span>
-        <p>
-            {{ $order['order_info']->fio->tel }}
-        </p>
+        <div class="d-flex bd-highlight">
+            <div class="mr-3">
+                <span>Телефон:</span>
+                <p>
+                    {{ $order['order_info']->fio->tel }}
+                </p>
+            </div>
+            <div class="mr-3">
 
-        <span>Имя:</span>
-        <p>
-            {{ $order['order_info']->fio->firstname }}
-        </p>
+                <span>Имя:</span>
+                <p>
+                    {{ $order['order_info']->fio->firstname }}
+                </p>
+            </div>
+            <div class="mr-3">
 
-        <span>Фамилия:</span>
-        <p>
-            {{ $order['order_info']->fio->lastname }}
-        </p>
+                <span>Фамилия:</span>
+                <p>
+                    {{ $order['order_info']->fio->lastname }}
+                </p>
+            </div>
+        </div>
         <hr>
     @endif
 
