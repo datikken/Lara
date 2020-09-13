@@ -7,10 +7,6 @@
                 <span class="error-message as-none" data-error>Заполните обязательные поля</span>
             </div>
 
-            <!--<span>{{ user.user.name }}</span>-->
-            <!--<span>{{ user.userInfo[0].lastname }}</span>-->
-            <!--<span>{{ user.userInfo[0].tel }}</span>-->
-
             <div class="cart_check-wrap_item">
                 <div class="cart_check-wrap_item-group">
                     <label for="required" class="invisible" data-err>Поле имя обязательно к заполнению</label>
