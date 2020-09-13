@@ -1080,7 +1080,8 @@ b {
   width: 130px;
   top: 11.9rem;
   font-weight: 300;
-  right: -14.2rem;
+  right: -27px;
+  transition: all 0.2s;
 }
 .menu_wrapper-item-main_menu-item-text_secondary-text {
   padding: 12.5px;
