@@ -94,13 +94,12 @@
                 let desMenu = this.$el.querySelector('[data-desktopMenuBlock]');
 
                 informationMenu.classList.remove('showInformationMenuDropdown');
-                desMenu.classList.add('as-none');
+                dropdown.classList.remove('showDesktopMenuDropdown');
             },
             hideDropDown() {
                 let menu = this.$el.querySelector('[data-informationMenuDropdown]');
                 let dropdown = this.$el.querySelector('[data-desktopMenuBlock]');
 
-                dropdown.classList.add('as-none');
                 menu.classList.remove('showInformationMenuDropdown');
                 dropdown.classList.remove('showDesktopMenuDropdown');
             },
@@ -108,16 +107,13 @@
                 let informationMenu = this.$el.querySelector('[data-informationMenuDropdown]');
                 let desMenu = this.$el.querySelector('[data-desktopMenuBlock]');
 
-                desMenu.classList.remove('as-none');
                 desMenu.classList.add('showDesktopMenuDropdown');
 
-                informationMenu.classList.remove('as-none');
                 informationMenu.classList.remove('showInformationMenuDropdown');
             },
             showInformationDropDown() {
                 let informationMenu = this.$el.querySelector('[data-informationMenuDropdown]');
                 informationMenu.classList.add('showInformationMenuDropdown');
-                informationMenu.classList.remove('as-none');
             },
             showDesktopMenuDropDown() {
                 let dropdown = this.$el.querySelector('[data-desktopMenuBlock]');

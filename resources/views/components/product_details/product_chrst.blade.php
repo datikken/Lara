@@ -48,20 +48,6 @@
             <div class="prdch_item">
                 <div class="prdch_name">
                     <span>
-                       Цвет
-                    </span>
-                </div>
-                <div class="prdch_val">
-                    @if(isset($chrst->color))
-                        {{ $chrst->color }}
-                    @else
-                        Черный
-                    @endif
-                </div>
-            </div>
-            <div class="prdch_item">
-                <div class="prdch_name">
-                    <span>
                        Ресурс страниц
                     </span>
                 </div>
