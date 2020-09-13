@@ -34,7 +34,7 @@
     &_image2 {
       background-image: url("/img/banner/banner2.png");
       height: 230px;
-    }  
+    }
     &_heading {
       display: flex;
       flex-direction: column;
@@ -80,8 +80,7 @@
       align-items: center;
       justify-content: center;
       margin: 0 auto;
-      @include btnShadow();
-      border-radius: 30px;
+        border-radius: 30px;
       cursor: pointer;
       font-size: $btn_fs;
 

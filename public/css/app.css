@@ -674,8 +674,12 @@ b {
 .header {
   display: none;
   font-family: "MontserratSemiBold";
-  font-weight: 600;
   background-color: #292930;
+}
+@media not all and (min-resolution: 0.001dpcm) {
+  .header {
+    font-family: "Montserrat", sans-serif;
+  }
 }
 @media screen and (min-width: 1030px) {
   .header {
@@ -753,7 +757,6 @@ b {
 }
 .header_wrapper-item_menu-item {
   margin-right: 40px;
-  font-weight: 600;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
@@ -764,10 +767,16 @@ b {
   flex-wrap: no-wrap;
   cursor: pointer;
   position: relative;
+  font-family: "MontserratMedium";
   margin-bottom: 0;
 }
 .header_wrapper-item_menu-item:last-child {
   margin-right: 78px;
+}
+@media not all and (min-resolution: 0.001dpcm) {
+  .header_wrapper-item_menu-item:last-child {
+    margin-right: 85px;
+  }
 }
 .header_wrapper-item_menu-item a {
   color: #fff !important;
@@ -775,55 +784,28 @@ b {
 .header_wrapper-item_menu-item:nth-child(2):hover .header_wrapper-item_menu-item-secondary {
   visibility: visible;
 }
-.header_wrapper-item_menu-item:nth-child(2) a:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  left: -22px;
-  top: 30px;
-  z-index: 899999;
-  transition: 0.2s;
-}
-.header_wrapper-item_menu-item:nth-child(2) a:hover:before {
-  width: 116%;
-}
-@media not all and (min-resolution: 0.001dpcm) {
-  .header_wrapper-item_menu-item:nth-child(2) a:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    left: -15px;
-    top: 30px;
-    z-index: 899999;
-    transition: 0.2s;
-  }
-  .header_wrapper-item_menu-item:nth-child(2) a:hover:before {
-    width: 106.6%;
-  }
-}
-.header_wrapper-item_menu-item a {
+.header_wrapper-item_menu-item_link {
   color: #fff;
 }
-.header_wrapper-item_menu-item a:before {
+.header_wrapper-item_menu-item_link:after {
   content: "";
+  display: block;
   position: absolute;
-  width: 0;
+  bottom: 0;
+  left: 50%;
+  top: 25px;
   height: 2px;
-  background: #fff;
-  left: -11px;
-  top: 29px;
-  transition: width 0.2s;
+  width: 0;
+  background: transparent;
+  transition: width 0.2s ease, background-color 0.2s ease, left 0.2s ease;
 }
-.header_wrapper-item_menu-item a:hover:before {
+.header_wrapper-item_menu-item_link:hover {
+  color: #fff;
+}
+.header_wrapper-item_menu-item_link:hover:after {
   width: 100%;
-}
-.header_wrapper-item_menu-item a:hover {
-  text-decoration: none;
-  color: #fff;
+  left: 0;
+  background: white;
 }
 .header_wrapper-item_menu-item-secondary {
   position: absolute;
@@ -852,6 +834,9 @@ b {
 .header_wrapper-item_menu-item-secondary_item:hover::before {
   display: none;
 }
+.header_wrapper-item_menu-item-secondary_item:last-child li {
+  border-bottom: none;
+}
 .header_wrapper-item_menu-item-secondary li {
   padding: 13px;
   font-size: 12px;
@@ -859,6 +844,7 @@ b {
   font-weight: 300;
   letter-spacing: 0.02em;
   color: black;
+  border-bottom: 1px solid #e9e9ea;
 }
 .header_wrapper-item_menu-item-secondary li:hover {
   background: #40404c;
@@ -1093,8 +1079,8 @@ b {
   z-index: 99;
   width: 130px;
   top: 11.9rem;
-  right: -13.4rem;
   font-weight: 300;
+  right: -14.2rem;
 }
 .menu_wrapper-item-main_menu-item-text_secondary-text {
   padding: 12.5px;
@@ -1478,7 +1464,7 @@ b {
   z-index: 99;
   width: 130px;
   top: 30px;
-  right: -13.4rem;
+  right: -14.2rem;
   font-weight: 300;
 }
 
@@ -2236,7 +2222,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .swiper-pagination-bullet {
-  box-sizing: content-box;
   border: 1px solid #fff;
   background: #292930;
   height: 10px;
@@ -2518,7 +2503,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   border-radius: 30px;
   cursor: pointer;
   font-size: 12px;
@@ -3429,7 +3413,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   flex-wrap: no-wrap;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
 }
 .sales_best-wrapper_item-content_inner-text-cta span {
   font-family: "Montserrat", sans-serif;

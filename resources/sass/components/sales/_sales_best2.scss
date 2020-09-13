@@ -73,7 +73,6 @@
               @include flex(center, center, no-wrap);
               border-radius: 30px;
               cursor: pointer;
-              @include btnShadow();
 
               span {
                 font-family: $font;
