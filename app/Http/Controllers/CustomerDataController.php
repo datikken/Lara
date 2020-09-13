@@ -34,7 +34,7 @@ class CustomerDataController extends Controller
             'rs' => $rs
         ];
 
-        $request->session()->put('cart-cutomerInfo', $arr);
+        $request->session()->put('cart_cutomerInfo', $arr);
         return response()->json((object) array('cutomer_info' => $arr));
     }
     public function setCustomerFio(Request $request)
@@ -92,13 +92,15 @@ class CustomerDataController extends Controller
         $fio = Session::get('cartCustomerFio');
         $index = Session::get('cartIndex');
         $adresss = Session::get('cartAddress');
+        $urik = Session::get('cart_cutomerInfo');
 
         $arr = array(
             'cart_pickup' => $cart_pickup,
             'payment_info' => $payment_info,
             'fio' => $fio,
             'index' => $index,
-            'adress' => $adresss
+            'adress' => $adresss,
+            'urik' => $urik
         );
 
         return response()->json($arr);
