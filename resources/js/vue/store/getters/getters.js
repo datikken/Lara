@@ -16,7 +16,8 @@ let getters = {
         cart: state => state.cart,
         informationPosts: state => state.informationPosts,
         customerIndex: state => state.customerIndex,
-        customerAdress: state => state.customerAdress
+        customerAdress: state => state.customerAdress,
+        stockDeliveryPickup: state => state.stockDeliveryPickup
 }
 
 export default getters;

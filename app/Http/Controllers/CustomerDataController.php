@@ -17,6 +17,8 @@ class CustomerDataController extends Controller
             'adr' => $adr
         );
 
+        $request->session()->put('cart_pickup', $toSave);
+
         return response()->json($toSave);
     }
 
@@ -49,7 +51,7 @@ class CustomerDataController extends Controller
             'save' => $save
         ];
 
-        $request->session()->put('cart-customerFio', $arr);
+        $request->session()->put('cartCustomerFio', $arr);
         return response()->json((object) array('customer_fio' => $arr));
     }
 
@@ -85,14 +87,14 @@ class CustomerDataController extends Controller
 
     public function getSessionInfo()
     {
-        $cart_pickup = Session::get('cart-pickup');
+        $cart_pickup = Session::get('cart_pickup');
         $payment_info = Session::get('payment_info');
-        $fio = Session::get('cart-customerFio');
-        $index = Session::get('cart-index');
+        $fio = Session::get('cartCustomerFio');
+        $index = Session::get('cartIndex');
         $adresss = Session::get('cart-address');
 
         $arr = array(
-            'cart-pickup' => $cart_pickup,
+            'cart_pickup' => $cart_pickup,
             'payment_info' => $payment_info,
             'fio' => $fio,
             'index' => $index,

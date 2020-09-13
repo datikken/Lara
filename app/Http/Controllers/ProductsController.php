@@ -274,6 +274,6 @@ class ProductsController extends Controller
             'metro' => $metro
         ];
 
-        $request->session()->put('cart-pickup', $arr);
+        $request->session()->put('cart_pickup', $arr);
     }
 }

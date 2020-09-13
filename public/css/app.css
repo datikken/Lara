@@ -13264,8 +13264,8 @@ main {
   position: relative;
   cursor: pointer;
 }
-.currentPickups_item-active .currentPickups_icon img {
-  content: url("/images/icons/metro_active.svg");
+.currentPickups_item-active {
+  border: 1px solid #e9e9ea;
 }
 .currentPickups_item:hover {
   background: #e9e9ea;

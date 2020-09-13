@@ -121,7 +121,7 @@ Route::get('products/addToCartAjaxGet/{id}', ['uses' => 'ProductsController@addT
 Route::get('/setCustomerFio', ['uses' => 'CustomerDataController@setCustomerFio', 'as' => 'setCustomerFio']);
 Route::get('/setUrikInfo', ['uses' => 'CustomerDataController@setUrikInfo', 'as' => 'setUrikInfo']);
 Route::get('/deliveryForm', ['uses' => 'CustomerDataController@deliveryForm', 'as' => 'deliveryForm']);
-Route::get('/setStockPickUpPoint', ['uses' => 'CustomerDataController@setStockPickUpPoint', 'as' => 'setStockPickUpPoint']);
+Route::post('/setStockPickUpPoint', ['uses' => 'CustomerDataController@setStockPickUpPoint', 'as' => 'setStockPickUpPoint']);
 
 
 Route::post('/setAdress', ['uses' => 'CustomerDataController@setAdress', 'as' => 'setAdress']);

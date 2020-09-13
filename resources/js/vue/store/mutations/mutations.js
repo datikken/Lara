@@ -4,34 +4,55 @@ import _ from "lodash";
 import axios from "axios/index";
 
 let mutations = {
-    checkDeliveryPickups(state, pickup) {
+    checkDeliveryPickups(state, {name, adr}) {
+        if (state.deliveryType === 'stock' && state.stockDeliveryPickup === false) {
+            state.stockDeliveryPickup = {name, adr};
 
-        console.warn('checkDeliveryPickups', pickup);
+            fetch('/setStockPickUpPoint', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': window.token
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify({
+                    name,
+                    adr
+                })
+            })
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    console.warn('pickupPointset', data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
 
-        if(state.deliveryType === 'stock') {
-            state.stockDeliveryPickup = pickup;
+            return true;
+        } else {
+            return false;
         }
-
-        // ajax /setStockPickUpPoint
-
     },
     getAllInformationPosts(state) {
         fetch('/getAllInformationPosts', {
             method: "GET"
         })
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            state.informationPosts = data;
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.informationPosts = data;
 
 
-            console.warn('informationPosts', data);
-        });
+                console.warn('informationPosts', data);
+            });
     },
     showDeliveryTypeHelper() {
         let helper = document.querySelector('[data-deliveryType_helper]');
-            helper.classList.add('top3');
+        helper.classList.add('top3');
     },
     sendGoogleAnalytics(state, {category, eventAction, eventLabel, eventValue}) {
         window.ga('send', 'event', category, eventAction, eventLabel, eventValue);
@@ -128,9 +149,9 @@ let mutations = {
                 id: pid
             })
         })
-        .then((response) => {
-            return response.json();
-        })
+            .then((response) => {
+                return response.json();
+            })
 
         let gObj = {
             category: 'catalog modal',
@@ -154,23 +175,23 @@ let mutations = {
                 year
             })
         })
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            state.lastTwoYearsInfo = data;
-        });
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.lastTwoYearsInfo = data;
+            });
     },
     getAboutYears(state) {
         fetch('/getAboutYears', {
             method: "GET"
         })
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            state.aboutData = data;
-        });
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.aboutData = data;
+            });
     },
     getOrdersInfo(state) {
         $.ajaxSetup({

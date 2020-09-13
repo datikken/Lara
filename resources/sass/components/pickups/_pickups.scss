@@ -28,11 +28,7 @@
         cursor: pointer;
 
         &-active {
-            .currentPickups_icon {
-                img {
-                    content:url("/images/icons/metro_active.svg");
-                }
-            }
+            border: 1px solid $light_gray;
         }
 
         &:hover {

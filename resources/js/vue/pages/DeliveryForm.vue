@@ -54,6 +54,7 @@
                 'deliveryType',
                 'customerAdress',
                 'customerIndex',
+                'stockDeliveryPickup',
                 'user'
             ]),
         },
@@ -61,7 +62,8 @@
             ...mapActions([
                 'DELIVERY_TYPE_ERROR',
                 'CHANGE_PROGRESS_STEP',
-                'SCROLL_TO_TOP'
+                'SCROLL_TO_TOP',
+                'CHECK_DELIVERY_PICKUPS'
             ]),
             proceedToPaymentPage() {
                 let ready = false;
@@ -69,7 +71,12 @@
                 // this.validateAdressForm();
 
                 if(this.deliveryType === 'stock') {
-                    ready = true;
+                   if(this.stockDeliveryPickup) {
+                       ready = true;
+                   } else {
+                       let errBlock = this.$el.querySelector('[data-deliveryPickupError]')
+                           errBlock.classList.remove('as-none');
+                   }
                 }
 
                 if(this.deliveryType === 'self') {
@@ -93,11 +100,11 @@
                 if(ready) {
                     this.CHANGE_PROGRESS_STEP();
 
-                    // if(this.user.face === 'urik') {
-                    //     router.push('/contract')
-                    // } else {
-                    //     router.push('/payments')
-                    // }
+                    if(this.user.face === 'urik') {
+                        router.push('/contract')
+                    } else {
+                        router.push('/payments')
+                    }
 
                     this.SCROLL_TO_TOP();
                 }
