@@ -12024,9 +12024,6 @@ main {
 .sres_col {
   position: relative;
 }
-.sres_col:hover {
-  color: #40404c;
-}
 .sres_col_inner_item {
   display: grid;
   grid-template-rows: 1fr 1fr;

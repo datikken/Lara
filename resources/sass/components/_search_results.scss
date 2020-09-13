@@ -93,9 +93,6 @@
 
     &_col {
         position: relative;
-        &:hover {
-            color: $black;
-        }
 
         &_inner_item {
             display: grid;
