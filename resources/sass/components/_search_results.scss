@@ -86,13 +86,13 @@
         }
 
         &:hover {
-            color: $black;
+            color: white;
+            background: $blue;
         }
     }
 
     &_col {
         position: relative;
-        color: $black;
         &:hover {
             color: $black;
         }

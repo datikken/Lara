@@ -12018,11 +12018,11 @@ main {
   }
 }
 .sres_item:hover {
-  color: #40404c;
+  color: white;
+  background: #3559fd;
 }
 .sres_col {
   position: relative;
-  color: #40404c;
 }
 .sres_col:hover {
   color: #40404c;
