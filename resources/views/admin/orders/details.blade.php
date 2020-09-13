@@ -64,22 +64,36 @@
 
     <hr>
 
-    <span>Телефон:</span>
-    <p>
-        {{ $order['order_info']->fio->tel }}
-    </p>
+    @if($order_user[0]->face === 'urik')
+        <span>Инн:</span>
+        <p>
+            {{ $order->order_info->urik->inn }}
+        </p>
+        <span>Бик:</span>
+        <p>
+            {{ $order->order_info->urik->bik }}
+        </p>
+        <span>Р/С:</span>
+        <p>
+            {{ $order->order_info->urik->rs }}
+        </p>
+    @else
+        <span>Телефон:</span>
+        <p>
+            {{ $order['order_info']->fio->tel }}
+        </p>
 
-    <span>Имя:</span>
-    <p>
-        {{ $order['order_info']->fio->firstname }}
-    </p>
+        <span>Имя:</span>
+        <p>
+            {{ $order['order_info']->fio->firstname }}
+        </p>
 
-    <span>Фамилия:</span>
-    <p>
-        {{ $order['order_info']->fio->lastname }}
-    </p>
-
-    <hr>
+        <span>Фамилия:</span>
+        <p>
+            {{ $order['order_info']->fio->lastname }}
+        </p>
+        <hr>
+    @endif
 
     <span>Cпособ оплаты:</span>
     <p>

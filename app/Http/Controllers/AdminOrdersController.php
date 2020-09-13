@@ -22,8 +22,9 @@ class AdminOrdersController extends Controller
     {
         $order = Orders::find($id);
         $order['order_info'] = json_decode($order['order_info']);
+        $user = DB::table('users')->where('id', $order['user_id'])->get();
 
-        return view('admin.orders.details', ['order' => $order]);
+        return view('admin.orders.details', ['order' => $order, 'order_user' => $user]);
     }
 
     public function repeatOrder(Request $request, $id)
