@@ -65,10 +65,11 @@
   }
 }
 .swiper-pagination-bullet {
-  margin: 10px;
-  height: 5px;
-  width: 11px!important;
-  height: 11px!important;
+    box-sizing: content-box;
+    border: 1px solid #fff;
+    background: #292930;
+    height: 10px;
+    width: 10px;
 
   @include breakpoint($phone) {
     height: 10px;
@@ -84,23 +85,44 @@
 .main_slider {
     margin-bottom: 10px!important;
 
-    &-nav {
-        display: none;
-    }
-
     &_pagination {
         display: none;
 
         @include breakpoint($medium) {
-            display: block;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        justify-content: center;
+        position: absolute;
+        left: 50%!important;
+        bottom: 40px!important;
+        transform: translate(-50%, 0);
+
+        &-bullet {
+            background: $black;
+            border: 1px solid #fff;
+        }
+
+        .swiper-pagination-bullet {
+            border: 1px solid #fff;
+            background: $dblack;
+            height: 10px;
+            width: 10px;
+        }
+
+       .swiper-pagination-bullet-active {
+            background: #FFFFFF!important;
+            box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.7);
+            border: none;
         }
     }
-
     .swiper-button-prev, .swiper-button-next {
         &:after {
             display: none;
         }
     }
+
     .swiper-button-next {
         width: 17.25px !important;
         height: 25px !important;

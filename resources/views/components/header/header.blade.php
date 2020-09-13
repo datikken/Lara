@@ -23,11 +23,11 @@
                     </ul>
                 </li>
                 <li class="header_wrapper-item_menu-item">
-                    <a href="/hits" class="header_wrapper-item_menu-item_link">Хит-парад принтеров</a>
+                    <a href="/hits" class="header_wrapper-item_menu-item_link">Хит - парад принтеров</a>
                 </li>
-                {{--<li class="header_wrapper-item_menu-item">--}}
-                    {{--<a href="/sales">Акции</a>--}}
-                {{--</li>--}}
+                <li class="header_wrapper-item_menu-item">
+                    <a href="/sales">Акции</a>
+                </li>
                 <li class="header_wrapper-item_menu-item">
                     <a href="/blog" class="header_wrapper-item_menu-item_link">Блог</a>
                 </li>
@@ -41,11 +41,9 @@
         </div>
         <div class="header_wrapper-item">
             <div class="header_wrapper-item_contacts">
-                <div class="header_wrapper-item_contacts-icon">
-                    <img class="header_wrapper-item_contacts-icon-item" src='/images/header/contact.svg' alt="Logo"/>
-                </div>
-                <span class="header_wrapper-item_contacts-tel">8 800 555 66 33</span>
-                <div class="header_wrapper-item_contacts-email">kakayatopochta@gmail.com</div>
+                <img class="header_wrapper-item_contacts-icon" src='/images/header/header_tel.svg' alt="Logo"/>
+                <a href="tel:88005556633" class="header_wrapper-item_contacts-tel">8 800 555 66 33</a>
+                {{--<div class="header_wrapper-item_contacts-email">kakayatopochta@gmail.com</div>--}}
             </div>
         </div>
     </div>

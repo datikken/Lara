@@ -25,6 +25,7 @@
                 margin-left: 10px;
                 @include breakpoint($medium) {
                     margin-left: 0;
+                    margin-right: 70px;
                 }
             }
             @include breakpoint($medium) {
@@ -77,7 +78,7 @@
                 @include breakpoint($medium) {
                     position: relative;
                     width: initial;
-                    margin-left: 20px;
+                    margin-right: 100px;
                 }
             }
 
@@ -141,9 +142,6 @@
                 .menu_wrapper-item_menuText {
                     display: none;
                     margin-left: 0;
-                    @include breakpoint($medium) {
-                        margin-left: 10px;
-                    }
                 }
             }
 
@@ -285,7 +283,7 @@
                     margin-right: 10px;
 
                     @include breakpoint($medium) {
-                        margin-left: 20px;
+                        margin-left: 70px;
                         margin-right: 0;
                     }
 
@@ -344,7 +342,7 @@
                 }
 
                 @include breakpoint(1030px) {
-                    margin-left: 20px;
+                    margin-left: 50px;
                 }
 
                 @include breakpoint(1200px) {
@@ -352,8 +350,8 @@
                 }
 
                 &_icon {
-                    width: 24px;
-                    height: 18px;
+                    width: 14px;
+                    height: 20px;
                 }
 
                 &_text {
@@ -372,15 +370,15 @@
             }
             &_tracking {
                 @include flex(center, space-between, wrap);
-                margin-left: 20px;
                 cursor: pointer;
+
                 &:hover {
                     text-decoration: none;
                 }
 
                 &_icon {
-                    width: 24px;
-                    height: 14.86px;
+                    width: 14px;
+                    height: 20px;
                     @include bg(contain, center);
                 }
 
@@ -411,16 +409,12 @@
                     position: initial;
                     rigth: initial;
                     transform: none;
-                    width: initial !important;
+                    width: 500px;
                 }
 
                 @include breakpoint(600px) {
                     width: 100%;
                     right: 8.2rem;
-                }
-
-                @include breakpoint(1030px) {
-                    margin-left: 30px;
                 }
 
                 &_input {
@@ -503,6 +497,12 @@
                 display: flex;
                 height: 100%;
                 z-index: 99;
+                align-items: center;
+
+                img {
+                    width: 15px;
+                    height: 15px;
+                }
 
                 .menu_wrapper-item_hamburger-link {
                     height: 50px;
@@ -526,7 +526,6 @@
                 line-height: 14px;
                 letter-spacing: 0.02em;
                 color: $dblack;
-                margin-left: 10px;
                 cursor: pointer;
                 width: 74px;
                 display: flex !important;

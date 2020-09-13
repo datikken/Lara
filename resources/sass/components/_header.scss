@@ -16,7 +16,7 @@
 
     @include breakpoint($medium) {
       margin-left: 10px;
-      justify-content: space-between;
+      justify-content: flex-start;
     }
 
    @include  breakpoint(1180px) {
@@ -24,54 +24,40 @@
    }
 
     &-item {
+     &:nth-child(1) {
+        margin-right: 86px;
+     }
+
       &_contacts {
         display: none;
         position: relative;
 
           @include breakpoint(1180px) {
-              display: block;
+              display: flex;
+              align-items: center;
           }
 
         &-icon {
-          width: 30px;
-          height: 30px;
-          position: absolute;
-          left: -1px;
-          top: -0.3rem;
-
-          @media not all and (min-resolution: 0.001dpcm) {
-            left: -15px;
-            top: -0.2rem;
-          }
+          width: 15px;
+          height: 15px;
+          margin-right: 11px;
         }
 
         &-tel {
-          font-style: normal;
-          font-weight: 600;
-          font-size: 18px;
-          line-height: 18px;
-          text-align: right;
-          letter-spacing: 0.02em;
-          color: $white;
-          margin-bottom: 5px;
-          display: block;
-          text-decoration: none;
-          cursor: pointer;
-        }
+            font-family: $font;
+            font-size: 18px;
+            line-height: 14px;
+            text-align: right;
+            letter-spacing: 0.02em;
+            color: white;
 
-        &-email {
-          font-style: normal;
-          font-weight: normal;
-          font-size: 12px;
-          line-height: 14px;
-          text-align: right;
-          letter-spacing: 0.02em;
-          color: $white;
-          cursor: pointer;
+            &:hover {
+                color: #fff;
+            }
         }
       }
       &_logo {
-        width: 110px;
+        width: 130px;
         height: 50px;
         display: table-cell;
         vertical-align: middle;
@@ -86,10 +72,10 @@
         @include flex(center, space-between, wrap);
         position: relative;
         margin: 0;
-        padding-right: 0;
+        padding: 0;
 
         &-item {
-          margin-right: 20px;
+          margin-right: 40px;
           font-weight: 600;
           font-size: 12px;
           line-height: 14px;
@@ -99,6 +85,10 @@
           cursor: pointer;
           position: relative;
           margin-bottom: 0;
+
+            &:last-child {
+                margin-right: 78px;
+            }
 
           a {
               color: #fff!important;
@@ -178,12 +168,6 @@
         &-item {
             &:last-child:after {
                 display: none;
-            }
-
-            &:after {
-                content: "|";
-                margin-left: 20px;
-                color: $light_gray;
             }
         }
       }

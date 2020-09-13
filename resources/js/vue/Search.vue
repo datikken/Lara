@@ -31,24 +31,17 @@
             </div>
             <div class="menu_wrapper-item">
                 <a href="/tracking" class="menu_wrapper-item_tracking">
-                    <div class="menu_wrapper-item_tracking_icon"
-                         style="background-image: url('/images/menu/tracking.svg')">
-                    </div>
+                    <img class="menu_wrapper-item_tracking_icon" src="/images/menu/header_tracking.svg" alt="">
                     <div class="menu_wrapper-item_tracking_text">
-                        <span>Трекинг заказа</span>
+                        <span>Статус заказа</span>
                     </div>
                 </a>
             </div>
             <div class="menu_wrapper-item">
                 <a href="/login" class="menu_wrapper-item_personal">
-                    <div class="menu_wrapper-item_personal_icon"
-                         style="background-image: url('/images/menu/login.svg')"></div>
+                    <img class="menu_wrapper-item_personal_icon" src="/images/menu/header_man.svg"></img>
                     <div class="menu_wrapper-item_personal_text">
                         <span>Личный кабинет</span>
-                        <img
-                            src="/images/icons/menu_decor.svg"
-                            class="menu_wrapper-item_menuText-decor"
-                        />
                     </div>
                 </a>
             </div>
@@ -59,13 +52,14 @@
                             <img src="/images/menu/cart.svg" alt=""/>
                             <span class="menu_wrapper-item_cart_icon-amount" data-cartAmountVal>{{ this.cart.totalQuantity }}</span>
                         </div>
-                        <div class="menu_wrapper-item_cart_value">
-                            <span data-cartPriceVal>{{ this.cart.totalPrice }}</span>
-                        </div>
 
-                        <div class="menu_wrapper-item_cart_currency">
-                            <img src="/images/menu/rub.svg" alt="rub" v-if="this.cart.totalPrice"/>
-                        </div>
+                        <!--<div class="menu_wrapper-item_cart_value">-->
+                            <!--<span data-cartPriceVal>{{ this.cart.totalPrice }}</span>-->
+                        <!--</div>-->
+
+                        <!--<div class="menu_wrapper-item_cart_currency">-->
+                            <!--<img src="/images/menu/rub.svg" alt="rub" v-if="this.cart.totalPrice"/>-->
+                        <!--</div>-->
 
                     </a>
                 </div>
