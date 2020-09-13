@@ -1,8 +1,8 @@
 <template>
     <div class="cart_check-wrapper">
         <Loader v-if="!this.$store.state.user"/>
-        <Fizik v-if="userInfo.user.face === 'fizik' "/>
-        <Urik v-if="userInfo.user.face === 'urik' "/>
+        <Fizik v-if="userInfo.user && userInfo.user.face === 'fizik' "/>
+        <Urik v-if="userInfo.user && userInfo.user.face === 'urik' "/>
     </div>
 </template>
 
@@ -38,6 +38,8 @@
         watch: {
             user(newVal, oldVal) {
                 this.userInfo = newVal;
+
+                console.warn(this.userInfo)
             }
         },
         created() {

@@ -15,14 +15,14 @@
                 <div class="cart_check-wrap_item-group">
                     <label for="required" class="invisible" data-err>Поле имя обязательно к заполнению</label>
                     <label for="firstname">Имя <span>*</span></label>
-                    <input type="text" name="firstname" data-required :value="user.user.name" />
+                    <input type="text" name="firstname" data-required />
                 </div>
                 <div class="cart_check-wrap_item-group">
                     <label for="required" class="invisible errorLabel" data-err>Поле фамилия обязательно к
                         заполнению</label>
                     <label for="lastname">Фамилия <span>*</span></label>
                     <div v-if="user.userInfo[0].lastname">
-                        <input type="text" name="lastname" data-required :value="user.userInfo[0].lastname" />
+                        <input type="text" name="lastname" data-required />
                     </div>
                     <input type="text" name="lastname" data-required v-else />
                 </div>
@@ -48,7 +48,7 @@
 
             <div class="cart_check-wrap_item">
                 <div class="cart_check-wrap_item-group checkbox">
-                    <SimpleCheckbox name="save"/>
+                    <SimpleCheckbox name="save" @click.native="saveDataToStorage" />
                     <label for="save">Сохранить данные</label>
                 </div>
             </div>
@@ -73,11 +73,12 @@
         data: function () {
             return {
                 userMask: 'aa-aa-AAAA',
-                phone: user.userInfo[0].tel
+                phone: ''
             }
         },
         mounted() {
            this.GET_USERS_INFO();
+           this.fillInputsData();
         },
         computed: {
             ...mapGetters(['user']),
@@ -92,6 +93,37 @@
                 'SCROLL_TO_TOP',
                 'GET_USERS_INFO'
             ]),
+            fillInputsData() {
+                let data = JSON.parse(localStorage.getItem('checkoutProductsData'));
+
+                if(data) {
+                    let name = this.$el.querySelector('[name="firstname"]');
+                    let lastName = this.$el.querySelector('[name="lastname"]');
+
+                    name.value = data.firstname;
+                    lastName.value = data.lastname;
+
+                    this.phone = data.tel
+                }
+            },
+            collectInputData() {
+                let inputs = this.$el.querySelectorAll('input');
+                let obj = {};
+
+                inputs.forEach((el) => {
+                    let name = el.getAttribute('name');
+                    let val = el.value;
+
+                    obj[name] = val;
+                })
+
+                return obj;
+            },
+            saveDataToStorage() {
+                let data = this.collectInputData();
+
+                localStorage.setItem('checkoutProductsData', JSON.stringify(data));
+            },
             validateNumberLength(num) {
                 let val = num.replace(/[- + _ )(]/g,'');
 
@@ -102,15 +134,7 @@
                 }
             },
             setCustomerFio() {
-                let inputs = this.$el.querySelectorAll('input');
-                let obj = {};
-
-                inputs.forEach((el) => {
-                    let name = el.getAttribute('name');
-                    let val = el.value;
-
-                    obj[name] = val;
-                })
+                let obj = this.collectInputData();
 
                 this.SET_CUSTOMER_FIO(obj);
 

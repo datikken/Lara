@@ -45,9 +45,7 @@ let mutations = {
             })
             .then((data) => {
                 state.informationPosts = data;
-
-
-                console.warn('informationPosts', data);
+                // console.warn('informationPosts', data);
             });
     },
     showDeliveryTypeHelper() {
@@ -494,10 +492,7 @@ let mutations = {
         axios.get('/checkCartState')
             .then(response => {
                 state.cart = response.data;
-
                 // localStorage.setItem('cart', JSON.stringify(response.data));
-
-                console.warn('js cart state', response.data)
             })
 
         return state.cart
