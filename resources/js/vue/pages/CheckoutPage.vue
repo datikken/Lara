@@ -38,8 +38,6 @@
         watch: {
             user(newVal, oldVal) {
                 this.userInfo = newVal;
-
-                console.warn(this.userInfo)
             }
         },
         created() {

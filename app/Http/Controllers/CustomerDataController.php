@@ -91,7 +91,7 @@ class CustomerDataController extends Controller
         $payment_info = Session::get('payment_info');
         $fio = Session::get('cartCustomerFio');
         $index = Session::get('cartIndex');
-        $adresss = Session::get('cart-address');
+        $adresss = Session::get('cartAddress');
 
         $arr = array(
             'cart_pickup' => $cart_pickup,
