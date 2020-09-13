@@ -21,10 +21,7 @@
                     <label for="required" class="invisible errorLabel" data-err>Поле фамилия обязательно к
                         заполнению</label>
                     <label for="lastname">Фамилия <span>*</span></label>
-                    <div v-if="user.userInfo[0].lastname">
-                        <input type="text" name="lastname" data-required />
-                    </div>
-                    <input type="text" name="lastname" data-required v-else />
+                    <input type="text" name="lastname" data-required />
                 </div>
             </div>
 
