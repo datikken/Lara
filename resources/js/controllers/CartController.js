@@ -141,6 +141,7 @@ class CartController {
         $('[data-cartpriceval]').html(price);
 
         if(type != 0) {
+            $('[data-cartIcon]').attr('src', '/images/menu/empty_cart.svg');
             $('.menu_wrapper-item_cart_currency').addClass('invisible');
         } else {
             $('.menu_wrapper-item_cart_currency').removeClass('invisible');

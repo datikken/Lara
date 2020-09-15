@@ -21,4 +21,4 @@
 
 {{--<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>--}}
 
-<script src="{{ asset('js/app.js') }}" defer></script>
+<script rel="preload" src="{{ asset('js/app.js') }}" async></script>

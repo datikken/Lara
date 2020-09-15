@@ -283,6 +283,11 @@
                     position: relative;
                     margin-right: 10px;
 
+                    img {
+                        height: 31px;
+                        width: 31px;
+                    }
+
                     @include breakpoint($medium) {
                         margin-left: 70px;
                         margin-right: 0;
@@ -291,21 +296,10 @@
                     &-amount {
                         color: $white;
                         z-index: 99;
-                        left: 61%;
+                        left: 56%;
                         top: 50%;
                         position: absolute;
                         transform: translate(-50%, -50%);
-                    }
-                    &:after {
-                        content: "";
-                        width: 23px;
-                        height: 23px;
-                        position: absolute;
-                        background: $purple2;
-                        border-radius: 50%;
-                        @include absCenter();
-                        margin-left: 4px;
-                        top: 15px;
                     }
                 }
                 &_value {

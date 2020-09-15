@@ -131,7 +131,7 @@
     }
 
     .showDesktopMenuDropdown {
-        height: 280px;
+        height: initial;
     }
 
     [data-informationMenuDropdown] {

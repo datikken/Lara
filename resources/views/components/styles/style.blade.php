@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/uikit.min.css">
 <link rel="stylesheet" href="/css/uikit-rtl.min.css">
 
-<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.2/dist/css/uikit.min.css" />
 

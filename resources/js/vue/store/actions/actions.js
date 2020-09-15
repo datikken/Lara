@@ -141,6 +141,8 @@ let actions = {
         let amount = data.totalQuantity;
         let price = data.totalPrice;
 
+        $('[data-cartIcon]').attr('src', '/images/menu/cart.svg');
+
         $('[data-cartamountval]').text(amount);
         $('[data-cartpriceval]').text(price);
     }

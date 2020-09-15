@@ -1125,6 +1125,10 @@ b {
   position: relative;
   margin-right: 10px;
 }
+.menu_wrapper-item_cart_icon img {
+  height: 31px;
+  width: 31px;
+}
 @media screen and (min-width: 1030px) {
   .menu_wrapper-item_cart_icon {
     margin-left: 70px;
@@ -1134,24 +1138,10 @@ b {
 .menu_wrapper-item_cart_icon-amount {
   color: #fff;
   z-index: 99;
-  left: 61%;
+  left: 56%;
   top: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
-}
-.menu_wrapper-item_cart_icon:after {
-  content: "";
-  width: 23px;
-  height: 23px;
-  position: absolute;
-  background: #d935fd;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-left: 4px;
-  top: 15px;
 }
 .menu_wrapper-item_cart_value {
   font-weight: 600;

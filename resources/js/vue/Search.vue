@@ -2,7 +2,7 @@
     <div class="menu">
         <div class="menu_wrapper" id="app">
 
-            <div class="menu_wrapper-item" @mouseenter="DesktopDropdownTrigger" @mouseleave="DesktopDropdownHide">
+            <div class="menu_wrapper-item" @mouseenter="DesktopDropdownTrigger">
 
                 <div class="menu_wrapper-item_hamburger" @click="MobileDropdownTrigger">
                     <img src="/images/menu/Mhamburger.svg" alt="hamburger" class="hamburger"/>
@@ -49,18 +49,10 @@
                 <div class="menu_wrapper-item_cart">
                     <a href="/cart">
                         <div class="menu_wrapper-item_cart_icon">
-                            <img src="/images/menu/cart.svg" alt=""/>
+                            <img src="/images/menu/cart.svg" alt="cart" v-if="this.cart.totalQuantity" data-cartIcon />
+                            <img src="/images/menu/empty_cart.svg" alt="cart" v-else data-cartIcon />
                             <span class="menu_wrapper-item_cart_icon-amount" data-cartAmountVal>{{ this.cart.totalQuantity }}</span>
                         </div>
-
-                        <!--<div class="menu_wrapper-item_cart_value">-->
-                            <!--<span data-cartPriceVal>{{ this.cart.totalPrice }}</span>-->
-                        <!--</div>-->
-
-                        <!--<div class="menu_wrapper-item_cart_currency">-->
-                            <!--<img src="/images/menu/rub.svg" alt="rub" v-if="this.cart.totalPrice"/>-->
-                        <!--</div>-->
-
                     </a>
                 </div>
             </div>
@@ -99,16 +91,13 @@
                 return this.$store.state.cart
             }
         },
-        mounted() {
+        created() {
             this.CHECK_CART_STATE();
         },
         methods: {
             ...mapActions([
                 'CHECK_CART_STATE'
             ]),
-            DesktopDropdownHide() {
-                console.warn('damn');
-            },
             DesktopDropdownTrigger() {
                 let menu = document.querySelector('[data-desktopMenuBlock]');
                     menu.classList.remove('as-none');

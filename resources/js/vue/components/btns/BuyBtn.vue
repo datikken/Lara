@@ -3,7 +3,7 @@
         <div class="desktop-hide">
             <div class="product_wrapper-item_price-item">Купить</div>
         </div>
-        <img src='/images/icons/cart.svg' alt="cart" />
+        <img src='/images/menu/empty_cart.svg' alt="cart" />
         <span v-if="text" class="product_wrapper-item_price-text">{{ text }}</span>
     </div>
 </template>

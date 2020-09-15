@@ -40,10 +40,22 @@
 
             <div class="details_wrap-info_item">
                 <div class="details_wrap-info_item-icons">
+
                     <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/drip.svg')"></div>
-                    <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/chip.svg')"></div>
-                    <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/new.svg')"></div>
-                    <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/stmc.svg')"></div>
+
+                    @if($params->Чип == 'true')
+                        <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/chip.svg')"></div>
+                    @endif
+
+                    {{--{{ dd($params) }}--}}
+
+                    @if($params->Новый == 'true')
+                        <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/new.svg')"></div>
+                    @endif
+
+                    @if($params->STMC == 'true')
+                        <div class="details_wrap-info_item-icons_icon" style="background-image: url('/images/product/stmc.svg')"></div>
+                    @endif
                 </div>
             </div>
 

@@ -55,7 +55,19 @@
                     <span>{{ $chrst->Ресурс }} текстовых страницы А4</span>
                 </div>
             </div>
+        @endif
 
+        @if($chrst->printertype === 'Принтер матричный')
+            <div class="prdch_item">
+                <div class="prdch_name">
+                    <span>
+                       Ресурс
+                    </span>
+                </div>
+                <div class="prdch_val">
+                    <span>{{ $chrst->Ресурс }}</span>
+                </div>
+            </div>
         @endif
 
             <div class="prdch_item">

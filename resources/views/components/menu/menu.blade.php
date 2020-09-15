@@ -81,7 +81,7 @@
                             <img src="/images/icons/arrow_right.svg" alt="right" class="arrow_right"/>
                         </li>
                         <li class="menu_Wrapper-item_secondary-item_list-item vip-item">
-                            <img src="/images/menu/cart.svg" alt="cart"/>
+                            {{--<img src="/images/menu/empty_cart.svg" alt="cart"/>--}}
                             <a href="/cart">
                         <span class="menu_Wrapper-item_secondary-item_list-item-text">
                                         Корзина
@@ -142,56 +142,6 @@
                             </li>
                         </ul>
 
-
-                        {{--<ul class="menu_wrapper-item-main_menu as-none" data-desktopDropdown>--}}
-                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
-                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
-                                            {{--<a href="/catalog">Каталог</a>--}}
-                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
-                                          {{--</span>--}}
-                            {{--</li>--}}
-                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
-                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
-                                            {{--<a href="/about">О нас</a>--}}
-                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
-                                          {{--</span>--}}
-                            {{--</li>--}}
-                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
-                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
-                                            {{--<a href="/hits">Хит парад принтеров</a>--}}
-                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
-                                          {{--</span>--}}
-                            {{--</li>--}}
-                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
-                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
-                                            {{--<a href="/hits">Акции</a>--}}
-                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
-                                          {{--</span>--}}
-                            {{--</li>--}}
-                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
-                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
-                                            {{--<a href="/blog">Блог</a>--}}
-                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
-                                          {{--</span>--}}
-                            {{--</li>--}}
-                            {{--<li--}}
-                                {{--class="menu_wrapper-item-main_menu-item"--}}
-                            {{-->--}}
-                    {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
-                                            {{--<span>Информация</span>--}}
-                                            {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
-                                          {{--</span>--}}
-                            {{--</li>--}}
-                            {{--<li class="menu_wrapper-item-main_menu-item">--}}
-                                          {{--<span class="menu_wrapper-item-main_menu-item-text">--}}
-                                            {{--<a href="/contacts">Контакты</a>--}}
-                                              {{--<img src="/images/icons/arrow_right.svg" alt="arrow"/>--}}
-                                          {{--</span>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-
-
-
                     </div>
                 </div>
             </a>
@@ -202,9 +152,6 @@
                 <div class="menu_wrapper-item_search_input">
                     <form action="{{ route('searchProducts') }}" method="get" style="margin-bottom: 0;">
                         {{ csrf_field() }}
-                        {{--<div id="app">--}}
-                            {{--<input type="text"/>--}}
-                        {{--</div>--}}
                     </form>
                 </div>
                 <div class="menu_wrapper-item_search_button">
@@ -240,7 +187,6 @@
             <div class="menu_wrapper-item_cart">
                 <a href="/cart">
                     <div class="menu_wrapper-item_cart_icon">
-                        <img src="/images/menu/cart.svg" alt=""/>
                         <span class="menu_wrapper-item_cart_icon-amount" data-cartAmountVal>
                 @php
                     if(Session::get('cart')) echo \App\Includes\HelperString::onlyNumber(Session::get('cart')->totalQuantity)
