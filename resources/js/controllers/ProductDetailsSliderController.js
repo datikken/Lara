@@ -24,6 +24,10 @@ class ProductDetailsSliderController {
             touchRatio: 0.2,
             slideToClickedSlide: true,
             loop: true,
+            navigation: {
+                nextEl: '.gallery-thumbs-next',
+                prevEl: '.gallery-thumbs-prev',
+            },
             loopedSlides: 4
         });
 

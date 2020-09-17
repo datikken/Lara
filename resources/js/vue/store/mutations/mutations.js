@@ -717,6 +717,8 @@ let mutations = {
         }
 
         products.forEach((prod) => {
+            prod.product_indbid = prod.id;
+            
             if (prod.name.indexOf(payload) >= 0) {
                 separate(prod)
             }

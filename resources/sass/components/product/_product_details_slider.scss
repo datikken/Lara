@@ -41,14 +41,14 @@
 }
 
 .details_slide {
-    background-size: contain!important;
-    background-position: center;
+    background-size: 39% !important;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 100%; 
+    background-position: bottom;
 }
 
 .details_slide_thumb {
-    background-size: 50%!important;
+    background-size: 30%!important;
 }
 
 .swiper-container {
@@ -69,8 +69,8 @@
 }
 .gallery-thumbs {
     width: 600px!important;
+    max-height: 85px;
     box-sizing: border-box;
-    padding: 10px 0;
     overflow: hidden;
 }
 .gallery-thumbs .swiper-slide {
@@ -102,13 +102,57 @@
 }
 
 .details_wrap-slider {
-    .swiper-container {
-        .swiper-button-next,.swiper-button-prev {
-            display: none!important;
+    .gallery-thumbs {
+        .gallery-thumbs-next,
+        .gallery-thumbs-prev {
+            position: absolute;
+            right: 0;
+            transform: translate(0, -50%);
+            height: 85px;
+            top: 64%;
+            width: 7.4px;
+            height: 12px;
+
             &:after {
-                display: none;
+                font-family: unset;
+                content: '';
+                width: 20px;
+                height: 20px;
+                width: 7.4px;
+                height: 12px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
             }
         }
+        .gallery-thumbs-next {
+            right: 0;
+
+            &:after {
+                background-image: url(/images/product/details_swipeRight.svg);
+            }
+        }
+        .gallery-thumbs-prev {
+            left: 0;
+
+            &:after {
+                background-image: url(/images/product/details_swipeLeft.svg);
+            }
+        }
+        .swiper-slide-active {
+            position: relative;
+        }
+        .swiper-slide-active:after {
+            content: '';
+            display: block;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background: $yellow;
+            height: 4px;
+        }
+    }
+    .swiper-container {
         .swiper-wrapper {
             .swiper-slide-img {
                 width: 100%;

@@ -171,6 +171,8 @@
                     background-color: $white;
                     transition: background-color $transition;
                     margin-bottom: 0;
+                    padding-left: 15px;
+                    padding-right: 30px;
 
                     a {
                         text-decoration: none;
@@ -195,6 +197,13 @@
                         }
                     }
 
+
+                    &:last-child {
+                        .menu_wrapper-item-main_menu-item-text {
+                            border-bottom: 0;
+                        }
+                    }
+
                     &-text {
                         height: 100%;
                         position: relative;
@@ -204,7 +213,7 @@
                         font-size: 12px;
                         line-height: 14px;
                         letter-spacing: 0.02em;
-                        padding: 12.5px;
+                        padding: 12.5px 12.5px 12.5px 0;
                         color: $dblack;
                         border-bottom: 1px solid $light_gray;
                         justify-content: space-between;
@@ -215,6 +224,8 @@
                         img {
                             margin-right: 5px;
                             height: 12px;
+                            position: absolute;
+                            right: -15px;
                         }
 
                         &_inner {
@@ -222,24 +233,35 @@
                         }
 
                         &_secondary {
-                            background: $white;
+                            background: #fff;
                             color: black;
                             position: absolute;
                             list-style: none;
                             padding: 0;
                             z-index: 99;
                             width: 130px;
-                            top: 14.4rem;
+                            top: 14.45rem;
                             font-weight: 300;
-                            right:-27px;
-                            transition: all .2s;
+                            right: -227px;
+                            transition: all 0.2s;
 
                             &-text {
                                 padding: 12.5px;
                                 color: black;
-                                position: relative;
-                                border-bottom: 1px solid $light_gray;
                                 margin-bottom: 0;
+                                padding: 12.5px 15px 12.5px 20px;
+                                position: relative;
+
+                                &:after {
+                                    content: "";
+                                    display: block;
+                                    width: 69%;
+                                    position: absolute;
+                                    bottom: -2px;
+                                    height: 1px;
+                                    background: $light_gray;
+                                }
+
                                 a {
                                     text-decoration: none;
                                     color: $dblack;
@@ -289,7 +311,7 @@
                     }
 
                     @include breakpoint($medium) {
-                        margin-left: 70px;
+                        margin-left: 60px;
                         margin-right: 0;
                     }
 
@@ -345,7 +367,7 @@
                 }
 
                 &_icon {
-                    width: 14px;
+                    width: 18px;
                     height: 20px;
                 }
 
@@ -354,7 +376,7 @@
                     line-height: 14px;
                     letter-spacing: 0.02em;
                     color: $dblack;
-                    margin-left: 5px;
+                    margin-left: 10px;
                     align-items: center;
                     display: none;
 

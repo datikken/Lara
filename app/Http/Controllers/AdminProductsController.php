@@ -227,6 +227,7 @@ class AdminProductsController extends Controller
             $arr = [
                 'uuid' => isset($value->uuid) ? $value->uuid : json_encode(array()),
                 'name' => isset($value->name_buh) ? $value->name_buh : json_encode(array()),
+                'artikul' => isset($value->Артикул) ? $value->Артикул : json_encode(array()),
                 'currency_code' => isset($value->currency_code) ? $value->currency_code : json_encode(array()),
                 'params' => isset($value->params) ? json_encode($value->params) : json_encode(array()),
                 'photo' => isset($value->photo) ? $value->photo : json_encode(array()),

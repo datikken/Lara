@@ -15,9 +15,11 @@
         display: grid;
         grid-template-columns: 200px 1fr;
         height: 40px;
+        border-bottom: 1px solid $light_gray;
 
         .prcp_item {
             border-right: 1px solid $light_gray;
+            border-left: 1px solid $light_gray;
             font-family: $font;
             font-style: normal;
             font-weight: 600;
@@ -26,6 +28,10 @@
             letter-spacing: 0.02em;
             color: $dblack;
             cursor: pointer;
+
+            &:nth-child(2) {
+                border-left: none;
+            }
         }
     }
     &_head {
@@ -45,6 +51,9 @@
             text-transform: uppercase;
             color: $blue;
             cursor: pointer;
+            &:nth-child(2) {
+                border-left: none;
+            }
         }
     }
 }

@@ -12,11 +12,15 @@
 
         &-info {
             margin-left: 70px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
 
             .price_wrap {
                 display: flex;
                 align-items: flex-end;
-                margin-bottom: 30px;
+                position: absolute;
+                bottom: 84px;
 
                 .discount {
                     margin-bottom: 3px;
@@ -85,11 +89,17 @@
             }
 
             &_item {
+                &:last-child {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                }
+
                 &-icons {
                     display: flex;
                     align-items: center;
                     justify-items: center;
-                    margin: 10px 0 20px 0;
+                    margin: 0 0 30px 0;
 
                     &_icon {
                         width: 50px;
@@ -142,17 +152,21 @@
                     line-height: 14px;
                     letter-spacing: 0.02em;
                     color: $dblack;
+
+                    p {
+                        margin: 0 0 25px 0;   
+                    }
                 }
                 &-head {
                     h1 {
-                        font-family: $semifont;
-                        font-style: normal;
+                        font-family: $font;
                         font-weight: 600;
                         font-size: 18px;
                         line-height: 18px;
                         letter-spacing: 0.02em;
                         color: $dblack;
                         margin-top: 40px;
+                        margin-bottom: 25px;
                     }
                 }
             }

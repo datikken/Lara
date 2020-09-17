@@ -31,7 +31,7 @@
             </div>
             <div class="menu_wrapper-item">
                 <a href="/tracking" class="menu_wrapper-item_tracking">
-                    <img class="menu_wrapper-item_tracking_icon" src="/images/menu/header_tracking.svg" alt="">
+                    <img class="menu_wrapper-item_tracking_icon" src="/images/menu/menu_point.svg" alt="status"/>
                     <div class="menu_wrapper-item_tracking_text">
                         <span>Статус заказа</span>
                     </div>
@@ -39,7 +39,7 @@
             </div>
             <div class="menu_wrapper-item">
                 <a href="/login" class="menu_wrapper-item_personal">
-                    <img class="menu_wrapper-item_personal_icon" src="/images/menu/header_man.svg"></img>
+                    <img class="menu_wrapper-item_personal_icon" src="/images/menu/menu_man.svg" alt="cabinet"/>
                     <div class="menu_wrapper-item_personal_text">
                         <span>Личный кабинет</span>
                     </div>
