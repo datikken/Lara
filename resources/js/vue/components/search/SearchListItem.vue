@@ -9,7 +9,7 @@
         </div>
         <div class="sres_col_inner">
 
-            <div class="sres_col_inner_item" v-for="(item, index) in data.cape">
+            <div class="sres_col_inner_item" v-for="(item, index) in data.cape" :key=item>
                 <span class="sres_col_item">{{ index }}</span>
                 <span class="sres_col_item">{{ item }}</span>
             </div>
