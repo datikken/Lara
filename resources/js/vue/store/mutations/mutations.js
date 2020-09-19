@@ -4,8 +4,26 @@ import _ from "lodash";
 import axios from "axios/index";
 
 let mutations = {
-    checkDeliveryAdress(state, adrObj) {
-        
+    checkDeliveryAdress(state, {city, street, house, body, building}) {
+        console.log('before checkDeliveryAdress', city, street, house, body, building);
+
+        fetch('/checkAdressInDadata', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': window.token
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify({city, street, house, body, building})
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                console.warn('dadata', data)
+            })
+
     },
     checkDeliveryPickups(state, {name, adr}) {
         if (state.deliveryType === 'stock' && state.stockDeliveryPickup === false) {

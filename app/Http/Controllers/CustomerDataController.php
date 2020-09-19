@@ -6,6 +6,24 @@ use Illuminate\Support\Facades\Session;
 
 class CustomerDataController extends Controller
 {
+    public function checkAdressInDadata(Request $request)
+    {
+        $token = "a799fcceda51c067cdb475e748d7e27e9b4f6fb9";
+        $secret = "09ef4a22ead3bac21c5c5431f01928c8975cb548";
+        $dadata = new \Dadata\DadataClient($token, $secret);
+
+        $city = $request->city;
+        $street = $request->street;
+        $house = $request->house;
+        $body = $request->body;
+        $building = $request->building;
+
+        $addr = $city . " " . $street . " " . $house . " " . $body . " " . $building;
+        
+        $result = $dadata->clean("address", $addr);
+
+        return response()->json($result);
+    }
 
     public function setStockPickUpPoint(Request $request)
     {

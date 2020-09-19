@@ -3,6 +3,7 @@
 Auth::routes(['verify' => true]);
 Route::group(['middleware' => 'restrictToAdmin'], function () {
 //ORDERS
+    Route::get('/admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
     Route::get('/admin/changeOrderStatus/{id}', ['uses' => 'AdminOrdersController@changeOrderStatus', 'as' => 'changeOrderStatus']);
     Route::get('/getOrdersInfo', ['uses' => 'OrdersController@ordersHistory', 'as' => 'GetOrdersInfo']);
     Route::get('/checkoutProducts', ['uses' => 'ProductsController@checkoutProducts', 'as' => 'checkoutProducts']);
@@ -20,7 +21,6 @@ Route::group(['middleware' => 'ajax'], function () {
 //PRODUCTS
 Route::group(['middleware' => 'checkUserRole'], function () {
     Route::post('/admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider']);
-    Route::get('/admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
     Route::get('/admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts']);
     Route::get('/admin/users', ['uses' => "AdminUsersController@index", 'as' => 'adminDisplayUsers']);
 //Display Edit Product form
@@ -217,3 +217,4 @@ Route::post('StoreNewPassword', ['uses' => 'ChangePasswordController@store', 'as
 Route::get('/mailtemplate', ['uses' => "SendEmailController@testEmailTemplate", 'as' => 'mailtemplate']);
 
 Route::get('/custinfo', ['uses' => 'CustomerDataController@getSessionInfo']);
+Route::post('/checkAdressInDadata', ['uses' => 'CustomerDataController@checkAdressInDadata', 'as' => 'checkAdressInDadata']);

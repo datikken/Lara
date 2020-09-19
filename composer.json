@@ -12,10 +12,11 @@
         "arrilot/laravel-widgets": "^3.13",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.0",
-        "guzzlehttp/guzzle": "^7.0",
+        "hflabs/dadata": "^20.7",
         "laravel/framework": "5.8.*",
         "laravel/helpers": "^1.2",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "guzzlehttp/guzzle": "^6.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
