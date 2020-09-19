@@ -329,9 +329,11 @@ b {
 .resetGrid {
     grid-template-columns: unset!important;
 }
-
 .top3 {
     top: 3px!important;
+}
+.top10 {
+  top: 10px!important;
 }
 //safari
 @media not all and (min-resolution: .001dpcm) {

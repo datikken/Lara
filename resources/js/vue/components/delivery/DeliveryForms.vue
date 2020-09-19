@@ -76,7 +76,8 @@
                 'CHANGE_PROGRESS_STEP',
                 'SCROLL_TO_TOP',
                 'VALIDATE_DELIVERY_ADRESS',
-                'SHOW_DELIVERY_TYPE_HELPER'
+                'SHOW_DELIVERY_TYPE_HELPER',
+                'CHECK_DELIVERY_ADRESS'
             ]),
             validatePickUpPoint() {
                 let valid = false;
@@ -124,6 +125,7 @@
 
                 if(Object.values(data).length > 0) {
                     this.APPLY_DELIVERY_ADRESS(data);
+                    this.CHECK_DELIVERY_ADRESS(data);
 
                     inputs.forEach((npt) => {
                         npt.value = ''
@@ -131,7 +133,6 @@
                     })
 
                     this.$el.querySelector('.error-message').classList.add('as-none');
-                    // $(document.body).scrollTop($('#proceedToPayments').offset().top);
 
                 } else {
                     this.validateAdressForm();

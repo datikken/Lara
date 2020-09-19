@@ -517,6 +517,10 @@ b {
   top: 3px !important;
 }
 
+.top10 {
+  top: 10px !important;
+}
+
 @media not all and (min-resolution: 0.001dpcm) {
   input::-webkit-input-placeholder {
     padding-top: 5px;
