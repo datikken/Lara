@@ -1048,8 +1048,9 @@ b {
 .menu_wrapper-item-main_menu-item:hover span a {
   color: #fff;
 }
-.menu_wrapper-item-main_menu-item:last-child .menu_wrapper-item-main_menu-item-text {
+.menu_wrapper-item-main_menu-item:last-child {
   border-bottom: 0;
+  max-height: 38px;
 }
 .menu_wrapper-item-main_menu-item-text {
   height: 100%;
@@ -1085,10 +1086,10 @@ b {
   padding: 0;
   z-index: 99;
   width: 130px;
-  top: 14.45rem;
+  top: 14.4rem;
   font-weight: 300;
-  right: -227px;
-  transition: all 0.2s;
+  right: -27px;
+  transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
 }
 .menu_wrapper-item-main_menu-item-text_secondary-text {
   padding: 12.5px;
@@ -1115,11 +1116,13 @@ b {
 }
 .menu_wrapper-item-main_menu-item-text_secondary-text:hover {
   background-color: #40404c;
-  border-bottom: 1px solid #292930;
 }
 .menu_wrapper-item-main_menu-item-text_secondary-text:hover a {
   color: #fff;
   font-family: "MontserratSemiBold";
+}
+.menu_wrapper-item-main_menu-item-text_secondary-text:first-child:hover {
+  border-bottom: 0;
 }
 .menu_wrapper-item-main_menu-item-overlay {
   background: transparent;
@@ -1304,20 +1307,6 @@ b {
   font-size: 12px;
   width: 0;
 }
-@media not all and (min-resolution: 0.001dpcm) {
-  .menu_wrapper-item_search_input input::-moz-placeholder {
-    padding-top: 2px;
-  }
-  .menu_wrapper-item_search_input input:-ms-input-placeholder {
-    padding-top: 2px;
-  }
-  .menu_wrapper-item_search_input input::-ms-input-placeholder {
-    padding-top: 2px;
-  }
-  .menu_wrapper-item_search_input input::placeholder {
-    padding-top: 2px;
-  }
-}
 @media screen and (min-width: 600px) {
   .menu_wrapper-item_search_input input {
     width: 100%;
@@ -1330,33 +1319,12 @@ b {
     width: 500px;
   }
 }
-.menu_wrapper-item_search_input input::-moz-placeholder {
+.menu_wrapper-item_search_input input::-webkit-input-placeholder {
   font-style: normal;
   font-weight: normal;
   letter-spacing: 0.02em;
   opacity: 0.5;
-  padding-bottom: 20px;
-}
-.menu_wrapper-item_search_input input:-ms-input-placeholder {
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: 0.02em;
-  opacity: 0.5;
-  padding-bottom: 20px;
-}
-.menu_wrapper-item_search_input input::-ms-input-placeholder {
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: 0.02em;
-  opacity: 0.5;
-  padding-bottom: 20px;
-}
-.menu_wrapper-item_search_input input::placeholder {
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: 0.02em;
-  opacity: 0.5;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 .menu_wrapper-item_search_button {
   width: 30px;

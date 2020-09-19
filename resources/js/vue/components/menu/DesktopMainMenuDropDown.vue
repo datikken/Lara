@@ -127,7 +127,7 @@
 <style scoped>
     [data-desktopMenuBlock] {
         height: 0;
-        transition: height .2s;
+        transition: all .2s;
     }
 
     .showDesktopMenuDropdown {

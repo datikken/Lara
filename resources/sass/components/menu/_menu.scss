@@ -199,9 +199,8 @@
 
 
                     &:last-child {
-                        .menu_wrapper-item-main_menu-item-text {
-                            border-bottom: 0;
-                        }
+                        border-bottom: 0;
+                        max-height: 38px;
                     }
 
                     &-text {
@@ -240,10 +239,10 @@
                             padding: 0;
                             z-index: 99;
                             width: 130px;
-                            top: 14.45rem;
+                            top: 14.4rem;
                             font-weight: 300;
-                            right: -227px;
-                            transition: all 0.2s;
+                            right: -27px;
+                            transition: all .2s cubic-bezier(0.33, 1, 0.68, 1);
 
                             &-text {
                                 padding: 12.5px;
@@ -272,12 +271,14 @@
 
                                 &:hover {
                                     background-color: $black;
-                                    border-bottom: 1px solid $dblack;
-
                                     a {
                                         color: $white;
                                         font-family: $semifont;
                                     }
+                                }
+
+                                &:first-child:hover {
+                                    border-bottom: 0;
                                 }
                             }
                         }
@@ -452,13 +453,6 @@
                         font-size: 12px;
                         width: 0;
 
-                        &::placeholder {
-                            //safari
-                            @media not all and (min-resolution: .001dpcm) {
-                                padding-top: 2px;
-                            }
-                        }
-
                         @include breakpoint(600px) {
                             width: 100%;
                         }
@@ -469,12 +463,12 @@
                             width: 500px;
                         }
 
-                        &::placeholder {
+                        &::-webkit-input-placeholder { 
                             font-style: normal;
                             font-weight: normal;
                             letter-spacing: 0.02em;
                             opacity: 0.5;
-                            padding-bottom: 20px;
+                            padding-bottom: 5px;
                         }
                     }
                 }
