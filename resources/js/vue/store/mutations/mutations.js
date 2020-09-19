@@ -5,26 +5,7 @@ import axios from "axios/index";
 
 let mutations = {
     checkDeliveryAdress(state, adrObj) {
-        var token = "a799fcceda51c067cdb475e748d7e27e9b4f6fb9";
-        var secret = "09ef4a22ead3bac21c5c5431f01928c8975cb548";
-        var url = "https://cleaner.dadata.ru/api/v1/clean/address";
-        var query = "мск сухонска 11/-89";
         
-        var options = {
-            method: "POST",
-            mode: "cors",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Token " + token,
-                "X-Secret": secret
-            },
-            body: JSON.stringify([query])
-        }
-        
-        fetch(url, options)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log("error", error));
     },
     checkDeliveryPickups(state, {name, adr}) {
         if (state.deliveryType === 'stock' && state.stockDeliveryPickup === false) {
