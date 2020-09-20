@@ -1,6 +1,6 @@
 <template>
 
-    <a class="sres_item" v-bind:href="link">
+    <a class="sres_item" v-bind:href="link" @mouseover="backgroundOnHover" @mouseleave="clearBackgroundOnHover">
         <div class="sres_col">
             <span class="sres_col_item sres_color" v-bind:class="color"></span>
         </div>
@@ -46,6 +46,16 @@
                     break;
                 default: 'black'
                     break;
+            }
+        },
+        methods: {
+            backgroundOnHover() {
+                this.$el.classList.add(this.color);
+                this.$el.style.color = '#fff';
+            },
+            clearBackgroundOnHover() {
+                this.$el.classList.remove(this.color);
+                this.$el.style.color = 'unset';
             }
         }
     }

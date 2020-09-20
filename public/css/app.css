@@ -12051,10 +12051,6 @@ main {
     grid-template-columns: 70px 150px 1fr;
   }
 }
-.sres_item:hover {
-  color: white;
-  background: #3559fd;
-}
 .sres_col {
   position: relative;
 }
@@ -12099,6 +12095,10 @@ main {
   background-size: cover;
   background-position: center;
   background-color: #fff;
+}
+
+.blackCol {
+  background-color: #40404c;
 }
 
 .blueCol {
@@ -12544,7 +12544,6 @@ main {
 .prcp_wrap {
   width: 971px;
   margin: 0 auto;
-  border-bottom: 1px solid #e9e9ea;
 }
 .prcp_item {
   display: flex;

@@ -1,12 +1,10 @@
-@php #dump($chrst); @endphp
+{{-- @php dump($chrst); @endphp --}}
 
 <div class="prdch  <? if ($class) {
     echo $class;
 } ?>">
+
     <div class="prdch_wrap">
-
-        {{--{{ dd($chrst) }}--}}
-
         <div class="prdch_item">
             <div class="prdch_name">
                     <span>
@@ -52,7 +50,7 @@
                     </span>
                 </div>
                 <div class="prdch_val">
-                    <span>{{ $chrst->Ресурс }} текстовых страницы А4</span>
+                    <span>{{ $chrst->Ресурс }}</span>
                 </div>
             </div>
         @endif
