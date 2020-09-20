@@ -521,6 +521,10 @@ b {
   top: 10px !important;
 }
 
+.top9 {
+  top: 9px !important;
+}
+
 @media not all and (min-resolution: 0.001dpcm) {
   input::-webkit-input-placeholder {
     padding-top: 5px;
@@ -7715,9 +7719,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-color: #fff;
   height: 170px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   z-index: 99999999;
   transition: top 0.2s;
+  min-width: 300px;
 }
 .dform_wrap-col .delivery_type-item {
   display: flex;

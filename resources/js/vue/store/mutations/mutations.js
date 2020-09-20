@@ -5,7 +5,7 @@ import axios from "axios/index";
 
 let mutations = {
     checkDeliveryAdress(state, {city, street, house, body, building}) {
-        console.log('before checkDeliveryAdress', city, street, house, body, building);
+        let that = this;
 
         fetch('/checkAdressInDadata', {
             method: "POST",
@@ -21,9 +21,76 @@ let mutations = {
                 return response.json();
             })
             .then((data) => {
-                console.warn('dadata', data)
-            })
+                console.warn('dadata', data.region_with_type)
 
+                if(data) {
+                    if(data.region_with_type.indexOf('Москва') >= 0) {
+                        state.selfDelivery = true;
+                    } else {
+                        state.selfDelivery = false;
+                    }
+                } else {
+                    state.selfDelivery = false;
+                }
+            })
+            .then(() => {
+                that.dispatch('SHOW_DELIVERY_TYPE_HELPER');
+            })
+    },
+    setDeliveryIndex(state, data) {
+        let that = this;
+        
+        fetch('/setIndex', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': window.token
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify(data)
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.customerIndex = data;
+                state.suggestedPostalOffice = data.suggestedOffice[0].unrestricted_value;
+
+                if(data) {
+                    if(data.suggestedOffice[0].unrestricted_value.indexOf('Москва') >= 0) {
+                        state.selfDelivery = true;
+                    } else {
+                        state.selfDelivery = false;
+                    }
+                } else {
+                    state.selfDelivery = false;
+                }
+            })
+            .then(() => {
+                that.dispatch('SHOW_DELIVERY_TYPE_HELPER');
+            })
+            .catch(err => {
+                console.error('setDeliveryIndex', err)
+            })
+    },
+    applyDeliveryAdress(state, data) {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': window.token
+            }
+        });
+        $.ajax({
+            method: "POST",
+            url: '/setAdress',
+            data,
+            success: function (data) {
+                state.customerAdress = data;
+            },
+            error: function (error) {
+                console.warn(error);
+            }
+        });
     },
     checkDeliveryPickups(state, {name, adr}) {
         if (state.deliveryType === 'stock' && state.stockDeliveryPickup === false) {
@@ -57,6 +124,15 @@ let mutations = {
             return false;
         }
     },
+    removeDeliveryTypeError() {
+        let block = document.querySelector('#delivery_type');
+        block.classList.remove('deliveryTypeError');
+    },
+    deliveryTypeError(state) {
+        let block = document.querySelector('#delivery_type');
+        block.classList.add('deliveryTypeError');
+        state.deliveryType = 'error';
+    },
     getAllInformationPosts(state) {
         fetch('/getAllInformationPosts', {
             method: "GET"
@@ -66,12 +142,11 @@ let mutations = {
             })
             .then((data) => {
                 state.informationPosts = data;
-                // console.warn('informationPosts', data);
             });
     },
     showDeliveryTypeHelper() {
-        let helper = document.querySelector('[data-deliveryType_helper]');
-        helper.classList.add('top10');
+        let helper = document.querySelector('[data-delivery-type_helper]');
+        helper.classList.add('top9');
     },
     sendGoogleAnalytics(state, {category, eventAction, eventLabel, eventValue}) {
         window.ga('send', 'event', category, eventAction, eventLabel, eventValue);
@@ -451,51 +526,6 @@ let mutations = {
         this.dispatch('SAVE_URIKS_DATA', obj);
 
         return returnObj;
-    },
-    setDeliveryIndex(state, data) {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': window.token
-            }
-        });
-        $.ajax({
-            method: "POST",
-            url: '/setIndex',
-            data,
-            success: function (data) {
-                state.customerIndex = data;
-            },
-            error: function (error) {
-                console.warn(error);
-            }
-        });
-    },
-    removeDeliveryTypeError() {
-        let block = document.querySelector('#delivery_type');
-        block.classList.remove('deliveryTypeError');
-    },
-    deliveryTypeError(state) {
-        let block = document.querySelector('#delivery_type');
-        block.classList.add('deliveryTypeError');
-        state.deliveryType = 'error';
-    },
-    applyDeliveryAdress(state, data) {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': window.token
-            }
-        });
-        $.ajax({
-            method: "POST",
-            url: '/setAdress',
-            data,
-            success: function (data) {
-                state.customerAdress = data;
-            },
-            error: function (error) {
-                console.warn(error);
-            }
-        });
     },
     applyPriceFilter(state, name) {
         state.filteredProducts = _.orderBy(state.filteredProducts, ['price'], [name]);

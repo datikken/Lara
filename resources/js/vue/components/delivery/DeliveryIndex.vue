@@ -45,7 +45,6 @@
                 }
 
                 this.SET_DELIVERY_INDEX(obj);
-                this.SHOW_DELIVERY_TYPE_HELPER();
 
                 npt.value = '';
                 npt.setAttribute('disabled', 'true');

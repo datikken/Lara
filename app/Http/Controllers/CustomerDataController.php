@@ -6,11 +6,12 @@ use Illuminate\Support\Facades\Session;
 
 class CustomerDataController extends Controller
 {
+    private $token = 'a799fcceda51c067cdb475e748d7e27e9b4f6fb9';
+    private $secret = '09ef4a22ead3bac21c5c5431f01928c8975cb548';
+
     public function checkAdressInDadata(Request $request)
     {
-        $token = "a799fcceda51c067cdb475e748d7e27e9b4f6fb9";
-        $secret = "09ef4a22ead3bac21c5c5431f01928c8975cb548";
-        $dadata = new \Dadata\DadataClient($token, $secret);
+        $dadata = new \Dadata\DadataClient($this->token, $this->secret);
 
         $city = $request->city;
         $street = $request->street;
@@ -78,7 +79,11 @@ class CustomerDataController extends Controller
         $index = $request->index;
         $item = $request->session()->put('cartIndex', $index);
 
-        return response()->json((object) array('deliveryIndex' => $index));
+        $dadata = new \Dadata\DadataClient($this->token, null);
+        $result = $dadata->suggest("postal_unit", $index);
+
+
+        return response()->json((object) array('deliveryIndex' => $index, 'suggestedOffice' => $result));
     }
 
     public function setAdress(Request $request)

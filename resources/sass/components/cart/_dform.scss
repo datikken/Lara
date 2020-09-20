@@ -149,9 +149,10 @@
         background-color: #fff;
         height: 170px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         z-index: 99999999;
         transition: top .2s;
+        min-width: 300px;
       }
 
       .delivery_type {

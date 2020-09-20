@@ -91,10 +91,6 @@
             validateAdressForm() {
                 let input = this.$el.querySelector('[data-required]');
                 let indexField = this.$el.querySelector('[data-index_field]');
-
-
-                console.warn('validateAdressForm', indexField.getAttribute('disabled'))
-
                 let valid = false;
 
                 try {
@@ -137,9 +133,6 @@
                 } else {
                     this.validateAdressForm();
                 }
-
-
-                this.SHOW_DELIVERY_TYPE_HELPER();
             }
         }
     }

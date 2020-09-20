@@ -1,6 +1,12 @@
 let state = {
-    lastTwoYearsInfo: false,
+    selfDelivery: null,
+    stockDeliveryPickup: false,
+    suggestedPostalOffice: false,
     paymentProvider: false,
+    signatureHash: false,
+    gridCatalog: false,
+    lastTwoYearsInfo: false,
+    informationPosts: false,
     productsLoaded: false,
     closeListener: false,
     customerIndex: false,
@@ -27,11 +33,7 @@ let state = {
     order: {},
     usersFIO: '',
     cartStep: 0,
-    signatureHash: false,
-    gridCatalog: false,
     catalogPerPage: 16,
-    informationPosts: false,
-    stockDeliveryPickup: false
 }
 
 export default state;
