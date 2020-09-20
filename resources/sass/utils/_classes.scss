@@ -348,3 +348,9 @@ b {
         padding-top: 2px;
     }
 }
+
+.topFixedMenu {
+  z-index: 9999999;
+  position: fixed;
+  top: 0;
+}

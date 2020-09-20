@@ -91,6 +91,9 @@
                 return this.$store.state.cart
             }
         },
+        mounted() {
+            this.fixedMenuOnScroll();
+        },
         created() {
             this.CHECK_CART_STATE();
         },
@@ -98,6 +101,17 @@
             ...mapActions([
                 'CHECK_CART_STATE'
             ]),
+            fixedMenuOnScroll() {
+                let that = this;
+
+                window.addEventListener('scroll', function() {
+                    if(window.pageYOffset >= 60) {
+                        that.$el.classList.add('topFixedMenu');
+                    } else {
+                        that.$el.classList.remove('topFixedMenu');
+                    }
+                })
+            },
             DesktopDropdownTrigger() {
                 let menu = document.querySelector('[data-desktopMenuBlock]');
                     menu.classList.remove('as-none');

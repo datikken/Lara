@@ -534,6 +534,12 @@ b {
     padding-top: 2px;
   }
 }
+.topFixedMenu {
+  z-index: 9999999;
+  position: fixed;
+  top: 0;
+}
+
 .animated_btn {
   transition: box-shadow 0.2s;
 }
