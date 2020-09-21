@@ -10,7 +10,7 @@
         .postList_posted_date {
             margin-left: 15px;
         }
-        
+
         &:after {
             left: 24px;
             top: 0;
@@ -93,7 +93,7 @@
         color: $gray;
     }
     &_comments {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
 
         &_responseBtn {
             width: 130px;
@@ -145,6 +145,7 @@
             text-align: justify;
             letter-spacing: 0.02em;
             color: $gray;
+            margin-left: 5px;
         }
         &_like, &_dislike, &_response {
             background-repeat: no-repeat;
@@ -158,15 +159,17 @@
         }
         &_dislike {
             background-image: url('/images/icons/postItem/dislikeGray.svg');
+            margin-left: 10px;
         }
         &_response {
             background-image: url('/images/icons/postItem/commentsGray.svg');
+            margin-left: 10px;
         }
         &_col {
             &:last-child {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: flex-end;
                 align-items: flex-end;
             }
             &_item {
@@ -175,6 +178,7 @@
                 align-items: center;
                 &:first-child {
                     height: 20px;
+                    margin-bottom: 10px;
                 }
             }
         }
@@ -205,7 +209,7 @@
         }
         &_header {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             margin-bottom: 30px;
 
             &_item {
@@ -237,11 +241,8 @@
     &_block {
         max-width: $layoutw;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: 340px 760px;
         grid-gap: 60px;
-        margin-top: 70px;
-        margin-bottom: 50px;
+        margin-top: 30px;
     }
     &_face, &_insta, &_tele, &_vk, &_like, &_dislike {
         height: 40px;

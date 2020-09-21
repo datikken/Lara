@@ -77,8 +77,11 @@
     </div>
 
     <div class="postItem_block">
-        @include('components.blog.post_auth')
+        <!-- @include('components.blog.post_auth') -->
         @include('components.blog.post_comments')
     </div>
+
+    @include('components.btn.text_btn', [ 'class' => 'action_btn allcomments_btn', 'text' => 'смотреть все комментарии'])
+    @include('components.blog.post_item_commentsForm')
 
 </div>
