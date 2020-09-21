@@ -114,13 +114,13 @@ class BlogPostController {
     constructor() {
         this.block = document.querySelector('.postList');
         this.commentsForm = document.querySelector('[data-blogCommentsForm]');
-        this.postId = document.querySelector('[data-blogCommentPostId]').dataset.blogcommentpostid;
-        this.route = document.querySelector('[data-blogCommentRoute]').dataset.blogcommentroute;
+        if(this.commentsForm) {
+            this.postId = document.querySelector('[data-blogCommentPostId]').dataset.blogcommentpostid;
+            this.route = document.querySelector('[data-blogCommentRoute]').dataset.blogcommentroute;
+        }
 
-        console.warn(this.route)
-
-            this.commentsForm && this.activateComments();
-            this.block && this.setListeners(block);
+        this.commentsForm && this.activateComments();
+        this.block && this.setListeners(block);
     }
 }
 
