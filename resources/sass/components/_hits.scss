@@ -114,12 +114,12 @@
       .hits_recs-item_inner-item {
         &:first-child {
             background: $light_gray;
-            color: black;
+            color: #40404C;
         }
         &:nth-child(2) {
           border-top-right-radius: 30px;
           border-bottom-right-radius: 30px;
-          background: $dblack;
+          background: $black;
           color: $white;
         }
       }
@@ -129,6 +129,11 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 10px !important;
+      &:nth-child(2) {
+        .hits_recs-item_inner-item {
+          min-width: 150px;
+        }
+      }
     }
     &_inner {
       font-family: $font;
@@ -140,12 +145,13 @@
       letter-spacing: 0.02em;
       color: $dblack;
       margin-bottom: 20px;
+
       &:first-child {
         margin-bottom: 25px;
       }
 
       &-item {
-        border: 1px solid black;
+        border: 1px solid $black;
         padding: 7px 20px;
         font-family: $font;
         font-weight: 500;
@@ -155,12 +161,16 @@
         align-items: flex-end;
         letter-spacing: 0.02em;
         text-transform: uppercase;
+        min-width: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:first-child {
           border-right: 0;
           border-top-left-radius: 30px;
           border-bottom-left-radius: 30px;
-          background: $dblack;
+          background: $black;
           color: $white;
         }
         &:nth-child(3) {
@@ -295,7 +305,7 @@
           line-height: 100%;
           letter-spacing: -0.02em;
           text-transform: uppercase;
-          color: black;
+          color:#40404C;
         }
       }
     }
