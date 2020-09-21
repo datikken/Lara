@@ -82,6 +82,6 @@
     </div>
 
     @include('components.btn.text_btn', [ 'class' => 'action_btn allcomments_btn', 'text' => 'смотреть все комментарии'])
-    @include('components.blog.post_item_commentsForm')
+    @include('components.blog.post_item_commentsForm', ['post' => $post ])
 
 </div>

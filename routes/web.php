@@ -96,6 +96,7 @@ Route::get('/home/orders', ['uses' => 'HomeController@displayOrders', 'as' => 'd
 //Blog
 Route::get('blog', ['uses' => 'BlogController@index', 'as' => 'blog']);
 Route::get('blog/{id}', ['uses' => 'BlogController@postDetails', 'as' => 'postDetails']);
+Route::post('/blog/blogPostComment', ['uses' => 'BlogController@blogPostComment', 'as' => 'blogPostComment']);
 Route::post('blog/like/{id}', ['uses' => 'BlogController@like', 'as' => 'blogLike']);
 
 //PAGES

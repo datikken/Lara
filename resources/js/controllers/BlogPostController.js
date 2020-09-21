@@ -1,6 +1,58 @@
 import $ from 'jquery';
 
 class BlogPostController {
+    _clearForm() {
+        let inputs = this.commentsForm.querySelectorAll('input');
+        let area = this.commentsForm.querySelector('[name="message"]');
+            area.value = '';
+            inputs.forEach(npt => npt.value = '');
+    }
+    _makeRequest({ name, email, message, postId }) {
+        let that = this;
+
+        fetch(this.route, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': window.token
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify({
+                name, email, message, postId
+            })
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            that._clearForm();
+        })
+        .catch(err => console.error(err))
+    }
+    activateComments() {
+        let submit = this.commentsForm.querySelector('.blogCom_submit');
+        let inputs = this.commentsForm.querySelectorAll('input');
+        let area = this.commentsForm.querySelector('[name="message"]');
+        let dataObj = {};
+        let that = this;
+
+        submit.addEventListener('click', function() {
+
+            inputs.forEach(npt => {
+                let name = npt.getAttribute('name')
+                let val = npt.value;
+
+                dataObj[name] = val;
+            })
+
+            dataObj[area.getAttribute('name')] = area.value;
+            dataObj['postId'] = that.postId;
+
+
+            that._makeRequest(dataObj)
+        })
+    }
     setListeners(block) {
         let posts = block.querySelectorAll('.postList_item');
             posts.forEach((el, i) => {
@@ -60,8 +112,15 @@ class BlogPostController {
             })
     }
     constructor() {
-        let block = document.querySelector('.postList');
-            block && this.setListeners(block);
+        this.block = document.querySelector('.postList');
+        this.commentsForm = document.querySelector('[data-blogCommentsForm]');
+        this.postId = document.querySelector('[data-blogCommentPostId]').dataset.blogcommentpostid;
+        this.route = document.querySelector('[data-blogCommentRoute]').dataset.blogcommentroute;
+
+        console.warn(this.route)
+
+            this.commentsForm && this.activateComments();
+            this.block && this.setListeners(block);
     }
 }
 
