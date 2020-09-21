@@ -3,9 +3,15 @@
     top: -2.75rem;
     right: 4px;
     display: none;
+    align-items: center;
+    right: 20px;
+    width: 200px;
+    position: relative;
+    float: right;
 
     @include breakpoint($medium) {
-        display: block;
+        display: flex;
+        justify-content: space-between;
     }
 
     &_text {
@@ -15,7 +21,6 @@
         font-size: 12px;
         line-height: 14px;
         letter-spacing: 0.02em;
-        text-transform: uppercase;
         color: $black;
     }
     &_wrap {
@@ -24,8 +29,12 @@
         justify-content: center;
     }
     &_item {
-        margin: 0 10px;
         cursor: pointer;
+
+        &:first-child {
+            margin-left: 0;
+            margin-right: 5px;
+        }
 
         &-filter, &-list, &-grid {
             width: 18px;
@@ -37,12 +46,77 @@
         &-filter {
             background-image: url('/images/icons/priceFilter.svg');
         }
+    }
 
-        //&-list {
-        //    background-image: url('/images/icons/stroke.svg');
-        //}
-        //&-grid {
-        //    background-image: url('/images/icons/grid.svg');
-        //}
+    &_arrow {
+        width: 12px;
+        height: 7px;
+        background-size: cover;
+        background-position: center;
+        background-image: url('/images/sortDropdown/sortDropdown_arr.svg');
+        margin: 0 35px 0 0;
+    }
+}
+    .catalogSwitch_item-active {
+        path {
+            stroke: #40404C!important;
+        }
+    }
+    .catalogSwitch_item-list {
+        margin: 0 20px 0 0;
+    }
+    .catalogSwitch_item-list, .catalogSwitch_item-grid {
+        path {
+            stroke: #D4D4D5;
+        }
+    }
+
+.sortDropdown {
+    position:absolute;
+    z-index: 999999;
+    width: 200px;
+    height: 160px;
+    right: 0;
+    top: 30px;
+    background: #fff;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
+    &_icon {
+        width: 10px;
+        height: 10px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 20px;
+    }
+
+    &_item {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        &:hover {
+            background: $light_gray;
+        }
+
+        &:nth-child(even) {
+            .sortDropdown_icon {
+                background-image: url('/images/sortDropdown/sortDropdown_asc.svg');
+            }
+        }
+        &:nth-child(odd) {
+            .sortDropdown_icon {
+                background-image: url('/images/sortDropdown/sortDropdown_desc.svg');
+            }
+        }
+    }
+
+    &_text {
+        font-family: Montserrat;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color: #000000;
+        padding-left: 20px;
     }
 }

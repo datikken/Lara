@@ -1,10 +1,33 @@
 <template>
     <div class="catalogSwitch">
         <div class="catalogSwitch_wrap">
-            <div class="catalogSwitch_item" @click="filterProductsByPrice"><span class="catalogSwitch_text">по цене</span></div>
-            <div class="catalogSwitch_item catalogSwitch_item-filter" data-orderIcon @click="filterProductsByPrice">
+            <div class="catalogSwitch_item" @click="rotateIcon"><span class="catalogSwitch_text">Сортировать</span></div>
 
+                <div class="sortDropdown as-none" data-sortDropdown>
+                    <div class="sortDropdown_wrap">
+                        <div class="sortDropdown_item" @click="filterProductsByPrice" data-filterAsc="true">
+                            <div class="sortDropdown_text">По цене</div>
+                            <div class="sortDropdown_icon">
+                            </div>
+                        </div>
+                        <div class="sortDropdown_item"  @click="filterProductsByPrice" data-filterDesc="true">
+                            <div class="sortDropdown_text">По цене</div>
+                            <div class="sortDropdown_icon"></div>
+                        </div>
+                        <div class="sortDropdown_item">
+                            <div class="sortDropdown_text">По популярности</div>
+                            <div class="sortDropdown_icon"></div>
+                        </div>
+                        <div class="sortDropdown_item">
+                            <div class="sortDropdown_text">По популярности</div>
+                            <div class="sortDropdown_icon"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+<div class="catalogSwitch_item catalogSwitch_arrow" data-sortDropdown_arrow></div>
+
             <svg class="catalogSwitch_item catalogSwitch_item-list" @click="switchCatalogGrid" data-grid="list" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.416504 1.01758H19.5832" stroke="#40404C" stroke-width="1.92" stroke-miterlimit="10"/>
                 <path d="M0.416504 9H19.5832" stroke="#40404C" stroke-width="1.92" stroke-miterlimit="10"/>
@@ -40,16 +63,21 @@
                 'SWITCH_CATALOG_LAYOUT',
                 'SEND_GOOGLE_ANALYTICS'
             ]),
-            filterProductsByPrice() {
-                if(this.descending === true) {
+            filterProductsByPrice(e) {
+                console.warn('filterProductsByPrice', e, e.currentTarget, e.target)
+
+console.warn(e.currentTarget.dataset.filterdesc)
+
+                if(e.currentTarget.dataset.filterdesc) {
                     this.$store.dispatch('PRICE_FILTER', 'desc');
                     this.descending = false;
-                } else {
+                } 
+
+                if(e.currentTarget.dataset.filterasc) {
                     this.$store.dispatch('PRICE_FILTER', 'asc');
                     this.descending = true;
                 }
 
-                this.rotateIcon();
 
                 let gObj = {
                     category: 'filters',
@@ -62,8 +90,10 @@
 
             },
             rotateIcon() {
-                let icon = this.$el.querySelector('[data-orderIcon]');
+                let icon = this.$el.querySelector('[data-sortDropdown_arrow]');
+                let dropdown = this.$el.querySelector('[data-sortDropdown]');
                     icon.classList.toggle('rotate180');
+                    dropdown.classList.toggle('as-none');
             },
             switchCatalogGrid(e) {
                 let type = e.currentTarget.dataset.grid;
@@ -99,16 +129,3 @@
         }
     }
 </script>
-
-<style lang="scss">
-    .catalogSwitch_item-active {
-        path {
-            stroke: #40404C!important;
-        }
-    }
-    .catalogSwitch_item-list, .catalogSwitch_item-grid {
-        path {
-            stroke: #D4D4D5;
-        }
-    }
-</style>

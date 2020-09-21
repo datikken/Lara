@@ -13157,10 +13157,16 @@ main {
   top: -2.75rem;
   right: 4px;
   display: none;
+  align-items: center;
+  right: 20px;
+  width: 200px;
+  position: relative;
+  float: right;
 }
 @media screen and (min-width: 1030px) {
   .catalogSwitch {
-    display: block;
+    display: flex;
+    justify-content: space-between;
   }
 }
 .catalogSwitch_text {
@@ -13170,7 +13176,6 @@ main {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
   color: #40404c;
 }
 .catalogSwitch_wrap {
@@ -13179,8 +13184,11 @@ main {
   justify-content: center;
 }
 .catalogSwitch_item {
-  margin: 0 10px;
   cursor: pointer;
+}
+.catalogSwitch_item:first-child {
+  margin-left: 0;
+  margin-right: 5px;
 }
 .catalogSwitch_item-filter, .catalogSwitch_item-list, .catalogSwitch_item-grid {
   width: 18px;
@@ -13191,6 +13199,68 @@ main {
 }
 .catalogSwitch_item-filter {
   background-image: url("/images/icons/priceFilter.svg");
+}
+.catalogSwitch_arrow {
+  width: 12px;
+  height: 7px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/images/sortDropdown/sortDropdown_arr.svg");
+  margin: 0 35px 0 0;
+}
+
+.catalogSwitch_item-active path {
+  stroke: #40404C !important;
+}
+
+.catalogSwitch_item-list {
+  margin: 0 20px 0 0;
+}
+
+.catalogSwitch_item-list path, .catalogSwitch_item-grid path {
+  stroke: #D4D4D5;
+}
+
+.sortDropdown {
+  position: absolute;
+  z-index: 999999;
+  width: 200px;
+  height: 160px;
+  right: 0;
+  top: 30px;
+  background: #fff;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
+}
+.sortDropdown_icon {
+  width: 10px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 20px;
+}
+.sortDropdown_item {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.sortDropdown_item:hover {
+  background: #e9e9ea;
+}
+.sortDropdown_item:nth-child(even) .sortDropdown_icon {
+  background-image: url("/images/sortDropdown/sortDropdown_asc.svg");
+}
+.sortDropdown_item:nth-child(odd) .sortDropdown_icon {
+  background-image: url("/images/sortDropdown/sortDropdown_desc.svg");
+}
+.sortDropdown_text {
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  padding-left: 20px;
 }
 
 .payment_dropdown_open, .payment_dropdown_open-right {
