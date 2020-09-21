@@ -138,6 +138,14 @@ input {
   display: none !important;
 }
 
+input::-webkit-input-placeholder {
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  opacity: 0.5;
+  padding-bottom: 4px;
+}
+
 .load_more-btn {
   position: absolute;
   cursor: pointer;
