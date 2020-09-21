@@ -1,5 +1,86 @@
 .postItem {
     width: 100%;
+
+    &_actions {
+        margin-left: 85px;
+    }
+
+    &_posted {
+        padding-left: 45px;
+        .postList_posted_date {
+            margin-left: 15px;
+        }
+        
+        &:after {
+            left: 24px;
+            top: 0;
+        }
+    }
+
+    &_top {
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+
+    &_backIcon, &_fwdIcon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    &_backIcon {
+        background-image: url('/images/blog/blogPost_prev.svg');
+        margin-right:10px;
+    }
+    &_fwdIcon {
+        background-image: url('/images/blog/blogPost_next.svg');
+        margin-left:10px;
+    }
+    &_backText {
+    }
+    &_fwdText {
+
+    }
+
+    &_cat {}
+
+    &_head {
+        margin-bottom: 0;
+    }
+
+    &_btns {
+        display: flex;
+        max-width: 1170px;
+        margin: 0 auto;
+        height: 56px;
+        align-items: center;
+
+        &_item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &:first-child {
+               border-right: 1px solid #e9e9ea;
+               padding-right: 22.5px;
+            }
+        }
+        .postList_posted {
+            margin-right: 60px;
+        }
+        &_inner {
+            display: flex;
+            font-family: $mfont;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: justify;
+            letter-spacing: 0.02em;
+            color: #000000;
+            grid-gap: 22.5px;
+        }
+    }
+
     &_date {
         margin-left: 20px;
         font-family: $font;
@@ -188,6 +269,7 @@
     }
     &_text {
         margin: 0 10px;
+        font-family: $semifont;
     }
     &_wrap {
         max-width: $layoutw;
@@ -217,6 +299,18 @@
             align-items: center;
             justify-content: space-around;
             min-width: 270px;
+            position: relative;
+
+            &:nth-child(2)::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: -60px;
+                width: 1px;
+                height: 100%;
+                background: $dblack;
+            }
         }
         &_inner {
             max-width: $layoutw;

@@ -29,6 +29,13 @@ class BlogController extends Controller
     public function postDetails($id)
     {
         $post = Post::find($id);
+
+        $likes = count(DB::table('likes')->where('post_id', $post['id'])->where('like', '>', 0 )->get());
+        $dislikes = count(DB::table('likes')->where('post_id', $post['id'])->where('like', '<=', 0 )->get());
+        
+        $post['likes'] = $likes;
+        $post['dislikes'] = $dislikes;
+
         if(is_null($post)) {
             return redirect('404');
         }

@@ -11641,9 +11641,19 @@ main {
 }
 .postList_posted {
   display: flex;
-  align-items: center;
-  border-left: 1px solid #e9e9ea;
+  align-items: flex-end;
   padding-left: 25px;
+  position: relative;
+}
+.postList_posted:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 1px;
+  background: #e9e9ea;
+  position: absolute;
+  top: 10px;
+  left: -25px;
 }
 .postList_posted_author {
   font-family: "Montserrat", sans-serif;
@@ -11688,6 +11698,7 @@ main {
   border-bottom: 1px solid #fdd935;
   padding-bottom: 5px;
   margin-bottom: 10px;
+  margin-left: 70px;
 }
 .postList_head {
   font-family: "MontserratSemiBold";
@@ -11698,6 +11709,7 @@ main {
   letter-spacing: 0.02em;
   color: #292930;
   margin-bottom: 10px;
+  margin-left: 70px;
 }
 .postList_like, .postList_dislike, .postList_comment, .postList_share {
   display: flex;
@@ -11734,14 +11746,16 @@ main {
 .postList_btns {
   display: flex;
   justify-content: space-between;
+  margin: 0 70px;
 }
 .postList_btns_inner {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 .postList_btns_actions {
   display: flex;
   margin-left: 30px;
+  grid-gap: 10px;
 }
 .postList_description span {
   margin: 20px 50px 25px 50px;
@@ -11757,6 +11771,69 @@ main {
 
 .postItem {
   width: 100%;
+}
+.postItem_actions {
+  margin-left: 85px;
+}
+.postItem_posted {
+  padding-left: 45px;
+}
+.postItem_posted .postList_posted_date {
+  margin-left: 15px;
+}
+.postItem_posted:after {
+  left: 24px;
+  top: 0;
+}
+.postItem_top {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.postItem_backIcon, .postItem_fwdIcon {
+  width: 25px;
+  height: 25px;
+}
+.postItem_backIcon {
+  background-image: url("/images/blog/blogPost_prev.svg");
+  margin-right: 10px;
+}
+.postItem_fwdIcon {
+  background-image: url("/images/blog/blogPost_next.svg");
+  margin-left: 10px;
+}
+.postItem_head {
+  margin-bottom: 0;
+}
+.postItem_btns {
+  display: flex;
+  max-width: 1170px;
+  margin: 0 auto;
+  height: 56px;
+  align-items: center;
+}
+.postItem_btns_item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.postItem_btns_item:first-child {
+  border-right: 1px solid #e9e9ea;
+  padding-right: 22.5px;
+}
+.postItem_btns .postList_posted {
+  margin-right: 60px;
+}
+.postItem_btns_inner {
+  display: flex;
+  font-family: "MontserratMedium";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: justify;
+  letter-spacing: 0.02em;
+  color: #000000;
+  grid-gap: 22.5px;
 }
 .postItem_date {
   margin-left: 20px;
@@ -11939,6 +12016,7 @@ main {
 }
 .postItem_text {
   margin: 0 10px;
+  font-family: "MontserratSemiBold";
 }
 .postItem_wrap {
   max-width: 1170px;
@@ -11968,6 +12046,17 @@ main {
   align-items: center;
   justify-content: space-around;
   min-width: 270px;
+  position: relative;
+}
+.postItem_footer_item:nth-child(2)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -60px;
+  width: 1px;
+  height: 100%;
+  background: #292930;
 }
 .postItem_footer_inner {
   max-width: 1170px;
