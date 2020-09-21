@@ -164,7 +164,7 @@
                 top: 30px;
                 width: 200px;
                 overflow: hidden;
-                transition: visibility $transition;
+                transition: height $transition;
                 box-shadow: $menu_shadow;
 
                 &-item {

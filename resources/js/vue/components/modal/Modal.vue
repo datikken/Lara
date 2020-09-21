@@ -110,8 +110,7 @@
                 <b  v-if="singleProduct.params"
                     class="prder_wrap-item-res">
                     {{ singleProduct.params.Ресурс }}
-                </b> текстовых страниц
-                <b>А4</b> согласно ASTM F1856/STMC для картриджей «Всё в одном»
+                </b> согласно ASTM F1856/STMC для картриджей «Всё в одном»
               </span>
             </div>
 

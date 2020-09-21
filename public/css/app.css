@@ -796,7 +796,7 @@ b {
   color: #fff !important;
 }
 .header_wrapper-item_menu-item:nth-child(2):hover .header_wrapper-item_menu-item-secondary {
-  visibility: visible;
+  height: 122px;
 }
 .header_wrapper-item_menu-item_link {
   color: #fff;
@@ -830,11 +830,12 @@ b {
   list-style: none;
   padding: 0;
   left: -22px;
-  visibility: hidden;
-  transition: visibility 0.2s;
+  height: 0;
+  transition: height 0.2s;
   font-weight: 300;
   font-family: "Montserrat", sans-serif;
   z-index: 99999999;
+  overflow: hidden;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
 @media not all and (min-resolution: 0.001dpcm) {
@@ -1033,7 +1034,7 @@ b {
   top: 30px;
   width: 200px;
   overflow: hidden;
-  transition: visibility 0.2s;
+  transition: height 0.2s;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
 }
 .menu_wrapper-item-main_menu-item {
