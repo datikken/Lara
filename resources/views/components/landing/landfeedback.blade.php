@@ -15,7 +15,7 @@
                     <span>Волан де морт</span>
                 </div>
                 {{--<div class="pfitem_wrap-item_head-date">{{ $feed->created_at }}</div>--}}
-                <div class="pfitem_wrap-item_head-date">12.09.2019</div>
+                {{-- <div class="pfitem_wrap-item_head-date">12.09.2019</div> --}}
             </div>
 
             <div class="pfitem_wrap-item_summary">

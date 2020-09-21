@@ -58,33 +58,50 @@ window.onload = function () {
     });
 
     let feedBackSwiper = new Swiper('.feedback_swiper', {
-        // containerClass: 'owl_swiper',
-        activeSlideKey: '5',
+        slidesPerView: 4,
+        spaceBetween: 30,
         centeredSlides: true,
+        activeSlideKey: '4',
         loop: true,
         autoplay: {
             delay: 2500,
             disableOnInteraction: false
         },
-        breakpoints: {
-            1024: {
-                slidesPerView: 4,
-                spaceBetween: 10
-            },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 10
-            },
-            640: {
-                slidesPerView: 3,
-                spaceBetween: 10
-            },
-            320: {
-                slidesPerView: 2,
-                spaceBetween: 10
-            }
-        }
-    });
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+
+      
+    // let feedBackSwiper = new Swiper('.feedback_swiper', {
+    //     // containerClass: 'owl_swiper',
+    //     activeSlideKey: '1',
+    //     centeredSlides: true,
+    //     loop: true,
+    //     autoplay: {
+    //         delay: 2500,
+    //         disableOnInteraction: false
+    //     },
+    //     breakpoints: {
+    //         1024: {
+    //             slidesPerView: 4,
+    //             spaceBetween: 10
+    //         },
+    //         768: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 10
+    //         },
+    //         640: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 10
+    //         },
+    //         320: {
+    //             slidesPerView: 2,
+    //             spaceBetween: 10
+    //         }
+    //     }
+    // });
 
     let mainSwiper = new Swiper('.main_slider', {
         slidesPerView: 1,

@@ -15,8 +15,8 @@
         text-transform: uppercase;
         color: $dblack;
         margin-bottom: 6px;
-        position: absolute;
-        top: 0;
+        // position: absolute;
+        // top: 0;
     }
 
     &_wrap {
@@ -73,6 +73,7 @@
                 display: flex;
                 align-items: center;
                 margin-bottom: 10px;
+                margin-top: 10px;
 
                 &-total {
                     font-family: $font;

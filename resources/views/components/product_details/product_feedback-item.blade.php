@@ -4,7 +4,7 @@
             <div class="pfitem_wrap-item">
                 <div class="pfitem_wrap-item_ava">
 
-<? if($feed->user_avatar) { ?>
+<? if(isset($feed->user_avatar)) { ?>
     <img src="{{Storage::disk('local')->url('user_avatars/' . $feed->user_avatar )}}" alt="Logo">
 <? } else { ?>
     <img src="/images/icons/avatar.svg" alt="">

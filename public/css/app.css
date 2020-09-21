@@ -10044,7 +10044,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 
 .feedback_swiper .swiper-wrapper .swiper-slide {
   max-width: 198px !important;
-  height: 100px !important;
+  height: 120px !important;
 }
 
 .landswiper {
@@ -10819,8 +10819,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   text-transform: uppercase;
   color: #292930;
   margin-bottom: 6px;
-  position: absolute;
-  top: 0;
 }
 .pfitem_wrap {
   display: flex;
@@ -10867,6 +10865,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 .pfitem_wrap-item_summary-total {
   font-family: "Montserrat", sans-serif;

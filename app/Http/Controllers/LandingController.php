@@ -7,7 +7,7 @@
  */
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 
 class LandingController extends Controller
 {
@@ -18,6 +18,9 @@ class LandingController extends Controller
 
     public function second()
     {
-        return view('pages.landings.landingt2');
+        $feeds = DB::table('product_feedback')->where('product_id', 'easyprint')->get();
+        $product = array('product', 'feedback' => $feeds);
+
+        return view('pages.landings.landingt2', ['product' =>  $product]);
     }
 }

@@ -60,13 +60,15 @@ class LandingController {
         var testlist = document.querySelectorAll('.animland'),
             test = Array.prototype.slice.call(testlist,0);
 
+
+
         var observer = new IntersectionObserver(function (entries) {
                 entries.forEach(function (entry) {
                     if (entry.intersectionRatio > 0) {
                         TweenMax.to(icon, 2, {
                             x:100,
-                            ease: Bounce.easeOut,
-                            left: `-20%`,
+                            ease: "power3.out",
+                            left: `45%`,
                         });
                     } else {
                         icon.style.left = '-600px'
