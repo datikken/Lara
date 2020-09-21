@@ -161,7 +161,7 @@ let mutations = {
     },
     unitPay(state) {
         let obj = {
-            account: state.user.id,
+            account: state.user.id ? state.user.id : 'unregistered',
             currency: 'RUB',
             desc: "Описание платежа",
             sum: state.cart.totalPrice,
@@ -193,7 +193,7 @@ let mutations = {
             redirect: 'follow',
             referrerPolicy: 'no-referrer',
             body: JSON.stringify({
-                account: state.user.id,
+                account: state.user.id ? state.user.id : 'unregistered',
                 currency: 'RUB',
                 desc: "Описание платежа",
                 sum: state.cart.totalPrice
