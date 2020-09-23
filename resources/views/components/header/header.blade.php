@@ -25,9 +25,9 @@
                 <li class="header_wrapper-item_menu-item">
                     <a href="/hits" class="header_wrapper-item_menu-item_link">Хит - парад принтеров</a>
                 </li>
-                <li class="header_wrapper-item_menu-item">
+                {{-- <li class="header_wrapper-item_menu-item">
                     <a href="/sales" class="header_wrapper-item_menu-item_link">Акции</a>
-                </li>
+                </li> --}}
                 <li class="header_wrapper-item_menu-item">
                     <a href="/blog" class="header_wrapper-item_menu-item_link">Блог</a>
                 </li>

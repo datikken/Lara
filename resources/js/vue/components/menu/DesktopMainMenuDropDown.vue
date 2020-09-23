@@ -43,12 +43,12 @@
                             <!--<img src="/images/icons/arrow_right.svg" alt="arrow"/>-->
                         </span>
                     </li>
-                    <li class="menu_wrapper-item-main_menu-item">
+                    <!-- <li class="menu_wrapper-item-main_menu-item">
                         <span class="menu_wrapper-item-main_menu-item-text">
                             <a href="/hits">Акции</a>
-                            <!--<img src="/images/icons/arrow_right.svg" alt="arrow"/>-->
+                            <img src="/images/icons/arrow_right.svg" alt="arrow"/>
                         </span>
-                    </li>
+                    </li> -->
                     <li class="menu_wrapper-item-main_menu-item">
                         <span class="menu_wrapper-item-main_menu-item-text">
                             <a href="/blog">Блог</a>

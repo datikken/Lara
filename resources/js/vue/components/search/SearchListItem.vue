@@ -50,6 +50,10 @@
         },
         methods: {
             backgroundOnHover() {
+                if(this.color === 'tripleCol') {
+                    this.color = 'tripleColGradient';
+                }
+
                 this.$el.classList.add(this.color);
                 this.$el.style.color = '#fff';
             },
