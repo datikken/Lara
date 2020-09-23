@@ -24,10 +24,10 @@
                 <div class="postList_dislike_val">{{ $post['dislikes'] }}</div>
             </div>
 
-            <div class="postList_comment">
+            <a href="#blogCom" class="postList_comment">
                 <div class="postList_comment_icon"></div>
-                <div class="postList_comment_val">{{ $post['comments'] }}</div>
-            </div>
+                <div class="postList_comment_val">{{ count($post['comments']) }}</div>
+            </a>
 
             <div class="postList_share">
                 <div class="postList_share_icon"></div>
@@ -77,11 +77,10 @@
     </div>
 
     <div class="postItem_block">
-        <!-- @include('components.blog.post_auth') -->
-        @include('components.blog.post_comments')
+        @include('components.blog.post_comments', ['comments' => $post['comments']])
     </div>
 
-    @include('components.btn.text_btn', [ 'class' => 'action_btn allcomments_btn', 'text' => 'смотреть все комментарии'])
+    
     @include('components.blog.post_item_commentsForm', ['post' => $post ])
 
 </div>

@@ -1,6 +1,11 @@
 .postItem_date {
 
 }
+.postItem_comments-shorten {
+    max-height: 340px;
+    overflow: hidden;
+}
+
 .postItem_comments {
     &_like {}
     &_dislike {}

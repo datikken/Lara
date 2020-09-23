@@ -12121,7 +12121,7 @@ main {
   background-image: url("/images/icons/postItem/dislike.svg");
 }
 .postItem_text {
-  margin: 0 10px;
+  margin: 0 26px;
   font-family: "MontserratSemiBold";
 }
 .postItem_wrap {
@@ -12906,6 +12906,11 @@ main {
   font-size: 12px;
   line-height: 130%;
   color: #292930;
+}
+
+.postItem_comments-shorten {
+  max-height: 340px;
+  overflow: hidden;
 }
 
 .postItem_auth_login {

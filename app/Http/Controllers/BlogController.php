@@ -22,7 +22,10 @@ class BlogController extends Controller
 
            $post['likes'] = $likes;
            $post['dislikes'] = $dislikes;
+
+           $post['comments'] = count(DB::table('posts_comments')->where('post_id', $post['id'])->get());
         }
+
 
         return view('pages.blog.blog',['posts' => $posts]);
     }
@@ -36,6 +39,11 @@ class BlogController extends Controller
 
         $post['likes'] = $likes;
         $post['dislikes'] = $dislikes;
+        $post['comments'] = DB::table('posts_comments')->where('post_id', $post['id'])->get();
+
+        // foreach($post['comments'] as $com) {
+        //     dump($com);
+        // }
 
         if(is_null($post)) {
             return redirect('404');
@@ -64,7 +72,8 @@ class BlogController extends Controller
             'user_id' => $userId,
             'content' => $message,
             'name' => $name,
-            'email' => $email
+            'email' => $email,
+            'created_at' => \Carbon\Carbon::now()
         );
 
         DB::table('posts_comments')->insert($arr);

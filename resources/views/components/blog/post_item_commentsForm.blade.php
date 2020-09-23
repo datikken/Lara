@@ -1,4 +1,6 @@
-<div class="blogCom" data-blogCommentsForm data-blogCommentPostId="{{ $post['id'] }}" data-blogCommentRoute="{{ route('blogPostComment') }}">
+{{-- ml100 --}}
+
+<div class="blogCom" id="blogCom" data-blogCommentsForm data-blogCommentPostId="{{ $post['id'] }}" data-blogCommentRoute="{{ route('blogPostComment') }}">
     <div class="blogCom_wrap">
         <div class="blogCom_head">
             <p class="blogCom_head-item">оставить комментарий</p>
