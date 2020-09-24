@@ -102,7 +102,7 @@
                 let desMenu = this.$el.querySelector('[data-desktopMenuBlock]');
 
                 informationMenu.classList.remove('showInformationMenuDropdown');
-                desMenu.classList.remove('showDesktopMenuDropdown');
+                desMenu.style.height = '0';
             },
             hideInformationDropDown() {
                 let menu = this.$el.querySelector('[data-informationMenuDropdown]');
@@ -121,9 +121,10 @@
             },
             showDesktopMenuDropDown() {
                 let dropdown = this.$el.querySelector('[data-desktopMenuBlock]');
+
                 let dropItems = this.$el.querySelectorAll('[data-mainDropdownItem]');
                 let dropHeight = dropItems.length * 40;
-                dropdown.style.height = `${dropHeight}px`;
+                    dropdown.style.height = `${dropHeight}px`;
 
                 console.warn(dropHeight, dropItems)
             }
