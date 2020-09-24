@@ -7,7 +7,7 @@
     @include('components.styles.style')
     @include('components.scripts.scripts')
 
-    <link rel="preload" as="style" href="/css/app.css" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/app.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177029583-1"></script>

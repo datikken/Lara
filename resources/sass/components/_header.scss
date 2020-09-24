@@ -16,7 +16,9 @@
         max-width: 1170px;
         height: 60px;
         margin: 0 auto;
-        @include flex(center, space-between, wrap);
+        display: grid;
+        grid-template-columns: 220px 4.5fr 1fr;
+        align-items: center;
 
         @include breakpoint($medium) {
             margin-left: 10px;

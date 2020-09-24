@@ -712,10 +712,9 @@ b {
   max-width: 1170px;
   height: 60px;
   margin: 0 auto;
-  display: flex !important;
+  display: grid;
+  grid-template-columns: 220px 4.5fr 1fr;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 @media screen and (min-width: 1030px) {
   .header_wrapper {
@@ -1448,6 +1447,7 @@ b {
   position: relative;
   z-index: 999999;
   order: 2 !important;
+  color: black;
 }
 .menu_wrapper-item_menuText-link:hover {
   color: #fff !important;

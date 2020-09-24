@@ -1,6 +1,6 @@
 <template>
     <div class="menu">
-        <div class="menu_wrapper" id="app">
+        <div class="menu_wrapper">
 
             <div class="menu_wrapper-item" @mouseenter="DesktopDropdownTrigger">
 

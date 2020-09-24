@@ -463,7 +463,7 @@
                             width: 500px;
                         }
 
-                        &::-webkit-input-placeholder { 
+                        &::-webkit-input-placeholder {
                             font-style: normal;
                             font-weight: normal;
                             letter-spacing: 0.02em;
@@ -572,6 +572,7 @@
     position: relative;
     z-index: 999999;
     order: 2 !important;
+    color: black;
 
     &:hover {
         color: #fff !important;
