@@ -25,37 +25,38 @@
                 </ul>
 
                 <ul class="menu_wrapper-item-main_menu" data-desktopMenuBlock @mouseenter="showDesktopMenuDropDown">
-                    <li class="menu_wrapper-item-main_menu-item">
+                    <li class="menu_wrapper-item-main_menu-item" data-mainDropdownItem>
                         <span class="menu_wrapper-item-main_menu-item-text">
                             <a href="/catalog">Каталог</a>
                             <!--<img src="/images/icons/arrow_right.svg" alt="arrow"/>-->
                         </span>
                     </li>
-                    <li class="menu_wrapper-item-main_menu-item">
+                    <li class="menu_wrapper-item-main_menu-item" data-mainDropdownItem>
                         <span class="menu_wrapper-item-main_menu-item-text">
                             <a href="/about">О нас</a>
                             <!--<img src="/images/icons/arrow_right.svg" alt="arrow"/>-->
                         </span>
                     </li>
-                    <li class="menu_wrapper-item-main_menu-item">
+                    <li class="menu_wrapper-item-main_menu-item" data-mainDropdownItem>
                         <span class="menu_wrapper-item-main_menu-item-text">
                             <a href="/hits">Хит парад принтеров</a>
                             <!--<img src="/images/icons/arrow_right.svg" alt="arrow"/>-->
                         </span>
                     </li>
-                    <!-- <li class="menu_wrapper-item-main_menu-item">
-                        <span class="menu_wrapper-item-main_menu-item-text">
-                            <a href="/hits">Акции</a>
-                            <img src="/images/icons/arrow_right.svg" alt="arrow"/>
-                        </span>
-                    </li> -->
-                    <li class="menu_wrapper-item-main_menu-item">
+                    <!--<li class="menu_wrapper-item-main_menu-item">-->
+                        <!--<span class="menu_wrapper-item-main_menu-item-text">-->
+                            <!--<a href="/hits">Акции</a>-->
+                            <!--<img src="/images/icons/arrow_right.svg" alt="arrow"/>-->
+                        <!--</span>-->
+                    <!--</li>-->
+                    <li class="menu_wrapper-item-main_menu-item" data-mainDropdownItem>
                         <span class="menu_wrapper-item-main_menu-item-text">
                             <a href="/blog">Блог</a>
                             <!--<img src="/images/icons/arrow_right.svg" alt="arrow"/>-->
                         </span>
                     </li>
                     <li
+                        data-mainDropdownItem
                         @mouseleave="hideInformationDropDown"
                         @mouseenter="showInformationDropDown"
                         class="menu_wrapper-item-main_menu-item"
@@ -65,7 +66,9 @@
                             <img src="/images/icons/arrow_right.svg" alt="arrow"/>
                         </span>
                     </li>
-                    <li class="menu_wrapper-item-main_menu-item">
+                    <li
+                        data-mainDropdownItem
+                        class="menu_wrapper-item-main_menu-item">
                         <span class="menu_wrapper-item-main_menu-item-text">
                             <a href="/contacts">Контакты</a>
                             <!--<img src="/images/icons/arrow_right.svg" alt="arrow"/>-->
@@ -118,7 +121,11 @@
             },
             showDesktopMenuDropDown() {
                 let dropdown = this.$el.querySelector('[data-desktopMenuBlock]');
-                dropdown.classList.add('showDesktopMenuDropdown');
+                let dropItems = this.$el.querySelectorAll('[data-mainDropdownItem]');
+                let dropHeight = dropItems.length * 40;
+                dropdown.style.height = `${dropHeight}px`;
+
+                console.warn(dropHeight, dropItems)
             }
         }
     }
@@ -128,10 +135,6 @@
     [data-desktopMenuBlock] {
         height: 0;
         transition: all .2s;
-    }
-
-    .showDesktopMenuDropdown {
-        height: 280px;
     }
 
     [data-informationMenuDropdown] {

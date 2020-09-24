@@ -189,16 +189,6 @@ a:hover {
 
 input, textarea {
   font-family: "Montserrat", sans-serif;
-
-  &::placeholder {
-    font-family: $font;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.02em;
-    color: $gray;
-  }
 }
 
 [type="submit"] {

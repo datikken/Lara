@@ -173,6 +173,7 @@
                     margin-bottom: 0;
                     padding-left: 15px;
                     padding-right: 30px;
+                    height: 40px;
 
                     a {
                         text-decoration: none;
@@ -180,12 +181,8 @@
                     }
                     &:hover {
                         background-color: $black;
-
-                        .menu_wrapper-item-main_menu-item-text {
-                            border-bottom: 1px solid $black;
-                        }
                         .menu_wrapper-item-main_menu-item-text:after {
-                            border: none;
+                            background: transparent;
                         }
                         span {
                             color: $white;
@@ -203,6 +200,7 @@
                         max-height: 38px;
                     }
 
+
                     &-text {
                         height: 100%;
                         position: relative;
@@ -214,11 +212,20 @@
                         letter-spacing: 0.02em;
                         padding: 12.5px 12.5px 12.5px 0;
                         color: $dblack;
-                        border-bottom: 1px solid $light_gray;
                         justify-content: space-between;
-                        transition: all $transition;
+                        transition: background $transition;
                         display: flex !important;
                         width: 100%;
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0px;
+                            height: 1px;
+                            background: $light_gray;
+                        }
 
                         img {
                             margin-right: 5px;

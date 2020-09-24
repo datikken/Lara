@@ -213,9 +213,9 @@ main {
                     height: 40px;
                     border-radius: 30px;
                     @include input();
-                    padding: 0 0 0 30px!important;
                     margin-right: 0;
                     outline: none;
+                    padding: 0 0 2px 30px;
 
                     &::placeholder {
                         font-family: $font;
@@ -224,8 +224,14 @@ main {
                         letter-spacing: 0.02em;
                         color: $gray;
                     }
-
                 }
+                //safari
+                @media not all and (min-resolution: .001dpcm) {
+                    input {
+                        padding: 20px;
+                    }
+                }
+
 
                 span {
                     margin-bottom: 5px;
