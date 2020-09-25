@@ -1,6 +1,7 @@
 <?php
 //Auth routes
 Auth::routes(['verify' => true]);
+
 Route::group(['middleware' => 'restrictToAdmin'], function () {
 //ORDERS
     Route::get('/admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
@@ -15,8 +16,10 @@ Route::group(['middleware' => 'restrictToAdmin'], function () {
 
 Route::group(['middleware' => 'ajax'], function () {
     //Search page
-    Route::get('search', ['uses' => "ProductsController@search", 'as' => 'searchProducts']);
 });
+
+Route::get('/search', ['uses' => "SearchController@search", 'as' => 'searchProducts']);
+
 
 //PRODUCTS
 Route::group(['middleware' => 'checkUserRole'], function () {
@@ -218,4 +221,5 @@ Route::post('StoreNewPassword', ['uses' => 'ChangePasswordController@store', 'as
 Route::get('/mailtemplate', ['uses' => "SendEmailController@testEmailTemplate", 'as' => 'mailtemplate']);
 
 Route::get('/custinfo', ['uses' => 'CustomerDataController@getSessionInfo']);
+Route::get('/testSearch', ['uses' => 'SearchController@testSearch']);
 Route::post('/checkAdressInDadata', ['uses' => 'CustomerDataController@checkAdressInDadata', 'as' => 'checkAdressInDadata']);
