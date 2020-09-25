@@ -38,13 +38,6 @@ trait FullTextSearch
         return $searchTerm;
     }
 
-    /**
-     * Scope a query that matches a full text search of term.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $term
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
     public function scopeSearch($query, $term)
     {
         $columns = implode(',',$this->searchable);
@@ -52,5 +45,24 @@ trait FullTextSearch
         $query->whereRaw("MATCH ({$columns}) AGAINST (? IN BOOLEAN MODE)" , $this->fullTextWildcards($term));
 
         return $query;
+    }
+
+    /**
+     * Scope a query that matches a full text search of term.
+     * This version calculates and orders by relevance score.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $term
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeRelevance($query, $term)
+    {
+        $columns = implode(',',$this->searchable);
+
+        $searchableTerm = $this->fullTextWildcards($term);
+
+        return $query->selectRaw("MATCH ({$columns}) AGAINST (? IN BOOLEAN MODE) AS relevance_score", [$searchableTerm])
+            ->whereRaw("MATCH ({$columns}) AGAINST (? IN BOOLEAN MODE)", $searchableTerm)
+            ->orderByDesc('relevance_score');
     }
 }

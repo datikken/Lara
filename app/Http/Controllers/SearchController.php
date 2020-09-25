@@ -13,7 +13,7 @@ class SearchController extends Controller
         $arr = array('-', ',', '/', '.', ')', '(', '№');
         $newphrase = str_replace($arr, ' ', $payload);
 
-        $prd = Product::search($newphrase);
+        $prd = Product::search($newphrase)->get();
 
         return response()->json($prd);
     }
@@ -21,7 +21,7 @@ class SearchController extends Controller
     public function testSearch()
     {
         //Длина 335 M3550idn
-        $prd = Product::search('laser')->get();
+        $prd = Product::search('1005')->get();
 
 
         return response()->json($prd);

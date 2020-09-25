@@ -2,7 +2,6 @@
 
 namespace App;
 
-use App\Product_Image;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
