@@ -12278,11 +12278,7 @@ main {
 }
 
 .tripleCol {
-  background-image: url("/images/icons/tripleCol.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: #fff;
+  background: linear-gradient(90deg, #FED935 0%, #D935FD 53.65%, #3559FD 97.92%);
 }
 
 .blackCol {

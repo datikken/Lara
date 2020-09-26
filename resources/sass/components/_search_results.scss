@@ -124,13 +124,9 @@
 .sres_color {
     margin: 0;
 }
-.tripleColGradient {
-    
-}
+
 .tripleCol {
-    background-image: url('/images/icons/tripleCol.svg');
-    @include bg(cover,center);
-    background-color: #fff;
+    background: linear-gradient(90deg, #FED935 0%, #D935FD 53.65%, #3559FD 97.92%);
 }
 .blackCol {
     background-color: $black;

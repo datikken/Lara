@@ -37,17 +37,22 @@ class ViewedController extends Controller
     {
         $item = DB::table('products')->where('id', $id)->get();
         $viewedItems = session()->get('viewed');
+        $exists = false;
 
-        foreach ($viewedItems as $viewed) {
-            if($viewed->id === $id) {
-                $exists = true;
+        if(!is_null($viewedItems)) {
+            foreach ($viewedItems as $viewed) {
+                if($viewed->id === $id) {
+                    $exists = true;
+                }
             }
-        }
 
-        //XXXX
-//        if(!$exists) {
+            if(!$exists) {
+                $sessionItem = session()->push('viewed', $item[0]);
+            }
+
+        } else {
             $sessionItem = session()->push('viewed', $item[0]);
-//        }
+        }
 
         return response()->json($item);
     }

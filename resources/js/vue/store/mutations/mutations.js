@@ -251,7 +251,7 @@ let mutations = {
             category: 'catalog modal',
             eventAction: 'click',
             eventLabel: 'catalog modal opened',
-            eventValue: id
+            eventValue: pid
         };
 
         this.dispatch('SEND_GOOGLE_ANALYTICS', gObj);

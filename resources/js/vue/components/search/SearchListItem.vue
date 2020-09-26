@@ -60,14 +60,14 @@
         methods: {
             backgroundOnHover() {
                 if(this.color) {
-                    if(this.color === 'tripleCol') {
-                        this.color = 'tripleColGradient';
-                    }
-
                     this.$el.classList.add(this.color);
                     this.$el.style.color = '#fff';
-                }
 
+                    if(this.color === 'tripleCol') {
+                        this.color = 'tripleCol';
+                        this.$el.style.color = 'black';
+                    }
+                }
 
                 console.warn(this.color)
             },

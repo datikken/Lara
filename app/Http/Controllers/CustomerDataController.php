@@ -20,7 +20,7 @@ class CustomerDataController extends Controller
         $building = $request->building;
 
         $addr = $city . " " . $street . " " . $house . " " . $body . " " . $building;
-        
+
         $result = $dadata->clean("address", $addr);
 
         return response()->json($result);
@@ -116,6 +116,7 @@ class CustomerDataController extends Controller
         $index = Session::get('cartIndex');
         $adresss = Session::get('cartAddress');
         $urik = Session::get('cart_cutomerInfo');
+        $viewed = Session::get('viewed');
 
         $arr = array(
             'cart_pickup' => $cart_pickup,
@@ -123,7 +124,8 @@ class CustomerDataController extends Controller
             'fio' => $fio,
             'index' => $index,
             'adress' => $adresss,
-            'urik' => $urik
+            'urik' => $urik,
+            'viewed' => $viewed
         );
 
         return response()->json($arr);
