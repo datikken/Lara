@@ -26,5 +26,9 @@
         height: 40px;
         align-items: center;
         border-bottom: 1px solid $light_gray;
+
+        &:last-child {
+            border-bottom: 0;
+        }
     }
 }

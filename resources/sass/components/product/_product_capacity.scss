@@ -50,8 +50,10 @@
             text-transform: uppercase;
             color: $blue;
             cursor: pointer;
+
             &:nth-child(2) {
                 border-left: none;
+                border-right: none;
             }
         }
     }

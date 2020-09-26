@@ -51,7 +51,7 @@
                     </span>
                 </div>
                 <div class="prdch_val">
-                        <span>{{ $chrst->Ресурс }}</span>
+                    <span>{{ intval($chrst->Ресурс) }} текстовых страниц А4</span>
                 </div>
             </div>
             @endif

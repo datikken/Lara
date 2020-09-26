@@ -12651,6 +12651,9 @@ main {
   align-items: center;
   border-bottom: 1px solid #e9e9ea;
 }
+.prdch_item:last-child {
+  border-bottom: 0;
+}
 
 .prdLt {
   margin-bottom: 30px;
@@ -12778,6 +12781,7 @@ main {
 }
 .prcp_head .prcp_item:nth-child(2) {
   border-left: none;
+  border-right: none;
 }
 
 .dadresses {
