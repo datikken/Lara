@@ -483,6 +483,8 @@ b {
 
 .resetGrid {
   grid-template-columns: unset !important;
+  width: 100%;
+  max-width: 870px;
 }
 
 .top3 {
@@ -2270,6 +2272,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 @media screen and (min-width: 1030px) {
   .main_slider .swiper-button-prev {
     left: 21% !important;
+  }
+}
+
+@media screen and (min-width: 1030px) {
+  .catalog {
+    margin-bottom: 150px;
   }
 }
 
@@ -4137,7 +4145,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   justify-content: center;
   border: 1px solid #e9e9ea;
   border-radius: 50%;
-  margin: 0 10px 0 0;
+  margin: 0 0 0 10px;
   cursor: pointer;
 }
 .products_grid .vue-ads-flex:last-child button:last-child {

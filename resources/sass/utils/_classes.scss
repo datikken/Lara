@@ -320,6 +320,8 @@ b {
 
 .resetGrid {
     grid-template-columns: unset!important;
+    width: 100%;
+    max-width: 870px;
 }
 .top3 {
     top: 3px!important;
