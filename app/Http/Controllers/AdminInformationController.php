@@ -24,19 +24,25 @@ class AdminInformationController extends Controller
 
     public function editInformationForm(Request $request, $id)
     {
+        $prevInf = Information::find($id);
+
         $category = $request->input('category');
         $urik_title = $request->input('urik_title');
         $fizik_title = $request->input('fizik_title');
         $urik_text = $request->input('urik_text');
         $fizik_text = $request->input('fizik_text');
 
-        $ext = $request->file('image')->getClientOriginalExtension();
-        $stringImageReFormat = str_replace(' ', '', $request->input('category'));
+        if($request->file('image')) {
+            $ext = $request->file('image')->getClientOriginalExtension();
+            $stringImageReFormat = str_replace(' ', '', $request->input('category'));
 
-        $imageName = $stringImageReFormat . '.' . $ext;
+            $imageName = $stringImageReFormat . '.' . $ext;
 
-        $imageEncoded = File::get($request->image);
-        Storage::disk('local')->put('public/information_icons/' . $imageName, $imageEncoded);
+            $imageEncoded = File::get($request->image);
+            Storage::disk('local')->put('public/information_icons/' . $imageName, $imageEncoded);
+        } else {
+            $imageName = $prevInf->image;
+        }
 
         $newInformationArray = array(
             'category' => $category,
