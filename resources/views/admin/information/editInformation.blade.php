@@ -2,8 +2,6 @@
 
 @section('center')
 
-    @php dump($item->image); @endphp
-
     <form action="/admin/editInformationForm/{{$item->id}}" method="post" enctype="multipart/form-data">
 
         {{csrf_field()}}

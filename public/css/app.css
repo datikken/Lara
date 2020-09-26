@@ -769,6 +769,11 @@ b {
 .header_wrapper-item_menu-item:nth-child(2):hover .header_wrapper-item_menu-item-secondary {
   height: 122px;
 }
+.header_wrapper-item_menu-item:nth-child(2):hover .header_wrapper-item_menu-item_link:after {
+  width: 100%;
+  left: 0;
+  background: white;
+}
 .header_wrapper-item_menu-item_link {
   color: #fff;
 }
