@@ -24865,7 +24865,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       context.commit('changeOrderStatus', obj);
     },
     CREATE_YEAR_TO_DESCRIBE: function CREATE_YEAR_TO_DESCRIBE(context, year) {
-      console.log('createYearToDescribe action');
+      // console.log('createYearToDescribe action')
       context.commit('createYearToDescribe', year);
     }
   },
@@ -24883,8 +24883,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           id: id
         },
         success: function success(data) {
-          state.yearsToDescribe = data;
-          console.log('createYearToDescribe', data);
+          state.yearsToDescribe = data; // console.log('createYearToDescribe', data)
         },
         error: function error(_error) {
           console.warn(_error);
@@ -24904,8 +24903,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           year: year
         },
         success: function success(data) {
-          state.yearsToDescribe = data;
-          console.log('createYearToDescribe', data);
+          state.yearsToDescribe = data; // console.log('createYearToDescribe', data)
         },
         error: function error(_error2) {
           console.warn(_error2);
@@ -24950,8 +24948,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
           id: obj.id
         },
         success: function success(data) {
-          state.orders = data;
-          console.log('changeOrderStatus', data);
+          state.orders = data; // console.log('changeOrderStatus', data)
         },
         error: function error(_error3) {
           console.warn(_error3);
