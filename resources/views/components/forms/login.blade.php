@@ -57,7 +57,7 @@
                             </div>
 
                             @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-link" href="{{ route('password.request') }}" uk-toggle="target: #passReset">
                                     {{ __('Забыли пароль?') }}
                                 </a>
                             @endif
@@ -77,3 +77,6 @@
         </div>
     </div>
 </div>
+
+
+@include('components.modals.resetPassword')
