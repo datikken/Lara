@@ -4,6 +4,7 @@
     echo $class;
 } ?>">
 
+
     <div class="prdch_wrap">
         <div class="prdch_item">
             <div class="prdch_name">
@@ -17,7 +18,6 @@
                 @else
                     Черный
                 @endif
-                {{--<span>{{ $chrst->color }}</span>--}}
             </div>
         </div>
 
@@ -29,7 +29,7 @@
                     </span>
                 </div>
                 <div class="prdch_val">
-                        5 мл
+                    5 мл
                 </div>
             </div>
             <div class="prdch_item">
@@ -43,6 +43,7 @@
                 </div>
             </div>
         @elseif($chrst->printertype === 'Принтер лазерный')
+            @if(isset($chrst->Ресурс))
             <div class="prdch_item">
                 <div class="prdch_name">
                     <span>
@@ -50,12 +51,14 @@
                     </span>
                 </div>
                 <div class="prdch_val">
-                    <span>{{ $chrst->Ресурс }}</span>
+                        <span>{{ $chrst->Ресурс }}</span>
                 </div>
             </div>
+            @endif
         @endif
 
         @if($chrst->printertype === 'Принтер матричный')
+            @if(isset($chrst->Ресурс))
             <div class="prdch_item">
                 <div class="prdch_name">
                     <span>
@@ -63,75 +66,55 @@
                     </span>
                 </div>
                 <div class="prdch_val">
-                    <span>{{ $chrst->Ресурс }}</span>
+                        <span>{{ $chrst->Ресурс }}</span>
                 </div>
             </div>
+            @endif
         @endif
 
-            <div class="prdch_item">
-                <div class="prdch_name">
+        <div class="prdch_item">
+            <div class="prdch_name">
                         <span>
                            Гарантия
                         </span>
-                </div>
-                <div class="prdch_val">
-                    <span>12 мес</span>
-                </div>
             </div>
-            <div class="prdch_item">
-                <div class="prdch_name">
+            <div class="prdch_val">
+                <span>12 мес</span>
+            </div>
+        </div>
+        @if(isset($chrst->Вес) && isset($chrst->Длина) && isset($chrst->Высота))
+        <div class="prdch_item">
+            <div class="prdch_name">
                     <span>
                        Размер в упаковке (ШхДхВ)мм
                     </span>
-                </div>
-                <div class="prdch_val">
-                    <span>{{ $chrst->Ширина }} х {{ $chrst->Длина }} x {{ $chrst->Высота }}</span>
-                </div>
             </div>
-            <div class="prdch_item">
-                <div class="prdch_name">
+            <div class="prdch_val">
+                    <span>{{ $chrst->Ширина }} х {{ $chrst->Длина }} x {{ $chrst->Высота }}</span>
+            </div>
+        </div>
+        @endif
+        @if(isset($chrst->Вес))
+        <div class="prdch_item">
+            <div class="prdch_name">
                     <span>
                        Вес в упаковке (кг.)
                     </span>
-                </div>
-                <div class="prdch_val">
-                    <span>{{ $chrst->Вес }}</span>
-                </div>
             </div>
-            <div class="prdch_item">
-                <div class="prdch_name">
+            <div class="prdch_val">
+                    <span>{{ $chrst->Вес }}</span>
+            </div>
+        </div>
+        @endif
+        <div class="prdch_item">
+            <div class="prdch_name">
                     <span>
                        Страна производитель
                     </span>
-                </div>
-                <div class="prdch_val">
-                    <span>Китай</span>
-                </div>
             </div>
-
-
-        {{--Струйные:--}}
-        {{--цвет--}}
-        {{--емкость (мл)--}}
-        {{--основа--}}
-        {{--гарантия--}}
-        {{--размер в упаковке (ш г в)мм--}}
-        {{--вес в упаковке (кг)--}}
-        {{--страна производитель--}}
-
-
-        {{--Лазерные--}}
-        {{--цвет--}}
-        {{--ресурс страниц--}}
-        {{--гарантия--}}
-        {{--размер в упаковке(ш г в)мм--}}
-        {{--вес в упаковке--}}
-        {{--страна производитель--}}
-
-
-
-
-
-
+            <div class="prdch_val">
+                <span>Китай</span>
+            </div>
+        </div>
     </div>
 </div>

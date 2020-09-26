@@ -25,8 +25,7 @@ const store = new Vuex.Store({
             context.commit('changeOrderStatus', obj);
         },
         CREATE_YEAR_TO_DESCRIBE(context, year) {
-            console.log('createYearToDescribe action')
-
+            // console.log('createYearToDescribe action')
             context.commit('createYearToDescribe', year);
         }
     },
@@ -46,7 +45,7 @@ const store = new Vuex.Store({
                 },
                 success: function (data) {
                     state.yearsToDescribe = data;
-                    console.log('createYearToDescribe', data)
+                    // console.log('createYearToDescribe', data)
                 },
                 error: function (error) {
                     console.warn(error);
@@ -68,7 +67,7 @@ const store = new Vuex.Store({
                 },
                 success: function (data) {
                     state.yearsToDescribe = data;
-                    console.log('createYearToDescribe', data)
+                    // console.log('createYearToDescribe', data)
                 },
                 error: function (error) {
                     console.warn(error);
@@ -105,7 +104,7 @@ const store = new Vuex.Store({
                 },
                 success: function (data) {
                     state.orders = data;
-                    console.log('changeOrderStatus', data)
+                    // console.log('changeOrderStatus', data)
                 },
                 error: function (error) {
                     console.warn(error);

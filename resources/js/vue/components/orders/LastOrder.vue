@@ -31,7 +31,7 @@
         name: "LastOrder",
         props: ['order'],
         mounted() {
-            console.log(this.$props.order, 'last order mounted')
+            // console.log(this.$props.order, 'last order mounted')
         }
 
     }

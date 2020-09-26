@@ -19,7 +19,7 @@ class ProductDetailsMenuController {
     }
 
     _setProductViewed(el) {
-        console.log('_setProductViewed inited');
+        // console.log('_setProductViewed inited');
         let pid = el.querySelector('[data-pid]').dataset.pid;
         this.store.dispatch('SET_PRODUCT_VIEWED', {pid});
     }

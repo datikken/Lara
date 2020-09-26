@@ -28,9 +28,7 @@ class ProfileController {
                 url: `${url}`,
                 data: dataObj,
                 success: function (status) {
-
-                    console.log(status);
-
+                    // console.log(status);
                 },
                 error: function (error) {
                     console.warn(error);
@@ -57,9 +55,7 @@ class ProfileController {
                           url: `${url}`,
                           data: dataObj,
                           success: function (status) {
-
-                              console.log(status);
-
+                              // console.log(status);
                           },
                           error: function (error) {
                               console.warn(error);
