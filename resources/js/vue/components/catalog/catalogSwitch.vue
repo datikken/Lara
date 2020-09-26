@@ -1,7 +1,10 @@
 <template>
     <div class="catalogSwitch">
         <div class="catalogSwitch_wrap">
-            <div class="catalogSwitch_item" @click="rotateIcon"><span class="catalogSwitch_text">Сортировать</span></div>
+            <div class="catalogSwitch_item" @click="rotateIcon">
+                <span class="catalogSwitch_text">Сортировать</span>
+                <div class="catalogSwitch_item catalogSwitch_arrow" data-sortDropdown_arrow></div>
+            </div>
 
                 <div class="sortDropdown as-none" data-sortDropdown>
                     <div class="sortDropdown_wrap">
@@ -14,19 +17,18 @@
                             <div class="sortDropdown_text">По цене</div>
                             <div class="sortDropdown_icon"></div>
                         </div>
-                        <div class="sortDropdown_item">
-                            <div class="sortDropdown_text">По популярности</div>
-                            <div class="sortDropdown_icon"></div>
-                        </div>
-                        <div class="sortDropdown_item">
-                            <div class="sortDropdown_text">По популярности</div>
-                            <div class="sortDropdown_icon"></div>
-                        </div>
+                        <!--<div class="sortDropdown_item">-->
+                            <!--<div class="sortDropdown_text">По популярности</div>-->
+                            <!--<div class="sortDropdown_icon"></div>-->
+                        <!--</div>-->
+                        <!--<div class="sortDropdown_item">-->
+                            <!--<div class="sortDropdown_text">По популярности</div>-->
+                            <!--<div class="sortDropdown_icon"></div>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
 
-<div class="catalogSwitch_item catalogSwitch_arrow" data-sortDropdown_arrow></div>
 
             <svg class="catalogSwitch_item catalogSwitch_item-list" @click="switchCatalogGrid" data-grid="list" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.416504 1.01758H19.5832" stroke="#40404C" stroke-width="1.92" stroke-miterlimit="10"/>
@@ -64,20 +66,15 @@
                 'SEND_GOOGLE_ANALYTICS'
             ]),
             filterProductsByPrice(e) {
-                console.warn('filterProductsByPrice', e, e.currentTarget, e.target)
-
-console.warn(e.currentTarget.dataset.filterdesc)
-
                 if(e.currentTarget.dataset.filterdesc) {
                     this.$store.dispatch('PRICE_FILTER', 'desc');
                     this.descending = false;
-                } 
+                }
 
                 if(e.currentTarget.dataset.filterasc) {
                     this.$store.dispatch('PRICE_FILTER', 'asc');
                     this.descending = true;
                 }
-
 
                 let gObj = {
                     category: 'filters',
@@ -88,6 +85,7 @@ console.warn(e.currentTarget.dataset.filterdesc)
 
                 this.SEND_GOOGLE_ANALYTICS(gObj);
 
+                this.rotateIcon();
             },
             rotateIcon() {
                 let icon = this.$el.querySelector('[data-sortDropdown_arrow]');

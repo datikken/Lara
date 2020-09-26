@@ -2,7 +2,7 @@
   <div class="dform_wrap-col" data-delivery-type_helper>
     <div class="dform_wrap-col_item delivery_type" id="delivery_type">
       <DeliveryHelperItem v-if="selfPickup" name="stock" text="Самовывоз со склада" />
-      <DeliveryHelperItem name="self" text="Забрать из постамата" />
+      <!--<DeliveryHelperItem name="self" text="Забрать из постамата" />-->
       <DeliveryHelperItem v-if="selfPickup" name="deliveryMkad" text="Доставка по Москве в пределах МКАД" />
       <DeliveryHelperItem v-if="selfPickup" name="delivery" text="Доставка по Москве за МКАД" />
       <DeliveryHelperItem name="post" text="Доставка почтой России" />

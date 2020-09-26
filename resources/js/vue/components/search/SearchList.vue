@@ -1,6 +1,8 @@
 <template>
     <div class="sres as-none">
         <div class="sres_wrap">
+            <div class="sres_close"></div>
+
             <simplebar data-simplebar-auto-hide="true" class="sres_content">
 
                 <SearchListItemHead  v-if="items[0] && items[0].length > 0" type="Принтер струйный" />
@@ -63,5 +65,16 @@
 </script>
 
 <style scoped>
-
+    .sres_close {
+        width: 20px;
+        height: 20px;
+        background-image: url('/images/icons/search_close.svg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        z-index: 999;
+    }
 </style>

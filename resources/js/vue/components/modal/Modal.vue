@@ -3,8 +3,9 @@
     <div id="modal_content" class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
       <div class="prdet">
         <div class="prdet_wrap">
+            <div class="prdet_close uk-modal-close"></div>
           <div class="prdet_wrap-item">
-            <div class="prdet_wrap-item_img">
+            <div class="prdet_wrap-item_img" v-if="singleProduct.params">
               <img
                 class="prdet_wrap-item_img_inner"
                 onerror="this.src = '/images/unnecessary/owl-swiper.svg';"
@@ -15,9 +16,12 @@
             </div>
           </div>
           <div class="prdet_wrap-item">
-            <div class="prdet_wrap-item-head">
+            <div class="prdet_wrap-item-head"  v-if="singleProduct.params">
               <span class="prdet_wrap-item-head-item">{{ singleProduct.name }}</span>
             </div>
+              <div class="prdet_wrap-item-desc"  v-if="singleProduct.params">
+                  <span class="prdet_wrap-item-desc-item">{{ singleProduct.params.color }} тонер-картридж {{ singleProduct.artikul }} для принтеров и МФУ:</span>
+              </div>
 
             <div class="prdet_wrap-item-icons" v-if="singleProduct.params">
               <div
@@ -62,7 +66,7 @@
                             <circle cx="25" cy="25" r="24.5" stroke="#40404C"/>
                             <path d="M33.4286 30.094C33.4286 34.4604 29.7509 38 25.2143 38C20.6777 38 17 34.4604 17 30.094C17 25.7277 25.2143 13 25.2143 13C25.2143 13 33.4286 25.7277 33.4286 30.094Z" fill="#40404C"/>
                             <path d="M33.4286 30.094C33.4286 34.4604 29.7509 38 25.2143 38C20.6777 38 17 34.4604 17 30.094C17 25.7277 25.2143 13 25.2143 13C25.2143 13 33.4286 25.7277 33.4286 30.094Z" fill="#ff54a4" stroke="#ff54a4"/>
-                        </svg> 
+                        </svg>
               </div>
               <div
                 v-if="singleProduct.params.color === 'Голубой'"
@@ -80,7 +84,7 @@
                             <circle cx="25" cy="25" r="24.5" stroke="#40404C"/>
                             <path d="M33.4286 30.094C33.4286 34.4604 29.7509 38 25.2143 38C20.6777 38 17 34.4604 17 30.094C17 25.7277 25.2143 13 25.2143 13C25.2143 13 33.4286 25.7277 33.4286 30.094Z" fill="#40404C"/>
                             <path d="M33.4286 30.094C33.4286 34.4604 29.7509 38 25.2143 38C20.6777 38 17 34.4604 17 30.094C17 25.7277 25.2143 13 25.2143 13C25.2143 13 33.4286 25.7277 33.4286 30.094Z" fill="#686866" stroke="#686866"/>
-                        </svg>    
+                        </svg>
                 </div>
 
               <div
@@ -110,19 +114,19 @@
                 <b  v-if="singleProduct.params"
                     class="prder_wrap-item-res">
                     {{ singleProduct.params.Ресурс }}
-                </b> согласно ASTM F1856/STMC для картриджей «Всё в одном»
+                </b> текстовых страниц <b>А4</b> согласно ASTM F1856/STMC для картриджей «Всё в одном»
               </span>
             </div>
 
             <div class="prdet_wrap-icons_ctas">
-              <div class="prdet_wrap-icons_ctas-amount">
+              <div class="prdet_wrap-icons_ctas-amount" v-if="singleProduct">
                 <PriceBtn :price="singleProduct.price" />
               </div>
               <div class="prdet_wrap-icons_ctas-increase">
                 <span class="prdet_wrap-icons_ctas-increase-text">Количество (шт)</span>
-                <AmountBtn :id="singleProduct.id" quantity="1" />
+                <AmountBtn v-if="singleProduct" :id="singleProduct.id" quantity="1" />
               </div>
-              <div class="prdet_wrap-icons_ctas-buy">
+              <div class="prdet_wrap-icons_ctas-buy" v-if="singleProduct">
                 <BuyBtn
                   text="в корзину"
                   class="text_buy-btn animated_btn uk-modal-close"
@@ -185,8 +189,11 @@ export default {
   computed: {
     singleProduct() {
       let prod =  this.$store.state.singleProduct;
-
-    //   this._fillData(prod);
+      // if(!prod.color) prod.color = 'black';
+      //
+      // let amount = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
+      //     amount.innerText = 1;
+      //     amount.setAttribute('data-modal-val', 1);
 
       return prod;
     },
@@ -201,4 +208,16 @@ export default {
 </script>
 
 <style scoped>
+    .prdet_close {
+        background-image: url('/images/icons/prdet_close.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+    }
 </style>

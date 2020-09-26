@@ -30,6 +30,8 @@
     }
     &_item {
         cursor: pointer;
+        display: flex;
+        align-items: center;
 
         &:first-child {
             margin-left: 0;
@@ -54,7 +56,7 @@
         background-size: cover;
         background-position: center;
         background-image: url('/images/sortDropdown/sortDropdown_arr.svg');
-        margin: 0 35px 0 0;
+        margin: 0 35px 0 10px;
     }
 }
     .catalogSwitch_item-active {

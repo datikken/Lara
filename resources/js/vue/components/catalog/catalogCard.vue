@@ -21,7 +21,7 @@
                     <img onerror="this.src = '/images/unnecessary/owl-swiper.svg';"
                          :src="`../storage/product_images/${data.params.Бренд}/SMALL/${data.photo}.png`" alt="">
                 </a>
-                <a class="product_wrapper-item_overlay" href="#modal-1" uk-toggle :data-id="data.id" @click="loadProductModal(data.id)">
+                <a class="product_wrapper-item_overlay" href="#modal-1" uk-toggle="target: #modal-1" :data-id="data.id" @click="loadProductModal(data.id)">
                     <div class="product_wrapper-item_overlay_wrapper">
                         <div class="product_wrapper-item_overlay_wrapper-item">
                             <span class="product_wrapper-item_overlay_wrapper-item_text">быстрый просмотр</span>

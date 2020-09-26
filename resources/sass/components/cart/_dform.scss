@@ -143,16 +143,16 @@
       }
 
         &:nth-child(2) {
-        position: absolute;
-        right: 48px;
-        top: -500;
-        background-color: #fff;
-        height: 170px;
-        display: flex;
-        align-items: flex-start;
-        z-index: 99999999;
-        transition: top .2s;
-        min-width: 300px;
+            position: absolute;
+            right: 48px;
+            top: -500;
+            background-color: #fff;
+            height: 170px;
+            display: flex;
+            align-items: flex-start;
+            z-index: 99;
+            transition: top .2s;
+            min-width: 300px;
       }
 
       .delivery_type {

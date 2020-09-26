@@ -251,7 +251,7 @@ let mutations = {
             category: 'catalog modal',
             eventAction: 'click',
             eventLabel: 'catalog modal opened',
-            eventValue: pid
+            eventValue: id
         };
 
         this.dispatch('SEND_GOOGLE_ANALYTICS', gObj);
@@ -613,13 +613,11 @@ let mutations = {
         return state.user
     },
     getProductById(state, id) {
-        let amount = document.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
         let product = state.products.filter((el) => el.id === id)
 
         state.singleProduct = product[0];
 
-        amount.innerText = 1;
-        amount.setAttribute('data-modal-val', 1);
+        console.warn('getProductBy id', product[0])
     },
     setProductsLoaded(state) {
         state.productsLoaded = true;

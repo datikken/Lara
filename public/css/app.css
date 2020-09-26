@@ -4509,7 +4509,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 #modal_content {
-  margin-top: 60px !important;
+  margin-top: 55px !important;
   position: relative;
 }
 #modal_content:after {
@@ -6113,7 +6113,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  margin: 20px 0 10px 0;
+  margin: 30px 0 10px 0;
   font-weight: 600;
   line-height: 110%;
   text-transform: uppercase;
@@ -6150,9 +6150,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 0;
 }
 .prdet_wrap-item:nth-child(2) {
+  margin-right: 30px;
+  margin-top: 0;
+}
+.prdet_wrap-item:nth-child(3) {
   width: 100%;
-  margin-left: 30px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 .prdet_wrap-item-stuff {
   font-family: "Montserrat", sans-serif;
@@ -7710,7 +7713,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   height: 170px;
   display: flex;
   align-items: flex-start;
-  z-index: 99999999;
+  z-index: 99;
   transition: top 0.2s;
   min-width: 300px;
 }
@@ -13185,7 +13188,7 @@ main {
 .simplebar-track {
   z-index: 1;
   position: absolute;
-  right: 0;
+  right: 2.5px;
   bottom: 0;
   pointer-events: none;
   overflow: hidden;
@@ -13306,7 +13309,7 @@ main {
 }
 
 .simplebar-track.simplebar-vertical {
-  top: 0;
+  top: 35px;
   width: 22px;
 }
 
@@ -13314,7 +13317,7 @@ main {
   content: "";
   width: 2px;
   background: #d4d4d5;
-  height: calc(100% - 20px);
+  height: calc(100% - 30px);
   position: absolute;
   right: 17px;
   z-index: -1;
@@ -13368,6 +13371,8 @@ main {
 }
 .catalogSwitch_item {
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 .catalogSwitch_item:first-child {
   margin-left: 0;
@@ -13389,7 +13394,7 @@ main {
   background-size: cover;
   background-position: center;
   background-image: url("/images/sortDropdown/sortDropdown_arr.svg");
-  margin: 0 35px 0 0;
+  margin: 0 35px 0 10px;
 }
 
 .catalogSwitch_item-active path {
