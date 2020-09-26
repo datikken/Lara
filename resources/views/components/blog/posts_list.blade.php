@@ -57,3 +57,6 @@
             </div>
     @endforeach
 </div>
+
+
+@include('components.modals.shouldBeLoggedIn')

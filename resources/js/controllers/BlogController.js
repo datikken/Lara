@@ -94,8 +94,9 @@ class BlogPostController {
                                     fixData(data);
                                 },
                                 error: function (error) {
-                                    // window.location.href
-                                    console.warn('like err', error);
+                                    let el = document.querySelector('#shouldBeLoggedIn');
+
+                                    UIkit.modal(el).show();
                                 }
                             });
 
