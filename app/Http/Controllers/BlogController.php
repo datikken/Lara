@@ -95,7 +95,12 @@ class BlogController extends Controller
         $user_id = Auth::id();
         $user = User::find($user_id);
 
+        if(!$user) {
+            throw new \Exception('User should be logged in.');
+        }
+
         $like = $user->likes()->where('post_id', $post_id)->first();
+
         if($like) {
             $already_like = $like->like;
             $update = true;

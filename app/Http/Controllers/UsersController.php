@@ -8,14 +8,19 @@ class UsersController extends Controller
 {
     public function get_user_info() {
         $user = Auth::user();
-        $uid = $user->id;
-        $user_info = DB::table('users_info')->where('user_id', $uid)->get();
 
-        $arrToReturn = array(
-            'user' => $user,
-            'userInfo' => $user_info
-        );
+        if(!is_null($user)) {
+            $uid = $user->id;
+            $user_info = DB::table('users_info')->where('user_id', $uid)->get();
 
-        return response()->json($arrToReturn);
+            $arrToReturn = array(
+                'user' => $user,
+                'userInfo' => $user_info
+            );
+
+            return response()->json($arrToReturn);
+        } else {
+            return response()->json('must be logged in');
+        }
     }
 }

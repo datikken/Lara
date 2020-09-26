@@ -931,7 +931,7 @@ b {
   .menu_wrapper-item:nth-child(2) {
     position: relative;
     width: initial;
-    margin-right: 100px;
+    margin-right: 105px;
   }
 }
 .menu_wrapper-item-home {
@@ -4122,11 +4122,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .products_grid .vue-ads-flex:first-child {
-    margin-bottom: 0;
-    margin-top: 0;
-    margin-left: 10px;
+    display: grid;
+    position: relative;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 0 100px 20px;
+    margin: 0 0 0 30px;
+    grid-gap: 30px;
   }
 }
 .products_grid .vue-ads-flex:last-child button {
@@ -4157,7 +4157,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .product {
   border: 1px solid #e9e9ea;
   min-width: 270px;
-  margin: 0 10px 10px 10px;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4167,9 +4167,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .product {
-    margin: 0px 10px 20px 10px;
+    margin: 0 0 20px 0;
     width: 270px;
   }
+}
+.product:nth-child(3n+3) {
+  margin-right: 0;
 }
 .product a:hover {
   text-decoration: none;
@@ -11740,7 +11743,7 @@ main {
   width: 1px;
   background: #e9e9ea;
   position: absolute;
-  top: 10px;
+  top: 0;
   left: -25px;
 }
 .postList_posted_author {
@@ -13348,7 +13351,7 @@ main {
   right: 4px;
   display: none;
   align-items: center;
-  right: 20px;
+  right: 0;
   width: 200px;
   position: relative;
   float: right;
@@ -13417,7 +13420,6 @@ main {
   position: absolute;
   z-index: 999999;
   width: 200px;
-  height: 160px;
   right: 0;
   top: 30px;
   background: #fff;

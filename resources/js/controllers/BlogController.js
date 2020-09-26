@@ -28,7 +28,8 @@ class BlogPostController {
         .then((data) => {
             that._clearForm();
         })
-        .catch(err => console.error(err))
+
+        .catch(err => console.error(err.message))
     }
     activateComments() {
         let submit = this.commentsForm.querySelector('.blogCom_submit');
@@ -70,7 +71,7 @@ class BlogPostController {
                             let id = posts[i].getAttribute('data-id');
                             let url = '/blog/like/' + id;
                                 url = url.replace('#','');
-                            
+
                             let classList = e.currentTarget.classList.value;
 
                             if(classList.indexOf('dis') >= 0) {
@@ -93,7 +94,8 @@ class BlogPostController {
                                     fixData(data);
                                 },
                                 error: function (error) {
-                                    console.warn(error);
+                                    // window.location.href
+                                    console.warn('like err', error);
                                 }
                             });
 
@@ -117,6 +119,7 @@ class BlogPostController {
     constructor() {
         this.block = document.querySelector('.postList');
         this.commentsForm = document.querySelector('[data-blogCommentsForm]');
+
         if(this.commentsForm) {
             this.postId = document.querySelector('[data-blogCommentPostId]').dataset.blogcommentpostid;
             this.route = document.querySelector('[data-blogCommentRoute]').dataset.blogcommentroute;
