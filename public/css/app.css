@@ -2259,7 +2259,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .main_slider .swiper-button-next {
-    right: 21% !important;
+    right: calc(50% - 587px);
   }
 }
 .main_slider .swiper-button-prev {
@@ -2271,7 +2271,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .main_slider .swiper-button-prev {
-    left: 21% !important;
+    left: calc(50% - 587px);
   }
 }
 

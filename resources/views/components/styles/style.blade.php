@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/css/uikit.min.css">
 <link rel="stylesheet" href="/css/uikit-rtl.min.css">
 
 <link rel="preload" href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -13,5 +12,4 @@
 <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
 <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
 
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">

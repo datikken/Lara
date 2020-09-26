@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\URL;
 
 class Post extends Model
 {
+    protected $guarded = [];
     protected $fillable = [
         'category',
         'heading',
@@ -20,7 +21,7 @@ class Post extends Model
 
     public function comments()
     {
-        return $this->belongsToMany(Post_Comments::class);
+        return $this->morphMany(Post_Comments::class, 'commentable')->whereNull('parent_id');
     }
 
     public function likes()

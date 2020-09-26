@@ -10,13 +10,23 @@ class Post_Comments extends Model
     protected $fillable = [
         'user_id',
         'post_id',
+        'parent_id',
         'likes',
         'dislikes',
-        'content'
+        'content',
+        'commentable_id',
+        'commentable_type'
   ];
 
-    public function comments()
+    protected $guarded = [];
+
+    public function user()
     {
-        return $this->belongsToMany(Post::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Post_Comments::class, 'parent_id');
     }
 }

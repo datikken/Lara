@@ -130,7 +130,7 @@
         right: 20px;
 
       @include  breakpoint($medium) {
-        right: 21%!important;
+        right: calc(50% - 587px);
       }
     }
     .swiper-button-prev {
@@ -141,7 +141,7 @@
         left: 20px;
 
       @include  breakpoint($medium) {
-        left: 21%!important;
+          left: calc(50% - 587px);
       }
     }
 }
