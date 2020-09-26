@@ -39,7 +39,7 @@ let mutations = {
     },
     setDeliveryIndex(state, data) {
         let that = this;
-        
+
         fetch('/setIndex', {
             method: "POST",
             headers: {
@@ -752,56 +752,25 @@ let mutations = {
         state.closeListener = payload;
     },
     getFilteredProducts(state, payload) {
-        let products = state.products;
-        let arrOfArrays = [[], [], []];
-
-        function separate(prod) {
-            if (prod.params.printertype === "Принтер струйный") {
-                arrOfArrays[0].push(prod)
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': window.token
             }
-            if (prod.params.printertype === "Принтер лазерный") {
-                arrOfArrays[1].push(prod)
+        });
+        $.ajax({
+            method: "get",
+            url: '/search',
+            data: {
+                payload
+            },
+            success: function (data) {
+                state.searchProducts = data;
+            },
+            error: function (error) {
+                console.warn(error);
             }
-            if (prod.params.printertype === "Принтер матричный") {
-                arrOfArrays[2].push(prod)
-            }
-        }
-
-        products.forEach((prod) => {
-            prod.product_indbid = prod.id;
-            
-            if (prod.name.indexOf(payload) >= 0) {
-                separate(prod)
-            }
-
-            if (prod.photo.toLowerCase().indexOf(payload) >= 0) {
-                separate(prod)
-            }
-
-            Object.keys(prod.cape).forEach((cape) => {
-                if ((cape.toLowerCase()).indexOf(payload) >= 0) {
-                    separate(prod)
-                }
-            })
-
-            Object.values(prod.cape).forEach((cape) => {
-                if ((cape.toLowerCase()).indexOf(payload) >= 0) {
-                    separate(prod)
-                }
-            })
         });
 
-        function removeDuplicates(myArr, prop) {
-            return myArr.filter((obj, pos, arr) => {
-                return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos;
-            });
-        }
-
-        arrOfArrays.forEach((arr, ind) => {
-            arrOfArrays[ind] = removeDuplicates(arr, 'id');
-        })
-
-        state.searchProducts = arrOfArrays;
         state.closeListener = true;
     },
     getAllProducts(state) {

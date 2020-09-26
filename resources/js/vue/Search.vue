@@ -103,12 +103,15 @@
             ]),
             fixedMenuOnScroll() {
                 let that = this;
+                let sresBlock = document.querySelector('.sres_wrap');
 
                 window.addEventListener('scroll', function() {
                     if(window.pageYOffset >= 60) {
                         that.$el.classList.add('topFixedMenu');
+                        sresBlock.style.top = '50px';
                     } else {
                         that.$el.classList.remove('topFixedMenu');
+                        sresBlock.style.top = '110px';
                     }
                 })
             },

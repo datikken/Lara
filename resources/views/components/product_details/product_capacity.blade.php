@@ -10,11 +10,13 @@
             </div>
         </div>
 
-        @forelse($product['cape'] as $item=>$value)
-            <div class="prcp_row">
-                <div class="prcp_item">{{ $item }}</div>
-                <div class="prcp_item">{{ $value }}</div>
-            </div>
+        @forelse($product['cape'] as $key=>$value)
+            @if($value != '')
+                <div class="prcp_row">
+                    <div class="prcp_item">{{ $key }}</div>
+                    <div class="prcp_item">{{ $value }}</div>
+                </div>
+            @endif
         @empty
             <div class="prcp_row">
                 <div class="prcp_item">Нет информации</div>

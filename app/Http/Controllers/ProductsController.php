@@ -135,17 +135,41 @@ class ProductsController extends Controller
             array_push($imgArr, $image);
         }
 
+        $newParams = array('');
+
+        function pushToArr($obj) {
+            $arr = new \stdClass();
+
+            foreach ($obj as $a=>$b) {
+                $arr->brand = $a;
+                $arr->model = $b;
+            }
+
+            return $arr;
+        }
+
         foreach ($product['cape'] as $key=>$item) {
-            foreach ($item as $obj=>$val) {
-                $cape[$obj] = $val;
+            $ret = pushToArr($item);
+            array_push($newParams, $ret);
+        }
+
+        $merged = array();
+
+        foreach ($newParams as $key=>$prm) {
+            if($prm != '') {
+                if(isset($merged[$prm->brand])) {
+                    $merged[$prm->brand] = $merged[$prm->brand] . ', ' . $prm->model;
+                } else {
+                    $merged[$prm->brand] = $prm->model;
+                }
             }
         }
 
-        $product['cape'] = $cape;
+
+        $product['cape'] = $merged;
+
         $product['name_econom'] = json_decode($product['name_econom']);
         $product['feedback'] = $feedItems;
-
-        // dd($feedItems);
 
         if ($request->ajax()) {
             return response()->json($product);

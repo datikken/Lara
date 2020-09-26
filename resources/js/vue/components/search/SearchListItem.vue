@@ -9,7 +9,7 @@
         </div>
         <div class="sres_col_inner">
 
-            <div class="sres_col_inner_item" v-for="(item, index) in data.cape" :key=item>
+            <div class="sres_col_inner_item" v-for="(item, index) in this.cape" :key=item>
                 <span class="sres_col_item">{{ index }}</span>
                 <span class="sres_col_item">{{ item }}</span>
             </div>
@@ -26,14 +26,20 @@
         data: function (){
             return {
                 color: '',
-                link: ''
+                link: '',
+                cape: ''
             }
         },
         created:function(data) {
-            this.link = '/product/' + this.$props.data.product_indbid
-            let col = this.$props.data.params.color
+            this.link = '/product/' + this.$props.data.id
+            this.cape = this.$props.data.cape;
+            let col = JSON.parse(this.$props.data.params).color;
+
+            console.warn(JSON.parse(this.$props.data.params), col);
 
             switch(col) {
+                case undefined: this.color = 'blackCol'
+                    break;
                 case 'Черный': this.color = 'blackCol'
                     break;
                 case 'Трехцветный': this.color = 'tripleCol'
@@ -44,21 +50,29 @@
                     break;
                 case 'Желтый': this.color = 'yellowCol'
                     break;
-                default: 'black'
+                default: 'blackCol'
                     break;
             }
+
+            console.warn(this.color, col);
+
         },
         methods: {
             backgroundOnHover() {
-                if(this.color === 'tripleCol') {
-                    this.color = 'tripleColGradient';
+                if(this.color) {
+                    if(this.color === 'tripleCol') {
+                        this.color = 'tripleColGradient';
+                    }
+
+                    this.$el.classList.add(this.color);
+                    this.$el.style.color = '#fff';
                 }
 
-                this.$el.classList.add(this.color);
-                this.$el.style.color = '#fff';
+
+                console.warn(this.color)
             },
             clearBackgroundOnHover() {
-                this.$el.classList.remove(this.color);
+                this.color && this.$el.classList.remove(this.color);
                 this.$el.style.color = 'unset';
             }
         }

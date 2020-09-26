@@ -16,10 +16,8 @@ Route::group(['middleware' => 'restrictToAdmin'], function () {
 
 Route::group(['middleware' => 'ajax'], function () {
     //Search page
+    Route::get('/search', ['uses' => "SearchController@search", 'as' => 'searchProducts']);
 });
-
-Route::get('/search', ['uses' => "SearchController@search", 'as' => 'searchProducts']);
-
 
 //PRODUCTS
 Route::group(['middleware' => 'checkUserRole'], function () {
