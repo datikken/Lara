@@ -66,8 +66,7 @@
     }
 
   @include breakpoint($medium) {
-    margin: 0 0 20px 0;
-    width: 270px;
+     width: 270px;
   }
 
   &:nth-child(3n+3) {
@@ -133,13 +132,13 @@
         }
 
       @include breakpoint($medium) {
-        margin-bottom: 12px;
-        top: initial;
-        display: grid;
-        grid-template-columns: 3.1fr 1fr;
-        align-items: flex-start;
-        justify-items: flex-end;
-        padding-top: 13px;
+          margin-bottom: 5px;
+          top: initial;
+          display: grid;
+          grid-template-columns: 3.1fr 1fr;
+          align-items: flex-start;
+          justify-items: flex-end;
+          padding-top: 10px;
       }
 
       &:first-child {

@@ -4167,7 +4167,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .product {
-    margin: 0 0 20px 0;
     width: 270px;
   }
 }
@@ -4233,13 +4232,13 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .product_wrapper-item {
-    margin-bottom: 12px;
+    margin-bottom: 5px;
     top: initial;
     display: grid;
     grid-template-columns: 3.1fr 1fr;
     align-items: flex-start;
     justify-items: flex-end;
-    padding-top: 13px;
+    padding-top: 10px;
   }
 }
 .product_wrapper-item:first-child {
