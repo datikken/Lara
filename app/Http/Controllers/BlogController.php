@@ -41,9 +41,19 @@ class BlogController extends Controller
         $post['dislikes'] = $dislikes;
         $post['comments'] = DB::table('posts_comments')->where('post_id', $post['id'])->get();
 
-        // foreach($post['comments'] as $com) {
-        //     dump($com);
-        // }
+//        $all = $post['comments'];
+//        $sortedCom = array();
+//
+//        foreach($all as $key) {
+//            array_push($sortedCom, $key);
+//
+//            if($sortedCom[$key->id] == $key->parentId) {
+//
+//            }
+//        }
+//
+//
+//        return response()->json($post['comments']);
 
         if(is_null($post)) {
             return redirect('404');
@@ -65,14 +75,16 @@ class BlogController extends Controller
         $email = $request->email;
         $message = $request->message;
         $postId = $request->postId;
+        $parentId = $request->parentId;
         $userId = Auth::id();
 
         $arr = array(
             'post_id' => $postId,
-            'user_id' => $userId,
+            'user_id' => $userId ? $userId : '',
             'content' => $message,
             'name' => $name,
             'email' => $email,
+            'parent_id' => $parentId ? intval($parentId) : 0,
             'created_at' => \Carbon\Carbon::now()
         );
 

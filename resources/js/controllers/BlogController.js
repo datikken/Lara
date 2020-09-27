@@ -8,6 +8,7 @@ class BlogPostController {
             inputs.forEach(npt => npt.value = '');
     }
     _makeRequest({ name, email, message, postId }) {
+        let parentId = document.querySelector('[data-blogcommentpostid]').dataset.blogcommentpostid;
         let that = this;
 
         fetch(this.route, {
@@ -68,7 +69,9 @@ class BlogPostController {
                 let arr = [like, dislike];
                     arr.forEach((item) => {
                         item.addEventListener('click', function(e) {
+                            let parentId = document.querySelector('[data-blogcommentpostid]').dataset.blogcommentpostid;
                             let id = posts[i].getAttribute('data-id');
+
                             let url = '/blog/like/' + id;
                                 url = url.replace('#','');
 
@@ -79,11 +82,14 @@ class BlogPostController {
                             } else {
                                 type = 'true';
                             }
-                            let data = {
-                                    post_id: id,
-                                    isLike: type
-                                }
 
+                            let dataObj = {};
+                                dataObj.isLike = type;
+                                dataObj.post_id = id;
+
+                            if(parentId) {
+                                dataObj.parent_id = parentId;
+                            }
 
                             $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': window.token } });
                             $.ajax({

@@ -26,7 +26,7 @@
         width: 25px;
         height: 25px;
     }
-    
+
     &_backIcon {
         background-image: url('/images/blog/blogPost_prev.svg');
         margin-right:10px;
@@ -35,13 +35,6 @@
         background-image: url('/images/blog/blogPost_next.svg');
         margin-left:10px;
     }
-    &_backText {
-    }
-    &_fwdText {
-
-    }
-
-    &_cat {}
 
     &_head {
         margin-bottom: 0;

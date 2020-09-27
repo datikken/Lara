@@ -1,10 +1,10 @@
-<div class="postItem_comments_item <? if(isset($class)) { echo $class; }?>">
+<div class="postItem_comments_item <? if(isset($class)) { echo $class; }?>" data-commentId="{{ $comment->id }}">
     <div class="postItem_comments_col">
         <div class="postItem_comments_avatar"></div>
     </div>
     <div class="postItem_comments_col">
         <div class="postItem_comments_nick">
-            <span>{{ $comment->name }}</span>
+            <span>{{ $comment->name }} {{ $comment->id }}, parent {{ $comment->parent_id }}</span>
             <span class="postItem_date">{{ $comment->created_at }}</span>
         </div>
         <div class="postItem_comments_comment">
@@ -21,7 +21,7 @@
             <div class="postItem_comments_responseCount">0</div>
         </div>
         <div class="postItem_comments_col_item">
-            <div class="postItem_comments_responseBtn">
+            <div class="postItem_comments_responseBtn" data-commentRespond>
                 <span class="postItem_comments_responseBtn_icon"></span>
                 <span class="postItem_comments_responseBtn_item">ответить</span>
             </div>

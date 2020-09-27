@@ -27,6 +27,7 @@ import OrdersHistoryController from './controllers/OrdersHistoryController'
 import ProductDetailsMenuController from './controllers/ProductDetailsMenuController'
 import DashController from './controllers/DashController'
 import BlogController from './controllers/BlogController'
+import BlogPostController from './controllers/BlogPostController'
 import OwlCarouselController from './controllers/OwlCarouselController'
 import CatalogController from './controllers/CatalogController'
 
@@ -56,4 +57,5 @@ $(document).ready(function() {
     new DashController();
     new DeliveryController();
     new BlogController();
+    new BlogPostController();
 });

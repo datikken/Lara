@@ -9259,6 +9259,22 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   outline: none;
   padding: 20px 0 0 30px;
   resize: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 100%;
+  font-weight: 400;
+  color: inherit;
+}
+.blogCom_area textarea::-moz-placeholder {
+  font-size: 12px;
+}
+.blogCom_area textarea:-ms-input-placeholder {
+  font-size: 12px;
+}
+.blogCom_area textarea::-ms-input-placeholder {
+  font-size: 12px;
+}
+.blogCom_area textarea::placeholder {
+  font-size: 12px;
 }
 .blogCom_group {
   width: 500px;
@@ -9289,7 +9305,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   padding-left: 30px;
 }
 .blogCom_inputs {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
   margin-bottom: 20px;
 }
@@ -12929,7 +12946,6 @@ main {
 }
 
 .postItem_comments-shorten {
-  max-height: 340px;
   overflow: hidden;
 }
 

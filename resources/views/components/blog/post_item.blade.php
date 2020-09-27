@@ -55,8 +55,8 @@
                 <div class="postItem_fwdText">следующая статья</div>
                 <div class="postItem_fwdIcon"></div>
             </div>
-        </div> 
-                
+        </div>
+
     </div>
 
     <div class="postItem_footer">
@@ -80,7 +80,7 @@
         @include('components.blog.post_comments', ['comments' => $post['comments']])
     </div>
 
-    
+
     @include('components.blog.post_item_commentsForm', ['post' => $post ])
 
 </div>

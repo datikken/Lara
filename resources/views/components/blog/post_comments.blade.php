@@ -8,10 +8,21 @@
         </div>
     </div>
 
-    @foreach ($comments as $comment)
-        @include('components.blog.postItem_comments_item', ['comment' => $comment])
+    @foreach ($comments as $key=>$comment)
+        @include('components.blog.postItem_comments_item', ['class' => '', 'comment' => $comment])
+
+    {{--@php dump($comments[$key]->id, $comment->parent_id); @endphp--}}
+
+        @if($comments[$key]->id == $comment->parent_id)
+           @include('components.blog.postItem_comments_item', ['class' => 'ml100', 'comment' => $comment])
+        @endif
+
     @endforeach
 
 </div>
 
-@include('components.btn.text_btn', [ 'class' => 'action_btn allcomments_btn', 'text' => 'смотреть все комментарии'])
+{{--@php dump($comments); @endphp--}}
+
+@if(count($comments) > 5)
+    @include('components.btn.text_btn', [ 'class' => 'action_btn allcomments_btn animated_btn', 'text' => 'смотреть все комментарии'])
+@endif
