@@ -288,10 +288,11 @@ input {
     }
 }
 
-input::-webkit-input-placeholder { 
+input::-webkit-input-placeholder {
   font-style: normal;
   font-weight: normal;
   letter-spacing: 0.02em;
   opacity: 0.5;
   padding-bottom: 4px;
+  font-size: 12px;
 }

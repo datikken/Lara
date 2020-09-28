@@ -21,6 +21,7 @@ class HomeController extends Controller
     {
         $this->middleware(['auth', 'verified']);
     }
+
     /**
      * Show the application dashboard.
      *
@@ -34,8 +35,10 @@ class HomeController extends Controller
     public function showFillProfileForm()
     {
         $usr_id = Auth::id();
-        $userAvatar = DB::table('users_info')->where('user_id', $usr_id)->value('image');
-        return view('pages.dash.dash_fill', ['user_avatar' => $userAvatar]);
+        $user = DB::table('users')->where('id', $usr_id)->get();
+        $userAvatar = DB::table('users')->where('id', $usr_id)->value('image');
+
+        return view('pages.dash.dash_fill', ['user' => $user[0], 'user_avatar' => $userAvatar]);
     }
 
     public function showFillAdressesForm()
@@ -43,10 +46,10 @@ class HomeController extends Controller
         $user_id = Auth::id();
         $address = DB::table('users_adresses')->where('user_id', $user_id)->get();
 
-        if($address->count() > 0) {
+        if ($address->count() > 0) {
             return view('pages.dash.adresses_fill', ['address' => $address]);
         } else {
-            return view('pages.dash.adresses_fill',['address' => $address]);
+            return view('pages.dash.adresses_fill', ['address' => $address]);
         }
     }
 
@@ -96,17 +99,15 @@ class HomeController extends Controller
         Storage::disk('local')->put('public/user_avatars/' . $imageName, $imageEncoded);
 
         $arr = array(
-            'image'=> $imageName,
-            'user_id' => $userId,
-            'created_at' => \Carbon\Carbon::now()
+            'image' => $imageName,
         );
 
-        $exst = DB::table('users_info')->where('user_id', $userId)->value('id');
+        $exst = DB::table('users')->where('id', $userId)->value('id');
 
-        if($exst) {
-            DB::table('users_info')->where('user_id', $userId)->update($arr);
+        if ($exst) {
+            DB::table('users')->where('id', $userId)->update($arr);
         } else {
-            DB::table('users_info')->insert($arr);
+            DB::table('users')->insert($arr);
         }
 
         return redirect()->route('fillProfile');
@@ -115,29 +116,29 @@ class HomeController extends Controller
     public function displayOrders()
     {
         $user_id = Auth::id();
-        $type = DB::table('users')->where('id', $user_id)->select('face','email', 'name')->first();
+        $type = DB::table('users')->where('id', id)->select('face', 'email', 'name')->first();
         $orders_history = DB::table('orders')->where('user_id', $user_id)->where('status', 'arrived')->get();
         $orders_actual = DB::table('orders')->where('user_id', $user_id)->get();
         $array = array_filter((array)$orders_actual);
 
-        if(empty($array)) {
+        if (empty($array)) {
             $orders_actual = null;
         }
 
-        if(DB::table('orders')->where('user_id', $user_id)->where('status','arrived')->get()->last()) {
+        if (DB::table('orders')->where('user_id', $user_id)->where('status', 'arrived')->get()->last()) {
             $last_order_id = DB::table('orders')->where('user_id', $user_id)->where('status', 'arrived')->get()->last()->id;
             $last_order = DB::table('order_items')->where('order_id', $last_order_id)->get();
             $last_order_total = DB::table('orders')->where('id', $last_order_id)->where('status', 'arrived')->get();
             $last_order->id = $last_order_id;
 
             return view('pages.dash.dash_orders',
-                    [
-                        'orders_actual' => $orders_actual,
-                        'orders_history' => $orders_history,
-                        'user' => $type,
-                        'last_order' => $last_order,
-                        'last_order_total' => $last_order_total
-                    ]
+                [
+                    'orders_actual' => $orders_actual,
+                    'orders_history' => $orders_history,
+                    'user' => $type,
+                    'last_order' => $last_order,
+                    'last_order_total' => $last_order_total
+                ]
             );
         } else {
             return view('pages.dash.dash_orders', [
@@ -146,49 +147,49 @@ class HomeController extends Controller
             ]);
         }
     }
+
     public function collectProfileData(Request $request)
     {
         $userId = Auth::id();
+
+        Validator::make($request->all(), [
+            'name' => 'max:500',
+            'lastname' => 'max:500',
+            'tel' => 'numeric',
+            'email' => 'email'
+        ])->validate();
 
         $name = $request->input('name');
         $lastname = $request->input('lastname');
         $tel = $request->input('tel');
         $mail = $request->input('email');
 
-        if($name) {
-            Validator::make( $request->all(), [
-                'name' => 'max:500',
-            ])->validate();
+        if ($name) {
+            DB::table('users')->where('id', $userId)->update(['name' => $name]);
 
-            DB::table('users')->where('id', $userId)->update(['name'=> $name]);
+            return response()->json(['message' => 'Name successfully changed']);
         }
 
-        if($mail) {
+        if ($mail) {
             DB::table('users')->where('id', $userId)->update(['email' => $mail]);
+            return response()->json(['message' => 'Email successfully changed']);
         }
 
-        if($lastname) {
-            Validator::make( $request->all(), [
-                'lastname' => 'max:500'
-            ])->validate();
+        if ($lastname) {
+            $exists = DB::table('users')->where('id', $userId)->value('id');
 
-            $exists = DB::table('users_info')->where('user_id', $userId)->value('user_id');
-
-            dump($exists);
-
-            if(isset($exists)) {
-                DB::table('users_info')->where('user_id', $userId)->update(['lastname' => $lastname]);
+            if (isset($exists)) {
+                DB::table('users')->where('id', $userId)->update(['lastname' => $lastname]);
             } else {
-                DB::table('users_info')->insert(['lastname' => $lastname,'user_id' => $userId]);
+                DB::table('users')->insert(['lastname' => $lastname]);
             }
+
+            return response()->json(['message' => 'Lastname successfully changed']);
         }
 
-        if($tel) {
-            Validator::make( $request->all(), [
-                'tel' => 'required|numeric',
-            ])->validate();
-
-            DB::table('users_info')->where('user_id', $userId)->update(['tel' => $tel]);
+        if ($tel) {
+            DB::table('users')->where('id', $userId)->update(['tel' => $tel]);
+            return response()->json(['message' => 'Tel successfully changed']);
         }
     }
 }

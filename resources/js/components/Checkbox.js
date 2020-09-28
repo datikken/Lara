@@ -57,9 +57,11 @@ class Checkbox {
             img.addEventListener('click', function() {
                 if(clicked) {
                     img.classList.add('invisible');
+                    a.setAttribute('checked', false);
                     clicked = false;
                 } else {
                     img.classList.remove('invisible');
+                    a.setAttribute('checked', true);
                     clicked = true;
                 }
             });
@@ -70,10 +72,12 @@ class Checkbox {
                 if(clicked) {
                     img.classList.add('invisible');
                     input && input.removeAttribute('checked');
+                    a.setAttribute('checked', false);
                     clicked = false;
                 } else {
                     img && img.classList.remove('invisible');
                     input && input.setAttribute('checked', true);
+                    a.setAttribute('checked', true);
                     clicked = true;
                 }
             });

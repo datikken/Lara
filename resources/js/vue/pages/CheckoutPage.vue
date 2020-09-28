@@ -1,10 +1,10 @@
 <template>
     <div class="cart_check-wrapper">
         <Loader v-if="!this.$store.state.user"/>
-        <Fizik v-if="userInfo.user && userInfo.user.face === 'fizik' "/>
-        <Urik v-if="userInfo.user && userInfo.user.face === 'urik' "/>
+        <Fizik v-if="this.userInfo.user && this.userInfo.user[0].face === 'fizik' "/>
+        <Urik v-if="this.userInfo.user && this.userInfo.user[0].face === 'urik' "/>
 
-        <OrderList/>
+        <OrderList v-if="this.$store.state.user" />
 
     </div>
 </template>

@@ -11,11 +11,10 @@ class UsersController extends Controller
 
         if(!is_null($user)) {
             $uid = $user->id;
-            $user_info = DB::table('users_info')->where('user_id', $uid)->get();
+            $user_info = DB::table('users')->where('id', $uid)->get();
 
             $arrToReturn = array(
-                'user' => $user,
-                'userInfo' => $user_info
+                'user' => $user_info
             );
 
             return response()->json($arrToReturn);

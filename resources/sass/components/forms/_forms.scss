@@ -1,0 +1,24 @@
+.form_group {
+    &-error {
+        display:flex;
+        flex-direction: column;
+
+        input {
+            border: 1px solid $red!important;
+        }
+
+        .form_group_message {
+            display: block!important;
+        }
+    }
+
+    .form_group_message {
+        display: none;
+        margin-bottom: 0;
+    }
+
+    &_error {
+        display: none;
+        color: $red;
+    }
+}

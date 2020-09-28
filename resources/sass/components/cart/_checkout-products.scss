@@ -15,6 +15,7 @@
   &-wrap {
     display: flex;
     flex-direction: column;
+    margin-bottom: 50px;
 
     &_item {
       display: grid;
@@ -39,6 +40,11 @@
           border: none;
           outline: none;
           user-select: none;
+
+          &_inner {
+              display: flex;
+              align-items: center;
+          }
 
           label {
               display: flex;

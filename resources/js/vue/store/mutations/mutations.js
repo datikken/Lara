@@ -608,6 +608,9 @@ let mutations = {
         axios.get('/getUserInfo')
             .then(response => {
                 state.user = response.data;
+
+
+                console.log(response.data)
             });
 
         return state.user

@@ -53,7 +53,7 @@
             cursor: pointer;
 
             &:first-child {
-               border-right: 1px solid #e9e9ea;
+               border-right: 1px solid $light_gray;
                padding-right: 22.5px;
             }
         }

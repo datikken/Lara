@@ -3,28 +3,24 @@
         <div class="cart_check-wrap" data-href="">
             <div class="cart_check-wrap_head">
                 <h1 data-heading>Получатель заказа</h1>
-
-                <span class="error-message as-none" data-error>Заполните обязательные поля</span>
             </div>
 
             <div class="cart_check-wrap_item">
-                <div class="cart_check-wrap_item-group">
-                    <label for="required" class="invisible" data-err>Поле имя обязательно к заполнению</label>
+                <div class="cart_check-wrap_item-group form_group">
                     <label for="firstname">Имя <span>*</span></label>
                     <input type="text" name="firstname" data-required />
+                    <label for="required" class="form_group_message" data-err>Поле имя обязательно к заполнению</label>
                 </div>
-                <div class="cart_check-wrap_item-group">
-                    <label for="required" class="invisible errorLabel" data-err>Поле фамилия обязательно к
-                        заполнению</label>
+                <div class="cart_check-wrap_item-group form_group">
                     <label for="lastname">Фамилия <span>*</span></label>
                     <input type="text" name="lastname" data-required />
+                    <label for="required" class="form_group_message" data-err>Поле фамилия обязательно к заполнению</label>
                 </div>
             </div>
 
             <div class="cart_check-wrap_item">
-                <div class="cart_check-wrap_item-group">
-                    <label for="required" class="invisible errorLabel" data-err>Поле телефон обязательно к
-                        заполнению</label>
+                <div class="cart_check-wrap_item-group form_group">
+
                     <label for="tel">Телефон <span>*</span></label>
                     <masked-input
                         v-model="phone"
@@ -32,20 +28,26 @@
                         placeholder="+7 (___) ___ - __ - __"
                         data-required
                         data-phone />
+
+                    <label for="required" class="form_group_message">Поле телефон обязательно к заполнению</label>
                 </div>
 
-                <TextBtn className="cart_check-wrap_item-group_btn animated_btn" text="продолжить"
-                         @click.native="setCustomerFio"/>
+                <TextBtn className="cart_check-wrap_item-group_btn blocked_btn" text="продолжить" @click.native="setCustomerFio"/>
 
             </div>
 
-            <div class="cart_check-wrap_item">
-                <div class="cart_check-wrap_item-group checkbox">
-                    <SimpleCheckbox name="save" @click.native="saveDataToStorage" />
-                    <label for="save">Сохранить данные</label>
+            <div class="cart_check-wrap_item cart_save_data">
+                <div class="cart_check-wrap_item-group form_group">
+                    <div class="cart_check-wrap_item-group_inner">
+                        <SimpleCheckbox name="save" @click.native="saveDataToStorage" />
+                        <label for="save">Сохранить данные</label>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <agreementCheck />
+
     </div>
 </template>
 
@@ -55,23 +57,27 @@
     import {mapActions,mapGetters} from 'vuex'
     import MaskedInput from '../inputs/MaskedInput'
     import router from '../../router/router'
+    import agreementCheck from '../policy/agreementCheck';
 
     export default {
         name: "Fizik",
         components: {
             SimpleCheckbox,
             TextBtn,
-            MaskedInput
+            MaskedInput,
+            agreementCheck
         },
         data: function () {
             return {
                 userMask: 'aa-aa-AAAA',
-                phone: ''
+                phone: '',
+                groups: ''
             }
         },
         mounted() {
            this.GET_USERS_INFO();
            this.fillInputsData();
+           this.clearInputsOnFocus();
         },
         computed: {
             ...mapGetters(['user']),
@@ -86,6 +92,18 @@
                 'SCROLL_TO_TOP',
                 'GET_USERS_INFO'
             ]),
+            clearInputsOnFocus() {
+                this.groups = this.$el.querySelectorAll('.form_group');
+
+                this.groups && this.groups.forEach(grp => {
+                    let npt = grp.querySelector('input');
+
+                    npt.addEventListener('focus', function() {
+                        grp.classList.remove('form_group-error');
+                        npt.value = '';
+                    })
+                });
+            },
             fillInputsData() {
                 let data = JSON.parse(localStorage.getItem('checkoutProductsData'));
 
@@ -112,10 +130,24 @@
 
                 return obj;
             },
+            validateOferta() {
+                let oferta = this.$el.querySelector('[data-oferta]');
+                let input;
+
+            },
             saveDataToStorage() {
                 let data = this.collectInputData();
 
+
+                console.warn(data);
+
+                return;
+
+
                 localStorage.setItem('checkoutProductsData', JSON.stringify(data));
+
+
+
             },
             validateNumberLength(num) {
                 let val = num.replace(/[- + _ )(]/g,'');
@@ -135,17 +167,20 @@
 
                     window.app.validator.formValidate([], $(this.$el));
                     this.validateNumberLength(obj.tel);
+                    this.validateOferta();
                     this.CHANGE_PROGRESS_STEP();
                     router.push('/deliveryForm');
                     this.SCROLL_TO_TOP();
 
                 } catch (err) {
-                    let error = this.$el.querySelector('[data-error]');
-                    let heading = this.$el.querySelector('[data-heading]');
+                    this.groups && this.groups.forEach(grp => {
+                        let required = grp.querySelector('[data-required]');
+                        let npt = grp.querySelector('input').value
 
-                    error.classList.add('mb10');
-                    error.classList.remove('as-none');
-                    heading.classList.add('mb5');
+                        if(required && npt === '') {
+                            grp.classList.add('form_group-error');
+                        }
+                    })
 
                     return;
                 }
@@ -157,5 +192,8 @@
 <style scoped>
     .cart_check-wrap_item-group_btn {
         margin-top: 24px;
+    }
+    .cart_save_data {
+        margin-top: 10px;
     }
 </style>

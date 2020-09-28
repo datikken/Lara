@@ -21,3 +21,23 @@
 .yellow_btn {
     background-color: $yellow!important;
 }
+
+.animated_btn {
+    transition: box-shadow .2s;
+
+    div {
+        user-select: none;
+    }
+
+    &:hover {
+        box-shadow: 0 0 12px rgba(0,0,0,0.6);
+    }
+}
+.blocked_btn {
+    background: $light_gray!important;
+}
+
+.animated_btn:active {
+    -webkit-animation: shadow_inset .2s;
+    animation: shadow_inset .2s;
+}

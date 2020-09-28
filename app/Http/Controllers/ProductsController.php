@@ -125,7 +125,7 @@ class ProductsController extends Controller
         $product['cape'] = json_decode($product['cape']);
 
         foreach ($feedItems as  $key=>$value) {
-            $usverAvatar = DB::table('users_info')->where('user_id', $value->user_id)->value('image');
+            $usverAvatar = DB::table('users')->where('id', $value->user_id)->value('image');
             $usverName = DB::table('users')->where('id', $value->user_id)->value('name');
             $feedItems[$key]->user_avatar = $usverAvatar;
             $feedItems[$key]->user_name = $usverName;

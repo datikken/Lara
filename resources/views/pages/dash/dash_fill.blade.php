@@ -1,5 +1,12 @@
 @extends('layouts.dash')
 
+{{--@php--}}
+    {{--dump(isset($user->name));--}}
+    {{--dump($user->lastname);--}}
+    {{--dump($user->tel);--}}
+    {{--dump($user->email);--}}
+{{--@endphp--}}
+
 @section('center')
    <div class="dfill">
        <div class="dfill_wrap">
@@ -38,7 +45,7 @@
                             <label for="name">Имя <span>*</span></label>
                             <div class="input_wrap">
 
-                                <input type="text" class="form-control" name="name" placeholder="Имя" required>
+                                <input type="text" class="form-control" name="name" placeholder="Имя" required value="<?if(isset($user->name)) { echo $user->name; } ?>">
 
                                 <button class="form-group-btn animated_btn" type="submit">
                                     <span>
@@ -53,7 +60,7 @@
                             {{csrf_field()}}
                             <label for="name">Фамилия <span>*</span></label>
                             <div class="input_wrap">
-                                <input type="text" class="form-control" name="lastname" placeholder="Фамилия" required>
+                                <input type="text" class="form-control" name="lastname" placeholder="Фамилия" required value="<?if(isset($user->lastname)) { echo $user->lastname; } ?>">
                                 <button class="form-group-btn animated_btn" type="submit">
                                      <span>
                                         изменить
@@ -68,7 +75,7 @@
                             <label for="name">Телефон <span>*</span></label>
 
                             <div class="input_wrap">
-                                <input type="text" class="form-control" name="tel" placeholder="Телефон" required>
+                                <input type="number" class="form-control" name="tel" placeholder="Телефон" required value="<?if(isset($user->tel)) { echo $user->tel; } ?>">
                                 <button class="form-group-btn animated_btn" type="submit">
                                     <span>
                                         изменить
@@ -82,7 +89,7 @@
 
                             <label for="name">Адрес электронной почты <span>*</span></label>
                             <div class="input_wrap" data-required>
-                                <input type="text" class="form-control" name="email" placeholder="Адрес электронной почты">
+                                <input type="text" class="form-control" name="email" placeholder="Адрес электронной почты" value="<?if(isset($user->email)) { echo $user->email; } ?>">
                                 <button class="form-group-btn animated_btn" type="submit">
                                     <span>
                                         изменить
