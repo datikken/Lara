@@ -19,6 +19,7 @@
         gtag('config', 'UA-177029583-1');
     </script>
     <link href="/images/icons/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="description" content="Купить картридж для принтера, с доставкой.">
     <title>RECART.me</title>
 </head>
 <body>

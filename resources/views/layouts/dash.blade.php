@@ -6,7 +6,8 @@
     @include('components.styles.style')
     @include('components.scripts.scripts')
     <link rel="stylesheet" href="/css/app.css">
-    <title>Printers</title>
+    <meta name="description" content="Купить картридж для принтера, с доставкой.">
+    <title>RECART.me</title>
 </head>
 <body>
 

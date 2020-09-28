@@ -11,7 +11,7 @@
             <div class="order_list-wrap_inner">
                 <div class="order_list-wrap_inner-row">
                     <div class="order_list-wrap_inner-row_item">
-                        <span class="order_list-wrap_inner-row_item-head">Наимениование</span>
+                        <span class="order_list-wrap_inner-row_item-head">Наименование</span>
                     </div>
                     <div class="order_list-wrap_inner-row_item">
                         <span class="order_list-wrap_inner-row_item-head">Стоимость</span>

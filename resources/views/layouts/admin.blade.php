@@ -3,12 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <meta name="theme-color" content="#563d7c">
-    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
-    <title>Админка</title>
+    <meta name="author" content="tikken23@gmail.com">
+    <meta name="description" content="Купить картридж для принтера, с доставкой.">
+    <title>RECART.me</title>
 
     @include('components.styles.style')
     @include('components.scripts.scripts')

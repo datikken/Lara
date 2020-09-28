@@ -3,6 +3,9 @@
         <Loader v-if="!this.$store.state.user"/>
         <Fizik v-if="userInfo.user && userInfo.user.face === 'fizik' "/>
         <Urik v-if="userInfo.user && userInfo.user.face === 'urik' "/>
+
+        <OrderList/>
+
     </div>
 </template>
 
@@ -11,6 +14,8 @@
     import Urik from '../components/checkout/Urik'
     import { mapActions, mapGetters } from 'vuex'
     import Loader from '../components/loader/Loader'
+    import OrderList from '../components/orders/OrdersList'
+
 
     export default {
         name: "CheckoutPage",
@@ -22,7 +27,8 @@
         components: {
             Fizik,
             Urik,
-            Loader
+            Loader,
+            OrderList
         },
         methods: {
             ...mapActions([
