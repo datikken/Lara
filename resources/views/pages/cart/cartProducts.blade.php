@@ -36,7 +36,7 @@
                         <img src="/images/icons/rub_fat.svg" alt="rub" class="cart_wrap-item-total_icon" />
                     </span>
                 </div>
-                <div class="cart_wrap-item_inner-total_button animated_btn">
+                <div class="cart_wrap-item_inner-total_button magic_btn">
                     {{--<span class="cart_wrap-item_inner-total_button-item" data-router="checkoutProducts">--}}
                     <a class="cart_wrap-item_inner-total_button-item" href="{{route('checkoutProducts')}}">
                         оформить заказ

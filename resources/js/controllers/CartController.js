@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import router from '../vue/router/router';
+import MagicButton from '../components/MagicButton'
 
 class CartController {
     constructor(el) {
@@ -7,6 +8,9 @@ class CartController {
         this.el = el;
         let btns = document.querySelectorAll('.ajaxGETproduct');
         let cart = document.querySelector('.cart');
+        let magicBtn = document.querySelector('.magic_btn');
+
+        new MagicButton(magicBtn);
 
         if(cart) {
             this._setDeleteListeners();
