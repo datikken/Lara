@@ -1,7 +1,8 @@
 <template>
     <a class="viewed_wrapper-item" :href="`/product/${data.id}`">
         <div class="viewed_wrapper-item_image">
-            <img :src="`../storage/product_images/${data.params.Бренд}/SMALL/${data.photo}.png`" alt="" />
+            <img onerror="this.src = '/images/unnecessary/owl-swiper.svg';"
+                :src="`../storage/product_images/${data.params.Бренд}/SMALL/${data.photo}.png`" />
         </div>
         <div class="viewed_wrapper-item_text">
             <div class="viewed_wrapper-item_text-heading">
@@ -25,6 +26,9 @@
             floor: function (value) {
                 return Math.ceil(value);
             }
+        },
+        created() {
+            console.warn(this.$props.data)
         }
     }
 </script>
