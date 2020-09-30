@@ -88,6 +88,7 @@
 
     &_col {
         position: relative;
+        border-right: 1px solid $gray;
 
         &_inner_item {
             display: grid;
@@ -115,7 +116,7 @@
             }
 
             @include breakpoint($medium) {
-                margin: 15px 0 15px 17px;
+                margin: 15px 0 25px 17px;
             }
         }
     }

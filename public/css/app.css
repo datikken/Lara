@@ -12348,6 +12348,7 @@ main {
 }
 .sres_col {
   position: relative;
+  border-right: 1px solid #d4d4d5;
 }
 .sres_col_inner_item {
   display: grid;
@@ -12376,7 +12377,7 @@ main {
 }
 @media screen and (min-width: 1030px) {
   .sres_col_item {
-    margin: 15px 0 15px 17px;
+    margin: 15px 0 25px 17px;
   }
 }
 

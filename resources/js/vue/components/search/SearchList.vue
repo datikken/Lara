@@ -58,7 +58,15 @@
         },
         computed: {
             items() {
-                 return this.$store.getters.searchProducts;
+                let sres = document.querySelector('.sres');
+                let products = this.$store.getters.searchProducts;
+                    products.forEach(prd => {
+                    if(prd.length > 0) {
+                            sres && sres.classList.remove('as-none');
+                    }
+                })
+
+                return this.$store.getters.searchProducts;
             }
         }
     }
@@ -73,8 +81,9 @@
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
-        top: 15px;
+        top: 12px;
         right: 10px;
         z-index: 999;
+        cursor: pointer;
     }
 </style>
