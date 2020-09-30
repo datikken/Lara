@@ -7267,6 +7267,13 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     flex-basis: 60%;
   }
 }
+.cart_wrap-item_inner-table_row-col_desc-about {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404C;
+}
 .cart_wrap-item_inner-table_row-col_desc-info {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
