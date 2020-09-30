@@ -10771,6 +10771,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   box-sizing: border-box;
   border-radius: 30px;
   padding-left: 20px;
+  font-size: 12px;
 }
 .dfill_wrap-form_top-right .form-group label {
   display: flex;
