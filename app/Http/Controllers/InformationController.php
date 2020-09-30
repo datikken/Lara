@@ -25,4 +25,10 @@ class InformationController extends Controller
 
         return response()->json($infos);
     }
+
+
+    public function showOferta()
+    {
+        return view('pages.oferta');
+    }
 }

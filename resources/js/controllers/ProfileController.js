@@ -42,13 +42,19 @@ class ProfileController {
               let btn = el.querySelector('button');
                   btn.addEventListener('click', function(e) {
                      e.preventDefault();
-                     let method = 'get';
+                     let method = 'post';
                      let url = formGroups[i].getAttribute('action');
                      let a = formGroups[i].querySelector('.input_wrap').querySelector('input');
                      let name = a.getAttribute('name');
                      let val = a.value;
                      let dataObj = {};
                       dataObj[name] = val;
+
+                      $.ajaxSetup({
+                          headers: {
+                              'X-CSRF-TOKEN': window.token
+                          }
+                      });
 
                       $.ajax({
                           method,

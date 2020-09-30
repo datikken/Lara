@@ -8,6 +8,7 @@ Route::group(['middleware' => 'restrictToAdmin'], function () {
     Route::get('/admin/changeOrderStatus/{id}', ['uses' => 'AdminOrdersController@changeOrderStatus', 'as' => 'changeOrderStatus']);
     Route::get('/getOrdersInfo', ['uses' => 'OrdersController@ordersHistory', 'as' => 'GetOrdersInfo']);
     Route::get('/checkoutProducts', ['uses' => 'ProductsController@checkoutProducts', 'as' => 'checkoutProducts']);
+    Route::get('/vueDeliveryForm', ['uses' => 'ProductsController@deliveryForm', 'as' => 'vueDeliveryForm']);
     Route::get('/getSingleOrderInfo/{id}', ['uses' => 'OrdersController@getOrderInfo', 'as' => 'getSingleOrderInfo']);
 
 //Tracking
@@ -70,13 +71,14 @@ Route::get('/resetViewed', ['uses' => 'ViewedController@reset', 'as' => 'forgetV
 
 //CATALOG
 Route::get('/catalog', ['uses' => "ProductsController@catalogHTML", 'as' => 'allProducts']);
+//Route::get('/catalogPaper', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
+
+//OFERTA
+Route::get('/oferta', ['uses' => 'InformationController@showOferta', 'as' => 'oferta']);
 
 //Catalog cartridge
 Route::get('/catalogСartridge', ['uses' => "ProductsController@index", 'as' => 'allCartridges']);
-////Catalog page
-//Route::get('/catalogPaper', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
 
-Route::get('/getUserInfo', ['uses' => 'UsersController@get_user_info', 'as' => 'getUsersInfo']);
 //Cart page
 Route::get('cart', ['uses' => "CartController@showCart", 'as' => 'cartItems']);
 //Add items to cart
@@ -91,7 +93,7 @@ Route::get('/home/fillProfile', ['uses' => 'HomeController@showFillProfileForm',
 Route::get('/home/fillAdressesForm', ['uses' => 'HomeController@showFillAdressesForm', 'as' => 'fillAdresses']);
 Route::get('/home/fillAdresses', ['uses' => 'HomeController@FillAdresses', 'as' => 'FillAdressesDB']);
 Route::post('/home/userAvatar', ['uses' => 'HomeController@setUsersAvatar', 'as' => 'FillUserAvatar']);
-Route::get('/home/collectProfileData', ['uses' => 'HomeController@collectProfileData', 'as' => 'collectProfileData']);
+Route::POST('/home/collectProfileData', ['uses' => 'HomeController@collectProfileData', 'as' => 'collectProfileData']);
 Route::get('/home/orders', ['uses' => 'HomeController@displayOrders', 'as' => 'displayUserOrders']);
 
 //Blog
@@ -157,7 +159,7 @@ Route::get('/admin/displayDocumentUpload', ['uses' => 'AdminDocumentsController@
 Route::post('/admin/createDocument', ['uses' => 'AdminDocumentsController@store', 'as' => 'AdminCreateDocument']);
 Route::get('/admin/displayDocuments', ['uses' => 'AdminDocumentsController@index', 'as' => 'AdminDisplayDocuments']);
 Route::get('/admin/deleteDocument/{id}', ['uses' => 'AdminDocumentsController@destroy', 'as' => 'AdminDeleteDocument']);
-Route::get('/admin/downloadDocument/{name}', ['uses' => 'AdminDocumentsController@download', 'as' => 'AdminDocumentsDownload']);
+Route::get('/download/{name}', ['uses' => 'AdminDocumentsController@download', 'as' => 'AdminDocumentsDownload']);
 
 //Subscriptions
 Route::get('/admin/subscriptions', ['uses' => 'AdminSubscriptionsController@index', 'as' => 'AdminSubscriptions']);
@@ -195,6 +197,9 @@ Route::get('/getAboutYears', ['uses' => 'AdminAboutController@getAboutYears', 'a
 Route::post('/getTwoYearsInfoBySelect', ['uses' => 'AdminAboutController@getTwoYearsInfoBySelect', 'as' => 'getTwoYearsInfoBySelect']);
 
 Route::get('/setPaymentProvider', ['uses' => 'PaymentsController@setPaymentProvider', 'as' => 'setPaymentProvider']);
+
+//Information
+Route::get('/getUserInfo', ['uses' => 'UsersController@get_user_info', 'as' => 'getUsersInfo']);
 
 //TECH ROUTES
 Route::get('/checkCartState', ['uses' => 'CartController@checkCartState', 'as' => 'checkCartState']);

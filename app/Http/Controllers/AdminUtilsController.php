@@ -37,8 +37,6 @@ class AdminUtilsController extends Controller
             'closest_station' => $closest_station
         );
 
-        dd($arr);
-
         DB::table('pick_up_points')->insert($arr);
     }
 }

@@ -101,13 +101,10 @@ class AdminInformationController extends Controller
     }
 
 
-    public function deleteInfo(Request $request, $id)
+    public function deleteInfo($id)
     {
-        $product = Information::find($id);
-
         Information::destroy($id);
 
         return redirect()->route('informationList');
     }
-
 }

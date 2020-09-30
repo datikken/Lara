@@ -23,7 +23,7 @@ let mutations = {
             .then((data) => {
                 console.warn('dadata', data.region_with_type)
 
-                if(data) {
+                if(data.region_with_type) {
                     if(data.region_with_type.indexOf('Москва') >= 0) {
                         state.selfDelivery = true;
                     } else {
@@ -57,7 +57,7 @@ let mutations = {
                 state.customerIndex = data;
                 state.suggestedPostalOffice = data.suggestedOffice[0].unrestricted_value;
 
-                if(data) {
+                if(data.suggestedOffice[0]) {
                     if(data.suggestedOffice[0].unrestricted_value.indexOf('Москва') >= 0) {
                         state.selfDelivery = true;
                     } else {
@@ -566,6 +566,25 @@ let mutations = {
 
         state.cartStep++;
     },
+    refreshCutomerData(state, data) {
+        console.warn('before send', data)
+
+        fetch('/home/collectProfileData', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': window.token
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify(data)
+        })
+            .then(res => { })
+            .catch(err => console.error('collectProfileData', err))
+
+
+        console.log('refreshCutomerData', data)
+    },
     setUriksInfo(state, obj) {
         $.ajaxSetup({
             headers: {
@@ -605,22 +624,18 @@ let mutations = {
         });
     },
     getUserInfo(state) {
-        axios.get('/getUserInfo')
-            .then(response => {
-                state.user = response.data;
+        if(!state.user) {
+            axios.get('/getUserInfo')
+                .then(response => {
+                    state.user = response.data;
+                });
 
-
-                console.log(response.data)
-            });
-
-        return state.user
+            return state.user
+        }
     },
     getProductById(state, id) {
         let product = state.products.filter((el) => el.id === id)
-
         state.singleProduct = product[0];
-
-        console.warn('getProductBy id', product[0])
     },
     setProductsLoaded(state) {
         state.productsLoaded = true;

@@ -159,10 +159,10 @@ class HomeController extends Controller
             'email' => 'email'
         ])->validate();
 
-        $name = $request->input('name');
-        $lastname = $request->input('lastname');
-        $tel = $request->input('tel');
-        $mail = $request->input('email');
+        $name = $request->name;
+        $lastname = $request->lastname;
+        $tel = $request->tel;
+        $mail = $request->email;
 
         if ($name) {
             DB::table('users')->where('id', $userId)->update(['name' => $name]);

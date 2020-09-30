@@ -22,7 +22,14 @@
         },
         methods: {
             setChecked() {
+                let checkbox = this.$el.querySelector('[type="checkbox"]');
                 this.checked = !this.checked;
+
+                if(this.checked) {
+                    checkbox.setAttribute('checked', true)
+                } else {
+                    checkbox.removeAttribute('checked');
+                }
             }
         }
     }

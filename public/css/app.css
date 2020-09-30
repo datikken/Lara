@@ -147,6 +147,10 @@ input::-webkit-input-placeholder {
   font-size: 12px;
 }
 
+.inline_group {
+  flex-direction: row !important;
+}
+
 .load_more-btn {
   position: absolute;
   cursor: pointer;
@@ -578,6 +582,25 @@ b {
     box-shadow: inset 0 0 12px rgba(0, 0, 0, 0);
   }
 }
+.uk-notification {
+  z-index: 9999999 !important;
+  top: 56px;
+}
+.uk-notification .uk-notification-message {
+  font-size: 12px;
+  position: relative;
+}
+.uk-notification .uk-notification-message:before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  display: block;
+  position: absolute;
+  background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
+  left: 0;
+  top: 0;
+}
+
 .pb16 {
   padding-bottom: 16px;
 }

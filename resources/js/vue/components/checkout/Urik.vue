@@ -194,7 +194,7 @@
                 } else {
                     this.SET_URIKS_INFO({rs, bik, inn});
                     this.CHANGE_PROGRESS_STEP();
-                    router.push('/deliveryForm');
+                    router.push('/vueDeliveryForm');
                     this.SCROLL_TO_TOP();
                 }
             }
