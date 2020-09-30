@@ -1,6 +1,6 @@
 <template>
     <div :class="`action_btn ${className}`">
-        <div class="action_btn-item">{{ text }}</div>
+        <span class="action_btn-item">{{ text }}</span>
     </div>
 </template>
 

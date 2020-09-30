@@ -32,7 +32,7 @@
                     <label for="required" class="form_group_message">Поле телефон обязательно к заполнению</label>
                 </div>
 
-                <TextBtn className="cart_check-wrap_item-group_btn blocked_btn" text="продолжить" @click.native="checkFormStepsBeforeProceed"/>
+                <TextBtn className="magic_btn" text="продолжить" @click.native="checkFormStepsBeforeProceed"/>
 
             </div>
 
@@ -58,6 +58,7 @@
     import MaskedInput from '../inputs/MaskedInput'
     import router from '../../router/router'
     import agreementCheck from '../policy/agreementCheck';
+    import MagicButton from '../../../components/MagicButton'
 
     export default {
         name: "Fizik",
@@ -79,6 +80,8 @@
            this.GET_USERS_INFO();
            this.fillInputsData();
            this.clearInputsOnFocus();
+
+           new MagicButton(this.$el.querySelector('.magic_btn'));
         },
         computed: {
             ...mapGetters(['user']),

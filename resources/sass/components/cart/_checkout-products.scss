@@ -18,9 +18,8 @@
     margin-bottom: 50px;
 
     &_item {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: flex-start;
+      display: flex;
+      align-items: flex-end;
       grid-gap: 30px;
       margin-bottom: 10px;
 

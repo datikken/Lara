@@ -10,7 +10,7 @@ class CartController {
         let cart = document.querySelector('.cart');
         let magicBtn = document.querySelector('.magic_btn');
 
-        new MagicButton(magicBtn);
+        magicBtn && new MagicButton(magicBtn);
 
         if(cart) {
             this._setDeleteListeners();
@@ -46,15 +46,15 @@ class CartController {
     }
     _changeConcreteItem(a) {
         let cartRows = document.querySelectorAll('.cart_item_row');
-            cartRows.forEach((row) => {
-                let id = parseInt(row.getAttribute('data-id'));
-                    if(a.data.id === id) {
-                        let totalCost = row.querySelector('.cart_wrap-item_inner-table_row-col_total');
-                        let quantity = row.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
-                            quantity.innerText = a.quantity;
-                            totalCost.innerText = a.totalPrice;
-                    }
-            });
+        cartRows.forEach((row) => {
+            let id = parseInt(row.getAttribute('data-id'));
+            if(a.data.id === id) {
+                let totalCost = row.querySelector('.cart_wrap-item_inner-table_row-col_total');
+                let quantity = row.querySelector('.cart_wrap-item_inner-table_row-col_btns-btn-items_quantity');
+                quantity.innerText = a.quantity;
+                totalCost.innerText = a.totalPrice;
+            }
+        });
     }
     _findItemInCart(data, el) {
         let id = parseInt(el.getAttribute('data-prid'));
@@ -76,36 +76,36 @@ class CartController {
 
         block.forEach((el) => {
             let links = el.querySelectorAll('a');
-                links.forEach((el) => {
-                    el.addEventListener('click', (e) => {
-                        let url = e.currentTarget.getAttribute('href');
-                        e.preventDefault();
+            links.forEach((el) => {
+                el.addEventListener('click', (e) => {
+                    let url = e.currentTarget.getAttribute('href');
+                    e.preventDefault();
 
-                        $.ajax({
-                            method: "get",
-                            url: `${url}`,
-                            success: function (data) {
-                                let changeItemData = that._findItemInCart(data, el);
-                                that._changeConcreteItem(changeItemData);
-                                that._fixCartTotalState();
-                            },
-                            error: function (error) {
-                                console.warn(error);
-                            }
-                        });
-                    })
+                    $.ajax({
+                        method: "get",
+                        url: `${url}`,
+                        success: function (data) {
+                            let changeItemData = that._findItemInCart(data, el);
+                            that._changeConcreteItem(changeItemData);
+                            that._fixCartTotalState();
+                        },
+                        error: function (error) {
+                            console.warn(error);
+                        }
+                    });
                 })
+            })
         })
     }
 
     _setDeleteListeners() {
         let that = this;
         let closes = document.querySelectorAll('.remove_icon');
-            closes && closes.forEach((el,i) => {
-                el.addEventListener('click', function() {
-                    that._deleteFromCart(closes[i],el);
-                });
+        closes && closes.forEach((el,i) => {
+            el.addEventListener('click', function() {
+                that._deleteFromCart(closes[i],el);
             });
+        });
     }
 
     _deleteFromCart(item) {
@@ -120,7 +120,7 @@ class CartController {
             success: function (data) {
                 if($(data).hasClass('empty_cart')) {
                     let cart = $('.cart_wrap');
-                      $(cart).html(data);
+                    $(cart).html(data);
 
                     that._fixDeletion('', '', 'addClass');
                 } else {
@@ -129,7 +129,7 @@ class CartController {
                     let amount = item[0].dataset.cartamount;
 
                     let cart = $('.cart_content');
-                      $(cart).html($(data)[0]);
+                    $(cart).html($(data)[0]);
 
                     that._fixDeletion(amount, price);
                     that._setDeleteListeners();

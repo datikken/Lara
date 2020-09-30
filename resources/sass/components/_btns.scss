@@ -45,7 +45,7 @@
 .magic_btn {
     position: relative;
     appearance: none;
-    background: $light_gray;
+    background: $light_gray!important;
     padding: 1em 2em;
     border: none;
     color: white;
@@ -55,9 +55,10 @@
     overflow: hidden;
     border-radius: 100px;
 
-    a {
+    span {
         position: relative;
         pointer-events: none;
+        z-index: 9999999;
     }
 
     &::before {
