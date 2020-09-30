@@ -7,23 +7,30 @@
 
                     <div class="contacts-inf_grid">
 
-                    <div class="contacts_wrap-item">
-                        <div class="contacts_wrap-item_inner">
-                            <div class="contacts_wrap-item_inner-location">
-                                <img src='/images/icons/location.svg' alt="Location"/>
+                        <div class="contacts_wrap-item">
+
+
+
+                            <div class="contacts_wrap-item_inner">
+                                <div class="contacts_wrap-item_inner-location">
+                                    <img src='/images/icons/location.svg' alt="Location"/>
+                                </div>
                             </div>
+
+                            <div class="contacts_wrap-item_inner">
+                                <div class="contacts_wrap-item_inner-item">
+                                    <span class="contacts_wrap-item_inner-item-text">Адрес:</span>
+                                </div>
+                                <div class="contacts_wrap-item_inner-item">
+                                    <span class="contacts_wrap-item_inner-item-desc">
+                                        115230 Россия, Москва, Варшавское шоссе, дом, 36, строение 8, 2-й подъезд, этаж 2, офис 1578
+                                    </span>
+                                </div>
+                            </div>
+
+
+
                         </div>
-                        <div class="contacts_wrap-item_inner">
-                            <div class="contacts_wrap-item_inner-item">
-                                <span class="contacts_wrap-item_inner-item-text">Адрес:</span>
-                            </div>
-                            <div class="contacts_wrap-item_inner-item">
-                                <span class="contacts_wrap-item_inner-item-desc">
-                                    115230 Россия, Москва, Варшавское шоссе, дом, 36, строение 8, 2-й подъезд, этаж 2, офис 1578
-                                </span>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="contacts_wrap-item">
                         <div class="contacts_wrap-item_inner">
@@ -135,6 +142,9 @@
                                     </div>
 
                                     <div class="cfeedback_wrap-row">
+                                        <div class="cfeedback_wrap-row_item_label">
+                                            <span>Текст</span>
+                                        </div>
                                         <div class="cfeedback_wrap-row_item_textarea">
                                             <textarea name="message" id="" cols="30" rows="10" placeholder="Напишите свое обращение. Мы будем рады ответить вам на ваши вопросы"></textarea>
                                         </div>

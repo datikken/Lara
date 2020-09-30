@@ -1,10 +1,17 @@
 .cfeedback {
-  width: 100%;
+    margin: 6px 0 0 30px;
+    width: calc(100% - 30px);
+
   .contacts_wrap-item_inner {
     margin: 0;
   }
+
   &_wrap {
     padding: 0 16px;
+
+    [type="submit"] {
+        float: right;
+    }
 
     @include breakpoint($medium) {
       padding: 0;
@@ -21,12 +28,16 @@
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
         -webkit-appearance: none;
-        margin: 0 0 10px 0;
+        margin: 0 0 30px 0;
       }
-
     }
+
     &-row {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+
+        &:last-child {
+            margin: 0 0 40px 0;
+        }
 
       &_btn {
         width: 187px!important;
@@ -52,7 +63,6 @@
 
         &_input {
           input {
-            //width: 340px;
             height: 40px;
             border-radius: 30px;
             -moz-appearance: none;
@@ -61,6 +71,11 @@
             border: 1px solid $light_gray;
             width: 100%;
             padding-left: 20px;
+            font-size: 12px;
+
+              &::placeholder {
+                  font-size: 12px;
+              }
           }
         }
         &_textarea {
@@ -72,18 +87,19 @@
             border-radius: 30px;
             resize: none;
             outline: none;
-            padding: 10px 10px 0 20px;
+            padding: 15px 0 0 20px;
             border: 1px solid $light_gray;
             outline: none;
 
             &::placeholder {
-              padding: 6px;
+              color: $light_gray;
             }
           }
         }
 
         &_label {
-          margin-bottom: 5px;
+            margin-bottom: 10px;
+            padding-left: 10px;
         }
 
         &-row {
@@ -98,7 +114,7 @@
             span {
               color: #fff;
             }
-            background: black;
+            background: $black;
           }
 
           &_inner {

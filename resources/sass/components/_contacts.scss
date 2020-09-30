@@ -12,11 +12,11 @@
 
     .contacts_wrap-item_inner {
       &-item-text {
-        margin: 0 60px 30px 60px;
+          margin: 0px 0 0 30px;
       }
     }
       background-color: $gray;
-      padding-top: 16px!important;
+      padding-top: 50px!important;
       //padding: 0 16px;
     @include breakpoint($medium) {
       padding: 0;
@@ -38,10 +38,10 @@
     flex-direction: column;
 
     @include breakpoint($medium)  {
-      display: grid;
-      border-bottom: 1px solid $yellow;
-      grid-template-columns: 1fr 1fr;
-
+        display: grid;
+        border-bottom: 1px solid #fdd935;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 80px;
     }
   }
 
@@ -63,6 +63,8 @@
   &_wrap {
     .timigs {
       border-bottom: none!important;
+        max-width: 270px;
+        margin-left: 30px;
     }
     &-item {
       margin-bottom: 35px;
@@ -70,10 +72,10 @@
       align-items: flex-start;
       border-bottom: 1px solid $light_gray;
       margin-bottom: 15px;
+      position: relative;
 
       @include breakpoint($medium) {
-        padding-top: 10px;
-        margin: 0 15px;
+        margin: 0;
         border-bottom: none;
       }
 
@@ -90,8 +92,9 @@
           width: initial;
         }
         @include breakpoint($medium) {
-          margin-left: 24px;
+            max-width: 200px;
         }
+
         &-item {
           .telegram,
           .facebook,
@@ -118,10 +121,6 @@
         }
       }
       &_inner {
-        &:nth-child(1) {
-          padding: 0 16px;
-        }
-
         &-inputs-wrap {
           @include breakpoint($phone) {
             display: flex;
@@ -142,7 +141,7 @@
           width: 100%;
 
           @include breakpoint($medium) {
-            margin: 5px 15px;
+              margin: 8px 0 0 10px;
           }
         }
         &-item {
@@ -151,6 +150,11 @@
 
           @include breakpoint($medium) {
             padding: 0;
+            margin-bottom: 14px;
+          }
+
+          &:nth-child(2) {
+            margin-bottom: 0;
           }
 
           &-day {
@@ -162,7 +166,7 @@
             }
 
             &-item {
-              font-family: $semifont!important;
+              font-family: $mfont!important;
             }
 
             &:last-child {
@@ -199,13 +203,17 @@
             cursor: pointer;
 
             &:before {
-              content: "";
-              height: 15px;
-              width: 15px;
-              display: block;
-              @include bg(contain, center);
-              background-image: url("/images/icons/mail.svg");
-              margin-right: 10px;
+                content: "";
+                height: 15px;
+                width: 15px;
+                display: block;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-image: url(/images/icons/mail.svg);
+                margin-right: 10px;
+                position: absolute;
+                left: 8px;
             }
           }
           &-tel {
@@ -217,21 +225,24 @@
             color: $dblack;
             margin-bottom: 20px;
             @include flex(center, flex-start, no-wrap);
-            background-image: url("/images/icons/tel.svg");
-            background-repeat: no-repeat;
 
             &:before {
-              content: "";
-              height: 15px;
-              width: 15px;
-              display: block;
-              @include bg(contain, center);
-              background-image: url("/images/icons/tel.svg");
-              margin-right: 10px;
+                content: "";
+                height: 15px;
+                width: 15px;
+                display: block;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-image: url(/images/icons/tel.svg);
+                margin-right: 20px;
+                position: absolute;
+                left: 7px;
+                top: 49.5px;
             }
           }
           &-text {
-            font-family: $semifont;
+            font-family: $mfont;
             font-weight: 500;
             font-size: 12px;
             line-height: 14px;
