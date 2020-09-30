@@ -8031,10 +8031,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   outline: none;
   padding-left: 20px;
   padding-bottom: 3px;
+  font-size: 12px;
 }
 @media not all and (min-resolution: 0.001dpcm) {
   .treq_form_gr input {
-    padding-bottom: 0;
+    padding-bottom: 10px;
     padding-top: 10px;
   }
 }

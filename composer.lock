@@ -1137,7 +1137,7 @@
                 "symfony/debug": "^4.2",
                 "symfony/finder": "^4.2",
                 "symfony/http-foundation": "^4.2",
-                "symfony/http-kernel": "^4.2",
+                "symfony/http-kernel": "4.4.13",
                 "symfony/process": "^4.2",
                 "symfony/routing": "^4.2",
                 "symfony/var-dumper": "^4.2",
