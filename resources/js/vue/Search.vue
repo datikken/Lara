@@ -2,7 +2,7 @@
     <div class="menu">
         <div class="menu_wrapper">
 
-            <div class="menu_wrapper-item" @mouseenter="DesktopDropdownTrigger">
+            <div class="menu_wrapper-item" @mouseenter="DesktopDropdownTrigger" @mouseleave="closeDesktopDropdown">
 
                 <div class="menu_wrapper-item_hamburger" @click="MobileDropdownTrigger">
                     <img src="/images/menu/Mhamburger.svg" alt="hamburger" class="hamburger"/>
@@ -115,9 +115,11 @@
                     }
                 })
             },
+            closeDesktopDropdown() {
+                this.$children[0].hideAllDropDowns();
+            },
             DesktopDropdownTrigger() {
-                let menu = document.querySelector('[data-desktopMenuBlock]');
-                    menu.classList.remove('as-none');
+                this.$children[0].showDesktopMenuDropDown();
             },
             MobileDropdownTrigger() {
                 let body = document.querySelector('body');

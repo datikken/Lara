@@ -125,8 +125,6 @@
                 let dropItems = this.$el.querySelectorAll('[data-mainDropdownItem]');
                 let dropHeight = dropItems.length * 40;
                     dropdown.style.height = `${dropHeight}px`;
-
-                console.warn(dropHeight, dropItems)
             }
         }
     }
