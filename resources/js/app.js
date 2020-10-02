@@ -31,6 +31,12 @@ import BlogPostController from './controllers/BlogPostController'
 import OwlCarouselController from './controllers/OwlCarouselController'
 import CatalogController from './controllers/CatalogController'
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': window.token
+    }
+});
+
 $(document).ready(function() {
     new ProductDetailsSliderController();
     new CatalogController();

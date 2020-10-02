@@ -1,13 +1,24 @@
 import $ from 'jquery';
+import Notifications from '../components/Notifications'
 
 class ProfileController {
     _passwordReset(el) {
         let form = el.querySelector('.dchange').querySelector('form');
+        let inputs = form.querySelectorAll('input');
         let url = form.getAttribute('action');
         let btn = el.querySelector('.dchange_btn');
 
+        let notParams = {
+            status: 'success',
+            pos: 'top-center',
+            timeout: 5000
+        }
+
+        function clearInputValues() {
+            inputs.forEach(npt => {npt.value = ''});
+        }
+
         btn.addEventListener('click', function() {
-            let inputs = form.querySelectorAll('input');
             let dataObj = {};
 
             inputs.forEach((el) => {
@@ -17,21 +28,24 @@ class ProfileController {
                 dataObj[name] = val;
             })
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': window.token
-                }
-            });
-
             $.ajax({
                 method: 'POST',
                 url: `${url}`,
                 data: dataObj,
                 success: function (status) {
-                    // console.log(status);
+                    notParams.message = 'Пароль успешно изменен.';
+                    notParams.status = 'success';
+                    let notification = new Notifications(notParams);
+
+                    notification.show();
+                    clearInputValues();
                 },
                 error: function (error) {
-                    console.warn(error);
+                    notParams.message = 'Что-то пошло не так, попробуйте еще раз.';
+                    notParams.status = 'danger';
+                    let notification = new Notifications(notParams);
+
+                    notification.show();
                 }
             });
         });
@@ -50,18 +64,21 @@ class ProfileController {
                      let dataObj = {};
                       dataObj[name] = val;
 
-                      $.ajaxSetup({
-                          headers: {
-                              'X-CSRF-TOKEN': window.token
-                          }
-                      });
-
                       $.ajax({
                           method,
                           url: `${url}`,
                           data: dataObj,
                           success: function (status) {
-                              console.log(status);
+                              let params = {
+                                  message: status.message,
+                                  status: 'primary',
+                                  pos: 'top-center',
+                                  timeout: 25000
+                              }
+
+                              let notification = new Notifications(params);
+
+                              notification.show();
                           },
                           error: function (error) {
                               console.warn(error);

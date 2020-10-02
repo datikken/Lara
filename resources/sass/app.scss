@@ -7,6 +7,7 @@
 @import "./modifiers/padding";
 @import "./modifiers/weight";
 @import "./modifiers/margin";
+@import "./modifiers/flex";
 
 @import "./components/btns";
 @import "./components/header";
@@ -114,3 +115,4 @@
 @import "./components/dropdown/payment_dropdown";
 @import "./components/about/about_modal";
 @import "./components/pickups/pickups";
+@import "./components/passReset";

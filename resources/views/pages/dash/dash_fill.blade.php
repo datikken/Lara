@@ -110,16 +110,16 @@
                 {{csrf_field()}}
                 <div class="form-group input_wrap">
                     <label for="name">Действуйщий пароль<span>*</span></label>
-                    <input id="password" type="password" class="form-control" name="current_password" autocomplete="current-password">
+                    <input id="password" type="password" class="form-control" name="current_password" autocomplete="off">
                 </div>
 
                 <div class="form-group input_wrap">
                     <label for="name">Новый пароль<span>*</span></label>
-                    <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
+                    <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="off">
                 </div>
 
                 <div class="form-group input_wrap">
-                    <label for="name">Подтвердите пароль<span>*</span></label>
+                    <label for="name">Подтвердите новый пароль<span>*</span></label>
                     <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
                 </div>
 

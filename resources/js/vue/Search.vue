@@ -11,10 +11,10 @@
                     </a>
                 </div>
 
-                <DesktopMainMenuDropDown />
+                <DesktopMainMenuDropDown/>
 
                 <div class="desktop-hide">
-                    <MobileMainMenuDropDown />
+                    <MobileMainMenuDropDown/>
                 </div>
 
             </div>
@@ -49,8 +49,8 @@
                 <div class="menu_wrapper-item_cart">
                     <a href="/cart">
                         <div class="menu_wrapper-item_cart_icon">
-                            <img src="/images/menu/cart.svg" alt="cart" v-if="this.cart.totalQuantity" data-cartIcon />
-                            <img src="/images/menu/empty_cart.svg" alt="cart" v-else data-cartIcon />
+                            <img src="/images/menu/cart.svg" alt="cart" v-if="this.cart.totalQuantity" data-cartIcon/>
+                            <img src="/images/menu/empty_cart.svg" alt="cart" v-else data-cartIcon/>
                             <span class="menu_wrapper-item_cart_icon-amount" data-cartAmountVal>{{ this.cart.totalQuantity }}</span>
                         </div>
                     </a>
@@ -76,7 +76,8 @@
         data: function () {
             return {
                 openedSearch: false,
-                openedMenu: false
+                openedMenu: false,
+                sresBlock: ''
             }
         },
         components: {
@@ -93,25 +94,36 @@
         },
         mounted() {
             this.fixedMenuOnScroll();
+            this.checkMenuFixedOrNot();
         },
         created() {
+            this.sresBlock = document.querySelector('.sres_wrap');
             this.CHECK_CART_STATE();
         },
         methods: {
             ...mapActions([
                 'CHECK_CART_STATE'
             ]),
+            checkMenuFixedOrNot() {
+                if (window.pageYOffset > 0 && this.sresBlock) {
+                    this.$el.classList.add('topFixedMenu');
+                    this.sresBlock.style.top = '50px';
+                }
+            },
             fixedMenuOnScroll() {
                 let that = this;
-                let sresBlock = document.querySelector('.sres_wrap');
 
-                window.addEventListener('scroll', function() {
-                    if(window.pageYOffset >= 60) {
+                window.addEventListener('scroll', function () {
+                    if (window.pageYOffset >= 60) {
                         that.$el.classList.add('topFixedMenu');
-                        sresBlock.style.top = '50px';
+                        if (that.sresBlock) {
+                            that.sresBlock.style.top = '50px';
+                        }
                     } else {
                         that.$el.classList.remove('topFixedMenu');
-                        sresBlock.style.top = '110px';
+                        if (that.sresBlock) {
+                            that.sresBlock.style.top = '110px';
+                        }
                     }
                 })
             },

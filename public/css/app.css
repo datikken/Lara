@@ -633,6 +633,14 @@ b {
   margin-top: 60px !important;
 }
 
+.as-flex {
+  display: flex;
+}
+
+.flex-center {
+  align-items: center;
+}
+
 .proceed_btn div, .proceed_flat_btn div {
   font-family: "Montserrat", sans-serif !important;
   font-size: 12px;
@@ -13785,4 +13793,20 @@ main {
   padding: 15px;
   max-width: 400px;
   max-height: 115px;
+}
+
+#passReset {
+  z-index: 99999;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+#passReset .passReset {
+  width: 300px !important;
+  height: 340px;
+}
+#passReset .passReset_close {
+  position: absolute;
+  right: 20px;
+}
+#passReset .uk-modal-body:before, #passReset .uk-modal-body:after {
+  display: none;
 }

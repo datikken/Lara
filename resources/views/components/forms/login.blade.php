@@ -14,11 +14,6 @@
                     @csrf
                     <div class="form-group row">
                         <label for="email" class="row_label">{{ __('Почта') }}</label>
-                        {{--@error('email')--}}
-                        {{--<span class="invalid-feedback" role="alert">--}}
-                            {{--<strong>{{ $message }}</strong>--}}
-                        {{--</span>--}}
-                        {{--@enderror--}}
                         <input type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
                     </div>
                     <div class="form-group row password_field">
@@ -27,12 +22,6 @@
                         <label for="email" class="row_label password_hide">{{ __('Пароль') }}</label>
 
                         <div class="col-md-6">
-                            {{--@error('password')--}}
-                            {{--<span class="invalid-feedback" role="alert">--}}
-                                    {{--<strong>{{ $message }}</strong>--}}
-                                {{--</span>--}}
-                            {{--@enderror--}}
-
                             <input type="password" placeholder="Введите ваш пароль"  class="form-control password_input @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
                         </div>
                     </div>
@@ -44,20 +33,13 @@
 
                                 @include('components.checkbox.simple_check', ['name' => 'remember'])
 
-                                {{--<div class="form-check_box">--}}
-                                    {{--<div class="form-check_box-wrap">--}}
-                                        {{--<div class="form-check_box-wrap_item"></div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-
-                                {{--<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>--}}
                                 <label class="form-check-label" for="remember">
                                     {{ __('Запомнить меня') }}
                                 </label>
                             </div>
 
                             @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}" uk-toggle="target: #passReset">
+                                <a class="btn btn-link" href="{{ route('password.request') }}" data-forgotPassword uk-toggle="target: #passReset">
                                     {{ __('Забыли пароль?') }}
                                 </a>
                             @endif
