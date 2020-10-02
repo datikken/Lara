@@ -35,6 +35,9 @@ class ChangePasswordController extends Controller
 
         $email = $request->email;
         $token = str_random(60);
+        $url = redirect()->to('/resetPassword')->with(['token' => $token, 'email' => $email ]);
+
+        dd($url);
 
         DB::table('password_resets')->insert([
             'email' => $email,
@@ -44,15 +47,18 @@ class ChangePasswordController extends Controller
 
 //    TODO create reset link
 //        : http://recart.me/password/reset/5ce4a30f1cb2b42f41a9ae6c230b3697ce7a07bee0a4bb41a961281017252ba7?email=tikken23%40gmail.com
-        Mail::to($request->email)->send(new SendMail(['name' => route('resetPassword', ['token' => $token, 'email' => $email ]), 'message' => '']));
+//        Mail::to($request->email)->send(new SendMail(['name' => $name, 'message' => '']));
 
         return response()->json(['fine']);
     }
 
 
-    public function showResetPasswordForm($token, $email)
+    public function showResetPasswordForm(Request $request)
     {
-        return view('auth.login',['reset' => 'true','token' => '', 'email' => '']);
+        $token = $request->token;
+        $email = $request->email;
+
+        return view('auth.login',['reset' => 'true','token' => $token, 'email' => $email]);
     }
     /**
      * Show the application dashboard.
