@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https:/recart.me'),
+    'url' => env('APP_URL', 'https://recart.me'),
 
     'asset_url' => env('ASSET_URL', null),
 
