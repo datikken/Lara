@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Rules\MatchOldPassword;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use Illuminate\Support\Facades\DB;
+use App\Mail\SendMail;
+use Illuminate\Support\Facades\Mail;
+
 
 class ChangePasswordController extends Controller
 {
@@ -19,14 +24,24 @@ class ChangePasswordController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
+    public function createResetToken(Request $request)
     {
-        return view('auth.passwords.changePassword');
+        $user = DB::table('users')->where('email', '=', $request->email)
+            ->first();
+
+        if (count($user) < 1) {
+            return redirect()->back()->withErrors(['email' => trans('User does not exist')]);
+        }
+
+        $token = str_random(60);
+
+        DB::table('password_resets')->insert([
+            'email' => $request->email,
+            'token' => $token,
+            'created_at' => Carbon::now()
+        ]);
+
+        Mail::to($request->email)->send(new SendMail($token));
     }
 
     /**
