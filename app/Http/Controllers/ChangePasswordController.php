@@ -21,17 +21,18 @@ class ChangePasswordController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     public function createResetToken(Request $request)
     {
+//        $str = 'love';
+//        dd($str);
+
         $user = DB::table('users')->where('email', '=', $request->email)
             ->first();
 
-        if (count($user) < 1) {
-            return redirect()->back()->withErrors(['email' => trans('User does not exist')]);
-        }
+//        dd($user);
 
         $token = str_random(60);
 
@@ -41,7 +42,9 @@ class ChangePasswordController extends Controller
             'created_at' => Carbon::now()
         ]);
 
-        Mail::to($request->email)->send(new SendMail($token));
+        Mail::to($request->email)->send(new SendMail(['name' => '', 'message' => '', 'token' => $token]));
+
+        return response()->json(['fine']);
     }
 
     /**
