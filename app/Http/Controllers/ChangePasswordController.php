@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\DB;
 use App\Mail\SendMail;
 use Illuminate\Support\Facades\Mail;
 
-
 class ChangePasswordController extends Controller
 {
     /**
@@ -34,19 +33,27 @@ class ChangePasswordController extends Controller
 
 //        dd($user);
 
+        $email = $request->email;
         $token = str_random(60);
 
         DB::table('password_resets')->insert([
-            'email' => $request->email,
+            'email' => $email,
             'token' => $token,
             'created_at' => Carbon::now()
         ]);
 
-        Mail::to($request->email)->send(new SendMail(['name' => '', 'message' => '', 'token' => $token]));
+//    TODO create reset link
+//        : http://recart.me/password/reset/5ce4a30f1cb2b42f41a9ae6c230b3697ce7a07bee0a4bb41a961281017252ba7?email=tikken23%40gmail.com
+        Mail::to($request->email)->send(new SendMail(['name' => route('resetPassword', ['token' => $token, 'email' => $email ]), 'message' => '']));
 
         return response()->json(['fine']);
     }
 
+
+    public function showResetPasswordForm($token, $email)
+    {
+        return view('auth.login',['reset' => 'true','token' => '', 'email' => '']);
+    }
     /**
      * Show the application dashboard.
      *

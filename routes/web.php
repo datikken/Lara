@@ -221,7 +221,7 @@ Route::get('/mailtest', function () {
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('StoreNewPassword', ['uses' => 'ChangePasswordController@store', 'as' => 'StoreNewPassword']);
 Route::get('/createResetToken/{email}', ['uses' => 'ChangePasswordController@createResetToken', 'as' => 'createResetToken']);
-
+Route::get('/resetPassword', ['uses' => 'ChangePasswordController@showResetPasswordForm', 'as' => 'resetPassword']);
 //Test email template
 Route::get('/mailtemplate', ['uses' => "SendEmailController@testEmailTemplate", 'as' => 'mailtemplate']);
 

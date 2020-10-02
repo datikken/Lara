@@ -5,6 +5,10 @@ class RegisterController {
         let auth = document.querySelector('.auth-decor');
         let that = this;
 
+
+        console.log(Laracasts.test_jsput); // access foo variable
+
+
         auth && this._setListeners();
         auth && this._showHidePassword();
 
