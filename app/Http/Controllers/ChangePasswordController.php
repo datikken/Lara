@@ -23,42 +23,26 @@ class ChangePasswordController extends Controller
 //        $this->middleware('auth');
     }
 
-    public function createResetToken(Request $request)
+    public function createResetToken($email)
     {
-//        $str = 'love';
-//        dd($str);
-
-        $user = DB::table('users')->where('email', '=', $request->email)
+        $user = DB::table('users')->where('email', '=', $email)
             ->first();
 
-//        dd($user);
+        $result = array('status' => 404, 'message' =>  'User with given email is not found');
 
-        $email = $request->email;
-        $token = str_random(60);
-        $url = redirect()->to('/resetPassword')->with(['token' => $token, 'email' => $email ]);
+        if(!is_null($user)) {
+            $token = str_random(60);
 
-        dd($url);
+            DB::table('password_resets')->insert([
+                'email' => $email,
+                'token' => $token,
+                'created_at' => Carbon::now()
+            ]);
 
-        DB::table('password_resets')->insert([
-            'email' => $email,
-            'token' => $token,
-            'created_at' => Carbon::now()
-        ]);
+            $result = array('status' => 200, 'message' =>  $token);
+        }
 
-//    TODO create reset link
-//        : http://recart.me/password/reset/5ce4a30f1cb2b42f41a9ae6c230b3697ce7a07bee0a4bb41a961281017252ba7?email=tikken23%40gmail.com
-//        Mail::to($request->email)->send(new SendMail(['name' => $name, 'message' => '']));
-
-        return response()->json(['fine']);
-    }
-
-
-    public function showResetPasswordForm(Request $request)
-    {
-        $token = $request->token;
-        $email = $request->email;
-
-        return view('auth.login',['reset' => 'true','token' => $token, 'email' => $email]);
+        return $result;
     }
     /**
      * Show the application dashboard.

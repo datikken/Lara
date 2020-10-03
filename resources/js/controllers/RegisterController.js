@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import MagicButton from '../components/MagicButton'
+import {validateEmail} from "../functions/validateEmail";
 
 class RegisterController {
     constructor() {
@@ -17,7 +17,30 @@ class RegisterController {
     }
     passReset() {
         let modal = document.querySelector('#passReset');
+        let btn = modal.querySelector('.animated_btn');
+        let formGroup = modal.querySelector('.form_group');
+        let url =
 
+        btn && btn.addEventListener('click', function(e) {
+            let email = modal.querySelector('input').value;
+            let valid = validateEmail(email);
+
+            if(!valid) {
+                formGroup.classList.add('form_group-error');
+            } else {
+                $.ajax({
+                    method: 'POST',
+                    url: '/sendPasswordResetEmail',
+                    data: {email},
+                    success: function (data) {
+                       console.warn('sex pass reset', data)
+                    },
+                    error: function (error) {
+                       console.error('pass reset ajax error');
+                    }
+                });
+            }
+        })
     }
     _showHidePassword() {
         let fields = document.querySelectorAll('.password_field');

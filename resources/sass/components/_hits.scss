@@ -114,7 +114,7 @@
       .hits_recs-item_inner-item {
         &:first-child {
             background: $light_gray;
-            color: #40404C;
+            color: $black;
         }
         &:nth-child(2) {
           border-top-right-radius: 30px;
@@ -305,7 +305,7 @@
           line-height: 100%;
           letter-spacing: -0.02em;
           text-transform: uppercase;
-          color:#40404C;
+          color: $black;
         }
       }
     }

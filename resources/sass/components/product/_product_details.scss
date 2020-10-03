@@ -51,7 +51,7 @@
                         font-size: 9px;
                         line-height: 14px;
                         letter-spacing: 0.02em;
-                        color: #40404C;
+                        color: $black;
                         display: flex;
                         margin-bottom: 5px;
                         position: relative;
@@ -125,7 +125,7 @@
                         font-size: 12px;
                         line-height: 14px;
                         letter-spacing: 0.02em;
-                        color: #40404C;
+                        color: $black;
                         margin-bottom: 12px!important;
 
                         span {
@@ -154,7 +154,7 @@
                     color: $dblack;
 
                     p {
-                        margin: 0 0 25px 0;   
+                        margin: 0 0 25px 0;
                     }
                 }
                 &-head {

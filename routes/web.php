@@ -220,8 +220,8 @@ Route::get('/mailtest', function () {
 //Reset password
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('StoreNewPassword', ['uses' => 'ChangePasswordController@store', 'as' => 'StoreNewPassword']);
-Route::get('/createResetToken/{email}', ['uses' => 'ChangePasswordController@createResetToken', 'as' => 'createResetToken']);
-Route::get('/resetPassword', ['uses' => 'ChangePasswordController@showResetPasswordForm', 'as' => 'resetPassword']);
+Route::post('/sendPasswordResetEmail', ['uses' => 'SendEmailController@sendPasswordResetEmail', 'as' => 'sendPasswordResetEmail']);
+
 //Test email template
 Route::get('/mailtemplate', ['uses' => "SendEmailController@testEmailTemplate", 'as' => 'mailtemplate']);
 

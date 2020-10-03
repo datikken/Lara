@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
 use App\Mail\OrderCreatedEmail;
-use Auth;
+use Illuminate\Support\Facades\URL;
 
 class SendEmailController extends Controller
 {
@@ -16,9 +17,19 @@ class SendEmailController extends Controller
         return view('emails.send_email');
     }
 
-    public static function sendPasswordReset()
+    public static function sendPasswordResetEmail(Request $request)
     {
+        $email = $request->email;
+        $user = DB::table('users')->where('email', $email)->get();
+        $changePass = new ChangePasswordController();
+        $tokenReq = $changePass->createResetToken($email);
+        $link = URL::to('login') . '?token=' . $tokenReq['message'];
 
+        if($tokenReq['status'] == '200') {
+            Mail::to($user)->send(new OrderCreatedEmail($link));
+        }
+
+        return $tokenReq;
     }
 
     public static function sendOrderWasCreated($id)

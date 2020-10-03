@@ -24,12 +24,20 @@
 
         .form_group_message {
             display: block!important;
+            color: $red!important;
+            padding-top: 5px;
         }
     }
 
     .form_group_message {
         display: none;
         margin-bottom: 0;
+        font-family:$font;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color:  $black;
     }
 
     &_error {

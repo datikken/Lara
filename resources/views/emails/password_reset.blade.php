@@ -162,7 +162,8 @@
                                          Мы получили запрос на восстановление доступа к вашей учётной записи Avito, которая привязана к почте egorpavlov@pochta.com
                                      </span>
                                         <span class="main_description_item">
-                                         Если это были вы, перейдите по ссылке, которая будет активна до 13 января: https://www.avito.ru/restore/confirm/eb949a03c50d9979fbade5a11<br/>51d7dd6/desktop/egorpavlov1%40gmail.com
+                                         Если это были вы, перейдите по ссылке, которая будет активна до 13 января: <a
+                                                href="{{ $link }}"> {{ $link }} </a>
                                         </span>
                                         <span class="main_description_item">
                                             Если ссылка не работает, то скопируйте ее и откройте через адресную строку браузера.

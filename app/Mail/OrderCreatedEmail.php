@@ -29,6 +29,6 @@ class OrderCreatedEmail extends Mailable
      */
     public function build($subject = 'Интернет магазин')
     {
-        return $this->from('admin@recart.me')->subject($subject)->view('emails.order_created')->with('data', $this->data);
+        return $this->from('admin@recart.me')->subject($subject)->view('emails.order_created')->with('link', $this->data);
     }
 }

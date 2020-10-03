@@ -11,9 +11,7 @@
                 <span class="passReset_head_txt">Смена пароля</span>
             </div>
 
-            <form method="POST" action="{{ route('password.email') }}">
-                @csrf
-
+            <form method="POST" action="{{ route('sendPasswordResetEmail') }}">
                 <div class="form_group">
                     <label for="email" class="form_group_label">{{ __('Введите почтовый адрес') }}</label>
 

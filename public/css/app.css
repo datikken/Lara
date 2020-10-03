@@ -642,7 +642,7 @@ b {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  color: #40404C;
+  color: #40404c;
 }
 
 .proceed_btn {
@@ -5471,7 +5471,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   font-size: 9px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  color: #40404C;
+  color: #40404c;
   display: flex;
   margin-bottom: 5px;
   position: relative;
@@ -5534,7 +5534,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  color: #40404C;
+  color: #40404c;
   margin-bottom: 12px !important;
 }
 .details_wrap-info_item-left .col_amount span {
@@ -7311,7 +7311,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  color: #40404C;
+  color: #40404c;
 }
 .cart_wrap-item_inner-table_row-col_desc-info {
   font-family: "Montserrat", sans-serif;
@@ -8791,7 +8791,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .hits_recs-item .second-hits_recs-row .hits_recs-item_inner-item:first-child {
   background: #e9e9ea;
-  color: #40404C;
+  color: #40404c;
 }
 .hits_recs-item .second-hits_recs-row .hits_recs-item_inner-item:nth-child(2) {
   border-top-right-radius: 30px;
@@ -8954,7 +8954,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   line-height: 100%;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: #40404C;
+  color: #40404c;
 }
 
 .hits_offers {
@@ -10829,7 +10829,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  color: #40404C;
+  color: #40404c;
 }
 .dfill_wrap-form_top-right .form-group input {
   width: 500px;
@@ -12032,10 +12032,18 @@ main {
 }
 .form_group-error .form_group_message {
   display: block !important;
+  color: #FF0000 !important;
+  padding-top: 5px;
 }
 .form_group .form_group_message {
   display: none;
   margin-bottom: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
 }
 .form_group_error {
   display: none;
