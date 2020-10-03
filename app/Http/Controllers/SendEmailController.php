@@ -28,7 +28,7 @@ class SendEmailController extends Controller
         $emailData = array('link' => $link);
 
         if($tokenReq['status'] == '200') {
-            Mail::to($user)->send(new PasswordResetEmail($emailData));
+            Mail::to($email)->send(new PasswordResetEmail($emailData));
         }
 
         return $tokenReq;
