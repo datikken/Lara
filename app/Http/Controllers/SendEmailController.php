@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PasswordResetEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -26,7 +27,7 @@ class SendEmailController extends Controller
         $link = URL::to('login') . '?token=' . $tokenReq['message'];
 
         if($tokenReq['status'] == '200') {
-            Mail::to($user)->send(new OrderCreatedEmail($link));
+            Mail::to($user)->send(new PasswordResetEmail($link));
         }
 
         return $tokenReq;
