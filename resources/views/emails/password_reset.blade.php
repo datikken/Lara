@@ -163,7 +163,7 @@
                                      </span>
                                         <span class="main_description_item">
                                          Если это были вы, перейдите по ссылке, которая будет активна до 13 января: <a
-                                                href="{{ $link }}"> {{ $link }} </a>
+                                                href="{{ $data['link'] }}"> {{ $data['link'] }} </a>
                                         </span>
                                         <span class="main_description_item">
                                             Если ссылка не работает, то скопируйте ее и откройте через адресную строку браузера.
