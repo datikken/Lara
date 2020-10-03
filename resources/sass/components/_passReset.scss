@@ -1,16 +1,85 @@
 #passReset {
     z-index: 99999;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
 
-   .passReset {
-       width: 300px!important;
-       height: 340px;
-   }
-    .passReset_close {
-        position: absolute;
-        right: 20px;
+.passReset {
+    width: 300px!important;
+    position: relative;
+
+    .animated_btn {
+        margin: 0 auto;
     }
-    .uk-modal-body:before, .uk-modal-body:after {
-        display: none;
+
+    &_head {
+        margin-bottom: 15px;
+        padding: 0 0 15px 0;
+        border-bottom: 1px solid $light_gray;
+        display: inline-block;
+
+        &_txt {
+            font-family: $semifont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            letter-spacing: 0.02em;
+            color: $dblack;
+        }
+    }
+
+    &_inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .form_group {
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+
+        form {
+            width: 100%;
+        }
+    }
+
+    &_img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    &_icon {
+        width: 50px;
+        height: 45px;
+        object-fit: cover;
+    }
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 4px;
+        display: block;
+        position: absolute;
+        background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
+        left: 0;
+        top: 0;
+    }
+}
+.passReset_close {
+    display: flex;
+    position: absolute;
+    justify-content: flex-end;
+    top: 0;
+    right:0;
+    padding: 20px 15px 0 0;
+
+    svg {
+        height: 10px;
     }
 }

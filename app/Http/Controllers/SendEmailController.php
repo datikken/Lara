@@ -16,6 +16,11 @@ class SendEmailController extends Controller
         return view('emails.send_email');
     }
 
+    public static function sendPasswordReset()
+    {
+
+    }
+
     public static function sendOrderWasCreated($id)
     {
         $user_id = Auth::id();

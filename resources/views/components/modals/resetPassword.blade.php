@@ -1,42 +1,33 @@
-<div id="passReset" class="flex-center" uk-modal>
-    <div class="passReset uk-modal-dialog uk-modal-body">
-        <div class="passReset_close" uk-close></div>
+<div id="passReset" class="uk-flex-top" uk-modal>
+    <div class="passReset uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <div class="passReset_close uk-modal-close-default" uk-close></div>
         <div class="passReset_inner">
 
-
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header">{{ __(' Смена пароля') }}</div>
-
-                            <div class="card-body">
-                                <form method="POST" action="{{ route('password.email') }}">
-                                    @csrf
-
-                                    <div class="form-group row">
-                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Введите почтовый адрес') }}</label>
-
-                                        <div class="col-md-6">
-                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row mb-0">
-                                        <div class="col-md-6 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
-                                                {{ __('Send Password Reset Link') }}
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="passReset_img">
+                <img src="/images/icons/passResetIcon.svg" alt="Reset" class="passReset_icon">
             </div>
 
+            <div class="passReset_head">
+                <span class="passReset_head_txt">Смена пароля</span>
+            </div>
 
+            <form method="POST" action="{{ route('password.email') }}">
+                @csrf
+
+                <div class="form_group">
+                    <label for="email" class="form_group_label">{{ __('Введите почтовый адрес') }}</label>
+
+                    <input class="form_group_input" type="text" name="email" placeholder="Почтовый адрес">
+
+                    <label for="required" class="form_group_message">Поле обязательно к заполнению</label>
+                </div>
+
+
+                <div class="form_group">
+                    @include('components.btn.text_btn', [ 'class' => 'action_btn animated_btn', 'text' => 'Отправить'])
+                </div>
+
+            </form>
 
         </div>
     </div>

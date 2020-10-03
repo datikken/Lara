@@ -1,13 +1,10 @@
 import $ from 'jquery';
+import MagicButton from '../components/MagicButton'
 
 class RegisterController {
     constructor() {
         let auth = document.querySelector('.auth-decor');
         let that = this;
-
-
-        console.log(Laracasts.test_jsput); // access foo variable
-
 
         auth && this._setListeners();
         auth && this._showHidePassword();
@@ -15,6 +12,12 @@ class RegisterController {
         $('.form_type-item').on('click', function (e) {
             that._pickFaceType(e)
         });
+
+        this.passReset();
+    }
+    passReset() {
+        let modal = document.querySelector('#passReset');
+
     }
     _showHidePassword() {
         let fields = document.querySelectorAll('.password_field');

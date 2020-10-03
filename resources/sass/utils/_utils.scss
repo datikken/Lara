@@ -241,10 +241,6 @@ p {
     }
 }
 
-input {
-  border: 1px solid $light_gray;
-}
-
 .invisible {
   display: none!important;
 }
@@ -293,7 +289,7 @@ input::-webkit-input-placeholder {
   font-weight: normal;
   letter-spacing: 0.02em;
   opacity: 0.5;
-  padding-bottom: 4px;
+  padding-bottom: 5px;
   font-size: 12px;
 }
 

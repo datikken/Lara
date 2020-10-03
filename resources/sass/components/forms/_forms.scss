@@ -1,4 +1,19 @@
 .form_group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &_input {
+        height: 40px;
+        border-radius: 30px;
+        padding: 0 0 0 20px;
+        font-size: 12px;
+        color: $dblack;
+        border: 1px solid $light_gray;
+        width: 100%;
+        outline: none;
+    }
+
     &-error {
         display:flex;
         flex-direction: column;
@@ -20,5 +35,15 @@
     &_error {
         display: none;
         color: $red;
+    }
+
+    &_label {
+        font-family: $font;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        margin-bottom: 15px;
     }
 }
