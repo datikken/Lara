@@ -42,7 +42,9 @@ class RegisterController {
                     url: '/sendPasswordResetEmail',
                     data: {email},
                     success: function (data) {
-                       console.warn('sex pass reset', data)
+                       if(data.status == '200') {
+                           UIkit.modal(element).hide();
+                       }
                     },
                     error: function (error) {
                        console.error('pass reset ajax error');
