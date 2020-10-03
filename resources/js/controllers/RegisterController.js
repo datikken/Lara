@@ -15,6 +15,15 @@ class RegisterController {
 
         this.passReset();
     }
+    openChangePassModal() {
+
+    }
+    testIfUserFromPasswordResetEmail() {
+        let url = window.location.href;
+            if(url.indexOf('token') >= 0) {
+                this.openChangePassModal();
+            }
+    }
     passReset() {
         let modal = document.querySelector('#passReset');
         let btn = modal.querySelector('.animated_btn');

@@ -32,11 +32,14 @@ class ChangePasswordController extends Controller
 
         if(!is_null($user)) {
             $token = str_random(60);
+            $now = Carbon::now()->toDateTimeString();
+            $expires = Carbon::now()->addHour()->toDateTimeString();
 
             DB::table('password_resets')->insert([
                 'email' => $email,
                 'token' => $token,
-                'created_at' => Carbon::now()
+                'created_at' => $now,
+                'expires' => $expires
             ]);
 
             $result = array('status' => 200, 'message' =>  $token);
