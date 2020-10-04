@@ -13,12 +13,13 @@ class UserTelephone extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('lastname');
-            $table->string('image');
-        });
-
-        Schema::drop('users_info');
+        if (!Schema::hasColumn('users', 'lastname'))
+        {
+            Schema::table('users', function (Blueprint $table) {
+                $table->string('lastname');
+                $table->string('image');
+            });
+        }
     }
 
     /**
