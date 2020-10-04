@@ -674,8 +674,23 @@ b {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
 }
 
+.flat_btn {
+  width: 170px;
+  height: 40px;
+  border: 1px solid #FDD935;
+  box-sizing: border-box;
+  border-radius: 30px;
+  color: #292930;
+}
+
 .blocked_btn {
   background: #e9e9ea !important;
+}
+
+.text_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .animated_btn:active {
@@ -3364,7 +3379,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin: 0 auto;
   margin-top: 30px;
 }
-.sales_slider_btn .action_btn-item {
+.sales_slider_btn .text_btn-item {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 18px;
@@ -3554,7 +3569,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 .sales_eco-wrapper_item {
   height: 130px;
-  margin-top: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -3595,8 +3609,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 .sales_eco-wrapper_item-head p {
-  font-family: Montserrat;
-  font-style: normal;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 18px;
@@ -3615,7 +3628,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #fdd935;
 }
 
-.flat_btn {
+.eco_flat_btn {
   width: 130px !important;
   height: 30px !important;
   border: 2px solid #FDD935;
@@ -3624,12 +3637,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background: transparent !important;
 }
 @media screen and (min-width: 1030px) {
-  .flat_btn {
+  .eco_flat_btn {
     width: 330px !important;
     height: 70px !important;
   }
 }
-.flat_btn .action_btn-item {
+.eco_flat_btn .text_btn-item {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -3643,7 +3656,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #FDD935;
 }
 @media screen and (min-width: 1030px) {
-  .flat_btn .action_btn-item {
+  .eco_flat_btn .text_btn-item {
     font-size: 24px;
     line-height: 29px;
     letter-spacing: 0.04em;
@@ -3863,7 +3876,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 
 .owl-carousel,
 .owl-wrapper {
-  height: 396px;
+  height: 491px;
   max-width: 1170px;
   margin: 0 auto;
 }
@@ -3887,7 +3900,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   .owl-wrapper {
     border-top: 1px solid #e9e9ea;
     position: relative;
-    height: 510px !important;
     margin-bottom: 50px;
     z-index: 0;
     display: block;
@@ -3987,9 +3999,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   .owl-item {
     max-width: initial;
     max-height: initial;
-    width: 270px;
-    height: 370px;
-    margin: 0 30px;
+    width: 270px !important;
+    margin: 0 15px;
   }
 }
 .owl-item:first-child {
@@ -4006,7 +4017,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 1030px) {
   .owl-item:after {
-    right: -23px;
+    right: -16px;
     top: 50%;
     display: block;
     transform: translate(-50%, -50%);
@@ -4017,7 +4028,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .carousel_card {
   min-width: 170px;
   text-align: left;
-  max-height: 200px;
 }
 .carousel_card-wrapper_item {
   max-height: 200px;
@@ -4031,7 +4041,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin: 10px 0 0 20px;
 }
 .carousel_card-wrapper_item-buttons_cart {
   width: 40px;
@@ -4043,6 +4053,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   justify-content: center;
   align-items: center;
   display: flex;
+  box-sizing: content-box;
 }
 .carousel_card-wrapper_item-buttons_cart-item {
   -o-object-fit: contain !important;
@@ -4051,7 +4062,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-right: 2px;
 }
 .carousel_card-wrapper_item-buttons_price {
-  font-family: "Montserrat", sans-serif;
+  font-family: "MontserratSemiBold";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -4065,9 +4076,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   width: 8px !important;
   margin-left: 5px;
   position: absolute;
-  bottom: 3px;
-  position: absolute;
-  right: -10px;
+  bottom: 1px;
+  right: -14px;
 }
 .carousel_card-wrapper_item:nth-child(3) {
   padding: 10px;
@@ -4103,7 +4113,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   line-height: 14px;
   letter-spacing: 0.02em;
   font-family: "Montserrat", sans-serif;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
 }
 @media screen and (min-width: 600px) {
   .carousel_card-wrapper_item-name {
@@ -4122,10 +4132,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 @media screen and (min-width: 600px) {
   .carousel_card-wrapper_item-heading {
-    font-weight: 600;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 18px;
-    letter-spacing: 0.02em;
     color: #292930;
     padding-bottom: 0;
   }

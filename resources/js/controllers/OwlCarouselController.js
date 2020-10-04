@@ -27,7 +27,6 @@ class OwlCarouselController {
         $('.owl-carousel').owlCarousel({
             loop: true,
             nav: true,
-            items: 6,
             margin: 15,
             autoplay: true,
             autoplayTimeout: 2000,
@@ -39,7 +38,7 @@ class OwlCarouselController {
                     items: 3
                 },
                 1000: {
-                    items: 5
+                    items: 4
                 }
             }
         })

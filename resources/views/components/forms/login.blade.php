@@ -42,9 +42,12 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}" data-forgotPassword uk-toggle="target: #passReset">
                                     {{ __('Забыли пароль?') }}
                                 </a>
+
                             @endif
                         </div>
-
+                        <a class="btn btn-link"  uk-toggle="target: #emailHasBeenSent">
+                            {{ __('почта') }}
+                        </a>
                     </div>
 
                     <div class="form-group row mb-0 login-btn">
@@ -62,3 +65,4 @@
 
 
 @include('components.modals.resetPassword')
+@include('components.modals.emailHasBeenSent')

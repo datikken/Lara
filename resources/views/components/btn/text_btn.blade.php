@@ -1,3 +1,3 @@
-<div class="{{$class}}">
-    <div class="action_btn-item">{{$text}}</div>
+<div class="{{$class}} text_btn">
+    <div class="text_btn-item">{{$text}}</div>
 </div>

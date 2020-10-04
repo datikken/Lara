@@ -33,10 +33,23 @@
         box-shadow: 0 0 12px rgba(0,0,0,0.6);
     }
 }
+.flat_btn {
+    width: 170px;
+    height: 40px;
+    border: 1px solid #FDD935;
+    box-sizing: border-box;
+    border-radius: 30px;
+    color: $dblack;
+}
 .blocked_btn {
     background: $light_gray!important;
 }
 
+.text_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .animated_btn:active {
     -webkit-animation: shadow_inset .2s;
     animation: shadow_inset .2s;

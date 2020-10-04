@@ -1,4 +1,3 @@
-
 <div class="item">
     <div class="carousel_card">
         <div class="carousel_card-wrapper">
@@ -9,13 +8,7 @@
 
             <div class="carousel_card-wrapper_item">
                 <span class="carousel_card-wrapper_item-heading">
-                    <?
-                    if(gettype($name) === 'array') {
-                        echo str_limit(json_decode($name_buh), $limit = 40, $end = '...');
-                    } else {
-                        echo str_limit($name, $limit = 40, $end = '...');
-                    }
-                    ?>
+                    {{ $product->artikul }}
                 </span>
             </div>
 

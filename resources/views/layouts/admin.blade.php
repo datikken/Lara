@@ -6,11 +6,6 @@
     <meta name="author" content="tikken23@gmail.com">
     <meta name="description" content="Купить картридж для принтера, с доставкой.">
     <title>RECART.me</title>
-
-    @include('components.styles.style')
-    @include('components.scripts.scripts')
-    <script src="{{ asset('js/admin.js') }}" defer></script>
-
     <style>
         .admin_container {
             max-width: 500px;
@@ -29,19 +24,15 @@
         }
     </style>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"></script>
-
 </head>
 <body>
 <div class="admin_wrap" style="overflow: hidden; height: 100vh;">
 
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
          style="height: 70px; background-color: #292930!important;">
-        {{--<a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/admin">{{$userData['name']}}</a>--}}
         <img class="header_wrapper-item_logo-item ml-3" src="/images/icons/main_logo.png" alt="Logo">
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
                 data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -307,6 +298,8 @@
         </div>
     </div>
 </div>
+
+@include('components.scripts.adminScripts')
 
 </body>
 </html>

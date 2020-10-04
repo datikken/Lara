@@ -11,7 +11,7 @@
             </div>
 
             <div class="sales_eco-wrapper_item-btn">
-                @include('components.btn.text_btn', [ 'class' => 'flat_btn action_btn', 'text' => 'подробнее'])
+                @include('components.btn.text_btn', [ 'class' => 'flat_btn eco_flat_btn', 'text' => 'подробнее'])
             </div>
         </div>
 

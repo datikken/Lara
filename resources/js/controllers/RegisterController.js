@@ -43,7 +43,7 @@ class RegisterController {
                     data: {email},
                     success: function (data) {
                        if(data.status == '200') {
-                           UIkit.modal(element).hide();
+                           UIkit.modal(modal).hide();
                        }
                     },
                     error: function (error) {

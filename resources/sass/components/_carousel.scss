@@ -1,6 +1,6 @@
 .owl-carousel,
 .owl-wrapper {
-  height: 396px;
+  height: 491px;
   max-width: 1170px;
   margin: 0 auto;
 
@@ -20,7 +20,6 @@
   @include breakpoint($phone) {
     border-top: 1px solid $light_gray;
     position: relative;
-    height: 510px !important;
     margin-bottom: 50px;
     z-index: 0;
     display: block;
@@ -112,9 +111,8 @@
   @include breakpoint($phone) {
     max-width: initial;
     max-height: initial;
-    width: 270px;
-    height: 370px;
-    margin: 0 30px;
+    width: 270px!important;
+    margin: 0 15px;
   }
 
   &:first-child {
@@ -131,7 +129,7 @@
     position: absolute;
 
     @include breakpoint($medium) {
-        right: -23px;
+        right: -16px;
         top: 50%;
         display: block;
         transform: translate(-50%, -50%);
@@ -142,7 +140,6 @@
 .carousel_card {
   min-width: 170px;
   text-align: left;
-  max-height: 200px;
 
   &-wrapper {
     &_item {
@@ -153,10 +150,11 @@
       }
 
       &-buttons {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 10px 0 0 20px;
+
         &_cart {
           width: 40px;
           height: 40px;
@@ -167,6 +165,7 @@
           justify-content: center;
           align-items: center;
           display: flex;
+          box-sizing: content-box;
 
           &-item {
             object-fit: contain!important;
@@ -175,7 +174,7 @@
           }
         }
         &_price {
-          font-family: $font;
+          font-family: $semifont;
           font-style: normal;
           font-weight: 600;
           font-size: 24px;
@@ -185,13 +184,12 @@
           position: relative;
 
           &-currency {
-            height: 11px!important;
-            width: 8px!important;
-            margin-left: 5px;
-            position: absolute;
-            bottom: 3px;
-            position: absolute;
-            right: -10px;
+              height: 11px !important;
+              width: 8px !important;
+              margin-left: 5px;
+              position: absolute;
+              bottom: 1px;
+              right: -14px;
           }
         }
       }
@@ -228,7 +226,7 @@
         line-height: 14px;
         letter-spacing: 0.02em;
         font-family: $font;
-        margin-bottom: 7px;
+        margin-bottom: 10px;
 
         @include breakpoint($phone) {
           font-size: 12px;
@@ -246,10 +244,8 @@
         font-family: $semifont;
 
         @include breakpoint($phone) {
-          font-weight: 600;
-          font-size: 12px;
+          font-size: 18px;
           line-height: 18px;
-          letter-spacing: 0.02em;
           color: $dblack;
           padding-bottom: 0;
         }

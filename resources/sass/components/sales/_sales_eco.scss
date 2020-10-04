@@ -1,5 +1,4 @@
 .sales_eco {
-  //display: none;
   width: 100%;
   margin-bottom: 15px;
   height: 173px;
@@ -25,7 +24,6 @@
 
     &_item {
       height: 130px;
-      margin-top: 25px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -67,8 +65,7 @@
         }
 
         p {
-          font-family: Montserrat;
-          font-style: normal;
+          font-family: $font;
           font-weight: 600;
           font-size: 18px;
           line-height: 18px;
@@ -91,7 +88,7 @@
   }
 }
 
-.flat_btn {
+.eco_flat_btn {
   width: 130px!important;
   height: 30px!important;
   border: 2px solid #FDD935;
@@ -104,7 +101,7 @@
     height: 70px!important;
   }
 
-  .action_btn-item {
+  .text_btn-item {
     font-family: $font;
     font-style: normal;
     font-weight: 500;
