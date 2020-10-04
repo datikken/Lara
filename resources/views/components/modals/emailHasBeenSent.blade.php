@@ -3,12 +3,12 @@
         <div class="emailHasBeenSent_close uk-modal-close-default" uk-close></div>
         <div class="emailHasBeenSent_inner">
 
-            <div class="passReset_img">
+            <div class="emailHasBeenSent_img">
                 <img src="/images/icons/emailHasBeenSent.svg" alt="Sent" class="emailHasBeenSent_icon">
             </div>
 
-            <div class="passReset_head">
-                <span class="passReset_head_txt">Письмо с инструкцией отправлено на почту</span>
+            <div class="emailHasBeenSent_head">
+                <span class="emailHasBeenSent_head_txt">Письмо с инструкцией отправлено на почту</span>
             </div>
 
             @include('components.btn.text_btn', [ 'class' => 'flat_btn', 'text' => 'Закрыть'])

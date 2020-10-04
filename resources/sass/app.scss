@@ -64,7 +64,6 @@
 @import "./components/blog";
 @import "./components/blog/blogCom";
 @import "./components/like";
-@import "./components/modals";
 @import "./components/comments";
 @import "./components/buttons";
 @import "./components/tip";
@@ -115,4 +114,5 @@
 @import "./components/dropdown/payment_dropdown";
 @import "./components/about/about_modal";
 @import "./components/pickups/pickups";
-@import "./components/passReset";
+@import "components/modals/passReset";
+@import "components/modals/emailHasBeenSent";
