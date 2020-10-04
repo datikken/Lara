@@ -7,6 +7,9 @@ let mutations = {
     getLastDeliveryAdress(state) {
 
     },
+    allFormsReadyState(state, val) {
+        state.allFormsReadyState = val;
+    },
     blockFormInputs(state, el) {
         let inputs = el.querySelectorAll('input');
 

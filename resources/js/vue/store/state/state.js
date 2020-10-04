@@ -18,7 +18,7 @@ let state = {
     orders: false,
     user: false,
     cart: false,
-    validatePostForm: null,
+    allFormsReadyState: null,
     filteredProducts: [],
     searchProducts: [],
     viewedProducts: [],

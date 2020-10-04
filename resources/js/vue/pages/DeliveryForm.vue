@@ -89,8 +89,6 @@
             proceedToPaymentPage() {
                 let ready = false;
 
-                // this.validateAdressForm();
-
                 if(this.deliveryType === 'stock') {
                    if(this.stockDeliveryPickup) {
                        ready = true;

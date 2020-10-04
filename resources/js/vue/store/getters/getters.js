@@ -19,7 +19,7 @@ let getters = {
         customerAdress: state => state.customerAdress,
         stockDeliveryPickup: state => state.stockDeliveryPickup,
         selfDelivery: state => state.selfDelivery,
-        validatePostForm: state => state.validatePostForm
+        allFormsReadyState: state => state.allFormsReadyState
 }
 
 export default getters;
