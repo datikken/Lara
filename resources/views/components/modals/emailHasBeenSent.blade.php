@@ -8,7 +8,7 @@
             </div>
 
             <div class="emailHasBeenSent_head">
-                <span class="emailHasBeenSent_head_txt">Письмо с новым паролем оправлено на почту</span>
+                <span class="emailHasBeenSent_head_txt">Письмо с инструкциями отправлено на почту</span>
             </div>
 
             @include('components.btn.text_btn', [ 'class' => 'flat_btn', 'text' => 'Закрыть'])

@@ -22,7 +22,7 @@ class RegisterController {
             url: '/checkEmailExpireDate',
             data: {email},
             success: function (data) {
-                
+
             },
             error: function (error) {
                 console.error('pass reset ajax error');
@@ -49,6 +49,7 @@ class RegisterController {
 
         btn && btn.addEventListener('click', function(e) {
             let email = modal.querySelector('input').value;
+            let emailSentPopup = modal.querySelector('#emailHasBeenSent');
             let valid = validateEmail(email);
 
             if(!valid) {
@@ -61,6 +62,7 @@ class RegisterController {
                     success: function (data) {
                        if(data.status == '200') {
                            UIkit.modal(modal).hide();
+                           UIkit.modal(emailSentPopup).show();
                        }
                     },
                     error: function (error) {
