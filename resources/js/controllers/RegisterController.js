@@ -16,8 +16,23 @@ class RegisterController {
         this.passReset();
         this.testIfUserFromPasswordResetEmail();
     }
+    checkEmailExpireDate(email) {
+        $.ajax({
+            method: 'get',
+            url: '/checkEmailExpireDate',
+            data: {email},
+            success: function (data) {
+                
+            },
+            error: function (error) {
+                console.error('pass reset ajax error');
+            }
+        });
+    }
     openChangePassModal() {
         let passsResetForm = document.querySelector('#passResetForm');
+
+
         UIkit.modal(passsResetForm).show();
     }
     testIfUserFromPasswordResetEmail() {

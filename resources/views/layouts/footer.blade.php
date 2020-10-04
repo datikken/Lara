@@ -41,23 +41,23 @@
                 </div>
                 <div class="footer_cat-item">
                     <div class="footer_cat-item_list">
-                        <ul>
-                            <li><span>О нас</span></li>
-                            <li><span>Блог</span></li>
-                            {{-- <li><span>Акции</span></li> --}}
-                            <li><a href="/contacts">Контакты</a></li>
-                            <li><span>Информация</span></li>
-                            <li><span>Хит парад принтеров</span></li>
+                        <ul class="footer_cat-item_list-ul">
+                            <li class="footer_cat-item_list-ul_item"><span>О нас</span></li>
+                            <li class="footer_cat-item_list-ul_item"><span>Блог</span></li>
+                            {{-- <li class="footer_cat-item_list-ul_item">spanАкции</li> --}}
+                            <li class="footer_cat-item_list-ul_item"><span>Контакты</span></li>
+                            <li class="footer_cat-item_list-ul_item"><span>Информация</span></li>
+                            <li class="footer_cat-item_list-ul_item"><span>Хит парад принтеров</span></li>
                         </ul>
                     </div>
 
                     <div class="footer_cat-item_list">
                         <ul class="footer_cat-item_list-ul">
-                            <li><span><a href="/catalog">Каталог</a></span></li>
-                            <li><span>Лазерные принтеры</span></li>
-                            <li><span>Струйные принтеры</span></li>
-                            <li><span>Ч/Б принтеры</span></li>
-                            <li><span>Цветные принтеры</span></li>
+                            <li class="footer_cat-item_list-ul_item"><span>Каталог</span></li>
+                            <li class="footer_cat-item_list-ul_item"><span>Лазерные принтеры</span></li>
+                            <li class="footer_cat-item_list-ul_item"><span>Струйные принтеры</span></li>
+                            <li class="footer_cat-item_list-ul_item"><span>Ч/Б принтеры</span></li>
+                            <li class="footer_cat-item_list-ul_item"><span>Цветные принтеры</span></li>
                         </ul>
                     </div>
                 </div>
@@ -74,10 +74,10 @@
                 </div>
                 <div class="footer_cat-item">
                     <div class="footer_cat-item_list">
-                        <ul>
-                            <li><span>Личный кабинет</span></li>
-                            <li><span>Трекинг заказа</span></li>
-                            <li><span>Корзина</span></li>
+                        <ul class="footer_cat-item_list-ul">
+                            <li class="footer_cat-item_list-ul_item"><span>Личный кабинет</span></li>
+                            <li class="footer_cat-item_list-ul_item"><span>Трекинг заказа</span></li>
+                            <li class="footer_cat-item_list-ul_item"><span>Корзина</span></li>
                         </ul>
                     </div>
                 </div>

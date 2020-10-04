@@ -52,22 +52,28 @@
 @mixin underline() {
   position: relative;
 
-  &:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: -4px;
-    background: $white;
-    left: 0;
-    transition: width $transition;
-  }
 
-  &:hover {
     &:after {
-      width: 100%;
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        top: 25px;
+        height: 2px;
+        width: 0;
+        background: transparent;
+        transition: width .2s ease, background-color .2s ease, left .2s ease;
     }
-  }
+
+    &:hover {
+        color: $white;
+    }
+    &:hover:after {
+        width: 100%;
+        left: 0;
+        background: white;
+    }
 }
 .active_info {
   &:after {

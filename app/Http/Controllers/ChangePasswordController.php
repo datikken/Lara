@@ -8,20 +8,13 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use DateTime;
-use DateInterval;
 
 class ChangePasswordController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function checkEmailExpireDate()
     {
-//        $this->middleware('auth');
-    }
 
+    }
     public function createResetToken($email)
     {
         $user = DB::table('users')->where('email', '=', $email)

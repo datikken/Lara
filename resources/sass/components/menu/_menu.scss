@@ -250,6 +250,7 @@
                             font-weight: 300;
                             right: -27px;
                             transition: all .2s cubic-bezier(0.33, 1, 0.68, 1);
+                            box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
 
                             &-text {
                                 padding: 12.5px;

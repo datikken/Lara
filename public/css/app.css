@@ -1177,6 +1177,7 @@ b {
   font-weight: 300;
   right: -27px;
   transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
 }
 .menu_wrapper-item-main_menu-item-text_secondary-text {
   padding: 12.5px;
@@ -2039,14 +2040,16 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     margin-left: 30px;
   }
 }
-.footer_cat-item_list ul {
+.footer_cat-item_list-ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
-.footer_cat-item_list ul:first-child {
+.footer_cat-item_list-ul:first-child {
   margin-right: 31px;
 }
-.footer_cat-item_list ul li {
+.footer_cat-item_list-ul_item {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
@@ -2054,28 +2057,33 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin: 0 0 7px 0;
   cursor: pointer;
 }
-.footer_cat-item_list ul li a {
-  color: #fff;
-}
-.footer_cat-item_list ul li span a {
-  color: #fff;
-}
 @media screen and (min-width: 600px) {
-  .footer_cat-item_list ul li span {
+  .footer_cat-item_list-ul_item span {
+    display: inline-block !important;
     position: relative;
   }
-  .footer_cat-item_list ul li span:after {
+  .footer_cat-item_list-ul_item span:after {
     content: "";
+    display: block;
     position: absolute;
+    bottom: 0;
+    left: 50%;
+    top: 25px;
+    height: 2px;
     width: 0;
-    height: 1px;
-    bottom: -4px;
-    background: #fff;
-    left: 0;
-    transition: width 0.2s;
+    background: transparent;
+    transition: width 0.2s ease, background-color 0.2s ease, left 0.2s ease;
   }
-  .footer_cat-item_list ul li span:hover:after {
+  .footer_cat-item_list-ul_item span:hover {
+    color: #fff;
+  }
+  .footer_cat-item_list-ul_item span:hover:after {
     width: 100%;
+    left: 0;
+    background: white;
+  }
+  .footer_cat-item_list-ul_item span:after {
+    top: 16px;
   }
 }
 

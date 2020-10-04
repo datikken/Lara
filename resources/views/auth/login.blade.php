@@ -2,7 +2,7 @@
 
 @section('center')
 
-    <div class="main" <? if(isset($reset)) { echo 'data-resetPass'; }?>>
+    <div class="main">
         @include('components.forms.login')
 
         <div class="auth-decor"></div>
