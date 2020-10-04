@@ -271,11 +271,6 @@ a:hover {
   border-bottom-right-radius: 50px;
 }
 
-.uk-close {
-  cursor: pointer;
-  top: 11px;
-}
-
 .active_border {
   border-bottom: 1px solid #fdd935;
 }
@@ -600,6 +595,18 @@ b {
   background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
   left: 0;
   top: 0;
+}
+
+.uk-close {
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+  top: 0;
+  right: 0;
+  padding: 20px 15px 0 0;
+}
+.uk-close svg {
+  height: 10px;
 }
 
 .pb16 {
@@ -13815,8 +13822,20 @@ main {
 }
 
 .passReset {
-  width: 300px !important;
+  width: 430px !important;
+  height: 225px !important;
   position: relative;
+  padding: 25px 30px;
+}
+.passReset_span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+  margin: 0 0 20px 0;
+  max-width: 250px;
+  align-self: flex-start;
 }
 .passReset:after {
   content: "";
@@ -13830,6 +13849,15 @@ main {
 }
 .passReset .animated_btn {
   margin: 0 auto;
+}
+.passReset .animated_btn .text_btn-item {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
 }
 .passReset_head {
   margin-bottom: 15px;
@@ -13855,8 +13883,14 @@ main {
 .passReset_inner .form_group {
   margin-bottom: 20px;
 }
+.passReset_inner .form_group_label {
+  margin: 0 0 5px 0;
+}
 .passReset_inner .form_group:last-child {
   margin: 0;
+}
+.passReset_inner .form_group-error {
+  margin-bottom: 10px;
 }
 .passReset_inner form {
   width: 100%;
@@ -13872,18 +13906,6 @@ main {
   height: 45px;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.passReset_close {
-  display: flex;
-  position: absolute;
-  justify-content: flex-end;
-  top: 0;
-  right: 0;
-  padding: 20px 15px 0 0;
-}
-.passReset_close svg {
-  height: 10px;
 }
 
 #emailHasBeenSent {

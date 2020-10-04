@@ -18,3 +18,16 @@
         }
     }
 }
+
+.uk-close {
+    display: flex;
+    position: absolute;
+    justify-content: flex-end;
+    top: 0;
+    right:0;
+    padding: 20px 15px 0 0;
+
+    svg {
+        height: 10px;
+    }
+}

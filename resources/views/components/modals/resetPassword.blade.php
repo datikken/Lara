@@ -3,19 +3,14 @@
         <div class="passReset_close uk-modal-close-default" uk-close></div>
         <div class="passReset_inner">
 
-            <div class="passReset_img">
-                <img src="/images/icons/passResetIcon.svg" alt="Reset" class="passReset_icon">
+            <div class="passReset_span">
+                <span>Для подтверждения вашего аккаунта, введите свою почту</span>
             </div>
-
-            <div class="passReset_head">
-                <span class="passReset_head_txt">Смена пароля</span>
-            </div>
-
             <form method="POST" action="{{ route('sendPasswordResetEmail') }}">
                 <div class="form_group">
-                    <label for="email" class="form_group_label">{{ __('Введите почтовый адрес') }}</label>
+                    <label for="email" class="form_group_label">{{ __('Введите почту') }}</label>
 
-                    <input class="form_group_input" type="text" name="email" placeholder="Почтовый адрес">
+                    <input class="form_group_input" type="text" name="email">
 
                     <label for="required" class="form_group_message">Поле обязательно к заполнению</label>
                 </div>

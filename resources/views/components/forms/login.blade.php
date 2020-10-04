@@ -45,9 +45,6 @@
 
                             @endif
                         </div>
-                        <a class="btn btn-link"  uk-toggle="target: #emailHasBeenSent">
-                            {{ __('почта') }}
-                        </a>
                     </div>
 
                     <div class="form-group row mb-0 login-btn">

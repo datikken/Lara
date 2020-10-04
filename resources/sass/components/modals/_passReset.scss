@@ -4,8 +4,21 @@
 }
 
 .passReset {
-    width: 300px!important;
+    width: 430px!important;
+    height: 225px!important;
     position: relative;
+    padding: 25px 30px;
+
+    &_span {
+        font-family: $font;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.02em;
+        color: $gray;
+        margin: 0 0 20px 0;
+        max-width: 250px;
+        align-self: flex-start;
+    }
 
     &:after {
         content: "";
@@ -20,6 +33,16 @@
 
     .animated_btn {
         margin: 0 auto;
+
+        .text_btn-item {
+            font-family: $font;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: $dblack;
+        }
     }
 
     &_head {
@@ -48,9 +71,17 @@
         .form_group {
             margin-bottom: 20px;
 
+            &_label {
+                margin: 0 0 5px 0;
+            }
+
             &:last-child {
                 margin: 0;
             }
+        }
+
+        .form_group-error {
+            margin-bottom: 10px;
         }
 
         form {
@@ -69,17 +100,5 @@
         width: 50px;
         height: 45px;
         object-fit: cover;
-    }
-}
-.passReset_close {
-    display: flex;
-    position: absolute;
-    justify-content: flex-end;
-    top: 0;
-    right:0;
-    padding: 20px 15px 0 0;
-
-    svg {
-        height: 10px;
     }
 }
