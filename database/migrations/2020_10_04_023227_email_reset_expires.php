@@ -14,7 +14,8 @@ class EmailResetExpires extends Migration
     public function up()
     {
         Schema::table('password_resets', function (Blueprint $table) {
-            $table->bigIncrements('id');
+//            $table->bigIncrements('id');
+            $table->datetime('expires')->change();
         });
     }
 

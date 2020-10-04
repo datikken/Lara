@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Rules\MatchOldPassword;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use Illuminate\Support\Facades\DB;
-use App\Mail\SendMail;
-use Illuminate\Support\Facades\Mail;
+use DateTime;
+use DateInterval;
 
 class ChangePasswordController extends Controller
 {
@@ -32,8 +31,10 @@ class ChangePasswordController extends Controller
 
         if(!is_null($user)) {
             $token = str_random(60);
-            $now = Carbon::now()->toDateTimeString();
-            $expires = Carbon::now()->addHour()->toDateTimeString();
+            $carbNow = new DateTime();
+
+            $now = $carbNow;
+            $expires = now()->addMinutes(30);
 
             DB::table('password_resets')->insert([
                 'email' => $email,
