@@ -4,6 +4,20 @@ import _ from "lodash";
 import axios from "axios/index";
 
 let mutations = {
+    getLastDeliveryAdress(state) {
+        
+    },
+    validatePostForm(state) {
+        state.validatePostForm = true;
+    },
+    blockFormInputs(state, el) {
+        let inputs = el.querySelectorAll('input');
+
+        inputs && inputs.forEach((npt) => {
+            npt.value = ''
+            npt.setAttribute('disabled', '')
+        })
+    },
     checkDeliveryAdress(state, {city, street, house, body, building}) {
         let that = this;
 
@@ -55,9 +69,9 @@ let mutations = {
             })
             .then((data) => {
                 state.customerIndex = data;
-                state.suggestedPostalOffice = data.suggestedOffice[0].unrestricted_value;
-
                 if(data.suggestedOffice[0]) {
+                    state.suggestedPostalOffice = data.suggestedOffice[0].unrestricted_value;
+
                     if(data.suggestedOffice[0].unrestricted_value.indexOf('Москва') >= 0) {
                         state.selfDelivery = true;
                     } else {

@@ -35,11 +35,12 @@
         methods: {
             ...mapActions([
                 'SET_DELIVERY_INDEX',
-                'SHOW_DELIVERY_TYPE_HELPER'
+                'SHOW_DELIVERY_TYPE_HELPER',
+                'BLOCK_FORM_INPUTS'
             ]),
             setDeliveryIndex() {
-
-                let npt = this.$el.querySelector('[data-index_field]')
+                let firstForm = document.querySelector('.first_step_form');
+                let npt = this.$el.querySelector('[data-index_field]');
                 let obj = {
                     index: npt.value
                 }
@@ -48,6 +49,8 @@
 
                 npt.value = '';
                 npt.setAttribute('disabled', 'true');
+
+                this.BLOCK_FORM_INPUTS(firstForm);
             }
         },
         computed: {

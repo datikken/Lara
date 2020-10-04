@@ -12,7 +12,6 @@
         </form>
 
         <DeliveryMap/>
-        <DeliverySelf/>
 
     </div>
 </template>
@@ -20,7 +19,6 @@
 <script>
     import TextBtn from '../btns/TextBtn'
     import DeliveryMap from '../delivery/DeliveryMap'
-    import DeliverySelf from '../delivery/DeliverySelf'
     import DropdownList from '../lists/DropdownList'
 
     export default {
@@ -28,7 +26,6 @@
         components: {
             TextBtn,
             DeliveryMap,
-            DeliverySelf,
             DropdownList
         },
         data: () => ({

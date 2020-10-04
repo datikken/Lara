@@ -14,7 +14,15 @@
 
             <DeliveryPickups v-if="this.deliveryType === 'stock'"/>
 
-            <DeliveryPost  v-if="this.deliveryType === 'post'"/>
+            <DeliveryPost v-if="this.deliveryType === 'post'"/>
+
+            <!--<SelfDelivery />-->
+
+            <DeliverySelf v-if="this.deliveryType === 'deliveryMkad'" text="Ранее используемый адрес доставки" />
+            <DeliveryService v-if="this.deliveryType === 'deliveryMkad'" />
+
+            <DeliverySelf v-if="this.deliveryType === 'delivery'" text="Ранее используемый адрес доставки" />
+            <DeliveryService v-if="this.deliveryType === 'delivery'" />
 
             <TextBtn
                 className="form_group-btn yellow_btn animated_btn"
@@ -39,7 +47,11 @@
     import OrdersList from '../components/orders/OrdersList'
     import DeliveryPickups from '../components/delivery/DeliveryPickups'
     import DeliveryPost from '../components/delivery/DeliveryPostForm';
+    import DeliveryService from '../components/delivery/DeliveryService';
     import TextBtn from '../components/btns/TextBtn'
+    import SelfDelivery from '../components/delivery/SelfDelivery';
+    import DeliverySelf from '../components/delivery/DeliverySelf'
+
     import { mapGetters, mapActions } from 'vuex'
     import router from '../router/router'
 
@@ -50,7 +62,10 @@
             DeliveryHelper,
             DeliveryForms,
             DeliveryPost,
+            DeliveryService,
+            SelfDelivery,
             OrdersList,
+            DeliverySelf,
             TextBtn
         },
         computed: {
@@ -67,7 +82,8 @@
                 'DELIVERY_TYPE_ERROR',
                 'CHANGE_PROGRESS_STEP',
                 'SCROLL_TO_TOP',
-                'CHECK_DELIVERY_PICKUPS'
+                'CHECK_DELIVERY_PICKUPS',
+                'VALIDATE_POST_FORM'
             ]),
             proceedToPaymentPage() {
                 let ready = false;
@@ -88,13 +104,19 @@
                     $(document.body).scrollTop($('#self').offset().top);
                 }
 
-                if(this.deliveryType === 'deliveryMkad' || this.deliveryType === 'delivery' || this.deliveryType === 'post') {
+                if(this.deliveryType === 'deliveryMkad' || this.deliveryType === 'delivery') {
                     if( typeof this.customerAdress.deliveryAddress === 'object') {
                         ready = true;
                     }
                     if(this.customerIndex.deliveryIndex) {
                         ready = true;
                     }
+                }
+
+                if(this.deliveryType === 'post') {
+                    this.VALIDATE_POST_FORM();
+
+                    return;
                 }
 
                 if(!this.deliveryType) {

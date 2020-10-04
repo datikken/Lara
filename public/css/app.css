@@ -243,6 +243,10 @@ a:hover {
   color: #40404c;
 }
 
+.required {
+  color: #FF0000;
+}
+
 .blue {
   color: #3559fd;
 }
@@ -647,6 +651,10 @@ b {
 
 .flex-center {
   align-items: center;
+}
+
+.gap5 {
+  grid-gap: 5px;
 }
 
 .proceed_btn div, .proceed_flat_btn div {
@@ -12063,6 +12071,147 @@ main {
   letter-spacing: 0.02em;
   color: #292930;
   margin-bottom: 15px;
+}
+
+.postDelForm {
+  max-width: 630px;
+  margin-bottom: 70px;
+}
+.postDelForm .form_group_tip {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+}
+.postDelForm_item {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-gap: 30px;
+}
+.postDelForm_item:nth-child(2) {
+  display: block;
+}
+.postDelForm_item-four {
+  grid-template-columns: repeat(3, 70px) 110px;
+  margin-bottom: 37px;
+}
+.postDelForm_item-four .form_group_input {
+  max-width: 70px;
+}
+.postDelForm_item .form_group {
+  margin-bottom: 10px;
+}
+.postDelForm_item .form_group_label {
+  font-family: "MontserratMedium";
+}
+.postDelForm_item .form_group_input {
+  border-radius: 0;
+  padding: 0 0 0 10px;
+}
+
+.delServ_inner {
+  max-width: 630px;
+}
+.delServ_item {
+  margin-bottom: 10px;
+}
+.delServ_item:first-child .form_group_input {
+  width: 300px;
+}
+.delServ_item-seven {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr) 1fr;
+  grid-gap: 20px;
+}
+.delServ_item-seven .form_group:last-child .form_group_label {
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: left;
+}
+.delServ_item-seven .form_group .form_group_input {
+  max-width: 77px;
+}
+.delServ_item .form_group textarea::-moz-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  color: #e9e9ea;
+}
+.delServ_item .form_group textarea:-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  color: #e9e9ea;
+}
+.delServ_item .form_group textarea::-ms-input-placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  color: #e9e9ea;
+}
+.delServ_item .form_group textarea::placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  color: #e9e9ea;
+}
+.delServ_item .form_group textarea {
+  width: 630px;
+  height: 170px;
+  border: 1px solid #e9e9ea;
+  box-sizing: border-box;
+  resize: none;
+  padding: 10px 0 0 10px;
+  margin-bottom: 20px;
+  outline: none;
+}
+.delServ_item .form_group_input {
+  border-radius: 0;
+  padding: 0 0 0 10px;
+  font-size: 12px;
+  line-height: 14px;
+}
+.delSelf {
+  margin: 0 0 30px 0;
+}
+.delSelf_btn {
+  background: #fdd935;
+  border-radius: 30px;
+  width: 270px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.delSelf_btn span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+.delSelf .flat_btn {
+  background: #fff;
+  border: 1px solid #fdd935;
+}
+.delSelf_label {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  color: #292930;
+  margin-bottom: 15px;
+}
+.delSelf_input {
+  width: 100%;
+  border: 1px solid #e9e9ea;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 0 0 0 10px;
+  outline: none;
+}
+.delSelf_btns {
+  display: flex;
+  grid-gap: 30px;
+  margin: 30px 0 0 30px;
 }
 
 .postItem {

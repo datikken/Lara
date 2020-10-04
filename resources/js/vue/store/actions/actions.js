@@ -1,6 +1,15 @@
 import  $ from 'jquery';
 
 let actions = {
+    GET_LAST_DELIVERY_ADRESS(context) {
+        context.commit('getLastDeliveryAdress');
+    },
+    VALIDATE_POST_FORM(context) {
+        context.commit('validatePostForm');
+    },
+    BLOCK_FORM_INPUTS(context, el) {
+        context.commit('blockFormInputs', el);
+    },
     REFRESH_CUTOMER_DATA(context, data) {
         context.commit('refreshCutomerData', data)
     },

@@ -1,5 +1,5 @@
 <template>
-    <div class="dform_wrap-col">
+    <div class="dform_wrap-col first_step_form">
         <div class="dform_wrap-col_item">
             <div class="step_wrap">
 
@@ -77,7 +77,8 @@
                 'SCROLL_TO_TOP',
                 'VALIDATE_DELIVERY_ADRESS',
                 'SHOW_DELIVERY_TYPE_HELPER',
-                'CHECK_DELIVERY_ADRESS'
+                'CHECK_DELIVERY_ADRESS',
+                'BLOCK_FORM_INPUTS'
             ]),
             validatePickUpPoint() {
                 let valid = false;
@@ -123,10 +124,7 @@
                     this.APPLY_DELIVERY_ADRESS(data);
                     this.CHECK_DELIVERY_ADRESS(data);
 
-                    inputs.forEach((npt) => {
-                        npt.value = ''
-                        npt.setAttribute('disabled', '')
-                    })
+                    this.BLOCK_FORM_INPUTS(this.$el);
 
                     this.$el.querySelector('.error-message').classList.add('as-none');
 

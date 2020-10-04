@@ -127,6 +127,8 @@ Route::get('/setUrikInfo', ['uses' => 'CustomerDataController@setUrikInfo', 'as'
 Route::get('/deliveryForm', ['uses' => 'CustomerDataController@deliveryForm', 'as' => 'deliveryForm']);
 Route::post('/setStockPickUpPoint', ['uses' => 'CustomerDataController@setStockPickUpPoint', 'as' => 'setStockPickUpPoint']);
 
+//Delivery
+Route::get('/getLastDeliveryAdress', ['uses' => 'DeliveryController@getLastDeliveryAdress', 'as' => 'getLastDeliveryAdress']);
 
 Route::post('/setAdress', ['uses' => 'CustomerDataController@setAdress', 'as' => 'setAdress']);
 Route::post('/setIndex', ['uses' => 'CustomerDataController@setIndex', 'as' => 'setIndex']);
