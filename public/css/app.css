@@ -8326,9 +8326,11 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 @media screen and (min-width: 600px) {
   .contacts_column {
     display: flex;
+    justify-content: center;
   }
   .contacts_column-inner {
     flex-basis: 70%;
+    max-width: 730px;
   }
   .contacts_column .mobile-hide {
     flex-basis: 30%;
@@ -8356,7 +8358,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .contacts_wrap-item_socials {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 100%;
   grid-column-gap: 25px;
   width: 240px;
   margin-bottom: 10px;
@@ -8559,8 +8560,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 15px;
 }
 .cfeedback {
-  margin: 6px 0 0 30px;
-  width: calc(100% - 30px);
+  margin: 6px 0 0 20px;
+  width: calc(100% - 20px);
 }
 .cfeedback .contacts_wrap-item_inner {
   margin: 0;
@@ -8592,7 +8593,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 .cfeedback_wrap-row {
-  margin-bottom: 16px;
+  margin-bottom: 30px;
 }
 .cfeedback_wrap-row:last-child {
   margin: 0 0 40px 0;

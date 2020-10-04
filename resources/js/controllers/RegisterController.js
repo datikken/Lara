@@ -13,6 +13,7 @@ class RegisterController {
             that._pickFaceType(e)
         });
 
+
         this.passReset();
         this.testIfUserFromPasswordResetEmail();
     }
