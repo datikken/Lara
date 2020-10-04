@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
+    input  {
+        border: 1px solid $light_gray;
+    }
     &_input {
         height: 40px;
         border-radius: 30px;

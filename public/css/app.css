@@ -12016,6 +12016,9 @@ main {
   flex-direction: column;
   align-items: flex-start;
 }
+.form_group input {
+  border: 1px solid #e9e9ea;
+}
 .form_group_input {
   height: 40px;
   border-radius: 30px;

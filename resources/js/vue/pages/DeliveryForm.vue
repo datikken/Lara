@@ -14,6 +14,8 @@
 
             <DeliveryPickups v-if="this.deliveryType === 'stock'"/>
 
+            <DeliveryPost  v-if="this.deliveryType === 'post'"/>
+
             <TextBtn
                 className="form_group-btn yellow_btn animated_btn"
                 text="Продолжить"
@@ -36,6 +38,7 @@
     import DeliveryForms from '../components/delivery/DeliveryForms'
     import OrdersList from '../components/orders/OrdersList'
     import DeliveryPickups from '../components/delivery/DeliveryPickups'
+    import DeliveryPost from '../components/delivery/DeliveryPostForm';
     import TextBtn from '../components/btns/TextBtn'
     import { mapGetters, mapActions } from 'vuex'
     import router from '../router/router'
@@ -46,6 +49,7 @@
             DeliveryPickups,
             DeliveryHelper,
             DeliveryForms,
+            DeliveryPost,
             OrdersList,
             TextBtn
         },

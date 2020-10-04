@@ -13,10 +13,12 @@ class RegisterController {
             that._pickFaceType(e)
         });
 
-
-        this.passReset();
-        this.testIfUserFromPasswordResetEmail();
+        if (auth) {
+            this.passReset();
+            this.testIfUserFromPasswordResetEmail();
+        }
     }
+
     checkEmailExpireDate(email) {
         $.ajax({
             method: 'get',
@@ -30,18 +32,20 @@ class RegisterController {
             }
         });
     }
+
     openChangePassModal() {
         let passsResetForm = document.querySelector('#passResetForm');
 
-
         UIkit.modal(passsResetForm).show();
     }
+
     testIfUserFromPasswordResetEmail() {
         let url = window.location.href;
-            if(url.indexOf('token') >= 0) {
-                this.openChangePassModal();
-            }
+        if (url.indexOf('token') >= 0) {
+            this.openChangePassModal();
+        }
     }
+
     passReset() {
         let modal = document.querySelector('#passReset');
         let emailSentPopup = document.querySelector('#emailHasBeenSent');
@@ -49,11 +53,11 @@ class RegisterController {
         let btn = modal.querySelector('.animated_btn');
         let formGroup = modal.querySelector('.form_group');
 
-        btn && btn.addEventListener('click', function(e) {
+        btn && btn.addEventListener('click', function (e) {
             let email = modal.querySelector('input').value;
             let valid = validateEmail(email);
 
-            if(!valid) {
+            if (!valid) {
                 formGroup.classList.add('form_group-error');
             } else {
                 $.ajax({
@@ -61,65 +65,68 @@ class RegisterController {
                     url: '/sendPasswordResetEmail',
                     data: {email},
                     success: function (data) {
-                       if(data.status == '200') {
-                           UIkit.modal(modal).hide();
-                           UIkit.modal(emailSentPopup).show();
-                       }
+                        if (data.status == '200') {
+                            UIkit.modal(modal).hide();
+                            UIkit.modal(emailSentPopup).show();
+                        }
                     },
                     error: function (error) {
-                       console.error('pass reset ajax error');
+                        console.error('pass reset ajax error');
                     }
                 });
             }
         })
     }
+
     _showHidePassword() {
         let fields = document.querySelectorAll('.password_field');
-            fields.forEach((field) => {
-                let icon = field.querySelector('.password_field-label');
-                let input = field.querySelector('.password_input');
-                let clicked = false;
+        fields.forEach((field) => {
+            let icon = field.querySelector('.password_field-label');
+            let input = field.querySelector('.password_input');
+            let clicked = false;
 
-                icon.addEventListener('click', function () {
-                    if(!clicked) {
-                        input.setAttribute('type', 'text');
-                        clicked = true;
-                    } else {
-                        input.setAttribute('type', 'password');
-                        clicked = false;
-                    }
-                })
+            icon.addEventListener('click', function () {
+                if (!clicked) {
+                    input.setAttribute('type', 'text');
+                    clicked = true;
+                } else {
+                    input.setAttribute('type', 'password');
+                    clicked = false;
+                }
             })
+        })
     }
+
     _setError(str, type) {
         let item;
 
-        if(type === 'register') {
+        if (type === 'register') {
             item = document.querySelector('[data-register]');
         } else {
             item = document.querySelector('[data-auth]');
         }
 
-        if(str.indexOf('required') > 0) {
+        if (str.indexOf('required') > 0) {
             item.innerText = 'Проверьте пароль.'
             item.classList.add('invalid');
         }
 
-        if(str.indexOf('email') > 0) {
+        if (str.indexOf('email') > 0) {
             item.innerText = 'Проверьте почту.'
             item.classList.add('invalid');
         }
 
-        if(str.indexOf('taken') > 0) {
+        if (str.indexOf('taken') > 0) {
             item.innerText = 'Почтовый ящик уже зарегистрирован.'
             item.classList.add('invalid');
         }
 
-        if(str.indexOf('invalid') > 0) {
+        if (str.indexOf('invalid') > 0) {
             item.innerText = 'Проверьте правильность введенных данных.';
             item.classList.add('invalid');
         }
     }
+
     _pickFaceType(etc) {
         let inputs = document.querySelectorAll('.form_type-item');
         let el = etc.currentTarget;
@@ -130,13 +137,13 @@ class RegisterController {
             let faceInput = document.querySelector('[name="face"]');
             let name;
 
-            if(text === 'Физ. лицо') {
+            if (text === 'Физ. лицо') {
                 name = 'fizik'
             } else {
                 name = 'urik'
             }
 
-            if(text) faceInput.setAttribute('value', name);
+            if (text) faceInput.setAttribute('value', name);
         });
 
         el.classList.toggle('activeFormItem');
@@ -148,7 +155,7 @@ class RegisterController {
         let check = agreement.querySelector('.checkbox-wrap_arrow');
         let span = agreement.querySelector('span');
 
-        if(check.classList.contains('invisible')) {
+        if (check.classList.contains('invisible')) {
             span.classList.add('invalid');
             item.innerText = 'Вам необходимо принять пользовательское соглашение.'
             return false;
@@ -158,10 +165,11 @@ class RegisterController {
             return true;
         }
     }
-    _validator(form, type='') {
+
+    _validator(form, type = '') {
         let status = false;
 
-        if(type != '') {
+        if (type != '') {
             status = this._agreementCheck();
         } else {
             status = true
@@ -171,13 +179,15 @@ class RegisterController {
 
         try {
             window.app.validator.formValidate([], $(form));
-        } catch(err) {
+        } catch (err) {
             this._setError(err.message, type)
         }
     }
+
     _sendGAevent(type) {
         window.ga("send", "event", "auth", type);
     }
+
     _ajaxCall(form) {
         let url = form.getAttribute('action');
         let method = form.getAttribute('method');
@@ -202,7 +212,7 @@ class RegisterController {
                 window.location.href = protocol + '//' + host + `/home`;
             },
             error: function (error) {
-                if(error.responseText.indexOf('taken') > 0) {
+                if (error.responseText.indexOf('taken') > 0) {
                     that._setError(error.responseText, 'register');
                 } else {
                     that._setError(error.responseText, 'login');
@@ -219,19 +229,19 @@ class RegisterController {
         let regSubmit = registerForm.querySelector('[type="submit"]');
         let that = this;
 
-        let arr = [loginSubmit,regSubmit];
+        let arr = [loginSubmit, regSubmit];
 
         arr.forEach((el) => {
-            el.addEventListener('click',(e) => {
+            el.addEventListener('click', (e) => {
                 e.preventDefault();
 
-                if(e.target.dataset.loginform) {
+                if (e.target.dataset.loginform) {
                     that._validator(loginForm)
                     that._sendGAevent('login')
                 }
 
-                if(e.target.dataset.registerform) {
-                    that._validator(registerForm,'register')
+                if (e.target.dataset.registerform) {
+                    that._validator(registerForm, 'register')
                     that._sendGAevent('register')
                 }
             })
