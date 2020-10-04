@@ -43,13 +43,13 @@ class RegisterController {
     }
     passReset() {
         let modal = document.querySelector('#passReset');
+        let emailSentPopup = document.querySelector('#emailHasBeenSent');
+
         let btn = modal.querySelector('.animated_btn');
         let formGroup = modal.querySelector('.form_group');
-        let url =
 
         btn && btn.addEventListener('click', function(e) {
             let email = modal.querySelector('input').value;
-            let emailSentPopup = modal.querySelector('#emailHasBeenSent');
             let valid = validateEmail(email);
 
             if(!valid) {
