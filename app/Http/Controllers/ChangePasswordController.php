@@ -34,7 +34,7 @@ class ChangePasswordController extends Controller
             $carbNow = new DateTime();
 
             $now = $carbNow;
-            $expires = now()->addMinutes(30);
+            $expires = now()->addMinutes(60);
 
             DB::table('password_resets')->insert([
                 'email' => $email,
