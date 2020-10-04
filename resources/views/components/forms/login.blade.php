@@ -39,7 +39,7 @@
                             </div>
 
                             @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}" data-forgotPassword uk-toggle="target: #passReset">
+                                <a class="btn btn-link" href="{{ route('password.request') }}" data-forgotPassword uk-toggle="target: #emailIsNotVerified">
                                     {{ __('Забыли пароль?') }}
                                 </a>
 
@@ -63,3 +63,4 @@
 
 @include('components.modals.resetPassword')
 @include('components.modals.emailHasBeenSent')
+@include('components.modals.emailIsNotVerified')
