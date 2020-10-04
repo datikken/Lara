@@ -93,7 +93,8 @@ class AdminOrdersController extends Controller
                 'price' => $cart->totalPrice,
                 'user_id' => $user_id,
                 'payment_status' => 'not_paid',
-                'order_info' => json_encode($orderInfoData->original)
+                'order_info' => json_encode($orderInfoData->original),
+                'created_at' => \Carbon\Carbon::now()
             );
 
             DB::table('orders')->insert($newOrderArray);

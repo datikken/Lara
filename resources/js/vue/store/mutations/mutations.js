@@ -5,10 +5,7 @@ import axios from "axios/index";
 
 let mutations = {
     getLastDeliveryAdress(state) {
-        
-    },
-    validatePostForm(state) {
-        state.validatePostForm = true;
+
     },
     blockFormInputs(state, el) {
         let inputs = el.querySelectorAll('input');
@@ -35,8 +32,6 @@ let mutations = {
                 return response.json();
             })
             .then((data) => {
-                console.warn('dadata', data.region_with_type)
-
                 if(data.region_with_type) {
                     if(data.region_with_type.indexOf('Москва') >= 0) {
                         state.selfDelivery = true;

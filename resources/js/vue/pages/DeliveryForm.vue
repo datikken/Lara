@@ -74,7 +74,8 @@
                 'customerAdress',
                 'customerIndex',
                 'stockDeliveryPickup',
-                'user'
+                'user',
+                'validatePostForm'
             ]),
         },
         methods: {
@@ -83,7 +84,7 @@
                 'CHANGE_PROGRESS_STEP',
                 'SCROLL_TO_TOP',
                 'CHECK_DELIVERY_PICKUPS',
-                'VALIDATE_POST_FORM'
+                'SET_POST_DELIVERY_FORM_STATUS'
             ]),
             proceedToPaymentPage() {
                 let ready = false;
@@ -114,8 +115,6 @@
                 }
 
                 if(this.deliveryType === 'post') {
-                    this.VALIDATE_POST_FORM();
-
                     return;
                 }
 

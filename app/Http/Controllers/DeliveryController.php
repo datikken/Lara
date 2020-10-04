@@ -13,7 +13,7 @@ class DeliveryController extends Controller
         $userId = Auth::id();
 
 
-        $lastOrder = DB::table('orders')->where('user_id', $userId)->first();
+        $lastOrder = DB::table('orders')->where('user_id', $userId)->latest('id')->first();
 
         dump($lastOrder);
     }

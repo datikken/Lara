@@ -5,38 +5,45 @@
             <div class="postDelForm_item">
                 <div class="form_group">
                     <label class="form_group_label" for="city">Город</label>
-                    <input class="form_group_input" type="text" name="city" placeholder="выберите город" data-required />
-                    <label class="form_group_message" for="required" >Поле город обязательно к заполнению</label>
+                    <input class="form_group_input" type="text" name="city" placeholder="выберите город" data-required/>
+                    <label class="form_group_message" for="required">Поле город обязательно к заполнению</label>
                 </div>
                 <div class="form_group">
                     <label class="form_group_label" for="index">Индекс</label>
-                    <input class="form_group_input" type="text" name="index" placeholder="введите индекс"  data-required />
-                    <label  class="form_group_message" for="required">Поле индекс обязательно к заполнению</label>
+                    <input class="form_group_input" type="text" name="index" placeholder="введите индекс"
+                           data-required/>
+                    <label class="form_group_message" for="required">Поле индекс обязательно к заполнению</label>
                 </div>
             </div>
             <div class="postDelForm_item">
                 <div class="form_group">
                     <label class="form_group_label" for="street">Улица</label>
-                    <input class="form_group_input" type="text" name="street" data-required placeholder="введите улицу" />
-                    <label class="form_group_message" for="required" >Поле улица обязательно к заполнению</label>
+                    <input class="form_group_input" type="text" name="street" data-required
+                           placeholder="введите улицу"/>
+                    <label class="form_group_message" for="required">Поле улица обязательно к заполнению</label>
                 </div>
             </div>
             <div class="postDelForm_item postDelForm_item-four">
                 <div class="form_group">
                     <label class="form_group_label" for="home">Дом</label>
-                    <input class="form_group_input" type="number" name="street" placeholder="номер"  data-required />
+                    <input class="form_group_input" type="text" pattern="[0-9]" name="street" placeholder="номер"
+                           data-required/>
                 </div>
                 <div class="form_group">
                     <label class="form_group_label" for="wing">Корпус</label>
-                    <input class="form_group_input" type="number" name="wing" placeholder="номер" data-required />
+                    <input class="form_group_input" type="text" pattern="[0-9]" name="wing" placeholder="номер"
+                           data-required/>
                 </div>
                 <div class="form_group">
                     <label class="form_group_label" for="building">Строение</label>
-                    <input class="form_group_input" type="number" name="building" placeholder="номер" data-required />
+                    <input class="form_group_input" type="text" pattern="[0-9]" name="building" placeholder="номер"
+                           data-required/>
                 </div>
                 <div class="form_group">
-                    <label class="form_group_label as-flex gap5" for="flat">Квартира/офис <span class="required">*</span></label>
-                    <input class="form_group_input" type="number" name="flat" placeholder="номер" data-required />
+                    <label class="form_group_label as-flex gap5" for="flat">Квартира/офис <span
+                        class="required">*</span></label>
+                    <input class="form_group_input" type="text" pattern="[0-9]" name="flat" placeholder="номер"
+                           data-required/>
                 </div>
             </div>
 
@@ -49,33 +56,54 @@
 </template>
 
 <script>
-    import {mapGetters} from 'vuex';
+    import {mapGetters, mapActions} from 'vuex';
     import TextBtn from '../btns/TextBtn'
 
     export default {
         name: "DeliveryPostForm",
+        data: function () {
+            return {
+                groups: [],
+            }
+        },
         components: {
             TextBtn
         },
-        methods: {
-            handleValidatePostForm() {
-                let groups = this.$el.querySelectorAll('.form_group');
-                    groups.forEach(grp => {
-                        let npt = grp.querySelector('input');
+        mounted() {
+            this.groups = this.$el.querySelectorAll('.form_group');
 
-                        if(npt.value === '') {
-                            grp.classList.add('form_group-error');
-                        }
+
+            console.warn('mounted del post form',this.groups)
+
+            this.clearErrorsOnFocus();
+        },
+        methods: {
+            ...mapActions([
+                'SET_POST_DELIVERY_FORM_STATUS'
+            ]),
+            clearErrorsOnFocus() {
+                this.groups.forEach(grp => {
+                    let npt = grp.querySelector('input');
+
+                    npt && npt.addEventListener('focus', function () {
+                        grp.classList.remove('form_group-error')
                     })
-            }
-        },
-        computed: {
-            ...mapGetters(["validatePostForm"]),
-        },
-        watch: {
-            validatePostForm(newVal, oldVal) {
-                if(newVal) {
-                    this.handleValidatePostForm();
+                })
+            },
+            handleValidatePostForm() {
+                let errs = [];
+
+                this.groups.forEach(grp => {
+                    let npt = grp.querySelector('input');
+
+                    if (npt && npt.value === '') {
+                        grp.classList.add('form_group-error');
+                        errs.push(npt.getAttribute('name'));
+                    }
+                })
+
+                if(errs.length === 0) {
+                    console.warn('no errors in post form success')
                 }
             }
         }
