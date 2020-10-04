@@ -26,8 +26,8 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
 
+                    <div class="form-group row">
                         <div class="agreement_check">
                             <div class="form-check">
 
@@ -37,13 +37,9 @@
                                     {{ __('Запомнить меня') }}
                                 </label>
                             </div>
-
-                            @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}" data-forgotPassword uk-toggle="target: #emailIsNotVerified">
-                                    {{ __('Забыли пароль?') }}
-                                </a>
-
-                            @endif
+                            <a class="btn btn-link" href="{{ route('password.request') }}" data-forgotPassword uk-toggle="target: #passReset">
+                                {{ __('Забыли пароль?') }}
+                            </a>
                         </div>
                     </div>
 
@@ -54,13 +50,12 @@
                     </div>
                 </form>
             </div>
-
-
         </div>
     </div>
 </div>
 
 
 @include('components.modals.resetPassword')
+@include('components.modals.passResetForm')
 @include('components.modals.emailHasBeenSent')
 @include('components.modals.emailIsNotVerified')

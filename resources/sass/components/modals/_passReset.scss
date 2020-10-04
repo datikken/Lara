@@ -1,9 +1,9 @@
-#passReset {
+#passReset, #passResetForm {
     z-index: 99999;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
 }
 
-.passReset {
+.passReset, .passResetForm {
     width: 430px!important;
     height: 225px!important;
     position: relative;
@@ -101,4 +101,8 @@
         height: 45px;
         object-fit: cover;
     }
+}
+.passResetForm {
+    width: 300px!important;
+    height: 370px!important;
 }

@@ -13817,18 +13817,18 @@ main {
   max-height: 115px;
 }
 
-#passReset {
+#passReset, #passResetForm {
   z-index: 99999;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
 }
 
-.passReset {
+.passReset, .passResetForm {
   width: 430px !important;
   height: 225px !important;
   position: relative;
   padding: 25px 30px;
 }
-.passReset_span {
+.passReset_span, .passResetForm_span {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   line-height: 15px;
@@ -13838,7 +13838,7 @@ main {
   max-width: 250px;
   align-self: flex-start;
 }
-.passReset:after {
+.passReset:after, .passResetForm:after {
   content: "";
   width: 100%;
   height: 4px;
@@ -13848,10 +13848,10 @@ main {
   left: 0;
   top: 0;
 }
-.passReset .animated_btn {
+.passReset .animated_btn, .passResetForm .animated_btn {
   margin: 0 auto;
 }
-.passReset .animated_btn .text_btn-item {
+.passReset .animated_btn .text_btn-item, .passResetForm .animated_btn .text_btn-item {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 12px;
@@ -13860,13 +13860,13 @@ main {
   text-transform: uppercase;
   color: #292930;
 }
-.passReset_head {
+.passReset_head, .passResetForm_head {
   margin-bottom: 15px;
   padding: 0 0 15px 0;
   border-bottom: 1px solid #e9e9ea;
   display: inline-block;
 }
-.passReset_head_txt {
+.passReset_head_txt, .passResetForm_head_txt {
   font-family: "MontserratSemiBold";
   font-style: normal;
   font-weight: 600;
@@ -13876,37 +13876,42 @@ main {
   letter-spacing: 0.02em;
   color: #292930;
 }
-.passReset_inner {
+.passReset_inner, .passResetForm_inner {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.passReset_inner .form_group {
+.passReset_inner .form_group, .passResetForm_inner .form_group {
   margin-bottom: 20px;
 }
-.passReset_inner .form_group_label {
+.passReset_inner .form_group_label, .passResetForm_inner .form_group_label {
   margin: 0 0 5px 0;
 }
-.passReset_inner .form_group:last-child {
+.passReset_inner .form_group:last-child, .passResetForm_inner .form_group:last-child {
   margin: 0;
 }
-.passReset_inner .form_group-error {
+.passReset_inner .form_group-error, .passResetForm_inner .form_group-error {
   margin-bottom: 10px;
 }
-.passReset_inner form {
+.passReset_inner form, .passResetForm_inner form {
   width: 100%;
 }
-.passReset_img {
+.passReset_img, .passResetForm_img {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
-.passReset_icon {
+.passReset_icon, .passResetForm_icon {
   width: 50px;
   height: 45px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.passResetForm {
+  width: 300px !important;
+  height: 370px !important;
 }
 
 #emailHasBeenSent {
