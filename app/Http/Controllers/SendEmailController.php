@@ -24,11 +24,10 @@ class SendEmailController extends Controller
         $user = DB::table('users')->where('email', $email)->get();
         $changePass = new ChangePasswordController();
         $tokenReq = $changePass->createResetToken($email);
-        $link = URL::to('login') . '?token=' . $tokenReq['message'];
-        $emailData = array('email' => $email, 'link' => $link);
+        $link = URL::to('login') . '?token=' . $tokenReq['message'] . '?email=' . $email;
 
         if($tokenReq['status'] == '200') {
-            Mail::to($email)->send(new PasswordResetEmail($emailData));
+            Mail::to($user)->send(new PasswordResetEmail($link));
         }
 
         return $tokenReq;

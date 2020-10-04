@@ -14,9 +14,11 @@ class RegisterController {
         });
 
         this.passReset();
+        this.testIfUserFromPasswordResetEmail();
     }
     openChangePassModal() {
-
+        let passsResetForm = document.querySelector('#passResetForm');
+        UIkit.modal(passsResetForm).show();
     }
     testIfUserFromPasswordResetEmail() {
         let url = window.location.href;
