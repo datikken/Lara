@@ -5,6 +5,6 @@
         или каталогом товаров
     </p>
     <a href="{{route('allProducts')}}">
-        @include('components.btn.text_btn', [ 'class' => 'empty_cart-btn action_btn', 'text' => 'перейти в каталог'])
+        @include('components.btn.text_btn', [ 'class' => 'empty_cart-btn magic_btn', 'text' => 'перейти в каталог'])
     </a>
 </div>

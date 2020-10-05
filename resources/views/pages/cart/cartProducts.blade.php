@@ -24,7 +24,22 @@
         @endif
 
         <div class="cart_content">
-            @include('components.cart.cart_grid', ['cartItems' => $cartItems])
+            <div class="cart_wrap-item_inner">
+                <div class="cart_wrap-item_inner-table"
+                     @if(isset($cartItems->totalQuantity))
+                     data-cartPrice="{{ $cartItems->totalPrice }}"
+                     data-cartAmount="{{ $cartItems->totalQuantity }}"
+                    @endif
+                >
+                    @if(Session::get('cart'))
+                        @foreach($cartItems->items as $cartItem)
+                            @include('components.cart.cart_item', $cartItem)
+                        @endforeach
+                    @else
+                        @include('components.cart.cart_empty')
+                    @endif
+                </div>
+            </div>
         </div>
 
         @if(Session::get('cart'))

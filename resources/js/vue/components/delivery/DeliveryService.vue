@@ -73,6 +73,11 @@
         name: "DeliveryService",
         components: {
             TextBtn
+        },
+        methods: {
+            validateDeliveryService() {
+
+            }
         }
     }
 </script>

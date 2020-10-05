@@ -1,11 +1,17 @@
 import  $ from 'jquery';
 
 let actions = {
+    SET_READY_TO_GO(context, val) {
+        context.commit('setReadyToGo', val);
+    },
+    SET_ADDITIONAL_FORMS(context, str) {
+        context.commit('setAddtionalForms', str);
+    },
+    VALIDATE_POST_DELIVERY_FORM(context) {
+        context.commit('validatePostDeliveryForm')
+    },
     GET_LAST_DELIVERY_ADRESS(context) {
         context.commit('getLastDeliveryAdress');
-    },
-    ALL_FORMS_READY_STATE(context,val) {
-        context.commit('allFormsReadyState', val)
     },
     BLOCK_FORM_INPUTS(context, el) {
         context.commit('blockFormInputs', el);

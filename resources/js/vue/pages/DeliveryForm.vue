@@ -1,5 +1,4 @@
 <template>
-    <div>
 
     <div class="dform_outer">
         <div class="dform">
@@ -12,24 +11,22 @@
                 <DeliveryHelper />
             </div>
 
-            <DeliveryPickups v-if="this.deliveryType === 'stock'"/>
+            <DeliveryPickups v-if="this.deliveryType === 'stock'" />
 
-            <DeliveryPost v-if="this.deliveryType === 'post'"/>
+            <DeliverySelf v-if="this.deliveryType === 'post'" type="post" text="Ранее используемый почтовый адрес" />
+            <DeliverySelf v-if="this.deliveryType === 'delivery'" type="post" text="Ранее используемый адрес доставки" />
+            <DeliverySelf v-if="this.deliveryType === 'deliveryMkad'" type="post" text="Ранее используемый адрес доставки" />
 
-            <!--<SelfDelivery />-->
-
-            <DeliverySelf v-if="this.deliveryType === 'deliveryMkad'" text="Ранее используемый адрес доставки" />
-            <DeliveryService v-if="this.deliveryType === 'deliveryMkad'" />
-
-            <DeliverySelf v-if="this.deliveryType === 'delivery'" text="Ранее используемый адрес доставки" />
-            <DeliveryService v-if="this.deliveryType === 'delivery'" />
+            <DeliveryPostForm v-if="showDeliveryPostForm" ref="postRef" />
+            <DeliveryService v-if="showDeliveryMkad" ref="delRef" />
+            <DeliveryService v-if="showDeliveryService" ref="delRef" />
 
             <TextBtn
                 className="form_group-btn yellow_btn animated_btn"
                 text="Продолжить"
                 @click.native="proceedToPaymentPage"
                 id="proceedToPayments"
-                v-if="this.deliveryType" />
+                v-if="readyToGoOn" />
 
         </div>
 
@@ -37,8 +34,6 @@
 
     </div>
 
-
-    </div>
 </template>
 
 <script>
@@ -46,7 +41,7 @@
     import DeliveryForms from '../components/delivery/DeliveryForms'
     import OrdersList from '../components/orders/OrdersList'
     import DeliveryPickups from '../components/delivery/DeliveryPickups'
-    import DeliveryPost from '../components/delivery/DeliveryPostForm';
+    import DeliveryPostForm from '../components/delivery/DeliveryPostForm';
     import DeliveryService from '../components/delivery/DeliveryService';
     import TextBtn from '../components/btns/TextBtn'
     import SelfDelivery from '../components/delivery/SelfDelivery';
@@ -61,12 +56,20 @@
             DeliveryPickups,
             DeliveryHelper,
             DeliveryForms,
-            DeliveryPost,
+            DeliveryPostForm,
             DeliveryService,
             SelfDelivery,
             OrdersList,
             DeliverySelf,
             TextBtn
+        },
+        data() {
+            return {
+                showDeliveryPostForm: false,
+                showDeliveryMkad: false,
+                showDeliveryService: false,
+                readyToGoOn: false
+            }
         },
         computed: {
             ...mapGetters([
@@ -75,8 +78,33 @@
                 'customerIndex',
                 'stockDeliveryPickup',
                 'user',
-                'validatePostForm'
+                'validatePostForm',
+                'showAditionalForms',
+                'readyToGo'
             ]),
+        },
+        watch: {
+            readyToGo(newVal, oldVal) {
+                console.log('readyToGo', newVal)
+
+                this.readyToGoOn = newVal;
+            },
+            showAditionalForms(newVal, oldVal) {
+                if(newVal) {
+                    if(this.deliveryType === 'post') {
+                        this.showDeliveryPostForm = true;
+                        this.SET_READY_TO_GO(true);
+                    }
+                    if(this.deliveryType === 'delivery') {
+                        this.showDeliveryService = true;
+                        this.SET_READY_TO_GO(true);
+                    }
+                    if(this.deliveryType === 'deliveryMkad') {
+                        this.showDeliveryMkad = true;
+                        this.SET_READY_TO_GO(true);
+                    }
+                }
+            }
         },
         methods: {
             ...mapActions([
@@ -84,8 +112,19 @@
                 'CHANGE_PROGRESS_STEP',
                 'SCROLL_TO_TOP',
                 'CHECK_DELIVERY_PICKUPS',
-                'SET_POST_DELIVERY_FORM_STATUS'
+                'GET_LAST_DELIVERY_ADRESS',
+                'SET_READY_TO_GO'
             ]),
+            callDeliveryForm() {
+                let status = this.$refs.delRef.validateDeliveryService();
+
+                return status;
+            },
+            callPostForm() {
+                let status = this.$refs.postRef.handleValidatePostForm();
+
+                return status;
+            },
             proceedToPaymentPage() {
                 let ready = false;
 
@@ -104,16 +143,24 @@
                 }
 
                 if(this.deliveryType === 'deliveryMkad' || this.deliveryType === 'delivery') {
-                    if( typeof this.customerAdress.deliveryAddress === 'object') {
-                        ready = true;
-                    }
-                    if(this.customerIndex.deliveryIndex) {
-                        ready = true;
-                    }
+                    let res = this.callDeliveryForm();
+
+                    // if( typeof this.customerAdress.deliveryAddress === 'object') {
+                    //     ready = true;
+                    // }
+                    // if(this.customerIndex.deliveryIndex) {
+                    //     ready = true;
+                    // }
                 }
 
                 if(this.deliveryType === 'post') {
-                    return;
+                    let res = this.callPostForm();
+
+                    if(res) {
+                        ready = true
+                    } else {
+                        return;
+                    }
                 }
 
                 if(!this.deliveryType) {

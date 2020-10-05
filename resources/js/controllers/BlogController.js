@@ -1,6 +1,16 @@
 import $ from 'jquery';
+import MagicButton from '../components/MagicButton'
 
 class BlogPostController {
+    _createMagicButtons() {
+        let btns = document.querySelectorAll('.magic_btn');
+            btns.forEach(btn => {
+               let mbtn = new MagicButton(btn);
+
+               console.warn('btns.forEach', mbtn);
+            })
+
+    }
     _clearForm() {
         let inputs = this.commentsForm.querySelectorAll('input');
         let area = this.commentsForm.querySelector('[name="message"]');
@@ -134,6 +144,7 @@ class BlogPostController {
 
         this.commentsForm && this.activateComments();
         this.block && this.setListeners(this.block);
+        this._createMagicButtons();
     }
 }
 

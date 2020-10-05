@@ -89,18 +89,22 @@ class CustomerDataController extends Controller
     public function setAdress(Request $request)
     {
         $city = $request->city;
+        $index = $request->index;
         $street = $request->street;
         $house = $request->house;
         $body = $request->body;
         $building = $request->building;
+        $flat = $request->flat;
         $delType = $request->deliveryType;
 
         $arr = [
             'city' => $city,
+            'index' => $index,
             'street' => $street,
             'house' => $house,
             'body' => $body,
             'building' => $building,
+            'flat' => $flat,
             'deliveryType' => $delType
         ];
 

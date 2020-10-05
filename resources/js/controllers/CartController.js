@@ -8,20 +8,23 @@ class CartController {
         this.el = el;
         let btns = document.querySelectorAll('.ajaxGETproduct');
         let cart = document.querySelector('.cart');
-        let magicBtn = document.querySelector('.magic_btn');
+        let cartCont = document.querySelector('.cart_content');
 
-        magicBtn && new MagicButton(magicBtn);
+        if(cartCont) {
+            let magicBtn = document.querySelector('.magic_btn');
+                new MagicButton(magicBtn);
+        }
 
         if(cart) {
             this._setDeleteListeners();
             this._setAmountListeners();
-        }
 
-        btns.forEach((btn) => {
-            btn.addEventListener('click', function(e) {
-                that.addToCart(e);
-            })
-        });
+            btns.forEach((btn) => {
+                btn.addEventListener('click', function(e) {
+                    that.addToCart(e);
+                })
+            });
+        }
     }
 
     _pushToOrderProcess() {

@@ -9512,7 +9512,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-left: 5px;
 }
 
-.action_btn {
+.action_btn, .magic_btn {
   background: #fdd935;
   border-radius: 30px;
   display: flex;
@@ -9521,14 +9521,15 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   cursor: pointer;
   height: 30px;
   width: 160px;
+  padding: 0;
 }
 @media screen and (min-width: 1030px) {
-  .action_btn {
+  .action_btn, .magic_btn {
+    width: 200px;
     height: 40px;
-    min-width: 170px;
   }
 }
-.action_btn-item, .action_btn span {
+.action_btn-item, .action_btn span, .magic_btn-item, .magic_btn span {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 12px;
@@ -9539,7 +9540,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   border-radius: 30px;
   display: flex;
   align-items: center;
-  margin-left: 10px;
 }
 
 .allcomments_btn {

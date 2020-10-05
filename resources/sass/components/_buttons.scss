@@ -1,4 +1,4 @@
-.action_btn {
+.action_btn, .magic_btn {
   background: $yellow;
   border-radius: 30px;
   display: flex;
@@ -7,10 +7,11 @@
   cursor: pointer;
   height: 30px;
   width: 160px;
+  padding: 0;
 
   @include breakpoint($medium) {
-    height: 40px;
-    min-width: 170px;
+      width: 200px;
+      height: 40px;
   }
 
   &-item, span {
@@ -24,7 +25,6 @@
     border-radius: 30px;
     display: flex;
     align-items: center;
-    margin-left: 10px;
   }
 }
 .allcomments_btn {

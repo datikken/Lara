@@ -31,7 +31,8 @@
         name: "DeliveryPickups",
         methods: {
             ...mapActions([
-                'CHECK_DELIVERY_PICKUPS'
+                'CHECK_DELIVERY_PICKUPS',
+                'SET_READY_TO_GO'
             ]),
             setPickupActive(e) {
                 let $class = 'currentPickups_item-active';
@@ -51,6 +52,7 @@
                    let adr = target.querySelector('[data-pickupAdress]').innerText;
 
                    this.CHECK_DELIVERY_PICKUPS({name, adr});
+                   this.SET_READY_TO_GO(true);
             }
         }
     }

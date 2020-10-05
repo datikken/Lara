@@ -4,11 +4,31 @@ import _ from "lodash";
 import axios from "axios/index";
 
 let mutations = {
+    setReadyToGo(state, val) {
+        state.readyToGo = val;
+    },
+    setAddtionalForms(state, str) {
+        state.showAditionalForms = true;
+    },
     getLastDeliveryAdress(state) {
+        $.ajax({
+            method: "GET",
+            url: '/getLastDeliveryAdress',
+            success: function (data) {
+                if(data != '') {
+                    state.lastDeliveryAdress = data;
+                } else {
+                    state.lastDeliveryAdress = null;
+                }
+            },
+            error: function (error) {
+                console.warn(error);
+            }
+        });
 
     },
-    allFormsReadyState(state, val) {
-        state.allFormsReadyState = val;
+    validatePostDeliveryForm(state) {
+
     },
     blockFormInputs(state, el) {
         let inputs = el.querySelectorAll('input');
@@ -87,11 +107,6 @@ let mutations = {
             })
     },
     applyDeliveryAdress(state, data) {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': window.token
-            }
-        });
         $.ajax({
             method: "POST",
             url: '/setAdress',
@@ -300,11 +315,6 @@ let mutations = {
             });
     },
     getOrdersInfo(state) {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': window.token
-            }
-        });
         $.ajax({
             method: "GET",
             url: '/getOrdersInfo',
@@ -321,11 +331,6 @@ let mutations = {
         });
     },
     getSingleOrderInfo(state, id) {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': window.token
-            }
-        });
         $.ajax({
             method: "GET",
             url: `/getSingleOrderInfo/${id}`,
@@ -451,12 +456,6 @@ let mutations = {
             process(nal)
         }
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': window.token
-            }
-        });
-
         $.ajax({
             method: "GET",
             url: '/setPaymentProvider',
@@ -474,11 +473,6 @@ let mutations = {
         return state.paymentProvider;
     },
     createOrder(state) {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': window.token
-            }
-        });
         $.ajax({
             method: "GET",
             url: '/createOrder',
@@ -598,11 +592,6 @@ let mutations = {
         console.log('refreshCutomerData', data)
     },
     setUriksInfo(state, obj) {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': window.token
-            }
-        });
         $.ajax({
             method: "get",
             url: '/setUrikInfo',
@@ -616,11 +605,6 @@ let mutations = {
         });
     },
     setCustomerFio(state, {firstname, lastname, tel, save}) {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': window.token
-            }
-        });
         $.ajax({
             method: "get",
             url: '/setCustomerFio',
@@ -780,11 +764,6 @@ let mutations = {
         state.closeListener = payload;
     },
     getFilteredProducts(state, payload) {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': window.token
-            }
-        });
         $.ajax({
             method: "get",
             url: '/search',
