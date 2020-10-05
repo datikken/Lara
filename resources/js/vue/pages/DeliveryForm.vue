@@ -1,7 +1,7 @@
 <template>
-
     <div class="dform_outer">
         <div class="dform">
+
             <div class="dform_head">
                 <span class="dform_head-item">Воспользуйтесь помошником для выбора доступных вариантов доставки</span>
             </div>
@@ -22,18 +22,17 @@
             <DeliveryService v-if="showDeliveryService" ref="delRef" />
 
             <TextBtn
-                className="form_group-btn yellow_btn animated_btn"
+                className="magic_btn"
                 text="Продолжить"
                 @click.native="proceedToPaymentPage"
                 id="proceedToPayments"
-                v-if="readyToGoOn" />
+            />
 
         </div>
 
         <OrdersList />
 
     </div>
-
 </template>
 
 <script>
@@ -46,6 +45,7 @@
     import TextBtn from '../components/btns/TextBtn'
     import SelfDelivery from '../components/delivery/SelfDelivery';
     import DeliverySelf from '../components/delivery/DeliverySelf'
+    import MagicButton from '../../components/MagicButton'
 
     import { mapGetters, mapActions } from 'vuex'
     import router from '../router/router'
@@ -70,6 +70,9 @@
                 showDeliveryService: false,
                 readyToGoOn: false
             }
+        },
+        mounted() {
+            this.CREATE_MAGIC_BTN(this.$el.querySelector('#proceedToPayments'));
         },
         computed: {
             ...mapGetters([
@@ -113,7 +116,8 @@
                 'SCROLL_TO_TOP',
                 'CHECK_DELIVERY_PICKUPS',
                 'GET_LAST_DELIVERY_ADRESS',
-                'SET_READY_TO_GO'
+                'SET_READY_TO_GO',
+                'CREATE_MAGIC_BTN'
             ]),
             callDeliveryForm() {
                 let status = this.$refs.delRef.validateDeliveryService();

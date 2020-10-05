@@ -7,7 +7,7 @@
 <script>
     export default {
         name: "TextBtn",
-        props: ['text','className']
+        props: ['text','className'],
     }
 </script>
 

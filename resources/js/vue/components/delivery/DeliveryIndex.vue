@@ -10,7 +10,12 @@
                 <div class="form_group-wrap index_field">
                     <input type="text" name="index" data-index_field/>
 
-                    <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" @click.native="setDeliveryIndex" />
+                    <TextBtn
+                        className="form_group-btn magic_btn"
+                        text="применить"
+                        @click.native="setDeliveryIndex"
+                        id="indexBtn"
+                    />
                 </div>
             </div>
         </form>
@@ -32,11 +37,15 @@
             SelfDelivery,
             TextBtn
         },
+        mounted() {
+            this.CREATE_MAGIC_BTN(this.$el.querySelector('#indexBtn'));
+        },
         methods: {
             ...mapActions([
                 'SET_DELIVERY_INDEX',
                 'SHOW_DELIVERY_TYPE_HELPER',
-                'BLOCK_FORM_INPUTS'
+                'BLOCK_FORM_INPUTS',
+                'CREATE_MAGIC_BTN'
             ]),
             setDeliveryIndex() {
                 let firstForm = document.querySelector('.first_step_form');

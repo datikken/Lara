@@ -326,8 +326,8 @@ b {
 .top10 {
   top: 10px!important;
 }
-.top9 {
-  top: 9px!important;
+.no_opacity {
+    opacity: 1!important;
 }
 //safari
 @media not all and (min-resolution: .001dpcm) {

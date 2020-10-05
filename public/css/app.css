@@ -492,8 +492,8 @@ b {
   top: 10px !important;
 }
 
-.top9 {
-  top: 9px !important;
+.no_opacity {
+  opacity: 1 !important;
 }
 
 @media not all and (min-resolution: 0.001dpcm) {
@@ -7692,6 +7692,12 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   margin-bottom: 30px;
 }
 
+.dform_decor {
+  width: 1px;
+  background: #e9e9ea;
+  height: 100%;
+  margin: 0 0 0 15px;
+}
 .dform_btn {
   width: 200px;
   height: 40px;
@@ -7801,38 +7807,27 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dform_wrap {
   display: flex;
   min-width: 783px;
-  position: relative;
 }
 .dform_wrap-col {
-  padding: 0 16px 0 0;
+  display: flex;
   flex-basis: 30%;
 }
 .dform_wrap-col:nth-child(1) {
-  position: relative;
-  max-width: 419px;
-}
-.dform_wrap-col:nth-child(1):after {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 1px;
-  background: #e9e9ea;
-  position: absolute;
-  top: 0;
-  right: 0;
-  max-height: 500px;
+  max-width: 435px;
 }
 .dform_wrap-col:nth-child(2) {
-  position: absolute;
-  right: 48px;
-  top: -500;
   background-color: #fff;
   height: 170px;
   display: flex;
   align-items: flex-start;
   z-index: 99;
-  transition: top 0.2s;
+  transition: opacity 0.2s;
   min-width: 300px;
+  padding: 0;
+  opacity: 0;
+}
+.dform_wrap-col:nth-child(2) #delivery_type {
+  margin: 10px 0 0 0;
 }
 .dform_wrap-col .delivery_type-item {
   display: flex;

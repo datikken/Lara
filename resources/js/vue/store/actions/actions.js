@@ -1,6 +1,9 @@
 import  $ from 'jquery';
 
 let actions = {
+    CREATE_MAGIC_BTN(context,btn) {
+        context.commit('createMagicBtn',btn);
+    },
     SET_READY_TO_GO(context, val) {
         context.commit('setReadyToGo', val);
     },

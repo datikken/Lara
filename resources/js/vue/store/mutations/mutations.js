@@ -2,8 +2,12 @@ import $ from "jquery";
 import router from "../../router/router";
 import _ from "lodash";
 import axios from "axios/index";
+import MagicButton from '../../../components/MagicButton';
 
 let mutations = {
+    createMagicBtn(state, btn) {
+        new MagicButton(btn);
+    },
     setReadyToGo(state, val) {
         state.readyToGo = val;
     },
@@ -25,9 +29,6 @@ let mutations = {
                 console.warn(error);
             }
         });
-
-    },
-    validatePostDeliveryForm(state) {
 
     },
     blockFormInputs(state, el) {
@@ -173,7 +174,7 @@ let mutations = {
     },
     showDeliveryTypeHelper() {
         let helper = document.querySelector('[data-delivery-type_helper]');
-        helper.classList.add('top9');
+        helper.classList.add('no_opacity');
     },
     sendGoogleAnalytics(state, {category, eventAction, eventLabel, eventValue}) {
         window.ga('send', 'event', category, eventAction, eventLabel, eventValue);

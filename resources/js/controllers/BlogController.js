@@ -140,11 +140,13 @@ class BlogPostController {
         if(this.commentsForm) {
             this.postId = document.querySelector('[data-blogCommentPostId]').dataset.blogcommentpostid;
             this.route = document.querySelector('[data-blogCommentRoute]').dataset.blogcommentroute;
+            this.activateComments();
         }
 
-        this.commentsForm && this.activateComments();
-        this.block && this.setListeners(this.block);
-        this._createMagicButtons();
+        if(this.block) {
+            this._createMagicButtons();
+            this.setListeners(this.block);
+        }
     }
 }
 

@@ -37,7 +37,11 @@
                         </div>
                     </div>
 
-                    <TextBtn className="form_group-btn flat_btn animated_btn" text="применить" @click.native="applyDeliveryAdress" />
+                    <TextBtn
+                        className="magic_btn"
+                        text="применить"
+                        id="adressUnique"
+                        @click.native="applyDeliveryAdress" />
 
                 </div>
 
@@ -46,7 +50,7 @@
             </div>
         </div>
 
-
+        <div class="dform_decor"></div>
 
     </div>
 </template>
@@ -69,6 +73,9 @@
                 'user'
             ]),
         },
+        mounted() {
+            this.CREATE_MAGIC_BTN(this.$el.querySelector('#adressUnique'));
+        },
         methods: {
             ...mapActions([
                 'APPLY_DELIVERY_ADRESS',
@@ -78,7 +85,8 @@
                 'VALIDATE_DELIVERY_ADRESS',
                 'SHOW_DELIVERY_TYPE_HELPER',
                 'CHECK_DELIVERY_ADRESS',
-                'BLOCK_FORM_INPUTS'
+                'BLOCK_FORM_INPUTS',
+                'CREATE_MAGIC_BTN'
             ]),
             validatePickUpPoint() {
                 let valid = false;
@@ -135,7 +143,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>
