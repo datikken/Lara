@@ -26,6 +26,7 @@
                 text="Продолжить"
                 @click.native="proceedToPaymentPage"
                 id="proceedToPayments"
+                v-if="readyToGoOn"
             />
 
         </div>

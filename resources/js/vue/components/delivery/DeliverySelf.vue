@@ -25,12 +25,6 @@
     export default {
         name: "DeliverySelf",
         props: ['text', 'type'],
-        methods: {
-            ...mapActions([
-                'GET_LAST_DELIVERY_ADRESS',
-                'SET_ADDITIONAL_FORMS'
-            ])
-        },
         data: function () {
             return {
                 adress: ''
@@ -42,13 +36,33 @@
         mounted() {
             this.GET_LAST_DELIVERY_ADRESS();
         },
+        methods: {
+            ...mapActions([
+                'GET_LAST_DELIVERY_ADRESS',
+                'SET_ADDITIONAL_FORMS'
+            ]),
+           fillInputAdress({street, building, city, flat, house, index}) {
+               let npt = this.$el.querySelector('[name="lastaddress"]');
+               npt.value = `${street} ${building} ${city} ${flat} ${house} ${index}`;
+
+               console.warn('fillInputAdress', npt.value)
+
+
+           },
+        },
         watch: {
             lastDeliveryAdress(newVal, oldVal) {
+                let that = this;
+
                 if (newVal === null) {
                     this.SET_ADDITIONAL_FORMS();
                 } else {
                     this.$el.classList.remove('as-none');
                     this.adress = newVal;
+
+                    this.fillInputAdress(this.adress.adress);
+
+                    console.warn('GET_LAST_DELIVERY_ADRESS', this.adress.adress)
                 }
             }
         }

@@ -69,6 +69,20 @@
         components: {
             TextBtn
         },
+        computed: {
+            ...mapGetters([
+                'suggestedPostalOffice',
+                'lastDeliveryAdress'
+            ])
+        },
+        watch: {
+            lastDeliveryAdress(nval, oval) {
+                console.log('lastDeliveryAdress watch',nval)
+            },
+            suggestedPostalOffice(nval, oval) {
+                console.log('suggestedPostalOffice',nval)
+            }
+        },
         mounted() {
             this.groups = this.$el.querySelectorAll('.form_group');
             this.clearErrorsOnFocus();

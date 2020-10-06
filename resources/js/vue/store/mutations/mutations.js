@@ -20,7 +20,12 @@ let mutations = {
             url: '/getLastDeliveryAdress',
             success: function (data) {
                 if(data != '') {
-                    state.lastDeliveryAdress = data;
+                    let orderInfoAddr = JSON.parse(data.order_info);
+
+                    if(orderInfoAddr) {
+                        state.lastDeliveryAdress = orderInfoAddr;
+                    }
+
                 } else {
                     state.lastDeliveryAdress = null;
                 }
