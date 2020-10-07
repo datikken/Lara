@@ -1,25 +1,81 @@
-.proceed_btn, .proceed_flat_btn {
-    div {
-        font-family: $font!important;
+
+.action_btn, .magic_btn, .rmagic_btn {
+    background: $yellow;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 30px;
+    width: 160px;
+    padding: 0;
+
+    @include breakpoint($medium) {
+        width: 200px;
+        height: 40px;
+    }
+
+    &-item, span {
+        font-family: $font;
+        font-weight: 500;
         font-size: 12px;
         line-height: 14px;
         letter-spacing: 0.02em;
-        color:  $black;
+        color: $dblack;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
     }
 }
-.proceed_btn {
-    width: 330px!important;
-    height: 40px!important;
+.allcomments_btn {
+    width: 270px;
+    height: 40px;
+    margin: 0 auto 50px auto;
+    font-family: $mfont;
 }
+.further_btn {
+    width: 170px;
+    height: 40px;
+    background: #fff;
+    border: 1px solid $yellow;
+
+    div {
+        font-family: $font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $black;
+        border-radius: 30px;
+    }
+}
+
+.proceed_btn, .proceed_flat_btn {
+    div {
+        font-family: $font !important;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color: $black;
+    }
+}
+
+.proceed_btn {
+    width: 330px !important;
+    height: 40px !important;
+}
+
 .proceed_flat_btn {
-    width: 330px!important;
-    height: 40px!important;
+    width: 330px !important;
+    height: 40px !important;
     border: 2px solid $yellow;
-    background: #fff!important;
+    background: #fff !important;
 }
 
 .yellow_btn {
-    background-color: $yellow!important;
+    background-color: $yellow !important;
 }
 
 .animated_btn {
@@ -30,9 +86,10 @@
     }
 
     &:hover {
-        box-shadow: 0 0 12px rgba(0,0,0,0.6);
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
     }
 }
+
 .flat_btn {
     width: 170px;
     height: 40px;
@@ -42,8 +99,15 @@
     color: $dblack;
     cursor: pointer;
 }
-.blocked_btn {
-    background: $light_gray!important;
+
+.disabled_btn {
+    background: $light_gray !important;
+    border: none!important;
+    pointer-events: none;
+
+    span {
+        color: $dblack;
+    }
 }
 
 .text_btn {
@@ -51,6 +115,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .animated_btn:active {
     -webkit-animation: shadow_inset .2s;
     animation: shadow_inset .2s;
@@ -59,7 +124,7 @@
 .magic_btn {
     position: relative;
     appearance: none;
-    background: $light_gray!important;
+    background: $light_gray !important;
     padding: 1em 2em;
     border: none;
     color: white;
@@ -83,7 +148,7 @@
         top: var(--y);
         width: var(--size);
         height: var(--size);
-        background: radial-gradient(circle closest-side, rgba(253,217,53,1), transparent);
+        background: radial-gradient(circle closest-side, rgba(253, 217, 53, 1), transparent);
         transform: translate(-50%, -50%);
         transition: width .2s ease, height .2s ease;
     }

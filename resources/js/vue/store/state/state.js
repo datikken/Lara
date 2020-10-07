@@ -1,7 +1,4 @@
 let state = {
-    selfDelivery: null,
-    stockDeliveryPickup: false,
-    suggestedPostalOffice: false,
     paymentProvider: false,
     signatureHash: false,
     gridCatalog: false,
@@ -10,7 +7,6 @@ let state = {
     productsLoaded: false,
     closeListener: false,
     customerIndex: false,
-    deliveryType: false,
     cardPayment: false,
     pickUpPoint: false,
     orderPaid: false,
@@ -18,7 +14,6 @@ let state = {
     orders: false,
     user: false,
     cart: false,
-    lastDeliveryAdress: false,
     showAditionalForms: false,
     readyToGo: false,
     filteredProducts: [],
@@ -29,7 +24,6 @@ let state = {
     typeFilters: [],
     products: [],
     customerAdress: {},
-    deliveryAdress: {},
     urikValidation: {},
     singleProduct: {},
     uriksData: {},
@@ -37,6 +31,13 @@ let state = {
     usersFIO: '',
     cartStep: 0,
     catalogPerPage: 16,
+
+    //Delivery
+    deliveryType: false,
+    deliveryAdress: {},
+    selfDelivery: null,
+    lastDeliveryAdress: false,
+    stockDeliveryPickup: false,
 }
 
 export default state;

@@ -20,7 +20,6 @@
     &_item {
       display: flex;
       align-items: flex-end;
-      grid-gap: 30px;
       margin-bottom: 10px;
 
       .cart_check-button {
@@ -39,6 +38,10 @@
           border: none;
           outline: none;
           user-select: none;
+
+          &:nth-child(1) {
+              margin-right: 30px;
+          }
 
           &_inner {
               display: flex;

@@ -46,7 +46,6 @@
     import TextBtn from '../components/btns/TextBtn'
     import SelfDelivery from '../components/delivery/SelfDelivery';
     import DeliverySelf from '../components/delivery/DeliverySelf'
-    import MagicButton from '../../components/MagicButton'
 
     import { mapGetters, mapActions } from 'vuex'
     import router from '../router/router'
@@ -72,9 +71,6 @@
                 readyToGoOn: false
             }
         },
-        mounted() {
-            this.CREATE_MAGIC_BTN(this.$el.querySelector('#proceedToPayments'));
-        },
         computed: {
             ...mapGetters([
                 'deliveryType',
@@ -89,9 +85,9 @@
         },
         watch: {
             readyToGo(newVal, oldVal) {
-                console.log('readyToGo', newVal)
-
                 this.readyToGoOn = newVal;
+
+                this.createMagicBtn();
             },
             showAditionalForms(newVal, oldVal) {
                 if(newVal) {
@@ -120,6 +116,12 @@
                 'SET_READY_TO_GO',
                 'CREATE_MAGIC_BTN'
             ]),
+            createMagicBtn() {
+                let btn = this.$el.querySelector('#proceedToPayments');
+
+                console.warn(btn, 'createMagicBtn')
+                this.CREATE_MAGIC_BTN(btn);
+            },
             callDeliveryForm() {
                 let status = this.$refs.delRef.validateDeliveryService();
 

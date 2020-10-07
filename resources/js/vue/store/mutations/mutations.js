@@ -14,6 +14,9 @@ let mutations = {
     setAddtionalForms(state, str) {
         state.showAditionalForms = true;
     },
+    proceedWithLastDeliveryAdress(state, adr) {
+        state.deliveryAdress = adr;
+    },
     getLastDeliveryAdress(state) {
         $.ajax({
             method: "GET",
@@ -61,15 +64,7 @@ let mutations = {
                 return response.json();
             })
             .then((data) => {
-                if(data.region_with_type) {
-                    if(data.region_with_type.indexOf('Москва') >= 0) {
-                        state.selfDelivery = true;
-                    } else {
-                        state.selfDelivery = false;
-                    }
-                } else {
-                    state.selfDelivery = false;
-                }
+                console.warn('checkDeliveryAdress', data)
             })
             .then(() => {
                 that.dispatch('SHOW_DELIVERY_TYPE_HELPER');
@@ -94,16 +89,11 @@ let mutations = {
             .then((data) => {
                 state.customerIndex = data;
                 if(data.suggestedOffice[0]) {
-                    state.suggestedPostalOffice = data.suggestedOffice[0].unrestricted_value;
-
-                    if(data.suggestedOffice[0].unrestricted_value.indexOf('Москва') >= 0) {
-                        state.selfDelivery = true;
-                    } else {
-                        state.selfDelivery = false;
-                    }
-                } else {
-                    state.selfDelivery = false;
+                    state.deliveryType = 'post';
+                    state.deliveryAdress = data.suggestedOffice[0].unrestricted_value;
                 }
+
+                console.warn('setindex', data.suggestedOffice)
             })
             .then(() => {
                 that.dispatch('SHOW_DELIVERY_TYPE_HELPER');
@@ -545,7 +535,7 @@ let mutations = {
     setDeliveryType(state, name) {
         state.deliveryType = name;
 
-        // console.warn('set delivery type', name)
+        console.warn('set delivery type', name)
 
         this.dispatch('REMOVE_DELIVERY_TYPE_ERROR');
 

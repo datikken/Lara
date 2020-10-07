@@ -657,6 +657,60 @@ b {
   grid-gap: 5px;
 }
 
+.action_btn, .magic_btn, .rmagic_btn {
+  background: #fdd935;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 30px;
+  width: 160px;
+  padding: 0;
+}
+@media screen and (min-width: 1030px) {
+  .action_btn, .magic_btn, .rmagic_btn {
+    width: 200px;
+    height: 40px;
+  }
+}
+.action_btn-item, .action_btn span, .magic_btn-item, .magic_btn span, .rmagic_btn-item, .rmagic_btn span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.allcomments_btn {
+  width: 270px;
+  height: 40px;
+  margin: 0 auto 50px auto;
+  font-family: "MontserratMedium";
+}
+
+.further_btn {
+  width: 170px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #fdd935;
+}
+.further_btn div {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #40404c;
+  border-radius: 30px;
+}
+
 .proceed_btn div, .proceed_flat_btn div {
   font-family: "Montserrat", sans-serif !important;
   font-size: 12px;
@@ -704,8 +758,13 @@ b {
   cursor: pointer;
 }
 
-.blocked_btn {
+.disabled_btn {
   background: #e9e9ea !important;
+  border: none !important;
+  pointer-events: none;
+}
+.disabled_btn span {
+  color: #292930;
 }
 
 .text_btn {
@@ -7617,7 +7676,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .cart_check-wrap_item {
   display: flex;
   align-items: flex-end;
-  grid-gap: 30px;
   margin-bottom: 10px;
 }
 .cart_check-wrap_item .cart_check-button {
@@ -7637,6 +7695,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+.cart_check-wrap_item-group:nth-child(1) {
+  margin-right: 30px;
 }
 .cart_check-wrap_item-group_inner {
   display: flex;
@@ -7697,6 +7758,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background: #e9e9ea;
   height: 100%;
   margin: 0 0 0 15px;
+  max-height: 500px;
 }
 .dform_btn {
   width: 200px;
@@ -9505,61 +9567,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   letter-spacing: 0.02em;
   color: #d4d4d5;
   margin-left: 5px;
-}
-
-.action_btn, .magic_btn {
-  background: #fdd935;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  height: 30px;
-  width: 160px;
-  padding: 0;
-}
-@media screen and (min-width: 1030px) {
-  .action_btn, .magic_btn {
-    width: 200px;
-    height: 40px;
-  }
-}
-.action_btn-item, .action_btn span, .magic_btn-item, .magic_btn span {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #292930;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.allcomments_btn {
-  width: 270px;
-  height: 40px;
-  margin: 0 auto 50px auto;
-  font-family: "MontserratMedium";
-}
-
-.further_btn {
-  width: 170px;
-  height: 40px;
-  background: #fff;
-  border: 1px solid #fdd935;
-}
-.further_btn div {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #40404c;
-  border-radius: 30px;
 }
 
 .tip {
@@ -12170,6 +12177,7 @@ main {
 .delSelf_btn {
   background: #fdd935;
   border-radius: 30px;
+  padding: 0 !important;
   width: 270px;
   height: 40px;
   display: flex;

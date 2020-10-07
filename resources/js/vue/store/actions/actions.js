@@ -1,6 +1,9 @@
 import  $ from 'jquery';
 
 let actions = {
+    PROCEED_WITH_LAST_DELIVERY_ADRESS(context, adr) {
+        context.commit('proceedWithLastDeliveryAdress', adr);
+    },
     CREATE_MAGIC_BTN(context,btn) {
         context.commit('createMagicBtn',btn);
     },
@@ -160,6 +163,14 @@ let actions = {
     },
     GET_MODEL_BRAND_FILTERS(context) {
         context.commit('getProductModelBrandFilters');
+    },
+    SHOW_NOTIFICATION(context, msg, type) {
+        UIkit.notification({
+            message: msg,
+            status: type,
+            pos: 'top-center',
+            timeout: 1000
+        });
     },
     fixCartStatus(state, {data}) {
         let amount = data.totalQuantity;

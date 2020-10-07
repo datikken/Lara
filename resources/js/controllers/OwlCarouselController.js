@@ -8,8 +8,8 @@ class OwlCarouselController {
             nav: true,
             items: 6,
             margin: 15,
-            autoplay: true,
-            autoplayTimeout: 2000,
+            // autoplay: true,
+            // autoplayTimeout: 2000,
             responsive: {
                 0: {
                     items: 1
@@ -28,8 +28,8 @@ class OwlCarouselController {
             loop: true,
             nav: true,
             margin: 15,
-            autoplay: true,
-            autoplayTimeout: 2000,
+            // autoplay: true,
+            // autoplayTimeout: 2000,
             responsive: {
                 0: {
                     items: 1

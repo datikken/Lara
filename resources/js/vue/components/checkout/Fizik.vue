@@ -172,6 +172,7 @@
                     this.validForm = true;
                 } else {
                     this.validForm = false;
+
                     UIkit.notification({
                         message: 'Необходимо ваше согласие.',
                         status: 'default',

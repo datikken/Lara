@@ -71,7 +71,7 @@
         },
         computed: {
             ...mapGetters([
-                'suggestedPostalOffice',
+                'deliveryAdress',
                 'lastDeliveryAdress'
             ])
         },
@@ -79,8 +79,8 @@
             lastDeliveryAdress(nval, oval) {
                 console.log('lastDeliveryAdress watch',nval)
             },
-            suggestedPostalOffice(nval, oval) {
-                console.log('suggestedPostalOffice',nval)
+            deliveryAdress(nval, oval) {
+                console.log('deliveryAdress',nval)
             }
         },
         mounted() {
