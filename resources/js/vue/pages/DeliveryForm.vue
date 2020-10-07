@@ -79,21 +79,26 @@
                 'stockDeliveryPickup',
                 'user',
                 'validatePostForm',
-                'showAditionalForms',
                 'readyToGo'
             ]),
         },
         watch: {
             readyToGo(newVal, oldVal) {
                 this.readyToGoOn = newVal;
-
-                this.createMagicBtn();
             },
-            showAditionalForms(newVal, oldVal) {
+            deliveryType(newVal, oldVal) {
+
+                console.warn(newVal, 'this del type changed')
+
                 if(newVal) {
+                    this.showDeliveryPostForm = false;
+                    this.showDeliveryService = false;
+                    this.showDeliveryMkad = false;
+
                     if(this.deliveryType === 'post') {
                         this.showDeliveryPostForm = true;
                         this.SET_READY_TO_GO(true);
+                        this.createMagicBtn();
                     }
                     if(this.deliveryType === 'delivery') {
                         this.showDeliveryService = true;

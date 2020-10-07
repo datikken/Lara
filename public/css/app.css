@@ -796,7 +796,7 @@ b {
 .magic_btn span {
   position: relative;
   pointer-events: none;
-  z-index: 9999999;
+  z-index: 9999;
 }
 .magic_btn::before {
   --size: 0;

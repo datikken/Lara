@@ -19,6 +19,7 @@ let getters = {
         customerAdress: state => state.customerAdress,
         stockDeliveryPickup: state => state.stockDeliveryPickup,
         lastDeliveryAdress: state => state.lastDeliveryAdress,
+        deliveryAdress: state => state.deliveryAdress,
         showAditionalForms: state => state.showAditionalForms,
         readyToGo: state => state.readyToGo
 }
