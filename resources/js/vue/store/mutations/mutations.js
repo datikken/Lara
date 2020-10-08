@@ -3,8 +3,22 @@ import router from "../../router/router";
 import _ from "lodash";
 import axios from "axios/index";
 import MagicButton from '../../../components/MagicButton';
+import Notifications from '../../../components/Notifications';
 
 let mutations = {
+    showNotification(state, msg, type) {
+        let notParams = {
+            status: 'success',
+            pos: 'top-center',
+            timeout: 3000
+        }
+
+        notParams.status = type;
+        notParams.message = msg;
+
+        let notification = new Notifications(notParams);
+        notification.show();
+    },
     createMagicBtn(state, btn) {
         btn.classList.remove('disabled_btn');
         new MagicButton(btn);
@@ -23,10 +37,10 @@ let mutations = {
             method: "GET",
             url: '/getLastDeliveryAdress',
             success: function (data) {
-                if(data != '') {
+                if (data != '') {
                     let orderInfoAddr = JSON.parse(data.order_info);
 
-                    if(orderInfoAddr) {
+                    if (orderInfoAddr) {
                         state.lastDeliveryAdress = orderInfoAddr;
                     }
 
@@ -66,11 +80,11 @@ let mutations = {
             })
             .then((data) => {
                 console.warn('checkDeliveryAdress', data)
-                if(data.result === null) {
+                if (data.result === null) {
                     state.deliveryType = 'post';
                 }
 
-                if(data.result.indexOf('Москва') >= 0) {
+                if (data.result.indexOf('Москва') >= 0) {
                     state.deliveryType = 'any'
                 }
             })
@@ -96,11 +110,11 @@ let mutations = {
             })
             .then((data) => {
                 state.customerIndex = data;
-                if(data.suggestedOffice[0]) {
+                if (data.suggestedOffice[0]) {
                     state.deliveryType = 'post';
                     state.deliveryAdress = data.suggestedOffice[0].unrestricted_value + `, ${data.suggestedOffice[0].value}`;
 
-                    if(data.suggestedOffice[0].unrestricted_value.indexOf('Москва') >= 0) {
+                    if (data.suggestedOffice[0].unrestricted_value.indexOf('Москва') >= 0) {
                         state.deliveryType = 'any';
                         state.deliveryAllowed = 'any';
                     }
@@ -129,46 +143,44 @@ let mutations = {
         });
     },
     checkDeliveryPickups(state, {name, adr}) {
-        if (state.deliveryType === 'stock' && state.stockDeliveryPickup === false) {
-            state.stockDeliveryPickup = {name, adr};
+        console.warn('checkDeliveryPickups recived', name, adr)
 
-            fetch('/setStockPickUpPoint', {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': window.token
-                },
-                redirect: 'follow',
-                referrerPolicy: 'no-referrer',
-                body: JSON.stringify({
-                    name,
-                    adr
-                })
+        state.stockDeliveryPickup = {name, adr};
+
+        fetch('/setStockPickUpPoint', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': window.token
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify({
+                name,
+                adr
             })
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) => {
-                    console.warn('pickupPointset', data);
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
-
-            return true;
-        } else {
-            return false;
-        }
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.pickUpPoint = data;
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     },
     removeDeliveryTypeError() {
         let block = document.querySelector('#delivery_type');
         block.classList.remove('deliveryTypeError');
-    },
+    }
+    ,
     deliveryTypeError(state) {
         let block = document.querySelector('#delivery_type');
         block.classList.add('deliveryTypeError');
         state.deliveryType = 'error';
-    },
+    }
+    ,
     getAllInformationPosts(state) {
         fetch('/getAllInformationPosts', {
             method: "GET"
@@ -179,22 +191,27 @@ let mutations = {
             .then((data) => {
                 state.informationPosts = data;
             });
-    },
+    }
+    ,
     showDeliveryTypeHelper() {
         let helper = document.querySelector('[data-delivery-type_helper]');
         helper.classList.add('no_opacity');
-    },
+    }
+    ,
     sendGoogleAnalytics(state, {category, eventAction, eventLabel, eventValue}) {
         window.ga('send', 'event', category, eventAction, eventLabel, eventValue);
         console.warn('ga event', category, eventAction, eventLabel, eventValue);
-    },
+    }
+    ,
     catalogLoadMore(state) {
         state.catalogPerPage = state.catalogPerPage + state.catalogPerPage;
-    },
+    }
+    ,
     switchCatalogLayout(state) {
         state.gridCatalog = !state.gridCatalog;
         state.catalogPerPage = state.gridCatalog ? 6 : 16;
-    },
+    }
+    ,
     unitPay(state) {
         let obj = {
             account: state.user.id ? state.user.id : 'unregistered',
@@ -216,7 +233,8 @@ let mutations = {
         });
 
         return false;
-    },
+    }
+    ,
     createSignatureHash(state) {
         let that = this;
 
@@ -245,7 +263,8 @@ let mutations = {
             .catch((err) => {
                 console.log(err);
             })
-    },
+    }
+    ,
     getViewedProducts(state) {
         fetch(`/getViewed`, {
             method: "GET",
@@ -265,7 +284,8 @@ let mutations = {
             .catch((err) => {
                 console.log(err);
             })
-    },
+    }
+    ,
     setProductViewed(state, {pid}) {
         fetch(`/setViewed/${pid}`, {
             method: "POST",
@@ -287,11 +307,12 @@ let mutations = {
             category: 'catalog modal',
             eventAction: 'click',
             eventLabel: 'catalog modal opened',
-            eventValue: id
+            eventValue: pid
         };
 
         this.dispatch('SEND_GOOGLE_ANALYTICS', gObj);
-    },
+    }
+    ,
     getTwoYearsInfoBySelect(state, year) {
         fetch('/getTwoYearsInfoBySelect', {
             method: "POST",
@@ -311,7 +332,8 @@ let mutations = {
             .then((data) => {
                 state.lastTwoYearsInfo = data;
             });
-    },
+    }
+    ,
     getAboutYears(state) {
         fetch('/getAboutYears', {
             method: "GET"
@@ -322,7 +344,8 @@ let mutations = {
             .then((data) => {
                 state.aboutData = data;
             });
-    },
+    }
+    ,
     getOrdersInfo(state) {
         $.ajax({
             method: "GET",
@@ -338,7 +361,8 @@ let mutations = {
                 console.warn(error);
             }
         });
-    },
+    }
+    ,
     getSingleOrderInfo(state, id) {
         $.ajax({
             method: "GET",
@@ -357,12 +381,14 @@ let mutations = {
         });
 
         return state.orders.last_order
-    },
+    }
+    ,
     finishContract() {
         console.log('send contract via email')
         // router.push('/success');
         // this.SCROLL_TO_TOP();
-    },
+    }
+    ,
     checkPaymentError() {
         let error = document.querySelector('[data-payment-error]');
         let heading = document.querySelector('[data-payment-head]');
@@ -371,22 +397,27 @@ let mutations = {
         heading.classList.add('mb10');
         head.classList.add('mb30');
         error.classList.remove('as-none');
-    },
+    }
+    ,
     finishOrderProcess() {
         router.push('/success');
-    },
+    }
+    ,
     setPickUpPoint(state, obj) {
         state.pickUpPoint = obj;
-    },
+    }
+    ,
     validateDeliveryAdress(state, form) {
         let valid = window.app.validator.formValidate([], $(form));
         state.deliveryAdress = valid;
 
         return state.deliveryAdress;
-    },
+    }
+    ,
     scrollToTop() {
         window.scrollTo({top: 0, behavior: 'smooth'});
-    },
+    }
+    ,
     payWithCard(state, obj) {
         let valid = {
             status: false,
@@ -433,7 +464,8 @@ let mutations = {
         if (valid) {
             createCryptogram();
         }
-    },
+    }
+    ,
     setPaymentProvider(state, provider) {
         state.paymentProvider = provider;
         let paymentBlock = document.querySelector('.payment_wrap');
@@ -480,7 +512,8 @@ let mutations = {
         });
 
         return state.paymentProvider;
-    },
+    }
+    ,
     createOrder(state) {
         $.ajax({
             method: "GET",
@@ -492,10 +525,12 @@ let mutations = {
                 console.warn(error);
             }
         });
-    },
+    }
+    ,
     saveUriksData(state, obj) {
         state.uriksData = obj;
-    },
+    }
+    ,
     RSValidation(state, obj) {
         let rs = obj.rs
         let bik = obj.bik
@@ -541,17 +576,20 @@ let mutations = {
         this.dispatch('SAVE_URIKS_DATA', obj);
 
         return returnObj;
-    },
+    }
+    ,
     applyPriceFilter(state, name) {
         state.filteredProducts = _.orderBy(state.filteredProducts, ['price'], [name]);
-    },
+    }
+    ,
     setDeliveryType(state, name) {
         state.deliveryType = name;
 
         this.dispatch('REMOVE_DELIVERY_TYPE_ERROR');
 
         return state.deliveryType;
-    },
+    }
+    ,
     checkCartState(state) {
         axios.get('/checkCartState')
             .then(response => {
@@ -560,7 +598,8 @@ let mutations = {
             })
 
         return state.cart
-    },
+    }
+    ,
     changeProgressStep(state, text) {
         let line = document.querySelector('.cart_wrap-crumb').querySelector('.active-item');
 
@@ -578,7 +617,8 @@ let mutations = {
         }
 
         state.cartStep++;
-    },
+    }
+    ,
     refreshCutomerData(state, data) {
         console.warn('before send', data)
 
@@ -592,12 +632,14 @@ let mutations = {
             referrerPolicy: 'no-referrer',
             body: JSON.stringify(data)
         })
-            .then(res => { })
+            .then(res => {
+            })
             .catch(err => console.error('collectProfileData', err))
 
 
         console.log('refreshCutomerData', data)
-    },
+    }
+    ,
     setUriksInfo(state, obj) {
         $.ajax({
             method: "get",
@@ -610,7 +652,8 @@ let mutations = {
                 console.warn(error);
             }
         });
-    },
+    }
+    ,
     setCustomerFio(state, {firstname, lastname, tel, save}) {
         $.ajax({
             method: "get",
@@ -625,9 +668,10 @@ let mutations = {
                 console.warn(error);
             }
         });
-    },
+    }
+    ,
     getUserInfo(state) {
-        if(!state.user) {
+        if (!state.user) {
             axios.get('/getUserInfo')
                 .then(response => {
                     state.user = response.data;
@@ -635,14 +679,17 @@ let mutations = {
 
             return state.user
         }
-    },
+    }
+    ,
     getProductById(state, id) {
         let product = state.products.filter((el) => el.id === id)
         state.singleProduct = product[0];
-    },
+    }
+    ,
     setProductsLoaded(state) {
         state.productsLoaded = true;
-    },
+    }
+    ,
     filterProductsByBrand(state, query) {
         let newProducts = [];
 
@@ -657,7 +704,8 @@ let mutations = {
         if (newProducts.length > 0) {
             state.filteredProducts = newProducts;
         }
-    },
+    }
+    ,
     filterProductsByPrinterType(state, query) {
         let newProducts = [];
 
@@ -669,7 +717,8 @@ let mutations = {
         });
 
         state.filteredProducts = newProducts;
-    },
+    }
+    ,
     filterProductsByModel(state, query) {
         let newProducts = [];
 
@@ -684,7 +733,8 @@ let mutations = {
         if (newProducts.length > 0) {
             state.filteredProducts = newProducts;
         }
-    },
+    }
+    ,
     filterProductByQuery(state, query) {
         if (query.printertype) {
             this.dispatch('FILTER_PRODUCTS_BY_PRINTERTYPE', query);
@@ -701,10 +751,12 @@ let mutations = {
         }
 
         this.dispatch('GET_MODEL_BRAND_FILTERS')
-    },
+    }
+    ,
     getProductTypeFilters(state) {
         state.typeFilters = [...new Set(state.products.map(item => item.params.printertype))];
-    },
+    }
+    ,
     getProductModelBrandFilters(state) {
         let allProductBrands = [];
         let allProductModels = [];
@@ -720,7 +772,8 @@ let mutations = {
 
         state.brandFilters = [...new Set(allProductBrands)];
         state.modelFilters = [...new Set(allProductModels)];
-    },
+    }
+    ,
     getProductModelFilters(state, data = {}) {
         let newProducts = state.products.filter(item => {
             let param = item.params
@@ -733,7 +786,8 @@ let mutations = {
         });
 
         state.modelFilters = [...new Set(newProducts.map(item => item.params.art))];
-    },
+    }
+    ,
     addProductToCart(state, {id, amount}) {
         let that = this;
         let url = `/products/addToCartAjaxGet/${id}`;
@@ -766,10 +820,12 @@ let mutations = {
         };
 
         this.dispatch('SEND_GOOGLE_ANALYTICS', gObj);
-    },
+    }
+    ,
     setCloseListener(state, payload) {
         state.closeListener = payload;
-    },
+    }
+    ,
     getFilteredProducts(state, payload) {
         $.ajax({
             method: "get",
@@ -786,7 +842,8 @@ let mutations = {
         });
 
         state.closeListener = true;
-    },
+    }
+    ,
     getAllProducts(state) {
         let that = this;
 

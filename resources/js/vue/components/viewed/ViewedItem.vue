@@ -7,7 +7,7 @@
         <div class="viewed_wrapper-item_text">
             <div class="viewed_wrapper-item_text-heading">
                 <span class="viewed_wrapper-item_text-heading-item">
-                  {{ data.name | truncate(30) }}
+                  {{ data.artikul | truncate(30) }}
                 </span>
             </div>
             <div class="viewed_wrapper-item_text-price">

@@ -21,7 +21,7 @@
             <DeliveryService v-if="showDeliveryService" ref="delRef" />
 
             <TextBtn
-                className="magic_btn disabled_btn"
+                className="magic_btn"
                 text="Продолжить"
                 @click.native="proceedToPaymentPage"
                 id="proceedToPayments"
@@ -68,7 +68,8 @@
                 showDeliveryMkad: false,
                 showDeliveryService: false,
                 readyToGoOn: false,
-                dadataValidAdress: false
+                dadataValidAdress: false,
+                pickUpPointAccepted: false
             }
         },
         computed: {
@@ -79,10 +80,16 @@
                 'stockDeliveryPickup',
                 'user',
                 'validatePostForm',
-                'readyToGo'
+                'readyToGo',
+                'pickUpPoint'
             ]),
         },
         watch: {
+            pickUpPoint(newVal, oldVal) {
+                if(newVal) {
+                    this.pickUpPointAccepted = true
+                }
+            },
             readyToGo(newVal, oldVal) {
                 this.readyToGoOn = newVal;
             },
@@ -91,9 +98,15 @@
             },
             deliveryType(newVal, oldVal) {
                 if(newVal) {
+                    let that = this;
+
                     this.showDeliveryPostForm = false;
                     this.showDeliveryService = false;
                     this.showDeliveryMkad = false;
+
+                    if(this.deliveryType === 'self') {
+                        this.SET_READY_TO_GO(true);
+                    }
 
                     if(this.deliveryType === 'post') {
                         this.showDeliveryPostForm = true;
@@ -107,6 +120,8 @@
                         this.showDeliveryMkad = true;
                         this.SET_READY_TO_GO(true);
                     }
+
+                    setTimeout(that.createMagicBtn, 500);
                 }
             }
         },
@@ -118,8 +133,18 @@
                 'CHECK_DELIVERY_PICKUPS',
                 'GET_LAST_DELIVERY_ADRESS',
                 'SET_READY_TO_GO',
-                'CREATE_MAGIC_BTN'
+                'CREATE_MAGIC_BTN',
+                'SHOW_NOTIFICATION'
             ]),
+            validatePickUpPoint() {
+                if(this.pickUpPointAccepted) {
+                    return true;
+                } else {
+                    this.SHOW_NOTIFICATION('Выберите пункт самовывоза', 'danger');
+                }
+
+                return false;
+            },
             createMagicBtn() {
                 let btn = this.$el.querySelector('#proceedToPayments');
 
@@ -149,8 +174,11 @@
                 }
 
                 if(this.deliveryType === 'self') {
-                    ready = this.validatePickUpPoint();
-                    $(document.body).scrollTop($('#self').offset().top);
+                    this.validatePickUpPoint();
+
+                    if(this.pickUpPointAccepted) {
+                        ready = true
+                    }
                 }
 
                 if(this.deliveryType === 'deliveryMkad' || this.deliveryType === 'delivery') {

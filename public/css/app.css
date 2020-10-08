@@ -784,7 +784,7 @@ b {
      -moz-appearance: none;
           appearance: none;
   background: #e9e9ea !important;
-  padding: 1em 2em;
+  padding: 0;
   border: none;
   color: white;
   font-size: 1.2em;

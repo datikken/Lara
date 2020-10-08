@@ -165,12 +165,7 @@ let actions = {
         context.commit('getProductModelBrandFilters');
     },
     SHOW_NOTIFICATION(context, msg, type) {
-        UIkit.notification({
-            message: msg,
-            status: type,
-            pos: 'top-center',
-            timeout: 1000
-        });
+        context.commit('showNotification', msg, type);
     },
     fixCartStatus(state, {data}) {
         let amount = data.totalQuantity;

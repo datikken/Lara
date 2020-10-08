@@ -1,5 +1,6 @@
 /* eslint-disable */
 import store from '../vue/store/store';
+import MagicButton from '../components/MagicButton'
 
 class ProductDetailsMenuController {
     constructor() {
@@ -15,13 +16,17 @@ class ProductDetailsMenuController {
             this.addToCart();
             this._setListeners(block, container);
             this._setProductViewed(container);
+            this._activateBtn();
         }
     }
 
+    _activateBtn() {
+        let btn = document.querySelector('.text_buy-btn');
+            btn && new MagicButton(btn);
+    }
     _setProductViewed(el) {
-        // console.log('_setProductViewed inited');
         let pid = el.querySelector('[data-pid]').dataset.pid;
-        this.store.dispatch('SET_PRODUCT_VIEWED', {pid});
+        this.store.dispatch('SET_PRODUCT_VIEWED',{pid});
     }
 
     _initialize(container) {

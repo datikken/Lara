@@ -8,7 +8,6 @@ let state = {
     closeListener: false,
     customerIndex: false,
     cardPayment: false,
-    pickUpPoint: false,
     orderPaid: false,
     aboutData: false,
     orders: false,
@@ -38,6 +37,7 @@ let state = {
     selfDelivery: null,
     lastDeliveryAdress: false,
     stockDeliveryPickup: false,
+    pickUpPoint: false
 }
 
 export default state;

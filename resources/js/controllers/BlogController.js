@@ -65,7 +65,7 @@ class BlogPostController {
             that._makeRequest(dataObj)
         })
     }
-    setListeners(block) {
+    setListenersLikesDislikes(block) {
         let posts = block.querySelectorAll('.postList_item');
             posts.forEach((el, i) => {
                 let like = el.querySelector('.postList_like');
@@ -79,7 +79,6 @@ class BlogPostController {
                 let arr = [like, dislike];
                     arr.forEach((item) => {
                         item.addEventListener('click', function(e) {
-                            let parentId = document.querySelector('[data-blogcommentpostid]').dataset.blogcommentpostid;
                             let id = posts[i].getAttribute('data-id');
 
                             let url = '/blog/like/' + id;
@@ -97,15 +96,12 @@ class BlogPostController {
                                 dataObj.isLike = type;
                                 dataObj.post_id = id;
 
-                            if(parentId) {
-                                dataObj.parent_id = parentId;
-                            }
 
                             $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': window.token } });
                             $.ajax({
                                 method: "post",
                                 url: `${url}`,
-                                data,
+                                data: dataObj,
                                 success: function (data) {
                                     fixData(data);
                                 },
@@ -145,7 +141,7 @@ class BlogPostController {
 
         if(this.block) {
             this._createMagicButtons();
-            this.setListeners(this.block);
+            this.setListenersLikesDislikes(this.block);
         }
     }
 }

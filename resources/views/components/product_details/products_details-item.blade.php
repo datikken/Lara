@@ -181,7 +181,7 @@ $params = json_decode($product['params']);
                 </div>
                 <div class="details_wrap-info_item-right">
                     <a href="#" class="" data-url="{{ route('AddToCartAjaxGet', ['id' => $product['id']]) }}">
-                        @include('components.btn.buy_btn', [ 'class' => 'empty_cart-btn', 'text' => 'в корзину'])
+                        @include('components.btn.buy_btn', [ 'class' => 'magic_btn', 'text' => 'в корзину'])
                     </a>
                 </div>
             </div>
