@@ -20,7 +20,7 @@
             </div>
         </form>
 
-        <SelfDelivery v-if="this.deliveryType === 'self' "/>
+        <SelfDelivery v-if="this.deliveryType === 'stock' "/>
 
     </div>
 

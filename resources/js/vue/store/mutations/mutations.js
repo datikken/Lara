@@ -6,6 +6,7 @@ import MagicButton from '../../../components/MagicButton';
 
 let mutations = {
     createMagicBtn(state, btn) {
+        btn.classList.remove('disabled_btn');
         new MagicButton(btn);
     },
     setReadyToGo(state, val) {
@@ -65,6 +66,13 @@ let mutations = {
             })
             .then((data) => {
                 console.warn('checkDeliveryAdress', data)
+                if(data.result === null) {
+                    state.deliveryType = 'post';
+                }
+
+                if(data.result.indexOf('Москва') >= 0) {
+                    state.deliveryType = 'any'
+                }
             })
             .then(() => {
                 that.dispatch('SHOW_DELIVERY_TYPE_HELPER');
@@ -90,7 +98,12 @@ let mutations = {
                 state.customerIndex = data;
                 if(data.suggestedOffice[0]) {
                     state.deliveryType = 'post';
-                    state.deliveryAdress = data.suggestedOffice[0].unrestricted_value;
+                    state.deliveryAdress = data.suggestedOffice[0].unrestricted_value + `, ${data.suggestedOffice[0].value}`;
+
+                    if(data.suggestedOffice[0].unrestricted_value.indexOf('Москва') >= 0) {
+                        state.deliveryType = 'any';
+                        state.deliveryAllowed = 'any';
+                    }
                 }
 
                 console.warn('setindex', data.suggestedOffice)
@@ -108,7 +121,7 @@ let mutations = {
             url: '/setAdress',
             data,
             success: function (data) {
-                state.customerAdress = data;
+                state.deliveryAdress = data;
             },
             error: function (error) {
                 console.warn(error);
@@ -534,8 +547,6 @@ let mutations = {
     },
     setDeliveryType(state, name) {
         state.deliveryType = name;
-
-        console.warn('set delivery type', name)
 
         this.dispatch('REMOVE_DELIVERY_TYPE_ERROR');
 

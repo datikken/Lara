@@ -11,8 +11,7 @@
                 <DeliveryHelper />
             </div>
 
-            <DeliveryPickups v-if="this.deliveryType === 'stock'" />
-
+            <DeliveryPickups v-if="this.deliveryType === 'self'" />
             <DeliverySelf v-if="this.deliveryType === 'post'" type="post" text="Ранее используемый почтовый адрес" />
             <DeliverySelf v-if="this.deliveryType === 'delivery'" type="post" text="Ранее используемый адрес доставки" />
             <DeliverySelf v-if="this.deliveryType === 'deliveryMkad'" type="post" text="Ранее используемый адрес доставки" />
@@ -22,7 +21,7 @@
             <DeliveryService v-if="showDeliveryService" ref="delRef" />
 
             <TextBtn
-                className="magic_btn"
+                className="magic_btn disabled_btn"
                 text="Продолжить"
                 @click.native="proceedToPaymentPage"
                 id="proceedToPayments"
@@ -68,13 +67,14 @@
                 showDeliveryPostForm: false,
                 showDeliveryMkad: false,
                 showDeliveryService: false,
-                readyToGoOn: false
+                readyToGoOn: false,
+                dadataValidAdress: false
             }
         },
         computed: {
             ...mapGetters([
                 'deliveryType',
-                'customerAdress',
+                'deliveryAdress',
                 'customerIndex',
                 'stockDeliveryPickup',
                 'user',
@@ -86,10 +86,10 @@
             readyToGo(newVal, oldVal) {
                 this.readyToGoOn = newVal;
             },
+            deliveryAdress(newVal, oldVal) {
+                console.warn('deliveryAdress changed', newVal, oldVal)
+            },
             deliveryType(newVal, oldVal) {
-
-                console.warn(newVal, 'this del type changed')
-
                 if(newVal) {
                     this.showDeliveryPostForm = false;
                     this.showDeliveryService = false;
@@ -98,7 +98,6 @@
                     if(this.deliveryType === 'post') {
                         this.showDeliveryPostForm = true;
                         this.SET_READY_TO_GO(true);
-                        this.createMagicBtn();
                     }
                     if(this.deliveryType === 'delivery') {
                         this.showDeliveryService = true;

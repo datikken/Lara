@@ -23,7 +23,6 @@ let state = {
     brandFilters: [],
     typeFilters: [],
     products: [],
-    customerAdress: {},
     urikValidation: {},
     singleProduct: {},
     uriksData: {},
@@ -34,7 +33,8 @@ let state = {
 
     //Delivery
     deliveryType: false,
-    deliveryAdress: {},
+    deliveryAdress: false,
+    deliveryAllowed: false,
     selfDelivery: null,
     lastDeliveryAdress: false,
     stockDeliveryPickup: false,

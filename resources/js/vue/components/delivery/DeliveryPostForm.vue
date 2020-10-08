@@ -5,12 +5,12 @@
             <div class="postDelForm_item">
                 <div class="form_group">
                     <label class="form_group_label" for="city">Город</label>
-                    <input class="form_group_input" type="text" name="city" placeholder="выберите город" data-required/>
+                    <input class="form_group_input" :value="this.city" type="text" name="city" placeholder="выберите город" data-required/>
                     <label class="form_group_message" for="required">Поле город обязательно к заполнению</label>
                 </div>
                 <div class="form_group">
                     <label class="form_group_label" for="index">Индекс</label>
-                    <input class="form_group_input" type="text" name="index" placeholder="введите индекс"
+                    <input class="form_group_input" :value="index" type="text" name="index" placeholder="введите индекс"
                            data-required/>
                     <label class="form_group_message" for="required">Поле индекс обязательно к заполнению</label>
                 </div>
@@ -18,15 +18,15 @@
             <div class="postDelForm_item">
                 <div class="form_group">
                     <label class="form_group_label" for="street">Улица</label>
-                    <input class="form_group_input" type="text" name="street" data-required
+                    <input class="form_group_input"  :value="this.street" type="text" name="street" data-required
                            placeholder="введите улицу"/>
                     <label class="form_group_message" for="required">Поле улица обязательно к заполнению</label>
                 </div>
             </div>
             <div class="postDelForm_item postDelForm_item-four">
                 <div class="form_group">
-                    <label class="form_group_label" for="home">Дом</label>
-                    <input class="form_group_input" type="text" pattern="[0-9]" name="house" placeholder="номер"
+                    <label class="form_group_label"for="home">Дом</label>
+                    <input class="form_group_input" :value="this.house" type="text" pattern="[0-9]" name="house" placeholder="номер"
                            data-required/>
                 </div>
                 <div class="form_group">
@@ -36,7 +36,7 @@
                 </div>
                 <div class="form_group">
                     <label class="form_group_label" for="building">Строение</label>
-                    <input class="form_group_input" type="text" pattern="[0-9]" name="building" placeholder="номер"
+                    <input class="form_group_input" :value="building" type="text" pattern="[0-9]" name="building" placeholder="номер"
                            data-required/>
                 </div>
                 <div class="form_group">
@@ -64,6 +64,11 @@
         data: function () {
             return {
                 groups: [],
+                city: null,
+                street: null,
+                house: null,
+                index: null,
+                building: null
             }
         },
         components: {
@@ -71,24 +76,31 @@
         },
         computed: {
             ...mapGetters([
-                'deliveryAdress',
-                'lastDeliveryAdress'
+                'deliveryAdress'
             ])
-        },
-        watch: {
-            lastDeliveryAdress(nval, oval) {
-                console.log('lastDeliveryAdress watch',nval)
-            },
-            deliveryAdress(nval, oval) {
-                console.log('deliveryAdress',nval)
-            }
         },
         mounted() {
             this.groups = this.$el.querySelectorAll('.form_group');
             this.clearErrorsOnFocus();
+
+            this.syncForms(this.deliveryAdress);
         },
         methods: {
             ...mapActions(['APPLY_DELIVERY_ADRESS']),
+            syncForms(adr) {
+                if(this.deliveryAdress) {
+                    let splitValues = adr.split(',');
+
+                    this.city = splitValues[0];
+                    this.street = splitValues[1];
+                    this.index = splitValues[3];
+
+                    let hsbd = splitValues[2].split(' ');
+
+                    this.house = hsbd[2];
+                    this.building = hsbd[4];
+                }
+            },
             clearErrorsOnFocus() {
                 this.groups.forEach(grp => {
                     let npt = grp.querySelector('input');

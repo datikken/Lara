@@ -797,6 +797,7 @@ b {
   position: relative;
   pointer-events: none;
   z-index: 9999;
+  text-transform: uppercase;
 }
 .magic_btn::before {
   --size: 0;

@@ -5,7 +5,7 @@
             <div class="delServ_item">
                 <div class="form_group">
                     <label class="form_group_label" for="city">Город</label>
-                    <input class="form_group_input" type="text" name="city" placeholder="выберите город" data-required />
+                    <input class="form_group_input" :value="this.city" type="text" name="city" placeholder="выберите город" data-required />
                     <label class="form_group_message" for="required" >Поле город обязательно к заполнению</label>
                 </div>
             </div>
@@ -13,7 +13,7 @@
             <div class="delServ_item">
                 <div class="form_group">
                     <label class="form_group_label" for="street">Улица</label>
-                    <input class="form_group_input" type="text" name="street" placeholder="введите улицу" data-required />
+                    <input class="form_group_input" :value="this.street"  type="text" name="street" placeholder="введите улицу" data-required />
                     <label class="form_group_message" for="required" >Поле улица обязательно к заполнению</label>
                 </div>
             </div>
@@ -21,7 +21,7 @@
             <div class="delServ_item delServ_item-seven">
                 <div class="form_group">
                     <label class="form_group_label" for="home">Дом</label>
-                    <input class="form_group_input" type="text" name="home" placeholder="номер" data-required />
+                    <input class="form_group_input"  :value="this.house" type="text" name="home" placeholder="номер" data-required />
                     <label class="form_group_message" for="required" >Поле дом обязательно к заполнению</label>
                 </div>
                 <div class="form_group">
@@ -69,8 +69,19 @@
 
 <script>
     import TextBtn from '../btns/TextBtn'
+    import {mapGetters} from 'vuex';
+
     export default {
         name: "DeliveryService",
+        props: ['adr'],
+        data: function () {
+            return {
+                city: null,
+                street: null,
+                house: null,
+                index: null
+            }
+        },
         components: {
             TextBtn
         },
@@ -78,7 +89,24 @@
             validateDeliveryService() {
 
             }
-        }
+        },
+        computed: {
+            ...mapGetters([
+                'deliveryAdress'
+            ])
+        },
+        watch: {
+            deliveryAdress(newVal, oval) {
+                if(newVal) {
+                    let splitValues = newVal.split(',');
+
+                    this.city = splitValues[0];
+                    this.street = splitValues[1];
+                    this.house = splitValues[2];
+                    this.index = splitValues[3];
+                }
+            }
+        },
     }
 </script>
 

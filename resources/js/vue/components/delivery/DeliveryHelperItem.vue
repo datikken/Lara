@@ -1,6 +1,6 @@
 <template>
-    <div class="delivery_type-item" @click="setDeliveryType">
-        <SimpleCheckbox :name="name" ref="child" />
+    <div class="delivery_type-item" @click="setDeliveryType" :data-val="name">
+        <SimpleCheckbox :name="name" ref="box" />
         <span>{{ text }}</span>
     </div>
 </template>
@@ -12,6 +12,11 @@
     export default {
         name: "DeliveryHelperItem",
         props: ['text', 'name'],
+        data: function() {
+            return {
+                checked: false
+            }
+        },
         components: {
             SimpleCheckbox
         },
@@ -24,16 +29,24 @@
 
                 if(type) {
                     let checkboxes = document.querySelectorAll('.checkbox-wrap');
-                        checkboxes.forEach((box) => {
-                            let img = box.querySelector('img');
-                                img && img.classList.add('invisible');
-                        })
+                    checkboxes.forEach((box) => {
+                        let img = box.querySelector('img');
+                        img && img.classList.add('invisible');
+                    })
 
-                    let img = e.currentTarget.querySelector('img')
+                    if(!this.checked) {
+                        let img = e.currentTarget.querySelector('img')
                         img.classList.remove('invisible');
+                    }
                 }
 
-                this.SET_DELIVERY_TYPE(this.$props.name);
+                if(!this.checked) {
+                    this.SET_DELIVERY_TYPE(e.currentTarget.dataset.val);
+                    this.checked = true;
+                } else {
+                    this.SET_DELIVERY_TYPE('any');
+                    this.checked = false;
+                }
             }
         }
     }
