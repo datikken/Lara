@@ -22,33 +22,16 @@
                 </div>
             </div>
         @endif
-
         <div class="cart_content">
-            <div class="cart_wrap-item_inner">
-                <div class="cart_wrap-item_inner-table"
-                     @if(isset($cartItems->totalQuantity))
-                     data-cartPrice="{{ $cartItems->totalPrice }}"
-                     data-cartAmount="{{ $cartItems->totalQuantity }}"
-                    @endif
-                >
-                    @if(Session::get('cart'))
-                        @foreach($cartItems->items as $cartItem)
-                            @include('components.cart.cart_item', $cartItem)
-                        @endforeach
-                    @else
-                        @include('components.cart.cart_empty')
-                    @endif
-                </div>
-            </div>
+            @include('components.cart.cart_grid')
         </div>
-
         @if(Session::get('cart'))
             <div class="cart_wrap-item_inner-total">
                 <div class="cart_wrap-item_inner-total_inner">
                     <span class="cart_wrap-item_inner-total_inner-item">Общая сумма</span>
                     <span class="cart_wrap-item_inner-total_inner-item" data-cartpriceval>
                         {{ $cartItems->totalPrice }}
-                        <img src="/images/icons/rub_fat.svg" alt="rub" class="cart_wrap-item-total_icon" />
+                        <img src="/images/icons/rub_fat.svg" alt="rub" class="cart_wrap-item-total_icon"/>
                     </span>
                 </div>
                 <a class="cart_wrap-item_inner-total_button magic_btn" href="{{route('checkoutProducts')}}">

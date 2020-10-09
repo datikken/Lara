@@ -11,8 +11,7 @@ class CartController {
         let cartCont = document.querySelector('.cart_content');
 
         if(cartCont) {
-            let magicBtn = document.querySelector('.magic_btn');
-                new MagicButton(magicBtn);
+           this._createMagicBtn();
         }
 
         if(cart) {
@@ -27,6 +26,10 @@ class CartController {
         }
     }
 
+    _createMagicBtn() {
+        let magicBtn = document.querySelector('.magic_btn');
+        let btn = new MagicButton(magicBtn);
+    }
     _pushToOrderProcess() {
         router.push('/checkoutProducts');
     }
