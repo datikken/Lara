@@ -88,7 +88,7 @@
         methods: {
             ...mapActions(['APPLY_DELIVERY_ADRESS']),
             syncForms(adr) {
-                if(this.deliveryAdress) {
+                if(this.deliveryAdress && adr) {
                     let splitValues = adr.split(',');
 
                     this.city = splitValues[0];

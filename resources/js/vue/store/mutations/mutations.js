@@ -94,6 +94,8 @@ let mutations = {
                 if (data[0].data.city.indexOf('Москва') >= 0) {
                     state.deliveryType = 'any';
                     state.deliveryAllowed = 'any';
+                } else {
+                    state.deliveryAllowed = 'post';
                 }
             })
             .then(() => {
