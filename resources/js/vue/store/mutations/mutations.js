@@ -1,7 +1,7 @@
 import $ from "jquery";
 import router from "../../router/router";
 import _ from "lodash";
-import axios from "axios/index";
+import axios from "axios";
 import MagicButton from '../../../components/MagicButton';
 import Notifications from '../../../components/Notifications';
 
@@ -20,11 +20,17 @@ let mutations = {
         notification.show();
     },
     createMagicBtn(state, btn) {
-        btn.classList.remove('disabled_btn');
-        new MagicButton(btn);
+        if(btn) {
+            btn.classList.remove('disabled_btn');
+            new MagicButton(btn);
+        }
     },
     setReadyToGo(state, val) {
         state.readyToGo = val;
+
+        if(state.readyToGo) {
+            state.blockDeliveryHelper = true;
+        }
     },
     setAddtionalForms(state, str) {
         state.showAditionalForms = true;
@@ -143,8 +149,6 @@ let mutations = {
         });
     },
     checkDeliveryPickups(state, {name, adr}) {
-        console.warn('checkDeliveryPickups recived', name, adr)
-
         state.stockDeliveryPickup = {name, adr};
 
         fetch('/setStockPickUpPoint', {

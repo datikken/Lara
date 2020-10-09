@@ -134,4 +134,11 @@ class CustomerDataController extends Controller
 
         return response()->json($arr);
     }
+
+    public function clearAllSessionInfo()
+    {
+        Session::flush();
+
+        return response()->json(['session has been flushed']);
+    }
 }

@@ -26,9 +26,6 @@
             floor: function (value) {
                 return Math.ceil(value);
             }
-        },
-        created() {
-            console.warn(this.$props.data)
         }
     }
 </script>

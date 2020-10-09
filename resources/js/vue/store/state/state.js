@@ -37,7 +37,8 @@ let state = {
     selfDelivery: null,
     lastDeliveryAdress: false,
     stockDeliveryPickup: false,
-    pickUpPoint: false
+    pickUpPoint: false,
+    blockDeliveryHelper: false
 }
 
 export default state;

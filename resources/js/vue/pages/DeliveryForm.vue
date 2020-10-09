@@ -147,8 +147,6 @@
             },
             createMagicBtn() {
                 let btn = this.$el.querySelector('#proceedToPayments');
-
-                console.warn(btn, 'createMagicBtn')
                 this.CREATE_MAGIC_BTN(btn);
             },
             callDeliveryForm() {

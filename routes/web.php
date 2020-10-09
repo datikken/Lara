@@ -231,3 +231,5 @@ Route::get('/mailtemplate', ['uses' => "SendEmailController@testEmailTemplate", 
 Route::get('/custinfo', ['uses' => 'CustomerDataController@getSessionInfo']);
 Route::get('/testSearch', ['uses' => 'SearchController@testSearch']);
 Route::post('/checkAdressInDadata', ['uses' => 'CustomerDataController@checkAdressInDadata', 'as' => 'checkAdressInDadata']);
+Route::get('/clearDeliveryTypeAndAdress', ['uses' => 'CustomerDataController@clearDeliveryTypeAndAdress', 'as' => 'clearDeliveryTypeAndAdress']);
+Route::get('/clearAllSessionInfo', ['uses' => 'CustomerDataController@clearAllSessionInfo', 'as' => 'clearAllSessionInfo']);

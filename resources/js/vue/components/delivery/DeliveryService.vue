@@ -82,34 +82,35 @@
                 index: null
             }
         },
-        components: {
-            TextBtn
-        },
-        methods: {
-            validateDeliveryService() {
-
-            }
-        },
         computed: {
             ...mapGetters([
                 'deliveryAdress'
             ])
         },
-        watch: {
-            deliveryAdress(newVal, oval) {
-                if(newVal) {
-                    let splitValues = newVal.split(',');
+        components: {
+            TextBtn
+        },
+        mounted() {
+            this.syncForms(this.deliveryAdress);
+        },
+        methods: {
+            validateDeliveryService() {
+
+            },
+            syncForms(adr) {
+                if(this.deliveryAdress) {
+                    let splitValues = adr.split(',');
 
                     this.city = splitValues[0];
                     this.street = splitValues[1];
-                    this.house = splitValues[2];
                     this.index = splitValues[3];
+
+                    let hsbd = splitValues[2].split(' ');
+
+                    this.house = hsbd[2];
+                    this.building = hsbd[4];
                 }
             }
-        },
+        }
     }
 </script>
-
-<style scoped>
-
-</style>

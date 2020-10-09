@@ -1,4 +1,4 @@
-import  $ from 'jquery';
+import $ from 'jquery';
 
 let actions = {
     PROCEED_WITH_LAST_DELIVERY_ADRESS(context, adr) {

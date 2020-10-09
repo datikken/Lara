@@ -7,7 +7,7 @@
 
 <script>
     import SimpleCheckbox from '../checkboxes/SimpleCheckbox'
-    import {mapActions} from 'vuex'
+    import {mapActions, mapGetters} from 'vuex'
 
     export default {
         name: "DeliveryHelperItem",
@@ -19,6 +19,16 @@
         },
         components: {
             SimpleCheckbox
+        },
+        computed: {
+            ...mapGetters([
+                'blockDeliveryHelper',
+            ])
+        },
+        watch: {
+            blockDeliveryHelper(newVal, oldVal) {
+                console.warn('blockDeliveryHelper watch', newVal)
+            }
         },
         methods: {
             ...mapActions([
