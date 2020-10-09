@@ -9,6 +9,19 @@ class CustomerDataController extends Controller
     private $token = 'a799fcceda51c067cdb475e748d7e27e9b4f6fb9';
     private $secret = '09ef4a22ead3bac21c5c5431f01928c8975cb548';
 
+
+    public function setIndex(Request $request)
+    {
+        $index = $request->index;
+        $item = $request->session()->put('cartIndex', $index);
+
+        $dadata = new \Dadata\DadataClient($this->token, null);
+        $result = $dadata->suggest("postal_unit", $index);
+
+
+        return response()->json((object) array('deliveryIndex' => $index, 'suggestedOffice' => $result));
+    }
+
     public function checkAdressInDadata(Request $request)
     {
         $dadata = new \Dadata\DadataClient($this->token, $this->secret);
@@ -21,7 +34,8 @@ class CustomerDataController extends Controller
 
         $addr = $city . " " . $street . " " . $house . " " . $body . " " . $building;
 
-        $result = $dadata->clean("address", $addr);
+        $result = $dadata->suggest("address", $addr);
+//        $result = $dadata->clean("address", $addr);
 
         return response()->json($result);
     }
@@ -72,18 +86,6 @@ class CustomerDataController extends Controller
 
         $request->session()->put('cartCustomerFio', $arr);
         return response()->json((object) array('customer_fio' => $arr));
-    }
-
-    public function setIndex(Request $request)
-    {
-        $index = $request->index;
-        $item = $request->session()->put('cartIndex', $index);
-
-        $dadata = new \Dadata\DadataClient($this->token, null);
-        $result = $dadata->suggest("postal_unit", $index);
-
-
-        return response()->json((object) array('deliveryIndex' => $index, 'suggestedOffice' => $result));
     }
 
     public function setAdress(Request $request)

@@ -85,13 +85,15 @@ let mutations = {
                 return response.json();
             })
             .then((data) => {
-                console.warn('checkDeliveryAdress', data)
+                console.warn('checkDeliveryAdress', data[0].data.city);
+
                 if (data.result === null) {
                     state.deliveryType = 'post';
                 }
 
-                if (data.result.indexOf('Москва') >= 0) {
-                    state.deliveryType = 'any'
+                if (data[0].data.city.indexOf('Москва') >= 0) {
+                    state.deliveryType = 'any';
+                    state.deliveryAllowed = 'any';
                 }
             })
             .then(() => {

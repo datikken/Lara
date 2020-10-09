@@ -35,8 +35,6 @@
         methods: {},
         watch: {
             deliveryAllowed(newVal, oldVal) {
-
-                console.warn('deliveryAllowed', newVal)
                 this.delAllowed = newVal;
             },
         },
