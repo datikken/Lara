@@ -4,9 +4,9 @@
             <DeliveryHelperItem v-if="delAllowed === 'self' || delAllowed === 'any'" name="self"
                                 text="Самовывоз со склада"/>
             <!--<DeliveryHelperItem name="self" text="Забрать из постамата" />-->
-            <DeliveryHelperItem v-if="delAllowed === 'delivery' || delAllowed === 'any'" name="deliveryMkad"
+            <DeliveryHelperItem v-if="delAllowed === 'delivery' || delAllowed === 'any'" name="delivery"
                                 text="Доставка по Москве в пределах МКАД"/>
-            <DeliveryHelperItem v-if="delAllowed === 'deliveryMkad' || delAllowed === 'any'" name="delivery"
+            <DeliveryHelperItem v-if="delAllowed === 'deliveryMkad' || delAllowed === 'any'" name="deliveryMkad"
                                 text="Доставка по Москве за МКАД"/>
             <DeliveryHelperItem v-if="delAllowed === 'post' || delAllowed === 'any'" name="post"
                                 text="Доставка почтой России"/>

@@ -91,20 +91,28 @@ class CustomerDataController extends Controller
         $city = $request->city;
         $index = $request->index;
         $street = $request->street;
-        $house = $request->house;
-        $body = $request->body;
+        $home = $request->home;
+        $floor = $request->floor;
         $building = $request->building;
         $flat = $request->flat;
+        $wing = $request->wing;
+        $porch = $request->porch;
+        $intercom = $request->intercom;
         $delType = $request->deliveryType;
+        $deliveryNote = $request->deliveryNote;
 
         $arr = [
             'city' => $city,
-            'index' => $index,
             'street' => $street,
-            'house' => $house,
-            'body' => $body,
+            'home' => $home,
+            'wing' => $wing,
             'building' => $building,
+            'porch' => $porch,
+            'intercom' => $intercom,
+            'floor' => $floor,
             'flat' => $flat,
+            'index' => $index,
+            'deliverNote' => $deliveryNote,
             'deliveryType' => $delType
         ];
 

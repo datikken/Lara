@@ -180,14 +180,13 @@
                 }
 
                 if(this.deliveryType === 'deliveryMkad' || this.deliveryType === 'delivery') {
-                    let res = this.callDeliveryForm();
+                    this.callDeliveryForm();
+                    let res =  this.$refs.delRef.validateDeliveryService();
 
-                    // if( typeof this.customerAdress.deliveryAddress === 'object') {
-                    //     ready = true;
-                    // }
-                    // if(this.customerIndex.deliveryIndex) {
-                    //     ready = true;
-                    // }
+                    console.warn('before proceed', res);
+                    if(res) {
+                        ready = true;
+                    }
                 }
 
                 if(this.deliveryType === 'post') {

@@ -98,7 +98,6 @@
                 return valid
             },
             validateAdressForm() {
-                let input = this.$el.querySelector('[data-required]');
                 let indexField = this.$el.querySelector('[data-index_field]');
                 let valid = false;
 

@@ -50,13 +50,7 @@
                     }
                 }
 
-                if(!this.checked) {
-                    this.SET_DELIVERY_TYPE(e.currentTarget.dataset.val);
-                    this.checked = true;
-                } else {
-                    this.SET_DELIVERY_TYPE('any');
-                    this.checked = false;
-                }
+                this.SET_DELIVERY_TYPE(e.currentTarget.dataset.val);
             }
         }
     }
