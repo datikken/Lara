@@ -125,8 +125,6 @@ let mutations = {
                         state.deliveryAllowed = 'any';
                     }
                 }
-
-                console.warn('setindex', data.suggestedOffice)
             })
             .then(() => {
                 that.dispatch('SHOW_DELIVERY_TYPE_HELPER');
@@ -136,16 +134,12 @@ let mutations = {
             })
     },
     applyDeliveryAdress(state, data) {
-        console.warn('applyDeliveryAdress before', data)
-
-
         $.ajax({
             method: "POST",
             url: '/setAdress',
             data,
             success: function (data) {
                 state.deliveryAdress = data;
-                console.warn('applyDeliveryAdress after', data)
             },
             error: function (error) {
                 console.warn(error);
@@ -593,9 +587,6 @@ let mutations = {
     setDeliveryType(state, name) {
         state.deliveryType = name;
 
-
-        console.warn(name, 'SET_DELIVERY_TYPE');
-
         this.dispatch('REMOVE_DELIVERY_TYPE_ERROR');
 
         return state.deliveryType;
@@ -631,8 +622,6 @@ let mutations = {
     }
     ,
     refreshCutomerData(state, data) {
-        console.warn('before send', data)
-
         fetch('/home/collectProfileData', {
             method: "POST",
             headers: {

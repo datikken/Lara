@@ -15,7 +15,7 @@
             height: 1px;
             background: $yellow;
             bottom: 0px;
-            left: -30px;
+            left: 0px;
         }
 
         @include breakpoint($medium) {
@@ -34,7 +34,7 @@
             height: 1px;
             background: $light_gray;
             bottom: 0px;
-            left: -30px;
+            left: 0;
         }
     }
 

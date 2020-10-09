@@ -6842,7 +6842,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   height: 1px;
   background: #fdd935;
   bottom: 0px;
-  left: -30px;
+  left: 0px;
 }
 @media screen and (min-width: 1030px) {
   .cart_content {
@@ -6861,7 +6861,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   height: 1px;
   background: #e9e9ea;
   bottom: 0px;
-  left: -30px;
+  left: 0;
 }
 .cart_wrap {
   max-width: 1170px;
