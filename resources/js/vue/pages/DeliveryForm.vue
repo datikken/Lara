@@ -12,9 +12,10 @@
             </div>
 
             <DeliveryPickups v-if="this.deliveryType === 'self'" />
-            <DeliverySelf v-if="this.deliveryType === 'post'" type="post" text="Ранее используемый почтовый адрес" />
-            <DeliverySelf v-if="this.deliveryType === 'delivery'" type="post" text="Ранее используемый адрес доставки" />
-            <DeliverySelf v-if="this.deliveryType === 'deliveryMkad'" type="post" text="Ранее используемый адрес доставки" />
+
+            <DeliverySelf v-if="showDeliverySelf && this.deliveryType === 'post'" type="post" text="Ранее используемый почтовый адрес" />
+            <DeliverySelf v-if="showDeliverySelf && this.deliveryType === 'delivery'" type="delivery" text="Ранее используемый адрес доставки" />
+            <DeliverySelf v-if="showDeliverySelf && this.deliveryType === 'deliveryMkad'" type="deliveryMkad" text="Ранее используемый адрес доставки" />
 
             <DeliveryPostForm v-if="showDeliveryPostForm" ref="postRef" />
             <DeliveryService v-if="showDeliveryMkad" ref="delRef" />
@@ -69,7 +70,8 @@
                 showDeliveryService: false,
                 readyToGoOn: false,
                 dadataValidAdress: false,
-                pickUpPointAccepted: false
+                pickUpPointAccepted: false,
+                showDeliverySelf: true
             }
         },
         computed: {
@@ -81,10 +83,16 @@
                 'user',
                 'validatePostForm',
                 'readyToGo',
-                'pickUpPoint'
+                'pickUpPoint',
+                'showAditionalForms'
             ]),
         },
         watch: {
+            showAditionalForms(newVal, oldVal) {
+                if(newVal) {
+                    this._showAditionalForms();
+                }
+            },
             pickUpPoint(newVal, oldVal) {
                 if(newVal) {
                     this.pickUpPointAccepted = true
@@ -98,30 +106,7 @@
             },
             deliveryType(newVal, oldVal) {
                 if(newVal) {
-                    let that = this;
 
-                    this.showDeliveryPostForm = false;
-                    this.showDeliveryService = false;
-                    this.showDeliveryMkad = false;
-
-                    if(this.deliveryType === 'self') {
-                        this.SET_READY_TO_GO(true);
-                    }
-
-                    if(this.deliveryType === 'post') {
-                        this.showDeliveryPostForm = true;
-                        this.SET_READY_TO_GO(true);
-                    }
-                    if(this.deliveryType === 'delivery') {
-                        this.showDeliveryService = true;
-                        this.SET_READY_TO_GO(true);
-                    }
-                    if(this.deliveryType === 'deliveryMkad') {
-                        this.showDeliveryMkad = true;
-                        this.SET_READY_TO_GO(true);
-                    }
-
-                    setTimeout(that.createMagicBtn, 500);
                 }
             }
         },
@@ -136,6 +121,30 @@
                 'CREATE_MAGIC_BTN',
                 'SHOW_NOTIFICATION'
             ]),
+            _showAditionalForms() {
+                if(this.deliveryType === 'self') {
+                    this.SET_READY_TO_GO(true);
+                }
+                if(this.deliveryType === 'post') {
+                    this.showDeliveryPostForm = true;
+                    this.SET_READY_TO_GO(true);
+                }
+                if(this.deliveryType === 'delivery') {
+                    this.showDeliveryService = true;
+                    this.SET_READY_TO_GO(true);
+                }
+                if(this.deliveryType === 'deliveryMkad') {
+                    this.showDeliveryMkad = true;
+                    this.SET_READY_TO_GO(true);
+                }
+
+                this.showDeliverySelf = false;
+            },
+            processCartSteps() {
+                this.showDeliveryPostForm = false;
+                this.showDeliveryService = false;
+                this.showDeliveryMkad = false;
+            },
             validatePickUpPoint() {
                 if(this.pickUpPointAccepted) {
                     return true;
@@ -147,6 +156,8 @@
             },
             createMagicBtn() {
                 let btn = this.$el.querySelector('#proceedToPayments');
+                console.log('createMagicBtn', btn);
+
                 this.CREATE_MAGIC_BTN(btn);
             },
             callDeliveryForm() {

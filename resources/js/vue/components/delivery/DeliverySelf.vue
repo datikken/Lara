@@ -49,8 +49,8 @@
                 'CREATE_MAGIC_BTN',
                 'SHOW_NOTIFICATION'
             ]),
-           fillInputAdress({street, building, city, flat, house, index}) {
-               let str = `${street} ${building} ${city} ${flat} ${house} ${index}`;
+           fillInputAdress({street, building, city, flat, home, index}) {
+               let str = `${street} ${building} ${city} ${flat} ${home} ${index}`;
 
                this.adress = str;
            },
@@ -60,6 +60,8 @@
                 let btn = this.$el.querySelector('.delSelf_btn');
                     btn.classList.add('disabled_btn');
 
+
+                this.SET_ADDITIONAL_FORMS(true);
                 this.SET_READY_TO_GO(false);
             },
             blockBtnsAndInput() {

@@ -83,6 +83,7 @@
             this.groups = this.$el.querySelectorAll('.form_group');
             this.clearErrorsOnFocus();
 
+            console.log('before sync', this.deliveryAdress)
             this.syncForms(this.deliveryAdress);
         },
         methods: {

@@ -85,7 +85,7 @@ let mutations = {
                 return response.json();
             })
             .then((data) => {
-                console.warn('checkDeliveryAdress', data[0].data.city);
+                console.warn('checkDeliveryAdress recieved', data[0].data);
 
                 if (data.result === null) {
                     state.deliveryType = 'post';
