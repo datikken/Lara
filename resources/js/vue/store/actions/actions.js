@@ -1,6 +1,9 @@
 import $ from 'jquery';
 
 let actions = {
+    SET_DELIVERY_ADRESS(context, adr) {
+        context.commit('setDeliveryAdress', adr);
+    },
     PROCEED_WITH_LAST_DELIVERY_ADRESS(context, adr) {
         context.commit('proceedWithLastDeliveryAdress', adr);
     },

@@ -6,6 +6,9 @@ import MagicButton from '../../../components/MagicButton';
 import Notifications from '../../../components/Notifications';
 
 let mutations = {
+    setDeliveryAdress(state, adr) {
+        state.deliveryAdress = adr;
+    },
     showNotification(state, msg, type) {
         let notParams = {
             status: 'success',
@@ -37,6 +40,7 @@ let mutations = {
     },
     proceedWithLastDeliveryAdress(state, adr) {
         state.deliveryAdress = adr;
+        state.prevDelAdrAccepted = true;
     },
     getLastDeliveryAdress(state) {
         $.ajax({
@@ -122,9 +126,9 @@ let mutations = {
                 state.customerIndex = data;
                 if (data.suggestedOffice[0]) {
                     state.deliveryType = 'post';
-                    state.deliveryAdress = data.suggestedOffice[0].unrestricted_value + `, ${data.suggestedOffice[0].value}`;
+                    state.deliveryAdress = data.suggestedOffice[0].data.address_str;
 
-                    if (data.suggestedOffice[0].unrestricted_value.indexOf('Москва') >= 0) {
+                    if (data.suggestedOffice[0].data.address_str.indexOf('Москва') >= 0) {
                         state.deliveryType = 'any';
                         state.deliveryAllowed = 'any';
                     }

@@ -31,14 +31,15 @@ let state = {
     catalogPerPage: 16,
 
     //Delivery
+    selfDelivery: null,
     deliveryType: false,
     deliveryAdress: false,
     deliveryAllowed: false,
-    selfDelivery: null,
     lastDeliveryAdress: false,
+    prevDelAdrAccepted: null,
     stockDeliveryPickup: false,
+    blockDeliveryHelper: false,
     pickUpPoint: false,
-    blockDeliveryHelper: false
 }
 
 export default state;

@@ -25,11 +25,6 @@
                 'blockDeliveryHelper',
             ])
         },
-        watch: {
-            blockDeliveryHelper(newVal, oldVal) {
-                console.warn('blockDeliveryHelper watch', newVal)
-            }
-        },
         methods: {
             ...mapActions([
                 'SET_DELIVERY_TYPE'

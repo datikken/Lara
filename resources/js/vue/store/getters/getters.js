@@ -22,7 +22,8 @@ let getters = {
     showAditionalForms: state => state.showAditionalForms,
     readyToGo: state => state.readyToGo,
     deliveryAllowed: state => state.deliveryAllowed,
-    blockDeliveryHelper: state => state.blockDeliveryHelper
+    blockDeliveryHelper: state => state.blockDeliveryHelper,
+    prevDelAdrAccepted: state => state.prevDelAdrAccepted
 }
 
 export default getters;

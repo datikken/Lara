@@ -47,10 +47,11 @@
                 'SET_ADDITIONAL_FORMS',
                 'SET_READY_TO_GO',
                 'CREATE_MAGIC_BTN',
-                'SHOW_NOTIFICATION'
+                'SHOW_NOTIFICATION',
+                'SET_DELIVERY_ADRESS'
             ]),
            fillInputAdress({street, building, city, flat, home, index}) {
-               let str = `${street} ${building} ${city} ${flat} ${home} ${index}`;
+               let str = `${city ? city : ' '} ${street ? street : ' '} ${building ? building : ' '} ${flat ? flat : ' '} ${home ? home : ' '} ${index ? index : ' '}`;
 
                this.adress = str;
            },
@@ -60,15 +61,15 @@
                 let btn = this.$el.querySelector('.delSelf_btn');
                     btn.classList.add('disabled_btn');
 
-
                 this.SET_ADDITIONAL_FORMS(true);
+                this.SET_DELIVERY_ADRESS(this.adress);
                 this.SET_READY_TO_GO(false);
             },
             blockBtnsAndInput() {
                 let npt = this.$el.querySelector('[name="lastaddress"]');
-                    npt.setAttribute('disabled', true)
+                    npt.setAttribute('disabled', true);
                 let btn = this.$el.querySelector('.delSelf_btn');
-                    btn.classList.add('disabled_btn')
+                    btn.classList.add('disabled_btn');
             },
             acceptCurrentAdress() {
                 if(this.adress) {
@@ -82,8 +83,6 @@
         },
         watch: {
             lastDeliveryAdress(newVal, oldVal) {
-                let that = this;
-
                 if (newVal === null) {
                     this.SET_ADDITIONAL_FORMS();
                 } else {

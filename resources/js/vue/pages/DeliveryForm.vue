@@ -13,9 +13,9 @@
 
             <DeliveryPickups v-if="this.deliveryType === 'self'" />
 
-            <DeliverySelf v-if="showDeliverySelf && this.deliveryType === 'post'" type="post" text="Ранее используемый почтовый адрес" />
-            <DeliverySelf v-if="showDeliverySelf && this.deliveryType === 'delivery'" type="delivery" text="Ранее используемый адрес доставки" />
-            <DeliverySelf v-if="showDeliverySelf && this.deliveryType === 'deliveryMkad'" type="deliveryMkad" text="Ранее используемый адрес доставки" />
+            <DeliverySelf ref="delSafe" v-if="showDeliverySelf && this.deliveryType === 'post'" type="post" text="Ранее используемый почтовый адрес" />
+            <DeliverySelf ref="delSafe" v-if="showDeliverySelf && this.deliveryType === 'delivery'" type="delivery" text="Ранее используемый адрес доставки" />
+            <DeliverySelf ref="delSafe" v-if="showDeliverySelf && this.deliveryType === 'deliveryMkad'" type="deliveryMkad" text="Ранее используемый адрес доставки" />
 
             <DeliveryPostForm v-if="showDeliveryPostForm" ref="postRef" />
             <DeliveryService v-if="showDeliveryMkad" ref="delRef" />
@@ -71,7 +71,8 @@
                 readyToGoOn: false,
                 dadataValidAdress: false,
                 pickUpPointAccepted: false,
-                showDeliverySelf: true
+                showDeliverySelf: true,
+                delSelfAccepted: false
             }
         },
         computed: {
@@ -84,7 +85,8 @@
                 'validatePostForm',
                 'readyToGo',
                 'pickUpPoint',
-                'showAditionalForms'
+                'showAditionalForms',
+                'prevDelAdrAccepted'
             ]),
         },
         watch: {
@@ -99,14 +101,14 @@
                 }
             },
             readyToGo(newVal, oldVal) {
+                let that = this;
                 this.readyToGoOn = newVal;
-            },
-            deliveryAdress(newVal, oldVal) {
-                console.warn('deliveryAdress changed', newVal, oldVal)
-            },
-            deliveryType(newVal, oldVal) {
-                if(newVal) {
 
+                setTimeout(that.createMagicBtn, 500);
+            },
+            prevDelAdrAccepted(newVal, oldVal) {
+                if(newVal) {
+                    this.delSelfAccepted = newVal;
                 }
             }
         },
@@ -156,14 +158,8 @@
             },
             createMagicBtn() {
                 let btn = this.$el.querySelector('#proceedToPayments');
-                console.log('createMagicBtn', btn);
 
                 this.CREATE_MAGIC_BTN(btn);
-            },
-            callDeliveryForm() {
-                let status = this.$refs.delRef.validateDeliveryService();
-
-                return status;
             },
             callPostForm() {
                 let status = this.$refs.postRef.handleValidatePostForm();
@@ -191,12 +187,10 @@
                 }
 
                 if(this.deliveryType === 'deliveryMkad' || this.deliveryType === 'delivery') {
-                    this.callDeliveryForm();
-                    let res =  this.$refs.delRef.validateDeliveryService();
-
-                    console.warn('before proceed', res);
-                    if(res) {
+                    if(this.delSelfAccepted) {
                         ready = true;
+                    } else {
+                        ready = this.$refs.delRef.validateDeliveryService();
                     }
                 }
 
