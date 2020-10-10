@@ -682,7 +682,7 @@ b {
   letter-spacing: 0.02em;
   color: #292930;
   border-radius: 30px;
-  display: flex;
+  text-transform: uppercase;
   align-items: center;
 }
 
