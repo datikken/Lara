@@ -93,7 +93,7 @@ Route::get('/home/fillProfile', ['uses' => 'HomeController@showFillProfileForm',
 Route::get('/home/fillAdressesForm', ['uses' => 'HomeController@showFillAdressesForm', 'as' => 'fillAdresses']);
 Route::get('/home/fillAdresses', ['uses' => 'HomeController@FillAdresses', 'as' => 'FillAdressesDB']);
 Route::post('/home/userAvatar', ['uses' => 'HomeController@setUsersAvatar', 'as' => 'FillUserAvatar']);
-Route::POST('/home/collectProfileData', ['uses' => 'HomeController@collectProfileData', 'as' => 'collectProfileData']);
+Route::post('/home/collectProfileData', ['uses' => 'HomeController@collectProfileData', 'as' => 'collectProfileData']);
 Route::get('/home/orders', ['uses' => 'HomeController@displayOrders', 'as' => 'displayUserOrders']);
 
 //Blog
@@ -165,6 +165,7 @@ Route::get('/download/{name}', ['uses' => 'AdminDocumentsController@download', '
 
 //Subscriptions
 Route::get('/admin/subscriptions', ['uses' => 'AdminSubscriptionsController@index', 'as' => 'AdminSubscriptions']);
+
 //Tracking
 Route::get('/admin/tracking', ['uses' => 'AdminTrackingController@index', 'as' => 'AdminDisplayTracking']);
 Route::post('/admin/collectData', ['uses' => 'AdminTrackingController@collectData', 'as' => 'AdminCollectTracking']);
@@ -197,7 +198,6 @@ Route::get('/admin/deleteAbout/{id}', ['uses' => "AdminAboutController@deleteAbo
 Route::get('/createYearToDescribe', ['uses' => 'AdminAboutController@createYearToDescribe', 'as' => 'CreateYearToDescribe']);
 Route::get('/getAboutYears', ['uses' => 'AdminAboutController@getAboutYears', 'as' => 'GetAboutYears']);
 Route::post('/getTwoYearsInfoBySelect', ['uses' => 'AdminAboutController@getTwoYearsInfoBySelect', 'as' => 'getTwoYearsInfoBySelect']);
-
 Route::get('/setPaymentProvider', ['uses' => 'PaymentsController@setPaymentProvider', 'as' => 'setPaymentProvider']);
 
 //Information

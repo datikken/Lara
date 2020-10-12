@@ -7679,6 +7679,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   align-items: flex-end;
   margin-bottom: 10px;
 }
+.cart_check-wrap_item:nth-child(2) {
+  align-items: flex-start;
+}
 .cart_check-wrap_item .cart_check-button {
   align-self: flex-start;
   margin-top: 24px;

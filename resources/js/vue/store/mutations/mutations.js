@@ -641,6 +641,7 @@ let mutations = {
             body: JSON.stringify(data)
         })
             .then(res => {
+                console.warn('back resp', res);
             })
             .catch(err => console.error('collectProfileData', err))
 

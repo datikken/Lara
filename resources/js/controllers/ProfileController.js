@@ -71,9 +71,9 @@ class ProfileController {
                           success: function (status) {
                               let params = {
                                   message: status.message,
-                                  status: 'primary',
+                                  status: 'success',
                                   pos: 'top-center',
-                                  timeout: 25000
+                                  timeout: 1000
                               }
 
                               let notification = new Notifications(params);

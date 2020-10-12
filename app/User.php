@@ -25,7 +25,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','face'
+        'name', 'lastname', 'tel', 'email', 'password','face'
     ];
 
     /**
@@ -53,5 +53,25 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function posts() {
         return $this->hasMany(Post_Comments::class);
+    }
+
+    public function setUserName($value)
+    {
+        $this->attributes['name'] = strtolower($value);
+    }
+
+    public function setLastName($value)
+    {
+        $this->attributes['lastname'] = strtolower($value);
+    }
+
+    public function setTel($value)
+    {
+        $this->attributes['tel'] = strtolower($value);
+    }
+
+    public function setEmail($value)
+    {
+        $this->attributes['email'] = strtolower($value);
     }
 }

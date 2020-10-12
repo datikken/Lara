@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\HomeController;
 
 class CustomerDataController extends Controller
 {
     private $token = 'a799fcceda51c067cdb475e748d7e27e9b4f6fb9';
     private $secret = '09ef4a22ead3bac21c5c5431f01928c8975cb548';
-
 
     public function setIndex(Request $request)
     {

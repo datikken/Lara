@@ -148,9 +148,10 @@ class HomeController extends Controller
         }
     }
 
+
     public function collectProfileData(Request $request)
     {
-        $userId = Auth::id();
+        $user = Auth::user();
 
         Validator::make($request->all(), [
             'name' => 'max:500',
@@ -162,34 +163,23 @@ class HomeController extends Controller
         $name = $request->name;
         $lastname = $request->lastname;
         $tel = $request->tel;
-        $mail = $request->email;
+        $email = $request->email;
 
-        if ($name) {
-            DB::table('users')->where('id', $userId)->update(['name' => $name]);
-
-            return response()->json(['message' => 'Name successfully changed']);
+        if(!is_null($name)) {
+            $user->setUserName($name);
+        }
+        if(!is_null($lastname)) {
+            $user->setLastName($lastname);
+        }
+        if(!is_null($tel)) {
+            $user->setTel($tel);
+        }
+        if(!is_null($email)) {
+            $user->setEmail($email);
         }
 
-        if ($mail) {
-            DB::table('users')->where('id', $userId)->update(['email' => $mail]);
-            return response()->json(['message' => 'Email successfully changed']);
-        }
+        $user->save();
 
-        if ($lastname) {
-            $exists = DB::table('users')->where('id', $userId)->value('id');
-
-            if (isset($exists)) {
-                DB::table('users')->where('id', $userId)->update(['lastname' => $lastname]);
-            } else {
-                DB::table('users')->insert(['lastname' => $lastname]);
-            }
-
-            return response()->json(['message' => 'Lastname successfully changed']);
-        }
-
-        if ($tel) {
-            DB::table('users')->where('id', $userId)->update(['tel' => $tel]);
-            return response()->json(['message' => 'Tel successfully changed']);
-        }
+        return response()->json(array('message' => 'Успех!'));
     }
 }
