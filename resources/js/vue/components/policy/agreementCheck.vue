@@ -3,19 +3,19 @@
 
         <div class="cart_check-wrap_item-group agreement_checkbox">
 
-            <div class="agreement_error as-none" data-ofertaError>
+            <div class="agreement_error as-none" data-ofertaError @click="hideErrorResetState">
                 <img src="/images/icons/tip_danger.svg" alt="tip">
                 <span>Для подтверждения авторизации, необходимо ваше согласие</span>
             </div>
 
 
             <div class="as-flex">
-                <SimpleCheckbox name="save" />
+                <SimpleCheckbox name="save" @click.native="checkAndChange" />
 
                 <div class="agreement_text">
                     <p class="agreement_prgf">
                         Нажимая на кнопку &laquo;Продолжить&raquo; вы соглашаетесь с
-                        <a class="agreement_link" target="_blank" href="/download/oferta.pdf">офертой</a> и
+                        <a class="agreement_link" target="_blank" href="/download/oferta.pdf">публичной офертой</a> и
                         <a class="agreement_link" target="_blank" href="/download/agreement.pdf">условиями обработки персональных данных</a>
                     </p>
                 </div>
@@ -27,18 +27,41 @@
 
 <script>
     import SimpleCheckbox from '../checkboxes/SimpleCheckbox'
-    import { mapActions, mapGetters } from 'vuex'
+    import { mapState,mapActions } from 'vuex'
 
     export default {
         name: "agreementCheck",
+        data: () => {
+            return {
+                errObj: false
+            }
+        },
         components: {
             SimpleCheckbox
         },
+        mounted() {
+            this.errObj = this.$el.querySelector('[data-ofertaError]');
+        },
         computed: {
-            ...mapGetters(['ofertaPolicy'])
+            ...mapState(['ofertaPolicy'])
+        },
+        watch: {
+            ofertaPolicy(newVal, oldVal) {
+                if(newVal != null) this.throwHideErr();
+            }
         },
         methods: {
-
+            ...mapActions(['SET_OFERTA_POLICY_STATE']),
+            throwHideErr() {
+                this.errObj.classList.toggle('as-none')
+            },
+            hideErrorResetState() {
+                this.errObj.classList.add('as-none');
+                this.SET_OFERTA_POLICY_STATE(null);
+            },
+            checkAndChange() {
+                this.SET_OFERTA_POLICY_STATE(true);
+            }
         }
     }
 </script>

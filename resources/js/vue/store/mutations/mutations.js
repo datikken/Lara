@@ -126,15 +126,12 @@ let mutations = {
                 return response.json();
             })
             .then((data) => {
-                state.customerIndex = data;
-                if (data.suggestedOffice[0]) {
+                if (data[0].data.city.indexOf('Москва') >= 0) {
+                    state.deliveryType = 'any';
+                    state.deliveryAllowed = 'any';
+                } else {
                     state.deliveryType = 'post';
-                    state.deliveryAdress = data.suggestedOffice[0].data.address_str;
-
-                    if (data.suggestedOffice[0].data.address_str.indexOf('Москва') >= 0) {
-                        state.deliveryType = 'any';
-                        state.deliveryAllowed = 'any';
-                    }
+                    state.deliveryAdress = `${data[0].data.city} ${data[0].data.street_with_type} ${data[0].data.house}`;
                 }
             })
             .then(() => {

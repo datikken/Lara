@@ -7,8 +7,8 @@ use App\Http\Controllers\HomeController;
 
 class CustomerDataController extends Controller
 {
-    private $token = 'a799fcceda51c067cdb475e748d7e27e9b4f6fb9';
-    private $secret = '09ef4a22ead3bac21c5c5431f01928c8975cb548';
+    private $token = '5198c55e667d178585d4f179815151410f0d13b7';
+    private $secret = 'fe9b20d2b5f8e595cad81adf1c42809ed089c3c6';
 
     public function setIndex(Request $request)
     {
