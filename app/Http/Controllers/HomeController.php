@@ -116,7 +116,7 @@ class HomeController extends Controller
     public function displayOrders()
     {
         $user_id = Auth::id();
-        $type = DB::table('users')->where('id', id)->select('face', 'email', 'name')->first();
+        $type = DB::table('users')->where('id', $user_id)->select('face', 'email', 'name')->first();
         $orders_history = DB::table('orders')->where('user_id', $user_id)->where('status', 'arrived')->get();
         $orders_actual = DB::table('orders')->where('user_id', $user_id)->get();
         $array = array_filter((array)$orders_actual);
