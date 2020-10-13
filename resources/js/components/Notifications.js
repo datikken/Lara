@@ -7,6 +7,8 @@
 
 class Notifications {
     checkPosition() {
+        console.warn('check pos inside notific')
+
         let fixedTop = document.querySelector('.topFixedMenu');
         let notification = document.querySelector('.uk-notification');
 

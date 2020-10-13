@@ -95,7 +95,8 @@
                 'CHANGE_PROGRESS_STEP',
                 'SCROLL_TO_TOP',
                 'GET_USERS_INFO',
-                'REFRESH_CUTOMER_DATA'
+                'REFRESH_CUTOMER_DATA',
+                'SHOW_NOTIFICATION'
             ]),
             collectInputData() {
                 let inputs = this.$el.querySelectorAll('input');
@@ -172,13 +173,7 @@
                     this.validForm = true;
                 } else {
                     this.validForm = false;
-
-                    UIkit.notification({
-                        message: 'Необходимо ваше согласие.',
-                        status: 'default',
-                        pos: 'top-center',
-                        timeout: 5000
-                    });
+                    this.SHOW_NOTIFICATION( 'Необходимо ваше согласие.', 'danger');
                 }
             },
             trimPhoneNumber(num) {

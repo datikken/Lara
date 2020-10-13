@@ -13,7 +13,7 @@ let mutations = {
         let notParams = {
             status: 'success',
             pos: 'top-center',
-            timeout: 3000
+            timeout: 30000
         }
 
         notParams.status = type;
@@ -640,13 +640,8 @@ let mutations = {
             referrerPolicy: 'no-referrer',
             body: JSON.stringify(data)
         })
-            .then(res => {
-                console.warn('back resp', res);
-            })
+            .then(res => {  })
             .catch(err => console.error('collectProfileData', err))
-
-
-        console.log('refreshCutomerData', data)
     }
     ,
     setUriksInfo(state, obj) {

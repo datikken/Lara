@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="/css/app.css">
 @include('components.scripts.scripts')
 @include('components.styles.style')
 @include('components.header.header')
