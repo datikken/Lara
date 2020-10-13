@@ -7,8 +7,8 @@ use App\Http\Controllers\HomeController;
 
 class CustomerDataController extends Controller
 {
-    private $token = '5198c55e667d178585d4f179815151410f0d13b7';
-    private $secret = 'fe9b20d2b5f8e595cad81adf1c42809ed089c3c6';
+    private $token = '4e9f0c231f89258c18f52beaff5a2da36623d920';
+    private $secret = '2383a183f695e066aad81565e71c42add6d9aa16';
 
     public function setIndex(Request $request)
     {
@@ -34,8 +34,8 @@ class CustomerDataController extends Controller
 
         $addr = $city . " " . $street . " " . $house . " " . $body . " " . $building;
 
-        $result = $dadata->suggest("address", $addr);
-//        $result = $dadata->clean("address", $addr);
+//        $result = $dadata->suggest("address", $addr);
+        $result = $dadata->clean("address", $addr);
 
         return response()->json($result);
     }

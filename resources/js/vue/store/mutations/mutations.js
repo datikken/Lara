@@ -92,17 +92,15 @@ let mutations = {
                 return response.json();
             })
             .then((data) => {
-                console.warn('checkDeliveryAdress recieved', data[0].data);
+                state.deliveryType = 'post';
+                state.deliveryAllowed = 'post';
+                state.deliveryAdress = data.result;
 
-                if (data.result === null) {
-                    state.deliveryType = 'post';
-                }
+                console.warn(data, 'straight from dadadta');
 
-                if (data[0].data.city.indexOf('Москва') >= 0) {
-                    state.deliveryType = 'any';
+                if (data.result.indexOf('Москва') >= 0) {
+                    state.deliveryType = 'any'
                     state.deliveryAllowed = 'any';
-                } else {
-                    state.deliveryAllowed = 'post';
                 }
             })
             .then(() => {
@@ -126,13 +124,18 @@ let mutations = {
                 return response.json();
             })
             .then((data) => {
-                if (data[0].data.city.indexOf('Москва') >= 0) {
-                    state.deliveryType = 'any';
-                    state.deliveryAllowed = 'any';
-                } else {
+                state.customerIndex = data;
+                if (data.suggestedOffice[0]) {
                     state.deliveryType = 'post';
-                    state.deliveryAdress = `${data[0].data.city} ${data[0].data.street_with_type} ${data[0].data.house}`;
+                    state.deliveryAdress = data.suggestedOffice[0].unrestricted_value + `, ${data.suggestedOffice[0].value}`;
+
+                    if (data.suggestedOffice[0].unrestricted_value.indexOf('Москва') >= 0) {
+                        state.deliveryType = 'any';
+                        state.deliveryAllowed = 'any';
+                    }
                 }
+
+                console.warn('setindex', data.suggestedOffice)
             })
             .then(() => {
                 that.dispatch('SHOW_DELIVERY_TYPE_HELPER');
