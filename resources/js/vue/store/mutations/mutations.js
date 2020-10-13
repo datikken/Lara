@@ -39,7 +39,7 @@ let mutations = {
         }
     },
     setAddtionalForms(state, str) {
-        state.showAditionalForms = true;
+        state.showAditionalForms = str;
     },
     proceedWithLastDeliveryAdress(state, adr) {
         state.deliveryAdress = adr;
@@ -597,6 +597,8 @@ let mutations = {
     ,
     setDeliveryType(state, name) {
         state.deliveryType = name;
+
+        console.warn('new del type set', name)
 
         this.dispatch('REMOVE_DELIVERY_TYPE_ERROR');
 

@@ -11,7 +11,7 @@
                 <DeliveryHelper />
             </div>
 
-            <DeliveryPickups v-if="this.deliveryType === 'self'" />
+            <DeliveryPickups v-if="showPickUpsService && this.deliveryType === 'self'" />
 
             <DeliverySelf ref="delSafe" v-if="showDeliverySelf && this.deliveryType === 'post'" type="post" text="Ранее используемый почтовый адрес" />
             <DeliverySelf ref="delSafe" v-if="showDeliverySelf && this.deliveryType === 'delivery'" type="delivery" text="Ранее используемый адрес доставки" />
@@ -68,6 +68,7 @@
                 showDeliveryPostForm: false,
                 showDeliveryMkad: false,
                 showDeliveryService: false,
+                showPickUpsService: false,
                 readyToGoOn: false,
                 dadataValidAdress: false,
                 pickUpPointAccepted: false,
@@ -124,7 +125,10 @@
                 'SHOW_NOTIFICATION'
             ]),
             _showAditionalForms() {
+                this.processCartSteps();
+
                 if(this.deliveryType === 'self') {
+                    this.showPickUpsService = true;
                     this.SET_READY_TO_GO(true);
                 }
                 if(this.deliveryType === 'post') {
@@ -140,12 +144,13 @@
                     this.SET_READY_TO_GO(true);
                 }
 
-                this.showDeliverySelf = false;
             },
             processCartSteps() {
+                this.showDeliverySelf = false;
                 this.showDeliveryPostForm = false;
                 this.showDeliveryService = false;
                 this.showDeliveryMkad = false;
+                this.showPickUpsService = false;
             },
             validatePickUpPoint() {
                 if(this.pickUpPointAccepted) {

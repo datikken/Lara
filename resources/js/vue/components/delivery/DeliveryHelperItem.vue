@@ -27,7 +27,8 @@
         },
         methods: {
             ...mapActions([
-                'SET_DELIVERY_TYPE'
+                'SET_DELIVERY_TYPE',
+                'SET_ADDITIONAL_FORMS'
             ]),
             setDeliveryType(e) {
                 let type = document.querySelector('.delivery_type');
@@ -46,6 +47,7 @@
                 }
 
                 this.SET_DELIVERY_TYPE(e.currentTarget.dataset.val);
+                this.SET_ADDITIONAL_FORMS(e.currentTarget.dataset.val);
             }
         }
     }
