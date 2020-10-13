@@ -7679,6 +7679,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   align-items: flex-end;
   margin-bottom: 10px;
 }
+.cart_check-wrap_item:last-child {
+  align-items: flex-end;
+}
 .cart_check-wrap_item:nth-child(2) {
   align-items: flex-start;
 }
@@ -7686,9 +7689,22 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   align-self: flex-start;
   margin-top: 24px;
 }
-.cart_check-wrap_item .checkbox {
-  flex-direction: row !important;
-  align-items: center;
+.cart_check-wrap_item .agreement_checkbox {
+  margin: 10px 0 0 0;
+}
+.cart_check-wrap_item .agreement_checkbox .agreement_error {
+  margin: 0 0 10px 0;
+  display: flex;
+}
+.cart_check-wrap_item .agreement_checkbox .agreement_error img {
+  margin-right: 10px;
+}
+.cart_check-wrap_item .agreement_checkbox .agreement_error span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #e34a02;
 }
 .cart_check-wrap_item-group {
   display: flex;

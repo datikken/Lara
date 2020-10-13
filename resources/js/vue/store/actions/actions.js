@@ -1,6 +1,9 @@
 import $ from 'jquery';
 
 let actions = {
+    SET_OFERTA_POLICY_STATE(context, val) {
+        context.commit('setOfertaPolicyState', val);
+    },
     SET_DELIVERY_ADRESS(context, adr) {
         context.commit('setDeliveryAdress', adr);
     },

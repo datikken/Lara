@@ -33,7 +33,6 @@
                 </div>
 
                 <TextBtn className="magic_btn" text="продолжить" @click.native="checkFormStepsBeforeProceed"/>
-
             </div>
 
             <div class="cart_check-wrap_item cart_save_data">
@@ -44,10 +43,10 @@
                     </div>
                 </div>
             </div>
+
+            <agreementCheck refs="oferta"/>
+
         </div>
-
-        <agreementCheck />
-
     </div>
 </template>
 
@@ -84,10 +83,7 @@
            new MagicButton(this.$el.querySelector('.magic_btn'));
         },
         computed: {
-            ...mapGetters(['user']),
-            user() {
-                return this.$store.state.user
-            }
+            ...mapGetters(['user','ofertaPolicy'])
         },
         methods: {
             ...mapActions([
@@ -96,7 +92,8 @@
                 'SCROLL_TO_TOP',
                 'GET_USERS_INFO',
                 'REFRESH_CUTOMER_DATA',
-                'SHOW_NOTIFICATION'
+                'SHOW_NOTIFICATION',
+                'SET_OFERTA_POLICY_STATE'
             ]),
             collectInputData() {
                 let inputs = this.$el.querySelectorAll('input');
@@ -117,7 +114,7 @@
                 this.groups && this.groups.forEach(grp => {
                     let npt = grp.querySelector('input');
 
-                    npt.addEventListener('focus', function() {
+                    npt && npt.addEventListener('focus', function() {
                         grp.classList.remove('form_group-error');
                     })
                 });
@@ -166,14 +163,12 @@
                 this.validForm = false;
             },
             validateAgreement() {
-                let oferta = this.$el.querySelector('[data-oferta]').querySelector('[type="checkbox"]');
-                let input;
-
-                if(oferta.getAttribute('checked')) {
+                if(this.ofertaPolicy) {
                     this.validForm = true;
+                    this.SET_OFERTA_POLICY_STATE(true);
                 } else {
                     this.validForm = false;
-                    this.SHOW_NOTIFICATION( 'Необходимо ваше согласие.', 'danger');
+                    this.SET_OFERTA_POLICY_STATE(false);
                 }
             },
             trimPhoneNumber(num) {

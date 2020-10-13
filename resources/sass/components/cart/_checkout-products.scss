@@ -22,6 +22,10 @@
             align-items: flex-end;
             margin-bottom: 10px;
 
+            &:last-child {
+                align-items: flex-end;
+            }
+
             &:nth-child(2) {
                 align-items: flex-start;
             }
@@ -31,9 +35,24 @@
                 margin-top: 24px;
             }
 
-            .checkbox {
-                flex-direction: row !important;
-                align-items: center;
+            .agreement_checkbox {
+                margin: 10px 0 0 0;
+
+               .agreement_error {
+                   margin: 0 0 10px 0;
+                   display: flex;
+
+                   img {
+                       margin-right: 10px;
+                   }
+                   span {
+                       font-family: $font;
+                       font-size: 12px;
+                       line-height: 20px;
+                       letter-spacing: 0.02em;
+                       color: $brown;
+                   }
+               }
             }
 
             &-group {

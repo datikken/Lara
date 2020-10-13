@@ -23,7 +23,8 @@ let getters = {
     readyToGo: state => state.readyToGo,
     deliveryAllowed: state => state.deliveryAllowed,
     blockDeliveryHelper: state => state.blockDeliveryHelper,
-    prevDelAdrAccepted: state => state.prevDelAdrAccepted
+    prevDelAdrAccepted: state => state.prevDelAdrAccepted,
+    ofertaPolicy: state => state.ofertaPolicy
 }
 
 export default getters;

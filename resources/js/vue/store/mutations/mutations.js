@@ -6,6 +6,9 @@ import MagicButton from '../../../components/MagicButton';
 import Notifications from '../../../components/Notifications';
 
 let mutations = {
+    setOfertaPolicyState(state, val) {
+        state.ofertaPolicy = val;
+    },
     setDeliveryAdress(state, adr) {
         state.deliveryAdress = adr;
     },

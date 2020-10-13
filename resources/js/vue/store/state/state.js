@@ -40,6 +40,9 @@ let state = {
     stockDeliveryPickup: false,
     blockDeliveryHelper: false,
     pickUpPoint: false,
+
+    //misc
+    ofertaPolicy: null
 }
 
 export default state;
