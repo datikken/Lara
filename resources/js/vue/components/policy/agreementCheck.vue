@@ -10,13 +10,14 @@
 
 
             <div class="as-flex">
-                <SimpleCheckbox name="save" @click.native="checkAndChange" />
+                <SimpleCheckbox name="save" @click.native="checkAndChange"/>
 
                 <div class="agreement_text">
                     <p class="agreement_prgf">
                         Нажимая на кнопку &laquo;Продолжить&raquo; вы соглашаетесь с
                         <a class="agreement_link" target="_blank" href="/download/oferta.pdf">публичной офертой</a> и
-                        <a class="agreement_link" target="_blank" href="/download/agreement.pdf">условиями обработки персональных данных</a>
+                        <a class="agreement_link" target="_blank" href="/download/agreement.pdf">условиями обработки
+                            персональных данных</a>
                     </p>
                 </div>
             </div>
@@ -27,13 +28,13 @@
 
 <script>
     import SimpleCheckbox from '../checkboxes/SimpleCheckbox'
-    import { mapState,mapActions } from 'vuex'
+    import {mapState, mapActions} from 'vuex'
 
     export default {
         name: "agreementCheck",
         data: () => {
             return {
-                errObj: false
+                errObj: null
             }
         },
         components: {
@@ -47,19 +48,22 @@
         },
         watch: {
             ofertaPolicy(newVal, oldVal) {
-                if(newVal != null) this.throwHideErr();
+                if (newVal != null) this.throwHideErr();
             }
         },
         methods: {
             ...mapActions(['SET_OFERTA_POLICY_STATE']),
             throwHideErr() {
-                this.errObj.classList.toggle('as-none')
+                if (this.ofertaPolicy != true) {
+                    this.errObj.classList.toggle('as-none')
+                }
             },
             hideErrorResetState() {
                 this.errObj.classList.add('as-none');
                 this.SET_OFERTA_POLICY_STATE(null);
             },
             checkAndChange() {
+                this.hideErrorResetState();
                 this.SET_OFERTA_POLICY_STATE(true);
             }
         }
@@ -70,6 +74,7 @@
     .agreement_text {
         margin: 0 0 0 30px;
     }
+
     .agreement_prgf {
         font-family: 'Montserrat';
         font-size: 12px;
@@ -78,7 +83,8 @@
         color: #292930;
         max-width: 630px;
     }
-  .agreement_prgf {
-      margin: 0;
-  }
+
+    .agreement_prgf {
+        margin: 0;
+    }
 </style>
