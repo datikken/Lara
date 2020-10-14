@@ -756,6 +756,9 @@ b {
   border-radius: 30px;
   color: #292930;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .disabled_btn {
