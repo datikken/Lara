@@ -6982,6 +6982,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     max-width: 200px;
     min-width: 200px;
     min-height: 50px;
+    padding: 0;
   }
 }
 .cart_wrap-item_inner-total_button-item {
@@ -7919,6 +7920,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  cursor: pointer;
 }
 .dform_wrap-col .delivery_type-item span {
   font-family: "Montserrat", sans-serif;

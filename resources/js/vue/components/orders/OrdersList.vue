@@ -59,9 +59,11 @@
                 </div>
             </div>
 
-            <TextBtn text="Завершить покупку" className="text_buy-btn animated_btn final_btn" v-if="finalStep"
+            <TextBtn text="Завершить покупку"
+                     className="text_buy-btn magic_btn final_btn"
+                     v-if="finalStep"
+                     id="final_btn"
                      @click.native="pushToThanks"/>
-
         </div>
     </div>
 
@@ -77,13 +79,15 @@
             TextBtn
         },
         data: () => ({
-            active: false
+            active: false,
+            magicBtn: false
         }),
         methods: {
             ...mapActions([
                 'CHECK_CART_STATE',
                 'FINISH_ORDER_PROCESS',
-                'CREATE_ORDER'
+                'CREATE_ORDER',
+                'CREATE_MAGIC_BTN'
             ]),
             fixFooter() {
                 let footer = this.$el.querySelector('.order_list-wrap_footer');
@@ -113,6 +117,9 @@
         created() {
             this.CHECK_CART_STATE();
         },
+        mounted() {
+            this.magicBtn = this.$el.querySelector('#final_btn');
+        },
         computed: {
             ...mapGetters([
                 'deliveryType',
@@ -125,6 +132,7 @@
             finalStep() {
                 if (this.$store.state.paymentProvider) {
                     this.fixFooter();
+                    this.CREATE_MAGIC_BTN(this.magicBtn);
                 }
 
                 return this.$store.state.paymentProvider
