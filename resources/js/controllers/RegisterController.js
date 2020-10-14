@@ -1,3 +1,4 @@
+
 import $ from 'jquery';
 import {validateEmail} from "../functions/validateEmail";
 
@@ -152,12 +153,10 @@ class RegisterController {
     _agreementCheck() {
         let item = document.querySelector('[data-register]');
         let agreement = document.querySelector('.agreement');
-        let check = agreement.querySelector('.checkbox');
-        let state = check.getAttribute('checked');
+        let check = agreement.querySelector('.checkbox-wrap_arrow');
         let span = agreement.querySelector('span');
 
-
-        if (state) {
+        if (check.classList.contains('invisible')) {
             span.classList.add('invalid');
             item.innerText = 'Вам необходимо принять пользовательское соглашение.'
             return false;
@@ -197,6 +196,11 @@ class RegisterController {
         let that = this;
         let dataObj = {};
 
+        inputs.forEach((npt) => {
+            let name = npt.getAttribute('name');
+            let val = $(npt).val();
+            dataObj[name] = val;
+        });
 
         $.ajax({
             method: method,

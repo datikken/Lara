@@ -11,9 +11,7 @@
                 <span class="emailHasBeenSent_head_txt">Письмо с инструкциями отправлено на почту</span>
             </div>
 
-            <div class="emailHasBeenSent_btn" uk-close>
-                @include('components.btn.text_btn', [ 'class' => 'flat_btn', 'text' => 'Закрыть'])
-            </div>
+            @include('components.btn.text_btn', [ 'class' => 'flat_btn uk-modal-close', 'text' => 'Закрыть'])
 
         </div>
     </div>

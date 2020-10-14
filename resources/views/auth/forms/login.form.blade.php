@@ -16,6 +16,8 @@
                                     </span>
                             @enderror
 
+                            <input type="text" class="as-none" name="name" value="initial">
+
                             <input type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         </div>
                         <div class="form-group row password_field">
