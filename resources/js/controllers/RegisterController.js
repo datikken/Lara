@@ -277,8 +277,7 @@ class RegisterController {
     }
 
     showUnverifiedPopup() {
-        let unverfPopup = document.querySelector('#emailIsNotVerified');
-        UIkit.modal(unverfPopup).show();
+        document.location.reload();
     }
 
     _ajaxCall(form) {
