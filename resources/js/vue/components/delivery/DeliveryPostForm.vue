@@ -25,13 +25,13 @@
             </div>
             <div class="postDelForm_item postDelForm_item-four">
                 <div class="form_group">
-                    <label class="form_group_label"for="home">Дом</label>
-                    <input class="form_group_input" :value="this.house" type="text" pattern="[0-9]" name="house" placeholder="номер"
+                    <label class="form_group_label" for="home">Дом</label>
+                    <input class="form_group_input" :value="this.house" type="text" pattern="[0-9]" name="home" placeholder="номер"
                            data-required/>
                 </div>
                 <div class="form_group">
                     <label class="form_group_label" for="wing">Корпус</label>
-                    <input class="form_group_input" type="text" pattern="[0-9]" name="body" placeholder="номер"
+                    <input class="form_group_input" type="text" pattern="[0-9]" name="wing" placeholder="номер"
                            data-required/>
                 </div>
                 <div class="form_group">
@@ -81,15 +81,14 @@
         },
         mounted() {
             this.groups = this.$el.querySelectorAll('.form_group');
-            this.clearErrorsOnFocus();
-
-            console.log('before sync', this.deliveryAdress)
             this.syncForms(this.deliveryAdress);
+            this.clearErrorsOnFocus();
         },
         methods: {
             ...mapActions(['APPLY_DELIVERY_ADRESS']),
             syncForms(adr) {
                 if(this.deliveryAdress && adr) {
+
                     let splitValues = adr.split(',');
 
                     this.city = splitValues[0];

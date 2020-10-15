@@ -90,8 +90,6 @@ let mutations = {
                 state.deliveryAllowed = 'post';
                 state.deliveryAdress = data.result;
 
-                console.warn(data, 'straight from dadadta');
-
                 if (data.result.indexOf('Москва') >= 0) {
                     state.deliveryType = 'any'
                     state.deliveryAllowed = 'any';
@@ -128,8 +126,6 @@ let mutations = {
                         state.deliveryAllowed = 'any';
                     }
                 }
-
-                console.warn('setindex', data.suggestedOffice)
             })
             .then(() => {
                 that.dispatch('SHOW_DELIVERY_TYPE_HELPER');

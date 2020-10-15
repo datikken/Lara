@@ -89,7 +89,7 @@
             let form = document.querySelector('[data-deliveryService]');
             this.groups = form.querySelectorAll('.form_group');
 
-            console.log('before sync', this.deliveryAdress)
+            // console.log('before sync', this.deliveryAdress)
 
             this.syncForms(this.deliveryAdress);
             this.clearErrorsOnFocus();

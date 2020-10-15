@@ -2483,6 +2483,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   }
 }
 
+.catalog_columns {
+  margin-bottom: 150px;
+}
 .catalog_columns .right_column {
   width: 100%;
   position: relative;
