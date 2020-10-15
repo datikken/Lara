@@ -6,6 +6,48 @@ import MagicButton from '../../../components/MagicButton';
 import Notifications from '../../../components/Notifications';
 
 let mutations = {
+    resetPassword(state, passObj) {
+
+        $.ajax({
+            method: 'POST',
+            url: `${url}`,
+            data: dataObj,
+            success: function (status) {
+                notParams.message = 'Пароль успешно изменен.';
+                notParams.status = 'success';
+                let notification = new Notifications(notParams);
+
+                notification.show();
+                clearInputValues();
+            },
+            error: function (error) {
+                notParams.message = 'Что-то пошло не так, попробуйте еще раз.';
+                notParams.status = 'danger';
+                let notification = new Notifications(notParams);
+
+                notification.show();
+            }
+        });
+
+
+        fetch('/checkAdressInDadata', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': window.token
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: passObj
+        })
+            .then((data) => {
+               console.warn('data');
+            })
+            .then(() => {
+                that.dispatch('SHOW_DELIVERY_TYPE_HELPER');
+            })
+
+    },
     setOfertaPolicyState(state, val) {
         state.ofertaPolicy = val;
     },

@@ -223,7 +223,7 @@ Route::get('/mailtest', function () {
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('StoreNewPassword', ['uses' => 'ChangePasswordController@store', 'as' => 'StoreNewPassword']);
 Route::post('/sendPasswordResetEmail', ['uses' => 'SendEmailController@sendPasswordResetEmail', 'as' => 'sendPasswordResetEmail']);
-Route::post('/checkEmailExpireDate', ['uses' => 'ChangePasswordController@checkEmailExpireDate', 'as' => 'checkEmailExpireDate']);
+Route::post('/checkTokenExpireDate', ['uses' => 'ChangePasswordController@checkTokenExpireDate', 'as' => 'checkTokenExpireDate']);
 
 //Test email template
 Route::get('/mailtemplate', ['uses' => "SendEmailController@testEmailTemplate", 'as' => 'mailtemplate']);

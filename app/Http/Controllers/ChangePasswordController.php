@@ -2,18 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Rules\MatchOldPassword;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use DateTime;
+use Illuminate\Support\Facades\Validator;
+
 
 class ChangePasswordController extends Controller
 {
-    public function checkEmailExpireDate()
+    public function checkTokenExpireDate(Request $request)
     {
+        $email = $request->email;
+        $token = $request->token;
 
+        Validator::make( $request->all(), [
+            'email' => 'required',
+            'token' => 'required'
+        ])->validate();
+
+        $email = 'tikken23@gmail.com';
+
+        $lastReset = DB::table('password_resets')->where('email', $email)->latest('expires')->first();
+        $lastResetExpire = Carbon::parse($lastReset->expires)->timestamp;
+        $current_date_time = Carbon::now()->timestamp;
+
+        if($current_date_time < $lastResetExpire) {
+            return response()->json(['status' => 200, 'message' => 'Token is valid']);
+        } else {
+            return response()->json(['status' => 403, 'message' => 'Token is invalid']);
+        }
     }
     public function createResetToken($email)
     {

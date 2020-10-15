@@ -1,10 +1,14 @@
 
 import $ from 'jquery';
 import {validateEmail} from "../functions/validateEmail";
+import Notifications from '../components/Notifications';
 
 class RegisterController {
     constructor() {
         let auth = document.querySelector('.auth-decor');
+        this.modal = document.querySelector('#passReset');
+        this.passResetForm = document.querySelector('#passResetForm');
+
         let that = this;
 
         auth && this._setListeners();
@@ -18,26 +22,50 @@ class RegisterController {
             this.passReset();
             this.testIfUserFromPasswordResetEmail();
         }
+
+        // this.openChangePassModal();
     }
 
-    checkEmailExpireDate(email) {
-        $.ajax({
-            method: 'get',
-            url: '/checkEmailExpireDate',
-            data: {email},
-            success: function (data) {
+    checkTokenExpireDate() {
+        let token, email, curUrl;
+        let that = this;
 
+        curUrl = window.location.href;
+        token = curUrl.split('?')[1].split('=')[1];
+        email = curUrl.split('?')[2].split('=')[1];
+
+        $.ajax({
+            method: 'post',
+            url: '/checkTokenExpireDate',
+            data: {token, email},
+            success: function (data) {
+                if(data.status === 200) {
+
+                } else {
+
+                    let params = {
+                        message: 'Ссылка просрочена, попробуйте заново.',
+                        status: 'danger',
+                        pos: 'top-center',
+                        timeout: 2000
+                    }
+
+                    UIkit.modal(that.passResetForm).hide();
+
+                    let notification = new Notifications(params);
+                    notification.show();
+                }
             },
             error: function (error) {
-                console.error('pass reset ajax error');
+                console.error('pass reset ajax error', error);
             }
         });
     }
 
-    openChangePassModal() {
-        let passsResetForm = document.querySelector('#passResetForm');
 
-        UIkit.modal(passsResetForm).show();
+    openChangePassModal() {
+        UIkit.modal(this.passResetForm).show();
+        this.checkTokenExpireDate();
     }
 
     testIfUserFromPasswordResetEmail() {
@@ -48,14 +76,14 @@ class RegisterController {
     }
 
     passReset() {
-        let modal = document.querySelector('#passReset');
         let emailSentPopup = document.querySelector('#emailHasBeenSent');
 
-        let btn = modal.querySelector('.animated_btn');
-        let formGroup = modal.querySelector('.form_group');
+        let btn = this.modal.querySelector('.animated_btn');
+        let formGroup = this.modal.querySelector('.form_group');
+        let that = this;
 
         btn && btn.addEventListener('click', function (e) {
-            let email = modal.querySelector('input').value;
+            let email = this.modal.querySelector('input').value;
             let valid = validateEmail(email);
 
             if (!valid) {
@@ -67,7 +95,7 @@ class RegisterController {
                     data: {email},
                     success: function (data) {
                         if (data.status == '200') {
-                            UIkit.modal(modal).hide();
+                            UIkit.modal(that.modal).hide();
                             UIkit.modal(emailSentPopup).show();
                         }
                     },

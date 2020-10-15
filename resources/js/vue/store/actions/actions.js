@@ -1,6 +1,9 @@
 import $ from 'jquery';
 
 let actions = {
+    RESET_PASSWORD(context, passObj) {
+        context.commit('resetPassword', passObj);
+    },
     SET_OFERTA_POLICY_STATE(context, val) {
         context.commit('setOfertaPolicyState', val);
     },
