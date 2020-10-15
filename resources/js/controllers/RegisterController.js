@@ -24,8 +24,6 @@ class RegisterController {
             this.passReset();
             this.testIfUserFromPasswordResetEmail();
         }
-
-        // this.openChangePassModal();
     }
 
     passResetHandler() {
@@ -144,7 +142,7 @@ class RegisterController {
         let that = this;
 
         btn && btn.addEventListener('click', function (e) {
-            let email = this.modal.querySelector('input').value;
+            let email = that.modal.querySelector('input').value;
             let valid = validateEmail(email);
 
             if (!valid) {

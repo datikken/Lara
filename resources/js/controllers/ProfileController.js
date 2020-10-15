@@ -109,8 +109,6 @@ class ProfileController {
             this._ajaxInputsSubmit(el);
             this._passwordReset(el);
         }
-
-        console.warn('ProfileController', store);
     }
 }
 
