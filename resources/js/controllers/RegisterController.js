@@ -213,6 +213,11 @@ class RegisterController {
             item.innerText = 'Проверьте правильность введенных данных.';
             item.classList.add('invalid');
         }
+
+        if (str.indexOf('least') > 0) {
+            item.innerText = 'Пароль должен быть не короче 8 символов.';
+            item.classList.add('invalid');
+        }
     }
 
     _pickFaceType(etc) {
@@ -311,7 +316,7 @@ class RegisterController {
                     return;
                 }
 
-                if (error.responseText.indexOf('taken') > 0) {
+                if (error.responseText.indexOf('taken') > 0 || error.responseText.indexOf('least') > 0) {
                     that._setError(error.responseText, 'register');
                 } else {
                     that._setError(error.responseText, 'login');
