@@ -276,6 +276,11 @@ class RegisterController {
         window.ga("send", "event", "auth", type);
     }
 
+    showUnverifiedPopup() {
+        let unverfPopup = document.querySelector('#emailIsNotVerified');
+        UIkit.modal(unverfPopup).show();
+    }
+
     _ajaxCall(form) {
         let url = form.getAttribute('action');
         let method = form.getAttribute('method');
@@ -301,6 +306,11 @@ class RegisterController {
             },
             error: function (error) {
                 console.warn(error, 'login action')
+
+                if(error.status === 403) {
+                    that.showUnverifiedPopup();
+                    return;
+                }
 
                 if (error.responseText.indexOf('taken') > 0) {
                     that._setError(error.responseText, 'register');
