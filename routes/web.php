@@ -222,6 +222,7 @@ Route::get('/mailtest', function () {
 //Reset password
 Route::get('change-password', 'ChangePasswordController@index');
 Route::post('StoreNewPassword', ['uses' => 'ChangePasswordController@store', 'as' => 'StoreNewPassword']);
+Route::post('/StoreNewPasswordEmail', ['uses' => 'ChangePasswordController@storeFromEmail', 'as' => 'StoreNewPasswordEmail']);
 Route::post('/sendPasswordResetEmail', ['uses' => 'SendEmailController@sendPasswordResetEmail', 'as' => 'sendPasswordResetEmail']);
 Route::post('/checkTokenExpireDate', ['uses' => 'ChangePasswordController@checkTokenExpireDate', 'as' => 'checkTokenExpireDate']);
 

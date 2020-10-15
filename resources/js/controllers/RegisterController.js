@@ -2,12 +2,14 @@
 import $ from 'jquery';
 import {validateEmail} from "../functions/validateEmail";
 import Notifications from '../components/Notifications';
+import store from '../vue/store/store';
 
 class RegisterController {
     constructor() {
         let auth = document.querySelector('.auth-decor');
         this.modal = document.querySelector('#passReset');
         this.passResetForm = document.querySelector('#passResetForm');
+        this.store = store;
 
         let that = this;
 
@@ -26,6 +28,64 @@ class RegisterController {
         // this.openChangePassModal();
     }
 
+    passResetHandler() {
+        let inputs = this.passResetForm.querySelectorAll('input');
+        let btn = this.passResetForm.querySelector('[data-passresetbtn]');
+        let that = this;
+
+        let notParams = {
+            status: 'success',
+            pos: 'top-center',
+            timeout: 3000
+        }
+
+        btn.addEventListener('click', () => {
+            let dataObj = {};
+            let that = this;
+
+            inputs.forEach(npt => {
+                let name = npt.getAttribute('name')
+                let val = npt.value;
+
+                dataObj[name] = val;
+            })
+
+            dataObj.email = this.email;
+            if(dataObj.new_password === dataObj.new_password_confirm) {
+                $.ajax({
+                    method: 'POST',
+                    url: `/StoreNewPasswordEmail`,
+                    data: dataObj,
+                    success: function (status) {
+                        notParams.message = 'Пароль успешно изменен.';
+                        notParams.status = 'success';
+
+                        let notification = new Notifications(notParams);
+
+                        notification.show();
+
+                        UIkit.modal(that.passResetForm).hide();
+                    },
+                    error: function (error) {
+                        notParams.message = 'Что-то пошло не так, попробуйте еще раз.';
+                        notParams.status = 'danger';
+
+                        let notification = new Notifications(notParams);
+
+                        notification.show();
+                    }
+                });
+            } else {
+                notParams.message = 'Пароли должны совпадать.';
+                notParams.status = 'danger';
+
+                let notification = new Notifications(notParams);
+
+                notification.show();
+            }
+        })
+    }
+
     checkTokenExpireDate() {
         let token, email, curUrl;
         let that = this;
@@ -34,15 +94,16 @@ class RegisterController {
         token = curUrl.split('?')[1].split('=')[1];
         email = curUrl.split('?')[2].split('=')[1];
 
+        this.email = email;
+
         $.ajax({
             method: 'post',
             url: '/checkTokenExpireDate',
             data: {token, email},
             success: function (data) {
                 if(data.status === 200) {
-
+                   that.passResetHandler();
                 } else {
-
                     let params = {
                         message: 'Ссылка просрочена, попробуйте заново.',
                         status: 'danger',

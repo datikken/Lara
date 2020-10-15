@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Notifications from '../components/Notifications'
+import store from '../vue/store/store';
 
 class ProfileController {
     _passwordReset(el) {
@@ -102,11 +103,14 @@ class ProfileController {
     }
     constructor() {
         let el = document.querySelector('.dfill');
+
         if(el) {
             this._setListeners(el);
             this._ajaxInputsSubmit(el);
             this._passwordReset(el);
         }
+
+        console.warn('ProfileController', store);
     }
 }
 

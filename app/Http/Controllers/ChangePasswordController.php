@@ -62,6 +62,21 @@ class ChangePasswordController extends Controller
 
         return $result;
     }
+    public function storeFromEmail(Request $request)
+    {
+        $email = $request->email;
+        $new_password = $request->new_password;
+
+        $request->validate([
+            'email' => ['required'],
+            'new_password' => ['required'],
+            'new_confirm_password' => ['same:new_password'],
+        ]);
+
+        User::where('email', $email)->update(['password'=> Hash::make($new_password)]);
+
+        return response()->json(['status' => 200, 'message' => 'Password successfully updated.']);
+    }
     /**
      * Show the application dashboard.
      *
