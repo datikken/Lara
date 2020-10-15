@@ -300,6 +300,8 @@ class RegisterController {
                 window.location.href = protocol + '//' + host + `/home`;
             },
             error: function (error) {
+                console.warn(error, 'login action')
+
                 if (error.responseText.indexOf('taken') > 0) {
                     that._setError(error.responseText, 'register');
                 } else {

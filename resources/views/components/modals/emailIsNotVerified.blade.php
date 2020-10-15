@@ -15,7 +15,6 @@
             </div>
 
 
-
             @include('components.btn.text_btn', [ 'class' => 'flat_btn', 'text' => 'Не получили письмо?'])
             @include('components.btn.text_btn', [ 'class' => 'action_btn animated_btn', 'text' => 'закрыть'])
 
