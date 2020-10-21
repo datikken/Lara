@@ -6,13 +6,13 @@
                 <div class="form_group">
                     <label class="form_group_label" for="city">Город</label>
                     <input class="form_group_input" :value="this.city" type="text" name="city" placeholder="выберите город" data-required/>
-                    <label class="form_group_message" for="required">Поле город обязательно к заполнению</label>
+                    <label class="form_group_message">Поле город обязательно к заполнению</label>
                 </div>
                 <div class="form_group">
                     <label class="form_group_label" for="index">Индекс</label>
                     <input class="form_group_input" :value="index" type="text" name="index" placeholder="введите индекс"
                            data-required/>
-                    <label class="form_group_message" for="required">Поле индекс обязательно к заполнению</label>
+                    <label class="form_group_message">Поле индекс обязательно к заполнению</label>
                 </div>
             </div>
             <div class="postDelForm_item">
@@ -20,7 +20,7 @@
                     <label class="form_group_label" for="street">Улица</label>
                     <input class="form_group_input"  :value="this.street" type="text" name="street" data-required
                            placeholder="введите улицу"/>
-                    <label class="form_group_message" for="required">Поле улица обязательно к заполнению</label>
+                    <label class="form_group_message">Поле улица обязательно к заполнению</label>
                 </div>
             </div>
             <div class="postDelForm_item postDelForm_item-four">
@@ -114,19 +114,19 @@
                 let errs = [];
                 let obj = {};
 
-                this.groups.forEach(grp => {
-                    let npt = grp.querySelector('input');
-                    if(npt) {
-                        let name = npt.getAttribute('name')
-
-                        if (npt.value === '') {
-                            grp.classList.add('form_group-error');
-                            errs.push(name);
-                        } else {
-                            obj[name] = npt.value;
-                        }
-                    }
-                })
+                // this.groups.forEach(grp => {
+                //     let npt = grp.querySelector('input');
+                //     if(npt) {
+                //         let name = npt.getAttribute('name')
+                //
+                //         if (npt.value === '') {
+                //             grp.classList.add('form_group-error');
+                //             errs.push(name);
+                //         } else {
+                //             obj[name] = npt.value;
+                //         }
+                //     }
+                // })
 
                 if(errs.length === 0) {
                     obj.deliveryType = 'post';

@@ -114,19 +114,19 @@
                     obj.deliveryNote = area.value;
                 }
 
-                this.groups.forEach(grp => {
-                    let npt = grp.querySelector('input');
-                    if(npt) {
-                        let name = npt.getAttribute('name')
-
-                        if (npt.value === '') {
-                            grp.classList.add('form_group-error');
-                            errs.push(name);
-                        } else {
-                            obj[name] = npt.value;
-                        }
-                    }
-                })
+                // this.groups.forEach(grp => {
+                //     let npt = grp.querySelector('input');
+                //     if(npt) {
+                //         let name = npt.getAttribute('name')
+                //
+                //         if (npt.value === '') {
+                //             grp.classList.add('form_group-error');
+                //             errs.push(name);
+                //         } else {
+                //             obj[name] = npt.value;
+                //         }
+                //     }
+                // })
 
                 if(errs.length === 0) {
                     obj.deliveryType = this.deliveryType;
