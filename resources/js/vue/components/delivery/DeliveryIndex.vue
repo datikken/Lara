@@ -11,7 +11,7 @@
                     <input type="text" name="index" data-index_field/>
 
                     <TextBtn
-                        className="form_group-btn magic_btn"
+                        className="form_group-btn flat_btn"
                         text="применить"
                         @click.native="setDeliveryIndex"
                         id="indexBtn"
@@ -38,7 +38,7 @@
             TextBtn
         },
         mounted() {
-            this.CREATE_MAGIC_BTN(this.$el.querySelector('#indexBtn'));
+            // this.CREATE_MAGIC_BTN(this.$el.querySelector('#indexBtn'));
         },
         methods: {
             ...mapActions([
@@ -73,5 +73,9 @@
 <style scoped>
     .delivery_index_block {
         margin-bottom: 60px;
+    }
+    .index_heading {
+        padding-left: 25px;
+        margin-bottom: 14px;
     }
 </style>

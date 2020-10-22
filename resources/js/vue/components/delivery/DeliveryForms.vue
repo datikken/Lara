@@ -38,7 +38,7 @@
                     </div>
 
                     <TextBtn
-                        className="magic_btn"
+                        className="flat_btn"
                         text="применить"
                         id="adressUnique"
                         @click.native="applyDeliveryAdress" />
@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <div class="dform_decor"></div>
+        <!--<div class="dform_decor"></div>-->
 
     </div>
 </template>
@@ -74,7 +74,7 @@
             ]),
         },
         mounted() {
-            this.CREATE_MAGIC_BTN(this.$el.querySelector('#adressUnique'));
+            // this.CREATE_MAGIC_BTN(this.$el.querySelector('#adressUnique'));
         },
         methods: {
             ...mapActions([

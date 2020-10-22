@@ -35,8 +35,6 @@
             this.cape = this.$props.data.cape;
             let col = JSON.parse(this.$props.data.params).color;
 
-            console.warn(JSON.parse(this.$props.data.params), col);
-
             switch(col) {
                 case undefined: this.color = 'blackCol'
                     break;
@@ -53,9 +51,6 @@
                 default: 'blackCol'
                     break;
             }
-
-            console.warn(this.color, col);
-
         },
         methods: {
             backgroundOnHover() {
@@ -68,8 +63,6 @@
                         this.$el.style.color = 'black';
                     }
                 }
-
-                console.warn(this.color)
             },
             clearBackgroundOnHover() {
                 this.color && this.$el.classList.remove(this.color);

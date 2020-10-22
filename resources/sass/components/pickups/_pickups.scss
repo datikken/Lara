@@ -72,10 +72,15 @@
 
 .getSetAddress {
     border: 1px solid $light_gray;
-    padding: 16px;
-    max-width: 404px;
-    max-height: 320px;
-    margin-bottom: 16px;
+    padding: 16px 25px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    width: 420px;
+    height: 385px;
+}
+
+.getSetAddress .form_group {
+    padding: 0!important;
 }
 
 .getSetIndex {

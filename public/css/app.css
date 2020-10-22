@@ -759,6 +759,7 @@ b {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
 }
 
 .disabled_btn {
@@ -7579,6 +7580,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   text-align: center;
   margin: 0;
 }
+.order_list {
+  width: 340px;
+}
 .order_list_deliveryAdress {
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
@@ -7587,8 +7591,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   color: #292930;
 }
 .order_list-wrap {
-  border: 1px solid #e9e9ea;
-  padding: 40px 30px 30px 30px;
+  border-left: 1px solid #e9e9ea;
+  padding: 40px 0 30px 40px;
 }
 .order_list-wrap .proceedPayment-btn {
   margin-top: 50px;
@@ -7902,7 +7906,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   flex-basis: 30%;
 }
 .dform_wrap-col:nth-child(1) {
-  max-width: 435px;
+  max-width: 470px;
 }
 .dform_wrap-col:nth-child(2) {
   background-color: #fff;
@@ -7912,7 +7916,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   z-index: 99;
   transition: opacity 0.2s;
   min-width: 300px;
-  padding: 0;
+  padding: 25px 0 0 0;
   opacity: 0;
 }
 .dform_wrap-col:nth-child(2) #delivery_type {
@@ -7921,7 +7925,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dform_wrap-col .delivery_type-item {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -7963,9 +7967,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   flex-basis: 70%;
 }
 .dform_wrap-col .action_btn {
-  width: 240px !important;
+  width: 240px;
   height: 40px !important;
-  margin-bottom: 35px;
+  margin-bottom: 14px;
 }
 .dform_wrap-col .action_btn .action_btn-item {
   font-family: "Montserrat", sans-serif;
@@ -8088,6 +8092,9 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dform_wrap-col_item .address_group input {
   width: 630px !important;
 }
+.dform_wrap-col_item .inline_group {
+  margin-bottom: 40px !important;
+}
 .dform_wrap-col_item .inline_group .label_wrap {
   margin-right: 16px;
 }
@@ -8097,7 +8104,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .dform_wrap-col_item .form_group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+.dform_wrap-col_item .form_group:nth-child(1) {
+  padding: 0 25px 0;
 }
 .dform_wrap-col_item .form_group .btns_wrap {
   display: flex;
@@ -12634,6 +12644,13 @@ main {
   position: relative;
   border-right: 1px solid #d4d4d5;
 }
+.sres_col:nth-child(2) .sres_col_item {
+  font-family: "MontserratSemiBold";
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 110%;
+  letter-spacing: 0.02em;
+}
 .sres_col_inner_item {
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -12641,13 +12658,21 @@ main {
 }
 @media screen and (min-width: 1030px) {
   .sres_col_inner_item {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr;
     grid-template-rows: unset;
     margin-bottom: 0;
   }
 }
+.sres_col_inner_item .sres_col_item {
+  font-family: "MontserratMedium";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+}
 .sres_col_item {
   margin: 5px 0 0 15px;
+  color: #292930;
 }
 .sres_col_item:first-child {
   font-family: "MontserratSemiBold";
@@ -12661,7 +12686,7 @@ main {
 }
 @media screen and (min-width: 1030px) {
   .sres_col_item {
-    margin: 15px 0 25px 17px;
+    margin: 15px 25px 25px 17px;
   }
 }
 
@@ -12676,13 +12701,22 @@ main {
 .blackCol {
   background-color: #40404c;
 }
+.blackCol .sres_col_item {
+  color: #fff;
+}
 
 .blueCol {
   background-color: #3559fd;
 }
+.blueCol .sres_col_item {
+  color: #fff;
+}
 
 .purpleCol {
   background-color: #d935fd;
+}
+.purpleCol .sres_col_item {
+  color: #fff;
 }
 
 .yellowCol {
@@ -13996,10 +14030,15 @@ main {
 
 .getSetAddress {
   border: 1px solid #e9e9ea;
-  padding: 16px;
-  max-width: 404px;
-  max-height: 320px;
-  margin-bottom: 16px;
+  padding: 16px 25px;
+  max-width: 100%;
+  margin-bottom: 20px;
+  width: 420px;
+  height: 385px;
+}
+
+.getSetAddress .form_group {
+  padding: 0 !important;
 }
 
 .getSetIndex {

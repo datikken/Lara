@@ -1,4 +1,5 @@
 .order_list {
+    width: 340px;
 
    &_deliveryAdress {
        font-family: $font;
@@ -9,8 +10,8 @@
    }
 
   &-wrap {
-    border: 1px solid $light_gray;
-    padding: 40px 30px 30px 30px;
+      border-left: 1px solid $light_gray;
+      padding: 40px 0 30px 40px;
 
     .proceedPayment-btn {
       margin-top: 50px;
