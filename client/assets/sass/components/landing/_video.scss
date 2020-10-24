@@ -1,0 +1,35 @@
+.land_video {
+    max-width: $layoutw;
+    margin: 0 auto;
+
+    &-item {
+       display: flex;
+       justify-content: center;
+       position: relative;
+
+       &_text {
+        font-family: $font;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $dblack;
+        max-width: 780px;
+        margin-bottom: 30px;
+       }
+
+       &_btn {
+           height: 70px;
+           width: 70px;
+           position: absolute;
+           @include absCenter();
+           cursor: pointer;
+       }
+       img {
+          margin: 0 auto;
+          margin-bottom: 30px;
+       }
+    }
+}

@@ -1,28 +1,17 @@
-import Cookies from 'js-cookie'
-import { cookieFromRequest } from '~/utils'
+import Vue from 'vue'
+import Vuex from 'vuex'
+import state from './state/state';
+import getters from './getters/getters';
+import actions from './actions/actions';
+import mutations from './mutations/mutations'
 
-export const actions = {
-  nuxtServerInit ({ commit }, { req }) {
-    const token = cookieFromRequest(req, 'token')
-    if (token) {
-      commit('auth/SET_TOKEN', token)
-    }
+Vue.use(Vuex)
 
-    const locale = cookieFromRequest(req, 'locale')
-    if (locale) {
-      commit('lang/SET_LOCALE', { locale })
-    }
-  },
+const store = () => new Vuex.Store({
+    state,
+    getters,
+    actions,
+    mutations
+})
 
-  nuxtClientInit ({ commit }) {
-    const token = Cookies.get('token')
-    if (token) {
-      commit('auth/SET_TOKEN', token)
-    }
-
-    const locale = Cookies.get('locale')
-    if (locale) {
-      commit('lang/SET_LOCALE', { locale })
-    }
-  }
-}
+export default store

@@ -1,0 +1,93 @@
+.verify {
+    width: 100%;
+    max-width: $layoutw;
+    margin: 0 auto;
+    position: relative;
+
+    &_wrap {
+        width: 430px;
+        height: 330px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+        text-align: center;
+
+        &:before {
+            content: '';
+            display: block;
+            height: 5px;
+            width: 100%;
+            background: $gradient;
+        }
+
+        &_icon {
+            @include bg(cover, center);
+            background-image: url('/images/icons/verify_icon.svg');
+            margin: 0 auto;
+            width: 40px;
+            height: 50px;
+            margin-top: 30px;
+        }
+        &_head {
+            font-family: $semifont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            letter-spacing: 0.02em;
+            color: $black;
+            padding-top: 17px;
+            padding-bottom: 37px;
+            position: relative;
+
+            &:after {
+                content: '';
+                display: block;
+                border-bottom: 1px solid $breadcrumb;
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 170px;
+                top: 47px;
+            }
+        }
+
+        &_text {
+            line-height: 20px;
+            text-align: center;
+            letter-spacing: 0.02em;
+            color: $dblack;
+            font-family: $font;
+            font-size: 12px;
+            max-width: 300px;
+            margin: 0 auto;
+            padding-bottom: 12px;
+        }
+
+        &_link {
+
+            .flat_btn {
+                width: 230px!important;
+                height: 40px!important;
+                margin: 0 auto;
+                box-shadow: none!important;
+                margin-bottom: 20px;
+
+                .action_btn-item {
+                    font-family: $mfont;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 14px;
+                    text-align: center;
+                    letter-spacing: 0.02em;
+                    text-transform: uppercase;
+                    color: #292930;
+                }
+            }
+        }
+    }
+}

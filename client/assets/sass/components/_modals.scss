@@ -1,0 +1,34 @@
+.shouldBeLoggedIn {
+
+    h2 {
+        margin: 0;
+    }
+
+    p {
+        margin: 10px 0 0 0;
+    }
+
+    .uk-modal-body {
+        position: relative;
+    }
+
+    .uk-modal-body::before {
+        content: "";
+        width: 100%;
+        height: 4px;
+        display: block;
+        position: absolute;
+        background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
+        left: 0;
+        top: 0;
+    }
+
+    .uk-modal-dialog {
+        width: 300px!important;
+    }
+
+    p {
+        text-align: left;
+        font-size: 15px;
+    }
+}

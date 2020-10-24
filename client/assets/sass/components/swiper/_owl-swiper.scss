@@ -1,0 +1,64 @@
+.owl-wrapper {
+  overflow: hidden;
+
+  @include breakpoint($medium) {
+    margin-bottom: 100px;
+  }
+
+  .owl-controls-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+
+    &_btns {
+      height: 100%;
+
+      .arrow_left, .arrow_right {
+        cursor: pointer;
+      }
+
+      .arrow_left {
+        transform: rotate(180deg);
+        margin-right: 55px;
+      }
+    }
+  }
+
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide {
+              max-width: 180px;
+              display: flex;
+              align-items: flex-start;
+
+              @include  breakpoint($medium) {
+                background-size: cover;
+                max-width: 270px!important;
+              }
+            }
+        }
+    }
+}
+.carousel_card-wrapper_item {
+  &-image {
+    object-fit: contain;
+  }
+
+    &:nth-child(3) {
+      border: 1px solid $light_gray;
+
+      @include breakpoint($medium) {
+        height: 270px;
+      }
+    }
+}
+.owl_swiper {
+    height: 450px!important;
+    overflow: hidden;
+    margin-bottom: 0;
+
+  @include  breakpoint($medium) {
+    padding-top: 20px;
+  }
+}

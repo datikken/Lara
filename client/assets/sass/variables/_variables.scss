@@ -1,0 +1,69 @@
+$font: "Montserrat", sans-serif;
+$semifont: "MontserratSemiBold";
+$mfont: "MontserratMedium";
+
+$layoutw: 1170px;
+$last_phone: 450px;
+$mobile: 320px;
+$phone: 600px;
+$tablet: 768px;
+$medium: 1030px;
+$large: 1120px;
+$btn_fs: 12px;
+$select-width: 220px;
+$select-height: 40px;
+
+$white: #fff;
+$yellow: #fdd935;
+$dblack: #292930;
+$black: #40404c;
+$blue: #3559fd;
+$gray: #d4d4d5;
+$gray2: #c4c4c4;
+$light_gray: #e9e9ea;
+$purple: #bb3cfd;
+$purple2: #d935fd;
+$purple3: #ff54a4;
+$breadcrumb: #d4d4d5;
+$brown: #e34a02;
+$lightblue: #35FDD9;
+$red: #FF0000;
+$popupboxshadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+$gradient: linear-gradient(90deg, #d935fd 19.91%, $blue 100%);
+
+$button_shadow: 0px 0px 3px rgba(41, 41, 48, 0.25);
+$card_shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$menu_shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
+$transition: .2s;
+
+$ruby: #9C1006;
+$lruby:  #E34A02;
+$mruby: #E30613;
+$druby: #D20A11;
+
+.on_hold {
+    background-color: #fff;
+};
+.on_delivery, .delivery_progress {
+    background-color: $blue;
+    .actorders_table_item_inner {
+        color: #fff;
+    }
+}
+.reserved {
+    background-color: $yellow;
+}
+.lost {
+    background-color: #E34A02;
+    .actorders_table_item_inner {
+        color: #fff;
+    }
+}
+.last_order {
+    .history_wrapper-item_row-item {
+        background-color: $black;
+    }
+    .history_wrapper-item_row-item .history_wrapper-item_row-item_val {
+        color: #fff;
+    }
+}

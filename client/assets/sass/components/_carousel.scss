@@ -1,0 +1,255 @@
+.owl-carousel,
+.owl-wrapper {
+  height: 491px;
+  max-width: 1170px;
+  margin: 0 auto;
+
+  @include breakpoint($medium) {
+    margin-bottom: 50px;
+  }
+}
+.owl-carousel {
+  overflow: hidden;
+  height: 100%;
+}
+.owl-wrapper {
+  position: relative;
+  //max-height: 367px;
+  padding-bottom: 30px;
+
+  @include breakpoint($phone) {
+    border-top: 1px solid $light_gray;
+    position: relative;
+    margin-bottom: 50px;
+    z-index: 0;
+    display: block;
+    max-height: 100%;
+  }
+}
+.owl-item {
+  text-align: center;
+  max-height: 200px;
+  margin: 0 20px;
+  @include breakpoint($phone) {
+    max-height: initial;
+  }
+  &:before {
+    display: none !important;
+  }
+  cursor: pointer;
+}
+.owl-dots {
+  display: none;
+}
+.owl-nav {
+  position: absolute;
+  display: block !important;
+  top: -5px;
+  left: 7.5rem;
+
+  @include breakpoint($phone) {
+    left: 6.6rem;
+    top: 20px;
+  }
+
+  .owl-prev {
+    margin-right: 55px;
+  }
+  .owl-prev,
+  .owl-next {
+    color: $gray !important;
+    outline: none;
+  }
+}
+.owl-stage-outer {
+  padding-top: 55px;
+
+  @include breakpoint($phone) {
+      padding-top: 90px;
+  }
+  overflow: hidden;
+  height: 100%;
+
+  .owl-stage {
+    height: 100%;
+    .owl-item {
+      height: 100% !important;
+    }
+  }
+}
+
+.owl-controls-heading {
+  left: 16px;
+  top: 0;
+  position: absolute;
+  font-family: $semifont;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: $dblack;
+
+  @include breakpoint($phone) {
+    top: 25px;
+    left: 0;
+  }
+
+  &:after {
+    content: "";
+    width: 170px;
+    position: absolute;
+    border-bottom: 1px solid $yellow;
+    bottom: 0;
+    left: 0;
+    top: 28px;
+  }
+}
+
+.owl-item {
+  max-width: 200px;
+  max-height: 200px;
+  @include breakpoint($phone) {
+    max-width: initial;
+    max-height: initial;
+    width: 270px!important;
+    margin: 0 15px;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:after {
+    right: -18px;
+    top: 60px;
+    content: "";
+    width: 1px;
+    height: 100%;
+    border-left: 1px solid $light_gray;
+    position: absolute;
+
+    @include breakpoint($medium) {
+        right: -16px;
+        top: 50%;
+        display: block;
+        transform: translate(-50%, -50%);
+        max-height: 405px;
+    }
+  }
+}
+.carousel_card {
+  min-width: 170px;
+  text-align: left;
+
+  &-wrapper {
+    &_item {
+      max-height: 200px;
+
+      @include breakpoint($phone) {
+        margin-bottom: -2px;
+      }
+
+      &-buttons {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 10px 0 0 20px;
+
+        &_cart {
+          width: 40px;
+          height: 40px;
+          background: $yellow;
+          border-radius: 50%;
+          position: relative;
+          cursor: pointer;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          box-sizing: content-box;
+
+          &-item {
+            object-fit: contain!important;
+            max-width: 20px;
+            margin-right: 2px;
+          }
+        }
+        &_price {
+          font-family: $semifont;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 26px;
+          text-transform: uppercase;
+          color: $blue;
+          position: relative;
+
+          &-currency {
+              height: 11px !important;
+              width: 8px !important;
+              margin-left: 5px;
+              position: absolute;
+              bottom: 1px;
+              right: -14px;
+          }
+        }
+      }
+      &:nth-child(3) {
+        padding: 10px;
+        border: 1px solid $light_gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        margin-top: 10px;
+
+        img {
+          max-width: 130px;
+          max-height: 200px;
+        }
+
+        @include breakpoint($phone) {
+          height: 100%;
+          max-height: 270px;
+        }
+      }
+
+      &-image {
+        background-image: url("/img/unnecessary/image.svg");
+        @include bg(contain, center);
+        background-size: contain!important;
+        background-position: 50% 60%!important;
+        width: 100%;
+        height: 100%;
+      }
+      &-name {
+        font-size: 9px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        font-family: $font;
+        margin-bottom: 10px;
+
+        @include breakpoint($phone) {
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          color: $dblack;
+        }
+      }
+
+      &-heading {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        font-family: $semifont;
+
+        @include breakpoint($phone) {
+          font-size: 18px;
+          line-height: 18px;
+          color: $dblack;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}

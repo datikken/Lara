@@ -1,0 +1,26 @@
+.pdetails_menu {
+    margin-top: 60px;
+    margin-bottom: 50px;
+
+    &_item {
+        font-family: $semifont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        margin-right: 69px;
+        cursor: pointer;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &_wrap {
+        display: flex;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}

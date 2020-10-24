@@ -1,0 +1,108 @@
+#passReset, #passResetForm {
+    z-index: 99999;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+
+.passReset, .passResetForm {
+    width: 430px!important;
+    height: 225px!important;
+    position: relative;
+    padding: 25px 30px;
+
+    &_span {
+        font-family: $font;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.02em;
+        color: $gray;
+        margin: 0 0 20px 0;
+        max-width: 250px;
+        align-self: flex-start;
+    }
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 4px;
+        display: block;
+        position: absolute;
+        background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
+        left: 0;
+        top: 0;
+    }
+
+    .animated_btn {
+        margin: 0 auto;
+
+        .text_btn-item {
+            font-family: $font;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: $dblack;
+        }
+    }
+
+    &_head {
+        margin-bottom: 15px;
+        padding: 0 0 15px 0;
+        border-bottom: 1px solid $light_gray;
+        display: inline-block;
+
+        &_txt {
+            font-family: $semifont;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            letter-spacing: 0.02em;
+            color: $dblack;
+        }
+    }
+
+    &_inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .form_group {
+            margin-bottom: 20px;
+
+            &_label {
+                margin: 0 0 5px 0;
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+
+        .form_group-error {
+            margin-bottom: 10px;
+        }
+
+        form {
+            width: 100%;
+        }
+    }
+
+    &_img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    &_icon {
+        width: 50px;
+        height: 45px;
+        object-fit: cover;
+    }
+}
+.passResetForm {
+    width: 300px!important;
+    height: 370px!important;
+}

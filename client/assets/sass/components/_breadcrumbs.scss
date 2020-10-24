@@ -1,0 +1,48 @@
+.breadcrumb {
+    max-width: $layoutw;
+    margin: 0 auto;
+    height: 24px;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: none;
+
+    @include breakpoint($medium) {
+        display: flex;
+    }
+
+    &_wrap {
+        display: flex;
+        align-items: center;
+        justify-items: flex-start;
+        border-bottom: 1px solid #FDD935;
+    }
+
+    &_arrow {
+        display: block;
+        background-image: url('/images/icons/arrow_right.svg');
+        width: 4px;
+        height: 10px;
+        margin-left: 10px;
+    }
+
+    &_item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:0 40px 10px 0;
+        cursor: pointer;
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        &_inner {
+            font-family: $font;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+            color: $gray;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.postDelForm {
+    max-width: 630px;
+    margin-bottom: 70px;
+
+    .form_group {
+        &_tip {
+            font-family: $font;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.02em;
+        }
+    }
+
+    &_item {
+        display: grid;
+        grid-template-columns: 300px 300px;
+        grid-gap: 30px;
+
+        &:nth-child(2) {
+            display: block;
+        }
+
+        &-four {
+            grid-template-columns: repeat(3, 70px) 110px;
+            margin-bottom: 37px;
+
+            .form_group {
+                &_input {
+                    max-width: 70px;
+                }
+            }
+        }
+        .form_group {
+            margin-bottom: 10px;
+
+            &_label {
+                font-family: $mfont;
+            }
+
+            &_input {
+                border-radius: 0;
+                padding: 0 0 0 10px;
+            }
+        }
+    }
+}

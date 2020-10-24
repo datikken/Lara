@@ -1,0 +1,47 @@
+.trackp {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: flex-start;
+    max-width: $layoutw;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 100px;
+
+    &_progress {
+        width: 25%;
+        left: 0;
+        height: 4px;
+        background: $gradient;
+        position: absolute;
+        top: 32px;
+    }
+
+    &_item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        color: $dblack;
+        max-width: 200px;
+
+        &_head {
+            font-family: $semifont;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            letter-spacing: 0.02em;
+            margin-bottom: 40px;
+        }
+
+        &_footer {
+            font-family: $font;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0.02em;
+        }
+    }
+}

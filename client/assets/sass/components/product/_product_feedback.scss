@@ -1,0 +1,144 @@
+.pfeedback {
+    margin: 0 auto;
+    max-width: $layoutw;
+    padding-bottom: 140px;
+
+    &_wrap {
+        border: 1px solid $light_gray;
+        border-radius: 30px;
+        padding: 70px;
+
+        form {
+            .pfeedback_wrap-item {
+                &:nth-child(9) {
+                    margin-top: 50px;
+                }
+
+                &:nth-child(5), &:nth-child(7) {
+                    margin-bottom: 15px;
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0 15px 0;
+                }
+
+                span {
+                    margin-left: 30px;
+                    font-family: $font;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    text-transform: uppercase;
+                    color: $dblack;
+                }
+
+                &-desc {
+                    margin: 50px 0 30px 0;
+                    font-family: $font;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    color: $dblack;
+                    margin-bottom: 30px;
+                }
+
+                &_desc {
+                    font-family: $font;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    color: $dblack;
+                    margin-bottom: 20px;
+                }
+
+                &_inputs {
+                    display: flex;
+
+                    &-wrap {
+                        display: flex;
+                        flex-direction: column;
+
+                        label {
+                            font-family: $semifont;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 12px;
+                            line-height: 14px;
+                            letter-spacing: 0.02em;
+                            color: $dblack;
+                            margin-bottom: 10px;
+                            display: flex;
+
+                            span {
+                                color: red;
+                                margin-left: 10px;
+                            }
+                        }
+
+                        textarea {
+                            width: 830px;
+                            height: 185px;
+                            border: 1px solid $light_gray;
+                            border-radius: 30px;
+                            resize: none;
+                            padding: 20px 0 0 20px;
+                            margin-bottom: 30px;
+                            outline: none;
+                        }
+
+                        input {
+                            width: 300px;
+                            height: 40px;
+                            border: 1px solid $light_gray;
+                            box-sizing: border-box;
+                            border-radius: 30px;
+                            outline: none;
+                            margin-bottom: 10px;
+                            padding-left: 20px;
+                        }
+                    }
+
+                    .pfeedback_wrap-item_inputs-wrap {
+                        display: flex;
+                        flex-direction: column;
+                        margin-right: 30px;
+
+                        label {
+                            font-family: $semifont;
+                            font-weight: 500;
+                            font-size: 12px;
+                            line-height: 14px;
+                            letter-spacing: 0.02em;
+                            color: $dblack;
+                            margin-bottom: 10px;
+                        }
+
+                        input {
+                            width: 300px;
+                            height: 40px;
+                            border: 1px solid $light_gray;
+                            box-sizing: border-box;
+                            border-radius: 30px;
+                            outline: none;
+                            padding-left: 20px;
+                            padding-bottom: 4px;
+                        }
+                    }
+                }
+
+                &_head {
+                    h2 {
+                        font-family: $semifont;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 18px;
+                        letter-spacing: 0.02em;
+                        color: $dblack;
+                    }
+                }
+            }
+        }
+    }
+}

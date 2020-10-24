@@ -34,7 +34,7 @@
                             <CatalogCard
                                         v-if="!gridCatalog"
                                         :data="item"
-                                         v-for="item in products.slice(props.start, props.end)"
+                                        v-for="item in products.slice(props.start, props.end)"
                                          :key="item.name"/>
 
                             <CatalogCardList

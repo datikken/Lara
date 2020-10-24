@@ -1,0 +1,218 @@
+footer {
+  display: block;
+  width: 100%;
+  background: $dblack;
+  overflow: hidden;
+
+  @include breakpoint($medium) {
+    height: 340px;
+  }
+
+  .footer_wrapper {
+    max-width: 400px;
+    width: 100%;
+    padding-top: 30px;
+    overflow: hidden;
+    @include flex(flex-start, space-between, wrap);
+
+    @include  breakpoint(600px) {
+        max-width: $layoutw;
+        margin-left: 10px;
+    }
+
+    @include breakpoint($medium) {
+      margin: 0 auto;
+      padding-top: 50px;
+      height: 100%;
+      @include flex(flex-start, flex-start, wrap);
+      max-width: $layoutw;
+      margin-left: 10px;
+    }
+
+     @include breakpoint(1170px) {
+          margin: 0 auto!important;
+     }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 30px 16px;
+
+      @include breakpoint($phone) {
+        width: 350px;
+      }
+
+      &:last-child {
+          max-width: 200px;
+      }
+
+      &:nth-child(1) {
+         flex: 100%;
+
+          @include breakpoint(400px) {
+              flex: initial;
+              margin-bottom: 30px;
+          }
+      }
+
+      @include  breakpoint($medium) {
+        margin: 0 0 30px 20px;
+      }
+
+      &:first-child {
+        margin-bottom: 30px;
+
+          @include breakpoint(600px) {
+              margin-bottom: 20px;
+          }
+
+          @include breakpoint(730px) {
+              flex: 30%;
+          }
+      }
+
+      &:nth-child(2) {
+        margin-bottom: 30px;
+
+        @include breakpoint($phone) {
+          margin-bottom: 30px;
+          margin-left: 30px;
+        }
+
+        @include breakpoint(600px) {
+            margin-bottom: 10px;
+            margin-right: 60px;
+        }
+
+        @include breakpoint(700px) {
+              margin-right: 40px;
+        }
+
+        @include breakpoint($medium) {
+            margin-right: 130px;
+            margin-left: 30px;
+        }
+      }
+
+      &:nth-child(3) {
+        margin-left: 50px;
+        margin-right: 16px;
+
+        @include  breakpoint(400px) {
+            margin-left: 16px;
+        }
+
+        @include  breakpoint(600px) {
+          margin-left: 0;
+          margin-right: 20px;
+        }
+
+        @include breakpoint($medium) {
+          margin-right:0;
+        }
+      }
+
+      @include breakpoint($phone) {
+          margin-left: 0px;
+          height: 100%;
+
+        &:first-child {
+          margin-bottom: 0;
+        }
+
+      }
+
+      &_social {
+        display: flex;
+
+          @include  breakpoint(600px) {
+              margin-bottom: 20px;
+          }
+
+        &_facebook,
+        &_instagram,
+        &_email {
+          height: 30px;
+          width: 30px;
+          @include bg(contain, center);
+          margin-right: 30px;
+          cursor: pointer;
+        }
+      }
+      &_logo {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 10px;
+        cursor: pointer;
+        a {
+          color: $white;
+        }
+      }
+      &_tel {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: 0.02em;
+        color: $white;
+        @include flex(center, flex-start, wrap);
+        margin-bottom: 20px;
+
+        &-phone {
+          cursor: pointer;
+          color: #fff;
+          text-decoration: none;
+        }
+
+        span {
+          a {
+            text-decoration: none;
+            color: $white !important;
+          }
+        }
+
+        &-icon {
+          @include bg(contain, center);
+          width: 30px;
+          height: 25px;
+          margin-right: 10px;
+        }
+      }
+      &_info,
+      &_adress {
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        color: $white;
+        margin-bottom: 15px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.footer_cat {
+  &-item {
+    &_heading {
+        max-width: initial!important;
+    }
+    @include breakpoint(600px) {
+      min-width: 125px;
+    }
+
+    &:nth-child(2) {
+      flex-direction: column;
+      @include breakpoint($phone) {
+        flex-direction: row;
+      }
+      .footer_cat-item_list {
+        ul {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

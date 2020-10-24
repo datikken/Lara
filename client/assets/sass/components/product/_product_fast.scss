@@ -1,0 +1,25 @@
+.uk-modal-dialog {
+    width: 1030px!important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.uk-modal {
+    overflow: hidden;
+    background-color: transparent!important;
+}
+
+#modal_content {
+    margin-top: 55px!important;
+    position: relative;
+
+    &:after {
+        content: '';
+        width: 100%;
+        height: 4px;
+        display: block;
+        position: absolute;
+        background: $gradient;
+        left: 0;
+        top: 0;
+    }
+}

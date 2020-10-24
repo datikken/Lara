@@ -1,0 +1,208 @@
+.header {
+    display: none;
+    font-family: $semifont;
+    background-color: $dblack;
+
+    //safari
+    @media not all and (min-resolution: .001dpcm) {
+        font-family: $font;
+    }
+
+    @include breakpoint($medium) {
+        display: block;
+    }
+
+    &_wrapper {
+        max-width: 1170px;
+        height: 60px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 220px 4.5fr 1fr;
+        align-items: center;
+
+        @include breakpoint($medium) {
+            margin-left: 10px;
+            justify-content: flex-start;
+        }
+
+        @include breakpoint(1180px) {
+            margin: 0 auto;
+        }
+
+        &-item {
+            &:nth-child(1) {
+                margin-right: 86px;
+            }
+
+            &_contacts {
+                display: none;
+                position: relative;
+
+                @include breakpoint(1180px) {
+                    display: flex;
+                    align-items: center;
+                }
+
+                &-icon {
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 11px;
+                }
+
+                &-tel {
+                    font-family: $font;
+                    font-size: 18px;
+                    line-height: 14px;
+                    text-align: right;
+                    letter-spacing: 0.02em;
+                    color: white;
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+            &_logo {
+                width: 130px;
+                height: 50px;
+                display: table-cell;
+                vertical-align: middle;
+
+                &-item {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+            &_menu {
+                list-style: none;
+                @include flex(center, space-between, wrap);
+                position: relative;
+                margin: 0;
+                padding: 0;
+
+                &-item {
+                    margin-right: 40px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    letter-spacing: 0.02em;
+                    color: $white;
+                    @include flex(center, space-between, no-wrap);
+                    cursor: pointer;
+                    position: relative;
+                    font-family: $mfont;
+                    margin-bottom: 0;
+
+                    &:last-child {
+                        margin-right: 78px;
+                    }
+
+                    //safari
+                    @media not all and (min-resolution: .001dpcm) {
+                        &:last-child {
+                            margin-right: 85px;
+                        }
+                    }
+
+                    a {
+                        color: #fff !important;
+                    }
+
+                    &:nth-child(2):hover {
+                        .header_wrapper-item_menu-item-secondary {
+                            height: 122px;
+                        }
+                        .header_wrapper-item_menu-item_link:after {
+                            width: 100%;
+                            left: 0;
+                            background: white;
+                        }
+                    }
+
+                    &_link {
+                        color: $white;
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            top: 25px;
+                            height: 2px;
+                            width: 0;
+                            background: transparent;
+                            transition: width .2s ease, background-color .2s ease, left .2s ease;
+                        }
+
+                        &:hover {
+                            color: $white;
+                        }
+                        &:hover:after {
+                            width: 100%;
+                            left: 0;
+                            background: white;
+                        }
+                    }
+
+                    &-secondary {
+                        position: absolute;
+                        top: 32px;
+                        margin: 0;
+                        background: #fff;
+                        width: 130px;
+                        list-style: none;
+                        padding: 0;
+                        left: -22px;
+                        height: 0;
+                        transition: height .2s;
+                        font-weight: 300;
+                        font-family: $font;
+                        z-index: 99999999;
+                        overflow: hidden;
+                        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+
+                        @media not all and (min-resolution: 0.001dpcm) {
+                            left: -15px !important;
+                        }
+
+                        &_item {
+                            color: $black !important;
+
+                            &:hover::before {
+                                display: none;
+                            }
+
+
+                            &:last-child {
+                                li {
+                                    border-bottom: none;
+                                }
+                            }
+                        }
+
+                        li {
+                            padding: 13px;
+                            font-size: 12px;
+                            line-height: 14px;
+                            font-weight: 300;
+                            letter-spacing: 0.02em;
+                            color: black;
+                            border-bottom: 1px solid $light_gray;
+
+                            &:hover {
+                                background: $black;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+
+                &-item {
+                    &:last-child:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -2,22 +2,22 @@
 //Auth routes
 Auth::routes(['verify' => true]);
 
-
+//Main page
 //Route::get('{path}', function () {
-//    return file_get_contents(public_path('_nuxt/index.html'));
-//})->where('path', '(.*)');
-//
+Route::get('/', function () {
+    return file_get_contents(public_path('_nuxt/index.html'));
+})->where('path', '(.*)');
+
 
 Route::group(['middleware' => 'restrictToAdmin'], function () {
-//ORDERS
+    //ORDERS
     Route::get('/admin', ['uses' => "AdminProductsController@main", 'as' => 'adminMainPage']);
     Route::get('/admin/changeOrderStatus/{id}', ['uses' => 'AdminOrdersController@changeOrderStatus', 'as' => 'changeOrderStatus']);
     Route::get('/getOrdersInfo', ['uses' => 'OrdersController@ordersHistory', 'as' => 'GetOrdersInfo']);
     Route::get('/checkoutProducts', ['uses' => 'ProductsController@checkoutProducts', 'as' => 'checkoutProducts']);
     Route::get('/vueDeliveryForm', ['uses' => 'ProductsController@deliveryForm', 'as' => 'vueDeliveryForm']);
     Route::get('/getSingleOrderInfo/{id}', ['uses' => 'OrdersController@getOrderInfo', 'as' => 'getSingleOrderInfo']);
-
-//Tracking
+    //Tracking
     Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking']);
 });
 
@@ -31,6 +31,7 @@ Route::group(['middleware' => 'checkUserRole'], function () {
     Route::post('/admin/sliderCreate', ['uses' => 'AdminMainSliderController@create', 'as' => 'AdminCreateMainSlider']);
     Route::get('/admin/products', ['uses' => "AdminProductsController@index", 'as' => 'adminDisplayProducts']);
     Route::get('/admin/users', ['uses' => "AdminUsersController@index", 'as' => 'adminDisplayUsers']);
+
 //Display Edit Product form
     Route::get('/admin/editProductForm/{id}', ['uses' => "AdminProductsController@editProductForm", 'as' => 'adminEditProductForm']);
 //Display edit Product form
@@ -47,6 +48,7 @@ Route::group(['middleware' => 'checkUserRole'], function () {
     Route::get('/admin/deleteProduct/{id}', ['uses' => 'AdminProductsController@deleteProduct', 'as' => 'adminDeleteProduct']);
 //Load multiple images for product
     Route::get('/admin/dropZone/{id}', ['uses' => 'AdminProductsController@dropZoneForm', 'as' => 'dropZoneForm']);
+
     Route::post('/admin/addMultipleProductImages/{id}', ['uses' => 'AdminProductsController@addMultipleProductImages', 'as' => 'addMultipleProductImages']);
     Route::get('/admin/cleanProductImages/{id}', ['uses' => 'AdminProductsController@cleanProductImages', 'as' => 'cleanProductImages']);
 
@@ -67,8 +69,12 @@ Route::group(['middleware' => 'checkUserRole'], function () {
     Route::post('/admin/sendemail/send', 'SendEmailController@send');
 });
 
-//Main page
-Route::get('/', ['uses' => "ProductsController@showIndex", 'as' => 'index']);
+
+
+//Main slider
+Route::get('/mainSliderImages', ['uses' => 'MainSliderImages@getMainSliderImages', 'as' => 'getMainSliderImages']);
+
+
 
 //Viewed
 Route::get('/getViewed', ['uses' => 'ViewedController@index', 'as' => 'getViewed']);

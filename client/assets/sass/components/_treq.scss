@@ -1,0 +1,74 @@
+.treq {
+    margin-bottom: 500px;
+    &_inputs {
+        display: flex;
+        margin-bottom: 30px;
+    }
+    &_wrap {
+        max-width: $layoutw;
+        margin: 0 auto;
+    }
+
+    &_form {
+        max-width: 1030px;
+        margin: 0 auto;
+
+        &_gr {
+            display: flex;
+            flex-direction: column;
+
+            &:nth-child(2) {
+                margin-left: 30px;
+            }
+
+            input {
+                width: 500px;
+                height: 40px;
+                border: 1px solid $gray;
+                border-radius: 30px;
+                outline: none;
+                padding-left: 20px;
+                padding-bottom: 3px;
+                font-size: 12px;
+
+                //safari
+                @media not all and (min-resolution: .001dpcm) {
+                    padding-bottom: 10px;
+                    padding-top: 10px;
+                }
+            }
+
+            label {
+                font-family: $semifont;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 14px;
+                letter-spacing: 0.02em;
+                color: $dblack;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &_desc {
+        font-family: $font;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: $dblack;
+    }
+    &_heading {
+        font-family: $semifont;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: $dblack;
+    }
+    &_head {
+        margin-bottom: 45px;
+    }
+
+}

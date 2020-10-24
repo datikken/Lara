@@ -1,0 +1,52 @@
+.mission {
+  background: $light_gray;
+  @include  breakpoint($medium) {
+    display: none;
+  }
+
+  &_wrap {
+    display: flex;
+    padding: 10px 0;
+
+    &-item {
+      min-width: 45px;
+
+      &_decor {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+
+        &-item {
+          width: 16px;
+          height: 20px;
+
+          &:nth-child(1) {
+            background: $lightblue;
+          }
+          &:nth-child(2) {
+            background: $purple;
+          }
+          &:nth-child(3) {
+            background: $yellow;
+          }
+          &:nth-child(4) {
+            background: $dblack;
+          }
+        }
+      }
+
+      &_text {
+        p {
+          font-family: $font;
+          font-size: 12px;
+          line-height: 20px;
+          text-align: justify;
+          letter-spacing: 0.02em;
+          color: $dblack;
+          padding-right: 40px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.best_printers {
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0;
+  @include breakpoint($medium) {
+    margin: 0;
+  }
+
+  @include breakpoint($medium) {
+    max-height: 372px;
+    margin-bottom: 50px;
+  }
+
+  &_swipe {
+    &-heading {
+        font-family:$font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: flex-end;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        position: absolute;
+        z-index: 99;
+        left: 75px;
+        width: 100%;
+        border-bottom: 2px solid $yellow;
+        padding-bottom: 7px;
+    }
+
+    &-decor {
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 50px;
+      margin-top: 30px;
+      width: 100%;
+      margin-bottom: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      width: 82px;
+      z-index: 99;
+
+      img {
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    height: 60px;
+    width: 28px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 150px!important;
+    left: 26px!important;
+
+    .swiper-pagination-bullet {
+      background: #fff!important;
+      border: 1px solid black!important;
+    }
+    .swiper-pagination-bullet-active {
+      background: $breadcrumb!important;
+      border: 1px solid $breadcrumb!important;
+    }
+  }
+}

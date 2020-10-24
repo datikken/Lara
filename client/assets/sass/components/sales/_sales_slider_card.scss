@@ -1,0 +1,256 @@
+.sales_slider-card {
+  position: relative;
+  width: calc(100% - 32px);
+  height: 100%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: .45fr 1.1fr;
+
+  background-image: url('/images/sales/ostatkiBackground.png');
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  //grid-template-columns: 1fr 1.81fr;
+
+  @include breakpoint($phone) {
+    grid-template-columns: 360px 1fr;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+  }
+
+  &::before {
+    background-position: right !important;
+  }
+
+  &_prod {
+    justify-self: flex-start;
+    align-self: center;
+    width: 136px;
+    height: 136px;
+    justify-self: flex-start;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 16px;
+
+    @include breakpoint($phone) {
+      height: calc(100% - 25px);
+      justify-self: center;
+      width: 300px;
+      height: 300px;
+      justify-self: flex-start;
+      margin-left: 30px;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      div {
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 70%;
+        margin: 0 auto;
+        background-position: center;
+
+        @include  breakpoint($phone) {
+          width: 251px;
+          height: 184px;
+        }
+      }
+
+      height: 100%;
+      width: 100%;
+      background: $white;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include  breakpoint($phone) {
+        display: block;
+      }
+
+      img {
+        position: absolute;
+        @include absCenter();
+        top: 50%;
+        width: 110px !important;
+
+        @include breakpoint($phone) {
+          width: 230px!important;
+        }
+
+        @include breakpoint($phone) {
+          width: 250px !important;
+          height: 180px;
+          top: 50% !important;
+          object-fit: cover !important;
+        }
+      }
+    }
+  }
+
+  &_items {
+    align-self: center;
+    justify-self: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &-wrap {
+      margin-top: 10px;
+
+      &-heading {
+        font-family: $font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        margin: 0 0 10px 0;
+
+        @include breakpoint($phone) {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 18px;
+          letter-spacing: 0.02em;
+        }
+      }
+
+      &-title {
+        font-family: $font;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.02em;
+        color: $blue;
+        text-transform: uppercase;
+
+
+
+        @include breakpoint($phone) {
+          font-weight: bold;
+          font-size: 36px;
+          line-height: 100%;
+          letter-spacing: -0.02em;
+          margin-bottom: 5px;
+        }
+      }
+      &-desc {
+        font-family: $font;
+        font-size: 11px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.02em;
+        color: $dblack;
+        margin-bottom: 15px;
+
+        @include breakpoint($phone) {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          color: $dblack;
+        }
+      }
+
+      &-nums {
+        display: flex;
+
+        @include breakpoint($phone) {
+            width: 370px;
+            height: 100px;
+        }
+
+        &_num {
+          width: 35px;
+          height: 60px;
+          position: relative;
+          margin: 0 2px;
+          background-image: url('/images/sales/numBackground.png');
+          background-size: cover;
+          background-position: center;
+
+          @include breakpoint($phone) {
+            width: 70px;
+            height: 100px;
+            margin-right: 20px;
+          }
+
+          &_back {
+            object-fit: cover !important;
+          }
+          &-dec {
+            object-fit: contain !important;
+            position: absolute;
+            width: 35px;
+            height: 5px;
+            left: 0;
+            top: -4px;
+          }
+
+          &-item {
+            top: 46%!important;
+            left: 50%!important;
+            transform: translate(-50%, -50%);
+            font-family: $font;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 26px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-transform: uppercase;
+            color: $yellow;
+            position: absolute;
+
+            @include breakpoint($phone) {
+                top: 50%;
+                left: 54%;  font-family: $font;
+                font-weight: bold;
+                font-size: 64px;
+                line-height: 100%;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                letter-spacing: -0.02em;
+                text-transform: uppercase;
+                color: $yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.sales_slider_btn {
+    width: 300px!important;
+    height: 50px!important;
+    background: #E34A02!important;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    .text_btn-item {
+        font-family: $font;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+}

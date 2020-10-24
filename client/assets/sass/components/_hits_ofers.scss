@@ -1,0 +1,274 @@
+.hits_offers {
+  width: $layoutw;
+  margin: 0 auto;
+  margin-bottom: 200px;
+
+  &-wrap {
+    &_item {
+        border-bottom: 1px solid $light_gray;
+
+      &-actions {
+          display: grid!important;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 80px;
+          width: 550px;
+          margin-bottom: 30px;
+
+          .hits_offers-wrap_item-actions-price {
+              width: 200px!important;
+          }
+
+          &-btns {
+              display: flex;
+              align-items: flex-end;
+
+              .ajaxGETproduct {
+                  margin-right: 30px;
+              }
+              .cart_wrap-item_inner-table_row-col_btns-btn-items {
+                  margin: 0;
+              }
+          }
+      }
+    }
+    &_item-actions {
+      display: flex;
+      align-items: flex-end;
+
+      &-about {
+        border-radius: 30px;
+        height: 40px;
+        border: 1px solid $yellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 35px;
+        cursor: pointer;
+        width: 170px;
+
+        &-item {
+          font-family: $font;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: $dblack;
+          border-radius: 30px;
+        }
+      }
+
+      &-cta {
+        background: $yellow;
+        border-radius: 30px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 30px;
+        cursor: pointer;
+        width: 170px;
+        @include btnShadow();
+
+        &_item {
+          font-family: $font;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: $dblack;
+          border-radius: 30px;
+          display: flex;
+          align-items: center;
+
+          &:before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url("/img/menu/cart.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            margin-right: 10px;
+          }
+        }
+      }
+      &-amount {
+        margin-right: 15px;
+
+        &-btn {
+          border: 1px solid;
+          border-radius: 30px;
+          padding: 7px 20px;
+
+          &_inner {
+            display: flex;
+            align-items: center;
+
+            &-min,
+            &-plus {
+              border: 1px solid $light_gray;
+              border-radius: 30px;
+              padding: 3px 5px;
+              height: 10px;
+              @include flex(center, center, no-wrap);
+              background: gray;
+              color: $white;
+              cursor: pointer;
+            }
+            &-val {
+              font-family: $font;
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 14px;
+              letter-spacing: 0.02em;
+              text-transform: uppercase;
+              color: $dblack;
+              border-radius: 30px;
+              margin-right: 10px;
+            }
+            &-plus {
+              padding: 3px 4px;
+              margin-left: 3px;
+            }
+          }
+        }
+        &-label {
+          font-family: $font;
+          font-size: 9px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          color: $dblack;
+          border-radius: 30px;
+          margin-left: 5px;
+          margin-bottom: 2px;
+        }
+      }
+      &-price {
+        margin-bottom: 3px;
+        margin-right: 35px;
+        @include bigPrice();
+        @include rubFat();
+      }
+    }
+    &_inner {
+      display: flex;
+      padding: 30px 30px 0 30px;
+
+      &-item {
+        &:nth-child(2) {
+          margin-left: 30px;
+        }
+
+        &_props {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 80px;
+          width: 550px;
+          margin-bottom: 30px;
+
+          &-item {
+            display: flex;
+            flex-direction: column;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0.02em;
+            color: $dblack;
+            font-family: $font;
+
+             &:nth-child(2) {
+              font-family: $semifont!important;
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 20px;
+              letter-spacing: 0.02em;
+              color: $dblack;
+            }
+
+            span {
+              padding: 2px 0;
+            }
+          }
+        }
+
+        &_heading {
+          font-family: $font;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 18px;
+          letter-spacing: 0.02em;
+          color: $blue;
+          margin-bottom: 30px;
+        }
+        &_image {
+          width: 270px;
+          height: 270px;
+          background: $light_gray;
+        }
+      }
+    }
+    &_heading {
+      &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // margin-bottom: 30px;
+
+        &:first-child {
+          border-bottom: 1px solid $yellow;
+          padding-bottom: 15px;
+        }
+        &_btns {
+          display: flex;
+          border: 1px solid $dblack;
+          border-radius: 30px;
+          overflow: hidden;
+
+          &-item {
+            padding: 8px 20px;
+            background: $black;
+            color: $white;
+
+            span {
+              font-family: $font;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 14px;
+              letter-spacing: 0.02em;
+              text-transform: uppercase;
+            }
+
+            &:first-child {
+              padding: 9px 20px;
+            }
+            &:nth-child(2) {
+              background: $white;
+              color: $black;
+            }
+          }
+        }
+        &_head {
+          font-family: $semifont;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 18px;
+          letter-spacing: 0.02em;
+          color: $dblack;
+          max-width: 200px;
+          display: flex;
+
+            span {
+                display: initial!important;
+            }
+        }
+      }
+    }
+  }
+}

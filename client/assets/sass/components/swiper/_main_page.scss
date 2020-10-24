@@ -1,0 +1,31 @@
+.swiper-container {
+  min-height: initial!important;
+  @include breakpoint($medium) {
+    display: block;
+  }
+}
+.swiper_slide {
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-next, .swiper-prev {
+    position: absolute;
+    background-image: none!important;
+    min-width: 50px;
+}
+.swiper-next {
+    right: 2rem;
+    top: 50%;
+    z-index: 99;
+}
+.swiper-prev {
+    left: 2rem;
+    top: 50%;
+    z-index: 99;
+}
+.swiper-wrapper {
+  @include  breakpoint($medium) {
+    height: 100%!important;
+  }
+}
