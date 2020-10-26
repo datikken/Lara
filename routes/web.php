@@ -4,10 +4,9 @@ Auth::routes(['verify' => true]);
 
 //Main page
 //Route::get('{path}', function () {
-Route::get('/', function () {
-    return file_get_contents(public_path('_nuxt/index.html'));
-})->where('path', '(.*)');
-
+//Route::get('/', function () {
+//    return file_get_contents(public_path('_nuxt/index.html'));
+//})->where('path', '(.*)');
 
 Route::group(['middleware' => 'restrictToAdmin'], function () {
     //ORDERS
