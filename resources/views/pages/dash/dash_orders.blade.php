@@ -3,8 +3,6 @@
 @section('center')
     <div class="orders">
 
-        {{--@php dd(empty($orders_actual)); @endphp--}}
-
 <? if($orders_actual) { ?>
         @include('components.orders.orders_actual', ['orders_actual' => $orders_actual, 'user' => $user])
 <? } ?>
