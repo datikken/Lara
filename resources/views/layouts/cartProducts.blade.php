@@ -5,8 +5,9 @@
 
 <div class="cart">
     <div class="cart_wrap">
-        @include('components.breadcrumbs.cart_wrap-crumb')
-
+        @if(Session::get('cart'))
+            @include('components.breadcrumbs.cart_wrap-crumb')
+        @endif
         @yield('center')
     </div>
 </div>

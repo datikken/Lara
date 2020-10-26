@@ -22,7 +22,7 @@
                 </div>
             </div>
         @endif
-        <div class="cart_content">
+        <div class="cart_content @if(!Session::get('cart')) clear @endif">
             @include('components.cart.cart_grid')
         </div>
         @if(Session::get('cart'))
