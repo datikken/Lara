@@ -31,7 +31,8 @@
                     <div class="dadresses_close"><span>x</span></div>
                 </div>
 
-                <div class="dadresses_row dadresses_selected">
+                {{--//dadresses_selected--}}
+                <div class="dadresses_row ">
                     <div class="dadresses_text"><span>Россия, Москва, ул. Академика Королева, д. 8, корпус 38, строение 98, подъезд 8, офис 787</span></div>
                     <div class="dadresses_select"><span>использовать этот адрес</span></div>
                     <div class="dadresses_close"><span>x</span></div>
