@@ -1,9 +1,7 @@
 @import "./variables/variables";
-@import "./utils/normalize";
 @import "./utils/utils";
-@import "./utils/classes";
 @import "./utils/animations";
-@import "./utils/uikit";
+
 
 @import "./modifiers/padding";
 @import "./modifiers/weight";
@@ -120,3 +118,9 @@
 @import "components/modals/passReset";
 @import "components/modals/emailHasBeenSent";
 @import "components/modals/emailIsNotVerified";
+
+@import "./utils/normalize";
+@import "./utils/classes";
+@import "./utils/padding";
+@import "./utils/margin";
+@import "./utils/uikit";

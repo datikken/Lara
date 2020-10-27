@@ -1,5 +1,5 @@
 
-<div class="empty_cart">
+<div class="<?if(isset($class)) { echo $class; }?> empty_cart">
     <h2 class="empty_cart-head">У вас еще нет заказов.</h2>
     <p class="empty_cart-paragraph">Для создания заказа, вы можете воспользоваться поиском или каталогом товаров.</p>
     <a href="{{route('allProducts')}}">

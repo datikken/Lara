@@ -10,7 +10,7 @@
 <? if(isset($orders_history)) { ?>
     @include('components.orders.orders_history',['orders_history' => $orders_history])
 <? } else { ?>
-    @include('components.orders.orders_empty')
+    @include('components.orders.orders_empty',['class' => 'p0 m0'])
 <? } ?>
 
     </div>
