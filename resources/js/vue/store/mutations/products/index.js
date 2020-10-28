@@ -202,24 +202,26 @@ let getProductModelFilters = function(state, data = {}) {
 }
 
 let getViewedProducts = function(state) {
-    fetch(`/getViewed`, {
-        method: "GET",
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': window.token
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer'
-    })
-        .then((response) => {
-            return response.json();
+    if(!state.viewedProducts) {
+        fetch(`/getViewed`, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': window.token
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer'
         })
-        .then((data) => {
-            state.viewedProducts = data;
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                state.viewedProducts = data;
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
 }
 
 let setProductViewed = function(state, {pid}) {

@@ -8,6 +8,7 @@ class OwlCarouselController {
             nav: true,
             items: 6,
             margin: 15,
+            // center:true,
             // autoplay: true,
             // autoplayTimeout: 2000,
             responsive: {
@@ -18,14 +19,13 @@ class OwlCarouselController {
                     items: 3
                 },
                 1000: {
-                    items: 5
+                    items: 4
                 }
             }
         })
     }
     activateCarousel() {
         $('.owl-carousel').owlCarousel({
-            loop: true,
             nav: true,
             margin: 15,
             // autoplay: true,

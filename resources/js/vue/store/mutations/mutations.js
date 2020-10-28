@@ -65,26 +65,27 @@ let mutations = {
         state.prevDelAdrAccepted = true;
     },
     getLastDeliveryAdress(state) {
-        $.ajax({
-            method: "GET",
-            url: '/getLastDeliveryAdress',
-            success: function (data) {
-                if (data != '') {
-                    let orderInfoAddr = JSON.parse(data.order_info);
+        if(!state.lastDeliveryAdress) {
+            $.ajax({
+                method: "GET",
+                url: '/getLastDeliveryAdress',
+                success: function (data) {
+                    if (data != '') {
+                        let orderInfoAddr = JSON.parse(data.order_info);
 
-                    if (orderInfoAddr) {
-                        state.lastDeliveryAdress = orderInfoAddr;
+                        if (orderInfoAddr) {
+                            state.lastDeliveryAdress = orderInfoAddr;
+                        }
+
+                    } else {
+                        state.lastDeliveryAdress = null;
                     }
-
-                } else {
-                    state.lastDeliveryAdress = null;
+                },
+                error: function (error) {
+                    console.warn(error);
                 }
-            },
-            error: function (error) {
-                console.warn(error);
-            }
-        });
-
+            });
+        }
     },
     checkDeliveryAdress(state, {city, street, house, body, building}) {
         let that = this;
@@ -313,22 +314,23 @@ let mutations = {
     }
     ,
     getOrdersInfo(state) {
-        $.ajax({
-            method: "GET",
-            url: '/getOrdersInfo',
-            success: function (data) {
-                if (typeof data === 'object') {
-                    state.orders = data;
-                } else {
-                    state.orders = false;
+        if(state.orders) {
+            $.ajax({
+                method: "GET",
+                url: '/getOrdersInfo',
+                success: function (data) {
+                    if (typeof data === 'object') {
+                        state.orders = data;
+                    } else {
+                        state.orders = false;
+                    }
+                },
+                error: function (error) {
+                    console.warn(error);
                 }
-            },
-            error: function (error) {
-                console.warn(error);
-            }
-        });
-    }
-    ,
+            });
+        }
+    },
     getSingleOrderInfo(state, id) {
         $.ajax({
             method: "GET",
@@ -551,21 +553,21 @@ let mutations = {
     setDeliveryType(state, name) {
         state.deliveryType = name;
 
-        console.warn('new del type set', name)
-
         this.dispatch('REMOVE_DELIVERY_TYPE_ERROR');
 
         return state.deliveryType;
     }
     ,
     checkCartState(state) {
-        axios.get('/checkCartState')
-            .then(response => {
-                state.cart = response.data;
-                // localStorage.setItem('cart', JSON.stringify(response.data));
-            })
+        if(!state.cart) {
+            axios.get('/checkCartState')
+                .then(response => {
+                    state.cart = response.data;
+                    // localStorage.setItem('cart', JSON.stringify(response.data));
+                })
 
-        return state.cart
+            return state.cart
+        }
     }
     ,
     changeProgressStep(state, text) {
@@ -603,19 +605,20 @@ let mutations = {
     }
     ,
     setUriksInfo(state, obj) {
-        $.ajax({
-            method: "get",
-            url: '/setUrikInfo',
-            data: obj,
-            success: function (data) {
-                state.usersInfo = data
-            },
-            error: function (error) {
-                console.warn(error);
-            }
-        });
-    }
-    ,
+        if(!state.usersInfo) {
+            $.ajax({
+                method: "get",
+                url: '/setUrikInfo',
+                data: obj,
+                success: function (data) {
+                    state.usersInfo = data
+                },
+                error: function (error) {
+                    console.warn(error);
+                }
+            });
+        }
+    },
     setCustomerFio(state, {firstname, lastname, tel, save}) {
         $.ajax({
             method: "get",
