@@ -75,9 +75,6 @@ class AdminPostController extends Controller
             //get filename with extension
             $filenamewithextension = $request->file('upload')->getClientOriginalName();
 
-            //get filename without extension
-            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-
             //get file extension
             $extension = $request->file('upload')->getClientOriginalExtension();
 

@@ -49,8 +49,6 @@ class AdminBannersController extends Controller
                 Storage::delete('public/banners_images' . $product->image);
             }
 
-            $ext = $request->file('image')->getClientOriginalExtension();
-
             $request->image->storeAs('public/banners_images/', $product->image);
 
             $arrToUpdate = array('image' => $product->image);

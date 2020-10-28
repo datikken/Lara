@@ -169,6 +169,8 @@ a:hover {
 .swiper-slide {
   cursor: pointer;
   height: 166px;
+  width: 100%;
+
   @include  breakpoint($medium) {
     height: 100%;
   }

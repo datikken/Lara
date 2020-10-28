@@ -4,9 +4,9 @@
 
 use App\Model;
 use Faker\Generator as Faker;
-use App\Post_Comments;
+use App\Comment;
 
-$factory->define(Post_Comments::class, function (Faker $faker) {
+$factory->define(Comment::class, function (Faker $faker) {
     return [
         'user_id' => 1,
         'post_id' => 1,

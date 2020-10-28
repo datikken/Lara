@@ -15399,7 +15399,6 @@ main {
 .getSetIndex {
   border: 1px solid #e9e9ea;
   padding: 15px;
-  max-width: 400px;
   max-height: 115px;
 }
 
@@ -16183,6 +16182,7 @@ a:hover {
 .swiper-slide {
   cursor: pointer;
   height: 166px;
+  width: 100%;
 }
 
 @media screen and (min-width: 1030px) {

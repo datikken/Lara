@@ -60,9 +60,7 @@ class AdminProductsController extends Controller
     {
         if ($request->hasFile('file')) {
             $product = Product::find($id);
-            $ext = $request->file('file')->getClientOriginalExtension();
             $fileName = str_replace(' ', '', $request->file('file')->getClientOriginalName());
-            $exists = DB::table('product_images')->where('image', $fileName);
 
             //TODO: existance check
             $arr = array(
@@ -159,6 +157,7 @@ class AdminProductsController extends Controller
         $created = DB::table('products')->insert($newProductArray);
 
         //REDO find method product id
+
         //Adding product images
         $product_id = DB::table('products')->where('name', $name)->value('id');
 

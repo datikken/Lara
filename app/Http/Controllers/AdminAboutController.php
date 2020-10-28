@@ -18,7 +18,6 @@ class AdminAboutController extends Controller
     public function index()
     {
         $yearsContent = About::paginate(4);
-        $years = DB::table('abouts_years')->get();
 
         foreach($yearsContent as $ind=>$yearCont) {
             $newYear = DB::table('abouts_years')->where('id', $yearCont['year'])->first();
@@ -33,7 +32,6 @@ class AdminAboutController extends Controller
     public function getTwoYearsInfoBySelect(Request $request)
     {
         $incomeYear = $request->year;
-        $allContent = DB::table('abouts')->get();
         $years = DB::table('abouts_years')->get();
 
         $lastTwoYears = array();
@@ -79,7 +77,6 @@ class AdminAboutController extends Controller
 
     public function deleteAbout($id)
     {
-        $about = About::find($id);
         About::destroy($id);
 
         return redirect()->route('adminDisplayAbout');
@@ -94,12 +91,20 @@ class AdminAboutController extends Controller
 
     public function sendCreateAbout(Request $request)
     {
-        $year =  $request->get('year');
+        Validator::make( $request->all(), [
+            'year' => 'numeric',
+            'heading' => 'required',
+            'description' => 'required',
+            'text' => 'required'
+        ])->validate();
 
+        $year =  $request->get('year');
         $heading = $request->input('heading');
         $description = $request->input('description');
         $text = $request->input('text');
+
         $year_id = DB::table('abouts_years')->where('year', $year)->value('id');
+        $exists = DB::table('abouts')->where('year', $year)->value('year');
 
         $arr = array(
             'year' => $year_id,
@@ -109,8 +114,6 @@ class AdminAboutController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => '',
         );
-
-        $exists = DB::table('abouts')->where('year', $year)->value('year');
 
         if(!$exists) {
             $created = DB::table('abouts')->insert($arr);
@@ -125,12 +128,12 @@ class AdminAboutController extends Controller
             'year' => 'numeric',
         ])->validate();
 
+        $exists = DB::table('abouts_years')->where('year', $request->year)->value('year');
+
         $arr = array(
             'year' => $request->year,
             'created_at' => \Carbon\Carbon::now()
         );
-
-        $exists = DB::table('abouts_years')->where('year', $request->year)->value('year');
 
         if(!$exists) {
             DB::table('abouts_years')->insert($arr);

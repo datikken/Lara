@@ -52,7 +52,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function posts() {
-        return $this->hasMany(Post_Comments::class);
+        return $this->hasMany(Comment::class);
     }
 
     public function setUserName($value)

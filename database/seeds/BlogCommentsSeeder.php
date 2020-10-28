@@ -13,7 +13,7 @@ class BlogCommentsSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('App\Post_Comments');
+        $faker = Faker::create('App\Comment');
         $posts = Post::all();
         $postsC = count($posts);
 

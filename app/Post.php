@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Post_Comments;
+use App\Comment;
 use Illuminate\Support\Facades\URL;
 
 class Post extends Model
@@ -21,7 +21,7 @@ class Post extends Model
 
     public function comments()
     {
-        return $this->morphMany(Post_Comments::class, 'commentable')->whereNull('parent_id');
+        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
     }
 
     public function likes()

@@ -1,6 +1,8 @@
 <template>
     <div class="cart_check-wrapper">
+
         <Loader v-if="!this.$store.state.user"/>
+
         <Fizik v-if="this.userInfo.user && this.userInfo.user[0].face === 'fizik' "/>
         <Urik v-if="this.userInfo.user && this.userInfo.user[0].face === 'urik' "/>
 
@@ -15,6 +17,7 @@
     import { mapActions, mapGetters } from 'vuex'
     import Loader from '../components/loader/Loader'
     import OrderList from '../components/orders/OrdersList'
+    import store from '../store/store';
 
 
     export default {

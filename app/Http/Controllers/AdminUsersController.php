@@ -19,10 +19,5 @@ class AdminUsersController
     }
 
     public function makeAdmin()
-    {
-
-
-
-
-    }
+    {}
 }
