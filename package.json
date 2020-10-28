@@ -78,6 +78,7 @@
         "vue-truncate-filter": "^1.1.7",
         "vue-yandex-maps": "^0.10.9",
         "vuex": "^3.5.1",
+        "vuex-persistedstate": "^4.0.0-beta.1",
         "ymaps": "^0.2.1"
     }
 }

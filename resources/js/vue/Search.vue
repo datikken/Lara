@@ -99,10 +99,12 @@
         created() {
             this.sresBlock = document.querySelector('.sres_wrap');
             this.CHECK_CART_STATE();
+            this.GET_USERS_INFO();
         },
         methods: {
             ...mapActions([
-                'CHECK_CART_STATE'
+                'CHECK_CART_STATE',
+                'GET_USERS_INFO'
             ]),
             checkMenuFixedOrNot() {
                 if (window.pageYOffset > 0 && this.sresBlock) {

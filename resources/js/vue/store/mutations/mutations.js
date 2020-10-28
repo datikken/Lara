@@ -639,8 +639,6 @@ let mutations = {
                     state.user = response.data;
                 });
 
-            console.log('getUserInfo',state.user)
-
             return state.user
         }
     },

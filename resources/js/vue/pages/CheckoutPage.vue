@@ -3,8 +3,8 @@
 
         <Loader v-if="!this.$store.state.user"/>
 
-        <Fizik v-if="this.userInfo.user && this.userInfo.user[0].face === 'fizik' "/>
-        <Urik v-if="this.userInfo.user && this.userInfo.user[0].face === 'urik' "/>
+        <Fizik v-if="this.userFace && this.userFace === 'fizik' "/>
+        <Urik v-if="this.userFace && this.userFace === 'urik' "/>
 
         <OrderList v-if="this.$store.state.user" />
 
@@ -24,7 +24,7 @@
         name: "CheckoutPage",
         data: function() {
             return {
-                userInfo: false
+                userFace: null
             }
         },
         components: {
@@ -39,18 +39,8 @@
                 'CHANGE_PROGRESS_STEP'
             ]),
         },
-        computed: {
-            ...mapGetters([
-                'user'
-            ])
-        },
-        watch: {
-            user(newVal, oldVal) {
-                this.userInfo = newVal;
-            }
-        },
-        created() {
-            this.GET_USERS_INFO();
+        mounted() {
+            this.userFace = this.$store.state.user.user[0].face;
             this.CHANGE_PROGRESS_STEP();
         }
     }
