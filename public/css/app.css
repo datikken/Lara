@@ -6994,7 +6994,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .gallery-thumbs .swiper-slide {
-  width: 100px;
+  width: 100px !important;
   height: 65px !important;
   height: 100%;
   opacity: 0.4;

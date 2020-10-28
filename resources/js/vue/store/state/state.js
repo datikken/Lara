@@ -17,7 +17,7 @@ let state = {
     readyToGo: false,
     filteredProducts: [],
     searchProducts: [],
-    viewedProducts: [],
+    viewedProducts: null,
     modelFilters: [],
     brandFilters: [],
     typeFilters: [],
