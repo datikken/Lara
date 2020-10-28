@@ -16182,7 +16182,7 @@ a:hover {
 .swiper-slide {
   cursor: pointer;
   height: 166px;
-  width: 100%;
+  width: 100% !important;
 }
 
 @media screen and (min-width: 1030px) {
