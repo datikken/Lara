@@ -5,7 +5,7 @@ let getAllProducts = function(state) {
     let that = this;
 
     if (state.products.length === 0) {
-        axios.get('/catalogСartridge')
+        axios.get('/catalogCartridge')
             .then(response => {
                 response.data.forEach((el) => {
                     let params = JSON.parse(el.params);

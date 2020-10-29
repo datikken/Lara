@@ -86,10 +86,9 @@ class ProductsController extends Controller
 
         return view('pages.catalog', ['products' => $products, 'news' => $posts]);
     }
-    public function index(Request $request)
+    public function catalogCartridge(Request $request)
     {
         $products = Product::all();
-        $posts = Post::all();
 
         foreach ($products as $product) {
             $product['image'] = DB::table('product_images')->where('product_id', $product['id'])->value('image');
@@ -104,10 +103,6 @@ class ProductsController extends Controller
             }
 
             $product['images'] = $arr;
-        }
-
-        foreach ($posts as $post) {
-            $post['url'] = URL::to('/blog') .'/'. $post->id();
         }
 
         return response()->json($products);

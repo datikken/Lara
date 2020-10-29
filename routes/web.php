@@ -67,10 +67,8 @@ Route::group(['middleware' => 'checkUserRole'], function () {
 });
 
 
-
 //Main slider
 Route::get('/mainSliderImages', ['uses' => 'MainSliderImages@getMainSliderImages', 'as' => 'getMainSliderImages']);
-
 
 
 //Viewed
@@ -81,12 +79,13 @@ Route::get('/resetViewed', ['uses' => 'ViewedController@reset', 'as' => 'forgetV
 //CATALOG
 Route::get('/catalog', ['uses' => "ProductsController@catalogHTML", 'as' => 'allProducts']);
 //Route::get('/catalogPaper', ['uses' => "ProductsController@index", 'as' => 'allProducts']);
+//Catalog cartridge
+Route::get('/catalogCartridge', ['uses' => "ProductsController@catalogCartridge", 'as' => 'catalogCartridge']);
+
 
 //OFERTA
 Route::get('/oferta', ['uses' => 'InformationController@showOferta', 'as' => 'oferta']);
 
-//Catalog cartridge
-Route::get('/catalogСartridge', ['uses' => "ProductsController@index", 'as' => 'allCartridges']);
 
 //Cart page
 Route::get('cart', ['uses' => "CartController@showCart", 'as' => 'cartItems']);
