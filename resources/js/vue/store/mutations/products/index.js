@@ -202,7 +202,6 @@ let getProductModelFilters = function(state, data = {}) {
 }
 
 let getViewedProducts = function(state) {
-    if(!state.viewedProducts) {
         fetch(`/getViewed`, {
             method: "GET",
             headers: {
@@ -221,7 +220,6 @@ let getViewedProducts = function(state) {
             .catch((err) => {
                 console.log(err);
             })
-    }
 }
 
 let setProductViewed = function(state, {pid}) {

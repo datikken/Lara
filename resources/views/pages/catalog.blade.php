@@ -9,7 +9,7 @@
         ['title' => 'Каталог', 'url' => '/home']]]
 )
 
-<div id="catalog">
+<div id="catalog" data-module="Catalog">
     <div class="left_column mobile-hide">
             {{--@include('components.catalog_filters.catalog_filters')--}}
             {{--@include('components.banner.catalog_banner')--}}

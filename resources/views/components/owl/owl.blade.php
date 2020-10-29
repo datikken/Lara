@@ -1,4 +1,4 @@
-<div class="owl-wrapper">
+<div class="owl-wrapper" data-module="OwlCarouselController">
     <div class="owl-controls-heading">
         <div class="owl-controls-heading-item">Новинки</div>
     </div>
