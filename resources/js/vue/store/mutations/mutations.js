@@ -61,7 +61,7 @@ let mutations = {
 
         console.log('setReadyToGo', val)
 
-        if(state.readyToGo) {
+        if (state.readyToGo) {
             state.blockDeliveryHelper = true;
         }
     },
@@ -73,7 +73,7 @@ let mutations = {
         state.prevDelAdrAccepted = true;
     },
     getLastDeliveryAdress(state) {
-        if(!state.lastDeliveryAdress) {
+        if (!state.lastDeliveryAdress) {
             $.ajax({
                 method: "GET",
                 url: '/getLastDeliveryAdress',
@@ -146,7 +146,7 @@ let mutations = {
                 state.deliveryType = 'post';
                 state.deliveryAllowed = 'post';
 
-                if(data.suggestedOffice[0]) {
+                if (data.suggestedOffice[0]) {
                     state.deliveryAdress = data.suggestedOffice[0].unrestricted_value + `, ${data.suggestedOffice[0].value}`;
 
                     if (data.suggestedOffice[0].unrestricted_value.indexOf('Москва') >= 0) {
@@ -324,7 +324,7 @@ let mutations = {
     }
     ,
     getOrdersInfo(state) {
-        if(state.orders) {
+        if (state.orders) {
             $.ajax({
                 method: "GET",
                 url: '/getOrdersInfo',
@@ -569,15 +569,13 @@ let mutations = {
     }
     ,
     checkCartState(state) {
-        if(!state.cart) {
-            axios.get('/checkCartState')
-                .then(response => {
-                    state.cart = response.data;
-                    // localStorage.setItem('cart', JSON.stringify(response.data));
-                })
+        axios.get('/checkCartState')
+            .then(response => {
+                state.cart = response.data;
+                // localStorage.setItem('cart', JSON.stringify(response.data));
+            })
 
-            return state.cart
-        }
+        return state.cart
     },
     refreshCutomerData(state, data) {
         fetch('/home/collectProfileData', {
@@ -590,12 +588,13 @@ let mutations = {
             referrerPolicy: 'no-referrer',
             body: JSON.stringify(data)
         })
-            .then(res => {  })
+            .then(res => {
+            })
             .catch(err => console.error('collectProfileData', err))
     }
     ,
     setUriksInfo(state, obj) {
-        if(!state.usersInfo) {
+        if (!state.usersInfo) {
             $.ajax({
                 method: "get",
                 url: '/setUrikInfo',

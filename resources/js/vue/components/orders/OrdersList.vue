@@ -42,8 +42,6 @@
                        <b>500 руб.</b>
                     </span>
                 </div>
-
-                <!--<span class="order_list-wrap_inner-row_item order_list_deliveryAdress">Москва, Академика Королева, 87/90 стр. 8</span>-->
             </div>
 
             <div class="order_list-wrap_footer">
