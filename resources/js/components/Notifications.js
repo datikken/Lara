@@ -4,7 +4,6 @@
     @pos
     @timeout
  */
-
 class Notifications {
     checkPosition() {
         let fixedTop = document.querySelector('.topFixedMenu');

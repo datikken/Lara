@@ -80,6 +80,17 @@
         text-decoration: none;
         color: $black;
         grid-template-columns: 60px 100px 1fr;
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            height: 1px;
+            background: $light_gray;
+            width: calc(100% - 40px);
+        }
 
         @include  breakpoint($medium) {
             grid-template-columns: 70px 150px 1fr;
@@ -88,7 +99,7 @@
 
     &_col {
         position: relative;
-        border-right: 1px solid $gray;
+        border-right: 1px solid $light_gray;
 
         &:nth-child(2) {
             .sres_col_item {

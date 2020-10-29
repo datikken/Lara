@@ -97,7 +97,6 @@
             this.checkMenuFixedOrNot();
         },
         created() {
-            this.sresBlock = document.querySelector('.sres_wrap');
             this.CHECK_CART_STATE();
             this.GET_USERS_INFO();
         },
@@ -116,16 +115,16 @@
                 let that = this;
 
                 window.addEventListener('scroll', function () {
+                    if(!that.sresBlock) {
+                        that.sresBlock = document.querySelector('.sres_wrap');
+                    }
+
                     if (window.pageYOffset >= 60) {
                         that.$el.classList.add('topFixedMenu');
-                        if (that.sresBlock) {
-                            that.sresBlock.style.top = '50px';
-                        }
+                        that.sresBlock.style.top = '50px';
                     } else {
                         that.$el.classList.remove('topFixedMenu');
-                        if (that.sresBlock) {
-                            that.sresBlock.style.top = '110px';
-                        }
+                        that.sresBlock.style.top = '110px';
                     }
                 })
             },

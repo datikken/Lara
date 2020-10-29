@@ -13588,6 +13588,17 @@ main {
   text-decoration: none;
   color: #40404c;
   grid-template-columns: 60px 100px 1fr;
+  position: relative;
+}
+
+.sres_item:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  background: #e9e9ea;
+  width: calc(100% - 40px);
 }
 
 @media screen and (min-width: 1030px) {
@@ -13598,7 +13609,7 @@ main {
 
 .sres_col {
   position: relative;
-  border-right: 1px solid #d4d4d5;
+  border-right: 1px solid #e9e9ea;
 }
 
 .sres_col:nth-child(2) .sres_col_item {

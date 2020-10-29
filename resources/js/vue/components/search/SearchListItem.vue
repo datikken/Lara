@@ -1,5 +1,4 @@
 <template>
-
     <a class="sres_item" v-bind:href="link" @mouseover="backgroundOnHover" @mouseleave="clearBackgroundOnHover">
         <div class="sres_col">
             <span class="sres_col_item sres_color" v-bind:class="color"></span>
