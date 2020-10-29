@@ -1,6 +1,6 @@
 let state = {
     //cart
-    cartStep: null,
+    cartStep: 1,
 
     paymentProvider: false,
     signatureHash: false,

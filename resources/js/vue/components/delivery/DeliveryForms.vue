@@ -49,9 +49,6 @@
 
             </div>
         </div>
-
-        <!--<div class="dform_decor"></div>-->
-
     </div>
 </template>
 
@@ -74,7 +71,7 @@
             ]),
         },
         mounted() {
-            // this.CREATE_MAGIC_BTN(this.$el.querySelector('#adressUnique'));
+            this.CHANGE_PROGRESS_STEP(2);
         },
         methods: {
             ...mapActions([

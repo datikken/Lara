@@ -3,8 +3,13 @@ import _ from "lodash";
 import axios from "axios";
 
 import router from "../../router/router";
-import {createMagicBtn, showNotification} from './utils/index'
+import {
+    createMagicBtn,
+    showNotification,
+    blockFormInputs
+} from './utils/index'
 import {sendGoogleAnalytics} from './utils/analytics'
+import {changeProgressStep} from './cart/utils'
 
 import {
     getAllProducts,
@@ -26,9 +31,10 @@ import {
 let mutations = {
     createMagicBtn,
     showNotification,
+    blockFormInputs,
 
     sendGoogleAnalytics,
-
+    changeProgressStep,
     getAllProducts,
     getFilteredProducts,
     addProductToCart,
@@ -52,6 +58,8 @@ let mutations = {
     },
     setReadyToGo(state, val) {
         state.readyToGo = val;
+
+        console.log('setReadyToGo', val)
 
         if(state.readyToGo) {
             state.blockDeliveryHelper = true;
@@ -135,8 +143,10 @@ let mutations = {
             })
             .then((data) => {
                 state.customerIndex = data;
-                if (data.suggestedOffice[0]) {
-                    state.deliveryType = 'post';
+                state.deliveryType = 'post';
+                state.deliveryAllowed = 'post';
+
+                if(data.suggestedOffice[0]) {
                     state.deliveryAdress = data.suggestedOffice[0].unrestricted_value + `, ${data.suggestedOffice[0].value}`;
 
                     if (data.suggestedOffice[0].unrestricted_value.indexOf('Москва') >= 0) {

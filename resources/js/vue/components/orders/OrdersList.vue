@@ -90,8 +90,8 @@
                 'CREATE_MAGIC_BTN'
             ]),
             fixFooter() {
-                let footer = this.$el.querySelector('.order_list-wrap_footer');
-                footer.classList.add('order_list-wrap_footer_final');
+                let footer = document.querySelector('.order_list-wrap_footer');
+                footer && footer.classList.add('order_list-wrap_footer_final');
             },
             pushToThanks() {
                 let order = new Promise((res, rej) => {
@@ -116,9 +116,6 @@
         },
         created() {
             this.CHECK_CART_STATE();
-        },
-        mounted() {
-            this.magicBtn = this.$el.querySelector('#final_btn');
         },
         computed: {
             ...mapGetters([

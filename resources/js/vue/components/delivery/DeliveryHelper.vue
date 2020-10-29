@@ -30,12 +30,13 @@
             };
         },
         computed: {
-            ...mapGetters(["deliveryAllowed"]),
+            ...mapGetters(["deliveryAllowed"])
         },
-        methods: {},
         watch: {
             deliveryAllowed(newVal, oldVal) {
                 this.delAllowed = newVal;
+
+                console.warn('delAllowed', this.delAllowed);
             },
         },
     };

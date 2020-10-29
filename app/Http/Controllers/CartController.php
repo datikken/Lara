@@ -32,9 +32,9 @@ class CartController extends Controller
         }
 
         if($cart) {
-            return view('pages.cart.cartProducts', ['cartItems' => $cart]);
+            return view('pages.cart.cart', ['cartItems' => $cart]);
         } else {
-            return view('pages.cart.cartProducts', ['cartItems' => $empty]);
+            return view('pages.cart.cart', ['cartItems' => $empty]);
         }
     }
 

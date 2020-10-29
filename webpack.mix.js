@@ -14,6 +14,7 @@ mix
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/admin.scss', 'public/css/admin.css')
     .options({
+        processCssUrls: false,
         autoprefixer: {
             options: {
                 browsers: [
@@ -23,6 +24,3 @@ mix
         }
     })
     .copyDirectory('resources/assets/images', 'public/images')
-    .options({
-        processCssUrls: false
-    });

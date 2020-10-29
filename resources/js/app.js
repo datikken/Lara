@@ -25,7 +25,6 @@ import ProductDetailsMenuController from './modules/ProductDetailsMenuController
 import DashController from './modules/DashController'
 import CartCheckoutVueApp from './modules/CartCheckoutVueApp';
 
-import DeliveryFormController from './modules/DeliveryFormController'
 import LandingController from './modules/LandingController'
 import DadataController from './modules/DadataController'
 
@@ -59,5 +58,4 @@ $(document).ready(function () {
     new TrackingFeedController();
     new DadataController();
     new LandingController();
-    new DeliveryFormController();
 });

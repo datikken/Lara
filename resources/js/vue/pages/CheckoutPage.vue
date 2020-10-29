@@ -1,26 +1,24 @@
 <template>
-    <div class="cart_check-wrapper">
+        <div class="cart_check-wrapper">
+            <Loader v-if="!this.$store.state.user"/>
 
-        <Loader v-if="!this.$store.state.user"/>
+            <Fizik v-if="this.userFace && this.userFace === 'fizik' "/>
+            <Urik v-if="this.userFace && this.userFace === 'urik' "/>
 
-        <Fizik v-if="this.userFace && this.userFace === 'fizik' "/>
-        <Urik v-if="this.userFace && this.userFace === 'urik' "/>
-
-        <OrderList v-if="this.$store.state.user" />
-
-    </div>
+            <OrderList v-if="this.$store.state.user"/>
+        </div>
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
     import Fizik from '../components/checkout/Fizik'
     import Urik from '../components/checkout/Urik'
-    import { mapActions } from 'vuex'
     import Loader from '../components/loader/Loader'
     import OrderList from '../components/orders/OrdersList'
 
     export default {
         name: "CheckoutPage",
-        data: function() {
+        data: function () {
             return {
                 userFace: null
             }
@@ -29,7 +27,7 @@
             Fizik,
             Urik,
             Loader,
-            OrderList
+            OrderList,
         },
         methods: {
             ...mapActions([
@@ -39,11 +37,8 @@
         },
         mounted() {
             this.userFace = this.$store.state.user.user[0].face;
-            console.warn('cart_check-wrapper', this.userFace)
-
 
             this.CHANGE_PROGRESS_STEP(1);
-
         }
     }
 </script>

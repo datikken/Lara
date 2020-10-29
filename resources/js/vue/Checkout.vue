@@ -1,11 +1,18 @@
 <template>
-    <router-view>
-    </router-view>
+    <div>
+        <CartNav/>
+        <router-view>
+        </router-view>
+    </div>
 </template>
 
 <script>
+    import CartNav from './components/nav/CartNav'
     export default {
-        name: "Checkout"
+        name: "Checkout",
+        components: {
+            CartNav
+        }
     }
 </script>
 

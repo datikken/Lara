@@ -90,6 +90,9 @@
                 'prevDelAdrAccepted'
             ]),
         },
+        mounted() {
+            this.SET_READY_TO_GO(false);
+        },
         watch: {
             showAditionalForms(newVal, oldVal) {
                 if(newVal) {
@@ -105,6 +108,8 @@
                 let that = this;
                 this.readyToGoOn = newVal;
 
+                console.warn('readyToGo', newVal)
+
                 setTimeout(that.createMagicBtn, 500);
             },
             prevDelAdrAccepted(newVal, oldVal) {
@@ -116,7 +121,6 @@
         methods: {
             ...mapActions([
                 'DELIVERY_TYPE_ERROR',
-                'CHANGE_PROGRESS_STEP',
                 'SCROLL_TO_TOP',
                 'CHECK_DELIVERY_PICKUPS',
                 'GET_LAST_DELIVERY_ADRESS',
@@ -214,8 +218,6 @@
                 }
 
                 if(ready) {
-                    this.CHANGE_PROGRESS_STEP();
-
                     if(this.user.face === 'urik') {
                         router.push('/contract')
                     } else {

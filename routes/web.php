@@ -17,6 +17,7 @@ Route::group(['middleware' => 'restrictToAdmin'], function () {
     Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking']);
 });
 
+
 Route::group(['middleware' => 'ajax'], function () {
     //Search page
     Route::get('/search', ['uses' => "SearchController@search", 'as' => 'searchProducts']);
