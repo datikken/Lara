@@ -14,9 +14,6 @@
 
     export default {
         name: "Input",
-        created: function() {
-            this.initStore();
-        },
         data: function() {
             return {
                 txtInput: ''
@@ -26,9 +23,6 @@
             ...mapActions([
                 'SEND_GOOGLE_ANALYTICS'
             ]),
-            initStore() {
-                this.$store.commit('getAllProducts');
-            },
             serverCall: function() {
                 this.$store.commit('getFilteredProducts', this.txtInput.toLowerCase());
 
