@@ -10,10 +10,9 @@ import './components/Form';
 import ContactsFormController from './controllers/ContactsFormController'
 import SearchController from './controllers/SearchController'
 
-import DeliveryController from './controllers/DeliveryController'
 import DeliveryFormController from './controllers/DeliveryFormController'
 
-import CartController from './controllers/CartController'
+import CartController from './controllers/cart/CartController'
 
 import Checkbox from './components/Checkbox'
 import InformationController from './controllers/InformationController'
@@ -37,6 +36,7 @@ import BlogPostController from './controllers/BlogPostController'
 
 import OwlCarouselController from './controllers/OwlCarouselController'
 import CatalogController from './controllers/CatalogController'
+import CartCheckoutVueApp from './controllers/CartCheckoutVueApp';
 
 $.ajaxSetup({
     headers: {
@@ -49,10 +49,14 @@ $(document).ready(function() {
     new OwlCarouselController();
     new Validator();
     new SearchController();
+    new Checkbox();
+
 
     new ProductDetailsSliderController();
     new CatalogController();
     new OrdersHistoryController();
+
+    new CartCheckoutVueApp();
 
     //todo vue
     // new DadataController();
@@ -64,7 +68,6 @@ $(document).ready(function() {
     new ContactsFormController();
     new LandingController();
 
-    // new Checkbox();
 
     new CartController();
 
