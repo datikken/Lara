@@ -1,4 +1,7 @@
 let state = {
+    //cart
+    cartStep: null,
+
     paymentProvider: false,
     signatureHash: false,
     gridCatalog: false,
@@ -27,7 +30,6 @@ let state = {
     uriksData: {},
     order: {},
     usersFIO: '',
-    cartStep: 0,
     catalogPerPage: 16,
 
     //Delivery

@@ -24,7 +24,8 @@ let getters = {
     deliveryAllowed: state => state.deliveryAllowed,
     blockDeliveryHelper: state => state.blockDeliveryHelper,
     prevDelAdrAccepted: state => state.prevDelAdrAccepted,
-    ofertaPolicy: state => state.ofertaPolicy
+    ofertaPolicy: state => state.ofertaPolicy,
+    cartStep: state => state.cartStep
 }
 
 export default getters;

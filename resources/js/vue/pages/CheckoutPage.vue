@@ -14,11 +14,9 @@
 <script>
     import Fizik from '../components/checkout/Fizik'
     import Urik from '../components/checkout/Urik'
-    import { mapActions, mapGetters } from 'vuex'
+    import { mapActions } from 'vuex'
     import Loader from '../components/loader/Loader'
     import OrderList from '../components/orders/OrdersList'
-    import store from '../store/store';
-
 
     export default {
         name: "CheckoutPage",
@@ -41,7 +39,11 @@
         },
         mounted() {
             this.userFace = this.$store.state.user.user[0].face;
-            this.CHANGE_PROGRESS_STEP();
+            console.warn('cart_check-wrapper', this.userFace)
+
+
+            this.CHANGE_PROGRESS_STEP(1);
+
         }
     }
 </script>
