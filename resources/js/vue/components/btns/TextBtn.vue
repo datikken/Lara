@@ -1,16 +1,12 @@
 <template>
-    <div :class="`action_btn ${className}`">
-        <span class="action_btn-item">{{ text }}</span>
+    <div :class="className">
+        <span>{{ text }}</span>
     </div>
 </template>
 
 <script>
     export default {
         name: "TextBtn",
-        props: ['text','className'],
+        props: ['text','className']
     }
 </script>
-
-<style scoped>
-
-</style>

@@ -117,7 +117,7 @@
             margin-bottom: 15px;
 
             @include breakpoint($medium) {
-                grid-template-columns: .5fr 1fr;
+                grid-template-columns: 200px 1fr;
                 grid-template-rows: unset;
                 margin-bottom: 0;
             }
@@ -147,7 +147,7 @@
             }
 
             @include breakpoint($medium) {
-                margin: 15px 25px 25px 17px;
+                margin: 15px 25px 15px 15px;
             }
         }
     }

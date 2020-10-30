@@ -234,12 +234,18 @@
     }
   }
 }
+
+
 .sales_slider_btn {
     width: 300px!important;
     height: 50px!important;
     background: #E34A02!important;
     margin: 0 auto;
     margin-top: 30px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .text_btn-item {
         font-family: $font;

@@ -134,7 +134,7 @@
                 />
               </div>
               <a class="prdet_wrap-icons_ctas-details" :href="`/product/${singleProduct.id}`">
-                <TextBtn class="prdet_btn" text="подробнее" />
+                <TextBtn class="flat_btn" text="подробнее" />
               </a>
             </div>
           </div>

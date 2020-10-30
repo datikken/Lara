@@ -1,5 +1,5 @@
 <template>
-    <div class="sres as-none">
+    <div class="sres as-none" v-bind:class="{ 'as-none': searchClosed }">
         <div class="sres_wrap">
             <div class="sres_close"></div>
 
@@ -35,26 +35,23 @@
 
     export default {
         name: "SearchList",
+        data: () => ({
+            searchClosed: null
+        }),
         components: {
             SearchListItem,
             SearchListItemHead,
             simplebar
         },
         created: function() {
-           let closeState = this.$store.state.closeListener;
-           let that = this;
+            document.addEventListener('click', (e) => {
 
-           if(!closeState) {
-               function closeSearch() {
-                   if(!that.$el.classList.contains('as-none')) {
-                       that.$el.classList.add('as-none');
-                   }
-               }
+                console.warn('click', e)
 
-               let closeListener = document.addEventListener('click', closeSearch);
-
-               this.$store.commit('setCloseListener', true);
-           }
+                if(e.currentTarget != 'sres') {
+                    this.searchClosed = true;
+                }
+            })
         },
         computed: {
             items() {

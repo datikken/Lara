@@ -234,7 +234,7 @@ input::-webkit-input-placeholder {
   grid-gap: 5px;
 }
 
-.action_btn, .magic_btn, .rmagic_btn {
+.yellow_btn {
   background: #fdd935;
   border-radius: 30px;
   display: flex;
@@ -247,13 +247,13 @@ input::-webkit-input-placeholder {
 }
 
 @media screen and (min-width: 1030px) {
-  .action_btn, .magic_btn, .rmagic_btn {
+  .yellow_btn {
     width: 200px;
     height: 40px;
   }
 }
 
-.action_btn-item, .action_btn span, .magic_btn-item, .magic_btn span, .rmagic_btn-item, .rmagic_btn span {
+.yellow_btn span {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 12px;
@@ -265,11 +265,24 @@ input::-webkit-input-placeholder {
   align-items: center;
 }
 
-.allcomments_btn {
-  width: 270px;
-  height: 40px;
-  margin: 0 auto 50px auto;
-  font-family: "MontserratMedium";
+.round_btn {
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+  background: #fdd935;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  line-height: 14px;
+  font-size: 10px;
+  width: 120px;
+  height: 30px;
+}
+
+.round_btn span {
+  margin-left: 0;
+  margin-right: 2px;
 }
 
 .further_btn {
@@ -279,7 +292,7 @@ input::-webkit-input-placeholder {
   border: 1px solid #fdd935;
 }
 
-.further_btn div {
+.further_btn span {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -289,42 +302,6 @@ input::-webkit-input-placeholder {
   text-transform: uppercase;
   color: #40404c;
   border-radius: 30px;
-}
-
-.proceed_btn div, .proceed_flat_btn div {
-  font-family: "Montserrat", sans-serif !important;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #40404c;
-}
-
-.proceed_btn {
-  width: 330px !important;
-  height: 40px !important;
-}
-
-.proceed_flat_btn {
-  width: 330px !important;
-  height: 40px !important;
-  border: 2px solid #fdd935;
-  background: #fff !important;
-}
-
-.yellow_btn {
-  background-color: #fdd935 !important;
-}
-
-.animated_btn {
-  transition: box-shadow .2s;
-}
-
-.animated_btn div {
-  user-select: none;
-}
-
-.animated_btn:hover {
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
 }
 
 .flat_btn {
@@ -341,20 +318,53 @@ input::-webkit-input-placeholder {
   background: transparent;
 }
 
+.flat_btn span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+}
+
+.proceed_btn, .proceed_flat_btn {
+  width: 330px;
+  height: 40px;
+}
+
+.proceed_flat_btn {
+  background: #fff;
+  border: 2px solid #fdd935;
+}
+
+.animated_btn {
+  transition: box-shadow .2s;
+}
+
+.animated_btn div {
+  user-select: none;
+}
+
+.animated_btn:hover {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
 .disabled_btn {
-  background: #e9e9ea !important;
-  border: none !important;
+  background: #e9e9ea;
   pointer-events: none;
+  border: none;
 }
 
 .disabled_btn span {
   color: #292930;
 }
 
-.text_btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.allcomments_btn {
+  width: 270px;
+  height: 40px;
+  margin: 0 auto 50px auto;
+  font-family: "MontserratMedium";
 }
 
 .animated_btn:active {
@@ -365,7 +375,7 @@ input::-webkit-input-placeholder {
 .magic_btn {
   position: relative;
   appearance: none;
-  background: #e9e9ea !important;
+  background: #e9e9ea;
   padding: 0;
   border: none;
   color: white;
@@ -3389,6 +3399,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background: #E34A02 !important;
   margin: 0 auto;
   margin-top: 30px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sales_slider_btn .text_btn-item {
@@ -3494,7 +3508,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .sales_best-wrapper_item-content_inner-text-cta span {
-  font-family: "Montserrat", sans-serif;
+  font-family: "MontserratSemiBold";
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -13628,7 +13642,7 @@ main {
 
 @media screen and (min-width: 1030px) {
   .sres_col_inner_item {
-    grid-template-columns: .5fr 1fr;
+    grid-template-columns: 200px 1fr;
     grid-template-rows: unset;
     margin-bottom: 0;
   }
@@ -13661,7 +13675,7 @@ main {
 
 @media screen and (min-width: 1030px) {
   .sres_col_item {
-    margin: 15px 25px 25px 17px;
+    margin: 15px 25px 15px 15px;
   }
 }
 

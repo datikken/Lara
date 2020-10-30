@@ -1,5 +1,4 @@
-
-.action_btn, .magic_btn, .rmagic_btn {
+.yellow_btn {
     background: $yellow;
     border-radius: 30px;
     display: flex;
@@ -15,7 +14,7 @@
         height: 40px;
     }
 
-    &-item, span {
+    span {
         font-family: $font;
         font-weight: 500;
         font-size: 12px;
@@ -27,19 +26,34 @@
         align-items: center;
     }
 }
-.allcomments_btn {
-    width: 270px;
-    height: 40px;
-    margin: 0 auto 50px auto;
-    font-family: $mfont;
+
+.round_btn {
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    background: $yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    line-height: 14px;
+    font-size: 10px;
+    width: 120px;
+    height: 30px;
+
+    span {
+        margin-left: 0;
+        margin-right: 2px;
+    }
 }
+
 .further_btn {
     width: 170px;
     height: 40px;
     background: #fff;
     border: 1px solid $yellow;
 
-    div {
+    span {
         font-family: $font;
         font-style: normal;
         font-weight: 500;
@@ -49,44 +63,6 @@
         text-transform: uppercase;
         color: $black;
         border-radius: 30px;
-    }
-}
-
-.proceed_btn, .proceed_flat_btn {
-    div {
-        font-family: $font !important;
-        font-size: 12px;
-        line-height: 14px;
-        letter-spacing: 0.02em;
-        color: $black;
-    }
-}
-
-.proceed_btn {
-    width: 330px !important;
-    height: 40px !important;
-}
-
-.proceed_flat_btn {
-    width: 330px !important;
-    height: 40px !important;
-    border: 2px solid $yellow;
-    background: #fff !important;
-}
-
-.yellow_btn {
-    background-color: $yellow !important;
-}
-
-.animated_btn {
-    transition: box-shadow .2s;
-
-    div {
-        user-select: none;
-    }
-
-    &:hover {
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
     }
 }
 
@@ -102,22 +78,55 @@
     align-items: center;
     justify-content: center;
     background: transparent;
+
+    span {
+        font-family: $font;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $dblack;
+    }
+}
+
+.proceed_btn, .proceed_flat_btn {
+    width: 330px;
+    height: 40px;
+}
+
+.proceed_flat_btn {
+    background: #fff;
+    border: 2px solid $yellow;
+}
+
+.animated_btn {
+    transition: box-shadow .2s;
+
+    div {
+        user-select: none;
+    }
+
+    &:hover {
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    }
 }
 
 .disabled_btn {
-    background: $light_gray !important;
-    border: none!important;
+    background: $light_gray;
     pointer-events: none;
+    border: none;
 
     span {
         color: $dblack;
     }
 }
 
-.text_btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.allcomments_btn {
+    width: 270px;
+    height: 40px;
+    margin: 0 auto 50px auto;
+    font-family: $mfont;
 }
 
 .animated_btn:active {
@@ -128,7 +137,7 @@
 .magic_btn {
     position: relative;
     appearance: none;
-    background: $light_gray !important;
+    background: $light_gray;
     padding: 0;
     border: none;
     color: white;

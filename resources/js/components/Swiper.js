@@ -38,7 +38,7 @@ window.onload = function () {
     let swiperV = new Swiper('.swiper-container-v', {
         spaceBetween: 50,
         pagination: {
-            el: '.swiper-pagination-v',
+            el: '.swiper-pagination',
         },
         navigation: {
             nextEl: '.swiper-button-nextt',
