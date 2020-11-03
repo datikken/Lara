@@ -22,7 +22,7 @@
             <DeliveryService v-if="showDeliveryService" ref="delRef" />
 
             <TextBtn
-                className="magic_btn"
+                className="magic_btn btn"
                 text="Продолжить"
                 @click.native="proceedToPaymentPage"
                 id="proceedToPayments"

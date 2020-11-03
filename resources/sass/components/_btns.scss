@@ -1,3 +1,8 @@
+.btn {
+    width: 200px;
+    height: 40px;
+}
+
 .yellow_btn {
     background: $yellow;
     border-radius: 30px;
@@ -15,15 +20,19 @@
     }
 
     span {
-        font-family: $font;
-        font-weight: 500;
+        font-family: $semifont;
         font-size: 12px;
         line-height: 14px;
         letter-spacing: 0.02em;
-        color: $dblack;
+        color: $black;
         border-radius: 30px;
         text-transform: uppercase;
         align-items: center;
+    }
+
+    img {
+        width: 20px;
+        margin-right: 10px;
     }
 }
 
@@ -38,12 +47,17 @@
     border-radius: 30px;
     line-height: 14px;
     font-size: 10px;
-    width: 120px;
+    width: 30px;
     height: 30px;
 
     span {
         margin-left: 0;
         margin-right: 2px;
+    }
+
+    img {
+        width: 15px;
+        margin: 0 2px 0 0;
     }
 }
 
@@ -80,19 +94,25 @@
     background: transparent;
 
     span {
-        font-family: $font;
-        font-weight: 500;
+        font-family: $semifont;
         font-size: 12px;
         line-height: 14px;
         letter-spacing: 0.02em;
         text-transform: uppercase;
-        color: $dblack;
+        color: $black;
     }
 }
 
 .proceed_btn, .proceed_flat_btn {
     width: 330px;
     height: 40px;
+    span {
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color: $black;
+        text-transform: unset;
+    }
 }
 
 .proceed_flat_btn {
@@ -146,12 +166,22 @@
     outline: none;
     overflow: hidden;
     border-radius: 100px;
+    min-width: 200px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     span {
         position: relative;
         pointer-events: none;
         z-index: 9999;
         text-transform: uppercase;
+        font-family: $semifont;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color: $dblack;
     }
 
     &::before {
@@ -169,5 +199,11 @@
 
     &:hover::before {
         --size: 400px;
+    }
+}
+
+.text_buy-btn {
+    span {
+        font-family: $semifont;
     }
 }

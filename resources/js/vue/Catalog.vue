@@ -52,7 +52,7 @@
                         >
 
                         <div class="load_more-btn " @click="loadMore">
-                            <TextBtn text="загрузить еще" className="text_buy-btn animated_btn"/>
+                            <TextBtn text="загрузить еще" className="yellow_btn animated_btn"/>
                         </div>
 
                         <vue-ads-page-button
@@ -91,7 +91,7 @@
     import VueAdsPagination, {VueAdsPageButton} from 'vue-ads-pagination';
 
     import OrdersHistory from './components/orders/OrdersHistory';
-    import TextBtn from '../vue/components/btns/BuyBtn';
+    import TextBtn from '../vue/components/btns/TextBtn';
     import CatalogSwitch from '../vue/components/catalog/catalogSwitch';
     import CatalogCard from '../vue/components/catalog/catalogCard';
     import NothingFound from './components/errors/NothingFound';

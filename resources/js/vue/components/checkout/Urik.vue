@@ -7,17 +7,17 @@
             </div>
             <div class="company_inputs">
 
-                <div class="company_inputs_items">
+                <div class="form_group company_inputs_items">
                     <label class="company_inputs_items_label" for="inn">ИНН <span>*</span></label>
                     <masked-input name="inn" class="company_input" v-model="inn" mask="1111111111"
                                   placeholder="0123456789"/>
                 </div>
-                <div class="company_inputs_items">
+                <div class="form_group company_inputs_items">
                     <label class="company_inputs_items_label" for="bik">Бик <span>*</span></label>
                     <masked-input class="company_input" name="bik" v-model="bik" mask="111111111"
                                   placeholder="123456789"/>
                 </div>
-                <div class="company_inputs_items">
+                <div class="form_group company_inputs_items">
                     <label class="company_inputs_items_label" for="schet">Расчетный счет <span>*</span></label>
                     <masked-input class="company_input" name="schet" v-model="schet" mask="11111111111111111111"
                                   placeholder="12345678901234567890"/>
@@ -101,9 +101,9 @@
 
 
         <div class="urik_btns_wrap">
-            <TextBtn text="Продолжить с данными реквизитами" className="proceed_btn animated_btn"
+            <TextBtn text="Продолжить с данными реквизитами" className="yellow_btn proceed_btn animated_btn"
                      @click.native="RSValidation"/>
-            <TextBtn text="Добавить другое юридическое лицо" className="proceed_flat_btn"
+            <TextBtn text="Добавить другое юридическое лицо" className="flat_btn proceed_flat_btn"
                      @click.native="rerenderComponent"/>
         </div>
 

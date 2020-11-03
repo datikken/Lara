@@ -234,6 +234,11 @@ input::-webkit-input-placeholder {
   grid-gap: 5px;
 }
 
+.btn {
+  width: 200px;
+  height: 40px;
+}
+
 .yellow_btn {
   background: #fdd935;
   border-radius: 30px;
@@ -254,15 +259,19 @@ input::-webkit-input-placeholder {
 }
 
 .yellow_btn span {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-family: "MontserratSemiBold";
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  color: #292930;
+  color: #40404c;
   border-radius: 30px;
   text-transform: uppercase;
   align-items: center;
+}
+
+.yellow_btn img {
+  width: 20px;
+  margin-right: 10px;
 }
 
 .round_btn {
@@ -276,13 +285,18 @@ input::-webkit-input-placeholder {
   border-radius: 30px;
   line-height: 14px;
   font-size: 10px;
-  width: 120px;
+  width: 30px;
   height: 30px;
 }
 
 .round_btn span {
   margin-left: 0;
   margin-right: 2px;
+}
+
+.round_btn img {
+  width: 15px;
+  margin: 0 2px 0 0;
 }
 
 .further_btn {
@@ -319,18 +333,25 @@ input::-webkit-input-placeholder {
 }
 
 .flat_btn span {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-family: "MontserratSemiBold";
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #292930;
+  color: #40404c;
 }
 
 .proceed_btn, .proceed_flat_btn {
   width: 330px;
   height: 40px;
+}
+
+.proceed_btn span, .proceed_flat_btn span {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  text-transform: unset;
 }
 
 .proceed_flat_btn {
@@ -384,6 +405,11 @@ input::-webkit-input-placeholder {
   outline: none;
   overflow: hidden;
   border-radius: 100px;
+  min-width: 200px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .magic_btn span {
@@ -391,6 +417,11 @@ input::-webkit-input-placeholder {
   pointer-events: none;
   z-index: 9999;
   text-transform: uppercase;
+  font-family: "MontserratSemiBold";
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
 }
 
 .magic_btn::before {
@@ -408,6 +439,10 @@ input::-webkit-input-placeholder {
 
 .magic_btn:hover::before {
   --size: 400px;
+}
+
+.text_buy-btn span {
+  font-family: "MontserratSemiBold";
 }
 
 .header {
@@ -4314,6 +4349,10 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   position: relative;
 }
 
+.products_grid {
+  display: flex;
+}
+
 .products_grid .vue-ads-flex:first-child {
   display: grid;
   grid-template-columns: 1fr;
@@ -4329,6 +4368,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 0 0 30px;
     grid-gap: 30px;
+    width: 100%;
+    max-width: 870px;
   }
 }
 

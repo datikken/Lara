@@ -5,7 +5,10 @@
         </div>
 
         <div class="viewed_wrapper">
-           <ViewedItem :data="product" v-for="product in products.slice(0, 10)" :key="product.name" />
+           <ViewedItem
+               :data="product"
+               v-for="product in allViewed.slice(0, 10)"
+               :key="product.name" />
         </div>
     </div>
 
@@ -13,13 +16,16 @@
 
 <script>
     import ViewedItem from './ViewedItem';
-    import {mapActions} from 'vuex';
+    import {mapActions, mapGetters} from 'vuex';
 
     export default {
         name: "Viewed",
         components: {
             ViewedItem
         },
+        data: () => ({
+            allViewed: []
+        }),
         created() {
             this.GET_VIEWED_PRODUCTS();
         },
@@ -29,8 +35,11 @@
             ]),
         },
         computed: {
-            products() {
-                return this.$store.state.viewedProducts;
+            ...mapGetters(['viewedProducts'])
+        },
+        watch: {
+            viewedProducts(newVal, oldVal) {
+                if(newVal) this.allViewed = newVal;
             }
         }
     }

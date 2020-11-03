@@ -1,4 +1,3 @@
-
 import $ from 'jquery';
 import {validateEmail} from "../functions/validateEmail";
 import Notifications from '../components/Notifications';
@@ -49,7 +48,7 @@ class RegisterController {
             })
 
             dataObj.email = this.email;
-            if(dataObj.new_password === dataObj.new_password_confirm) {
+            if (dataObj.new_password === dataObj.new_password_confirm) {
                 $.ajax({
                     method: 'POST',
                     url: `/StoreNewPasswordEmail`,
@@ -99,8 +98,8 @@ class RegisterController {
             url: '/checkTokenExpireDate',
             data: {token, email},
             success: function (data) {
-                if(data.status === 200) {
-                   that.passResetHandler();
+                if (data.status === 200) {
+                    that.passResetHandler();
                 } else {
                     let params = {
                         message: 'Ссылка просрочена, попробуйте заново.',
@@ -187,6 +186,7 @@ class RegisterController {
 
     _setError(str, type) {
         let item;
+        let jsonStr = JSON.stringify(str);
 
         if (type === 'register') {
             item = document.querySelector('[data-register]');
@@ -194,29 +194,27 @@ class RegisterController {
             item = document.querySelector('[data-auth]');
         }
 
-        if (str.indexOf('required') > 0) {
-            item.innerText = 'Проверьте пароль.'
-            item.classList.add('invalid');
-        }
+        item.classList.add('invalid');
 
-        if (str.indexOf('email') > 0) {
-            item.innerText = 'Проверьте почту.'
-            item.classList.add('invalid');
+        if (jsonStr.indexOf('required') >= 0) {
+            item.innerText = 'Проверьте пароль.';
+            return;
         }
-
-        if (str.indexOf('taken') > 0) {
-            item.innerText = 'Почтовый ящик уже зарегистрирован.'
-            item.classList.add('invalid');
+        if (jsonStr.indexOf('email') >= 0) {
+            item.innerText = 'Проверьте почту.';
+            return;
         }
-
-        if (str.indexOf('invalid') > 0) {
+        if (jsonStr.indexOf('invalid') >= 0) {
             item.innerText = 'Проверьте правильность введенных данных.';
-            item.classList.add('invalid');
+            return;
         }
-
-        if (str.indexOf('least') > 0) {
+        if (jsonStr.indexOf('taken') >= 0) {
+            item.innerText = 'Почтовый ящик уже зарегистрирован.';
+            return;
+        }
+        if (jsonStr.indexOf('least') >= 0) {
             item.innerText = 'Пароль должен быть не короче 8 символов.';
-            item.classList.add('invalid');
+            return;
         }
     }
 
@@ -311,7 +309,7 @@ class RegisterController {
             error: function (error) {
                 console.warn(error, 'login action')
 
-                if(error.status === 403) {
+                if (error.status === 403) {
                     that.showUnverifiedPopup();
                     return;
                 }

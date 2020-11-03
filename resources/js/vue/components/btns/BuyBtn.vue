@@ -1,5 +1,5 @@
 <template>
-    <div :class="`product_wrapper-item_btn ${className}`" @click="addProductToCart">
+    <div :class="`${className}`" @click="addProductToCart">
         <div class="desktop-hide">
             <div class="product_wrapper-item_price-item">Купить</div>
         </div>

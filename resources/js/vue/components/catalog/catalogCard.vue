@@ -39,7 +39,7 @@
                     <img src="/images/icons/rub.svg" alt="cur"/>
                 </div>
 
-                <BuyBtn :id="data.id" className="animated_btn" />
+                <BuyBtn :id="data.id" className="animated_btn round_btn" />
 
             </div>
         </div>

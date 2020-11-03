@@ -59,7 +59,7 @@
 
             <TextBtn text="Завершить покупку"
                      className="text_buy-btn magic_btn final_btn"
-                     v-if="finalStep"
+                     v-if="active"
                      id="final_btn"
                      @click.native="pushToThanks"/>
         </div>

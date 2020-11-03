@@ -25,7 +25,8 @@ let getters = {
     blockDeliveryHelper: state => state.blockDeliveryHelper,
     prevDelAdrAccepted: state => state.prevDelAdrAccepted,
     ofertaPolicy: state => state.ofertaPolicy,
-    cartStep: state => state.cartStep
+    cartStep: state => state.cartStep,
+    viewedProducts: state => state.viewedProducts
 }
 
 export default getters;

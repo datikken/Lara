@@ -20,7 +20,7 @@ let state = {
     readyToGo: false,
     filteredProducts: [],
     searchProducts: [],
-    viewedProducts: null,
+    viewedProducts: [],
     modelFilters: [],
     brandFilters: [],
     typeFilters: [],

@@ -50,9 +50,10 @@
                     <div class="prdLt_btns">
 
                         <a :href="`/product/${data.id}`">
-                            <TextBtn text="Подробнее" className="further_btn animated_btn" />
+                            <TextBtn text="Подробнее" className="flat_btn further_btn animated_btn" />
                         </a>
-                        <BuyBtn :id="data.id" className="action_btn animated_btn" text="В корзину" />
+
+                        <BuyBtn :id="data.id" className="yellow_btn action_btn animated_btn" text="В корзину" />
 
                     </div>
                 </div>

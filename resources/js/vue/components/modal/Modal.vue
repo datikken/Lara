@@ -129,7 +129,7 @@
               <div class="prdet_wrap-icons_ctas-buy" v-if="singleProduct">
                 <BuyBtn
                   text="в корзину"
-                  class="text_buy-btn animated_btn uk-modal-close"
+                  class="yellow_btn animated_btn uk-modal-close"
                   :id="singleProduct.id"
                 />
               </div>
