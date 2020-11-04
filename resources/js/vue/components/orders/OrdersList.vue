@@ -86,8 +86,7 @@
             TextBtn
         },
         data: () => ({
-            active: false,
-            magicBtn: false
+            active: false
         }),
         methods: {
             ...mapActions([
@@ -121,20 +120,24 @@
                 )
             },
             finalStep() {
+                let mgcBtn = document.querySelector('#final_btn');
+
                 this.active = true;
+
                 this.fixFooter();
-                this.CREATE_MAGIC_BTN(this.magicBtn);
+
+                setTimeout(this.CREATE_MAGIC_BTN(mgcBtn), 500)
             }
         },
         created() {
             this.CHECK_CART_STATE();
         },
         watch: {
-            paymentProvider(newval, oldval) {
-                console.warn(newval, 'paymentProvider')
+            paymentProvider(newVal, oldVal) {
 
-                if (newval) this.finalStep();
+                console.warn(newVal, 'paymentProvider')
 
+                this.finalStep();
             }
         },
         computed: {
@@ -143,6 +146,9 @@
                 'orderPaid',
                 'paymentProvider'
             ]),
+            paymentProvider() {
+                return this.$store.state.paymentProvider
+            },
             orders() {
                 return this.$store.state.cart
             }

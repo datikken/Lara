@@ -489,6 +489,8 @@ let mutations = {
             }
         });
 
+        console.warn('tes', state.paymentProvider)
+
         return state.paymentProvider;
     }
     ,
