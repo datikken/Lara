@@ -108,8 +108,6 @@
                 let that = this;
                 this.readyToGoOn = newVal;
 
-                console.warn('readyToGo', newVal)
-
                 setTimeout(that.createMagicBtn, 500);
             },
             prevDelAdrAccepted(newVal, oldVal) {

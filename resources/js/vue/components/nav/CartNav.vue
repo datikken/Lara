@@ -36,6 +36,9 @@
                 }
             }
         },
+        mounted() {
+            this.changeStep(1);
+        },
         methods: {
             ...mapActions(['CHANGE_PROGRESS_STEP']),
             changeStep(val) {

@@ -4318,7 +4318,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 
 .breadcrumb_arrow {
   display: block;
-  background-image: url("/images/icons/arrow_right.svg");
   width: 4px;
   height: 10px;
   margin-left: 10px;
@@ -4965,7 +4964,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 .filters_wrapper-item_text:after {
   content: "";
   display: block;
-  background-image: url("/img/icons/arrow_right.svg");
   height: 10px;
   width: 4px;
   background-repeat: no-repeat;
@@ -7308,13 +7306,6 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   background-position: center;
   margin-left: 10px;
   margin-top: 0;
-  background-image: url("/img/icons/arrow_right_white.svg");
-}
-
-@media screen and (min-width: 600px) {
-  .cart_wrap-crumb-item:after {
-    background-image: url("/img/icons/arrow_right.svg");
-  }
 }
 
 .cart_wrap-item-total_icon {
@@ -8079,16 +8070,13 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .order_list-wrap_footer-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .order_list-wrap_footer-row_item {
   font-family: "MontserratSemiBold";
-  font-style: normal;
-  font-weight: 600;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
@@ -8097,15 +8085,23 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 
 .order_list-wrap_inner-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  border-bottom: 1px solid #d4d4d5;
+  border-bottom: 1px solid #e9e9ea;
   margin-bottom: 10px;
 }
 
 .order_list-wrap_inner-row_item {
   margin-bottom: 15px;
+  text-align: right;
+}
+
+.order_list-wrap_inner-row_item:first-child {
+  text-align: left;
+}
+
+.order_list-wrap_inner-row_item:last-child {
+  text-align: right;
 }
 
 .order_list-wrap_inner-row_item-text {

@@ -8,7 +8,7 @@
 
             <div class="payment_wrap-form">
                 <div class="payment_wrap-form_group" @click="setPayment" data-checkNal>
-                    <label for="payment_type">При получении</label>
+                    <label for="payment_type-nal">При получении</label>
 
                     <div class="payment_wrap-form_group-inner">
                         <SimpleCheckbox/>
@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="payment_wrap-form_group" @click="setPayment" data-checkCard>
-                    <label for="payment_type">Онлайн</label>
+                    <label for="payment_type-cart">Онлайн</label>
 
                     <div class="payment_wrap-form_group-inner">
                         <SimpleCheckbox/>

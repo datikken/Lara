@@ -139,9 +139,6 @@
                         data.tel = phone;
 
                         this.REFRESH_CUTOMER_DATA(data);
-
-
-                        console.warn('saveDataToStorage', data)
                 }
             },
             fillInputsData() {

@@ -135,7 +135,7 @@
                 &:after {
                     content: "";
                     display: block;
-                    background-image: url("/img/icons/arrow_right.svg");
+                    //background-image: url("/img/icons/arrow_right.svg");
                     height: 10px;
                     width: 4px;
                     @include bg(contain, center);

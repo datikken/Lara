@@ -40,21 +40,23 @@
         },
         watch: {
             user(newVal, oldVal) {
+
+                console.warn('main 3', newVal.user[0].face);
+
                 if (newVal) {
-                    this.userFace = newVal;
+                    this.userFace = newVal.user[0].face;
                 }
             }
         },
         created() {
-            this.userFace = this.$store.state.user;
-
             if(!this.userFace) {
                 this.GET_USERS_INFO();
             }
-
-            console.warn('main2', this.$store.state.user);
-
+        },
+        mounted() {
             this.CHANGE_PROGRESS_STEP(1);
+
+            this.userFace = this.$store.state.user.user[0].face;
         }
     }
 </script>

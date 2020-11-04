@@ -98,9 +98,9 @@
                     @include bg(contain, center);
                     margin-left: 10px;
                     margin-top: 0;
-                    background-image: url("/img/icons/arrow_right_white.svg");
+                    //background-image: url("/img/icons/arrow_right_white.svg");
                     @include breakpoint($phone) {
-                        background-image: url("/img/icons/arrow_right.svg");
+                        //background-image: url("/img/icons/arrow_right.svg");
                     }
                 }
             }

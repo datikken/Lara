@@ -14,6 +14,9 @@
                         <span class="order_list-wrap_inner-row_item-head">Наименование</span>
                     </div>
                     <div class="order_list-wrap_inner-row_item">
+                        <span class="order_list-wrap_inner-row_item-head">Кол-во</span>
+                    </div>
+                    <div class="order_list-wrap_inner-row_item">
                         <span class="order_list-wrap_inner-row_item-head">Стоимость</span>
                     </div>
                 </div>
@@ -27,7 +30,13 @@
 
                     <div class="order_list-wrap_inner-row_item">
                         <span class="order_list-wrap_inner-row_item-text">
-                            {{ order.data.price }}
+                            {{ order.quantity }}
+                        </span>
+                    </div>
+
+                    <div class="order_list-wrap_inner-row_item">
+                        <span class="order_list-wrap_inner-row_item-text">
+                            {{ Math.floor(order.data.price) }} руб.
                         </span>
                     </div>
                 </div>
@@ -82,10 +91,10 @@
         }),
         methods: {
             ...mapActions([
-                'CHECK_CART_STATE',
                 'FINISH_ORDER_PROCESS',
+                'CHECK_CART_STATE',
+                'CREATE_MAGIC_BTN',
                 'CREATE_ORDER',
-                'CREATE_MAGIC_BTN'
             ]),
             fixFooter() {
                 let footer = document.querySelector('.order_list-wrap_footer');
@@ -110,10 +119,23 @@
                         }
                     }
                 )
+            },
+            finalStep() {
+                this.active = true;
+                this.fixFooter();
+                this.CREATE_MAGIC_BTN(this.magicBtn);
             }
         },
         created() {
             this.CHECK_CART_STATE();
+        },
+        watch: {
+            paymentProvider(newval, oldval) {
+                console.warn(newval, 'paymentProvider')
+
+                if (newval) this.finalStep();
+
+            }
         },
         computed: {
             ...mapGetters([
@@ -123,14 +145,6 @@
             ]),
             orders() {
                 return this.$store.state.cart
-            },
-            finalStep() {
-                if (this.$store.state.paymentProvider) {
-                    this.fixFooter();
-                    this.CREATE_MAGIC_BTN(this.magicBtn);
-                }
-
-                return this.$store.state.paymentProvider
             }
         }
     }

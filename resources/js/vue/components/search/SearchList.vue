@@ -45,10 +45,7 @@
         },
         created: function() {
             document.addEventListener('click', (e) => {
-
-                console.warn('click', e)
-
-                if(e.currentTarget != 'sres') {
+                if(e.currentTarget != 'sres' && !this.searchClosed) {
                     this.searchClosed = true;
                 }
             })
