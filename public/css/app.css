@@ -4368,8 +4368,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 0 0 30px;
     grid-gap: 30px;
-    width: 100%;
-    max-width: 870px;
+    width: 870px;
   }
 }
 
