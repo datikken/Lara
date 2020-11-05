@@ -115,7 +115,6 @@
             applyDeliveryAdress() {
                 let data =  {};
                 let inputs = this.$el.querySelectorAll('input');
-                let form = this.$el.querySelector('.getSetAddress');
 
                 inputs.forEach((npt) => {
                     let name = npt.getAttribute('name');

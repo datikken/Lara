@@ -24,6 +24,8 @@
     }
 
     &_footer {
+        margin-bottom: 17px;
+
       &_final {
           border-bottom: 1px solid $light_gray;
           padding-bottom: 17px;
@@ -34,6 +36,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        height: 40px;
 
         &_item {
           font-family: $semifont;
@@ -51,10 +54,14 @@
         grid-template-columns: 1fr 1fr 1fr;
         align-items: center;
         border-bottom: 1px solid $light_gray;
-        margin-bottom: 10px;
+        height: 40px;
+
+          &:first-child {
+              padding-bottom: 30px;
+              border-bottom: none;
+          }
 
         &_item {
-            margin-bottom: 15px;
             text-align: right;
 
             &:first-child {

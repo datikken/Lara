@@ -54,9 +54,11 @@ let mutations = {
         state.ofertaPolicy = val;
     },
     setDeliveryAdress(state, adr) {
+        state.deliveryAdress = null;
         state.deliveryAdress = adr;
     },
     setReadyToGo(state, val) {
+        state.readyToGo = null;
         state.readyToGo = val;
 
         console.log('setReadyToGo', val)
@@ -65,8 +67,10 @@ let mutations = {
             state.blockDeliveryHelper = true;
         }
     },
-    setAddtionalForms(state, str) {
-        state.showAditionalForms = str;
+    setAdditionalForms(state, str) {
+        state.showAditionalForms = null;
+
+        setTimeout(() => (state.showAditionalForms = str), 50);
     },
     proceedWithLastDeliveryAdress(state, adr) {
         state.deliveryAdress = adr;
@@ -128,6 +132,10 @@ let mutations = {
     setDeliveryIndex(state, data) {
         let that = this;
 
+        state.customerIndex = null;
+        state.deliveryType = null;
+        state.deliveryAllowed = null;
+
         fetch('/setIndex', {
             method: "POST",
             headers: {
@@ -163,6 +171,8 @@ let mutations = {
             })
     },
     applyDeliveryAdress(state, data) {
+        state.deliveryAdress = null;
+
         $.ajax({
             method: "POST",
             url: '/setAdress',
@@ -176,6 +186,7 @@ let mutations = {
         });
     },
     checkDeliveryPickups(state, {name, adr}) {
+        state.stockDeliveryPickup = null;
         state.stockDeliveryPickup = {name, adr};
 
         fetch('/setStockPickUpPoint', {
@@ -563,6 +574,7 @@ let mutations = {
     }
     ,
     setDeliveryType(state, name) {
+        state.deliveryType = null;
         state.deliveryType = name;
 
         this.dispatch('REMOVE_DELIVERY_TYPE_ERROR');

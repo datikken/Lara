@@ -17,7 +17,7 @@ let actions = {
         context.commit('setReadyToGo', val);
     },
     SET_ADDITIONAL_FORMS(context, str) {
-        context.commit('setAddtionalForms', str);
+        context.commit('setAdditionalForms', str);
     },
     VALIDATE_POST_DELIVERY_FORM(context) {
         context.commit('validatePostDeliveryForm')

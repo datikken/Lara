@@ -97,7 +97,7 @@
             ]),
             fixFooter() {
                 let footer = document.querySelector('.order_list-wrap_footer');
-                footer && footer.classList.add('order_list-wrap_footer_final');
+                // footer && footer.classList.add('order_list-wrap_footer_final');
             },
             pushToThanks() {
                 let order = new Promise((res, rej) => {
@@ -155,10 +155,3 @@
         }
     }
 </script>
-
-<style scoped>
-    .final_btn {
-        margin-bottom: 10px !important;
-        margin: 0 auto !important;
-    }
-</style>

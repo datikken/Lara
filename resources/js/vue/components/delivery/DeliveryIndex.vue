@@ -8,7 +8,7 @@
             <div class="form_group getSetIndex">
                 <label for="index" class="form_group-label">Индекс</label>
                 <div class="form_group-wrap index_field">
-                    <input type="text" name="index" data-index_field/>
+                    <input type="text" name="index" data-index_field :value="deliveryIndex" />
 
                     <TextBtn
                         className="form_group-btn flat_btn"
@@ -33,12 +33,19 @@
 
     export default {
         name: "DeliveryIndex",
+        data: () => ({
+            deliveryIndex: null
+        }),
         components: {
             SelfDelivery,
             TextBtn
         },
         mounted() {
-            // this.CREATE_MAGIC_BTN(this.$el.querySelector('#indexBtn'));
+            let delIndex = this.$store.state.customerIndex.deliveryIndex;
+
+            if(delIndex) {
+                this.deliveryIndex = delIndex;
+            }
         },
         methods: {
             ...mapActions([

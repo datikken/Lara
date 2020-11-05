@@ -286,6 +286,10 @@ class ProductsController extends Controller
     {
         return view('pages.cart.checkoutProducts');
     }
+    public function payments()
+    {
+        return view('pages.cart.checkoutProducts');
+    }
 
     public function setIssue(Request $request)
     {

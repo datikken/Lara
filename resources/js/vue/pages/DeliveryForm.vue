@@ -95,14 +95,12 @@
         },
         watch: {
             showAditionalForms(newVal, oldVal) {
-                if(newVal) {
-                    this._showAditionalForms();
-                }
+                console.warn('showAditionalForms watch', newVal, oldVal);
+
+                this._showAditionalForms();
             },
             pickUpPoint(newVal, oldVal) {
-                if(newVal) {
-                    this.pickUpPointAccepted = true
-                }
+                this.pickUpPointAccepted = true
             },
             readyToGo(newVal, oldVal) {
                 let that = this;
@@ -111,9 +109,7 @@
                 setTimeout(that.createMagicBtn, 500);
             },
             prevDelAdrAccepted(newVal, oldVal) {
-                if(newVal) {
-                    this.delSelfAccepted = newVal;
-                }
+                this.delSelfAccepted = newVal;
             }
         },
         methods: {

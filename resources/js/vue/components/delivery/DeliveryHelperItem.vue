@@ -48,6 +48,9 @@
 
                 this.SET_DELIVERY_TYPE(e.currentTarget.dataset.val);
                 this.SET_ADDITIONAL_FORMS(e.currentTarget.dataset.val);
+
+                console.warn('del helper item', e.currentTarget.dataset.val)
+
             }
         }
     }

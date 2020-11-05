@@ -11,7 +11,7 @@ Route::group(['middleware' => 'restrictToAdmin'], function () {
     Route::get('/admin/changeOrderStatus/{id}', ['uses' => 'AdminOrdersController@changeOrderStatus', 'as' => 'changeOrderStatus']);
     Route::get('/getOrdersInfo', ['uses' => 'OrdersController@ordersHistory', 'as' => 'GetOrdersInfo']);
     Route::get('/checkoutProducts', ['uses' => 'ProductsController@checkoutProducts', 'as' => 'checkoutProducts']);
-    Route::get('/payments', ['uses' => 'ProductsController@checkoutProducts', 'as' => 'checkoutProducts']);
+    Route::get('/payments', ['uses' => 'ProductsController@payments', 'as' => 'payments']);
     Route::get('/vueDeliveryForm', ['uses' => 'ProductsController@deliveryForm', 'as' => 'vueDeliveryForm']);
     Route::get('/getSingleOrderInfo/{id}', ['uses' => 'OrdersController@getOrderInfo', 'as' => 'getSingleOrderInfo']);
     //Tracking

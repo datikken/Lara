@@ -260,7 +260,7 @@ button {
 
     span {
         margin-left: 10px;
-        font-family: $font;
+        font-family: $semifont;
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
@@ -269,6 +269,7 @@ button {
         text-transform: uppercase;
         color: $black;
         border-radius: 30px;
+        cursor: pointer;
     }
 }
 
