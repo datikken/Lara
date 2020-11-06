@@ -81,7 +81,8 @@
         },
         methods: {
             ...mapActions([
-                'FINISH_CONTRACT'
+                'FINISH_CONTRACT',
+                'CHANGE_PROGRESS_STEP'
             ]),
             setClass(e) {
                 let btns = this.$el.querySelectorAll('.dform_btn')
@@ -93,11 +94,13 @@
             },
             pushToThanks() {
                 this.FINISH_CONTRACT();
-
             }
         },
         computed: {
             ...mapGetters(['orderPaid', 'paymentProvider'])
+        },
+        created() {
+            this.CHANGE_PROGRESS_STEP(4);
         }
     }
 </script>

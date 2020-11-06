@@ -95,10 +95,6 @@
                 'CREATE_MAGIC_BTN',
                 'CREATE_ORDER',
             ]),
-            fixFooter() {
-                let footer = document.querySelector('.order_list-wrap_footer');
-                // footer && footer.classList.add('order_list-wrap_footer_final');
-            },
             pushToThanks() {
                 let order = new Promise((res, rej) => {
                     this.CREATE_ORDER();
@@ -120,23 +116,16 @@
                 )
             },
             finalStep() {
-                let mgcBtn = document.querySelector('#final_btn');
-
                 this.active = true;
-
-                this.fixFooter();
-
-                setTimeout(this.CREATE_MAGIC_BTN(mgcBtn), 500)
+                setTimeout(this.createMagic, 50)
+            },
+            createMagic() {
+                let btn = document.querySelector('#final_btn');
+                this.CREATE_MAGIC_BTN(btn);
             }
-        },
-        created() {
-            this.CHECK_CART_STATE();
         },
         watch: {
             paymentProvider(newVal, oldVal) {
-
-                console.warn(newVal, 'paymentProvider')
-
                 this.finalStep();
             }
         },
@@ -151,6 +140,14 @@
             },
             orders() {
                 return this.$store.state.cart
+            }
+        },
+        created() {
+            this.CHECK_CART_STATE();
+        },
+        mounted() {
+            if (this.$store.state.paymentProvider && this.$store.state.cartStep === 3) {
+                this.finalStep();
             }
         }
     }

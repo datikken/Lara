@@ -48,7 +48,7 @@
             <div class="menu_wrapper-item">
                 <div class="menu_wrapper-item_cart">
                     <a href="/cart">
-                        <div class="menu_wrapper-item_cart_icon">
+                        <div class="menu_wrapper-item_cart_icon" :if="this.cart">
                             <img src="/images/menu/cart.svg" alt="cart" v-if="this.cart.totalQuantity" data-cartIcon/>
                             <img src="/images/menu/empty_cart.svg" alt="cart" v-else data-cartIcon/>
                             <span class="menu_wrapper-item_cart_icon-amount" data-cartAmountVal>{{ this.cart.totalQuantity }}</span>
@@ -89,7 +89,11 @@
         },
         computed: {
             cart() {
-                return this.$store.state.cart
+                if(this.$store.state.cart) {
+                    return this.$store.state.cart
+                } else {
+                    return {};
+                }
             }
         },
         mounted() {

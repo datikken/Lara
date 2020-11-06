@@ -11,11 +11,7 @@
         components: {
             Success
         },
-        methods: {
-            ...mapActions(['CHANGE_PROGRESS_STEP'])
-        },
         mounted() {
-            this.CHANGE_PROGRESS_STEP(3);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }

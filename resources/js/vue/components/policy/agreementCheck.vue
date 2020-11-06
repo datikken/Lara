@@ -10,7 +10,7 @@
 
 
             <div class="as-flex">
-                <SimpleCheckbox name="save" @click.native="checkAndChange"/>
+                <SimpleCheckbox name="save" @click.native="checkAndChange" ref="agremCheck"/>
 
                 <div class="agreement_text">
                     <p class="agreement_prgf">
@@ -42,6 +42,9 @@
         },
         mounted() {
             this.errObj = this.$el.querySelector('[data-ofertaError]');
+            if(this.$store.state.ofertaPolicy) {
+                this.$refs.agremCheck.setChecked();
+            }
         },
         computed: {
             ...mapState(['ofertaPolicy'])

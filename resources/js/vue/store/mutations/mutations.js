@@ -263,6 +263,7 @@ let mutations = {
         let payment = new UnitPay();
         payment.createWidget(obj);
         payment.success(function (params) {
+            state.orderPaid = true;
             console.log('Успешный платеж');
         });
         payment.error(function (message, params) {
@@ -388,7 +389,18 @@ let mutations = {
         error.classList.remove('as-none');
     }
     ,
-    finishOrderProcess() {
+    finishOrderProcess(state) {
+        state.cart = null;
+        state.customerIndex = null;
+        state.deliveryAdress = null;
+        state.deliveryAllowed = null;
+        state.deliveryType = null;
+        state.paymentProvider = null;
+        state.showAditionalForms = null;
+        state.signatureHash = null;
+        state.stockDeliveryPickup = null;
+        state.cartStep = 0;
+
         router.push('/success');
     }
     ,
@@ -453,10 +465,12 @@ let mutations = {
         if (valid) {
             createCryptogram();
         }
-    }
-    ,
+    },
     setPaymentProvider(state, provider) {
-        state.paymentProvider = provider;
+        state.paymentProvider = null;
+
+        setTimeout(() => (state.paymentProvider = provider), 50);
+
         let paymentBlock = document.querySelector('.payment_wrap');
         let checkboxes = paymentBlock.querySelectorAll('.checkbox');
 
@@ -499,8 +513,6 @@ let mutations = {
                 console.warn(error);
             }
         });
-
-        console.warn('tes', state.paymentProvider)
 
         return state.paymentProvider;
     }

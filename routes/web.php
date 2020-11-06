@@ -16,6 +16,11 @@ Route::group(['middleware' => 'restrictToAdmin'], function () {
     Route::get('/getSingleOrderInfo/{id}', ['uses' => 'OrdersController@getOrderInfo', 'as' => 'getSingleOrderInfo']);
     //Tracking
     Route::get('tracking', ['uses' => 'TrackingController@index', 'as' => 'tracking']);
+
+    Route::get('/success', function () {
+       return redirect('/');
+    });
+
 });
 
 

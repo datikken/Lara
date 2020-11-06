@@ -11,7 +11,7 @@
                     <label for="payment_type-nal">При получении</label>
 
                     <div class="payment_wrap-form_group-inner">
-                        <SimpleCheckbox/>
+                        <SimpleCheckbox ref="nalBox" />
                         <span>Наличными или банковской картой</span>
                     </div>
                 </div>
@@ -20,12 +20,12 @@
                     <label for="payment_type-cart">Онлайн</label>
 
                     <div class="payment_wrap-form_group-inner">
-                        <SimpleCheckbox/>
+                        <SimpleCheckbox ref="cardBox" />
                         <span>Картами Visa, Mastercard, Maestro</span>
                     </div>
                 </div>
 
-                <CardPayment v-if="paymentsProvider === true" />
+                <CardPayment :if="paymentsProvider === true" ref="payWithCard" />
 
             </div>
         </div>
@@ -51,10 +51,18 @@
         methods: {
             ...mapActions([
                 'SET_PAYMENT_PROVIDER',
+                'CHANGE_PROGRESS_STEP'
             ]),
             setPayment(e) {
                 let provider = e.currentTarget.innerText;
                 this.SET_PAYMENT_PROVIDER(provider);
+            },
+            selectMethod(state) {
+                if(state.indexOf('картой') >= 0) {
+                    this.$refs.cardBox.setChecked();
+                } else {
+                    this.$refs.nalBox.setChecked();
+                }
             }
         },
         computed: {
@@ -67,6 +75,17 @@
                 this.paymentsProvider = newVal;
             }
         },
+        mounted() {
+            let methodSelected = this.$store.state.paymentProvider;
+
+            this.CHANGE_PROGRESS_STEP(3);
+
+            if (methodSelected) {
+                this.paymentsProvider = true;
+                this.selectMethod(methodSelected)
+                this.$refs.payWithCard.processCardPayment();
+            }
+        }
     }
 </script>
 

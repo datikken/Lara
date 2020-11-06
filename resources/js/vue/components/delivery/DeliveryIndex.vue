@@ -41,7 +41,10 @@
             TextBtn
         },
         mounted() {
-            let delIndex = this.$store.state.customerIndex.deliveryIndex;
+            let delIndex;
+            if(this.$store.state.customerIndex) {
+                delIndex = this.$store.state.customerIndex.deliveryIndex;
+            }
 
             if(delIndex) {
                 this.deliveryIndex = delIndex;

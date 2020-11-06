@@ -7945,6 +7945,13 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   height: 50px !important;
 }
 
+.cart_success {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .cart_success_wrap {
   width: 770px;
   height: 330px !important;
