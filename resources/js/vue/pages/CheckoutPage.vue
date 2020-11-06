@@ -40,9 +40,6 @@
         },
         watch: {
             user(newVal, oldVal) {
-
-                console.warn('main 3', newVal.user[0].face);
-
                 if (newVal) {
                     this.userFace = newVal.user[0].face;
                 }

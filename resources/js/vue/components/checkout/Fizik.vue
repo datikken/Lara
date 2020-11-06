@@ -79,6 +79,7 @@
            this.GET_USERS_INFO();
            this.fillInputsData();
            this.clearInputsOnFocus();
+           this.CHANGE_PROGRESS_STEP(1);
 
            new MagicButton(this.$el.querySelector('.magic_btn'));
         },
@@ -198,7 +199,6 @@
 
                 if(this.validForm) {
                     this.SET_CUSTOMER_FIO(obj);
-                    this.CHANGE_PROGRESS_STEP();
                     router.push('/vueDeliveryForm');
                     this.SCROLL_TO_TOP();
                 }

@@ -21,10 +21,7 @@
         methods: {
             ...mapActions([
                 'CREATE_SIGNATURE_HASH'
-            ]),
-            processCardPayment() {
-                this.CREATE_SIGNATURE_HASH();
-            }
+            ])
         }
     }
 </script>

@@ -25,7 +25,7 @@
                     </div>
                 </div>
 
-                <CardPayment :if="paymentsProvider === true" ref="payWithCard" />
+                <CardPayment v-if="this.payments === true" ref="payWithCard" />
 
             </div>
         </div>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-    import {mapActions} from 'vuex'
+    import {mapActions,mapGetters} from 'vuex'
     import TextBtn from '../btns/TextBtn'
     import SimpleCheckbox from '../checkboxes/SimpleCheckbox'
     import CardPayment from './CardPayment'
@@ -41,7 +41,7 @@
     export default {
         name: "Payments",
         data: () => ({
-            paymentsProvider: false
+            payments: false
         }),
         components: {
             SimpleCheckbox,
@@ -51,39 +51,47 @@
         methods: {
             ...mapActions([
                 'SET_PAYMENT_PROVIDER',
-                'CHANGE_PROGRESS_STEP'
+                'CHANGE_PROGRESS_STEP',
+                'CREATE_SIGNATURE_HASH'
             ]),
             setPayment(e) {
                 let provider = e.currentTarget.innerText;
                 this.SET_PAYMENT_PROVIDER(provider);
             },
             selectMethod(state) {
-                if(state.indexOf('картой') >= 0) {
+                if(state.indexOf('Mastercard') >= 0) {
                     this.$refs.cardBox.setChecked();
+                    this.CREATE_SIGNATURE_HASH();
                 } else {
                     this.$refs.nalBox.setChecked();
                 }
             }
         },
         computed: {
-            card() {
-                return this.$store.state.cardPayment
-            }
+            ...mapGetters([
+                'paymentProvider'
+            ])
         },
         watch: {
-            card(newVal, oldVal) {
-                this.paymentsProvider = newVal;
+            paymentProvider(newVal, oldVal) {
+                if(newVal && newVal.indexOf('Mastercard') >= 0) {
+                    this.payments = true;
+                    this.CREATE_SIGNATURE_HASH();
+                } else {
+                    this.payments = false;
+                }
             }
         },
         mounted() {
             let methodSelected = this.$store.state.paymentProvider;
+                methodSelected && this.selectMethod(methodSelected);
+
 
             this.CHANGE_PROGRESS_STEP(3);
 
-            if (methodSelected) {
-                this.paymentsProvider = true;
-                this.selectMethod(methodSelected)
-                this.$refs.payWithCard.processCardPayment();
+            if (methodSelected && methodSelected.indexOf('Mastercard') >= 0) {
+                this.payments = true;
+                this.concretePay();
             }
         }
     }

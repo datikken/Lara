@@ -44,8 +44,6 @@
             changeStep(val) {
                 let line = document.querySelector('.cart_wrap-crumb').querySelector('.active-item');
 
-                console.warn('CartNav', this.cartStep)
-
                 switch(this.cartStep) {
                     case 1 : line.style.width = '37%';
                         break;
@@ -55,6 +53,10 @@
                         break;
                     case 4 : this.$el.classList.add('as-none');
                         break;
+                }
+
+                if(this.cartStep < 4) {
+                    this.$el.classList.remove('as-none');
                 }
             }
         }

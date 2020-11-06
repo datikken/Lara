@@ -79,6 +79,7 @@
 <script>
     import {mapActions, mapGetters} from 'vuex'
     import TextBtn from '../btns/TextBtn'
+    import router from '../../router/router'
 
     export default {
         name: "OrdersList",
@@ -96,24 +97,17 @@
                 'CREATE_ORDER',
             ]),
             pushToThanks() {
+                let that = this;
+
                 let order = new Promise((res, rej) => {
-                    this.CREATE_ORDER();
+                    that.CREATE_ORDER();
 
                     res();
-                });
+                })
 
                 order.then(() => {
-                        if (this.paymentProvider.indexOf('Mastercard') >= 0) {
-                            if (!this.orderPaid) {
-                                return
-                            } else {
-                                this.FINISH_ORDER_PROCESS();
-                            }
-                        } else {
-                            this.FINISH_ORDER_PROCESS();
-                        }
-                    }
-                )
+                    that.FINISH_ORDER_PROCESS();
+                })
             },
             finalStep() {
                 this.active = true;
@@ -139,7 +133,7 @@
                 return this.$store.state.paymentProvider
             },
             orders() {
-                if(this.$store.state.cart) {
+                if (this.$store.state.cart) {
                     return this.$store.state.cart
                 } else {
                     return {}

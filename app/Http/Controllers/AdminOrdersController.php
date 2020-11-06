@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
-use App\Http\Controllers\CustomerDataController;
+use App;
 
 class AdminOrdersController extends Controller
 {
@@ -80,6 +80,7 @@ class AdminOrdersController extends Controller
     {
         $cart = Session::get('cart');
         $user_id = Auth::id();
+        $environment = App::environment();
 
         if($cart) {
             $date = date('Y-m-d H:i:s');
@@ -121,8 +122,10 @@ class AdminOrdersController extends Controller
             Session::forget('cart');
             Session::flush();
 
-            $mailer = new SendEmailController();
-            $mailer::sendOrderWasCreated($order_id);
+            if($environment != 'local') {
+                $mailer = new SendEmailController();
+                $mailer::sendOrderWasCreated($order_id);
+            }
         }
 
         return response()->json($newOrderArray);
