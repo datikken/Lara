@@ -139,14 +139,18 @@
                 return this.$store.state.paymentProvider
             },
             orders() {
-                return this.$store.state.cart
+                if(this.$store.state.cart) {
+                    return this.$store.state.cart
+                } else {
+                    return {}
+                }
             }
         },
         created() {
             this.CHECK_CART_STATE();
         },
         mounted() {
-            if (this.$store.state.paymentProvider && this.$store.state.cartStep === 3) {
+            if (this.$store.state.paymentProvider && this.$store.state.cartStep >= 3) {
                 this.finalStep();
             }
         }

@@ -24,7 +24,11 @@
 
             <div class="cart_success_wrap_item">
                 <div class="cart_success_wrap_item-btn">
-                    <TextBtn text="Закрыть" className="cart_success_wrap_item-btn_item text_buy-btn magic_btn" @click.native="pushToHome" />
+                    <TextBtn
+                        text="Закрыть"
+                        id="thanks_btn"
+                        className="cart_success_wrap_item-btn_item text_buy-btn magic_btn"
+                        @click.native="pushToHome" />
                 </div>
             </div>
 
@@ -50,12 +54,12 @@
                 window.location = '/'
             },
             createMagic() {
-                let btn = document.querySelector('#final_btn');
+                let btn = document.querySelector('#thanks_btn');
                 this.CREATE_MAGIC_BTN(btn);
             }
         },
         created() {
-            this.CHANGE_PROGRESS_STEP(0);
+            this.CHANGE_PROGRESS_STEP(4);
             setTimeout(this.createMagic, 500);
         }
     }
