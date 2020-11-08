@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
 use App\Includes\HelperString;
 use Illuminate\Http\Request;
-use App\MainSliderImage;
+use App\MainSliderImages;
 use App\Product;
 use App\Cart;
 use App\Post;
@@ -18,7 +18,7 @@ class ProductsController extends Controller
 {
     public function showIndex()
     {
-        $slides = MainSliderImage::all();
+        $slides = MainSliderImages::all();
         $products = Product::all();
         $posts = Post::all();
 

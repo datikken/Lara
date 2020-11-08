@@ -1,5 +1,5 @@
 {
-    "name": "Lara",
+    "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
     "keywords": [
@@ -16,7 +16,8 @@
         "hflabs/dadata": "^20.7",
         "laravel/framework": "5.8.*",
         "laravel/helpers": "^1.2",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "laravel/nova": "2.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -26,6 +27,12 @@
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^7.5"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",

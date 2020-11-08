@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MainSliderImage extends Model
+class MainSliderImages extends Model
 {
     protected $fillable = [
         'image'
