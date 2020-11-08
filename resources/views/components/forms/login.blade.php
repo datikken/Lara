@@ -16,7 +16,7 @@
                         <label for="email" class="row_label">{{ __('Почта') }}</label>
                         <input type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
                     </div>
-                    <div class="form-group row password_field">
+                    <div class="form-group row password_field mb20">
                         <span class="password_field-label"></span>
 
                         <label for="email" class="row_label password_hide">{{ __('Пароль') }}</label>
@@ -37,7 +37,7 @@
                                     {{ __('Запомнить меня') }}
                                 </label>
                             </div>
-                            <a class="btn btn-link" href="{{ route('password.request') }}" data-forgotPassword uk-toggle="target: #passReset">
+                            <a class="btn-link" href="{{ route('password.request') }}" data-forgotPassword uk-toggle="target: #passReset">
                                 {{ __('Забыли пароль?') }}
                             </a>
                         </div>

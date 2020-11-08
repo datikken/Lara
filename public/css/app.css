@@ -202,6 +202,10 @@ input::-webkit-input-placeholder {
   margin-bottom: 30px !important;
 }
 
+.mb20 {
+  margin-bottom: 20px;
+}
+
 .mb10 {
   margin-bottom: 10px !important;
 }
@@ -220,6 +224,10 @@ input::-webkit-input-placeholder {
 
 .mt60 {
   margin-top: 60px !important;
+}
+
+.mauto {
+  margin: 0 auto;
 }
 
 .as-flex {
@@ -12223,351 +12231,6 @@ main {
   min-height: 500px;
 }
 
-.main {
-  margin: 0 auto;
-  background: #fff;
-  margin-bottom: 250px;
-  position: relative;
-  width: 100%;
-}
-
-@media screen and (min-width: 1030px) {
-  .main {
-    max-width: 970px;
-    width: 970px;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
-    height: 574px;
-  }
-}
-
-.main .container {
-  width: 320px;
-  height: 346px;
-  margin: 0 auto;
-  align-self: flex-start;
-  padding-top: 38px;
-}
-
-.main .card-body {
-  align-self: flex-start;
-  width: 100%;
-}
-
-.main .card-body form .btn-primary {
-  border-radius: 30px;
-  background: #fdd935;
-  width: 200px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px 0;
-  border: none;
-  cursor: pointer;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #292930;
-}
-
-.main .card-body form .agreement {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.main .card-body form .agreement span {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #3559fd;
-  margin-left: 35px !important;
-}
-
-.main .card-body form .agreement .form-check_box {
-  border: 1px solid #e9e9ea;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  z-index: 99999;
-  background: #fff;
-  cursor: pointer;
-}
-
-.main .card-body form .agreement .form-control {
-  width: 20px;
-  height: 20px;
-}
-
-.main .card-body form .agreement span {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #3559fd;
-  margin-left: 10px;
-}
-
-.main .card-body form .form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-  position: relative !important;
-}
-
-.main .card-body form .form-group .col-form-label {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #40404c;
-  margin-bottom: 5px;
-}
-
-.main .card-body form .form-group .agreement_check {
-  display: flex;
-  align-items: center;
-}
-
-.main .card-body form .form-group .agreement_check .btn-link {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: right;
-  letter-spacing: 0.02em;
-  color: #3559fd;
-  display: block;
-  width: 150px;
-}
-
-.main .card-body form .form-group .row_label {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #40404c;
-  margin-bottom: 5px;
-}
-
-.main .card-body form .form-group .form-check {
-  flex-basis: 80%;
-  display: flex;
-  align-items: center;
-}
-
-.main .card-body form .form-group .form-check_box {
-  border: 1px solid #e9e9ea;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  z-index: 99999;
-  background: #fff;
-  cursor: pointer;
-}
-
-.main .card-body form .form-group .form-check_box:after {
-  content: '';
-  height: 9px;
-  width: 6px;
-  background-image: url("/img/icons/arrow_right_black.svg");
-}
-
-.main .card-body form .form-group .form-check .form-check-label {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: right;
-  letter-spacing: 0.02em;
-  color: #40404c;
-  cursor: pointer;
-  margin-left: 35px;
-}
-
-.main .card-body form .form-group .form-check .form-check-input {
-  width: 20px;
-  height: 20px;
-  margin: 0;
-}
-
-.main .card-body form .form-group input {
-  width: 270px;
-  height: 40px;
-  border-radius: 30px;
-  border: 1px solid #e9e9ea;
-  width: 300px;
-  padding: 20px;
-  border-radius: 30px;
-  height: 40px;
-  margin-right: 30px;
-  margin-right: 0;
-  outline: none;
-  padding: 0 0 2px 30px;
-}
-
-.main .card-body form .form-group input::placeholder {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #d4d4d5;
-}
-
-@media not all and (min-resolution: 0.001dpcm) {
-  .main .card-body form .form-group input {
-    padding: 20px;
-  }
-}
-
-.main .card-body form .form-group span {
-  margin-bottom: 5px;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #292930;
-}
-
-.main .card-body form .form_type {
-  display: grid;
-  width: 300px;
-  grid-template-columns: 1fr 1fr;
-  height: 40px;
-  align-items: center;
-  justify-items: center;
-  border: 1px solid #e9e9ea;
-  border-radius: 30px;
-  overflow: hidden;
-}
-
-.main .card-body form .form_type-item {
-  display: block;
-  color: #fff;
-  cursor: pointer;
-  height: 100%;
-  width: 100%;
-}
-
-.main .card-body form .form_type-item .form_type-itemText {
-  color: #40404c;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.main .card-body form .form_type-item .form_type-itemText span {
-  margin: 0;
-}
-
-.main .card-body form .form_type-item .form_type-itemText_inner {
-  margin-bottom: 0;
-}
-
-.main .card-body form .form_type .activeFormItem {
-  background: black;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  justify-content: center;
-}
-
-.main .card-body form .form_type .activeFormItem .form_type-itemText span {
-  color: #fff;
-}
-
-@media screen and (min-width: 1030px) {
-  .main .card-body {
-    width: 300px;
-  }
-}
-
-.main .card .card-greet {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #d4d4d5;
-  max-width: 170px;
-}
-
-.main .card .card-greet_text {
-  margin: 20px 0;
-  text-align: left;
-}
-
-.main .card .card-header {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 29px;
-  text-transform: uppercase;
-  color: #40404c;
-  border-bottom: 1px solid #fdd935;
-  padding-bottom: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.main .card .card-header:after {
-  content: '';
-  display: block;
-  background-image: url("/images/icons/closed.svg");
-  width: 12px;
-  height: 12px;
-}
-
-@media screen and (min-width: 1030px) {
-  .main .card .card-header:after {
-    display: none;
-  }
-}
-
-.register_greet {
-  max-width: 250px !important;
-}
-
-.password_field-label {
-  display: block;
-  background-image: url("/images/icons/closedeyese.svg");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  z-index: 9999;
-  top: 2rem;
-  cursor: pointer;
-  right: 10px;
-  margin-right: 20px;
-}
-
-@media screen and (min-width: 1030px) {
-  .password_field-label {
-    right: 0;
-  }
-}
-
 .invalid-feedback {
   color: red !important;
 }
@@ -14619,6 +14282,351 @@ main {
   color: #292930;
 }
 
+.register_greet {
+  max-width: 250px !important;
+}
+
+.password_field-label {
+  display: block;
+  background-image: url("/images/icons/closedeyese.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 9999;
+  top: 2rem;
+  cursor: pointer;
+  right: 10px;
+  margin-right: 20px;
+}
+
+@media screen and (min-width: 1030px) {
+  .password_field-label {
+    right: 0;
+  }
+}
+
+.main {
+  margin: 0 auto;
+  background: #fff;
+  margin-bottom: 250px;
+  position: relative;
+  width: 100%;
+}
+
+@media screen and (min-width: 1030px) {
+  .main {
+    max-width: 970px;
+    width: 970px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    height: 574px;
+  }
+}
+
+.main .container {
+  width: 320px;
+  height: 346px;
+  margin: 0 auto;
+  align-self: flex-start;
+  padding-top: 38px;
+}
+
+.main .card-body {
+  align-self: flex-start;
+  width: 100%;
+}
+
+.main .card-body form .btn-primary {
+  border-radius: 30px;
+  background: #fdd935;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+}
+
+.main .card-body form .agreement {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.main .card-body form .agreement span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #3559fd;
+  margin-left: 35px !important;
+}
+
+.main .card-body form .agreement .form-check_box {
+  border: 1px solid #e9e9ea;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 99999;
+  background: #fff;
+  cursor: pointer;
+}
+
+.main .card-body form .agreement .form-control {
+  width: 20px;
+  height: 20px;
+}
+
+.main .card-body form .agreement span {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #3559fd;
+  margin-left: 10px;
+}
+
+.main .card-body form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  position: relative !important;
+}
+
+.main .card-body form .form-group .col-form-label {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  margin-bottom: 5px;
+}
+
+.main .card-body form .form-group .agreement_check {
+  display: flex;
+  align-items: center;
+}
+
+.main .card-body form .form-group .agreement_check .btn-link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  letter-spacing: 0.02em;
+  color: #3559fd;
+  display: block;
+  width: 150px;
+}
+
+.main .card-body form .form-group .row_label {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  margin-bottom: 5px;
+}
+
+.main .card-body form .form-group .form-check {
+  flex-basis: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.main .card-body form .form-group .form-check_box {
+  border: 1px solid #e9e9ea;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 99999;
+  background: #fff;
+  cursor: pointer;
+}
+
+.main .card-body form .form-group .form-check_box:after {
+  content: '';
+  height: 9px;
+  width: 6px;
+  background-image: url("/img/icons/arrow_right_black.svg");
+}
+
+.main .card-body form .form-group .form-check .form-check-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  letter-spacing: 0.02em;
+  color: #40404c;
+  cursor: pointer;
+  margin-left: 35px;
+}
+
+.main .card-body form .form-group .form-check .form-check-input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.main .card-body form .form-group input {
+  width: 270px;
+  height: 40px;
+  border-radius: 30px;
+  border: 1px solid #e9e9ea;
+  width: 300px;
+  padding: 20px;
+  border-radius: 30px;
+  height: 40px;
+  margin-right: 30px;
+  margin-right: 0;
+  outline: none;
+  padding: 0 0 2px 30px;
+}
+
+.main .card-body form .form-group input::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  .main .card-body form .form-group input {
+    padding: 20px;
+  }
+}
+
+.main .card-body form .form-group span {
+  margin-bottom: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+}
+
+.main .card-body form .form_type {
+  display: grid;
+  width: 300px;
+  grid-template-columns: 1fr 1fr;
+  height: 40px;
+  align-items: center;
+  justify-items: center;
+  border: 1px solid #e9e9ea;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.main .card-body form .form_type-item {
+  display: block;
+  color: #fff;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.main .card-body form .form_type-item .form_type-itemText {
+  color: #40404c;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .card-body form .form_type-item .form_type-itemText span {
+  margin: 0;
+}
+
+.main .card-body form .form_type-item .form_type-itemText_inner {
+  margin-bottom: 0;
+}
+
+.main .card-body form .form_type .activeFormItem {
+  background: black;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.main .card-body form .form_type .activeFormItem .form_type-itemText span {
+  color: #fff;
+}
+
+@media screen and (min-width: 1030px) {
+  .main .card-body {
+    width: 300px;
+  }
+}
+
+.main .card .card-greet {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #d4d4d5;
+  max-width: 170px;
+}
+
+.main .card .card-greet_text {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.main .card .card-header {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #40404c;
+  border-bottom: 1px solid #fdd935;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main .card .card-header:after {
+  content: '';
+  display: block;
+  background-image: url("/images/icons/closed.svg");
+  width: 12px;
+  height: 12px;
+}
+
+@media screen and (min-width: 1030px) {
+  .main .card .card-header:after {
+    display: none;
+  }
+}
+
 .simplebar-content-wrapper {
   overflow: auto;
 }
@@ -15380,6 +15388,79 @@ main {
   border-bottom: 1px solid #e9e9ea;
   display: inline-block !important;
   padding-bottom: 20px;
+  margin: 0 0 20px 0;
+}
+
+#emailIsNotVerified {
+  z-index: 99999;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+
+.emailIsNotVerified {
+  width: 430px !important;
+  height: 330px;
+}
+
+.emailIsNotVerified:after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  display: block;
+  position: absolute;
+  background: linear-gradient(90deg, #d935fd 19.91%, #3559fd 100%);
+  left: 0;
+  top: 0;
+}
+
+.emailIsNotVerified .flat_btn, .emailIsNotVerified .animated_btn {
+  width: 230px;
+  margin: 0 0 20px 0;
+}
+
+.emailIsNotVerified_span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #292930;
+  margin-bottom: 10px;
+}
+
+.emailIsNotVerified_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.emailIsNotVerified_inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emailIsNotVerified_inner .flat_btn, .emailIsNotVerified_inner .animated_btn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #292930;
+}
+
+.emailIsNotVerified_head_txt {
+  font-family: "MontserratSemiBold";
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #292930;
+  border-bottom: 1px solid #e9e9ea;
+  display: inline-block !important;
+  padding-bottom: 15px;
   margin: 0 0 20px 0;
 }
 

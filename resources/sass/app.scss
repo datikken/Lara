@@ -2,7 +2,6 @@
 @import "./utils/utils";
 @import "./utils/animations";
 
-
 @import "./modifiers/padding";
 @import "./modifiers/weight";
 @import "./modifiers/margin";
@@ -109,14 +108,17 @@
 @import "./components/dash/dadresses";
 @import "./components/blog/postComments";
 @import "./components/verify";
+@import "./components/auth/auth";
 @import "./components/simplebar";
 @import "./components/notFound";
 @import "./components/catalogSwitch";
 @import "./components/dropdown/payment_dropdown";
 @import "./components/about/about_modal";
 @import "./components/pickups/pickups";
+
 @import "components/modals/passReset";
 @import "components/modals/emailHasBeenSent";
+@import "components/modals/emailIsNotVerified";
 @import "components/modals/emailIsNotVerified";
 
 @import "./utils/normalize";

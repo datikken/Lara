@@ -17,7 +17,7 @@
 
 
                 <div class="form_group">
-                    @include('components.btn.text_btn', [ 'class' => 'action_btn animated_btn', 'text' => 'Отправить'])
+                    @include('components.btn.text_btn', [ 'class' => 'mauto action_btn yellow_btn', 'text' => 'Отправить'])
                 </div>
 
             </form>
