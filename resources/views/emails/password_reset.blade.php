@@ -164,7 +164,8 @@
                                         <span class="main_description_item">
                                          Если это были вы, перейдите по ссылке, которая будет активна до
                                             <?
-                                                echo \App\Includes\HelperDate::getTommorrowWithMonth();
+                                                $helper = new \App\Includes\HelperDate();
+                                                echo $helper->getTommorrowWithMonth();
                                             ?> <a
                                                 href="{{ $data['link'] }}"> {{ $data['link'] }} </a>
                                         </span>
