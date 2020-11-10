@@ -33,7 +33,7 @@
 
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
          style="height: 70px; background-color: #292930!important;">
-        <img class="header_wrapper-item_logo-item ml-3" src="/images/icons/main_logo.png" alt="Logo">
+        <img class="header_wrapper-item_logo-item ml-3" src="/images/header/main_logo.svg" alt="Logo">
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
                 data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
                 aria-label="Toggle navigation">

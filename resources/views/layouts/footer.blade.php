@@ -3,7 +3,7 @@
         <div class="footer_wrapper-item">
             <div class="footer_wrapper-item_logo">
                 <a href="/">
-                    <img class="header_wrapper-item_logo-item" src="/images/icons/main_logo.png" alt="Logo"/>
+                    <img class="header_wrapper-item_logo-item" src="/images/header/main_logo.svg" alt="Logo"/>
                 </a>
             </div>
             <div class="footer_wrapper-item_info">
