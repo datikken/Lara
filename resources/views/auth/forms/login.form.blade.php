@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                                <button type="submit" class="btn btn-primary animated_btn">
+                                <button type="submit" class="yellow_btn animated_btn">
                                     {{ __('Войти') }}
                                 </button>
 

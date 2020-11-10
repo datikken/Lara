@@ -102,10 +102,10 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary animated_btn" data-registerForm="true">
+                            <div class="col-md-6 offset-md-4 yellow_btn animated_btn">
+                                <span type="submit" class="" data-registerForm="true">
                                     {{ __('РЕГИСТРАЦИЯ') }}
-                                </button>
+                                </span>
                             </div>
                         </div>
                     </form>

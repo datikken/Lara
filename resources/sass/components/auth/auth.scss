@@ -50,27 +50,6 @@
         //padding-top: 38px;
 
         form {
-            .btn-primary {
-                border-radius: 30px;
-                background: $yellow;
-                width: 200px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 10px 0;
-                border: none;
-                cursor: pointer;
-
-                font-family:$font;
-                font-weight: 500;
-                font-size: 12px;
-                line-height: 15px;
-                text-align: center;
-                letter-spacing: 0.02em;
-                text-transform: uppercase;
-                color: $dblack;
-            }
             .agreement {
                 display: flex;
                 align-items: center;
@@ -115,8 +94,7 @@
             .form-group {
                 display: flex;
                 flex-direction: column;
-                margin-bottom: 10px;
-                position: relative!important;
+                position: relative;
 
                 .col-form-label {
                     font-family: $font;
@@ -217,18 +195,6 @@
                     input {
                         padding: 20px;
                     }
-                }
-
-
-                span {
-                    margin-bottom: 5px;
-                    font-family: $font;
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 12px;
-                    line-height: 14px;
-                    letter-spacing: 0.02em;
-                    color: $dblack;
                 }
             }
             .form_type {
@@ -332,4 +298,8 @@
             }
         }
     }
+}
+
+.form-group {
+    margin-bottom: 10px;
 }

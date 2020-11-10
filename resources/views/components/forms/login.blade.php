@@ -27,7 +27,7 @@
                     </div>
 
 
-                    <div class="form-group row">
+                    <div class="form-group row mb20">
                         <div class="agreement_check">
                             <div class="form-check">
 
@@ -43,8 +43,8 @@
                         </div>
                     </div>
 
-                    <div class="form-group row mb-0 login-btn">
-                        <button type="submit" class="btn btn-primary animated_btn" data-loginForm="true">
+                    <div class="form-group row mb-0 yellow_btn animated_btn">
+                        <button type="submit" class="yellow_btn animated_btn" data-loginForm="true">
                             {{ __('Войти') }}
                         </button>
                     </div>

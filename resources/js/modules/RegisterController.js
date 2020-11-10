@@ -136,7 +136,7 @@ class RegisterController {
     passReset() {
         let emailSentPopup = document.querySelector('#emailHasBeenSent');
 
-        let btn = this.modal.querySelector('.animated_btn');
+        let btn = this.modal.querySelector('[data-resetPassEmail]');
         let formGroup = this.modal.querySelector('.form_group');
         let that = this;
 

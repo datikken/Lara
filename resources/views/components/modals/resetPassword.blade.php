@@ -17,7 +17,7 @@
 
 
                 <div class="form_group">
-                    @include('components.btn.text_btn', [ 'class' => 'mauto action_btn yellow_btn', 'text' => 'Отправить'])
+                    @include('components.btn.text_btn', [ 'class' => 'mauto action_btn yellow_btn', 'text' => 'Отправить', 'attr' => 'data-resetPassEmail'])
                 </div>
 
             </form>
