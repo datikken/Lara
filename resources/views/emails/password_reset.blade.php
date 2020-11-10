@@ -222,7 +222,7 @@
                                 <div class="footer_item_contacts">
                                     <div class="footer_item_contacts_left" style="float:left;">
                                         <img src="{{URL::to('/')}}/images/emails/footer_tel.png" alt="" style="float:left;padding-top: 1px;">
-                                        <a href="tel:74957755053" style="padding-left: 18px;padding-bottom: 5px;color: white; text-decoration: none;">+7 (495) 775-50-53</a>
+                                        <a href="tel:88005556633" style="padding-left: 18px;padding-bottom: 5px;color: white; text-decoration: none;">+7 (800) 555-66-33</a>
                                     </div>
                                     <div class="footer_item_contacts_right" style="float:left;padding-left: 40px;">
                                         <img src="{{URL::to('/')}}/images/emails/footer_mail.png" alt="" style="float:left;padding-top: 5px;">
