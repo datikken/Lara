@@ -165,8 +165,8 @@
                                          Если это были вы, перейдите по ссылке, которая будет активна до
                                             <?
                                                 $datetime = new DateTime('tomorrow');
-                                                echo $datetime->format('Y-m-d');
-                                            ?> января: <a
+                                                echo $datetime->format('d m Y');
+                                            ?> <a
                                                 href="{{ $data['link'] }}"> {{ $data['link'] }} </a>
                                         </span>
                                         <span class="main_description_item">
