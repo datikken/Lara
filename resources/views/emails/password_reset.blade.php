@@ -164,8 +164,7 @@
                                         <span class="main_description_item">
                                          Если это были вы, перейдите по ссылке, которая будет активна до
                                             <?
-                                                $datetime = new DateTime('tomorrow');
-                                                echo $datetime->format('d m Y');
+                                                echo \App\Includes\HelperDate::getTommorrowWithMonth();
                                             ?> <a
                                                 href="{{ $data['link'] }}"> {{ $data['link'] }} </a>
                                         </span>
