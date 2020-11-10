@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="form_group">
-                    @include('components.btn.text_btn', ['attr' => 'data-passResetBtn', 'class' => 'yellow_btn animated_btn', 'text' => 'Отправить'])
+                    @include('components.btn.text_btn', ['attr' => 'data-passResetBtn', 'class' => 'mauto yellow_btn animated_btn', 'text' => 'Отправить'])
                 </div>
 
             </form>
