@@ -226,7 +226,7 @@
                                     </div>
                                     <div class="footer_item_contacts_right" style="float:left;padding-left: 40px;">
                                         <img src="{{URL::to('/')}}/images/emails/footer_mail.png" alt="" style="float:left;padding-top: 5px;">
-                                        <span  style="padding-left: 18px;padding-bottom: 5px;color: white;text-decoration: none;" class="footer_link">kakayto_pochta@brenddomen.com</span>
+                                        <span  style="padding-left: 18px;padding-bottom: 5px;color: white;text-decoration: none;" class="footer_link">support@recart.me</span>
                                     </div>
                                 </div>
                             </div>
