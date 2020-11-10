@@ -31,20 +31,6 @@
         top: 0;
     }
 
-    .animated_btn {
-        margin: 0 auto;
-
-        .text_btn-item {
-            font-family: $font;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 15px;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-            color: $dblack;
-        }
-    }
-
     &_head {
         margin-bottom: 15px;
         padding: 0 0 15px 0;

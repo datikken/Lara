@@ -15176,20 +15176,6 @@ main {
   top: 0;
 }
 
-.passReset .animated_btn, .passResetForm .animated_btn {
-  margin: 0 auto;
-}
-
-.passReset .animated_btn .text_btn-item, .passResetForm .animated_btn .text_btn-item {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #292930;
-}
-
 .passReset_head, .passResetForm_head {
   margin-bottom: 15px;
   padding: 0 0 15px 0;
