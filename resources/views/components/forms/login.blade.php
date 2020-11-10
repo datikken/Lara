@@ -13,13 +13,13 @@
                 <form method="POST" action="{{ route('login') }}" data-loginForm="true">
                     @csrf
                     <div class="form-group row">
-                        <label for="email" class="row_label">{{ __('Почта') }}</label>
-                        <input type="email" placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                        <label for="email" class="row_label form_group_label">{{ __('Почта') }}</label>
+                        <input type="email" placeholder="Введите вашу почту" class="form-control form_group_label @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
                     </div>
                     <div class="form-group row password_field mb20">
                         <span class="password_field-label"></span>
 
-                        <label for="email" class="row_label password_hide">{{ __('Пароль') }}</label>
+                        <label for="email" class="row_label password_hide form_group_label">{{ __('Пароль') }}</label>
 
                         <div class="col-md-6">
                             <input type="password" placeholder="Введите ваш пароль"  class="form-control password_input @error('password') is-invalid @enderror" name="password" autocomplete="current-password">

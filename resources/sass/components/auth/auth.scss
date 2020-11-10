@@ -96,16 +96,6 @@
                 flex-direction: column;
                 position: relative;
 
-                .col-form-label {
-                    font-family: $font;
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 12px;
-                    line-height: 14px;
-                    letter-spacing: 0.02em;
-                    color:  $black;
-                    margin-bottom: 5px;
-                }
 
                 .agreement_check {
                     display: flex;
@@ -121,17 +111,6 @@
                         display: block;
                         width: 150px;
                     }
-                }
-
-                .row_label {
-                    font-family: Montserrat;
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 12px;
-                    line-height: 14px;
-                    letter-spacing: 0.02em;
-                    color: $black;
-                    margin-bottom: 5px;
                 }
 
                 .form-check {
@@ -223,6 +202,12 @@
                         align-items: center;
                         justify-content: center;
 
+                        font-family: $mfont;
+                        font-size: 12px;
+                        line-height: 15px;
+                        text-align: center;
+                        letter-spacing: 0.02em;
+
                         span {
                             margin: 0;
                         }
@@ -273,7 +258,7 @@
             }
         }
         .card-header {
-            font-family: $font;
+            font-family: $mfont;
             font-style: normal;
             font-weight: 500;
             font-size: 24px;

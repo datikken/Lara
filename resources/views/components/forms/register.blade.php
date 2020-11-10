@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <span>
+                            <span class="form_group_label">
                                 {{ __('Вы регистрируетесь как') }}
                             </span>
 
@@ -62,7 +62,7 @@
 
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Почта') }}</label>
+                            <label for="email" class="form_group_label col-md-4 col-form-label text-md-right">{{ __('Почта') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email"type="email" data-email placeholder="Введите вашу почту" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
@@ -71,7 +71,7 @@
 
                         <div class="form-group row password_field">
                             <span class="password_field-label"></span>
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Пароль') }}</label>
+                            <label for="password" class="form_group_label col-md-4 col-form-label text-md-right">{{ __('Пароль') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" data-required placeholder="Введите пароль" type="password" class="form-control password_input @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
@@ -87,7 +87,7 @@
 
                         <div class="form-group row password_field">
                             <span class="password_field-label"></span>
-                            <label for="password-confirm" class="col-md-4 col-form-label password_hide text-md-right">{{ __('Подтверждение пароля') }}</label>
+                            <label for="password-confirm" class="form_group_label col-md-4 col-form-label password_hide text-md-right">{{ __('Подтверждение пароля') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" data-required placeholder="Подтвердите пароль" type="password" class="form-control password_input" name="password_confirmation" autocomplete="new-password">

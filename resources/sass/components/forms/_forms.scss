@@ -3,6 +3,17 @@
     flex-direction: column;
     align-items: flex-start;
 
+    &_label {
+        font-family: $mfont;
+        text-align: left;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.02em;
+        color:  $dblack;
+        margin-bottom: 5px;
+    }
+
     input {
         border: 1px solid $light_gray;
     }
@@ -47,15 +58,5 @@
     &_error {
         display: none;
         color: $red;
-    }
-
-    &_label {
-        font-family: $font;
-        font-size: 12px;
-        line-height: 20px;
-        text-align: center;
-        letter-spacing: 0.02em;
-        color: $dblack;
-        margin-bottom: 15px;
     }
 }

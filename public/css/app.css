@@ -12617,6 +12617,17 @@ main {
   align-items: flex-start;
 }
 
+.form_group_label {
+  font-family: "MontserratMedium";
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #292930;
+  margin-bottom: 5px;
+}
+
 .form_group input {
   border: 1px solid #e9e9ea;
 }
@@ -12661,16 +12672,6 @@ main {
 .form_group_error {
   display: none;
   color: #FF0000;
-}
-
-.form_group_label {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  line-height: 20px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: #292930;
-  margin-bottom: 15px;
 }
 
 .postDelForm {
@@ -14930,17 +14931,6 @@ main {
   position: relative;
 }
 
-.main .card-body form .form-group .col-form-label {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #40404c;
-  margin-bottom: 5px;
-}
-
 .main .card-body form .form-group .agreement_check {
   display: flex;
   align-items: center;
@@ -14955,17 +14945,6 @@ main {
   color: #3559fd;
   display: block;
   width: 150px;
-}
-
-.main .card-body form .form-group .row_label {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #40404c;
-  margin-bottom: 5px;
 }
 
 .main .card-body form .form-group .form-check {
@@ -15064,6 +15043,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "MontserratMedium";
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 0.02em;
 }
 
 .main .card-body form .form_type-item .form_type-itemText span {
@@ -15110,7 +15094,7 @@ main {
 }
 
 .main .card .card-header {
-  font-family: "Montserrat", sans-serif;
+  font-family: "MontserratMedium";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
