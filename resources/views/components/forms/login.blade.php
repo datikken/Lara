@@ -44,9 +44,9 @@
                     </div>
 
                     <div class="form-group row mb-0 yellow_btn animated_btn">
-                        <button type="submit" class="yellow_btn animated_btn" data-loginForm="true">
+                        <span type="submit" class="" data-loginForm="true">
                             {{ __('Войти') }}
-                        </button>
+                        </span>
                     </div>
                 </form>
             </div>
