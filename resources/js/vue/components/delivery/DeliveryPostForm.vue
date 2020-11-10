@@ -89,6 +89,9 @@
             syncForms(adr) {
                 if(this.deliveryAdress && adr) {
 
+
+                    console.warn(this.deliveryAdress)
+
                     let splitValues = adr.split(',');
 
                     this.city = splitValues[0];
@@ -114,19 +117,19 @@
                 let errs = [];
                 let obj = {};
 
-                // this.groups.forEach(grp => {
-                //     let npt = grp.querySelector('input');
-                //     if(npt) {
-                //         let name = npt.getAttribute('name')
-                //
-                //         if (npt.value === '') {
-                //             grp.classList.add('form_group-error');
-                //             errs.push(name);
-                //         } else {
-                //             obj[name] = npt.value;
-                //         }
-                //     }
-                // })
+                this.groups.forEach(grp => {
+                    let npt = grp.querySelector('input');
+                    if(npt) {
+                        let name = npt.getAttribute('name')
+
+                        if (npt.value === '') {
+                            grp.classList.add('form_group-error');
+                            errs.push(name);
+                        } else {
+                            obj[name] = npt.value;
+                        }
+                    }
+                })
 
                 if(errs.length === 0) {
                     obj.deliveryType = 'post';

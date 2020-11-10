@@ -15,11 +15,11 @@ class CustomerDataController extends Controller
         $index = $request->index;
         $item = $request->session()->put('cartIndex', $index);
 
-        $dadata = new \Dadata\DadataClient($this->token, null);
+        $dadata = new \Dadata\DadataClient($this->token,  $this->secret);
         $result = $dadata->suggest("postal_unit", $index);
+        $standartize = $dadata->clean("address", $result[0]->data->address_str);
 
-
-        return response()->json((object) array('deliveryIndex' => $index, 'suggestedOffice' => $result));
+        return response()->json((object) array('deliveryIndex' => $index, 'suggestedOffice' => $standartize));
     }
 
     public function checkAdressInDadata(Request $request)
