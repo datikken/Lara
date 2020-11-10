@@ -112,4 +112,42 @@ class HelperString{
         return $string;
 
     }
+    /**
+     * Генерация кейвордов из всякого
+     *
+     * @param string $title
+     */
+    static function getMetaKeywords($title)
+    {
+        $keywords = array();
+
+        $titlePieces = explode(" ", $title); //разбиваем заголовок на слова
+        foreach ($titlePieces as $k => $v) {
+            if (mb_strlen(trim(str_replace(array(".", "!", ":", ",", "&nbsp;", "&laquo;", "&raquo;", "&mdash;", "&ndash;"), "", $v)), "utf-8") > 3) { //если слово больше 3 символов - в кейвордсы его
+                $keywords[] = trim(str_replace(array(".", "!", ":", ",", "&nbsp;", "&laquo;", "&raquo;", "&mdash;", "&ndash;"), "", $v));
+            }
+        }
+
+        if (func_num_args() > 1) { //если есть еще какие-то параметры кроме тайтла
+            $args = func_get_args();
+            array_shift($args); //убираем первый элемент - это тайтл
+            foreach ($args as $k => $v) {
+                if (is_array($v)) { //если параметр массив, то добавляем все значения длиннее 3 символов в кейвордсы
+                    foreach ($v as $kk => $vv) {
+                        if (!is_array($vv)) {
+                            if (mb_strlen(trim(str_replace(array(".", "!", ":", ",", "&nbsp;", "&laquo;", "&raquo;", "&mdash;", "&ndash;"), "", $vv)), "utf-8") > 3) {
+                                $keywords[] = trim(str_replace(array(".", "!", ":", ",", "&nbsp;", "&laquo;", "&raquo;", "&mdash;", "&ndash;"), "", $vv));
+                            }
+                        }
+                    }
+                } elseif (is_string($v)) { //если строка и она длиннее трех символов, то добавляем в кейвордсы
+                    if (mb_strlen(trim(str_replace(array(".", "!", ":", ",", "&nbsp;", "&laquo;", "&raquo;", "&mdash;", "&ndash;"), "", $v)), "utf-8") > 3) {
+                        $keywords[] = trim(str_replace(array(".", "!", ":", ",", "&nbsp;", "&laquo;", "&raquo;", "&mdash;", "&ndash;"), "", $v));
+                    }
+                }
+            }
+        }
+        $result = implode(", ", $keywords); //склеиваем все кейвордсы через запятую
+        return $result;
+    }
 }
