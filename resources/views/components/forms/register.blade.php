@@ -103,7 +103,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4 yellow_btn animated_btn">
-                                <span type="submit" class="" data-registerForm="true">
+                                <span data-registerForm="true">
                                     {{ __('РЕГИСТРАЦИЯ') }}
                                 </span>
                             </div>

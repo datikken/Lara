@@ -13,7 +13,7 @@ class PostsCommentsCreatedUpdated extends Migration
      */
     public function up()
     {
-        Schema::table('posts_comments', function (Blueprint $table) {
+        Schema::table('comments', function (Blueprint $table) {
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

@@ -23,7 +23,7 @@ class BlogController extends Controller
            $post['likes'] = $likes;
            $post['dislikes'] = $dislikes;
 
-           $post['comments'] = count(DB::table('posts_comments')->where('post_id', $post['id'])->get());
+           $post['comments'] = count(DB::table('comments')->where('post_id', $post['id'])->get());
         }
 
 
@@ -39,7 +39,7 @@ class BlogController extends Controller
 
         $post['likes'] = $likes;
         $post['dislikes'] = $dislikes;
-        $post['comments'] = DB::table('posts_comments')->where('post_id', $post['id'])->get();
+        $post['comments'] = DB::table('comments')->where('post_id', $post['id'])->get();
 
 //        $all = $post['comments'];
 //        $sortedCom = array();
@@ -88,7 +88,7 @@ class BlogController extends Controller
             'created_at' => \Carbon\Carbon::now()
         );
 
-        DB::table('posts_comments')->insert($arr);
+        DB::table('comments')->insert($arr);
 
         return response()->json($arr);
     }

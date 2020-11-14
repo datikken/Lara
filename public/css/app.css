@@ -10305,7 +10305,7 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
   line-height: 14px;
   text-align: justify;
   letter-spacing: 0.02em;
-  color: #d4d4d5;
+  color: #A1A1A2;
   margin-left: 5px;
 }
 
@@ -11346,8 +11346,8 @@ footer .footer_wrapper-item_info, footer .footer_wrapper-item_adress {
 }
 
 .best_printers .swiper-pagination .swiper-pagination-bullet-active {
-  background: #d4d4d5 !important;
-  border: 1px solid #d4d4d5 !important;
+  background: #A1A1A2 !important;
+  border: 1px solid #A1A1A2 !important;
 }
 
 .uk-text-area {
@@ -13771,7 +13771,7 @@ main {
 .prdLt {
   margin-bottom: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #D4D4D5;
+  border-bottom: 1px solid #A1A1A2;
 }
 
 .prdLt_descItem {
@@ -14191,7 +14191,7 @@ main {
 .verify_wrap_head:after {
   content: '';
   display: block;
-  border-bottom: 1px solid #d4d4d5;
+  border-bottom: 1px solid #A1A1A2;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -14483,7 +14483,7 @@ main {
 .simplebar-vertical:after {
   content: "";
   width: 2px;
-  background: #d4d4d5;
+  background: #A1A1A2;
   height: calc(100% - 30px);
   position: absolute;
   right: 17px;
@@ -14583,7 +14583,7 @@ main {
 }
 
 .catalogSwitch_item-list path, .catalogSwitch_item-grid path {
-  stroke: #D4D4D5;
+  stroke: #A1A1A2;
 }
 
 .sortDropdown {

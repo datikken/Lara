@@ -327,8 +327,8 @@ class RegisterController {
         let loginForm = document.querySelector('[data-loginform]');
         let registerForm = document.querySelector('[data-registerform]');
 
-        let loginSubmit = loginForm.querySelector('[type="submit"]');
-        let regSubmit = registerForm.querySelector('[type="submit"]');
+        let loginSubmit = loginForm.querySelector('.yellow_btn');
+        let regSubmit = registerForm.querySelector('.yellow_btn');
         let that = this;
 
         let arr = [loginSubmit, regSubmit];

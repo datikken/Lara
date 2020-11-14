@@ -18,7 +18,7 @@ class BlogCommentsSeeder extends Seeder
         $postsC = count($posts);
 
         for($i = 1; $i <= $postsC; $i++) {
-            DB::table('posts_comments')->insert([
+            DB::table('comments')->insert([
                 'id' => $i,
                 'post_id' => $i,
                 'user_id' => 1,
