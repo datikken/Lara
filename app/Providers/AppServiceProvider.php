@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Information;
-use App\Product;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\ServiceProvider;

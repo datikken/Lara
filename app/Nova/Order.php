@@ -77,7 +77,8 @@ class Order extends Resource
      */
     public function lenses(Request $request)
     {
-        return [];
+        return [
+        ];
     }
 
     /**
