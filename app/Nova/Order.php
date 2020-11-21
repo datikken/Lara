@@ -77,8 +77,7 @@ class Order extends Resource
      */
     public function lenses(Request $request)
     {
-        return [
-        ];
+        return [];
     }
 
     /**
@@ -89,8 +88,6 @@ class Order extends Resource
      */
     public function actions(Request $request)
     {
-        return [
-            new DownloadExcel
-        ];
+        return [];
     }
 }

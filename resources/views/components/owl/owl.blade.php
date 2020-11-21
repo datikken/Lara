@@ -9,3 +9,24 @@
         @endforeach
     </div>
 </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        $(".owl-carousel").owlCarousel({
+            nav: true,
+            margin: 15,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        });
+    });
+</script>
