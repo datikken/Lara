@@ -11,4 +11,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/js/vendors/owl.min.js"></script>
 
-<script src="{{ asset('js/app.js') }}" async defer></script>
+<script src="{{ mix('app.build.js', 'build') }}"></script>

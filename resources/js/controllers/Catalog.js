@@ -20,7 +20,7 @@ class Catalog {
     constructor() {
         let catalog = document.querySelector('#catalog');
             catalog && this._setListeners();
-
+            
             if(catalog) {
                 Vue.use(VueTruncate)
                 new Vue({
