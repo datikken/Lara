@@ -1,13 +1,13 @@
 import $ from 'jquery'
 import './components/Search'
-import './components/Swiper'
+import './controllers/Swiper'
 
 import Application from './Application';
 import Checkbox from './components/Checkbox'
 import Validator from './functions/validator'
 
 // import SearchController from './controllers/SearchController'
-// import OwlCarouselController from './controllers/OwlCarouselController'
+// import OwlCarousel from './controllers/OwlCarousel'
 // import Catalog from './controllers/Catalog'
 
 // import InformationController from './controllers/InformationController'
