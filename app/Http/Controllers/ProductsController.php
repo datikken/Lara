@@ -27,40 +27,44 @@ class ProductsController extends Controller
         }
 
         foreach ($posts as $post) {
-            $post['url'] = URL::to('/blog') .'/'. $post->id();
+            $post['url'] = URL::to('/blog') . '/' . $post->id();
         }
 
         $firstThirty = array();
 
-        foreach ($products->take(30) as $key=>$product)
-        {
-            if(!is_null($product['photo'])) {
+        foreach ($products->take(30) as $key => $product) {
+            if (!is_null($product['photo'])) {
                 $firstThirty[$key] = $product;
             }
         }
 
         $vwd = session()->get('viewed');
 
-        if(is_null($vwd)) {
+        if (is_null($vwd)) {
             $vwd = $firstThirty;
         }
 
-        if($vwd) {
-            foreach ($vwd as $key=>$item) {
-                if(!is_object($item->params)) {
+        if ($vwd) {
+            foreach ($vwd as $key => $item) {
+                if (!is_object($item->params)) {
                     $vwd[$key]->params = json_decode($item->params);
                 }
             }
         }
 
-        foreach ($firstThirty as $key=>$val) {
-            if(!is_object($val['params'])) {
+        foreach ($firstThirty as $key => $val) {
+            if (!is_object($val['params'])) {
                 $firstThirty[$key]['params'] = json_decode($val['params']);
             }
         }
 
-        return view('pages.index', ['products' => $firstThirty, 'slides' => $slides, 'news' => $posts, 'vwd' => $vwd ]);
+        return view('pages.index', ['products' => $firstThirty, 'slides' => $slides, 'news' => $posts, 'vwd' => $vwd])
+                ->withHeaders([
+                    'Accept-Encoding' => 'gzip, compress, br',
+                    'Content-Encoding' => 'br'
+                ]);
     }
+
     public function catalogHTML()
     {
         $products = Product::paginate(15);
@@ -73,7 +77,7 @@ class ProductsController extends Controller
 
             $arr = array();
 
-            foreach($images as $key=>$val) {
+            foreach ($images as $key => $val) {
                 $arr[$key] = $val;
             }
 
@@ -81,11 +85,12 @@ class ProductsController extends Controller
         }
 
         foreach ($posts as $post) {
-            $post['url'] = URL::to('/blog') .'/'. $post->id();
+            $post['url'] = URL::to('/blog') . '/' . $post->id();
         }
 
         return view('pages.catalog', ['products' => $products, 'news' => $posts]);
     }
+
     public function catalogCartridge(Request $request)
     {
         $products = Product::all();
@@ -98,7 +103,7 @@ class ProductsController extends Controller
 
             $arr = array();
 
-            foreach($images as $key=>$val) {
+            foreach ($images as $key => $val) {
                 $arr[$key] = $val;
             }
 
@@ -119,23 +124,24 @@ class ProductsController extends Controller
         $feedItems = DB::table('product_feedback')->where('product_id', $product['id'])->get();
         $product['cape'] = json_decode($product['cape']);
 
-        foreach ($feedItems as  $key=>$value) {
+        foreach ($feedItems as $key => $value) {
             $usverAvatar = DB::table('users')->where('id', $value->user_id)->value('image');
             $usverName = DB::table('users')->where('id', $value->user_id)->value('name');
             $feedItems[$key]->user_avatar = $usverAvatar;
             $feedItems[$key]->user_name = $usverName;
         }
 
-        foreach ($images as $image ) {
+        foreach ($images as $image) {
             array_push($imgArr, $image);
         }
 
         $newParams = array('');
 
-        function pushToArr($obj) {
+        function pushToArr($obj)
+        {
             $arr = new \stdClass();
 
-            foreach ($obj as $a=>$b) {
+            foreach ($obj as $a => $b) {
                 $arr->brand = $a;
                 $arr->model = $b;
             }
@@ -143,16 +149,16 @@ class ProductsController extends Controller
             return $arr;
         }
 
-        foreach ($product['cape'] as $key=>$item) {
+        foreach ($product['cape'] as $key => $item) {
             $ret = pushToArr($item);
             array_push($newParams, $ret);
         }
 
         $merged = array();
 
-        foreach ($newParams as $key=>$prm) {
-            if($prm != '') {
-                if(isset($merged[$prm->brand])) {
+        foreach ($newParams as $key => $prm) {
+            if ($prm != '') {
+                if (isset($merged[$prm->brand])) {
                     $merged[$prm->brand] = $merged[$prm->brand] . ', ' . $prm->model;
                 } else {
                     $merged[$prm->brand] = $prm->model;
@@ -178,11 +184,11 @@ class ProductsController extends Controller
         $bigExists = Storage::disk('local')->exists('/public/product_images/' . $bigImage);
         $smallExists = Storage::disk('local')->exists('/public/product_images/' . $smallImage);
 
-        if($bigExists) {
-            array_push($imgArr,(object) array('image' => $bigImage) );
+        if ($bigExists) {
+            array_push($imgArr, (object)array('image' => $bigImage));
         } else {
-            if($smallExists) {
-                array_push($imgArr,(object) array('image' => $smallImage) );
+            if ($smallExists) {
+                array_push($imgArr, (object)array('image' => $smallImage));
             }
         }
 
@@ -203,9 +209,8 @@ class ProductsController extends Controller
 
         $cart = $request->session()->get('cart');
 
-        if(array_key_exists($str, $cart->items))
-        {
-             unset($cart->items[$str]);
+        if (array_key_exists($str, $cart->items)) {
+            unset($cart->items[$str]);
         }
 
         $prevCart = $request->session()->get('cart');
@@ -213,13 +218,13 @@ class ProductsController extends Controller
         $updatedCart = new Cart($prevCart);
         $updatedCart->updatePriceAndQuantity();
 
-        if(empty($updatedCart->items)) {
+        if (empty($updatedCart->items)) {
             $request->session()->forget('cart');
         } else {
             $request->session()->put('cart', $updatedCart);
         }
 
-        if(empty($cart->items)) {
+        if (empty($cart->items)) {
             return view('components.cart.cart_empty');
         } else {
             return view('components.cart.cart_grid', ['cartItems' => $updatedCart]);
@@ -244,7 +249,7 @@ class ProductsController extends Controller
         $prevCart = $request->session()->get('cart');
         $cart = new Cart($prevCart);
 
-        if($cart->items[$id]['quantity'] > 1) {
+        if ($cart->items[$id]['quantity'] > 1) {
             $product = Product::find($id);
 
             $cart->items[$id]['quantity'] = $cart->items[$id]['quantity'] - 1;
@@ -282,10 +287,12 @@ class ProductsController extends Controller
     {
         return view('pages.cart.checkoutProducts');
     }
+
     public function deliveryForm()
     {
         return view('pages.cart.checkoutProducts');
     }
+
     public function payments()
     {
         return view('pages.cart.checkoutProducts');
