@@ -1,4 +1,3 @@
-/* eslint-disable */
 import Vue from 'vue';
 import app from '../vue/Search.vue'
 import store from '../vue/store/store'
