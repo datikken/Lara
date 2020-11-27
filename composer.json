@@ -8,19 +8,17 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.4.0",
+        "php": "^7.1.3",
         "arrilot/laravel-widgets": "^3.13",
         "classic-o/nova-media-library": "^1.0",
         "doctrine/dbal": "^2.10",
+        "ericlagarda/nova-gallery": "^1.3",
         "fideloper/proxy": "^4.0",
-        "gregoriohc/laravel-nova-theme-responsive": "^0.8.1",
         "guzzlehttp/guzzle": "^6.0",
         "hflabs/dadata": "^20.7",
-        "infinety-es/nova-filemanager": "^2.8",
         "laravel/framework": "5.8.*",
-        "laravel/nova": "2.0",
+        "laravel/nova": "*",
         "laravel/tinker": "^1.0",
-        "maatwebsite/laravel-nova-excel": "^1.2",
         "renatomarinho/laravel-page-speed": "^1.9"
     },
     "require-dev": {
@@ -33,8 +31,8 @@
     },
     "repositories": [
         {
-            "type": "composer",
-            "url": "https://nova.laravel.com"
+            "type": "path",
+            "url": "./nova"
         }
     ],
     "config": {
@@ -44,9 +42,6 @@
     },
     "extra": {
         "laravel": {
-            "providers": [
-                "Infinety\\Filemanager\\FilemanagerServiceProvider"
-            ]
         }
     },
     "autoload": {
@@ -66,6 +61,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "post-update-cmd": [
+            "@php artisan nova:publish"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

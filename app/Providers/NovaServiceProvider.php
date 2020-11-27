@@ -7,7 +7,7 @@ use App\Nova\Metrics\OrdersPerDay;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use App\Nova\Metrics\UsersPerDay;
-use \Infinety\Filemanager\FilemanagerTool;
+use EricLagarda\NovaGallery\NovaGallery;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -68,8 +68,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new UsersPerDay,
-            new OrdersPerDay
+//            new UsersPerDay,
+//            new OrdersPerDay
         ];
     }
 
@@ -81,7 +81,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
-            new \Infinety\Filemanager\FilemanagerTool(),
+            new NovaGallery
         ];
     }
 
