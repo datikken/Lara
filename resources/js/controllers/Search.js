@@ -3,14 +3,17 @@ import app from '../vue/Search.vue'
 import store from '../vue/store/store'
 
 class SearchController {
-    constructor() {
-        let offCatalog = document.querySelector('.menu_wrapper-item_search_input');
+    activateVue() {
+        new Vue({
+            render: h => h(app),
+            store: store,
+        }).$mount('#app')
+    }
 
-        if (offCatalog) {
-            new Vue({
-                render: h => h(app),
-                store: store,
-            }).$mount('#app')
+    constructor() {
+        let that = this;
+        window.onload = function () {
+            that.activateVue();
         }
     }
 }

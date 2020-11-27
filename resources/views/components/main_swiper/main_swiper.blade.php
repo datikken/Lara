@@ -1,4 +1,4 @@
-<div class="swiper-container main_slider" data-module="Swiper">
+<div class="swiper-container main_slider">
     <div class="swiper-wrapper">
         @foreach($slides as $slide)
             <div class="swiper-slide" style="background-image: url('{{Storage::disk('local')->url('main_slider_images/' . $slide->image )}}')"></div>

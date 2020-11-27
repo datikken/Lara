@@ -29,21 +29,20 @@ var RegisterController = /*#__PURE__*/function () {
   function RegisterController() {
     _classCallCheck(this, RegisterController);
 
-    var auth = document.querySelector('.auth-decor');
     this.modal = document.querySelector('#passReset');
     this.passResetForm = document.querySelector('#passResetForm');
     this.store = _vue_store_store__WEBPACK_IMPORTED_MODULE_3__["default"];
     var that = this;
-    auth && this._setListeners();
-    auth && this._showHidePassword();
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('.form_type-item').on('click', function (e) {
       that._pickFaceType(e);
     });
 
-    if (auth) {
-      this.passReset();
-      this.testIfUserFromPasswordResetEmail();
-    }
+    this._setListeners();
+
+    this._showHidePassword();
+
+    this.testIfUserFromPasswordResetEmail();
+    this.passReset();
   }
 
   _createClass(RegisterController, [{
@@ -154,7 +153,7 @@ var RegisterController = /*#__PURE__*/function () {
       var btn = this.modal.querySelector('[data-resetPassEmail]');
       var formGroup = this.modal.querySelector('.form_group');
       var that = this;
-      btn && btn.addEventListener('click', function (e) {
+      btn.addEventListener('click', function (e) {
         var email = that.modal.querySelector('input').value;
         var valid = Object(_functions_validateEmail__WEBPACK_IMPORTED_MODULE_1__["validateEmail"])(email);
 

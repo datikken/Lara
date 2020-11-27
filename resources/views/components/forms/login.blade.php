@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" data-module="RegisterController">
     <div class="row justify-content-center">
         <div class="card">
             <div class="card-header">{{ __('Вход') }}</div>
@@ -53,7 +53,6 @@
         </div>
     </div>
 </div>
-
 
 @include('components.modals.resetPassword')
 @include('components.modals.passResetForm')

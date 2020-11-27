@@ -86,7 +86,7 @@
     export default {
         name: "DesktopMainMenuDropDown",
         mounted() {
-            this.GET_ALL_INFORMATION_POSTS();
+            // this.GET_ALL_INFORMATION_POSTS();
         },
         computed: {
             ...mapGetters([

@@ -5,24 +5,21 @@ import store from '../vue/store/store';
 
 class RegisterController {
     constructor() {
-        let auth = document.querySelector('.auth-decor');
         this.modal = document.querySelector('#passReset');
+
         this.passResetForm = document.querySelector('#passResetForm');
         this.store = store;
 
         let that = this;
 
-        auth && this._setListeners();
-        auth && this._showHidePassword();
-
         $('.form_type-item').on('click', function (e) {
             that._pickFaceType(e)
         });
 
-        if (auth) {
-            this.passReset();
-            this.testIfUserFromPasswordResetEmail();
-        }
+        this._setListeners();
+        this._showHidePassword();
+        this.testIfUserFromPasswordResetEmail();
+        this.passReset();
     }
 
     passResetHandler() {
@@ -140,7 +137,7 @@ class RegisterController {
         let formGroup = this.modal.querySelector('.form_group');
         let that = this;
 
-        btn && btn.addEventListener('click', function (e) {
+        btn.addEventListener('click', function (e) {
             let email = that.modal.querySelector('input').value;
             let valid = validateEmail(email);
 

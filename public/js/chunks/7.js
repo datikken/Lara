@@ -288,8 +288,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "DesktopMainMenuDropDown",
-  mounted: function mounted() {
-    this.GET_ALL_INFORMATION_POSTS();
+  mounted: function mounted() {// this.GET_ALL_INFORMATION_POSTS();
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['informationPosts'])),
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['GET_ALL_INFORMATION_POSTS'])), {}, {
@@ -1820,24 +1819,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vue_store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../vue/store/store */ "./resources/js/vue/store/store.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 
 
 
-var SearchController = function SearchController() {
-  _classCallCheck(this, SearchController);
 
-  var offCatalog = document.querySelector('.menu_wrapper-item_search_input');
+var SearchController = /*#__PURE__*/function () {
+  _createClass(SearchController, [{
+    key: "activateVue",
+    value: function activateVue() {
+      new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+        render: function render(h) {
+          return h(_vue_Search_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
+        },
+        store: _vue_store_store__WEBPACK_IMPORTED_MODULE_2__["default"]
+      }).$mount('#app');
+    }
+  }]);
 
-  if (offCatalog) {
-    new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-      render: function render(h) {
-        return h(_vue_Search_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
-      },
-      store: _vue_store_store__WEBPACK_IMPORTED_MODULE_2__["default"]
-    }).$mount('#app');
+  function SearchController() {
+    _classCallCheck(this, SearchController);
+
+    var that = this;
+
+    window.onload = function () {
+      that.activateVue();
+    };
   }
-};
+
+  return SearchController;
+}();
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchController);
 
