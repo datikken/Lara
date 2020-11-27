@@ -2,12 +2,12 @@
 
 namespace App\Providers;
 
-use App\Nova\Metrics\OrdersPerDay;
 use Laravel\Nova\Nova;
-use Laravel\Nova\Cards\Help;
+use App\Nova\Metrics\OrdersPerDay;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use App\Nova\Metrics\UsersPerDay;
+use \Infinety\Filemanager\FilemanagerTool;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -19,6 +19,16 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+    }
+
+    /**
+     * Register the application's Nova resources.
+     *
+     * @return void
+     */
+    protected function resources()
+    {
+        Nova::resourcesIn(app_path('Nova'));
     }
 
     /**
@@ -70,7 +80,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            new \Infinety\Filemanager\FilemanagerTool(),
+        ];
     }
 
     /**

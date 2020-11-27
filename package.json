@@ -13,7 +13,9 @@
         "nuxDev": "nuxt -c client/nuxt.config.js",
         "nuxBuild": "nuxt build -c client/nuxt.config.js",
         "nuxStart": "nuxt start -c client/nuxt.config.js",
-        "nuxLint": "eslint --fix --ext .js,.vue client/"
+        "nuxLint": "eslint --fix --ext .js,.vue client/",
+        "build-nova-filemanager": "cd nova-components/NovaFilemanager && npm run dev",
+        "build-nova-filemanager-prod": "cd nova-components/NovaFilemanager && npm run prod"
     },
     "devDependencies": {
         "@vue/test-utils": "^1.0.3",
