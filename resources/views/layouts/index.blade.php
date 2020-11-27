@@ -14,6 +14,11 @@
         gtag('config', 'UA-177029583-1');
     </script>
     <link href="/images/icons/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="preload" href="/fonts/Montserrat-Medium.ttf" as="font" />
+    <link rel="preload" href="/fonts/Montserrat-Regular.ttf" as="font" />
+    <link rel="preload" href="/fonts/Montserrat-semibold.ttf" as="font" />
+
     <meta name="description" content="Купить картридж для принтера, с доставкой.">
 
     @include('components.styles.style')

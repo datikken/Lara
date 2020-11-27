@@ -14,10 +14,9 @@
                 @include('components.btn.text_btn', [ 'class' => 'flat_btn action_btn', 'text' => 'Не получили письмо?'])
             </a>
 
-            <a class="verify_wrap_link" href="{{ route('index') }}">
+            <a class="verify_wrap_link" href="{{ route('mainPage') }}">
                 @include('components.btn.text_btn', [ 'class' => 'flat_btn action_btn animated_btn', 'text' => 'Закрыть'])
             </a>
-
 
         </div>
     </div>
