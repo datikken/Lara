@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Information;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\ServiceProvider;
@@ -28,7 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
         // Override the email notification for verifying email
         VerifyEmail::toMailUsing(function ($notifiable,$url){
             $mail = new MailMessage;
@@ -36,9 +34,6 @@ class AppServiceProvider extends ServiceProvider
             $mail->markdown('emails.verify', ['url' => $url]);
             return $mail;
         });
-
-        $information = Information::all();
-        View::share('information', $information);
 
         View::composer('*', function($view) {
             $view->with('userData', Auth::user());

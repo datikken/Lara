@@ -66,7 +66,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     .sres_close {
         width: 20px;
         height: 20px;

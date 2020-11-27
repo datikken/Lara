@@ -23442,7 +23442,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapMutations", function() { return mapMutations; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapState", function() { return mapState; });
 /*!
- * vuex v3.5.1
+ * vuex v3.6.0
  * (c) 2020 Evan You
  * @license MIT
  */
@@ -23729,7 +23729,11 @@ ModuleCollection.prototype.isRegistered = function isRegistered (path) {
   var parent = this.get(path.slice(0, -1));
   var key = path[path.length - 1];
 
-  return parent.hasChild(key)
+  if (parent) {
+    return parent.hasChild(key)
+  }
+
+  return false
 };
 
 function update (path, targetModule, newModule) {
@@ -24669,7 +24673,7 @@ function pad (num, maxLength) {
 var index = {
   Store: Store,
   install: install,
-  version: '3.5.1',
+  version: '3.6.0',
   mapState: mapState,
   mapMutations: mapMutations,
   mapGetters: mapGetters,
@@ -24713,26 +24717,6 @@ try {
 
 module.exports = g;
 
-
-/***/ }),
-
-/***/ "./resources/js/admin.js":
-/*!*******************************!*\
-  !*** ./resources/js/admin.js ***!
-  \*******************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _admin_components_DropDown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin/components/DropDown */ "./resources/js/admin/components/DropDown.js");
-var admin = document.querySelector('.admin_wrap');
-
-
-if (admin) {
-  var drop = document.querySelector('.dropdown');
-  new _admin_components_DropDown__WEBPACK_IMPORTED_MODULE_0__["default"](drop);
-}
 
 /***/ }),
 
@@ -24961,14 +24945,34 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 
 /***/ }),
 
+/***/ "./resources/js/main_admin.js":
+/*!************************************!*\
+  !*** ./resources/js/main_admin.js ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _admin_components_DropDown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin/components/DropDown */ "./resources/js/admin/components/DropDown.js");
+var main_admin = document.querySelector('.admin_wrap');
+
+
+if (main_admin) {
+  var drop = document.querySelector('.dropdown');
+  new _admin_components_DropDown__WEBPACK_IMPORTED_MODULE_0__["default"](drop);
+}
+
+/***/ }),
+
 /***/ 1:
-/*!*************************************!*\
-  !*** multi ./resources/js/admin.js ***!
-  \*************************************/
+/*!******************************************!*\
+  !*** multi ./resources/js/main_admin.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/tikken/Sites/Lara/resources/js/admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! /Users/datikken/Sites/Lara/resources/js/main_admin.js */"./resources/js/main_admin.js");
 
 
 /***/ })
